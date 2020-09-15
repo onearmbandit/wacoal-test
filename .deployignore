@@ -1,0 +1,8 @@
+node_modules
+docker
+wp
+.vscode
+sniffs
+photon_local
+
+

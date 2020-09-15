@@ -1,0 +1,29 @@
+# Uploads directory
+/uploads/
+
+# mu-plugins; these are managed at the platform-level
+/mu-plugins/
+
+# drop-ins; these are managed at the platform-level
+/object-cache.php
+/db.php
+
+# Ignore temporary OS files
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+
+node_modules/
+vendor/
+wp/*
+sniffs/*
+test.php
+/themes/wacoal/dist/*
+photon_local/*
+yarn-error.log
+
+!plugins/wordpress-seo/vendor

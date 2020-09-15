@@ -1,0 +1,128 @@
+<?php
+
+define('themePath', get_template_directory());
+define('themeUri', get_template_directory_uri());
+define('stylesheetUri', get_stylesheet_directory_uri());
+
+if (!function_exists('wacoal_setup')) {
+
+    function wacoal_setup()
+    {
+
+        add_theme_support('automatic-feed-links');
+        add_theme_support('title-tag');
+        add_theme_support('post-thumbnails');
+
+        register_nav_menus(array(
+            'menu-1' => esc_html__('Primary', 'wacoal'),
+        ));
+
+        add_theme_support('html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ));
+
+        add_theme_support('custom-background', apply_filters('wacoal_custom_background_args', array(
+            'default-color' => 'ffffff',
+            'default-image' => '',
+        )));
+
+        add_theme_support('customize-selective-refresh-widgets');
+
+        add_theme_support('custom-logo', array(
+            'height' => 250,
+            'width' => 250,
+            'flex-width' => true,
+            'flex-height' => true,
+        ));
+    }
+}
+add_action('after_setup_theme', 'wacoal_setup');
+
+function wacoal_content_width()
+{
+    $GLOBALS['content_width'] = apply_filters('wacoal_content_width', 640);
+}
+add_action('after_setup_theme', 'wacoal_content_width', 0);
+
+function wacoal_widgets_init()
+{
+    register_sidebar(array(
+        'name' => esc_html__('Sidebar', 'wacoal'),
+        'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+}
+add_action('widgets_init', 'wacoal_widgets_init');
+
+/**
+ * Enqueue scripts and styles.
+ */
+function wacoal_scripts()
+{
+
+    $distFileJson = file_get_contents(__DIR__ . '/dist/assets.json');
+    $distFile = json_decode($distFileJson, true);
+
+    wp_enqueue_script('wacoal-js', stylesheetUri . '/dist/' . $distFile['main']['js'], array('jquery'), null, true);
+    wp_enqueue_style('wacoal-css', stylesheetUri . '/dist/' . $distFile['main']['css']);
+
+    wp_localize_script('wacoal-js', 'wacoal_js_var', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+    ));
+
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
+}
+add_action('wp_enqueue_scripts', 'wacoal_scripts');
+
+/**
+ * Admin Enqueue scripts and styles.
+ */
+function wacoal_admin_scripts()
+{
+    if (!did_action('wp_enqueue_media')) {
+        wp_enqueue_media();
+    }
+
+    wp_enqueue_style('jquery');
+
+    wp_enqueue_script('wacoal-admin-js', themeUri . '/assets/js/wpadmin.js', array('jquery'), null, true);
+    //    wp_enqueue_style('wacoal-admin-css', themeUri . '/assets/css/wpadmin/admin.css');
+
+    wp_localize_script('admin', 'wacoal_js_var_admin', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+    ));
+}
+add_action('admin_enqueue_scripts', 'wacoal_admin_scripts');
+
+/**
+ * Admin functions include - START
+ */
+
+if (is_admin()) {
+    include themePath . '/includes/admin/admin-functions.php';
+}
+
+/**
+ * Admin functions include - END
+ */
+
+
+/**
+ * Website functions include - START
+ */
+
+include themePath . '/includes/website/website-functions.php';
+
+/**
+ * Website functions include - END
+ */

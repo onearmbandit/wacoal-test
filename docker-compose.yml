@@ -1,0 +1,61 @@
+version: "3.3"
+
+services:
+  nginx:
+    depends_on:
+      - php
+    build: ./docker/nginx/
+    container_name: wacoal-nginx
+    ports:
+      - 8000:80
+    volumes:
+      - ${PWD}/wp:/var/www/html
+      - ${PWD}/vip-config:/var/www/html/wp-content/vip-config
+      - ${PWD}/client-mu-plugins/plugin-loader.php:/var/www/html/wp-content/mu-plugins/plugin-loader.php
+      - ${PWD}/themes/wacoal:/var/www/html/wp-content/themes/wacoal
+      - ${PWD}/plugins:/var/www/html/wp-content/plugins
+      - ${PWD}/vip-config/sunrise.php:/var/www/html/wp-content/sunrise.php
+      - ${PWD}/docker/php/dbadmin.php:/var/www/html/dbadmin.php
+      - ${PWD}/photon_local:/var/www/photon
+
+  mysql:
+    image: mysql:5.7
+    container_name: wacoal-mysql
+    volumes:
+      - ${HOME}/docker/wacoal:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: wacoal
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+
+  php:
+    depends_on:
+      - mysql
+    build: ./docker/php/
+    container_name: wacoal-php
+    volumes:
+      - ${PWD}/wp:/var/www/html
+      - ${PWD}/vip-config:/var/www/html/wp-content/vip-config
+      - ${PWD}/client-mu-plugins/plugin-loader.php:/var/www/html/wp-content/mu-plugins/plugin-loader.php
+      - ${PWD}/themes/wacoal:/var/www/html/wp-content/themes/wacoal
+      - ${PWD}/plugins:/var/www/html/wp-content/plugins
+      - ${PWD}/vip-config/sunrise.php:/var/www/html/wp-content/sunrise.php
+      - ${PWD}/docker/php/dbadmin.php:/var/www/html/dbadmin.php
+      - ${PWD}/docker/php/setup.sh:/setup.sh
+      - ${PWD}/wp-plugins.txt:/wp-plugins.txt
+      - ${PWD}/photon_local:/var/www/photon
+      
+    expose:
+      - 9000
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: admin
+      WORDPRESS_DB_PASSWORD: admin
+      WORDPRESS_DB_NAME: wacoal
+
+volumes:
+  db_data: {}
+  wp: {}

@@ -1,0 +1,9 @@
+wordpress-seo
+siteorigin-panels
+contact-form-7
+feedzy-rss-feeds
+google-sitemap-generator
+redirection
+so-widgets-bundle
+wp-fastest-cache
+wp-mail-smtp
