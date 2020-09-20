@@ -1,174 +1,246 @@
 'use strict';
 
+const autoprefixer = require('autoprefixer');
 const fs = require('fs');
+const globImporter = require('node-sass-glob-importer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
 const AssetsPlugin = require('assets-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
+module.exports = function () {
 
-require('dotenv').config();
+  const mode = process.env.NODE_ENV || 'development';
+  const extensionPrefix = mode === 'production' ? '.min' : '';
+  const DEV = process.env.NODE_ENV === 'development';
 
-// Make sure any symlinks in the project folder are resolved:
-// https://github.com/facebookincubator/create-react-app/issues/637
-const appDirectory = fs.realpathSync(process.cwd() + '/themes/wacoal/assets');
+  const appDirectory = fs.realpathSync(process.cwd() + '/themes/' + process.env.NODE_SITE + '/assets');
 
-function resolveApp(relativePath) {
-  return path.resolve(appDirectory, relativePath);
-}
+  function resolveApp(relativePath) {
+    return path.resolve(appDirectory, relativePath);
+  }
 
-const paths = {
-  appSrc: resolveApp('.'),
-  appBuild: resolveApp('../dist'),
-  appIndexJs: resolveApp('js/website.js'),
-  appNodeModules: resolveApp('../../node_modules'),
-};
+  // These are the paths where different types of resources should end up.
+  const paths = {
+    css: 'assets/css/',
+    img: 'assets/img/',
+    font: 'assets/font/',
+    js: 'assets/js/',
+    lang: 'languages/',
+  };
 
-const DEV = process.env.NODE_ENV === 'development';
+  const appPaths = {
+    appSrc: resolveApp('.'),
+    appBuild: resolveApp('../dist'),
+    appIndexJs: resolveApp('js/website.js'),
+    appNodeModules: resolveApp('../../node_modules'),
+  };
 
-module.exports = {
-  bail: !DEV,
-  mode: DEV ? 'development' : 'production',
-  // We generate sourcemaps in production. This is slow but gives good results.
-  // You can exclude the *.map files from the build during deployment.
-  target: 'web',
-  devtool: DEV ? 'source-map' : 'cheap-eval-source-map',
-  entry: [paths.appIndexJs],
-  output: {
-    path: paths.appBuild,
-    filename: DEV ? 'website.js' : 'website.[hash:8].js'
-  },
-  module: {
-    rules: [
-      // Disable require.ensure as it's not a standard language feature.
-      { parser: { requireEnsure: false } },
-      // Transform ES6 with Babel
-      {
-        test: /\.js?$/,
-        loader: 'babel-loader',
-        include: paths.appSrc,
-      },
-      {
-        test: /.s?css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true,
-            }
-          },
-          {
-            loader: "postcss-loader",
-            options: {
-              ident: "postcss", // https://webpack.js.org/guides/migrating/#complex-options
-              sourceMap: true,
-              plugins: () => [
-                autoprefixer({
-                  browsers: [
-                    ">1%",
-                    "last 4 versions",
-                    "Firefox ESR",
-                    "not ie < 9" // React doesn't support IE8 anyway
-                  ]
-                })
-              ]
-            }
-          },
-          {
-            loader: "sass-loader",
-            options: {
-              sourceMap: true,
-            }
-          }
-        ],
-      },
-      {
-        test: /\.(eot|ttf|woff|woff2)$/,
-        use: ['file-loader']
-      },
-      {
-        test: /\.(gif|png|jpe?g|svg)$/i,
-        use: ['file-loader'],
-      }
+  // The property names will be the file names, the values are the files that should be included.
+  const entry = {
+    website: [
+      appPaths.appIndexJs
     ],
-  },
-  optimization: {
-    minimize: !DEV,
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          }
-        }
-      }),
-      new TerserPlugin({
-        terserOptions: {
-          compress: {
-            warnings: false
-          },
-          output: {
-            comments: false
-          }
+  };
+
+
+
+  const loaders = {
+    css: {
+      loader: 'css-loader',
+      options: {
+        sourceMap: true,
+      },
+    },
+    postCss: {
+      loader: 'postcss-loader',
+      options: {
+        plugins: [
+          autoprefixer({
+            flexbox: 'no-2009',
+          }),
+        ],
+        sourceMap: true,
+      },
+    },
+    sass: {
+      loader: 'sass-loader',
+      options: {
+        importer: globImporter(),
+        sourceMap: true,
+      },
+    },
+  };
+
+  const config = {
+    node: {
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty',
+      child_process: 'empty',
+    },
+    mode,
+    entry,
+    output: {
+      path: appPaths.appBuild,
+      //publicPath,
+      //filename: `${paths.js}[name]${extensionPrefix}.js`,
+      filename: DEV ? '[name].js' : '[name].[hash:8].js'
+    },
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000
+    },
+    externals: {
+      '@wordpress/a11y': 'wp.a11y',
+      '@wordpress/components': 'wp.components', // Not really a package.
+      '@wordpress/blocks': 'wp.blocks', // Not really a package.
+      '@wordpress/data': 'wp.data', // Not really a package.
+      '@wordpress/date': 'wp.date', // Not really a package.
+      '@wordpress/element': 'wp.element', // Not really a package.
+      '@wordpress/hooks': 'wp.hooks',
+      '@wordpress/i18n': 'wp.i18n',
+      '@wordpress/utils': 'wp.utils', // Not really a package
+      backbone: 'Backbone',
+      jquery: 'jQuery',
+      lodash: 'lodash',
+      moment: 'moment',
+      react: 'React',
+      'react-dom': 'ReactDOM',
+      tinymce: 'tinymce',
+    },
+    module: {
+      rules: [
+        {
+          enforce: 'pre',
+          test: /\.js|.jsx/,
+          loader: 'import-glob',
+          exclude: /(node_modules)/,
         },
-        sourceMap: true
-      })
-    ]
-  },
-  plugins: [
-    !DEV && new CleanWebpackPlugin(['build']),
-    new MiniCssExtractPlugin({
-      filename: DEV ? 'website.css' : 'website.[hash:8].css'
-    }),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development', // use 'development' unless process.env.NODE_ENV is defined
-      DEBUG: false,
-    }),
-    new AssetsPlugin({
-      path: paths.appBuild,
-      filename: 'assets.json',
-    }),
-    DEV &&
-    new FriendlyErrorsPlugin({
-      clearConsole: false,
-    }),
-    DEV &&
-    new BrowserSyncPlugin({
-      notify: false,
-      host: 'localhost',
-      port: 4000,
-      logLevel: 'silent',
-      files: ['./*.php'],
-      proxy: 'http://localhost:8000/',
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      tether: 'tether',
-      Tether: 'tether',
-      'window.Tether': 'tether',
-      Popper: ['popper.js', 'default'],
-      'window.Tether': 'tether',
-      Alert: 'exports-loader?Alert!bootstrap/js/dist/alert',
-      Button: 'exports-loader?Button!bootstrap/js/dist/button',
-      Carousel: 'exports-loader?Carousel!bootstrap/js/dist/carousel',
-      Collapse: 'exports-loader?Collapse!bootstrap/js/dist/collapse',
-      Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-      Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
-      Popover: 'exports-loader?Popover!bootstrap/js/dist/popover',
-      Scrollspy: 'exports-loader?Scrollspy!bootstrap/js/dist/scrollspy',
-      Tab: 'exports-loader?Tab!bootstrap/js/dist/tab',
-      Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-      Util: 'exports-loader?Util!bootstrap/js/dist/util'
-    }),
-  ].filter(Boolean),
+        {
+          test: /\.js|.jsx/,
+          loader: 'babel-loader',
+          query: {
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  useBuiltIns: 'usage',
+                  corejs: "2",
+                  targets: {
+                    browsers: ['last 2 versions', 'ie >= 9'],
+                  },
+                }
+              ],
+              '@wordpress/default',
+            ],
+            plugins: [
+              [
+                '@wordpress/babel-plugin-makepot',
+                {
+                  'output': `${paths.lang}translation.pot`,
+                }
+              ],
+              'transform-class-properties',
+            ],
+          },
+          exclude: /(node_modules|bower_components)/,
+        },
+        {
+          test: /\.html$/,
+          loader: 'raw-loader',
+          exclude: /node_modules/,
+        },
+        // {
+        //   test: /\.css$/,
+        //   use: [
+        //     MiniCssExtractPlugin.loader,
+        //     loaders.css,
+        //     loaders.postCss,
+        //   ],
+        //   exclude: /node_modules/,
+        // },
+        {
+          test: /\.s?css$/,
+          use: [
+            MiniCssExtractPlugin.loader,
+            loaders.css,
+            loaders.postCss,
+            loaders.sass,
+          ],
+          exclude: /node_modules/,
+        },
+        {
+          test: /\.(ttf|eot|svg|woff2?)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+                outputPath: paths.font,
+              },
+            },
+          ],
+          exclude: /(assets)/,
+        },
+        {
+          test: /\.(eot|ttf|woff|woff2)$/,
+          use: ['file-loader']
+        },
+        {
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          use: ['file-loader'],
+        },
+        {
+          test: /jquery-mousewheel/,
+          loader: "imports-loader?define=>false&this=>window"
+        },
+        {
+          test: /malihu-custom-scrollbar-plugin/,
+          loader: "imports-loader?define=>false&this=>window"
+        }
+      ],
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        //filename: `${paths.css}[name]${extensionPrefix}.css`,
+        filename: DEV ? '[name].css' : '[name].[hash:8].css'
+      }),
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: JSON.stringify(mode), // use 'development' unless process.env.NODE_ENV is defined
+        DEBUG: false,
+      }),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify(mode),
+      }),
+      function () {
+        // Custom webpack plugin - remove generated JS files that aren't needed
+        this.hooks.done.tap('webpack', function (stats) {
+          stats.compilation.chunks.forEach(chunk => {
+            if (!chunk.entryModule._identifier.includes('.js')) {
+              chunk.files.forEach(file => {
+                if (file.includes('.js')) {
+                  //fs.unlinkSync(path.join(__dirname, `/${file}`));
+                }
+              });
+            }
+          });
+        });
+      },
+
+      //generate assets.json
+      new AssetsPlugin({
+        path: paths.appBuild,
+        filename: './themes/' + process.env.NODE_SITE + '/dist/assets.json',
+      }),
+    ],
+  };
+
+  if (mode !== 'production') {
+    config.devtool = 'source-map';
+  }
+
+  return config;
 };

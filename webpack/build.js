@@ -10,7 +10,7 @@ process.on('unhandledRejection', err => {
 });
 
 const webpack = require('webpack');
-const config = require('./config');
+const config = require('./config')();
 
 const clientCompiler = webpack(config);
 
