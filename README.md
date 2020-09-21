@@ -8,6 +8,7 @@ Wordprss Headless with React (ssr)
 *   [Install WP Core & theme](#install-wp-core-&-theme)
 *   [Wp-config.php file edits](#Update-wp-config)
 *   [Local Project Setup](#Local-Project-Setup)
+*   [Daily Project run commands](#Daily-Project-run-commands)
 
 ## Introduction
 
@@ -74,7 +75,7 @@ Step 7: yarn start
 
 ```
 
-## Daily Project run command
+## Daily Project run commands
 
 ```
   01) yarn docker:start
