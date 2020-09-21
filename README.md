@@ -6,6 +6,8 @@ Wordprss Headless with React (ssr)
 *   [Introduction](#introduction)
 *   [Install WP Cli](#install-wp-cli)
 *   [Install WP Core & theme](#install-wp-core-&-theme)
+*   [Wp-config.php file edits](#Update-wp-config)
+*   [Local Project Setup](#Local-Project-Setup)
 
 ## Introduction
 
@@ -38,21 +40,64 @@ wp theme activate wp-react-ssr
 add following after `$table_prefix`
 
 ```php
+define( 'WACOAL_ENABLE_LOCAL_SETTINGS', true );
+define( 'WACOAL_PHOTON_URL', 'http://photon.local' );
 define('WP_ENV', 'development');
-define('WP_SITEURL', 'http://localhost:8000/');
-define('WP_HOME', 'http://localhost:8000/');
+define('WP_SITEURL', 'http://wacoal.local/');
+define('WP_HOME', 'http://wacoal.local/');
+
+define('WP_DEBUG',true);
+define('WP_DEBUG_LOG',true);
+define('WP_DEBUG_DISPLAY',false);
+
+if ( file_exists( __DIR__ . '/wp-content/vip-config/vip-config.php' ) ) {
+  require_once __DIR__ . '/wp-content/vip-config/vip-config.php';
+}
 ```
 
-## Install Plugins
+## Local Project Setup
 
 ```bash
-cat wp-plugins.txt | xargs wp plugin install --activate
+Step 1: Clone the project using SSH/HTTP to your machine.
+
+Step 2: (Go to project folder) cd wacoal
+
+Step 3: yarn install (Only once when initial project setup)
+
+Step 4: yarn sniff:setup (Only once when initial project setup)
+
+Step 5: yarn docker:start
+
+Step 6: yarn docker:setup (Only once when initial project setup)
+
+Step 7: yarn start
+
 ```
 
-## Run Wordpress with php built in server
+## Daily Project run command
 
-```bash
-yarn wp
+```
+  01) yarn docker:start
+
+  02) yarn docker:ip
+      (Copy IP address and use the same in host file of local machine and docker container)
+
+  03) sudo nano /etc/hosts
+      (Use the copied IP address and paste in the file with below example)
+
+      example:- 172.27.0.4 wacoal.local photon.local
+
+      (Replace IP address in above example with yours and save the file)
+
+  04) yarn docker:shell
+
+      (Use the copied IP address and paste in the file with below example)
+
+      example:- echo "172.27.0.4 photon.local wacoal.local" >> /etc/hosts
+
+      (Replace IP address in above example with yours and save the file)
+
+  05) yarn start
 ```
 
 
