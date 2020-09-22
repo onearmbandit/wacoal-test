@@ -1,4 +1,4 @@
 <?php
 
 // Admin Common Functions
-require_once themePath . '/includes/admin/common/admin-common-functions.php';
+require_once THEMEPATH . '/includes/admin/common/admin-common-functions.php';
