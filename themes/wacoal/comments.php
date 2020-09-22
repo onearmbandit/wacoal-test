@@ -33,14 +33,14 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wacoal' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf(
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wacoal_comment_count, 'comments title', 'wacoal' ) ),
-					number_format_i18n( $wacoal_comment_count ),
-					'<span>' . get_the_title() . '</span>'
+					number_format_i18n( $wacoal_comment_count ), // phpcs:ignore
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore
 				);
 			}
 			?>

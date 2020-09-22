@@ -1,5 +1,11 @@
 <?php
-wacoal_page_entry_top('');
+/**
+ * Single post to collect all data
+ *
+ * @package Wacoal
+ */
+
+wacoal_page_entry_top( '' );
 ?>
 
 	<div id="primary" class="content-area">

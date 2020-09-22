@@ -1,26 +1,39 @@
 <?php
+/**
+ * Website common functions
+ *
+ * @package Wacoal
+ */
 
-function wacoal_body_classes($classes)
-{
-    if (!is_singular()) {
+/**
+ * Function used to add the body classes
+ *
+ * @param array $classes body classes.
+ */
+function wacoal_body_classes( $classes ) {
+    if ( ! is_singular() ) {
         $classes[] = 'hfeed';
     }
 
-    if (!is_active_sidebar('sidebar-1')) {
+    if ( ! is_active_sidebar( 'sidebar-1' ) ) {
         $classes[] = 'no-sidebar';
     }
 
     return $classes;
 }
-add_filter('body_class', 'wacoal_body_classes');
+add_filter( 'body_class', 'wacoal_body_classes' );
 
-function wacoal_pingback_header()
-{
-    if (is_singular() && pings_open()) {
-        printf('<link rel="pingback" href="%s">', esc_url(get_bloginfo('pingback_url')));
+/**
+ * To ‘ping‘ all the sites that were linked to in your post
+ *
+ * @return void
+ */
+function wacoal_pingback_header() {
+    if ( is_singular() && pings_open() ) {
+        printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
     }
 }
-add_action('wp_head', 'wacoal_pingback_header');
+add_action( 'wp_head', 'wacoal_pingback_header' );
 
 if (!function_exists('wacoal_posted_on')) {
 
@@ -44,7 +57,7 @@ if (!function_exists('wacoal_posted_on')) {
             '<a href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
-        echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+        echo '<span class="posted-on">' . $posted_on . '</span>'; // phpcs:ignore
 
     }
 };
@@ -58,7 +71,7 @@ if (!function_exists('wacoal_posted_by')) {
             '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
         );
 
-        echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+        echo '<span class="byline"> ' . $byline . '</span>'; // phpcs:ignore
 
     }
 };
@@ -72,12 +85,12 @@ if (!function_exists('wacoal_entry_footer')) {
 
             $categories_list = get_the_category_list(esc_html__(', ', 'wacoal'));
             if ($categories_list) {
-                printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'wacoal') . '</span>', $categories_list); // WPCS: XSS OK.
+                printf('<span class="cat-links">' . esc_html__('Posted in %1$s', 'wacoal') . '</span>', $categories_list); // phpcs:ignore
             }
 
             $tags_list = get_the_tag_list('', esc_html_x(', ', 'list item separator', 'wacoal'));
             if ($tags_list) {
-                printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'wacoal') . '</span>', $tags_list); // WPCS: XSS OK.
+                printf('<span class="tags-links">' . esc_html__('Tagged %1$s', 'wacoal') . '</span>', $tags_list); // phpcs:ignore
             }
         }
 
@@ -152,7 +165,7 @@ if (!function_exists('wacoal_post_thumbnail')) {
 function wacoal_page_entry_top($classname)
 {
     get_header('files/main-header');
-    echo "<div class=\"$classname\" id=\"js-$classname\">\n";
+    echo "<div class=\"$classname\" id=\"js-$classname\">\n"; // phpcs:ignore
     get_template_part('template-parts/content-header');
 }
 

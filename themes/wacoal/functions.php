@@ -5,9 +5,9 @@
  * @package Wacoal
  */
 
-define('THEMEPATH', get_template_directory());
-define('THEMEURI', get_template_directory_uri());
-define('STYLESHEETURI', get_stylesheet_directory_uri());
+define( 'THEMEPATH', get_template_directory() );
+define( 'THEMEURI', get_template_directory_uri() );
+define( 'STYLESHEETURI', get_stylesheet_directory_uri() );
 
 if (!function_exists('wacoal_setup')) {
 
@@ -20,25 +20,28 @@ if (!function_exists('wacoal_setup')) {
 
         register_nav_menus(
             array(
-            'menu-1' => esc_html__('Primary', 'wacoal'),
+                'menu-1' => esc_html__('Primary', 'wacoal'),
             )
         );
 
         add_theme_support(
-            'html5', array(
-            'search-form',
-            'comment-form',
-            'comment-list',
-            'gallery',
-            'caption',
+            'html5',
+            array(
+                'search-form',
+                'comment-form',
+                'comment-list',
+                'gallery',
+                'caption',
             )
         );
 
         add_theme_support(
-            'custom-background', apply_filters(
-                'wacoal_custom_background_args', array(
-                'default-color' => 'ffffff',
-                'default-image' => '',
+            'custom-background',
+            apply_filters(
+                'wacoal_custom_background_args',
+                array(
+                    'default-color' => 'ffffff',
+                    'default-image' => '',
                 )
             )
         );
@@ -46,11 +49,12 @@ if (!function_exists('wacoal_setup')) {
         add_theme_support('customize-selective-refresh-widgets');
 
         add_theme_support(
-            'custom-logo', array(
-            'height' => 250,
-            'width' => 250,
-            'flex-width' => true,
-            'flex-height' => true,
+            'custom-logo',
+            array(
+                'height' => 250,
+                'width' => 250,
+                'flex-width' => true,
+                'flex-height' => true,
             )
         );
     }
@@ -67,13 +71,13 @@ function wacoal_widgets_init()
 {
     register_sidebar(
         array(
-        'name' => esc_html__('Sidebar', 'wacoal'),
-        'id' => 'sidebar-1',
-        'description' => esc_html__('Add widgets here.', 'wacoal'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>',
+            'name' => esc_html__('Sidebar', 'wacoal'),
+            'id' => 'sidebar-1',
+            'description' => esc_html__('Add widgets here.', 'wacoal'),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
         )
     );
 }
@@ -92,8 +96,10 @@ function Wacoal_scripts()
     wp_enqueue_style('wacoal-css', STYLESHEETURI . '/dist/' . $distFile['website']['css']);
 
     wp_localize_script(
-        'wacoal-js', 'wacoal_js_var', array(
-        'ajaxurl' => admin_url('admin-ajax.php'),
+        'wacoal-js',
+        'wacoal_js_var',
+        array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
         )
     );
 
@@ -118,8 +124,10 @@ function Wacoal_Admin_scripts()
     //    wp_enqueue_style('wacoal-admin-css', themeUri . '/assets/css/wpadmin/admin.css');
 
     wp_localize_script(
-        'admin', 'wacoal_js_var_admin', array(
-        'ajaxurl' => admin_url('admin-ajax.php'),
+        'admin',
+        'wacoal_js_var_admin',
+        array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
         )
     );
 }
