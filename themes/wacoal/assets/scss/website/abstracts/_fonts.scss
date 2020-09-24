@@ -1,0 +1,27 @@
+@include font-cust(AvenirLTPro-Black, '/assets/Guest/fonts/AvenirLTPro-Black/font');
+@include font-cust(AvenirLTPro-Book, '/assets/Guest/fonts/AvenirLTPro-Book/font');
+@include font-cust(AvenirLTPro-Heavy, '/assets/Guest/fonts/AvenirLTPro-Heavy/font');
+@include font-cust(AvenirLTPro-Light, '/assets/Guest/fonts/AvenirLTPro-Light/font');
+@include font-cust(AvenirLTPro-Medium, '/assets/Guest/fonts/AvenirLTPro-Medium/font');
+@include font-cust(AvenirLTPro-Roman, '/assets/Guest/fonts/AvenirLTPro-Roman/font');
+
+
+
+@mixin AvenirLTPro-Black {
+    font-family: 'AvenirLTPro-Black';
+}
+@mixin AvenirLTPro-Book {
+    font-family: 'AvenirLTPro-Book';
+}
+@mixin AvenirLTPro-Heavy {
+    font-family: 'AvenirLTPro-Heavy';
+}
+@mixin AvenirLTPro-Light {
+    font-family: 'AvenirLTPro-Light';
+}
+@mixin AvenirLTPro-Medium {
+    font-family: 'AvenirLTPro-Medium';
+}
+@mixin AvenirLTPro-Roman {
+    font-family: 'AvenirLTPro-Roman';
+}
