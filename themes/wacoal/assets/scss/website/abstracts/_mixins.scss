@@ -2,11 +2,10 @@
 //  Custom Font mixin
 //––––––––––––––––––––––––––––––––––––––––––––––––––
 
-@mixin font-cust($font-family, $file-path) {
+@mixin custom-font($font-family, $file-path) {
   @font-face {
       font-family: $font-family;
-      src        : url('#{$file-path}.woff') format('woff'),
-      url('#{$file-path}.woff2') format('woff2');
+      src        : url('#{$file-path}.woff') format('woff');
       font-weight : normal;
       font-style  : normal;
       font-display: swap;
@@ -21,10 +20,10 @@
 
 // A map of breakpoints.
 $breakpoints: (
-  xs: 767px,
+  xs: 576px,
   sm: 768px,
-  md: 992px,
-  lg: 1200px
+  md: 1025px,
+  lg: 1400px
 );
 
 
