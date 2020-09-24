@@ -1,7 +1,22 @@
-@import './elements/branding';
+@charset 'utf-8';
 
-@import './pages/_homepage';
+//Vendor
+// @import "vendor/__vendor-dir";
 
-body{
-  background-color: red;
+//Abstracts
+@import "./abstracts/__abstracts-dir";
+
+//Base Styles
+@import "./base/__base-dir";
+
+//Components
+@import "./components/__components-dir";
+
+//Layout
+@import "./layouts/__layouts-dir";
+
+
+body {
+  background: #f00;;
 }
+
