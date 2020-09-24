@@ -1,4 +1,9 @@
 <?php
+/**
+ * Frontend website functions
+ *
+ * @package Wacoal
+ */
 
 // Common Function File Include
 include THEMEPATH . '/includes/website/common/website-common-function.php';

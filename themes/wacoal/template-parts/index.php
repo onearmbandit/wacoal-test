@@ -1,7 +1,9 @@
 <?php
 /**
- * Index template
+ * The main template file
  *
  * @package Wacoal
  */
+
+ ?>
 
