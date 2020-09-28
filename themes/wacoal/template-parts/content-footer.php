@@ -95,7 +95,7 @@
                         <a href="" class="footer-links--ul__link">Bra Finder</a>
                     </li>
                     <li class="footer-links--ul__list">
-                        <a href="" class="footer-links--ul__link">Bra fir calculator</a>
+                        <a href="" class="footer-links--ul__link">Bra fit calculator</a>
                     </li>
                     <li class="footer-links--ul__list">
                         <a href="" class="footer-links--ul__link">Fit Consultants</a>
