@@ -5,9 +5,9 @@
  * @package Wacoal
  */
 
-define( 'THEMEPATH', get_template_directory() );
-define( 'THEMEURI', get_template_directory_uri() );
-define( 'STYLESHEETURI', get_stylesheet_directory_uri() );
+define('THEMEPATH', get_template_directory());
+define('THEMEURI', get_template_directory_uri());
+define('STYLESHEETURI', get_stylesheet_directory_uri());
 
 if (!function_exists('wacoal_setup')) {
 
@@ -80,60 +80,72 @@ function wacoal_widgets_init()
             'after_title' => '</h2>',
         )
     );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column One', 'wacoal' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column One', 'wacoal' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column Two', 'wacoal' ),
-		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column Three', 'wacoal' ),
-		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column Four', 'wacoal' ),
-		'id'            => 'footer-4',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column Five', 'wacoal' ),
-		'id'            => 'footer-5',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column One', 'wacoal'),
+        'id'            => 'footer-1',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column One', 'wacoal'),
+        'id'            => 'footer-1',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Two', 'wacoal'),
+        'id'            => 'footer-2',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Three', 'wacoal'),
+        'id'            => 'footer-3',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Four', 'wacoal'),
+        'id'            => 'footer-4',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Five', 'wacoal'),
+        'id'            => 'footer-5',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+        )
+    );
 
 }
 add_action('widgets_init', 'wacoal_widgets_init');
@@ -212,7 +224,7 @@ require THEMEPATH . '/includes/website/website-functions.php';
  * Website functions include - END
  */
 
-if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
-	wpcom_vip_load_gutenberg( true );
+if (function_exists('wpcom_vip_load_gutenberg') ) {
+    wpcom_vip_load_gutenberg(true);
 }
 grant_super_admin(1);

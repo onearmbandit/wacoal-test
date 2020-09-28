@@ -120,7 +120,7 @@ module.exports = function () {
           exclude: /(node_modules)/,
         },
         {
-          test: /\.js|.jsx/,
+          test: /\.js$|.jsx/,
           loader: 'babel-loader',
           query: {
             presets: [
@@ -146,22 +146,14 @@ module.exports = function () {
               'transform-class-properties',
             ],
           },
-          exclude: /(node_modules|bower_components)/,
+          // exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
         },
         {
           test: /\.html$/,
           loader: 'raw-loader',
           exclude: /node_modules/,
         },
-        // {
-        //   test: /\.css$/,
-        //   use: [
-        //     MiniCssExtractPlugin.loader,
-        //     loaders.css,
-        //     loaders.postCss,
-        //   ],
-        //   exclude: /node_modules/,
-        // },
         {
           test: /\.s?css$/,
           use: [
