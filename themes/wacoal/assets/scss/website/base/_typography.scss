@@ -1,7 +1,67 @@
+h1, h2, h3, h4{
+  @include BentonModDisp-Regular;
+}
 h1 {
-  font-size: calcRem(128);
+  font-size: calcRem(73);
+  line-height: calcRem(70);
+
+  @include respond-above(sm) {
+    font-size: get-vw(191px);
+    line-height: 1;
+  }
 }
 
 h2 {
-  font-size: calcRem(110);
+  font-size: calcRem(54);
+  line-height: calcRem(49);
+
+  @include respond-above(sm) {
+      font-size: get-vw(165px);
+      line-height: 1;
+  }
+}
+
+h3 {
+  font-size: calcRem(54);
+  line-height: calcRem(49);
+
+  @include respond-above(sm) {
+    font-size: calcRem(36);
+    line-height: calcRem(35);
+  }
+
+  @include respond-above(md) {
+    font-size: calcRem(49);
+    line-height: calcRem(47);
+  }
+
+  @include respond-above(lg) {
+    font-size: calcRem(63);
+    line-height: calcRem(60);
+  }
+
+  @include respond-above(xl) {
+    font-size: calcRem(93);
+    line-height: calcRem(89);
+  }
+}
+
+h4 {
+  font-size: calcRem(50);
+  line-height: calcRem(44);
+
+  @include respond-above(sm) {
+    font-size: get-vw(85px);
+    line-height: 1;
+  }
+}
+
+h5 {
+  font-size: calcRem(24);
+  line-height: 1;
+  @include BentonModDisp-Bold;
+
+  @include respond-above(sm) {
+    font-size: get-vw(35px);
+  }
 }

@@ -4,5 +4,11 @@ Files inside this folder can contain specific element styles and layout.
 */
 
 //Import Layout files
+@import "spacer";
 @import "header";
 @import "footer";
+@import "banner-with-image";
+@import "banner-with-background";
+@import "featured-article";
+@import "wacoal-101";
+@import "more-blog";

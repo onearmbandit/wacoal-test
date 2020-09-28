@@ -1,0 +1,28 @@
+.banner-with-background {
+  background: var(--color-hero-bg);
+  text-align: center;
+  padding: calcRem(44, 0);
+
+  @include respond-above(sm) {
+    padding-top: get-vw(89px);
+    padding-bottom: get-vw(89px);
+  }
+
+  &--heading {
+    text-transform: uppercase;
+  }
+
+  &--subtitle {
+    font-size: calcRem(15);
+    line-height: calcRem(19);
+    margin-top: calcRem(8);
+    text-transform: uppercase;
+
+    @include respond-above(sm) {
+      @include ProximaNova-Light;
+      margin-top: get-vw(20px);
+      font-size: get-vw(32px);
+      line-height: get-vw(42px);
+    }
+  }
+}

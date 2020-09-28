@@ -6,15 +6,7 @@
   height: calcRem(72);
 
   @include respond-above(sm) {
-    height: calcRem(140);
-  }
-
-  @include respond-above(md) {
-    height: calcRem(164);
-  }
-
-  @include respond-above(lg) {
-    height: calcRem(204);
+    height: get-vw(306px);
   }
 
   &--logo {
@@ -22,15 +14,7 @@
     width: 100%;
 
     @include respond-above(sm) {
-      max-width: calcRem(182);
-    }
-
-    @include respond-above(md) {
-      max-width: calcRem(242);
-    }
-
-    @include respond-above(lg) {
-      max-width: calcRem(456);
+      max-width: get-vw(456px);
     }
   }
 }
@@ -38,7 +22,7 @@
 
 .header-navigation {
   background: var(--color-nav-bg);
-  width: 100%;
+  width: var(--width-100);
 
   &--ul{
     display: flex;
@@ -46,10 +30,14 @@
     padding: calcRem(10, 0);
 
     @include respond-above(md) {
-      padding: calcRem(20, 0);
+      padding: calcRem(14, 0);
     }
 
     @include respond-above(lg) {
+      padding: calcRem(20, 0);
+    }
+
+    @include respond-above(xl) {
       padding: calcRem(32, 0);
     }
   }
@@ -61,7 +49,7 @@
       margin: calcRem(0, 27);
     }
 
-    @include respond-above(lg) {
+    @include respond-above(xl) {
       margin: calcRem(0, 45);
     }
   }
@@ -75,7 +63,7 @@
       font-size: calcRem(15);
     }
 
-    @include respond-above(lg) {
+    @include respond-above(xl) {
       font-size: calcRem(21);
     }
   }

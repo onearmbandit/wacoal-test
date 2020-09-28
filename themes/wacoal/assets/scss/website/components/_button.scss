@@ -1,0 +1,48 @@
+.btn {
+  border: 2px solid transparent;
+  border-radius: 0;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+
+  &:focus {
+      outline: none;
+  }
+
+  &.primary {
+      border-color: var(--color-black);
+      background-color: transparent;
+      color: var(--color-black);
+      font-size:calcRem(17);
+      @include BentonModDisp-Bold;
+      text-transform:   uppercase;
+      padding: calcRem(12, 20, 9);
+
+      @include respond-above(sm) {
+          font-size: calcRem(12);
+          padding: calcRem(8, 12, 5);
+      }
+
+      @include respond-above(md) {
+        font-size: calcRem(16);
+        padding: calcRem(9, 16, 6);
+      }
+
+      @include respond-above(lg) {
+        font-size: calcRem(20);
+        padding: calcRem(10, 18, 7);
+      }
+
+      @include respond-above(xl) {
+        font-size: calcRem(30);
+        padding: calcRem(16, 27, 13);
+      }
+
+      &:hover {
+
+      }
+
+  }
+
+}

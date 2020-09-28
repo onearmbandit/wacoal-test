@@ -28,3 +28,17 @@ font-size: calcRem(16);
 margin: calcRem(10, 11, 12, 13);
 */
 
+
+
+// @function vw($px-vw, $base-vw: 1920px)    {
+//   @return ($px-vw * 100vw) / $base-vw;
+// }
+
+$vw-viewport: 1920;
+@function get-vw($font){
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return $font / $vw-context * 1vw;
+  @return $font;
+}
+
+/* font-size: vw(16px) */
