@@ -117,6 +117,35 @@ acf_add_local_field_group(array(
 			'min' => '',
 			'max' => 3,
 			'return_format' => 'id',
+        ),
+        array(
+			'key' => 'field_5f6dcf63f2e0d',
+			'label' => 'Featured Posts',
+			'name' => 'featured_posts',
+			'type' => 'relationship',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'post',
+			),
+			'taxonomy' => '',
+			'filters' => array(
+				0 => 'search',
+				1 => 'post_type',
+				2 => 'taxonomy',
+			),
+			'elements' => array(
+				0 => 'featured_image',
+			),
+			'min' => '',
+			'max' => '',
+			'return_format' => 'object',
 		),
 	),
 	'location' => array(
