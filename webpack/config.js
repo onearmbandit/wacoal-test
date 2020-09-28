@@ -146,8 +146,7 @@ module.exports = function () {
               'transform-class-properties',
             ],
           },
-          // exclude: /(node_modules|bower_components)/,
-          exclude: /node_modules\/(?!(dom7|ssr-window|swiper)\/).*/,
+          exclude: /(node_modules|bower_components)/,
         },
         {
           test: /\.html$/,
