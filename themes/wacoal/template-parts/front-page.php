@@ -54,6 +54,9 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="featured-article--wrapper swiper-wrapper">
         <?php foreach ($featured_blogs as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
+            if(empty($thumbnail)){
+                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+            }
             $thumbnail_id = get_post_thumbnail_id( $blog->ID );
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             $categories = get_the_terms( $blog->ID, 'category' );
@@ -67,7 +70,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     <a href="<?php echo get_permalink($blog->ID);?>" class="btn primary">learn more</a>
                 </div>
                 <div class="featured-box--image">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo $alt;?>" />
                 </div>
             </article>
         <?php } ?>
@@ -134,6 +137,9 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="more-blog--wrapper">
         <?php foreach ($related_blogs['posts'] as $key => $post) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($post->ID);
+            if(empty($thumbnail)){
+                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+            }
             $thumbnail_id = get_post_thumbnail_id( $post->ID );
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             $categories = get_the_terms( $post->ID, 'category' );

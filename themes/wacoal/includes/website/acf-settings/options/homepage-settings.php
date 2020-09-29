@@ -115,7 +115,7 @@ acf_add_local_field_group(array(
 				0 => 'featured_image',
 			),
 			'min' => '',
-			'max' => 3,
+			'max' => '',
 			'return_format' => 'id',
         ),
         array(
