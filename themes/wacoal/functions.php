@@ -242,3 +242,13 @@ function wacoal_add_menu_li_class ( $classes, $item, $args, $depth ){
   return $classes;
 }
 add_filter ( 'nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4 );
+
+function wacoal_add_svg_file_types_to_uploads($file_types){
+
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg';
+    $file_types = array_merge($file_types, $new_filetypes );
+
+    return $file_types;
+}
+add_action('upload_mimes', 'wacoal_add_svg_file_types_to_uploads');

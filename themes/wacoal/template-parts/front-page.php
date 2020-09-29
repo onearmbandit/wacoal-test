@@ -7,10 +7,9 @@
 
 ?>
 
-<!-- Banner with image -->
-<section class="banner-with-image">
-    <h1 class="banner-with-image--heading">Under the wire</h1>
-    <p class="banner-with-image--subtitle">The Wacoal Blog</p>
+<section class="banner-with-image" style="background-image:url(<?php  echo $top_banner_image_url[0];?>);">
+    <h1 class="banner-with-image--heading"><?php echo $top_banner_title;?></h1>
+    <p class="banner-with-image--subtitle"><?php echo $top_banner_subtitle;?></p>
 </section>
 
 
@@ -51,9 +50,32 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 
 <!-- Featured Articles -->
-<section class="featured-article">
-    <div class="featured-article--wrapper">
-        <article class="featured-box">
+<section class="featured-article swiper-container">
+    <div class="featured-article--wrapper swiper-wrapper">
+        <?php foreach ($featured_blogs as $key => $blog) { ?>
+            <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
+            if(empty($thumbnail)){
+                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+            }
+            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+            $categories = get_the_terms( $blog->ID, 'category' );
+
+            ?>
+            <article class="featured-box swiper-slide">
+                <div class="featured-box--content">
+                    <p class="featured-box--content__subtitle"><?php echo $categories[0]->name;?></p>
+                    <h4 class="featured-box--content__title"><?php echo $blog->post_title;?></h4>
+                    <p class="featured-box--content__para"><?php echo get_field('short_description',$blog->ID);?></p>
+                    <a href="<?php echo get_permalink($blog->ID);?>" class="btn primary">learn more</a>
+                </div>
+                <div class="featured-box--image">
+                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo $alt;?>" />
+                </div>
+            </article>
+        <?php } ?>
+
+        <!-- <article class="featured-box swiper-slide">
             <div class="featured-box--content">
                 <p class="featured-box--content__subtitle">bra'drobe</p>
                 <h4 class="featured-box--content__title">Featured Article Title</h4>
@@ -63,19 +85,12 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
             <div class="featured-box--image">
                 <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
             </div>
-        </article>
-        <article class="featured-box">
-            <div class="featured-box--content">
-                <p class="featured-box--content__subtitle">bra'drobe</p>
-                <h4 class="featured-box--content__title">Featured Article Title</h4>
-                <p class="featured-box--content__para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                <a href="" class="btn primary">learn more</a>
-            </div>
-            <div class="featured-box--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
-            </div>
-        </article>
+        </article> -->
     </div>
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
 </section>
 
 
@@ -87,42 +102,24 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
         <div class="wacoal-101--image">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacoal-101-image.png" alt="Wacoal 101" />
+            <img src="<?php echo  $static_section['image']; ?>" alt="Wacoal 101" />
         </div>
         <div class="wacoal-101--content">
             <div class="wacoal-101--content__title">
-                Wacoal 101
+               <?php echo $static_section['title'];?>
             </div>
-            <div class="wacoal-101--list">
-                <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+            <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
+                <div class="wacoal-101--list">
+                    <div class="wacoal-101--list__icon">
+                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                    </div>
+                    <div class="wacoal-101--list__content"><a href="<?php echo $page_obj['link'];?>"><?php echo $page_obj['title'];?></a></div>
                 </div>
-                <div class="wacoal-101--list__content">Bra Finder</div>
-            </div>
-            <div class="wacoal-101--list">
-                <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
-                </div>
-                <div class="wacoal-101--list__content">Bra Fit Calculator</div>
-            </div>
-            <div class="wacoal-101--list">
-                <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
-                </div>
-                <div class="wacoal-101--list__content">Breast Shape Guide</div>
-            </div>
-            <div class="wacoal-101--list">
-                <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
-                </div>
-                <div class="wacoal-101--list__content">Size Charts</div>
-            </div>
-            <div class="wacoal-101--list">
-                <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
-                </div>
-                <div class="wacoal-101--list__content">Ask A Bra Fit Expert</div>
-            </div>
+            <?php } ?>
+
+
+
+
         </div>
     </div>
 </section>
@@ -135,95 +132,42 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <!-- More From Blog -->
 <section class="more-blog">
     <div class="more-blog--title">
-            More From The Blog
+            <?php echo $related_blogs['headline'];?>
     </div>
     <div class="more-blog--wrapper">
-        <article class="blog-tile">
-            <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-1.png" alt="Blog Image" />
-            </div>
-            <div class="blog-tile--category">
-                Category
-            </div>
-            <h5 class="blog-tile--heading">
-                Does Your Bra Have An Expiration Date?
-            </h5>
-            <p class="blog-tile--para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore at
-                dolore magna a liqua. Ut enim ad
-            </p>
-            <a href="" class="btn primary">Learn More</a>
-        </article>
+        <?php foreach ($related_blogs['posts'] as $key => $post) { ?>
+            <?php $thumbnail = get_the_post_thumbnail_url($post->ID);
+            if(empty($thumbnail)){
+                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+            }
+            $thumbnail_id = get_post_thumbnail_id( $post->ID );
+            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+            $categories = get_the_terms( $post->ID, 'category' );
 
-        <article class="blog-tile">
-            <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-2.png" alt="Blog Image" />
-            </div>
-            <div class="blog-tile--category">
-                Category
-            </div>
-            <h5 class="blog-tile--heading">
-                Does Your Bra Have An Expiration Date?
-            </h5>
-            <p class="blog-tile--para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore at
-                dolore magna a liqua. Ut enim ad
-            </p>
-            <a href="" class="btn primary">Learn More</a>
-        </article>
+            ?>
+            <article class="blog-tile">
+                <div class="blog-tile--image">
+                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo  $alt; ?>" />
+                </div>
+                <div class="blog-tile--category">
+                    <?php if ( ! empty( $categories ) ) {
+                        echo esc_html( $categories[0]->name );
+                    }?>
+                </div>
+                <h5 class="blog-tile--heading">
+                    <?php echo $post->post_title;?>
+                </h5>
+                <p class="blog-tile--para">
+                <?php echo get_field('short_description',$post->ID);?>
+                </p>
+                <a href="<?php echo get_permalink($post->ID);?>" class="btn primary">Learn More</a>
+            </article>
+        <?php } ?>
 
-        <article class="blog-tile">
-            <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-3.png" alt="Blog Image" />
-            </div>
-            <div class="blog-tile--category">
-                Category
-            </div>
-            <h5 class="blog-tile--heading">
-                Does Your Bra Have An Expiration Date?
-            </h5>
-            <p class="blog-tile--para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore at
-                dolore magna a liqua. Ut enim ad
-            </p>
-            <a href="" class="btn primary">Learn More</a>
-        </article>
+
+
     </div>
 </section>
 
 <!-- -->
 <section class="spacer-120"></section>
-<div class="container">
-    <div class="row" style="background-image:url( <?php echo esc_url($top_banner_image_url[0]); ?> ); background-size:cover; height:250px; width:100%;">
-        <div class="col-lg-12">
-            <div class="intro-text">
-            <h2><?php echo esc_attr($top_banner_title); ?></h2>
-            <span class="skills"><?php echo esc_attr($top_banner_subtitle); ?></span>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-        <div class="swiper-slide">Slide 10</div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-</div>
