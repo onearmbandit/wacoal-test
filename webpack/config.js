@@ -120,7 +120,7 @@ module.exports = function () {
           exclude: /(node_modules)/,
         },
         {
-          test: /\.js|.jsx/,
+          test: /\.js$|.jsx/,
           loader: 'babel-loader',
           query: {
             presets: [
@@ -153,15 +153,6 @@ module.exports = function () {
           loader: 'raw-loader',
           exclude: /node_modules/,
         },
-        // {
-        //   test: /\.css$/,
-        //   use: [
-        //     MiniCssExtractPlugin.loader,
-        //     loaders.css,
-        //     loaders.postCss,
-        //   ],
-        //   exclude: /node_modules/,
-        // },
         {
           test: /\.s?css$/,
           use: [

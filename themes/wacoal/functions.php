@@ -5,9 +5,9 @@
  * @package Wacoal
  */
 
-define( 'THEMEPATH', get_template_directory() );
-define( 'THEMEURI', get_template_directory_uri() );
-define( 'STYLESHEETURI', get_stylesheet_directory_uri() );
+define('THEMEPATH', get_template_directory());
+define('THEMEURI', get_template_directory_uri());
+define('STYLESHEETURI', get_stylesheet_directory_uri());
 
 if (!function_exists('wacoal_setup')) {
 
@@ -203,8 +203,8 @@ require THEMEPATH . '/includes/website/website-functions.php';
  * Website functions include - END
  */
 
-if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
-	wpcom_vip_load_gutenberg( true );
+if (function_exists('wpcom_vip_load_gutenberg') ) {
+    wpcom_vip_load_gutenberg(true);
 }
 grant_super_admin(1);
 /**
