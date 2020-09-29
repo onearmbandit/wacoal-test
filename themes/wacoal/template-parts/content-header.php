@@ -1,6 +1,6 @@
 <?php  $logo = get_field( 'header_logo', 'options' );?>
 <header class="header-section">
-    <img class="header-section--logo" src="<?php echo $logo;?>" alt="Wacoal" />
+    <a href="<?php echo home_url();?>"><img class="header-section--logo" src="<?php echo $logo;?>" alt="Wacoal" /></a>
 </header>
 
     <nav class="header-navigation">

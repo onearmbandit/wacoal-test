@@ -66,7 +66,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <div class="featured-box--content">
                     <p class="featured-box--content__subtitle"><?php echo $categories[0]->name;?></p>
                     <h4 class="featured-box--content__title"><?php echo $blog->post_title;?></h4>
-                    <p class="featured-box--content__para"><?php echo get_field('short_description',$blog->ID);?></p>
+                    <p class="featured-box--content__para"><?php echo $blog->post_excerpt;?></p>
                     <a href="<?php echo get_permalink($blog->ID);?>" class="btn primary">learn more</a>
                 </div>
                 <div class="featured-box--image">
@@ -158,7 +158,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     <?php echo $post->post_title;?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo get_field('short_description',$post->ID);?>
+                <?php echo $post->post_excerpt;?>
                 </p>
                 <a href="<?php echo get_permalink($post->ID);?>" class="btn primary">Learn More</a>
             </article>

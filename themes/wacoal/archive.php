@@ -1,5 +1,6 @@
 <?php
 wacoal_page_entry_top('');
+$related_blogs = get_field( 'more_from_blog', 'options' );
 ?>
 
 <div id="primary" class="content-area1111">
@@ -113,62 +114,40 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <!-- More From Blog -->
 <section class="more-blog">
     <div class="more-blog--title">
-            More From The Blog
+            <?php echo $related_blogs['headline'];?>
     </div>
     <div class="more-blog--wrapper">
-        <article class="blog-tile">
-            <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-1.png" alt="Blog Image" />
-            </div>
-            <div class="blog-tile--category">
-                Category
-            </div>
-            <h5 class="blog-tile--heading">
-                Does Your Bra Have An Expiration Date?
-            </h5>
-            <p class="blog-tile--para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore at
-                dolore magna a liqua. Ut enim ad
-            </p>
-            <a href="" class="btn primary">Learn More</a>
-        </article>
+        <?php foreach ($related_blogs['posts'] as $key => $post) { ?>
+            <?php $thumbnail = get_the_post_thumbnail_url($post->ID);
+            if(empty($thumbnail)){
+                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+            }
+            $thumbnail_id = get_post_thumbnail_id( $post->ID );
+            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+            $categories = get_the_terms( $post->ID, 'category' );
 
-        <article class="blog-tile">
-            <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-2.png" alt="Blog Image" />
-            </div>
-            <div class="blog-tile--category">
-                Category
-            </div>
-            <h5 class="blog-tile--heading">
-                Does Your Bra Have An Expiration Date?
-            </h5>
-            <p class="blog-tile--para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore at
-                dolore magna a liqua. Ut enim ad
-            </p>
-            <a href="" class="btn primary">Learn More</a>
-        </article>
+            ?>
+            <article class="blog-tile">
+                <div class="blog-tile--image">
+                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo  $alt; ?>" />
+                </div>
+                <div class="blog-tile--category">
+                    <?php if ( ! empty( $categories ) ) {
+                        echo esc_html( $categories[0]->name );
+                    }?>
+                </div>
+                <h5 class="blog-tile--heading">
+                    <?php echo $post->post_title;?>
+                </h5>
+                <p class="blog-tile--para">
+                <?php echo $post->post_excerpt;?>
+                </p>
+                <a href="<?php echo get_permalink($post->ID);?>" class="btn primary">Learn More</a>
+            </article>
+        <?php } ?>
 
-        <article class="blog-tile">
-            <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-3.png" alt="Blog Image" />
-            </div>
-            <div class="blog-tile--category">
-                Category
-            </div>
-            <h5 class="blog-tile--heading">
-                Does Your Bra Have An Expiration Date?
-            </h5>
-            <p class="blog-tile--para">
-                Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit, sed do eiusmod tempor incididunt ut labore at
-                dolore magna a liqua. Ut enim ad
-            </p>
-            <a href="" class="btn primary">Learn More</a>
-        </article>
+
+
     </div>
 </section>
 

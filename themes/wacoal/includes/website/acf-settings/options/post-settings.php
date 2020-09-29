@@ -10,25 +10,7 @@ if( function_exists('acf_add_local_field_group') ):
         'key' => 'group_5f6dd1d552c57',
         'title' => 'Arcticle Page settings',
         'fields' => array(
-            array(
-                'key' => 'field_5f72f87d8b561',
-                'label' => 'Short Description',
-                'name' => 'short_description',
-                'type' => 'textarea',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => '',
-                'placeholder' => '',
-                'maxlength' => '',
-                'rows' => '',
-                'new_lines' => '',
-            ),
+
             array(
                 'key' => 'field_5f6dd5ca8e91e',
                 'label' => 'Tag line',
