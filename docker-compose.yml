@@ -46,7 +46,7 @@ services:
       - ${PWD}/docker/php/setup.sh:/setup.sh
       - ${PWD}/wp-plugins.txt:/wp-plugins.txt
       - ${PWD}/photon_local:/var/www/photon
-      
+
     expose:
       - 9000
     restart: always
