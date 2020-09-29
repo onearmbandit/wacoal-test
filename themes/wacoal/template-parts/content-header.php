@@ -1,12 +1,14 @@
+<?php $logo = get_field('options');?>
 <header class="header-section">
-    <img class="header-section--logo" src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacoal-logo.svg" alt="Wacoal" />
+    <img class="header-section--logo" src="<?php echo $logo['url'];?>" alt="Wacoal" />
 </header>
 
     <nav class="header-navigation">
-        <ul class="header-navigation--ul">
-            <li class="header-navigation--list"><a href="" class="header-navigation--link">WACOAL 101</a></li>
-            <li class="header-navigation--list"><a href="" class="header-navigation--link">STYLE GUIDE</a></li>
-            <li class="header-navigation--list"><a href="" class="header-navigation--link">BRA TRENDS: TIPS & HOW TO’S</a></li>
-            <li class="header-navigation--list"><a href="" class="header-navigation--link">BRA’DROBE</a></li>
-        </ul>
+    <?php $args=array(
+        'container' => false ,
+        'items_wrap' => '<ul id="%1$s" class="header-navigation--ul">%3$s</ul>',
+
+    );
+    wp_nav_menu($args); ?>
+
     </nav>

@@ -22,7 +22,7 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'return_format' => 'id',
+			'return_format' => 'url',
 			'preview_size' => 'medium',
 			'library' => 'all',
 			'min_width' => '',

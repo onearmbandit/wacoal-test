@@ -84,46 +84,37 @@ function wacoal_widgets_init()
 		'name'          => esc_html__( 'Footer Column One', 'wacoal' ),
 		'id'            => 'footer-1',
 		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column One', 'wacoal' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+		'before_title'  => '<div class="footer-links--title">',
+		'after_title'   => '</div>',
     ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column Two', 'wacoal' ),
 		'id'            => 'footer-2',
 		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+		'before_title'  => '<div class="footer-links--title">',
+		'after_title'   => '</div>',
     ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column Three', 'wacoal' ),
 		'id'            => 'footer-3',
 		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+		'before_title'  => '<div class="footer-links--title">',
+		'after_title'   => '</div>',
     ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column Four', 'wacoal' ),
 		'id'            => 'footer-4',
 		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+		'before_title'  => '<div class="footer-links--title">',
+		'after_title'   => '</div>',
     ) );
     register_sidebar( array(
 		'name'          => esc_html__( 'Footer Column Five', 'wacoal' ),
@@ -216,3 +207,31 @@ if ( function_exists( 'wpcom_vip_load_gutenberg' ) ) {
 	wpcom_vip_load_gutenberg( true );
 }
 grant_super_admin(1);
+/**
+ * Add Menu link class.
+ */
+function wacoal_add_menu_link_class($atts, $item, $args)
+{
+    if ($args->menu->name == 'Header') {
+        $atts['class'] = 'header-navigation--link';
+    }else{
+        $atts['class'] = 'footer-links--ul__link';
+    }
+
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
+/**
+ * Add Menu li class.
+ */
+
+function wacoal_add_menu_li_class ( $classes, $item, $args, $depth ){
+  if($args->menu->name == 'Header'){
+    $classes[] = 'header-navigation--list';
+  }else{
+    $classes[] = 'footer-links--ul__list';
+  }
+
+  return $classes;
+}
+add_filter ( 'nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4 );
