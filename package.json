@@ -4,7 +4,7 @@
   "scripts": {
     "start": "NODE_ENV=development NODE_SITE=wacoal node ./webpack/start.js",
     "build": "NODE_ENV=production NODE_SITE=wacoal node ./webpack/build.js",
-    "sniff:setup" : "chmod +x sniff_setup.sh && ./sniff_setup.sh",
+    "sniff:setup": "chmod +x sniff_setup.sh && ./sniff_setup.sh",
     "docker:start": "npm run photon:setup && docker-compose down && docker-compose up --build",
     "docker:setup": "docker exec -it wacoal-php sh -c /setup.sh",
     "docker:shell": "docker exec -it wacoal-php /bin/bash",
