@@ -12,6 +12,7 @@ import Swiper from 'swiper';
 
   var swiper = new Swiper('.swiper-container', {
     spaceBetween: 30,
+    slidesPerView: 'auto',
     centeredSlides: true,
     autoplay: {
       delay: 2500,

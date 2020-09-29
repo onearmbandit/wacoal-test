@@ -4,12 +4,17 @@
 *
 */
 wacoal_page_entry_top('');
+$top_banner_fields      = get_field( 'top_banner', 'options' );
+$slider_fields      = get_field( 'slider_posts', 'options' );
+$top_banner_image_id  = $top_banner_fields['banner_image'];
+$top_banner_image_url = wp_get_attachment_image_src( $top_banner_image_id , full);
+$top_banner_title     = $top_banner_fields['banner_title'];
+$top_banner_subtitle  = $top_banner_fields['banner_subtitle'];
 ?>
 
-<!-- Banner with image -->
-<section class="banner-with-image">
-    <h1 class="banner-with-image--heading">Under the wire</h1>
-    <p class="banner-with-image--subtitle">The Wacoal Blog</p>
+<section class="banner-with-image" style="background-image:url(<?php  echo $top_banner_image_url[0];?>);">
+    <h1 class="banner-with-image--heading"><?php echo $top_banner_title;?></h1>
+    <p class="banner-with-image--subtitle"><?php echo $top_banner_subtitle;?></p>
 </section>
 
 
