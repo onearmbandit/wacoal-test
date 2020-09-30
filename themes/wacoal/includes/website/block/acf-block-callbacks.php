@@ -23,4 +23,6 @@ function wacoal_data_image_block_render_callback( $block ) {
 	$output             = '';
     $default_template   = '/template-parts/block/wacoal-data-image.php';
 
+    include get_theme_file_path( $default_template );
+
 }
