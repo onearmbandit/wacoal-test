@@ -21,14 +21,14 @@ function wacoal_acf_init() {
 				'keywords'        => array( 'wacoal-data-image' ),
 			)
         );
-        acf_register_block_type(array(
-                'name'              => 'wacoal-testimonial',
-                'title'             => __('Wacoal Testimonial'),
-                'description'       => __('A custom testimonial block.'),
-                'render_template'   => 'wacoal_testimonial_block_render_callback',
-                'category'          => 'formatting',
-                'icon'              => 'admin-comments',
-                'keywords'          => array( 'testimonial', 'quote' ),
+        acf_register_block(array(
+            'name' => 'wacoal-testimonial',
+            'title' => __('Wacoal Testimonial'),
+            'description' => __('A custom testimonial block.'),
+            'render_callback' => 'wacoal_testimonial_block_render_callback',
+            'category' => 'formatting',
+            'icon' => 'admin-comments',
+            'keywords' => array( 'testimonial', 'quote' ),
             )
         );
         acf_register_block_type(array(
@@ -58,7 +58,6 @@ function wacoal_acf_init() {
             'render_template'   => 'wacoal_list_format_render_callback',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
-            'align'             => 'full',
             'keywords'          => array( 'list-format' ),
         )
     );
