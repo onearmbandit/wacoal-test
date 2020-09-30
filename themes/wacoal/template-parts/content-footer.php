@@ -9,10 +9,7 @@
         </div>
         <div class="footer-wrapper--right">
             <div class="footer-images">
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-1.png" alt="Wacoal Image 1" />
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-2.png" alt="Wacoal Image 2" />
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-3.png" alt="Wacoal Image 3" />
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-4.png" alt="Wacoal Image 4" />
+                <iframe src="https://cdn.lightwidget.com/widgets/146a63ddcf49509fb649e7c4eef76e8c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0px; overflow: hidden; height: 81.9px;"></iframe>
             </div>
             <?php
 
@@ -25,8 +22,8 @@
 
             <div class="footer-social">
                 <?php foreach ($social_share as $key => $value){  ?>
-                   <a href="<?php echo $value['link']['url'];?>" class="footer-social--icon">
-                    <img src="<?php echo $value['icon']['url'];?>" alt="<?php echo $value['icon']['alt'];?>" />
+                   <a href="<?php echo esc_url($value['link']['url']);?>" class="footer-social--icon">
+                    <img src="<?php echo esc_url($value['icon']['url']);?>" alt="<?php echo esc_attr($value['icon']['alt']);?>" />
                     </a>
                 <?php } ?>
 
@@ -36,7 +33,7 @@
 
     <div class="footer-wrapper">
         <div class="footer-wrapper--copyright">
-            <?php echo $copyright_value;?>
+            <?php echo esc_html($copyright_value);?>
         </div>
     </div>
 </footer>
