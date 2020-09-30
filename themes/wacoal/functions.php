@@ -116,15 +116,7 @@ function wacoal_widgets_init()
 		'before_title'  => '<div class="footer-links--title">',
 		'after_title'   => '</div>',
     ) );
-    register_sidebar( array(
-		'name'          => esc_html__( 'Footer Column Five', 'wacoal' ),
-		'id'            => 'footer-5',
-		'description'   => esc_html__( 'Add widgets here.', 'wacoal' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-    ) );
+
 
 }
 add_action('widgets_init', 'wacoal_widgets_init');
@@ -167,7 +159,7 @@ function Wacoal_Admin_scripts()
     wp_enqueue_style('jquery');
 
     wp_enqueue_script('wacoal-admin-js', THEMEURI . '/assets/js/wpadmin.js', array('jquery'), null, true);
-    //    wp_enqueue_style('wacoal-admin-css', themeUri . '/assets/css/wpadmin/admin.css');
+
 
     wp_localize_script(
         'admin',
@@ -207,7 +199,7 @@ foreach ( glob( THEMEPATH . '/includes/website/block/*.php' ) as $filename ) {
 require THEMEPATH . '/includes/website/website-functions.php';
 
 /**
- * Website functions include - END
+ * enable gutenberg
  */
 
 if (function_exists('wpcom_vip_load_gutenberg') ) {
@@ -219,7 +211,7 @@ grant_super_admin(1);
  */
 function wacoal_add_menu_link_class($atts, $item, $args)
 {
-    if ($args->menu->name == 'Header') {
+    if($args->theme_location == 'primary'){
         $atts['class'] = 'header-navigation--link';
     }else{
         $atts['class'] = 'footer-links--ul__link';
@@ -233,7 +225,8 @@ add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
  */
 
 function wacoal_add_menu_li_class ( $classes, $item, $args, $depth ){
-  if($args->menu->name == 'Header'){
+
+  if($args->theme_location == 'primary'){
     $classes[] = 'header-navigation--list';
   }else{
     $classes[] = 'footer-links--ul__list';
@@ -242,7 +235,9 @@ function wacoal_add_menu_li_class ( $classes, $item, $args, $depth ){
   return $classes;
 }
 add_filter ( 'nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4 );
-
+/**
+ * Add support for svg images.
+ */
 function wacoal_add_svg_file_types_to_uploads($file_types){
 
     $new_filetypes = array();

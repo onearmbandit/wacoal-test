@@ -18,7 +18,16 @@ $cat_name         = $current_cat_data[0]->name;
 $featured_posts = get_posts(
     array(
     'numberposts' => 2,
-    'cat' => $cat_id,
+    'cat' => $current_cat_id,
+    'offset' => 0,
+    'orderby' => 'post_date',
+    'order' => 'DESC',
+    'post_status'=>'publish'
+    )
+);
+$recent_posts = get_posts(
+    array(
+    'numberposts' => 3,
     'offset' => 0,
     'orderby' => 'post_date',
     'order' => 'DESC',
@@ -69,25 +78,27 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <!-- -->
 <section class="spacer-80"></section>
 
+
 <!-- More From Blog -->
+
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo $related_blogs['headline'];?>
+            <?php echo esc_html('MORE FROM THE BLOG');?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as $key => $post) { ?>
-            <?php $thumbnail = get_the_post_thumbnail_url($post->ID);
+        <?php foreach ($recent_posts as $key => $blog) { ?>
+            <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
             if(empty($thumbnail)){
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $post->ID );
+            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $post->ID, 'category' );
+            $categories = get_the_terms( $blog->ID, 'category' );
 
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo  $alt; ?>" />
+                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if ( ! empty( $categories ) ) {
@@ -95,12 +106,12 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo $post->post_title;?>
+                    <?php echo esc_attr($blog->post_title);?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo $post->post_excerpt;?>
+                <?php echo  wp_kses_post($blog->post_excerpt);?>
                 </p>
-                <a href="<?php echo get_permalink($post->ID);?>" class="btn primary">Learn More</a>
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>
 
@@ -108,7 +119,6 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
     </div>
 </section>
-
 <!-- -->
 <section class="spacer-120"></section>
 

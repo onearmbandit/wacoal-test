@@ -212,18 +212,4 @@ function wacoal_remove_p_tag($content)
     return $content;
 }
 
-// /* Remove extra span wrapper from cf7 layout */
-// add_filter('wpcf7_form_elements', function ($content) {
-//     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
 
-//     return $content;
-// });
-
-/* Allow uploading SVG files to media */
-function wacoal_mime_types($mimes)
-{
-    $mimes['svg'] = 'image/svg+xml';
-
-    return $mimes;
-}
-add_filter('upload_mimes', 'wacoal_mime_types');
