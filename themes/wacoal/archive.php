@@ -18,7 +18,16 @@ $cat_name         = $current_cat_data[0]->name;
 $featured_posts = get_posts(
     array(
     'numberposts' => 2,
-    'cat' => $cat_id,
+    'cat' => $current_cat_id,
+    'offset' => 0,
+    'orderby' => 'post_date',
+    'order' => 'DESC',
+    'post_status'=>'publish'
+    )
+);
+$recent_posts = get_posts(
+    array(
+    'numberposts' => 3,
     'offset' => 0,
     'orderby' => 'post_date',
     'order' => 'DESC',
@@ -69,13 +78,15 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <!-- -->
 <section class="spacer-80"></section>
 
+
 <!-- More From Blog -->
+
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo esc_attr($related_blogs['headline']);?>
+            <?php echo esc_html('MORE FROM THE BLOG');?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as $key => $blog) { ?>
+        <?php foreach ($recent_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
             if(empty($thumbnail)){
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
@@ -87,7 +98,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr($alt); ?>" />
+                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if ( ! empty( $categories ) ) {
@@ -98,7 +109,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     <?php echo esc_attr($blog->post_title);?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo wp_kses_post($blog->post_excerpt);?>
+                <?php echo  wp_kses_post($blog->post_excerpt);?>
                 </p>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>
@@ -108,7 +119,6 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
     </div>
 </section>
-
 <!-- -->
 <section class="spacer-120"></section>
 

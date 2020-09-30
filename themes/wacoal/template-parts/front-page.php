@@ -130,12 +130,13 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 
 <!-- More From Blog -->
+
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo esc_html($related_blogs['headline']);?>
+            <?php echo esc_html('MORE FROM THE BLOG');?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as $key => $blog) { ?>
+        <?php foreach ($featured_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
             if(empty($thumbnail)){
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
@@ -168,6 +169,5 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
     </div>
 </section>
-
 <!-- -->
 <section class="spacer-120"></section>

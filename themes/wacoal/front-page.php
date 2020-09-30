@@ -21,6 +21,17 @@ $featured_blogs = get_field( 'featured_posts', 'options' );
 $related_blogs = get_field( 'more_from_blog', 'options' );
 $static_section = get_field( 'static_section', 'options' );
 
+$featured_posts = get_posts(
+    array(
+    'numberposts' => 3,
+
+    'offset' => 0,
+    'orderby' => 'post_date',
+    'order' => 'DESC',
+    'post_status'=>'publish'
+    )
+);
+
 require locate_template( 'template-parts/front-page.php' );
 
 wacoal_page_entry_bottom();

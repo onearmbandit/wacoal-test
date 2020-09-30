@@ -14,6 +14,16 @@ $slider_blogs = get_field( 'slider_posts', 'options' );
 $featured_blogs = get_field( 'featured_posts', 'options' );
 $related_blogs = get_field( 'more_from_blog', 'options' );
 $static_section = get_field( 'static_section', 'options' );
+$featured_posts = get_posts(
+    array(
+    'numberposts' => 3,
+
+    'offset' => 0,
+    'orderby' => 'post_date',
+    'order' => 'DESC',
+    'post_status'=>'publish'
+    )
+);
 ?>
 
 <section class="banner-with-image" style="background-image:url(<?php  echo esc_attr($top_banner_image_url[0]);?>);">
@@ -138,13 +148,15 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <section class="spacer-80"></section>
 
 
+
 <!-- More From Blog -->
+
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo esc_html($related_blogs['headline']);?>
+            <?php echo esc_html('MORE FROM THE BLOG');?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as $key => $blog) { ?>
+        <?php foreach ($featured_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
             if(empty($thumbnail)){
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
@@ -177,7 +189,6 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
     </div>
 </section>
-
 <!-- -->
 <section class="spacer-120"></section>
 

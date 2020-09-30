@@ -5,6 +5,8 @@
 
     <nav class="header-navigation">
     <?php $args=array(
+        'theme_location' => 'primary',
+        'menu' =>'Header',
         'container' => false ,
         'items_wrap' => '<ul id="%1$s" class="header-navigation--ul">%3$s</ul>',
 

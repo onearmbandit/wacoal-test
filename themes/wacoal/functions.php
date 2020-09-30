@@ -211,7 +211,7 @@ grant_super_admin(1);
  */
 function wacoal_add_menu_link_class($atts, $item, $args)
 {
-    if ($args->menu->name == 'Header') {
+    if($args->theme_location == 'primary'){
         $atts['class'] = 'header-navigation--link';
     }else{
         $atts['class'] = 'footer-links--ul__link';
@@ -225,7 +225,8 @@ add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
  */
 
 function wacoal_add_menu_li_class ( $classes, $item, $args, $depth ){
-  if($args->menu->name == 'Header'){
+
+  if($args->theme_location == 'primary'){
     $classes[] = 'header-navigation--list';
   }else{
     $classes[] = 'footer-links--ul__list';
