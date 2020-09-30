@@ -1,7 +1,7 @@
 <?php
 $related_blogs = get_field( 'more_from_blog', 'options' );
 $banner=get_field('banner_image');
-$title = get_the_title( $post->ID );
+$post_title = get_the_title( $post->ID );
 $post_excerpt = get_the_excerpt( $post->ID );
 $tag_line = get_field('tag_line');
 
@@ -40,10 +40,9 @@ $recent_posts = get_posts(
     )
 );
 ?>
-<section class="banner-with-image" style="background-image:url(<?php  echo esc_url($banner['url']);?>);">
 
 <!-- Top banner section-->
-<section class="banner-with-image" style="background-image:url(<?php  echo $banner['url'];?>);">
+<section class="banner-with-image" style="background-image:url(<?php  echo esc_url($banner['url']);?>);">
 </section>
 
 <!-- Solutions section -->
@@ -51,20 +50,15 @@ $recent_posts = get_posts(
     <a href="<?php echo esc_url( $parent_cat_url ); ?>">
         <?php echo esc_attr( $parent_cat_name ); ?>
     </a>
-    <h2><?php echo esc_attr($title); ?></h2>
+    <h2><?php echo esc_attr($post_title); ?></h2>
     <span><?php echo wp_kses_post($post_excerpt); ?></span></br>
     <span><?php echo wp_kses_post($tag_line); ?></span>
 </div>
 
 <?php
-// wp_reset_postdata();
 
     the_content();
 
-// if ( have_posts() ) : while ( have_posts() ) : the_post();
-//   the_content();
-// endwhile;
-// endif;
 ?>
 
 

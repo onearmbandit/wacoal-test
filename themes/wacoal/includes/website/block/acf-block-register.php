@@ -21,11 +21,11 @@ function wacoal_acf_init() {
 				'keywords'        => array( 'wacoal-data-image' ),
 			)
         );
-        acf_register_block_type(array(
+        acf_register_block(array(
             'name'              => 'wacoal-testimonial',
             'title'             => __('Wacoal Testimonial'),
             'description'       => __('A custom testimonial block.'),
-            'render_template'   => 'wacoal_testimonial_block_render_callback',
+            'render_callback'   => 'wacoal_testimonial_block_render_callback',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
             'keywords'          => array( 'testimonial', 'quote' ),
