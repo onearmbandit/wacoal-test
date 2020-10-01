@@ -71,6 +71,26 @@ function wacoal_acf_init() {
             'keywords'          => array( 'size-chart' ),
         )
     );
+        acf_register_block(array(
+            'name'              => 'wacoal-title-description',
+            'title'             => __('Wacoal Title Description'),
+            'description'       => __('A custom title description block.'),
+            'render_callback'   => 'wacoal_title_description_render_callback',
+            'category'          => 'common',
+            'icon'              => 'block-editor',
+            'keywords'          => array( 'title', 'description' ),
+        )
+    );
+        acf_register_block(array(
+            'name'              => 'wacoal-question-answer',
+            'title'             => __('Wacoal Question Answer'),
+            'description'       => __('A custom question answer block.'),
+            'render_callback'   => 'wacoal_question_answer_render_callback',
+            'category'          => 'common',
+            'icon'              => 'block-editor',
+            'keywords'          => array( 'question', 'answer' ),
+        )
+    );
     }
 }
 

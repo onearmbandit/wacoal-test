@@ -77,6 +77,16 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 <!-- -->
 <section class="spacer-80"></section>
+<?php if(have_posts()){ ?>
+    <div class="more-blog--wrapper">
+    <?php while ( have_posts() ) : the_post();
+
+        get_template_part( 'template-parts/content', 'excerpt' );
+    endwhile;?>
+    </div>
+
+<?php } ?>
+<section class="spacer-80"></section>
 
 
 <!-- More From Blog -->
