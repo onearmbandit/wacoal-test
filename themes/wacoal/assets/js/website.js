@@ -6,24 +6,24 @@ require('../js/website/main.js');
 
 require('../js/website/wacoal-swiper.js');
 
-  var swiper = new Swiper('.featured-article', {
-    slidesPerView: 1.2,
-    spaceBetween: 70,
-    centeredSlides: true,
-    loop: true,
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+  // var swiper = new Swiper('.featured-article', {
+  //   slidesPerView: 1.2,
+  //   spaceBetween: 70,
+  //   centeredSlides: true,
+  //   loop: true,
+  //   // autoplay: {
+  //   //   delay: 2500,
+  //   //   disableOnInteraction: false,
+  //   // },
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     clickable: true,
+  //   },
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
+  // });
 
 	function find_page_number( element ) {
 		element.find('span').remove();
@@ -43,9 +43,9 @@ require('../js/website/wacoal-swiper.js');
 				page: page
 			},
 			success: function( html ) {
-				$('#main').find( 'section' ).remove();
-				$('#main nav').remove();
-				$('#main').append( html );
+				$('#post-listing').find( 'section' ).remove();
+				$('#post-listing nav').remove();
+				$('#post-listing').append( html );
 			}
 		})
 	});

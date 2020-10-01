@@ -74,8 +74,9 @@ function wacoal_gallery_block_render_callback( $block ) {
 	global $wp, $post;
 
     $block_fields       = get_field('gallery');
-    $output             = '';
+
     $default_template   = '/template-parts/block/wacoal-product-gallery.php';
+    include get_theme_file_path( $default_template );
 
 }
 
@@ -88,10 +89,10 @@ function wacoal_gallery_block_render_callback( $block ) {
 function wacoal_gallery_carousel_render_callback( $block ) {
 	global $wp, $post;
 
-    $block_fields       = get_field('slider');
-    $output             = '';
-    $default_template   = '/template-parts/block/wacoal-product-carousel.php';
+    $block_fields       = have_rows('slider');
 
+    $default_template   = '/template-parts/block/wacoal-product-carousel.php';
+    include get_theme_file_path( $default_template );
 }
 
 /**
@@ -107,9 +108,9 @@ function wacoal_list_format_render_callback( $block ) {
     $block_heading      = ! empty( get_field('heading') ) ? get_field('heading') : '';
 	$block_subheading   = ! empty( get_field('short_description') ) ? get_field('short_description') : '';
 
-	$output             = '';
-    $default_template   = '/template-parts/block/wacoal-list-format.php';
 
+    $default_template   = '/template-parts/block/wacoal-list-format.php';
+    include get_theme_file_path( $default_template );
 }
 
 /**

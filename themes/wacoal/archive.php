@@ -82,7 +82,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 <!-- -->
 <section class="spacer-80"></section>
-<div id="main">
+<div id="post-listing">
 <?php if(have_posts()){ ?>
 
     <?php $i=0;?>

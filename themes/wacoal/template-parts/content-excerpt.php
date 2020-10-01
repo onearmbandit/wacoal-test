@@ -9,7 +9,7 @@
 ?>
 <article class="blog-tile">
     <div class="blog-tile--image">
-        <?php the_post_thumbnail(  ); ?>
+        <?php the_post_thumbnail(array(334, 220)  ); ?>
     </div>
     <div class="blog-tile--category">
         <?php echo esc_html(single_cat_title());?>
