@@ -79,8 +79,9 @@ function wacoal_gallery_block_render_callback( $block ) {
     $default_template   = '/template-parts/block/wacoal-product-gallery.php';
 
 }
+
 /**
- * Callback function for product slider block
+ * Callback function for gallery carousel block
  *
  * @param [type] $block Block.
  * @return void
@@ -93,8 +94,9 @@ function wacoal_gallery_carousel_render_callback( $block ) {
     $default_template   = '/template-parts/block/wacoal-product-carousel.php';
 
 }
+
 /**
- * Callback function for list format block
+ * Callback function for list block
  *
  * @param [type] $block Block.
  * @return void
@@ -108,5 +110,23 @@ function wacoal_list_format_render_callback( $block ) {
 
 	$output             = '';
     $default_template   = '/template-parts/block/wacoal-list-format.php';
+
+}
+
+/**
+ * Callback function for list block
+ *
+ * @param [type] $block Block.
+ * @return void
+ */
+function wacoal_title_description_render_callback( $block ) {
+	global $wp, $post;
+
+    $title_text = get_field('title_or_subhead');
+    $desc_text  = get_field('description');
+
+    $default_template  = '/template-parts/block/wacoal-title-desc.php';
+
+    include get_theme_file_path( $default_template );
 
 }
