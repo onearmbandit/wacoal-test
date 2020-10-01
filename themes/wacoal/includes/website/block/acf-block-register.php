@@ -31,6 +31,16 @@ function wacoal_acf_init() {
             'keywords'          => array( 'testimonial', 'quote' ),
         )
     );
+        acf_register_block(array(
+            'name'              => 'wacoal-size-chart',
+            'title'             => __('Wacoal Size Chart'),
+            'description'       => __('A custom size chart block.'),
+            'render_callback'   => 'wacoal_size_chart_block_render_callback',
+            'category'          => 'common',
+            'icon'              => 'table',
+            'keywords'          => array( 'size-chart' ),
+        )
+    );
     }
 }
 

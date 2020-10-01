@@ -45,3 +45,22 @@ function wacoal_testimonial_block_render_callback( $block ) {
 
     include get_theme_file_path( $default_template );
 }
+
+/**
+ * Callback function for size chart block
+ *
+ * @param [type] $block Block.
+ * @return void
+ */
+function wacoal_size_chart_block_render_callback( $block ) {
+    global $wp, $post;
+
+    $size_chart_header = get_field('size_chart_heading');
+    $size_chart_table = get_field('size_chart_table');
+    $size_chart_subheading = $size_chart_table['size_chart_subheading'];
+    $size_chart_data = $size_chart_table['size_chart_data'];
+
+    $default_template   = '/template-parts/block/wacoal-testimonial.php';
+
+    include get_theme_file_path( $default_template );
+}
