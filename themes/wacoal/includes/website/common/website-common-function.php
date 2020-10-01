@@ -249,6 +249,7 @@ add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
 
 /**
  * Add Menu li class.
+ *
  * @param array $file_types file types.
  */
 function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
@@ -266,6 +267,7 @@ add_filter('nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4);
 
 /**
  * Add support for svg images.
+ *
  * @param array $file_types file types.
  */
 function wacoal_add_svg_file_types_to_uploads($file_types)
@@ -300,7 +302,7 @@ function wacoal_widgets_init()
         'name'          => esc_html__('Footer Column One', 'wacoal'),
         'id'            => 'footer-1',
         'description'   => esc_html__('Add widgets here.', 'wacoal'),
-        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<div class="footer-links--title">',
         'after_title'   => '</div>',
@@ -311,7 +313,7 @@ function wacoal_widgets_init()
         'name'          => esc_html__('Footer Column Two', 'wacoal'),
         'id'            => 'footer-2',
         'description'   => esc_html__('Add widgets here.', 'wacoal'),
-        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<div class="footer-links--title">',
         'after_title'   => '</div>',
@@ -322,7 +324,7 @@ function wacoal_widgets_init()
         'name'          => esc_html__('Footer Column Three', 'wacoal'),
         'id'            => 'footer-3',
         'description'   => esc_html__('Add widgets here.', 'wacoal'),
-        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<div class="footer-links--title">',
         'after_title'   => '</div>',
@@ -333,7 +335,7 @@ function wacoal_widgets_init()
         'name'          => esc_html__('Footer Column Four', 'wacoal'),
         'id'            => 'footer-4',
         'description'   => esc_html__('Add widgets here.', 'wacoal'),
-        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<div class="footer-links--title">',
         'after_title'   => '</div>',
@@ -404,9 +406,6 @@ function wacoal_post_date( $wacoal_post_id )
 
     $post_date = get_the_date('F j, Y g:i a', $wacoal_post_id);
     $date = new DateTime($post_date);
-    /**
- * $date->setTimezone( new DateTimeZone( 'America/New_York' ) );
-*/
     $wacoal_post_date = $date->format('F j, Y g:i a');
     return $wacoal_post_date;
 }
@@ -419,9 +418,8 @@ function wacoal_post_date( $wacoal_post_id )
  *
  * @return array
  */
-function wacoal_video_get_primary_category( $post_id )
+function wacoal_get_primary_category( $post_id )
 {
-
     $primary_category = null;
 
     $wpseo_primary_term_cls = new WPSEO_Primary_Term('category', $post_id);
@@ -439,4 +437,92 @@ function wacoal_video_get_primary_category( $post_id )
     }
 
     return $primary_category;
+}
+
+
+/**
+ * ---------------
+ */
+
+
+ /**
+  * Function to create the URL
+  *
+  * @param  string $url URL.
+  * @return string
+  */
+function wacoal_reconstruct_url( $url )
+{
+    $url_parts           = wp_parse_url($url);
+    $url_parts['scheme'] = isset($url_parts['scheme']) ? $url_parts['scheme'] : '';
+    $url_parts['host']   = isset($url_parts['host']) ? $url_parts['host'] : '';
+    $constructed_url     = $url_parts['scheme'] . '://' . $url_parts['host'] . ( isset($url_parts['path']) ? $url_parts['path'] : '' );
+
+    return $constructed_url;
+}
+
+
+
+/**
+ * Function to create the image with crop points
+ *
+ * @param array $image       Image array.
+ * @param int   $width       Image size to return using width.
+ * @param array $ratio       Image ratio to return.
+ * @param array $crop_points array of crop points.
+ * @param int   $height      Image size to return using height.
+ *
+ * @return string Return the image URL.
+ */
+function wacoal_get_image( $image, $width = null, $ratio = null, $crop_points = null, $height = null )
+{
+
+    $url = '';
+
+    if (! empty($image) && ! empty($image[0]) ) {
+
+        $url = wacoal_reconstruct_url($image[0]);
+
+        if (empty($crop_points) && ! empty($ratio) ) {
+            $default_crop_points = wmag_get_default_crop_points_for_image($image[1], $image[2]);
+            $crop_points         = $default_crop_points[ $ratio ];
+        }
+
+        if (! empty($width) && ! empty($ratio) && ! empty($crop_points) ) {
+
+            $crop_width  = $crop_points['crop_width'];
+            $crop_height = $crop_points['crop_height'];
+            $crop_x      = $crop_points['crop_x'];
+            $crop_y      = $crop_points['crop_y'];
+
+            $cur_ratio = ( $crop_height / $crop_width );
+
+            $params = array(
+            'crop' => (int) $crop_x . 'px,' . (int) $crop_y . 'px,' . (int) $crop_width . 'px,' . (int) $crop_height . 'px',
+            'w'    => $width . 'px',
+            );
+
+            if ($width > $image[1] ) {
+                $height           = ( $width * $cur_ratio );
+                $params['resize'] = $width . 'px,' . $height . 'px';
+            }
+
+            $url .= '?' . build_query($params);
+        } elseif (! empty($width) ) {
+
+            $params = array(
+            'w' => $width . 'px',
+            );
+
+            $url .= '?' . build_query($params);
+        } elseif (! empty($height) ) {
+
+            $params = array(
+            'h' => $height . 'px',
+            );
+
+            $url .= '?' . build_query($params);
+        }
+    }
+    return $url;
 }

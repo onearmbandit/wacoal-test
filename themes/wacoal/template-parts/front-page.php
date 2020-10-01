@@ -35,7 +35,7 @@
                 }
                 $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
                 $alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
-                $categories = wacoal_video_get_primary_category($slider_blog->ID);
+                $categories = wacoal_get_primary_category($slider_blog->ID);
 
                 ?>
                 <div class="swiper-slide evergreen-article">
@@ -110,7 +110,7 @@
                 }
                 $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
                 $alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
-                $categories = wacoal_video_get_primary_category($featured_blog->ID);
+                $categories = wacoal_get_primary_category($featured_blog->ID);
                 ?>
                 <div class="swiper-slide">
                     <article class="featured-box">
