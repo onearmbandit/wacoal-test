@@ -1,8 +1,13 @@
 <?php
 /**
  * Website common functions
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 /**
@@ -232,9 +237,9 @@ function wacoal_remove_p_tag($content)
  */
 function wacoal_add_menu_link_class($atts, $item, $args)
 {
-    if($args->theme_location == 'primary') {
+    if ($args->theme_location == 'primary') {
         $atts['class'] = 'header-navigation--link';
-    }else{
+    } else {
         $atts['class'] = 'footer-links--ul__link';
     }
 
@@ -248,9 +253,9 @@ add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
 function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
 {
 
-    if($args->theme_location == 'primary') {
+    if ($args->theme_location == 'primary') {
         $classes[] = 'header-navigation--list';
-    }else{
+    } else {
         $classes[] = 'footer-links--ul__list';
     }
 
@@ -334,3 +339,100 @@ function wacoal_widgets_init()
 
 }
 add_action('widgets_init', 'wacoal_widgets_init');
+
+
+
+/**
+ * Function get all the posts from 'post' post type
+ *
+ * @param array $args wp query args.
+ *
+ * @return array|WP_Post
+ */
+function Wacoal_Query_posts( $args )
+{
+
+    $wmag_posts = [];
+
+    $default_args = array(
+    'post_type' => array(
+    'post',
+    ),
+    );
+
+    $args = array_merge($default_args, $args);
+
+    $wmag_query = new WP_Query($args);
+
+    foreach ( $wmag_query->posts as $post ) {
+
+        $meta         = Wacoal_get_post_details($post->ID);
+        $wmag_posts[] = new Wacoal_Post($post, $meta);
+    }
+
+    return $wmag_posts;
+}
+
+
+/**
+ * Function to get the post details of provide post id.
+ *
+ * @param int $wacoal_post_id post id.
+ *
+ * @return $meta
+ */
+function Wacoal_get_post_details( int $wacoal_post_id )
+{
+
+    $meta = get_post_meta($wacoal_post_id);
+
+    return $meta;
+}
+
+/**
+ * Function used to return the post published date in New York format.
+ *
+ * @param  int $wacoal_post_id post id to date in newyork timezone.
+ * @return string return date for provided post id.
+ */
+function wacoal_post_date( $wacoal_post_id )
+{
+
+    $post_date = get_the_date('F j, Y g:i a', $wacoal_post_id);
+    $date = new DateTime($post_date);
+    /**
+ * $date->setTimezone( new DateTimeZone( 'America/New_York' ) );
+*/
+    $wacoal_post_date = $date->format('F j, Y g:i a');
+    return $wacoal_post_date;
+}
+
+
+/**
+ * Undocumented function
+ *
+ * @param int $post_id post id to fetch categories.
+ *
+ * @return array
+ */
+function wacoal_video_get_primary_category( $post_id )
+{
+
+    $primary_category = null;
+
+    $wpseo_primary_term_cls = new WPSEO_Primary_Term('category', $post_id);
+    $wpseo_primary_term     = $wpseo_primary_term_cls->get_primary_term();
+    $primary_cat_arr        = get_term($wpseo_primary_term);
+
+    if (! is_wp_error($primary_cat_arr) ) {
+        $primary_category = $primary_cat_arr;
+    } else {
+        $all_categories = get_the_category($post_id);
+
+        if (! empty($all_categories) ) {
+            $primary_category = $all_categories[0];
+        }
+    }
+
+    return $primary_category;
+}

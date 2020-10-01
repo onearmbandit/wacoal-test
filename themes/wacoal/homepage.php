@@ -1,19 +1,27 @@
 <?php
 /**
-* Template Name: Homapage
-*
-*/
+ * Template Name: Homapage
+ *  * php version 7.4
+ *
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
+ */
+
 wacoal_page_entry_top('');
-$top_banner_fields      = get_field( 'top_banner', 'options' );
-$slider_fields      = get_field( 'slider_posts', 'options' );
+
+$top_banner_fields      = get_field('top_banner', 'options');
+$slider_fields      = get_field('slider_posts', 'options');
 $top_banner_image_id  = $top_banner_fields['banner_image'];
-$top_banner_image_url = wp_get_attachment_image_src( $top_banner_image_id , full);
+$top_banner_image_url = wp_get_attachment_image_src($top_banner_image_id, full);
 $top_banner_title     = $top_banner_fields['banner_title'];
 $top_banner_subtitle  = $top_banner_fields['banner_subtitle'];
-$slider_blogs = get_field( 'slider_posts', 'options' );
-$featured_blogs = get_field( 'featured_posts', 'options' );
-$related_blogs = get_field( 'more_from_blog', 'options' );
-$static_section = get_field( 'static_section', 'options' );
+$slider_blogs = get_field('slider_posts', 'options');
+$featured_blogs = get_field('featured_posts', 'options');
+$related_blogs = get_field('more_from_blog', 'options');
+$static_section = get_field('static_section', 'options');
 $featured_posts = get_posts(
     array(
     'numberposts' => 3,
@@ -73,12 +81,12 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="featured-article--wrapper swiper-wrapper">
         <?php foreach ($featured_blogs as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)){
+            if(empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $blog->ID, 'category' );
+            $categories = get_the_terms($blog->ID, 'category');
 
             ?>
             <article class="featured-box swiper-slide">
@@ -158,12 +166,12 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="more-blog--wrapper">
         <?php foreach ($featured_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)){
+            if(empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $blog->ID, 'category' );
+            $categories = get_the_terms($blog->ID, 'category');
 
             ?>
             <article class="blog-tile">
@@ -171,8 +179,8 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
-                    <?php if ( ! empty( $categories ) ) {
-                        echo esc_html( $categories[0]->name );
+                    <?php if (! empty($categories) ) {
+                        echo esc_html($categories[0]->name);
                     }?>
                 </div>
                 <h5 class="blog-tile--heading">

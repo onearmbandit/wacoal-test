@@ -83,36 +83,20 @@ function Wacoal_Admin_scripts()
 add_action('admin_enqueue_scripts', 'Wacoal_Admin_scripts');
 
 /**
- * Admin functions include - START
+ * Admin functions include
  */
-
 if (is_admin()) {
-
     include THEMEPATH . '/includes/admin/admin-functions.php';
 }
 
 /**
- * Admin functions include - END
+ * Website functions include
  */
-
-
-/**
- * Block Folder File Include
- */
-foreach ( glob(THEMEPATH . '/includes/website/block/*.php') as $filename ) {
-    include $filename;
-}
-
-/**
- * Website functions include - START
- */
-
 require THEMEPATH . '/includes/website/website-functions.php';
 
 /**
  * Enable gutenberg
  */
-
 if (function_exists('wpcom_vip_load_gutenberg') ) {
     wpcom_vip_load_gutenberg(true);
 }
@@ -121,7 +105,6 @@ if (function_exists('wpcom_vip_load_gutenberg') ) {
 /**
  * Below this all code is local dev only, in circle ci configuration this code is removed in a '-built' branch
 */
-
 if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
 
     add_filter(
@@ -140,5 +123,5 @@ if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
         }
     );
 }
-
 // LOCALDEV END.
+
