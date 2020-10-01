@@ -7,9 +7,9 @@
 
 ?>
 
-<section class="banner-with-image" style="background-image:url(<?php  echo $top_banner_image_url[0];?>);">
-    <h1 class="banner-with-image--heading"><?php echo $top_banner_title;?></h1>
-    <p class="banner-with-image--subtitle"><?php echo $top_banner_subtitle;?></p>
+<section class="banner-with-image" style="background-image:url(<?php  echo esc_attr($top_banner_image_url[0]);?>);">
+    <h1 class="banner-with-image--heading"><?php echo esc_attr($top_banner_title);?></h1>
+    <p class="banner-with-image--subtitle"><?php echo esc_attr($top_banner_subtitle);?></p>
 </section>
 
 
@@ -19,34 +19,34 @@ and will change the height gap respective to screen size as for Mobile 22px, iPa
 
 
 <!-- Banner with background color -->
-<section class="banner-with-background">
+<!-- <section class="banner-with-background">
     <h2 class="banner-with-background--heading">wacoal 101</h2>
     <p class="banner-with-background--subtitle">
         Bra Education<br>
         Blurb Describing Category<br>
         LOREM IPSUM
     </p>
-</section>
+</section> -->
 
 
 <!-- -->
-<section class="spacer-80"></section>
+<!-- <section class="spacer-80"></section> -->
 
 
 <!-- Banner with background color -->
-<section class="banner-with-background">
+<!-- <section class="banner-with-background">
     <h2 class="banner-with-background--heading">bra'drobe</h2>
     <p class="banner-with-background--subtitle">
         Our Product Recommendtions<br>
         Blurb Describing Category<br>
         LOREM IPSUM
     </p>
-</section>
+</section> -->
 
 
 <!-- This sesction will create 120 pixel height gap between sections for big screens
 and will change the height gap respective to screen size as for Mobile 44px, iPad 48px, iPad Pro 64px, Small Monitor 80px -->
-<section class="spacer-120"></section>
+<!-- <section class="spacer-120"></section> -->
 
 
 <!-- Featured Articles -->
@@ -54,23 +54,23 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="featured-article--wrapper swiper-wrapper">
         <?php foreach ($featured_blogs as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)){
+            if (empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $blog->ID, 'category' );
+            $categories = get_the_terms($blog->ID, 'category');
 
             ?>
             <article class="featured-box swiper-slide">
                 <div class="featured-box--content">
-                    <p class="featured-box--content__subtitle"><?php echo $categories[0]->name;?></p>
-                    <h4 class="featured-box--content__title"><?php echo $blog->post_title;?></h4>
-                    <p class="featured-box--content__para"><?php echo $blog->post_excerpt;?></p>
-                    <a href="<?php echo get_permalink($blog->ID);?>" class="btn primary">learn more</a>
+                    <p class="featured-box--content__subtitle"><?php echo esc_attr($categories[0]->name);?></p>
+                    <h4 class="featured-box--content__title"><?php echo esc_attr($blog->post_title);?></h4>
+                    <p class="featured-box--content__para"><?php echo wp_kses_post($blog->post_excerpt);?></p>
+                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">learn more</a>
                 </div>
                 <div class="featured-box--image">
-                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo $alt;?>" />
+                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo esc_attr($alt);?>" />
                 </div>
             </article>
         <?php } ?>
@@ -83,7 +83,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <a href="" class="btn primary">learn more</a>
             </div>
             <div class="featured-box--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                <img src="" alt="Featured Article" />
             </div>
         </article> -->
     </div>
@@ -102,18 +102,18 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
         <div class="wacoal-101--image">
-            <img src="<?php echo  $static_section['image']; ?>" alt="Wacoal 101" />
+            <img src="<?php echo  esc_url($static_section['image']); ?>" alt="Wacoal 101" />
         </div>
         <div class="wacoal-101--content">
             <div class="wacoal-101--content__title">
-               <?php echo $static_section['title'];?>
+               <?php echo esc_attr($static_section['title']);?>
             </div>
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
-                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                        <img src="<?php echo  esc_url(get_theme_file_uri()); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                     </div>
-                    <div class="wacoal-101--list__content"><a href="<?php echo $page_obj['link'];?>"><?php echo $page_obj['title'];?></a></div>
+                    <div class="wacoal-101--list__content"><a href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
             <?php } ?>
 
@@ -130,37 +130,38 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 
 <!-- More From Blog -->
+
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo $related_blogs['headline'];?>
+            <?php echo esc_html('MORE FROM THE BLOG');?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as $key => $post) { ?>
-            <?php $thumbnail = get_the_post_thumbnail_url($post->ID);
-            if(empty($thumbnail)){
+        <?php foreach ($featured_posts as $key => $blog) { ?>
+            <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
+            if(empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $post->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $post->ID, 'category' );
+            $categories = get_the_terms($blog->ID, 'category');
 
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo  $thumbnail; ?>" alt="<?php echo  $alt; ?>" />
+                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
-                    <?php if ( ! empty( $categories ) ) {
-                        echo esc_html( $categories[0]->name );
+                    <?php if (! empty($categories) ) {
+                        echo esc_html($categories[0]->name);
                     }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo $post->post_title;?>
+                    <?php echo esc_attr($blog->post_title);?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo $post->post_excerpt;?>
+                <?php echo  wp_kses_post($blog->post_excerpt);?>
                 </p>
-                <a href="<?php echo get_permalink($post->ID);?>" class="btn primary">Learn More</a>
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>
 
@@ -168,6 +169,5 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
     </div>
 </section>
-
 <!-- -->
 <section class="spacer-120"></section>

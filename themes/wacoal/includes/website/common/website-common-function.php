@@ -10,30 +10,32 @@
  *
  * @param array $classes body classes.
  */
-function wacoal_body_classes( $classes ) {
-    if ( ! is_singular() ) {
+function wacoal_body_classes( $classes )
+{
+    if (! is_singular() ) {
         $classes[] = 'hfeed';
     }
 
-    if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+    if (! is_active_sidebar('sidebar-1') ) {
         $classes[] = 'no-sidebar';
     }
 
     return $classes;
 }
-add_filter( 'body_class', 'wacoal_body_classes' );
+add_filter('body_class', 'wacoal_body_classes');
 
 /**
  * To ‘ping‘ all the sites that were linked to in your post
  *
  * @return void
  */
-function wacoal_pingback_header() {
-    if ( is_singular() && pings_open() ) {
-        printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+function wacoal_pingback_header()
+{
+    if (is_singular() && pings_open() ) {
+        printf('<link rel="pingback" href="%s">', esc_url(get_bloginfo('pingback_url')));
     }
 }
-add_action( 'wp_head', 'wacoal_pingback_header' );
+add_action('wp_head', 'wacoal_pingback_header');
 
 if (!function_exists('wacoal_posted_on')) {
 
@@ -142,23 +144,27 @@ if (!function_exists('wacoal_post_thumbnail')) {
             ?>
 
 <div class="post-thumbnail">
-    <?php the_post_thumbnail(); ?>
+            <?php the_post_thumbnail(); ?>
 </div><!-- .post-thumbnail -->
 
 <?php else : ?>
 
 <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
     <?php
-        the_post_thumbnail('post-thumbnail', array(
-            'alt' => the_title_attribute(array(
+        the_post_thumbnail(
+            'post-thumbnail', array(
+            'alt' => the_title_attribute(
+                array(
                 'echo' => false,
-            )),
-        ));
+                )
+            ),
+            )
+        );
     ?>
 </a>
 
-<?php
-        endif; // End is_singular().
+    <?php
+endif; // End is_singular().
     }
 };
 
@@ -176,25 +182,32 @@ function wacoal_page_entry_bottom()
     get_footer('files/main-footer');
 }
 
-
-/** Remove admin bar from fontend */
+/**
+ * Remove admin bar from fontend
+*/
 add_filter('show_admin_bar', '__return_false');
 
-/** ACF get fields of page by PageId */
+/**
+ * ACF get fields of page by PageId
+ */
 function wacoal_get_page_acf_fields($pageId)
 {
     $fields = get_fields($pageId);
     return $fields;
 }
 
-/** Get wacoal Image source */
+/**
+ * Get wacoal Image source
+ */
 function wacoal_get_image_src($attachmentId, $size = 'full', $icon = false)
 {
     $image_src = wp_get_attachment_image_src($attachmentId, $size, $icon);
     return $image_src[0];
 }
 
-/** Get wacoal Image alt */
+/**
+ * Get wacoal Image alt
+ */
 function wacoal_get_image_alt($attachmentId, $default = null)
 {
     $image_alt = get_post_meta($attachmentId, '_wp_attachment_image_alt', true);
@@ -204,7 +217,9 @@ function wacoal_get_image_alt($attachmentId, $default = null)
     return $image_alt;
 }
 
-/** wacoal remove p tag from content */
+/**
+ * wacoal remove p tag from content
+ */
 function wacoal_remove_p_tag($content)
 {
     $content = str_ireplace('<p>', '', $content);
@@ -212,18 +227,110 @@ function wacoal_remove_p_tag($content)
     return $content;
 }
 
-// /* Remove extra span wrapper from cf7 layout */
-// add_filter('wpcf7_form_elements', function ($content) {
-//     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-
-//     return $content;
-// });
-
-/* Allow uploading SVG files to media */
-function wacoal_mime_types($mimes)
+/**
+ * Add Menu link class.
+ */
+function wacoal_add_menu_link_class($atts, $item, $args)
 {
-    $mimes['svg'] = 'image/svg+xml';
+    if($args->theme_location == 'primary') {
+        $atts['class'] = 'header-navigation--link';
+    }else{
+        $atts['class'] = 'footer-links--ul__link';
+    }
 
-    return $mimes;
+    return $atts;
 }
-add_filter('upload_mimes', 'wacoal_mime_types');
+add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
+
+/**
+ * Add Menu li class.
+ */
+function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
+{
+
+    if($args->theme_location == 'primary') {
+        $classes[] = 'header-navigation--list';
+    }else{
+        $classes[] = 'footer-links--ul__list';
+    }
+
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4);
+
+/**
+ * Add support for svg images.
+ */
+function wacoal_add_svg_file_types_to_uploads($file_types)
+{
+
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg';
+    $file_types = array_merge($file_types, $new_filetypes);
+
+    return $file_types;
+}
+add_action('upload_mimes', 'wacoal_add_svg_file_types_to_uploads');
+
+
+function wacoal_widgets_init()
+{
+    register_sidebar(
+        array(
+        'name' => esc_html__('Sidebar', 'wacoal'),
+        'id' => 'sidebar-1',
+        'description' => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column One', 'wacoal'),
+        'id'            => 'footer-1',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+        'before_title'  => '<div class="footer-links--title">',
+        'after_title'   => '</div>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Two', 'wacoal'),
+        'id'            => 'footer-2',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+        'before_title'  => '<div class="footer-links--title">',
+        'after_title'   => '</div>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Three', 'wacoal'),
+        'id'            => 'footer-3',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+        'before_title'  => '<div class="footer-links--title">',
+        'after_title'   => '</div>',
+        )
+    );
+    register_sidebar(
+        array(
+        'name'          => esc_html__('Footer Column Four', 'wacoal'),
+        'id'            => 'footer-4',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
+        'before_widget' => '<div id="%1$s" class="footer-links %2$s">', //You can change class/id here
+        'after_widget'  => '</div>',
+        'before_title'  => '<div class="footer-links--title">',
+        'after_title'   => '</div>',
+        )
+    );
+
+
+}
+add_action('widgets_init', 'wacoal_widgets_init');
