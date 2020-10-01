@@ -55,6 +55,7 @@ function Wacoal_scripts()
         'wacoal_js_var',
         array(
         'ajaxurl' => admin_url('admin-ajax.php'),
+        'query_vars' => json_encode( $wp_query->query )
         )
     );
 
@@ -137,3 +138,4 @@ if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
 }
 
 // LOCALDEV END.
+require THEMEPATH . '/includes/website/website-ajax-functions.php';
