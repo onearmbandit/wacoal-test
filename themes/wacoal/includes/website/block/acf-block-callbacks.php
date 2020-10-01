@@ -78,6 +78,8 @@ function wacoal_gallery_block_render_callback( $block ) {
     $default_template   = '/template-parts/block/wacoal-product-gallery.php';
     include get_theme_file_path( $default_template );
 
+    include get_theme_file_path( $default_template );
+
 }
 
 /**
@@ -142,6 +144,24 @@ function wacoal_question_answer_render_callback( $block ) {
 
     $block_fields = get_field('question_answer');
     $default_template  = '/template-parts/block/wacoal-question-answer.php';
+
+    include get_theme_file_path( $default_template );
+
+}
+
+/**
+ * Callback function for staic links block
+ *
+ * @param [type] $block Block.
+ * @return void
+ */
+function wacoal_static_link_render_callback( $block ) {
+	global $wp, $post;
+
+    $block_fields = get_field('static_section');
+    $block_image_id  = $block_fields['image'];
+    $block_image_url = wp_get_attachment_image_src( $block_image_id , 'full');
+    $default_template  = '/template-parts/block/wacoal-static-links.php';
 
     include get_theme_file_path( $default_template );
 
