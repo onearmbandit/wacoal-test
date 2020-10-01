@@ -34,6 +34,11 @@ $recent_posts = get_posts(
     'post_status'=>'publish'
     )
 );
+$posts_per_page=get_option( 'posts_per_page' );
+$category = get_category($current_cat_id);
+$count = $category->category_count;
+ $page_num= $count/$posts_per_page;
+//print_r($wp_query);
 ?>
 
 <!-- Banner with background color -->
@@ -77,17 +82,37 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 <!-- -->
 <section class="spacer-80"></section>
+<div id="main">
 <?php if(have_posts()){ ?>
-    <div class="more-blog--wrapper">
-    <?php while ( have_posts() ) : the_post();
 
+    <?php $i=0;?>
+    <?php while ( have_posts() ) : the_post();
+        if($i%3 == 0 || $i==0){
+            echo '<section class="more-blog"><div class="more-blog--wrapper">';
+        }
         get_template_part( 'template-parts/content', 'excerpt' );
+        if($i%3 == 2 || $i == 2){
+            echo '</div></section>';
+        }
+        $i++;
     endwhile;?>
-    </div>
+
+
 
 <?php } ?>
 <section class="spacer-80"></section>
 
+<?php the_posts_pagination( array(
+
+    'prev_text'          => __( '<', 'wacoal' ),
+    'next_text'          => __( '>', 'wacoal' ),
+    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( '', 'wacoal' ) . ' </span>',
+    'screen_reader_text' => ' ',
+
+    ) );
+
+ ?>
+</div>
 
 <!-- More From Blog -->
 
