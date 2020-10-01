@@ -54,12 +54,12 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="featured-article--wrapper swiper-wrapper">
         <?php foreach ($featured_blogs as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)){
+            if (empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $blog->ID, 'category' );
+            $categories = get_the_terms($blog->ID, 'category');
 
             ?>
             <article class="featured-box swiper-slide">
@@ -138,12 +138,12 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="more-blog--wrapper">
         <?php foreach ($featured_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)){
+            if(empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $blog->ID, 'category' );
+            $categories = get_the_terms($blog->ID, 'category');
 
             ?>
             <article class="blog-tile">
@@ -151,8 +151,8 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
-                    <?php if ( ! empty( $categories ) ) {
-                        echo esc_html( $categories[0]->name );
+                    <?php if (! empty($categories) ) {
+                        echo esc_html($categories[0]->name);
                     }?>
                 </div>
                 <h5 class="blog-tile--heading">

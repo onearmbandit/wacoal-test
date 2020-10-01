@@ -192,6 +192,206 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <!-- -->
 <section class="spacer-120"></section>
 
+<!-- Entry page full width Slider -->
+<section class="full-width-slider--wrapper">
+    <div class="swiper-container full-width-slider">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+        </div>
+        <div class="swiper-slide">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+        </div>
+        <div class="swiper-slide">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+        </div>
+        <div class="swiper-slide">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+        </div>
+        </div>
 
+        <div class="swiper-pagination custom-swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+        <div class="swiper-button-prev swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+    </div>
+</section>
+
+<!-- -->
+<section class="spacer-120"></section>
+
+<!-- Evergreen Articles Slider -->
+<section class="evergreen-article--slider">
+    <div class="swiper-container center-slide-slider">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide evergreen-article">
+            <div class="evergreen-article--content">
+                <p class="evergreen-article--content__subtitle">bra'drobe</p>
+                <h3 class="evergreen-article--content__title">evergreen article</h3>
+                <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
+            </div>
+            <div class="evergreen-article--image">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            </div>
+            <div class="evergreen-article--button">
+                <a href="" class="btn primary">learn more</a>
+            </div>
+        </div>
+        <div class="swiper-slide evergreen-article">
+            <div class="evergreen-article--content">
+                <p class="evergreen-article--content__subtitle">bra'drobe</p>
+                <h3 class="evergreen-article--content__title">evergreen article</h3>
+                <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
+            </div>
+            <div class="evergreen-article--image">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            </div>
+            <div class="evergreen-article--button">
+                <a href="" class="btn primary">learn more</a>
+            </div>
+        </div>
+        <div class="swiper-slide evergreen-article">
+            <div class="evergreen-article--content">
+                <p class="evergreen-article--content__subtitle">bra'drobe</p>
+                <h3 class="evergreen-article--content__title">evergreen article</h3>
+                <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
+            </div>
+            <div class="evergreen-article--image">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            </div>
+            <div class="evergreen-article--button">
+                <a href="" class="btn primary">learn more</a>
+            </div>
+        </div>
+        <div class="swiper-slide evergreen-article">
+            <div class="evergreen-article--content">
+                <p class="evergreen-article--content__subtitle">bra'drobe</p>
+                <h3 class="evergreen-article--content__title">evergreen article</h3>
+                <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
+            </div>
+            <div class="evergreen-article--image">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            </div>
+            <div class="evergreen-article--button">
+                <a href="" class="btn primary">learn more</a>
+            </div>
+        </div>
+        <div class="swiper-slide evergreen-article">
+            <div class="evergreen-article--content">
+                <p class="evergreen-article--content__subtitle">bra'drobe</p>
+                <h3 class="evergreen-article--content__title">evergreen article</h3>
+                <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
+            </div>
+            <div class="evergreen-article--image">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            </div>
+            <div class="evergreen-article--button">
+                <a href="" class="btn primary">learn more</a>
+            </div>
+        </div>
+        <div class="swiper-slide evergreen-article">
+            <div class="evergreen-article--content">
+                <p class="evergreen-article--content__subtitle">bra'drobe</p>
+                <h3 class="evergreen-article--content__title">evergreen article</h3>
+                <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
+            </div>
+            <div class="evergreen-article--image">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            </div>
+            <div class="evergreen-article--button">
+                <a href="" class="btn primary">learn more</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="swiper-pagination custom-swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+        <div class="swiper-button-prev swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+  </div>
+</section>
+
+<!-- -->
+<section class="spacer-120"></section>
+
+<!-- Featured Artcile Slider -->
+<section class="featured-article--slider">
+    <div class="swiper-container featured-article">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <article class="featured-box">
+                    <div class="featured-box--content">
+                        <p class="featured-box--content__subtitle">bra'drobe</p>
+                        <h4 class="featured-box--content__title">Featured Article Title</h4>
+                        <p class="featured-box--content__para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+                        <a href="" class="btn primary">learn more</a>
+                    </div>
+                    <div class="featured-box--image">
+                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                    </div>
+                </article>
+            </div>
+
+            <div class="swiper-slide">
+                <article class="featured-box">
+                    <div class="featured-box--content">
+                        <p class="featured-box--content__subtitle">bra'drobe</p>
+                        <h4 class="featured-box--content__title">Featured Article Title</h4>
+                        <p class="featured-box--content__para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+                        <a href="" class="btn primary">learn more</a>
+                    </div>
+                    <div class="featured-box--image">
+                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                    </div>
+                </article>
+            </div>
+
+            <div class="swiper-slide">
+                <article class="featured-box">
+                    <div class="featured-box--content">
+                        <p class="featured-box--content__subtitle">bra'drobe</p>
+                        <h4 class="featured-box--content__title">Featured Article Title</h4>
+                        <p class="featured-box--content__para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+                        <a href="" class="btn primary">learn more</a>
+                    </div>
+                    <div class="featured-box--image">
+                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                    </div>
+                </article>
+            </div>
+
+            <div class="swiper-slide">
+                <article class="featured-box">
+                    <div class="featured-box--content">
+                        <p class="featured-box--content__subtitle">bra'drobe</p>
+                        <h4 class="featured-box--content__title">Featured Article Title</h4>
+                        <p class="featured-box--content__para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
+                        <a href="" class="btn primary">learn more</a>
+                    </div>
+                    <div class="featured-box--image">
+                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="swiper-pagination custom-swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+        <div class="swiper-button-prev swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+    </div>
+</section>
 <?php
 wacoal_page_entry_bottom();

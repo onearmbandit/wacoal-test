@@ -26,23 +26,8 @@ h3 {
   line-height: calcRem(49);
 
   @include respond-above(sm) {
-    font-size: calcRem(36);
-    line-height: calcRem(35);
-  }
-
-  @include respond-above(md) {
-    font-size: calcRem(49);
-    line-height: calcRem(47);
-  }
-
-  @include respond-above(lg) {
-    font-size: calcRem(63);
-    line-height: calcRem(60);
-  }
-
-  @include respond-above(xl) {
-    font-size: calcRem(93);
-    line-height: calcRem(89);
+    font-size: get-vw(93px);
+    line-height: get-vw(89px);
   }
 }
 
