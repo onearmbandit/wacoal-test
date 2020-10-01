@@ -17,12 +17,6 @@ foreach ( glob(THEMEPATH . '/includes/website/common/*.php') as $filename ) {
     include $filename;
 }
 
-/**
- * Block Folder File Include
- */
-foreach ( glob(THEMEPATH . '/includes/website/block/*.php') as $filename ) {
-    include $filename;
-}
 
 if (class_exists('acf') ) {
     /**
