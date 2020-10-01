@@ -1,103 +1,82 @@
 <?php
 /**
  * Front page html
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 ?>
 
-<section class="banner-with-image" style="background-image:url(<?php  echo esc_attr($top_banner_image_url[0]);?>);">
-    <h1 class="banner-with-image--heading"><?php echo esc_attr($top_banner_title);?></h1>
-    <p class="banner-with-image--subtitle"><?php echo esc_attr($top_banner_subtitle);?></p>
+<section class="banner-with-image"
+    style="background-image:url(<?php  echo esc_attr($top_banner_image_url[0]);?>);">
+        <h1 class="banner-with-image--heading">
+            <?php echo esc_attr($top_banner_title);?>
+        </h1>
+        <p class="banner-with-image--subtitle">
+            <?php echo esc_attr($top_banner_subtitle);?>
+        </p>
 </section>
 
-
-<!-- This sesction will create 80 pixel height gap between sections for big screens
-and will change the height gap respective to screen size as for Mobile 22px, iPad 32px, iPad Pro 44px, Small Monitor 54px -->
 <section class="spacer-80"></section>
+<!-- Evergreen Articles Slider -->
+<section class="evergreen-article--slider">
+    <div class="swiper-container center-slide-slider">
+        <div class="swiper-wrapper">
+            <?php foreach ($slider_blog_slider as $key => $slider_blog) {
+                ?>
+                <?php $thumbnail = get_the_post_thumbnail_url($slider_blog->ID);
+                if (empty($thumbnail)) {
+                    $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+                }
+                $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
+                $alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
+                $categories = wacoal_video_get_primary_category($slider_blog->ID);
 
+                ?>
+                <div class="swiper-slide evergreen-article">
+                    <div class="evergreen-article--content">
+                        <p class="evergreen-article--content__subtitle">
+                            <?php echo esc_attr($categories->name);?>
+                        </p>
+                        <h3 class="evergreen-article--content__title">
+                            <?php echo esc_attr($slider_blog->post_title);?>
+                        </h3>
+                        <p class="evergreen-article--content__para">
+                            <?php echo wp_kses_post($slider_blog->post_excerpt);?>
+                        </p>
+                    </div>
 
-<!-- Banner with background color -->
-<!-- <section class="banner-with-background">
-    <h2 class="banner-with-background--heading">wacoal 101</h2>
-    <p class="banner-with-background--subtitle">
-        Bra Education<br>
-        Blurb Describing Category<br>
-        LOREM IPSUM
-    </p>
-</section> -->
-
-
-<!-- -->
-<!-- <section class="spacer-80"></section> -->
-
-
-<!-- Banner with background color -->
-<!-- <section class="banner-with-background">
-    <h2 class="banner-with-background--heading">bra'drobe</h2>
-    <p class="banner-with-background--subtitle">
-        Our Product Recommendtions<br>
-        Blurb Describing Category<br>
-        LOREM IPSUM
-    </p>
-</section> -->
-
-
-<!-- This sesction will create 120 pixel height gap between sections for big screens
-and will change the height gap respective to screen size as for Mobile 44px, iPad 48px, iPad Pro 64px, Small Monitor 80px -->
-<!-- <section class="spacer-120"></section> -->
-
-
-<!-- Featured Articles -->
-<section class="featured-article swiper-container">
-    <div class="featured-article--wrapper swiper-wrapper">
-        <?php foreach ($featured_blogs as $key => $blog) { ?>
-            <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if (empty($thumbnail)) {
-                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
-            }
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
-            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms($blog->ID, 'category');
-
-            ?>
-            <article class="featured-box swiper-slide">
-                <div class="featured-box--content">
-                    <p class="featured-box--content__subtitle"><?php echo esc_attr($categories[0]->name);?></p>
-                    <h4 class="featured-box--content__title"><?php echo esc_attr($blog->post_title);?></h4>
-                    <p class="featured-box--content__para"><?php echo wp_kses_post($blog->post_excerpt);?></p>
-                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">learn more</a>
+                    <div class="evergreen-article--image">
+                        <img src="<?php echo  esc_url($thumbnail); ?>"
+                            alt="<?php echo esc_attr($alt);?>" />
+                    </div>
+                    <div class="evergreen-article--button">
+                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
+                        class="btn primary">learn more</a>
+                    </div>
                 </div>
-                <div class="featured-box--image">
-                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo esc_attr($alt);?>" />
-                </div>
-            </article>
-        <?php } ?>
+            <?php } ?>
 
-        <!-- <article class="featured-box swiper-slide">
-            <div class="featured-box--content">
-                <p class="featured-box--content__subtitle">bra'drobe</p>
-                <h4 class="featured-box--content__title">Featured Article Title</h4>
-                <p class="featured-box--content__para">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                <a href="" class="btn primary">learn more</a>
-            </div>
-            <div class="featured-box--image">
-                <img src="" alt="Featured Article" />
-            </div>
-        </article> -->
-    </div>
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+        </div>
+
+        <div class="swiper-pagination custom-swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+        <div class="swiper-button-prev swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+  </div>
 </section>
 
-
 <!-- -->
-<section class="spacer-120"></section>
-
-
+<section class="spacer-80"></section>
 <!-- Wacoal 101 -->
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
@@ -116,21 +95,60 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                     <div class="wacoal-101--list__content"><a href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
             <?php } ?>
-
-
-
-
         </div>
     </div>
 </section>
 
+<section class="spacer-120"></section>
+<section class="featured-article--slider">
+    <div class="swiper-container featured-article">
+        <div class="swiper-wrapper">
+            <?php foreach ($featured_blog_slider as $key => $featured_blog) { ?>
+                <?php $thumbnail = get_the_post_thumbnail_url($featured_blog->ID);
+                if (empty($thumbnail)) {
+                    $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+                }
+                $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
+                $alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+                $categories = wacoal_video_get_primary_category($featured_blog->ID);
+                ?>
+                <div class="swiper-slide">
+                    <article class="featured-box">
+                        <div class="featured-box--content">
+                            <p class="featured-box--content__subtitle">
+                                <?php echo esc_attr($categories->name);?>
+                            </p>
+                            <h4 class="featured-box--content__title">
+                                <?php echo esc_attr($featured_blog->post_title);?>
+                            </h4>
+                            <p class="featured-box--content__para">
+                                <?php echo wp_kses_post($featured_blog->post_excerpt);?>
+                            </p>
+                            <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
+                                class="btn primary">learn more</a>
+                        </div>
+                        <div class="featured-box--image">
+                            <img src="<?php echo  esc_url($thumbnail); ?>"
+                                alt="<?php echo esc_attr($alt);?>" />
+                        </div>
+                    </article>
+                </div>
+            <?php } ?>
+        </div>
 
-<!-- -->
+        <div class="swiper-pagination custom-swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+        <div class="swiper-button-prev swiper-buttun-background">
+            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+        </div>
+    </div>
+</section>
+
 <section class="spacer-80"></section>
-
-
 <!-- More From Blog -->
-
 <section class="more-blog">
     <div class="more-blog--title">
             <?php echo esc_html('MORE FROM THE BLOG');?>
@@ -138,7 +156,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="more-blog--wrapper">
         <?php foreach ($featured_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)) {
+            if (empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
             $thumbnail_id = get_post_thumbnail_id($blog->ID);
@@ -164,9 +182,6 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>
-
-
-
     </div>
 </section>
 <!-- -->
