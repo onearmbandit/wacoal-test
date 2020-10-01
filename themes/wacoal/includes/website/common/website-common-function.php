@@ -347,7 +347,6 @@ function wacoal_widgets_init()
 add_action('widgets_init', 'wacoal_widgets_init');
 
 
-
 /**
  * Function get all the posts from 'post' post type
  *

@@ -55,16 +55,15 @@ function wacoal_testimonial_block_render_callback( $block ) {
 function wacoal_size_chart_block_render_callback( $block ) {
     global $wp, $post;
 
-    $size_chart_header = get_field('size_chart_heading');
-    $size_chart_table = get_field('size_chart_table');
-    $size_chart_subheading = $size_chart_table['size_chart_subheading'];
-    $size_chart_data = $size_chart_table['size_chart_data'];
-
-    $default_template   = '/template-parts/block/wacoal-testimonial.php';
+    $table_heading = get_field('table_name');
+    $table = get_field('table');
+    $table_data_header = $table['header'];
+    $table_data = $table['body'];
+    $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
 
     include get_theme_file_path( $default_template );
-
 }
+
 /**
  * Callback function for product gallery block
  *
@@ -75,8 +74,11 @@ function wacoal_gallery_block_render_callback( $block ) {
 	global $wp, $post;
 
     $block_fields       = get_field('gallery');
-    $output             = '';
+
     $default_template   = '/template-parts/block/wacoal-product-gallery.php';
+    include get_theme_file_path( $default_template );
+
+    include get_theme_file_path( $default_template );
 
 }
 
@@ -89,10 +91,10 @@ function wacoal_gallery_block_render_callback( $block ) {
 function wacoal_gallery_carousel_render_callback( $block ) {
 	global $wp, $post;
 
-    $block_fields       = get_field('slider');
-    $output             = '';
-    $default_template   = '/template-parts/block/wacoal-product-carousel.php';
+    $block_fields       = have_rows('slider');
 
+    $default_template   = '/template-parts/block/wacoal-product-carousel.php';
+    include get_theme_file_path( $default_template );
 }
 
 /**
@@ -108,9 +110,9 @@ function wacoal_list_format_render_callback( $block ) {
     $block_heading      = ! empty( get_field('heading') ) ? get_field('heading') : '';
 	$block_subheading   = ! empty( get_field('short_description') ) ? get_field('short_description') : '';
 
-	$output             = '';
-    $default_template   = '/template-parts/block/wacoal-list-format.php';
 
+    $default_template   = '/template-parts/block/wacoal-list-format.php';
+    include get_theme_file_path( $default_template );
 }
 
 /**
@@ -141,8 +143,25 @@ function wacoal_question_answer_render_callback( $block ) {
 	global $wp, $post;
 
     $block_fields = get_field('question_answer');
-    // error_log('data--'.print_r($question_text,1));
     $default_template  = '/template-parts/block/wacoal-question-answer.php';
+
+    include get_theme_file_path( $default_template );
+
+}
+
+/**
+ * Callback function for staic links block
+ *
+ * @param [type] $block Block.
+ * @return void
+ */
+function wacoal_static_link_render_callback( $block ) {
+	global $wp, $post;
+
+    $block_fields = get_field('static_section');
+    $block_image_id  = $block_fields['image'];
+    $block_image_url = wp_get_attachment_image_src( $block_image_id , 'full');
+    $default_template  = '/template-parts/block/wacoal-static-links.php';
 
     include get_theme_file_path( $default_template );
 

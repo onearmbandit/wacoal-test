@@ -46,7 +46,7 @@ $recent_posts = get_posts(
 </section>
 
 <!-- Solutions section -->
-<div>
+<div style="text-align: center;padding:50px 0;">
     <a href="<?php echo esc_url( $parent_cat_url ); ?>">
         <?php echo esc_attr( $parent_cat_name ); ?>
     </a>
