@@ -63,6 +63,8 @@ function wacoal_size_chart_block_render_callback( $block ) {
     $default_template   = '/template-parts/block/wacoal-testimonial.php';
 
     include get_theme_file_path( $default_template );
+
+}
 function wacoal_gallery_block_render_callback( $block ) {
 	global $wp, $post;
 
