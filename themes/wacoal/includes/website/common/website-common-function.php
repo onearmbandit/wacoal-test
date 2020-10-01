@@ -244,6 +244,7 @@ add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
 
 /**
  * Add Menu li class.
+ * @param array $file_types file types.
  */
 function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
 {
@@ -260,6 +261,7 @@ add_filter('nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4);
 
 /**
  * Add support for svg images.
+ * @param array $file_types file types.
  */
 function wacoal_add_svg_file_types_to_uploads($file_types)
 {
@@ -272,7 +274,9 @@ function wacoal_add_svg_file_types_to_uploads($file_types)
 }
 add_action('upload_mimes', 'wacoal_add_svg_file_types_to_uploads');
 
-
+/**
+ * register widget
+ */
 function wacoal_widgets_init()
 {
     register_sidebar(

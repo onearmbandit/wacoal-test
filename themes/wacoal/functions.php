@@ -96,12 +96,7 @@ if (is_admin()) {
  */
 
 
-/**
- * Block Folder File Include
- */
-foreach ( glob(THEMEPATH . '/includes/website/block/*.php') as $filename ) {
-    include $filename;
-}
+
 
 /**
  * Website functions include - START
