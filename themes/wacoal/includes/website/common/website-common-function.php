@@ -450,7 +450,7 @@ function wacoal_get_primary_category( $post_id )
   * @param  string $url URL.
   * @return string
   */
-function wacoal_reconstruct_url( $url )
+function Wacoal_Reconstruct_url( $url )
 {
     $url_parts           = wp_parse_url($url);
     $url_parts['scheme'] = isset($url_parts['scheme']) ? $url_parts['scheme'] : '';
@@ -465,46 +465,35 @@ function wacoal_reconstruct_url( $url )
 /**
  * Function to create the image with crop points
  *
- * @param array $image       Image array.
- * @param int   $width       Image size to return using width.
- * @param array $ratio       Image ratio to return.
- * @param array $crop_points array of crop points.
- * @param int   $height      Image size to return using height.
+ * @param array $image Image array.
+ * @param int   $width Image size to return.
+ * @param array $ratio Image ratio to return.
  *
  * @return string Return the image URL.
  */
-function wacoal_get_image( $image, $width = null, $ratio = null, $crop_points = null, $height = null )
+function Wacoal_Get_image( $image, $width = null, $ratio = null )
 {
 
-    $url = '';
+    if ($image && ! empty($image) && ! empty($image[0]) ) {
 
-    if (! empty($image) && ! empty($image[0]) ) {
+        $url = Wacoal_Reconstruct_url($image[0]);
 
-        $url = wacoal_reconstruct_url($image[0]);
+        $dimention = null;
 
-        if (empty($crop_points) && ! empty($ratio) ) {
-            $default_crop_points = wmag_get_default_crop_points_for_image($image[1], $image[2]);
-            $crop_points         = $default_crop_points[ $ratio ];
+        if ($image[1] > $image[2] ) {
+            $dimention = $image[2];
+        } else {
+            $dimention = $image[1];
         }
 
-        if (! empty($width) && ! empty($ratio) && ! empty($crop_points) ) {
+        if (! empty($width) && ! empty($ratio) ) {
 
-            $crop_width  = $crop_points['crop_width'];
-            $crop_height = $crop_points['crop_height'];
-            $crop_x      = $crop_points['crop_x'];
-            $crop_y      = $crop_points['crop_y'];
-
-            $cur_ratio = ( $crop_height / $crop_width );
+            $height = ( $dimention * $ratio[1] ) / $ratio[0];
 
             $params = array(
-            'crop' => (int) $crop_x . 'px,' . (int) $crop_y . 'px,' . (int) $crop_width . 'px,' . (int) $crop_height . 'px',
+            'crop' => '0,0,' . (int) $dimention . 'px,' . (int) $height . 'px',
             'w'    => $width . 'px',
             );
-
-            if ($width > $image[1] ) {
-                $height           = ( $width * $cur_ratio );
-                $params['resize'] = $width . 'px,' . $height . 'px';
-            }
 
             $url .= '?' . build_query($params);
         } elseif (! empty($width) ) {
@@ -514,14 +503,10 @@ function wacoal_get_image( $image, $width = null, $ratio = null, $crop_points = 
             );
 
             $url .= '?' . build_query($params);
-        } elseif (! empty($height) ) {
-
-            $params = array(
-            'h' => $height . 'px',
-            );
-
-            $url .= '?' . build_query($params);
         }
+
+        return $url;
+    } else {
+        return '';
     }
-    return $url;
 }

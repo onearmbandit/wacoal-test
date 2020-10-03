@@ -13,7 +13,7 @@
 ?>
 
 <section class="banner-with-image"
-    style="background-image:url(<?php  echo esc_attr($top_banner_image_url[0]);?>);">
+    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
         </h1>
@@ -29,7 +29,7 @@
         <div class="swiper-wrapper">
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
                 ?>
-                <?php $thumbnail = get_the_post_thumbnail_url($slider_blog->ID);
+                <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
                 if (empty($thumbnail)) {
                     $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
                 }
@@ -104,7 +104,7 @@
     <div class="swiper-container featured-article">
         <div class="swiper-wrapper">
             <?php foreach ($featured_blog_slider as $key => $featured_blog) { ?>
-                <?php $thumbnail = get_the_post_thumbnail_url($featured_blog->ID);
+                <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
                 if (empty($thumbnail)) {
                     $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
                 }
@@ -155,7 +155,7 @@
     </div>
     <div class="more-blog--wrapper">
         <?php foreach ($featured_posts as $key => $blog) { ?>
-            <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
+            <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
             if (empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
