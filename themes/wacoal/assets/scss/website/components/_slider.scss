@@ -119,3 +119,16 @@
     background: var(--color-feat-article-bg);
   }
 }
+
+
+.article-details-slider {
+  max-width: get-vw(1590px);
+  margin: auto;
+
+  .swiper-slide {
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

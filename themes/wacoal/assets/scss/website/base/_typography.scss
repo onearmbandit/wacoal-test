@@ -2,22 +2,22 @@ h1, h2, h3, h4{
   @include BentonModDisp-Regular;
 }
 h1 {
-  font-size: calcRem(73);
-  line-height: calcRem(70);
+  font-size: calcRem(54);
+  line-height: calcRem(49);
 
   @include respond-above(sm) {
-    font-size: get-vw(191px);
+    font-size: get-vw(165px);
     line-height: 1;
   }
 }
 
 h2 {
-  font-size: calcRem(54);
-  line-height: calcRem(49);
+  font-size: calcRem(36);
+  line-height: calcRem(35);
 
   @include respond-above(sm) {
-      font-size: get-vw(165px);
-      line-height: 1;
+      font-size: get-vw(115px);
+      line-height: get-vw(109px);
   }
 }
 

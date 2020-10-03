@@ -50,7 +50,7 @@ $recent_posts = get_posts(
     <a href="<?php echo esc_url( $parent_cat_url ); ?>">
         <?php echo esc_attr( $parent_cat_name ); ?>
     </a>
-    <h2><?php echo esc_attr($post_title); ?></h2>
+    <h1><?php echo esc_attr($post_title); ?></h1>
     <span><?php echo wp_kses_post($post_excerpt); ?></span></br>
     <span><?php echo wp_kses_post($tag_line); ?></span>
 </div>
