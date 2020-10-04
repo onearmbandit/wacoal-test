@@ -377,5 +377,124 @@ wacoal_page_entry_top('');
         </div>
     </div>
 </section>
+
+<!-- Subhead Two -->
+<section class="subhead-two">
+    <div class="subhead-two--wrapper">
+        <div class="subhead-two--wrapper__title">Subhead 2 - Lorem ipsum dolor sit amen, consectetur adipiscing elit</div>
+        <div class="subhead-two--wrapper__para">
+        Body Copy Center Aligned – Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut sem viverra aliquet eget. Laoreet id donec ultrices tincidunt.
+        Scelerisque mauris pellentesque pulvinar pellentesque habitant.
+        </div>
+    </div>
+</section>
+
+<!-- List text format -->
+<section class="list-text-format">
+    <div class="list-text-format--wrapper">
+        <div class="list-box list-box-one">
+            <div class="list-box--number">
+                <span>1</span>
+                <h2>List Header 1</h2>
+            </div>
+            <div class="list-box--content">
+                <div class="list-box--heading">
+                    List Subhead Center Aligned Format
+                </div>
+                <div class="list-box--para">
+                    List Body Copy Center Aligned Format - Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut sem viverra aliquet eget. Laoreet id donec ultrices
+                    tincidunt. Scelerisque mauris pellentesque pulvinar pellentesque habitant.
+                    Massa placerat duis ultricies lacus sed turpis tincidunt. Gravida dictum fusce
+                </div>
+            </div>
+        </div>
+
+        <div class="list-box list-box-two">
+            <div class="list-box--heading">
+                List Subhead Left Aligned Format
+            </div>
+            <div class="list-box-even--wrapper">
+                <div class="list-box--content">
+                    <div class="list-box--para">
+                        List Body Copy Center Aligned Format - Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut sem viverra aliquet eget. Laoreet id donec ultrices
+                        tincidunt. Scelerisque mauris pellentesque pulvinar pellentesque habitant.
+                        Massa placerat duis ultricies lacus sed turpis tincidunt. Gravida dictum fusce
+                    </div>
+                </div>
+                <div class="list-box--number">
+                    <span>2</span>
+                    <h2>List</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-box list-box-three">
+            <div class="list-box--heading">
+                List Subhead Right Aligned Format
+            </div>
+            <div class="list-box-even--wrapper">
+                <div class="list-box--number">
+                    <span>3</span>
+                    <h2>List</h2>
+                </div>
+                <div class="list-box--content">
+                    <div class="list-box--para">
+                        List Body Copy Center Aligned Format - Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut sem viverra aliquet eget. Laoreet id donec ultrices
+                        tincidunt. Scelerisque mauris pellentesque pulvinar pellentesque habitant.
+                        Massa placerat duis ultricies lacus sed turpis tincidunt. Gravida dictum fusce
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-box list-box-two">
+            <div class="list-box--heading">
+                List Subhead Left Aligned Format
+            </div>
+            <div class="list-box-even--wrapper">
+                <div class="list-box--content">
+                    <div class="list-box--para">
+                        List Body Copy Center Aligned Format - Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut sem viverra aliquet eget. Laoreet id donec ultrices
+                        tincidunt. Scelerisque mauris pellentesque pulvinar pellentesque habitant.
+                        Massa placerat duis ultricies lacus sed turpis tincidunt. Gravida dictum fusce
+                    </div>
+                </div>
+                <div class="list-box--number">
+                    <span>4</span>
+                    <h2>List</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-box list-box-one">
+            <div class="list-box--number">
+                <span>5</span>
+                <h2>List</h2>
+            </div>
+            <div class="list-box--content">
+                <div class="list-box--heading">
+                    List Subhead Center Aligned Format
+                </div>
+                <div class="list-box--para">
+                    List Body Copy Center Aligned Format - Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Ut sem viverra aliquet eget. Laoreet id donec ultrices
+                    tincidunt. Scelerisque mauris pellentesque pulvinar pellentesque habitant.
+                    Massa placerat duis ultricies lacus sed turpis tincidunt. Gravida dictum fusce
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 <?php
 wacoal_page_entry_bottom();
