@@ -1,8 +1,13 @@
 <?php
 /**
  * Common Gutenberg ACF Block callback functions file.
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 
@@ -38,7 +43,6 @@ function wacoal_data_image_block_render_callback( $block )
     }
 }
 
-
 /**
  * Callback function for testimonial block
  *
@@ -69,9 +73,65 @@ function wacoal_testimonial_block_render_callback( $block )
 }
 
 /**
+ * Callback function for gallery carousel block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_gallery_carousel_render_callback( $block )
+{
+    $slider_images     = get_field('slider');
+    $shortcode_template = 'template-parts/block/wacoal-product-carousel.php';
+
+    if (! empty($slider_images) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Slider:</u></h4>
+            <span style="color:red">Empty Wacoal Slider Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_question_answer_render_callback( $block )
+{
+
+    $block_qna = get_field('question_answer');
+    $block_image_id = get_field('image');
+    $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+    $block_image_alt   = wacoal_get_image_alt($block_image_id, 'Block Image');
+    $block_image_url   = Wacoal_Get_image($block_image_array);
+
+    $shortcode_template = 'template-parts/block/wacoal-question-answer.php';
+
+    if (! empty($block_qna) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Question & Answer:</u></h4>
+            <span style="color:red">Empty Wacoal Q&A Block</span>
+            <?php
+        }
+    }
+
+}
+
+/**
  * Callback function for size chart block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
 function wacoal_size_chart_block_render_callback( $block )
@@ -101,30 +161,6 @@ function wacoal_gallery_block_render_callback( $block )
 
     $default_template   = '/template-parts/block/wacoal-product-gallery.php';
     include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for gallery carousel block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function wacoal_gallery_carousel_render_callback( $block )
-{
-    $slider_images     = get_field('slider');
-    $shortcode_template = 'template-parts/block/wacoal-product-carousel.php';
-
-    if (! empty($slider_images) ) {
-        include locate_template($shortcode_template);
-    } else {
-        if (is_admin() ) {
-            ?>
-            <h4><u>Slider:</u></h4>
-            <span style="color:red">Empty Wacoal Slider Block</span>
-            <?php
-        }
-    }
 }
 
 /**
@@ -167,26 +203,10 @@ function wacoal_title_description_render_callback( $block )
 }
 
 /**
- * Callback function for list block
- *
- * @param  [type] $block Block.
- * @return void
- */
-function wacoal_question_answer_render_callback( $block )
-{
-    global $wp, $post;
-
-    $block_fields = get_field('question_answer');
-    $default_template  = '/template-parts/block/wacoal-question-answer.php';
-
-    include get_theme_file_path($default_template);
-
-}
-
-/**
  * Callback function for staic links block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
 function wacoal_static_link_render_callback( $block )
