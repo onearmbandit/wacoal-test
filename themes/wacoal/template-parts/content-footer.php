@@ -1,15 +1,18 @@
 <?php
 /**
  * Template part for displaying footer content
+ * php version 7.4
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
-$copyright_value = get_field( 'copyright_text', 'options' );
-$social_share = get_field( 'social_share', 'options' );
-$oembeded = get_field( 'instagram_feeds', 'options' );
+$copyright_value = get_field('copyright_text', 'options');
+$social_share = get_field('social_share', 'options');
+$oembeded = get_field('instagram_feeds', 'options');
 ?>
 <footer class="footer-section">
     <div class="footer-wrapper">
@@ -27,7 +30,7 @@ $oembeded = get_field( 'instagram_feeds', 'options' );
 
 
             <div class="footer-social">
-                <?php foreach ($social_share as $key => $value){  ?>
+                <?php foreach($social_share as $key => $value){ ?>
                    <a href="<?php echo esc_url($value['link']['url']);?>" class="footer-social--icon">
                     <img src="<?php echo esc_url($value['icon']['url']);?>" alt="<?php echo esc_attr($value['icon']['alt']);?>" />
                     </a>

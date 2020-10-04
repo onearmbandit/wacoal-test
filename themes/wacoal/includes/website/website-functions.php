@@ -17,7 +17,6 @@ foreach ( glob(THEMEPATH . '/includes/website/common/*.php') as $filename ) {
     include $filename;
 }
 
-
 if (class_exists('acf') ) {
     /**
      * ACF Theme options includes

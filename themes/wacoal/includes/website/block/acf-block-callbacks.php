@@ -25,27 +25,36 @@ function wacoal_data_image_block_render_callback( $block )
     $default_template   = '/template-parts/block/wacoal-data-image.php';
 
     include get_theme_file_path($default_template);
-
 }
 
 
 /**
  * Callback function for testimonial block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
 function wacoal_testimonial_block_render_callback( $block )
 {
-    global $wp, $post;
+    $testimonial_image_id    = get_field('image');
+    $testimonial_image_array = wp_get_attachment_image_src($testimonial_image_id, 'full');
+    $testimonial_image_alt   = wacoal_get_image_alt($testimonial_image_id, 'Quote Image');
+    $testimonial_image_url   = Wacoal_Get_image($testimonial_image_array);
+    $testimonial_quote_text  = get_field('quote_text');
 
-    $testimonial_image_id = get_field('image');
-    $testimonial_image_url = wp_get_attachment_image_src($testimonial_image_id, 'full');
-    $testimonial_quote_text = get_field('quote_text');
+    $shortcode_template = 'template-parts/block/wacoal-testimonial.php';
 
-    $default_template   = '/template-parts/block/wacoal-testimonial.php';
-
-    include get_theme_file_path($default_template);
+    if (! empty($testimonial_quote_text) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Testimonial:</u></h4>
+            <span style="color:red">Empty Wacoal Testimonial Block</span>
+            <?php
+        }
+    }
 }
 
 /**
@@ -81,31 +90,37 @@ function wacoal_gallery_block_render_callback( $block )
 
     $default_template   = '/template-parts/block/wacoal-product-gallery.php';
     include get_theme_file_path($default_template);
-
-    include get_theme_file_path($default_template);
-
 }
 
 /**
  * Callback function for gallery carousel block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
 function wacoal_gallery_carousel_render_callback( $block )
 {
-    global $wp, $post;
+    $slider_images     = get_field('slider');
+    $shortcode_template = 'template-parts/block/wacoal-product-carousel.php';
 
-    $block_fields       = have_rows('slider');
-
-    $default_template   = '/template-parts/block/wacoal-product-carousel.php';
-    include get_theme_file_path($default_template);
+    if (! empty($slider_images) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Slider:</u></h4>
+            <span style="color:red">Empty Wacoal Slider Block</span>
+            <?php
+        }
+    }
 }
 
 /**
  * Callback function for list block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
 function wacoal_list_format_render_callback( $block )
@@ -116,7 +131,6 @@ function wacoal_list_format_render_callback( $block )
     $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
     $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
 
-
     $default_template   = '/template-parts/block/wacoal-list-format.php';
     include get_theme_file_path($default_template);
 }
@@ -124,7 +138,8 @@ function wacoal_list_format_render_callback( $block )
 /**
  * Callback function for list block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
 function wacoal_title_description_render_callback( $block )
