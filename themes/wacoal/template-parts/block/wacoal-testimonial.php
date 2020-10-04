@@ -16,7 +16,8 @@
 <section class="product-quote">
     <div class="product-quote--wrapper">
         <div class="product-quote--image">
-            <img src="<?php echo esc_url($testimonial_image_url); ?>" alt="Quote Image" />
+            <img src="<?php echo esc_url($testimonial_image_url); ?>"
+                alt="<?php echo wp_kses_post($testimonial_image_alt)?>" />
         </div>
         <div class="product-quote--content">
             <?php echo wp_kses_post($testimonial_quote_text)?>
