@@ -1,13 +1,8 @@
 <?php
 /**
  * Common Gutenberg ACF Block callback functions file.
- * php version 7.4
  *
- * @category Wacoal
- * @package  Wacoal
- * @author   Cemtrexlabs <hello@cemtrexlabs.com>
- * @license  https://cemtrexlabs.com 1.0
- * @link     Wacoal
+ * @package Wacoal
  */
 
 
@@ -43,6 +38,7 @@ function wacoal_data_image_block_render_callback( $block )
     }
 }
 
+
 /**
  * Callback function for testimonial block
  *
@@ -70,6 +66,68 @@ function wacoal_testimonial_block_render_callback( $block )
             <?php
         }
     }
+}
+
+/**
+ * Callback function for list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_text_img_list_format_render_callback( $block )
+{
+    $block_lists       = get_field('lists');
+    $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
+    $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
+
+    $shortcode_template   = '/template-parts/block/wacoal-list-format.php';
+
+    if (! empty($block_lists) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Lists:</u></h4>
+            <span style="color:red">Empty Wacoal Text Image Lists Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for size chart block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_size_chart_block_render_callback( $block )
+{
+    global $wp, $post;
+
+    $table_heading = get_field('table_name');
+    $table = get_field('table');
+    $table_data_header = $table['header'];
+    $table_data = $table['body'];
+    $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
+
+    include get_theme_file_path($default_template);
+}
+
+/**
+ * Callback function for product gallery block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_gallery_block_render_callback( $block )
+{
+    global $wp, $post;
+
+    $block_fields       = get_field('gallery');
+
+    $default_template   = '/template-parts/block/wacoal-product-gallery.php';
+    include get_theme_file_path($default_template);
 }
 
 /**
@@ -103,92 +161,6 @@ function wacoal_gallery_carousel_render_callback( $block )
  *
  * @return void
  */
-function wacoal_question_answer_render_callback( $block )
-{
-
-    $block_qna = get_field('question_answer');
-    $block_image_id = get_field('image');
-    $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-    $block_image_alt   = wacoal_get_image_alt($block_image_id, 'Block Image');
-    $block_image_url   = Wacoal_Get_image($block_image_array);
-
-    $shortcode_template = 'template-parts/block/wacoal-question-answer.php';
-
-    if (! empty($block_qna) ) {
-        include locate_template($shortcode_template);
-    } else {
-        if (is_admin() ) {
-            ?>
-            <h4><u>Question & Answer:</u></h4>
-            <span style="color:red">Empty Wacoal Q&A Block</span>
-            <?php
-        }
-    }
-
-}
-
-/**
- * Callback function for size chart block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function wacoal_size_chart_block_render_callback( $block )
-{
-    global $wp, $post;
-
-    $table_heading = get_field('table_name');
-    $table = get_field('table');
-    $table_data_header = $table['header'];
-    $table_data = $table['body'];
-    $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
-
-    include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for product gallery block
- *
- * @param  [type] $block Block.
- * @return void
- */
-function wacoal_gallery_block_render_callback( $block )
-{
-    global $wp, $post;
-
-    $block_fields       = get_field('gallery');
-
-    $default_template   = '/template-parts/block/wacoal-product-gallery.php';
-    include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for list block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function wacoal_list_format_render_callback( $block )
-{
-    global $wp, $post;
-
-    $block_fields       = get_field('lists');
-    $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
-    $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
-
-    $default_template   = '/template-parts/block/wacoal-list-format.php';
-    include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for list block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
 function wacoal_title_description_render_callback( $block )
 {
     global $wp, $post;
@@ -203,10 +175,26 @@ function wacoal_title_description_render_callback( $block )
 }
 
 /**
+ * Callback function for list block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_question_answer_render_callback( $block )
+{
+    global $wp, $post;
+
+    $block_fields = get_field('question_answer');
+    $default_template  = '/template-parts/block/wacoal-question-answer.php';
+
+    include get_theme_file_path($default_template);
+
+}
+
+/**
  * Callback function for staic links block
  *
- * @param [type] $block Block.
- *
+ * @param  [type] $block Block.
  * @return void
  */
 function wacoal_static_link_render_callback( $block )

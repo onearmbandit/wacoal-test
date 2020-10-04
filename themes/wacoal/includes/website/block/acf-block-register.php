@@ -62,10 +62,10 @@ function wacoal_acf_init()
         );
         acf_register_block_type(
             array(
-            'name'              => 'wacoal-list-format',
-            'title'             => __('Wacoal List Format'),
+            'name'              => 'wacoal-text-image-list-format',
+            'title'             => __('Wacoal Text Image List Format'),
             'description'       => __('A custom List format block.'),
-            'render_callback'   => 'wacoal_list_format_render_callback',
+            'render_callback'   => 'wacoal_text_img_list_format_render_callback',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
             'keywords'          => array( 'list-format' ),
