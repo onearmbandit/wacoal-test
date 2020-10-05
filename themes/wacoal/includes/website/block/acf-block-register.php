@@ -82,17 +82,17 @@ function wacoal_acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
-        acf_register_block(
-            array(
-            'name'              => 'wacoal-size-chart',
-            'title'             => __('Wacoal Size Chart'),
-            'description'       => __('A custom size chart block.'),
-            'render_callback'   => 'wacoal_size_chart_block_render_callback',
-            'category'          => 'common',
-            'icon'              => 'table',
-            'keywords'          => array( 'size-chart' ),
-            )
-        );
+        // acf_register_block(
+        //     array(
+        //     'name'              => 'wacoal-size-chart',
+        //     'title'             => __('Wacoal Size Chart'),
+        //     'description'       => __('A custom size chart block.'),
+        //     'render_callback'   => 'wacoal_size_chart_block_render_callback',
+        //     'category'          => 'common',
+        //     'icon'              => 'table',
+        //     'keywords'          => array( 'size-chart' ),
+        //     )
+        // );
         acf_register_block(
             array(
             'name'              => 'wacoal-subhead-description',
@@ -135,6 +135,17 @@ function wacoal_acf_init()
             'category'          => 'common',
             'icon'              => 'block-editor',
             'keywords'          => array( 'text', 'link', 'image' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'              => 'wacoal-size-chart-table',
+            'title'             => __('Wacoal Size Chart table'),
+            'description'       => __('A custom size chart table block.'),
+            'render_callback'   => 'wacoal_size_chart_table_block_render_callback',
+            'category'          => 'common',
+            'icon'              => 'admin',
+            'keywords'          => array( 'size-chart' ),
             )
         );
     }
