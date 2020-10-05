@@ -180,6 +180,31 @@ function wacoal_text_only_list_format_render_callback( $block )
 }
 
 /**
+ * Callback function for product gallery block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_gallery_block_render_callback( $block )
+{
+
+    $product_fields       = get_field('gallery');
+    $shortcode_template   = '/template-parts/block/wacoal-product-gallery.php';
+
+    if (! empty($product_fields) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Products List:</u></h4>
+            <span style="color:red">Empty Wacoal Product List Block</span>
+            <?php
+        }
+    }
+
+}
+
+/**
  * Callback function for size chart block
  *
  * @param  [type] $block Block.
@@ -195,22 +220,6 @@ function wacoal_size_chart_block_render_callback( $block )
     $table_data = $table['body'];
     $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
 
-    include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for product gallery block
- *
- * @param  [type] $block Block.
- * @return void
- */
-function wacoal_gallery_block_render_callback( $block )
-{
-    global $wp, $post;
-
-    $block_fields       = get_field('gallery');
-
-    $default_template   = '/template-parts/block/wacoal-product-gallery.php';
     include get_theme_file_path($default_template);
 }
 
