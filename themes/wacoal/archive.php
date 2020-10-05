@@ -5,7 +5,7 @@
  * @package Wacoal
  */
 wacoal_page_entry_top('');
-$related_blogs = get_field( 'more_from_blog', 'options' );
+
 ?>
 
 <div id="primary" class="content-area1111">
@@ -14,7 +14,7 @@ $related_blogs = get_field( 'more_from_blog', 'options' );
 $current_cat_data = get_the_category();
 $current_cat_id   = $current_cat_data[0]->cat_ID;
 $cat_name         = $current_cat_data[0]->name;
-
+$recent_posts= get_field( 'more_from_blog' ,'category_'.$current_cat_id);
 $featured_posts = get_posts(
     array(
     'numberposts' => 2,
@@ -25,20 +25,11 @@ $featured_posts = get_posts(
     'post_status'=>'publish'
     )
 );
-$recent_posts = get_posts(
-    array(
-    'numberposts' => 3,
-    'offset' => 0,
-    'orderby' => 'post_date',
-    'order' => 'DESC',
-    'post_status'=>'publish'
-    )
-);
 $posts_per_page=get_option( 'posts_per_page' );
 $category = get_category($current_cat_id);
 $count = $category->category_count;
- $page_num= $count/$posts_per_page;
-//print_r($wp_query);
+$page_num= $count/$posts_per_page;
+
 ?>
 
 <!-- Banner with background color -->
@@ -118,35 +109,37 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo esc_html('MORE FROM THE BLOG');?>
+            <?php echo esc_html($recent_posts['headline']);?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($recent_posts as $key => $blog) { ?>
-            <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
-            if(empty($thumbnail)){
+        <?php foreach ($recent_posts['posts'] as  $blog) { ?>
+            <?php
+
+             $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($blog));
+            if (empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id( $blog->ID );
+            $thumbnail_id = get_post_thumbnail_id($blog);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms( $blog->ID, 'category' );
+            $categories = get_the_terms($blog, 'category');
 
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
+                    <img src="<?php echo esc_url($thumbnail);?>" alt="" />
                 </div>
                 <div class="blog-tile--category">
-                    <?php if ( ! empty( $categories ) ) {
-                        echo esc_html( $categories[0]->name );
+                    <?php if (! empty($categories) ) {
+                        echo esc_html($categories[0]->name);
                     }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo esc_attr($blog->post_title);?>
+                    <?php echo esc_attr(get_the_title($blog));?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo  wp_kses_post($blog->post_excerpt);?>
+                <?php echo  wp_kses_post(get_the_excerpt($blog));?>
                 </p>
-                <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
+                <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>
 

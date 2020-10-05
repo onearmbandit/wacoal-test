@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Article Detail page
- *  * php version 7.4
+ * php version 7.4
  *
  * @category Wacoal
  * @package  Wacoal
@@ -16,7 +16,6 @@ wacoal_page_entry_top('');
 <!-- PLease DO NOT modify this file, we have all HTML components here -->
 
 <section class="article-details-banner">
-
 </section>
 
 <section class="article-header">

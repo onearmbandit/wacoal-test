@@ -44,6 +44,7 @@ add_action('after_setup_theme', 'wacoal_setup');
 function Wacoal_scripts()
 {
 
+    global $wp_query;
     $distFileJson = file_get_contents(__DIR__ . '/dist/assets.json');
     $distFile = json_decode($distFileJson, true);
 
@@ -55,7 +56,7 @@ function Wacoal_scripts()
         'wacoal_js_var',
         array(
         'ajaxurl' => admin_url('admin-ajax.php'),
-        'query_vars' => json_encode( $wp_query->query )
+        'query_vars' => wp_json_encode($wp_query->query)
         )
     );
 
@@ -115,7 +116,6 @@ if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
             return $image;
         }
     );
-
 
     add_filter(
         'jetpack_photon_domain',

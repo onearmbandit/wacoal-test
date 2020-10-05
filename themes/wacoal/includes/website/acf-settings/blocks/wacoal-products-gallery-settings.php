@@ -1,19 +1,23 @@
 <?php
 /**
- * Wacoal list acf settings
+ * Wacoal products gallery acf settings
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 acf_add_local_field_group(
     array(
-    'key' => 'group_5f74840ac6725',
-    'title' => 'Wacoal Text Image List Format',
+    'key' => 'group_5f747913ade3e',
+    'title' => 'Wacoal Product Gallery',
     'fields' => array(
         array(
-            'key' => 'field_5f748469bd0d0',
-            'label' => 'Lists',
-            'name' => 'lists',
+            'key' => 'field_5f747919248e0',
+            'label' => 'Gallery',
+            'name' => 'gallery',
             'type' => 'repeater',
             'instructions' => '',
             'required' => 0,
@@ -25,32 +29,24 @@ acf_add_local_field_group(
             ),
             'collapsed' => '',
             'min' => 0,
-            'max' => 0,
-            'layout' => 'block',
+            'max' => 4,
+            'layout' => 'table',
             'button_label' => '',
             'sub_fields' => array(
                 array(
-                    'key' => 'field_5f748589bd0d6',
+                    'key' => 'field_5f747953248e1',
                     'label' => 'Image',
                     'name' => 'image',
                     'type' => 'image',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field' => 'field_5f75905baa479',
-                                'operator' => '==',
-                                'value' => 'Style2',
-                            ),
-                        ),
-                    ),
+                    'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
                         'id' => '',
                     ),
-                    'return_format' => 'url',
+                    'return_format' => 'id',
                     'preview_size' => 'medium',
                     'library' => 'all',
                     'min_width' => '',
@@ -62,9 +58,9 @@ acf_add_local_field_group(
                     'mime_types' => '',
                 ),
                 array(
-                    'key' => 'field_5f748499bd0d2',
-                    'label' => 'List heading',
-                    'name' => 'list_heading',
+                    'key' => 'field_5f747963248e2',
+                    'label' => 'Name',
+                    'name' => 'name',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -81,62 +77,10 @@ acf_add_local_field_group(
                     'maxlength' => '',
                 ),
                 array(
-                    'key' => 'field_5f7485f0bd0d7',
-                    'label' => 'List subheading 1',
-                    'name' => 'list_subheading_1',
+                    'key' => 'field_5f747982248e3',
+                    'label' => 'Size',
+                    'name' => 'size',
                     'type' => 'text',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field' => 'field_5f748469bd0d0',
-                                'operator' => '!=empty',
-                            ),
-                        ),
-                    ),
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                array(
-                    'key' => 'field_5f74860abd0d8',
-                    'label' => 'List subheading 2',
-                    'name' => 'list_subheading_2',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field' => 'field_5f748469bd0d0',
-                                'operator' => '!=empty',
-                            ),
-                        ),
-                    ),
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                array(
-                    'key' => 'field_5f7484a9bd0d3',
-                    'label' => 'Description',
-                    'name' => 'description',
-                    'type' => 'textarea',
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
@@ -147,9 +91,25 @@ acf_add_local_field_group(
                     ),
                     'default_value' => '',
                     'placeholder' => '',
+                    'prepend' => '',
+                    'append' => '',
                     'maxlength' => '',
-                    'rows' => '',
-                    'new_lines' => '',
+                ),
+                array(
+                    'key' => 'field_5f74798b248e4',
+                    'label' => 'Product Link',
+                    'name' => 'product_link',
+                    'type' => 'url',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
                 ),
             ),
         ),
@@ -159,7 +119,7 @@ acf_add_local_field_group(
             array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/wacoal-text-image-list-format',
+                'value' => 'acf/wacoal-product-gallery',
             ),
         ),
     ),
@@ -173,4 +133,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-

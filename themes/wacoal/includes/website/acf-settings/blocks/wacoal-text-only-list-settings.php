@@ -1,19 +1,19 @@
 <?php
 /**
- * Wacoal list acf settings
+ * Wacoal text only list acf settings
  *
  * @package Wacoal
  */
 
 acf_add_local_field_group(
     array(
-    'key' => 'group_5f74840ac6725',
-    'title' => 'Wacoal Text Image List Format',
+    'key' => 'group_5f7ab009c58e9',
+    'title' => 'Wacoal Text only list format settings',
     'fields' => array(
         array(
-            'key' => 'field_5f748469bd0d0',
-            'label' => 'Lists',
-            'name' => 'lists',
+            'key' => 'field_5f7ab0381c7bb',
+            'label' => 'List',
+            'name' => 'list',
             'type' => 'repeater',
             'instructions' => '',
             'required' => 0,
@@ -26,45 +26,39 @@ acf_add_local_field_group(
             'collapsed' => '',
             'min' => 0,
             'max' => 0,
-            'layout' => 'block',
+            'layout' => 'row',
             'button_label' => '',
             'sub_fields' => array(
                 array(
-                    'key' => 'field_5f748589bd0d6',
-                    'label' => 'Image',
-                    'name' => 'image',
-                    'type' => 'image',
+                    'key' => 'field_5f7ab06e1c7bc',
+                    'label' => 'list align type',
+                    'name' => 'list_align_type',
+                    'type' => 'select',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field' => 'field_5f75905baa479',
-                                'operator' => '==',
-                                'value' => 'Style2',
-                            ),
-                        ),
-                    ),
+                    'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
                         'id' => '',
                     ),
-                    'return_format' => 'url',
-                    'preview_size' => 'medium',
-                    'library' => 'all',
-                    'min_width' => '',
-                    'min_height' => '',
-                    'min_size' => '',
-                    'max_width' => '',
-                    'max_height' => '',
-                    'max_size' => '',
-                    'mime_types' => '',
+                    'choices' => array(
+                        'center_aligned' => 'Center Aligned',
+                        'left_aligned' => 'Left Aligned',
+                        'right_aligned' => 'Right Aligned',
+                    ),
+                    'default_value' => false,
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
+                    'placeholder' => '',
                 ),
                 array(
-                    'key' => 'field_5f748499bd0d2',
-                    'label' => 'List heading',
-                    'name' => 'list_heading',
+                    'key' => 'field_5f7ab4c6b7ffa',
+                    'label' => 'list header',
+                    'name' => 'list_header',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
@@ -81,20 +75,13 @@ acf_add_local_field_group(
                     'maxlength' => '',
                 ),
                 array(
-                    'key' => 'field_5f7485f0bd0d7',
-                    'label' => 'List subheading 1',
-                    'name' => 'list_subheading_1',
+                    'key' => 'field_5f7ab1291c7bd',
+                    'label' => 'list subhead',
+                    'name' => 'list_subhead',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field' => 'field_5f748469bd0d0',
-                                'operator' => '!=empty',
-                            ),
-                        ),
-                    ),
+                    'conditional_logic' => 0,
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
@@ -107,35 +94,9 @@ acf_add_local_field_group(
                     'maxlength' => '',
                 ),
                 array(
-                    'key' => 'field_5f74860abd0d8',
-                    'label' => 'List subheading 2',
-                    'name' => 'list_subheading_2',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => array(
-                        array(
-                            array(
-                                'field' => 'field_5f748469bd0d0',
-                                'operator' => '!=empty',
-                            ),
-                        ),
-                    ),
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                array(
-                    'key' => 'field_5f7484a9bd0d3',
-                    'label' => 'Description',
-                    'name' => 'description',
+                    'key' => 'field_5f7ab1801c7be',
+                    'label' => 'List description',
+                    'name' => 'list_description',
                     'type' => 'textarea',
                     'instructions' => '',
                     'required' => 0,
@@ -159,7 +120,7 @@ acf_add_local_field_group(
             array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/wacoal-text-image-list-format',
+                'value' => 'acf/wacoal-text-only-list-format',
             ),
         ),
     ),
@@ -173,4 +134,5 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 

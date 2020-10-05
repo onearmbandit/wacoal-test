@@ -1,13 +1,31 @@
 <?php
 /**
- * HTML for title description block
+ * Html for subhead with description
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 ?>
-<div class="row" style="text-align: center;padding:50px 0;">
-    <div class="column">
-<h6 class="featured-box--content__subtitle"><?php echo esc_attr($title_text);?></h6>
-<p class="featured-box--content__title"><?php echo wp_kses_post($desc_text);?></p>
-</div>
-</div>
+
+<section class="subhead-two">
+    <div class="subhead-two--wrapper">
+        <?php
+        if ($subhead_text && !empty($subhead_text)) {
+            ?>
+        <div class="subhead-two--wrapper__title"><?php echo wp_kses_post($subhead_text);?></div>
+            <?php
+        }
+        if ($desc_text && !empty($desc_text)) {
+            ?>
+        <div class="subhead-two--wrapper__para">
+            <?php echo wp_kses_post($desc_text);?>
+        </div>
+            <?php
+        }
+        ?>
+    </div>
+</section>

@@ -188,11 +188,6 @@ function wacoal_page_entry_bottom()
 }
 
 /**
- * Remove admin bar from fontend
-*/
-add_filter('show_admin_bar', '__return_false');
-
-/**
  * ACF get fields of page by PageId
  */
 function wacoal_get_page_acf_fields($pageId)

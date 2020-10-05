@@ -1,19 +1,26 @@
 <?php
 /**
  * Wacoal block tesimonial
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
-
-global $post;
 
 ?>
 
-<div style="margin-top:200px;margin-bottom:100px;">
-<div style='float:left'>
-        <img src="<?php echo esc_url( $testimonial_image_url[0] ); ?>" style="height:200px;width:200px;"/>
+<!-- Product Quotes -->
+<section class="product-quote">
+    <div class="product-quote--wrapper">
+        <div class="product-quote--image">
+            <img src="<?php echo esc_url($testimonial_image_url); ?>"
+                alt="<?php echo wp_kses_post($testimonial_image_alt)?>" />
+        </div>
+        <div class="product-quote--content">
+            <?php echo wp_kses_post($testimonial_quote_text)?>
+        </div>
     </div>
-    <div style='float:leftt'>
-        <span><q><?php echo wp_kses_post( $testimonial_quote_text ); ?></span></q>
-    </div>
-</div>
+</section>

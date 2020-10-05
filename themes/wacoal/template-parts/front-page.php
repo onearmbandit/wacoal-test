@@ -30,6 +30,7 @@
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
                 ?>
                 <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
+                print_r($thumbnail);
                 if (empty($thumbnail)) {
                     $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
                 }
@@ -92,7 +93,7 @@
                     <div class="wacoal-101--list__icon">
                         <img src="<?php echo  esc_url(get_theme_file_uri()); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                     </div>
-                    <div class="wacoal-101--list__content"><a href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
+                    <div class="wacoal-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
             <?php } ?>
         </div>
@@ -151,22 +152,24 @@
 <!-- More From Blog -->
 <section class="more-blog">
     <div class="more-blog--title">
-            <?php echo esc_html('MORE FROM THE BLOG');?>
+            <?php echo esc_html($related_blogs['headline']);?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($featured_posts as $key => $blog) { ?>
-            <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
+        <?php foreach ($related_blogs['posts'] as  $blog) { ?>
+            <?php
+
+             $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($blog));
             if (empty($thumbnail)) {
                 $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
+            $thumbnail_id = get_post_thumbnail_id($blog);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
-            $categories = get_the_terms($blog->ID, 'category');
+            $categories = get_the_terms($blog, 'category');
 
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
+                    <img src="<?php echo esc_url($thumbnail);?>" alt="" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {
@@ -174,12 +177,12 @@
                     }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo esc_attr($blog->post_title);?>
+                    <?php echo esc_attr(get_the_title($blog));?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo  wp_kses_post($blog->post_excerpt);?>
+                <?php echo  wp_kses_post(get_the_excerpt($blog));?>
                 </p>
-                <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
+                <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>
     </div>

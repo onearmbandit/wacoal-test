@@ -1,8 +1,13 @@
 <?php
 /**
  * Common Gutenberg ACF Block register file.
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
  /**
@@ -46,21 +51,32 @@ function wacoal_acf_init()
         );
         acf_register_block_type(
             array(
-                'name'              => 'wacoal-product-slider',
-                'title'             => __('Wacoal Product Slider'),
-                'description'       => __('A custom product slider block.'),
-                'render_callback'   => 'wacoal_gallery_carousel_render_callback',
+                'name'              => 'wacoal-image-carousel',
+                'title'             => __('Wacoal Image Carousel'),
+                'description'       => __('A custom image carousel block.'),
+                'render_callback'   => 'wacoal_image_carousel_render_callback',
                 'category'          => 'formatting',
                 'icon'              => 'admin-comments',
-                'keywords'          => array( 'product-slider', 'gallery' ),
+                'keywords'          => array( 'image-carousel', 'gallery' ),
             )
         );
         acf_register_block_type(
             array(
-            'name'              => 'wacoal-list-format',
-            'title'             => __('Wacoal List Format'),
+            'name'              => 'wacoal-text-image-list-format',
+            'title'             => __('Wacoal Text Image List Format'),
             'description'       => __('A custom List format block.'),
-            'render_callback'   => 'wacoal_list_format_render_callback',
+            'render_callback'   => 'wacoal_text_img_list_format_render_callback',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'list-format' ),
+            )
+        );
+        acf_register_block_type(
+            array(
+            'name'              => 'wacoal-text-only-list-format',
+            'title'             => __('Wacoal Text Only List Format'),
+            'description'       => __('A custom Text Only List format block.'),
+            'render_callback'   => 'wacoal_text_only_list_format_render_callback',
             'category'          => 'formatting',
             'icon'              => 'admin-comments',
             'keywords'          => array( 'list-format' ),
@@ -79,10 +95,10 @@ function wacoal_acf_init()
         );
         acf_register_block(
             array(
-            'name'              => 'wacoal-title-description',
-            'title'             => __('Wacoal Title Description'),
-            'description'       => __('A custom title description block.'),
-            'render_callback'   => 'wacoal_title_description_render_callback',
+            'name'              => 'wacoal-subhead-description',
+            'title'             => __('Wacoal Subhead Description'),
+            'description'       => __('A custom subhead description block.'),
+            'render_callback'   => 'wacoal_subhead_description_render_callback',
             'category'          => 'common',
             'icon'              => 'block-editor',
             'keywords'          => array( 'title', 'description' ),
