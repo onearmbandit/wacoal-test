@@ -94,3 +94,48 @@
     }
   }
 }
+
+.pagination {
+
+  &--wrapper {
+    max-width: get-vw(400px);
+    width: 100%;
+    margin: auto;
+  }
+
+  .pagination-box {
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    &--btn {
+        width: get-vw(69px);
+        height: get-vw(40px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-article-bg);
+        margin-left: get-vw(37px);
+        margin-right: get-vw(37px);
+    }
+
+    &--numbers {
+      display: flex;
+
+      li {
+        letter-spacing: get-vw(10px);
+
+        a {
+          @include ProximaNova-Light;
+          font-size: get-vw(19px);
+          color: var(--color-gray);
+
+          &.active {
+            color: var(--color-black);
+          }
+        }
+      }
+    }
+  }
+
+}
