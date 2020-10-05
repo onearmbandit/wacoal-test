@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Template part for displaying header content
  * php version 7.4

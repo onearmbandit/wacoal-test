@@ -1,6 +1,6 @@
 <?php
 /**
- * Wacoal Product Slider
+ * Wacoal Image Carousel
  * php version 7.4
  *
  * @category Wacoal
@@ -22,11 +22,18 @@ if (is_admin() ) {
         <div class="swiper-container article-details-slider">
             <div class="swiper-wrapper">
                 <?php foreach ($slider_images as $key => $image) {
-                    $image_url = wp_get_attachment_image_src($image['image'], 'full');
+
+                    $image_id     = $image['image'];
+                    $image_array  = wp_get_attachment_image_src($image_id, 'full');
+                    $image_alt    = wacoal_get_image_alt($image_id, 'Carousel Image');
+                    $image_url    = Wacoal_Get_image($image_array);
+
                     ?>
                     <div class="swiper-slide">
-                        <img src="<?php echo esc_url(Wacoal_Get_image($image_url, 300)); ?>"
-                            alt="Slider Image" />
+                        <!-- <img src="<?php //echo esc_url(Wacoal_Get_image($image_url, 300)); ?>"
+                            alt="Slider Image" /> -->
+                            <img src="<?php echo esc_url($image_url); ?>"
+                            alt="<?php echo wp_kses_post($image_alt);?>" />
                     </div>
                 <?php } ?>
             </div>

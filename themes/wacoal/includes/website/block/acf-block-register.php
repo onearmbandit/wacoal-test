@@ -51,13 +51,13 @@ function wacoal_acf_init()
         );
         acf_register_block_type(
             array(
-                'name'              => 'wacoal-product-slider',
-                'title'             => __('Wacoal Product Slider'),
-                'description'       => __('A custom product slider block.'),
-                'render_callback'   => 'wacoal_gallery_carousel_render_callback',
+                'name'              => 'wacoal-image-carousel',
+                'title'             => __('Wacoal Image Carousel'),
+                'description'       => __('A custom image carousel block.'),
+                'render_callback'   => 'wacoal_image_carousel_render_callback',
                 'category'          => 'formatting',
                 'icon'              => 'admin-comments',
-                'keywords'          => array( 'product-slider', 'gallery' ),
+                'keywords'          => array( 'image-carousel', 'gallery' ),
             )
         );
         acf_register_block_type(
@@ -95,10 +95,10 @@ function wacoal_acf_init()
         );
         acf_register_block(
             array(
-            'name'              => 'wacoal-title-description',
-            'title'             => __('Wacoal Title Description'),
-            'description'       => __('A custom title description block.'),
-            'render_callback'   => 'wacoal_title_description_render_callback',
+            'name'              => 'wacoal-subhead-description',
+            'title'             => __('Wacoal Subhead Description'),
+            'description'       => __('A custom subhead description block.'),
+            'render_callback'   => 'wacoal_subhead_description_render_callback',
             'category'          => 'common',
             'icon'              => 'block-editor',
             'keywords'          => array( 'title', 'description' ),

@@ -80,10 +80,10 @@ function wacoal_testimonial_block_render_callback( $block )
  *
  * @return void
  */
-function wacoal_gallery_carousel_render_callback( $block )
+function wacoal_image_carousel_render_callback( $block )
 {
     $slider_images     = get_field('slider');
-    $shortcode_template = 'template-parts/block/wacoal-product-carousel.php';
+    $shortcode_template = 'template-parts/block/wacoal-image-carousel.php';
 
     if (! empty($slider_images) ) {
         include locate_template($shortcode_template);
@@ -91,7 +91,7 @@ function wacoal_gallery_carousel_render_callback( $block )
         if (is_admin() ) {
             ?>
             <h4><u>Slider:</u></h4>
-            <span style="color:red">Empty Wacoal Slider Block</span>
+            <span style="color:red">Empty Wacoal Image Carousel Block</span>
             <?php
         }
     }
@@ -180,6 +180,59 @@ function wacoal_text_only_list_format_render_callback( $block )
 }
 
 /**
+ * Callback function for product gallery block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_gallery_block_render_callback( $block )
+{
+
+    $product_fields       = get_field('gallery');
+    $shortcode_template   = '/template-parts/block/wacoal-product-gallery.php';
+
+    if (! empty($product_fields) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Products List:</u></h4>
+            <span style="color:red">Empty Wacoal Product List Block</span>
+            <?php
+        }
+    }
+
+}
+
+/**
+ * Callback function for subhead with description block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_subhead_description_render_callback( $block )
+{
+    $subhead_text = get_field('title_or_subhead');
+    $desc_text  = get_field('description');
+
+    $shortcode_template  = '/template-parts/block/wacoal-title-desc.php';
+
+    if (! empty($subhead_text) || ! empty($desc_text) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Subhead with Description</u></h4>
+            <span style="color:red">Empty Subhead with Description Block</span>
+            <?php
+        }
+    }
+
+}
+
+
+/**
  * Callback function for size chart block
  *
  * @param  [type] $block Block.
@@ -196,42 +249,6 @@ function wacoal_size_chart_block_render_callback( $block )
     $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
 
     include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for product gallery block
- *
- * @param  [type] $block Block.
- * @return void
- */
-function wacoal_gallery_block_render_callback( $block )
-{
-    global $wp, $post;
-
-    $block_fields       = get_field('gallery');
-
-    $default_template   = '/template-parts/block/wacoal-product-gallery.php';
-    include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for list block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function wacoal_title_description_render_callback( $block )
-{
-    global $wp, $post;
-
-    $title_text = get_field('title_or_subhead');
-    $desc_text  = get_field('description');
-
-    $default_template  = '/template-parts/block/wacoal-title-desc.php';
-
-    include get_theme_file_path($default_template);
-
 }
 
 /**

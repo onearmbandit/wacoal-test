@@ -10,32 +10,30 @@
  * @link     Wacoal
  */
 
-if(function_exists('acf_add_local_field_group') ) :
-
-    acf_add_local_field_group(
+acf_add_local_field_group(
+    array(
+    'key' => 'group_5f7481779f059',
+    'title' => 'Wacoal Image Carousel',
+    'fields' => array(
         array(
-        'key' => 'group_5f7481779f059',
-        'title' => 'Wacoal Product Slider',
-        'fields' => array(
-        array(
-        'key' => 'field_5f7481852db06',
-        'label' => 'Slider',
-        'name' => 'slider',
-        'type' => 'repeater',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
+            'key' => 'field_5f7481852db06',
+            'label' => 'Slider',
+            'name' => 'slider',
+            'type' => 'repeater',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
                 'width' => '',
                 'class' => '',
                 'id' => '',
-        ),
-        'collapsed' => '',
-        'min' => 0,
-        'max' => 0,
-        'layout' => 'table',
-        'button_label' => '',
-        'sub_fields' => array(
+            ),
+            'collapsed' => '',
+            'min' => 0,
+            'max' => 0,
+            'layout' => 'row',
+            'button_label' => '',
+            'sub_fields' => array(
                 array(
                     'key' => 'field_5f7481952db07',
                     'label' => 'Image',
@@ -60,27 +58,26 @@ if(function_exists('acf_add_local_field_group') ) :
                     'max_size' => '',
                     'mime_types' => '',
                 ),
+            ),
         ),
-        ),
-        ),
-        'location' => array(
+    ),
+    'location' => array(
         array(
-        array(
+            array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/wacoal-product-slider',
+                'value' => 'acf/wacoal-image-carousel',
+            ),
         ),
-        ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-        )
-    );
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+    'active' => true,
+    'description' => '',
+    )
+);
 
-endif;
