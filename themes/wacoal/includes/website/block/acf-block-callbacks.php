@@ -231,6 +231,36 @@ function wacoal_subhead_description_render_callback( $block )
 
 }
 
+/**
+ * Callback function for image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_image_render_callback( $block )
+{
+    $block_image_id     = get_field('image');
+    $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
+    $block_image_alt    = wacoal_get_image_alt($block_image_id, 'Block Image');
+    $block_image_url    = Wacoal_Get_image($block_image_array);
+    $caption            = get_field('image_caption');
+
+    $shortcode_template = 'template-parts/block/wacoal-image.php';
+
+    if (! empty($block_image_id) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Image:</u></h4>
+            <span style="color:red">Empty Wacoal Image Block</span>
+            <?php
+        }
+    }
+
+}
+
 
 /**
  * Callback function for size chart block
