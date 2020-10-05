@@ -126,6 +126,17 @@ function wacoal_acf_init()
             'keywords'          => array( 'text', 'link', 'image' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'              => 'wacoal-image',
+            'title'             => __('Wacoal Image'),
+            'description'       => __('A custom image block.'),
+            'render_callback'   => 'wacoal_image_render_callback',
+            'category'          => 'common',
+            'icon'              => 'block-editor',
+            'keywords'          => array( 'text', 'link', 'image' ),
+            )
+        );
     }
 }
 
