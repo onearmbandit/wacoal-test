@@ -71,6 +71,17 @@ function wacoal_acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'              => 'wacoal-text-only-list-format',
+            'title'             => __('Wacoal Text Only List Format'),
+            'description'       => __('A custom Text Only List format block.'),
+            'render_callback'   => 'wacoal_text_only_list_format_render_callback',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'list-format' ),
+            )
+        );
         acf_register_block(
             array(
             'name'              => 'wacoal-size-chart',

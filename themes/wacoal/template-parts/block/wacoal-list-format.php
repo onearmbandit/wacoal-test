@@ -10,20 +10,19 @@
  * @link     Wacoal
  */
 
-// error_log('$block_lists'.print_r($block_lists,1));
-?>
+if ($block_lists && !empty($block_lists)) {
+    ?>
 
 <section class="list-format">
     <div class="list-format--wrapper">
-    <?php foreach( $block_lists as $key => $list ){
-
+    <?php foreach ($block_lists as $key => $list) {
         $list_image_url = $list['image'];
-        $list_heading  = $list['list_heading'];
-        $list_subheading_1  = $list['list_subheading_1'];
-        $list_subheading_2  = $list['list_subheading_2'];
+        $list_heading = $list['list_heading'];
+        $list_subheading_1 = $list['list_subheading_1'];
+        $list_subheading_2 = $list['list_subheading_2'];
         $list_desc = $list['description'];
 
-        if($key % 2 == 0 ) {
+        if ($key % 2 == 0) {
             ?>
         <div class="list list-odd-order">
             <?php
@@ -33,7 +32,7 @@
                 <img src="<?php echo  esc_url($list_image_url) ?>" alt="List Image" />
             </div>
                 <?php
-            }?>
+            } ?>
             <div class="list--content">
                 <?php
                 if ($list_heading && !empty($list_heading)) {
@@ -66,8 +65,7 @@
                     <?php echo wp_kses_post($list_desc); ?>
                 </div>
                     <?php
-                }
-                ?>
+                } ?>
 
             </div>
         </div>
@@ -83,7 +81,7 @@
                 <img src="<?php echo  esc_url($list_image_url) ?>" alt="List Image" />
             </div>
                 <?php
-            }?>
+            } ?>
                         <div class="list--content">
                 <?php
                 if ($list_heading && !empty($list_heading)) {
@@ -116,14 +114,15 @@
                     <?php echo wp_kses_post($list_desc); ?>
                 </div>
                     <?php
-                }
-                ?>
+                } ?>
 
             </div>
         </div>
             <?php
         }
-    }
-    ?>
+    } ?>
 
 </section>
+    <?php
+}
+?>
