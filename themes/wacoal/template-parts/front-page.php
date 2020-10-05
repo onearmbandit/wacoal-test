@@ -28,16 +28,10 @@
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
-                ?>
-                <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
-                print_r($thumbnail);
-                if (empty($thumbnail)) {
-                    $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
-                }
                 $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
-                $alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id));
+                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
                 $categories = wacoal_get_primary_category($slider_blog->ID);
-
                 ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
@@ -53,8 +47,8 @@
                     </div>
 
                     <div class="evergreen-article--image">
-                        <img src="<?php echo  esc_url($thumbnail); ?>"
-                            alt="<?php echo esc_attr($alt);?>" />
+                        <img src="<?php echo  esc_url($thumbnail_url); ?>"
+                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                     <div class="evergreen-article--button">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
@@ -104,13 +98,10 @@
 <section class="featured-article--slider">
     <div class="swiper-container featured-article">
         <div class="swiper-wrapper">
-            <?php foreach ($featured_blog_slider as $key => $featured_blog) { ?>
-                <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
-                if (empty($thumbnail)) {
-                    $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
-                }
+            <?php foreach ($featured_blog_slider as $key => $featured_blog) {
                 $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
-                $alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id));
+                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($featured_blog->ID);
                 ?>
                 <div class="swiper-slide">
@@ -129,8 +120,8 @@
                                 class="btn primary">learn more</a>
                         </div>
                         <div class="featured-box--image">
-                            <img src="<?php echo  esc_url($thumbnail); ?>"
-                                alt="<?php echo esc_attr($alt);?>" />
+                            <img src="<?php echo  esc_url($thumbnail_url); ?>"
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </div>
                     </article>
                 </div>
@@ -155,21 +146,15 @@
             <?php echo esc_html($related_blogs['headline']);?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as  $blog) { ?>
-            <?php
-
-             $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($blog));
-            if (empty($thumbnail)) {
-                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
-            }
+        <?php foreach ($related_blogs['posts'] as  $blog) {
             $thumbnail_id = get_post_thumbnail_id($blog);
-            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id));
+            $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
             $categories = get_the_terms($blog, 'category');
-
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo esc_url($thumbnail);?>" alt="" />
+                    <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {
@@ -182,7 +167,8 @@
                 <p class="blog-tile--para">
                 <?php echo  wp_kses_post(get_the_excerpt($blog));?>
                 </p>
-                <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
+                <a href="<?php echo esc_url(get_permalink($blog));?>"
+                    class="btn primary">Learn More</a>
             </article>
         <?php } ?>
     </div>
