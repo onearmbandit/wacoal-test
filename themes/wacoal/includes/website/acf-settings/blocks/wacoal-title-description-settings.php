@@ -7,7 +7,7 @@
 
 acf_add_local_field_group(array(
 	'key' => 'group_5f757fe698d71',
-	'title' => 'Title with description settings',
+	'title' => 'Subhead with description settings',
 	'fields' => array(
 		array(
 			'key' => 'field_5f757ff68e119',
@@ -53,7 +53,7 @@ acf_add_local_field_group(array(
 			array(
 				'param' => 'block',
 				'operator' => '==',
-				'value' => 'acf/wacoal-title-description',
+				'value' => 'acf/wacoal-subhead-description',
 			),
 		),
 	),
@@ -66,5 +66,6 @@ acf_add_local_field_group(array(
 	'active' => true,
 	'description' => '',
 ));
+
 
 

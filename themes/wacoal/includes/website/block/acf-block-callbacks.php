@@ -205,6 +205,34 @@ function wacoal_gallery_block_render_callback( $block )
 }
 
 /**
+ * Callback function for subhead with description block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_subhead_description_render_callback( $block )
+{
+    $subhead_text = get_field('title_or_subhead');
+    $desc_text  = get_field('description');
+
+    $shortcode_template  = '/template-parts/block/wacoal-title-desc.php';
+
+    if (! empty($subhead_text) || ! empty($desc_text) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Subhead with Description</u></h4>
+            <span style="color:red">Empty Subhead with Description Block</span>
+            <?php
+        }
+    }
+
+}
+
+
+/**
  * Callback function for size chart block
  *
  * @param  [type] $block Block.
@@ -221,26 +249,6 @@ function wacoal_size_chart_block_render_callback( $block )
     $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
 
     include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for list block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function wacoal_title_description_render_callback( $block )
-{
-    global $wp, $post;
-
-    $title_text = get_field('title_or_subhead');
-    $desc_text  = get_field('description');
-
-    $default_template  = '/template-parts/block/wacoal-title-desc.php';
-
-    include get_theme_file_path($default_template);
-
 }
 
 /**

@@ -95,10 +95,10 @@ function wacoal_acf_init()
         );
         acf_register_block(
             array(
-            'name'              => 'wacoal-title-description',
-            'title'             => __('Wacoal Title Description'),
-            'description'       => __('A custom title description block.'),
-            'render_callback'   => 'wacoal_title_description_render_callback',
+            'name'              => 'wacoal-subhead-description',
+            'title'             => __('Wacoal Subhead Description'),
+            'description'       => __('A custom subhead description block.'),
+            'render_callback'   => 'wacoal_subhead_description_render_callback',
             'category'          => 'common',
             'icon'              => 'block-editor',
             'keywords'          => array( 'title', 'description' ),
