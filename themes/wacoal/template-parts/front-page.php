@@ -29,8 +29,10 @@
         <div class="swiper-wrapper">
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
                 ?>
-                <?php $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
-                print_r($thumbnail);
+                <?php
+
+                 $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($slider_blog->ID));
+
                 if (empty($thumbnail)) {
                     $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
                 }

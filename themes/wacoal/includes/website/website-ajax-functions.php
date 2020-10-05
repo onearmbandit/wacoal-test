@@ -31,7 +31,7 @@ function wacoal_ajax_pagination() {
         while ( $posts->have_posts() ) {
             $posts->the_post();
             if($i%3 == 0 || $i==0){
-                echo '<section class="more-blog"><div class="more-blog--wrapper">';
+                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
             }
             get_template_part( 'template-parts/content', 'excerpt' );
             if($i%3 == 2 || $i == 2){
@@ -41,15 +41,6 @@ function wacoal_ajax_pagination() {
         }
     }
 
-
-    the_posts_pagination( array(
-
-        'prev_text'          => __( '<', 'wacoal' ),
-        'next_text'          => __( '>', 'wacoal' ),
-        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( '', 'wacoal' ) . ' </span>',
-        'screen_reader_text' => ' ',
-
-        ) );
 
     die();
 }
