@@ -261,6 +261,32 @@ function wacoal_image_render_callback( $block )
 
 }
 
+/**
+ * Callback function for size chart table block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_size_chart_table_block_render_callback( $block )
+{
+    $chart_images     = get_field('size_chart');
+
+    $shortcode_template = 'template-parts/block/wacoal-size-chart-table.php';
+
+    if (! empty($chart_images) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Image:</u></h4>
+            <span style="color:red">Empty Wacoal Size Chart Table Block</span>
+            <?php
+        }
+    }
+
+}
+
 
 /**
  * Callback function for size chart block
