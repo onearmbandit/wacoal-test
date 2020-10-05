@@ -64,15 +64,7 @@ foreach ( $featured_blogs_ids as $featured_blog_id ) {
 $static_section = get_field('static_section', 'options');
 
 $related_blogs = get_field('more_from_blog', 'options');
-$featured_posts = get_posts(
-    array(
-    'numberposts' => 3,
-    'offset' => 0,
-    'orderby' => 'post_date',
-    'order' => 'DESC',
-    'post_status'=>'publish'
-    )
-);
+
 
 require locate_template('template-parts/front-page.php');
 

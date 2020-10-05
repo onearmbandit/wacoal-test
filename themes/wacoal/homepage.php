@@ -438,6 +438,29 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     </div>
 </section>
 
+<!-- Pagination -->
+<section class="pagination">
+    <div class="pagination--wrapper">
+        <div class="pagination-box">
+            <div class="pagination-box--btn">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/pagination-prev-icon.svg" alt="Prev Icon" />
+            </div>
+            <ul class="pagination-box--numbers">
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">6</a></li>
+            </ul>
+            <div class="pagination-box--btn">
+                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/pagination-next-icon.svg" alt="Next Icon" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- -->
+<section class="spacer-120"></section>
 <!-- Static Footer -->
 <!-- <footer class="footer-section">
     <div class="footer-wrapper">
