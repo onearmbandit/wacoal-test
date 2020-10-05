@@ -24,6 +24,7 @@ if ($product_fields && !empty($product_fields)) {
             $product_image_url    = Wacoal_Get_image($product_image_array);
             $product_name         = $product['name'];
             $product_size         = $product['size'];
+            $product_link         = $product['product_link'];
 
             ?>
         <div class="product-gallery--box">
@@ -31,17 +32,21 @@ if ($product_fields && !empty($product_fields)) {
             <?php
             if ($product_image_id && !empty($product_image_id)) {
                 ?>
+                <a href = "<?php echo esc_url($product_link);?>" >
             <div class="product-gallery--box__image">
                 <img src="<?php echo  esc_url($product_image_url); ?>" alt="<?php echo wp_kses_post($product_image_alt); ?>" />
             </div>
+                </a>
                 <?php
             }
             if ($product_name && !empty($product_name)) {
                 ?>
 
+            <a href = "<?php echo esc_url($product_link);?>" >
             <div class="product-gallery--box__title">
                 <?php echo wp_kses_post($product_name);?>
             </div>
+            </a>
                 <?php
             }
             if ($product_size && !empty($product_size)) {

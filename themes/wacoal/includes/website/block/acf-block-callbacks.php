@@ -80,10 +80,10 @@ function wacoal_testimonial_block_render_callback( $block )
  *
  * @return void
  */
-function wacoal_gallery_carousel_render_callback( $block )
+function wacoal_image_carousel_render_callback( $block )
 {
     $slider_images     = get_field('slider');
-    $shortcode_template = 'template-parts/block/wacoal-product-carousel.php';
+    $shortcode_template = 'template-parts/block/wacoal-image-carousel.php';
 
     if (! empty($slider_images) ) {
         include locate_template($shortcode_template);
@@ -91,7 +91,7 @@ function wacoal_gallery_carousel_render_callback( $block )
         if (is_admin() ) {
             ?>
             <h4><u>Slider:</u></h4>
-            <span style="color:red">Empty Wacoal Slider Block</span>
+            <span style="color:red">Empty Wacoal Image Carousel Block</span>
             <?php
         }
     }
