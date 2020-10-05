@@ -29,7 +29,7 @@
         <div class="swiper-wrapper">
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
                 $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
-                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id));
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
                 $categories = wacoal_get_primary_category($slider_blog->ID);
                 ?>
@@ -100,7 +100,7 @@
         <div class="swiper-wrapper">
             <?php foreach ($featured_blog_slider as $key => $featured_blog) {
                 $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
-                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id));
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($featured_blog->ID);
                 ?>
@@ -148,7 +148,7 @@
     <div class="more-blog--wrapper">
         <?php foreach ($related_blogs['posts'] as  $blog) {
             $thumbnail_id = get_post_thumbnail_id($blog);
-            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id));
+            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
             $categories = get_the_terms($blog, 'category');
             ?>
