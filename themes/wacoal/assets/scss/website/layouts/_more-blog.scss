@@ -36,6 +36,25 @@
     color: var(--color-gray);
     text-align: center;
     text-transform: uppercase;
+    max-width: get-vw(774px);
+    margin: auto;
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      width: get-vw(159px);
+      height: 1px;
+      background: var(--color-gray);
+      top: 50%;
+    }
+
+    &:before {
+      left: get-vw(-269px);
+    }
+
+    &:after {
+      right: get-vw(-269px);
+    }
 
     @include respond-above(sm) {
       font-size: get-vw(64px);

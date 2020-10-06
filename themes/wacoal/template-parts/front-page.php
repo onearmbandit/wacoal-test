@@ -148,7 +148,7 @@ endif;?>>
 
 <section class="spacer-80"></section>
 <!-- More From Blog -->
-<?php if(!empty($related_blogs['posts']) > 0) :?>
+<?php if(!empty($related_blogs['posts'])) :?>
     <section class="more-blog">
         <div class="more-blog--title">
                 <?php echo esc_html($related_blogs['headline']);?>
