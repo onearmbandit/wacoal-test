@@ -1,8 +1,13 @@
 <?php
 /**
  * Custom size chart settings
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 acf_add_local_field_group(array(
