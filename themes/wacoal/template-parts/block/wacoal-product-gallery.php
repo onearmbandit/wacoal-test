@@ -32,7 +32,8 @@ if ($product_fields && !empty($product_fields)) {
             <?php
             if ($product_image_id && !empty($product_image_id)) {
                 ?>
-                <a href = "<?php echo esc_url($product_link);?>" >
+                <a href = "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
+               endif;?>>
             <div class="product-gallery--box__image">
                 <img src="<?php echo  esc_url($product_image_url); ?>" alt="<?php echo wp_kses_post($product_image_alt); ?>" />
             </div>
@@ -42,7 +43,8 @@ if ($product_fields && !empty($product_fields)) {
             if ($product_name && !empty($product_name)) {
                 ?>
 
-            <a href = "<?php echo esc_url($product_link);?>" >
+            <a href = "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
+           endif;?>>
             <div class="product-gallery--box__title">
                 <?php echo wp_kses_post($product_name);?>
             </div>
