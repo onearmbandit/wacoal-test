@@ -572,3 +572,30 @@ function wacoal_paging_nav() {
 
     echo '</div></div></section>' . "\n";
     }
+    function wacoal_exclude_posts_from_specific_category( $query ) {
+
+        if ( is_admin() || ! $query->is_main_query() )
+            return;
+
+
+        if ($query->is_archive() ) {
+
+            $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
+
+            $featured_posts = get_posts(
+                array(
+                'numberposts' => 2,
+                'cat' => $get_cat_ID->term_id,
+                'offset' => 0,
+                'orderby' => 'post_date',
+                'order' => 'DESC',
+                'post_status'=>'publish'
+                )
+            );
+            foreach( $featured_posts as $featured_post ) {
+                $posts_to_exclude[]    = $featured_post->ID;
+            }
+            $query->set('post__not_in', $posts_to_exclude);
+        }
+    }
+    add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );

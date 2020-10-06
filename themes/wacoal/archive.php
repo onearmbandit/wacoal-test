@@ -68,6 +68,7 @@ else{
     $category = get_category($current_cat_id);
     $count = $category->category_count;
     $page_num= $count/$posts_per_page;
+    $posts_to_exclude=array();
 ?>
     <!-- Featured Articles -->
     <section class="featured-article">
@@ -78,6 +79,7 @@ else{
                 $featured_post_title   = get_the_title( $featured_post_id );
                 $featured_post_excerpt = get_the_excerpt( $featured_post_id );
                 $featured_image        = get_the_post_thumbnail_url( $featured_post_id );
+                $posts_to_exclude[]    = $featured_post->ID;
                 ?>
             <article class="featured-box">
                 <div class="featured-box--content">
