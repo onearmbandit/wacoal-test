@@ -145,37 +145,40 @@
 
 <section class="spacer-80"></section>
 <!-- More From Blog -->
-<section class="more-blog">
-    <div class="more-blog--title">
-            <?php echo esc_html($related_blogs['headline']);?>
-    </div>
-    <div class="more-blog--wrapper">
-        <?php foreach ($related_blogs['posts'] as  $blog) {
-            $thumbnail_id = get_post_thumbnail_id($blog);
-            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-            $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
-            $categories = get_the_terms($blog, 'category');
-            ?>
-            <article class="blog-tile">
-                <div class="blog-tile--image">
-                    <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                </div>
-                <div class="blog-tile--category">
-                    <?php if (! empty($categories) ) {
-                        echo esc_html($categories[0]->name);
-                    }?>
-                </div>
-                <h5 class="blog-tile--heading">
-                    <?php echo esc_attr(get_the_title($blog));?>
-                </h5>
-                <p class="blog-tile--para">
-                <?php echo  wp_kses_post(get_the_excerpt($blog));?>
-                </p>
-                <a href="<?php echo esc_url(get_permalink($blog));?>"
-                    class="btn primary">Learn More</a>
-            </article>
-        <?php } ?>
-    </div>
-</section>
-<!-- -->
+<?php if(!empty($related_blogs['posts']) > 0):?>
+    <section class="more-blog">
+        <div class="more-blog--title">
+                <?php echo esc_html($related_blogs['headline']);?>
+        </div>
+        <div class="more-blog--wrapper">
+            <?php foreach ($related_blogs['posts'] as  $blog) {
+                $thumbnail_id = get_post_thumbnail_id($blog);
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+                $categories = get_the_terms($blog, 'category');
+                ?>
+                <article class="blog-tile">
+                    <div class="blog-tile--image">
+                        <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+                    <div class="blog-tile--category">
+                        <?php if (! empty($categories) ) {
+                            echo esc_html($categories[0]->name);
+                        }?>
+                    </div>
+                    <h5 class="blog-tile--heading">
+                        <?php echo esc_attr(get_the_title($blog));?>
+                    </h5>
+                    <p class="blog-tile--para">
+                    <?php echo  wp_kses_post(get_the_excerpt($blog));?>
+                    </p>
+                    <a href="<?php echo esc_url(get_permalink($blog));?>"
+                        class="btn primary">Learn More</a>
+                </article>
+            <?php } ?>
+        </div>
+    </section>
+
+<?php endif;?>
+ <!-- -->
 <section class="spacer-120"></section>

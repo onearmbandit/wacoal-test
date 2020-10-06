@@ -25,6 +25,7 @@ $slider_blogs_ids = ! empty($slider_blogs) ? array_values($slider_blogs) : array
 $slider_blogs_posts = Wacoal_Query_posts(
     array(
         'post__in'  => $slider_blogs_ids,
+        'posts_per_page' => -1,
         'post_type' => array(
             'post',
         ),
@@ -46,9 +47,11 @@ $featured_blogs_ids = ! empty($featured_blogs) ? array_values($featured_blogs) :
 $featured_blogs_posts = Wacoal_Query_posts(
     array(
         'post__in'  => $featured_blogs_ids,
+        'posts_per_page' => -1,
         'post_type' => array(
             'post',
         ),
+
     )
 );
 
