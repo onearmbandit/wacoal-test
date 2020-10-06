@@ -103,6 +103,7 @@ if ($template == 'wacoal') {
     <section class="spacer-80"></section>
     <div id="post-listing">
     <?php if (have_posts()) { ?>
+        <?php echo esc_attr($cat_name);?>
         <div class="category-posts">
         <?php $i=0;?>
         <?php while ( have_posts() ) : the_post();

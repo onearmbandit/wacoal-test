@@ -22,7 +22,7 @@
         <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
     </div>
     <div class="blog-tile--category">
-        <?php echo esc_html(single_cat_title());?>
+    <?php single_cat_title('',true); ?>
     </div>
     <?php
     the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
