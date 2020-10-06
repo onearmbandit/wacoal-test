@@ -110,7 +110,8 @@ if ($template == 'wacoal') {
             if ($i%3 == 0 || $i==0) {
                 echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
             }
-            get_template_part('template-parts/content', 'excerpt');
+            include locate_template('template-parts/content-excerpt.php');
+            //get_template_part('template-parts/content', 'excerpt');
             if ($i%3 == 2 || $i == 2) {
                 echo '</div></section>';
             }
