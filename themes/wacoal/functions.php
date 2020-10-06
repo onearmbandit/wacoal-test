@@ -85,6 +85,18 @@ function Wacoal_Admin_scripts()
 add_action('admin_enqueue_scripts', 'Wacoal_Admin_scripts');
 
 /**
+ * Admin Enqueue ACF scripts.
+ */
+function acf_custom_text_toolbar_script()
+{
+
+    wp_enqueue_script('admin-js', THEMEURI . '/assets/js/admin/acf-custom-text-toolbar.js', array( 'jquery' ), '1.0.0', true);
+
+}
+
+add_action('acf/input/admin_enqueue_scripts', 'acf_custom_text_toolbar_script');
+
+/**
  * Admin functions include
  */
 if (is_admin()) {

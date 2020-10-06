@@ -1,6 +1,6 @@
 <?php
 /**
- * Wacoal testimonial acf settings
+ * Wacoal quotes acf settings
  * php version 7.4
  *
  * @category Wacoal
@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f74801fd9ad1',
-    'title' => 'Testimonial Settings',
+    'title' => 'Wacoal Quotes Settings',
     'fields' => array(
         array(
             'key' => 'field_5f74802bd8869',
@@ -43,8 +43,8 @@ acf_add_local_field_group(
             'key' => 'field_5f74806cd886a',
             'label' => 'quote text',
             'name' => 'quote_text',
-            'type' => 'textarea',
-            'instructions' => 'Add quote text',
+            'type' => 'wysiwyg',
+            'instructions' => '',
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -53,10 +53,10 @@ acf_add_local_field_group(
                 'id' => '',
             ),
             'default_value' => '',
-            'placeholder' => '',
-            'maxlength' => '',
-            'rows' => '',
-            'new_lines' => '',
+            'tabs' => 'all',
+            'toolbar' => 'content_toolbar',
+            'media_upload' => 1,
+            'delay' => 0,
         ),
     ),
     'location' => array(
@@ -64,7 +64,7 @@ acf_add_local_field_group(
             array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/wacoal-testimonial',
+                'value' => 'acf/wacoal-quotes',
             ),
         ),
     ),

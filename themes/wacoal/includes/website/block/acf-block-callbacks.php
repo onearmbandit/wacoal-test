@@ -51,7 +51,7 @@ function wacoal_data_image_block_render_callback( $block )
  *
  * @return void
  */
-function wacoal_testimonial_block_render_callback( $block )
+function wacoal_quotes_block_render_callback( $block )
 {
     $testimonial_image_id    = get_field('image');
     $testimonial_image_array = wp_get_attachment_image_src($testimonial_image_id, 'full');
@@ -59,15 +59,15 @@ function wacoal_testimonial_block_render_callback( $block )
     $testimonial_image_url   = Wacoal_Get_image($testimonial_image_array);
     $testimonial_quote_text  = get_field('quote_text');
 
-    $shortcode_template = 'template-parts/block/wacoal-testimonial.php';
+    $shortcode_template = 'template-parts/block/wacoal-quotes.php';
 
     if (! empty($testimonial_quote_text) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Testimonial:</u></h4>
-            <span style="color:red">Empty Wacoal Testimonial Block</span>
+            <h4><u>Wacoal Quotes:</u></h4>
+            <span style="color:red">Empty Wacoal Quotes Block</span>
             <?php
         }
     }

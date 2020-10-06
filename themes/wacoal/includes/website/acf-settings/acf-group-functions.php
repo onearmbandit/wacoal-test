@@ -29,3 +29,20 @@ if (function_exists('acf_add_local_field_group') ) {
     }
 
 }
+
+/**
+ * Function creates the custom toolbar for Dek.
+ *
+ * @param array $toolbars list of toolbars.
+ */
+function content_toolbar( $toolbars )
+{
+
+    $toolbars['Content Toolbar']    = array();
+    $toolbars['Content Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist' );
+
+    return $toolbars;
+}
+
+add_filter('acf/fields/wysiwyg/toolbars', 'content_toolbar');
+

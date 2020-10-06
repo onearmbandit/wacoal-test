@@ -1,8 +1,13 @@
 <?php
 /**
  * Wacoal image acf settings
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 acf_add_local_field_group(
@@ -29,7 +34,7 @@ acf_add_local_field_group(
                     'key' => 'field_5f732e32e1f37',
                     'label' => 'paragraph content',
                     'name' => 'paragraph_content',
-                    'type' => 'textarea',
+                    'type' => 'wysiwyg',
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
@@ -39,17 +44,17 @@ acf_add_local_field_group(
                         'id' => '',
                     ),
                     'default_value' => '',
-                    'placeholder' => '',
-                    'maxlength' => '',
-                    'rows' => '',
-                    'new_lines' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'content_toolbar',
+                    'media_upload' => 1,
+                    'delay' => 0,
                 ),
                 array(
                     'key' => 'field_5f732fd5e1f38',
                     'label' => 'Image',
                     'name' => 'image',
                     'type' => 'image',
-                    'instructions' => 'select image',
+                    'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -73,7 +78,7 @@ acf_add_local_field_group(
                     'label' => 'Image caption',
                     'name' => 'image_caption',
                     'type' => 'text',
-                    'instructions' => 'Add image caption',
+                    'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -86,25 +91,6 @@ acf_add_local_field_group(
                     'prepend' => '',
                     'append' => '',
                     'maxlength' => '',
-                ),
-                array(
-                    'key' => 'field_5f733041e1f3a',
-                    'label' => 'Enable Separator',
-                    'name' => 'enable_separator',
-                    'type' => 'true_false',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'message' => '',
-                    'default_value' => 1,
-                    'ui' => 0,
-                    'ui_on_text' => '',
-                    'ui_off_text' => '',
                 ),
             ),
         ),
@@ -128,5 +114,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
-

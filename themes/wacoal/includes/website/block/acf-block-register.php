@@ -29,10 +29,10 @@ function wacoal_acf_init()
         );
         acf_register_block(
             array(
-            'name' => 'wacoal-testimonial',
-            'title' => __('Wacoal Testimonial'),
-            'description' => __('A custom testimonial block.'),
-            'render_callback' => 'wacoal_testimonial_block_render_callback',
+            'name' => 'wacoal-quotes',
+            'title' => __('Wacoal Quotes'),
+            'description' => __('A custom quotes block.'),
+            'render_callback' => 'wacoal_quotes_block_render_callback',
             'category' => 'formatting',
             'icon' => 'admin-comments',
             'keywords' => array( 'testimonial', 'quote' ),
