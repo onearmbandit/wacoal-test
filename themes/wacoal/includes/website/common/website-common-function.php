@@ -515,6 +515,7 @@ function wacoal_paging_nav() {
     /** Stop execution if there's only 1 page */
     if( $wp_query->max_num_pages <= 1 )
         return;
+
     // $get_cat_ID=get_term_by('slug',$wp_query->query_vars['category_name'],'category');
 
     // $featured_posts = get_posts(
@@ -593,8 +594,8 @@ function wacoal_paging_nav() {
             return;
 
 
-        if ($query->is_archive() ) {
-            echo "in";
+        if ($query->is_archive() || isset($query->query_vars['category_name'])) {
+
             $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
 
             $featured_posts = get_posts(
@@ -611,8 +612,7 @@ function wacoal_paging_nav() {
                 $posts_to_exclude[]    = $featured_post->ID;
             }
             $query->set('post__not_in', $posts_to_exclude);
-        }else{
-            echo "out";
         }
+
     }
     add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );

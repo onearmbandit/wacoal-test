@@ -15,7 +15,23 @@ add_action( 'wp_ajax_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
 function wacoal_ajax_pagination() {
     $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
 
+    $get_cat_ID=get_term_by('slug',$query_vars['category_name'],'category');
+
+    $featured_posts = get_posts(
+        array(
+        'numberposts' => 2,
+        'cat' => $get_cat_ID->term_id,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+        )
+    );
+    foreach( $featured_posts as $featured_post ) {
+        $posts_to_exclude[]    = $featured_post->ID;
+    }
     $query_vars['paged'] = $_POST['page'];
+    $query_vars['post__not_in'] = $posts_to_exclude;
 
 
     $posts = new WP_Query( $query_vars );
