@@ -21,7 +21,7 @@ class WPSEO_Tracking_Theme_Data implements WPSEO_Collection {
 		return [
 			'theme' => [
 				'name'        => $theme->get( 'Name' ),
-				'url'         => $theme->get( 'ThemeURI' ),
+				'url'         => $theme->get( 'esc_url(THEMEURI)' ),
 				'version'     => $theme->get( 'Version' ),
 				'author'      => [
 					'name' => $theme->get( 'Author' ),

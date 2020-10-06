@@ -9,7 +9,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <title><?php wp_title(''); ?>
     </title>
-    <link rel="shortcut icon" href="<?php echo esc_url( THEMEURI ); ?>/assets/images/favicon.png"
+    <link rel="shortcut icon" href="<?php echo esc_url( esc_url(THEMEURI) ); ?>/assets/images/favicon.png"
         type="image/x-icon" />
 
     <?php if (is_singular() && pings_open(get_queried_object())) : ?>

@@ -36,7 +36,7 @@ $featured_posts = get_posts(
 
 <!-- Header -->
 <!-- <header class="header-section">
-    <img class="header-section--logo" src="<?php //echo  get_theme_file_uri(); ?>/assets/images/wacoal-logo.svg" alt="Wacoal" />
+    <img class="header-section--logo" src="<?php //echo  esc_url(THEMEURI); ?>/assets/images/wacoal-logo.svg" alt="Wacoal" />
 </header>
 <nav class="header-navigation">
     <ul class="header-navigation--ul">
@@ -101,7 +101,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <a href="" class="btn primary">learn more</a>
             </div>
             <div class="featured-box--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
             </div>
         </article>
         <article class="featured-box">
@@ -112,7 +112,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <a href="" class="btn primary">learn more</a>
             </div>
             <div class="featured-box--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
             </div>
         </article>
     </div>
@@ -127,7 +127,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
         <div class="wacoal-101--image">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacoal-101-image.png" alt="Wacoal 101" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wacoal-101-image.png" alt="Wacoal 101" />
         </div>
         <div class="wacoal-101--content">
             <div class="wacoal-101--content__title">
@@ -135,31 +135,31 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
             </div>
             <div class="wacoal-101--list">
                 <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                 </div>
                 <div class="wacoal-101--list__content">Bra Finder</div>
             </div>
             <div class="wacoal-101--list">
                 <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                 </div>
                 <div class="wacoal-101--list__content">Bra Fit Calculator</div>
             </div>
             <div class="wacoal-101--list">
                 <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                 </div>
                 <div class="wacoal-101--list__content">Breast Shape Guide</div>
             </div>
             <div class="wacoal-101--list">
                 <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                 </div>
                 <div class="wacoal-101--list__content">Size Charts</div>
             </div>
             <div class="wacoal-101--list">
                 <div class="wacoal-101--list__icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                 </div>
                 <div class="wacoal-101--list__content">Ask A Bra Fit Expert</div>
             </div>
@@ -180,7 +180,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="more-blog--wrapper">
         <article class="blog-tile">
             <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-1.png" alt="Blog Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-1.png" alt="Blog Image" />
             </div>
             <div class="blog-tile--category">
                 Category
@@ -198,7 +198,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
         <article class="blog-tile">
             <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-2.png" alt="Blog Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-2.png" alt="Blog Image" />
             </div>
             <div class="blog-tile--category">
                 Category
@@ -216,7 +216,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
         <article class="blog-tile">
             <div class="blog-tile--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/blog-img-3.png" alt="Blog Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-3.png" alt="Blog Image" />
             </div>
             <div class="blog-tile--category">
                 Category
@@ -241,26 +241,26 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="swiper-container full-width-slider">
         <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         </div>
 
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
     </div>
 </section>
@@ -279,7 +279,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
             </div>
             <div class="evergreen-article--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
             </div>
             <div class="evergreen-article--button">
                 <a href="" class="btn primary">learn more</a>
@@ -292,7 +292,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
             </div>
             <div class="evergreen-article--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
             </div>
             <div class="evergreen-article--button">
                 <a href="" class="btn primary">learn more</a>
@@ -305,7 +305,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
             </div>
             <div class="evergreen-article--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
             </div>
             <div class="evergreen-article--button">
                 <a href="" class="btn primary">learn more</a>
@@ -318,7 +318,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
             </div>
             <div class="evergreen-article--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
             </div>
             <div class="evergreen-article--button">
                 <a href="" class="btn primary">learn more</a>
@@ -331,7 +331,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
             </div>
             <div class="evergreen-article--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
             </div>
             <div class="evergreen-article--button">
                 <a href="" class="btn primary">learn more</a>
@@ -344,7 +344,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <p class="evergreen-article--content__para">lightweight, breathable fabrics so you can keep your cool all day (and night) long.</p>
             </div>
             <div class="evergreen-article--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
             </div>
             <div class="evergreen-article--button">
                 <a href="" class="btn primary">learn more</a>
@@ -355,10 +355,10 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
   </div>
 </section>
@@ -379,7 +379,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                         <a href="" class="btn primary">learn more</a>
                     </div>
                     <div class="featured-box--image">
-                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
                     </div>
                 </article>
             </div>
@@ -393,7 +393,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                         <a href="" class="btn primary">learn more</a>
                     </div>
                     <div class="featured-box--image">
-                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
                     </div>
                 </article>
             </div>
@@ -407,7 +407,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                         <a href="" class="btn primary">learn more</a>
                     </div>
                     <div class="featured-box--image">
-                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
                     </div>
                 </article>
             </div>
@@ -421,7 +421,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                         <a href="" class="btn primary">learn more</a>
                     </div>
                     <div class="featured-box--image">
-                        <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-image.png" alt="Featured Article" />
                     </div>
                 </article>
             </div>
@@ -430,10 +430,10 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
     </div>
 </section>
@@ -443,7 +443,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
     <div class="pagination--wrapper">
         <div class="pagination-box">
             <div class="pagination-box--btn">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/pagination-prev-icon.svg" alt="Prev Icon" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pagination-prev-icon.svg" alt="Prev Icon" />
             </div>
             <ul class="pagination-box--numbers">
                 <li><a href="#" class="active">1</a></li>
@@ -453,7 +453,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
                 <li><a href="#">6</a></li>
             </ul>
             <div class="pagination-box--btn">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/pagination-next-icon.svg" alt="Next Icon" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pagination-next-icon.svg" alt="Next Icon" />
             </div>
         </div>
     </div>
@@ -566,23 +566,23 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
         </div>
         <div class="footer-wrapper--right">
             <div class="footer-images">
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-1.png" alt="Wacoal Image 1" />
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-2.png" alt="Wacoal Image 2" />
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-3.png" alt="Wacoal Image 3" />
-                <img class="footer-images--img" src="<?php echo  get_theme_file_uri(); ?>/assets/images/footer-img-4.png" alt="Wacoal Image 4" />
+                <img class="footer-images--img" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/footer-img-1.png" alt="Wacoal Image 1" />
+                <img class="footer-images--img" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/footer-img-2.png" alt="Wacoal Image 2" />
+                <img class="footer-images--img" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/footer-img-3.png" alt="Wacoal Image 3" />
+                <img class="footer-images--img" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/footer-img-4.png" alt="Wacoal Image 4" />
             </div>
             <div class="footer-social">
                 <a href="" class="footer-social--icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/facebook-icon.svg" alt="Wacoal Facebook" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/facebook-icon.svg" alt="Wacoal Facebook" />
                 </a>
                 <a href="" class="footer-social--icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/twitter-icon.svg" alt="Wacoal Twitter" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/twitter-icon.svg" alt="Wacoal Twitter" />
                 </a>
                 <a href="" class="footer-social--icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/youtube-icon.svg" alt="Wacoal Youtube" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/youtube-icon.svg" alt="Wacoal Youtube" />
                 </a>
                 <a href="" class="footer-social--icon">
-                    <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/instagram-icon.svg" alt="Wacoal Instagram" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/instagram-icon.svg" alt="Wacoal Instagram" />
                 </a>
             </div>
         </div>

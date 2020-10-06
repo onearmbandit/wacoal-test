@@ -73,7 +73,7 @@ function Wacoal_Admin_scripts()
     }
 
     wp_enqueue_style('jquery');
-    wp_enqueue_script('wacoal-admin-js', THEMEURI . '/assets/js/wpadmin.js', array('jquery'), null, true);
+    wp_enqueue_script('wacoal-admin-js', esc_url(THEMEURI) . '/assets/js/wpadmin.js', array('jquery'), null, true);
     wp_localize_script(
         'admin',
         'wacoal_js_var_admin',
@@ -90,7 +90,7 @@ add_action('admin_enqueue_scripts', 'Wacoal_Admin_scripts');
 function acf_custom_text_toolbar_script()
 {
 
-    wp_enqueue_script('admin-js', THEMEURI . '/assets/js/admin/acf-custom-text-toolbar.js', array( 'jquery' ), '1.0.0', true);
+    wp_enqueue_script('admin-js', esc_url(THEMEURI) . '/assets/js/admin/acf-custom-text-toolbar.js', array( 'jquery' ), '1.0.0', true);
 
 }
 

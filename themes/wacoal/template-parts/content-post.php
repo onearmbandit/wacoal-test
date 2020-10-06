@@ -48,7 +48,7 @@
         <?php foreach ($recent_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
             if (empty($thumbnail)) {
-                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+                $thumbnail = esc_url(THEMEURI).'/assets/images/blog-img-1.png';
             }
             $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
