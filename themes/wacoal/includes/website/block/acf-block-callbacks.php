@@ -112,6 +112,7 @@ function wacoal_question_answer_render_callback( $block )
     $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
     $block_image_alt   = wacoal_get_image_alt($block_image_id, 'Block Image');
     $block_image_url   = Wacoal_Get_image($block_image_array);
+    $image_caption     = get_field('caption');
 
     $shortcode_template = 'template-parts/block/wacoal-question-answer.php';
 

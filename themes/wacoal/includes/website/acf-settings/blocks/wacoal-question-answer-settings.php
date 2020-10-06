@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f7598f9da32f',
-    'title' => 'question answer settings',
+    'title' => 'Wacoal question answer settings',
     'fields' => array(
         array(
             'key' => 'field_5f75a314def12',
@@ -57,7 +57,7 @@ acf_add_local_field_group(
                     'key' => 'field_5f75a3a1def14',
                     'label' => 'answer text',
                     'name' => 'answer_text',
-                    'type' => 'textarea',
+                    'type' => 'wysiwyg',
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
@@ -67,10 +67,10 @@ acf_add_local_field_group(
                         'id' => '',
                     ),
                     'default_value' => '',
-                    'placeholder' => '',
-                    'maxlength' => '',
-                    'rows' => '',
-                    'new_lines' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'content_toolbar',
+                    'media_upload' => 1,
+                    'delay' => 0,
                 ),
             ),
         ),
@@ -97,6 +97,25 @@ acf_add_local_field_group(
             'max_height' => '',
             'max_size' => '',
             'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_5f7bfd26271a1',
+            'label' => 'caption',
+            'name' => 'caption',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
         ),
     ),
     'location' => array(

@@ -29,7 +29,7 @@ if ($block_image_id && !empty($block_image_id)) {
                 <figure>
                     <img src="<?php echo esc_url($block_image_url); ?>"
                         alt="<?php echo wp_kses_post($block_image_alt); ?>" />
-                    <figcaption>Image caption - Lorem Ipsum</figcaption>
+                    <figcaption><?php echo wp_kses_post($image_caption); ?></figcaption>
                 </figure>
             </div>
         </div>
