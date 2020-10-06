@@ -134,18 +134,15 @@ else{
         <?php foreach ($recent_posts['posts'] as  $blog) { ?>
             <?php
 
-             $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($blog));
-            if (empty($thumbnail)) {
-                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
-            }
             $thumbnail_id = get_post_thumbnail_id($blog);
-            $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
             $categories = get_the_terms($blog, 'category');
 
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo esc_url($thumbnail);?>" alt="" />
+                    <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {

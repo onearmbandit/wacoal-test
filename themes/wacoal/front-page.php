@@ -16,8 +16,8 @@ $top_banner_fields    = get_field('top_banner', 'options');
 $top_banner_image_id  = $top_banner_fields['banner_image'];
 $top_banner_title     = $top_banner_fields['banner_title'];
 $top_banner_subtitle  = $top_banner_fields['banner_subtitle'];
-$top_banner_link  = $top_banner_fields['link'];
-$top_banner_newtab  = $top_banner_fields['open_in_new_tab'];
+$top_banner_link      = $top_banner_fields['link'];
+$top_banner_newtab    = $top_banner_fields['open_in_new_tab'];
 $top_banner_image_url = wp_get_attachment_image_src($top_banner_image_id, full);
 
 $slider_blogs = get_field('slider_posts', 'options');

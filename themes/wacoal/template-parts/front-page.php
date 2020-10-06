@@ -11,7 +11,9 @@
  */
 
 ?>
-
+<?php if(!empty($top_banner_link)):?>
+<a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true): echo "target='_blank'"; endif;?>>
+<?php endif;?>
 <section class="banner-with-image"
     style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
         <h1 class="banner-with-image--heading">
@@ -21,7 +23,9 @@
             <?php echo esc_attr($top_banner_subtitle);?>
         </p>
 </section>
-
+<?php if(!empty($top_banner_link)):?>
+</a>
+<?php endif;?>
 <section class="spacer-80"></section>
 <!-- Evergreen Articles Slider -->
 <section class="evergreen-article--slider">

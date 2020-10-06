@@ -13,7 +13,12 @@
 ?>
 <article class="blog-tile">
     <div class="blog-tile--image">
-        <?php the_post_thumbnail(array(334, 220)); ?>
+        <?php
+        $thumbnail_id = get_post_thumbnail_id();
+        $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+        $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+        //the_post_thumbnail(array(334, 220)); ?>
+        <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
     </div>
     <div class="blog-tile--category">
         <?php echo esc_html(single_cat_title());?>
