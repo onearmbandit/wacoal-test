@@ -97,7 +97,7 @@ acf_add_local_field_group(
                     'key' => 'field_5f7ab1801c7be',
                     'label' => 'List description',
                     'name' => 'list_description',
-                    'type' => 'textarea',
+                    'type' => 'wysiwyg',
                     'instructions' => '',
                     'required' => 0,
                     'conditional_logic' => 0,
@@ -107,10 +107,10 @@ acf_add_local_field_group(
                         'id' => '',
                     ),
                     'default_value' => '',
-                    'placeholder' => '',
-                    'maxlength' => '',
-                    'rows' => '',
-                    'new_lines' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'content_toolbar',
+                    'media_upload' => 1,
+                    'delay' => 0,
                 ),
             ),
         ),
@@ -134,5 +134,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
 
