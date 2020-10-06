@@ -45,7 +45,8 @@
             <?php echo esc_html('MORE FROM THE BLOG');?>
     </div>
     <div class="more-blog--wrapper">
-        <?php foreach ($recent_posts as $key => $blog) { ?>
+        <?php
+        foreach ($recent_posts as $key => $blog) { ?>
             <?php $thumbnail = get_the_post_thumbnail_url($blog->ID);
             if (empty($thumbnail)) {
                 $thumbnail = esc_url(THEMEURI).'/assets/images/blog-img-1.png';

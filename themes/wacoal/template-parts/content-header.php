@@ -17,7 +17,7 @@ $logo = get_field( 'header_logo', 'options' );
         <img class="header-section--logo" src="<?php echo esc_url($logo);?>" alt="Wacoal" />
     </a>
     <a class="shop-wacoal-btn" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
-        <?php echo esc_html(get_field('header_button_text', 'options'));?> >
+        <?php echo esc_html(get_field('header_button_text', 'options'));?>
     </a>
 </header>
 

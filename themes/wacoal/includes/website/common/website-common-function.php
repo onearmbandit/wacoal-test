@@ -580,7 +580,7 @@ function wacoal_paging_nav() {
             return;
 
 
-        if ($query->is_archive() || isset($query->query_vars['category_name'])) {
+        if ($query->is_archive() ) {
 
             $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
 
