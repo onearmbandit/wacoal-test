@@ -55,7 +55,7 @@ wacoal_page_entry_top('');
         <div class="article-questions--image">
 
         <figure>
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/article-details-img.png" alt="Article Details" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-details-img.png" alt="Article Details" />
             <figcaption>Image caption - Lorem Ipsum</figcaption>
         </figure>
 
@@ -119,7 +119,7 @@ wacoal_page_entry_top('');
         </div>
         <div class="article-questions--image">
         <figure>
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/article-details-img.png" alt="Article Details" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-details-img.png" alt="Article Details" />
             <figcaption>Image caption - Lorem Ipsum</figcaption>
         </figure>
 
@@ -153,26 +153,26 @@ wacoal_page_entry_top('');
     <div class="swiper-container article-details-slider">
         <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         <div class="swiper-slide">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" alt="Slider Image" />
         </div>
         </div>
 
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
     </div>
 </section>
@@ -182,7 +182,7 @@ wacoal_page_entry_top('');
     <div class="product-gallery--wrapper">
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/product-gallery-image.png" alt="Product" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/product-gallery-image.png" alt="Product" />
             </div>
             <div class="product-gallery--box__title">
                 product name caption
@@ -194,7 +194,7 @@ wacoal_page_entry_top('');
 
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/product-gallery-image.png" alt="Product" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/product-gallery-image.png" alt="Product" />
             </div>
             <div class="product-gallery--box__title">
                 product name caption
@@ -206,7 +206,7 @@ wacoal_page_entry_top('');
 
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/product-gallery-image.png" alt="Product" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/product-gallery-image.png" alt="Product" />
             </div>
             <div class="product-gallery--box__title">
                 product name caption
@@ -218,7 +218,7 @@ wacoal_page_entry_top('');
 
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/product-gallery-image.png" alt="Product" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/product-gallery-image.png" alt="Product" />
             </div>
             <div class="product-gallery--box__title">
                 product name caption
@@ -234,7 +234,7 @@ wacoal_page_entry_top('');
 <section class="product-quote">
     <div class="product-quote--wrapper">
         <div class="product-quote--image">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/quote-image.png" alt="Quote Image" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-image.png" alt="Quote Image" />
         </div>
         <div class="product-quote--content">
             Pull Quote – Lorem
@@ -250,7 +250,7 @@ wacoal_page_entry_top('');
     <div class="list-format--wrapper">
         <div class="list list-odd-order">
             <div class="list--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/list-image.svg" alt="List Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/list-image.svg" alt="List Image" />
             </div>
             <div class="list--content">
                 <div class="list--content__heading">
@@ -275,7 +275,7 @@ wacoal_page_entry_top('');
 
         <div class="list list-even-order">
             <div class="list--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/list-image.svg" alt="List Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/list-image.svg" alt="List Image" />
             </div>
             <div class="list--content">
                 <div class="list--content__heading">
@@ -301,7 +301,7 @@ wacoal_page_entry_top('');
 
         <div class="list list-odd-order">
             <div class="list--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/list-image.svg" alt="List Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/list-image.svg" alt="List Image" />
             </div>
             <div class="list--content">
                 <div class="list--content__heading">
@@ -326,7 +326,7 @@ wacoal_page_entry_top('');
 
         <div class="list list-even-order">
             <div class="list--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/list-image.svg" alt="List Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/list-image.svg" alt="List Image" />
             </div>
             <div class="list--content">
                 <div class="list--content__heading">
@@ -352,7 +352,7 @@ wacoal_page_entry_top('');
 
         <div class="list list-odd-order">
             <div class="list--image">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/list-image.svg" alt="List Image" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/list-image.svg" alt="List Image" />
             </div>
             <div class="list--content">
                 <div class="list--content__heading">

@@ -517,6 +517,7 @@ function wacoal_paging_nav() {
     if( $wp_query->max_num_pages <= 1 )
         return;
 
+
     $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
     $max   = intval( $wp_query->max_num_pages );
 
@@ -539,13 +540,13 @@ function wacoal_paging_nav() {
 
     /** Previous Post Link */
     // if ( get_previous_posts_link() )
-    printf( '<div class="pagination-box--btn prev"><a href="%s"><img src="'.get_theme_file_uri().'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", get_previous_posts_page_link() );
+    printf( '<div class="pagination-box--btn prev"><a href="%s"><img src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link() ));
     echo '<ul class="pagination-box--numbers">';
     /** Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
         $class = 1 == $paged ? ' class="active"' : '';
 
-        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", esc_attr($class), esc_url( get_pagenum_link( 1 ) ), '1' );
 
         if ( ! in_array( 2, $links ) )
             echo '<li>…</li>';
@@ -555,7 +556,7 @@ function wacoal_paging_nav() {
     sort( $links );
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
-        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", esc_attr($class), esc_url( get_pagenum_link( $link ) ), esc_url($link) );
     }
 
     /** Link to last page, plus ellipses if necessary */
@@ -564,12 +565,40 @@ function wacoal_paging_nav() {
             echo '<li class="nav-links">…</li>' . "\n";
 
         $class = $paged == $max ? ' class="active"' : '';
-        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", esc_attr($class), esc_url( get_pagenum_link( $max ) ), esc_url($max) );
     }
     echo '</ul>';
     /** Next Post Link */
     if ( get_next_posts_link() )
-        printf( '<div class="pagination-box--btn next"><a href="%s"><img src="'.get_theme_file_uri().'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", get_next_posts_page_link() );
+        printf( '<div class="pagination-box--btn next"><a href="%s"><img src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link() ));
 
     echo '</div></div></section>' . "\n";
     }
+    function wacoal_exclude_posts_from_specific_category( $query ) {
+
+        if ( is_admin() || ! $query->is_main_query() )
+            return;
+
+
+        if ($query->is_archive() || isset($query->query_vars['category_name'])) {
+
+            $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
+
+            $featured_posts = get_posts(
+                array(
+                'numberposts' => 2,
+                'cat' => $get_cat_ID->term_id,
+                'offset' => 0,
+                'orderby' => 'post_date',
+                'order' => 'DESC',
+                'post_status'=>'publish'
+                )
+            );
+            foreach( $featured_posts as $featured_post ) {
+                $posts_to_exclude[]    = $featured_post->ID;
+            }
+            $query->set('post__not_in', $posts_to_exclude);
+        }
+
+    }
+    add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );

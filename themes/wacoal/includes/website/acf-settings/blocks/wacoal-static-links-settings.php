@@ -1,14 +1,19 @@
 <?php
 /**
- * custom static links settings
+ * Custom static links settings
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 acf_add_local_field_group(
     array(
     'key' => 'group_5f75df44143cb',
-    'title' => 'static link section',
+    'title' => 'Wacoal static link section',
     'fields' => array(
         array(
             'key' => 'field_5f75df4cfdc05',
@@ -23,7 +28,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'layout' => 'row',
+            'layout' => 'block',
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f75df6afdc06',

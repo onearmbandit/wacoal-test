@@ -118,7 +118,7 @@ function wacoal_acf_init()
         acf_register_block(
             array(
             'name'              => 'wacoal-static-link',
-            'title'             => __('Wacoal static links'),
+            'title'             => __('Wacoal 101 static links'),
             'description'       => __('A custom text and link block.'),
             'render_callback'   => 'wacoal_static_link_render_callback',
             'category'          => 'common',

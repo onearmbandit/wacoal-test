@@ -220,7 +220,7 @@ class WPSEO_HelpScout implements WPSEO_WordPress_Integration {
 
 		$theme_info = sprintf(
 			'<a href="%1$s">%2$s</a> v%3$s by %4$s',
-			esc_attr( $theme->display( 'ThemeURI' ) ),
+			esc_attr( $theme->display( 'esc_url(THEMEURI)' ) ),
 			esc_html( $theme->display( 'Name' ) ),
 			esc_html( $theme->display( 'Version' ) ),
 			esc_html( $theme->display( 'Author' ) )

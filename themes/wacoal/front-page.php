@@ -68,7 +68,6 @@ $static_section = get_field('static_section', 'options');
 
 $related_blogs = get_field('more_from_blog', 'options');
 
-
 require locate_template('template-parts/front-page.php');
 
 wacoal_page_entry_bottom();

@@ -62,7 +62,7 @@ class Wacoal_Post
     {
 
         $post_properties        = [ 'ID', 'post_title', 'post_name', 'post_type', 'post_date', 'post_status', 'post_excerpt' ];
-        $post_meta_text_fields  = [ 'dek' ];
+        $post_meta_text_fields  = [ 'tag_line' ];
         $post_meta_image_fields = [ 'promo_image', ];
 
         $field_value = null;

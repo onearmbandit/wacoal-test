@@ -40,10 +40,10 @@ if (is_admin() ) {
 
             <div class="swiper-pagination custom-swiper-pagination"></div>
             <div class="swiper-button-next swiper-buttun-background">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
             </div>
             <div class="swiper-button-prev swiper-buttun-background">
-                <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
             </div>
         </div>
     </section>
