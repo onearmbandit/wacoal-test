@@ -54,6 +54,8 @@
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             $categories = get_the_terms($blog->ID, 'category');
             $post_tagline = get_field('tag_line', $blog);
+            $cat_ID = $categories[0]->term_id;
+            $cat_url = get_term_link($cat_ID);
 
             ?>
             <article class="blog-tile">
@@ -61,9 +63,9 @@
                     <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
-                    <?php if (! empty($categories) ) {
-                        echo esc_html($categories[0]->name);
-                    }?>
+                    <?php if (! empty($categories) ) { ?>
+                       <a href="<?php echo esc_url(get_term_link($cat_ID));?>" ><?php echo esc_html($categories[0]->name);?></a>
+                    <?php }?>
                 </div>
                 <h5 class="blog-tile--heading">
                     <?php echo esc_attr($blog->post_title);?>

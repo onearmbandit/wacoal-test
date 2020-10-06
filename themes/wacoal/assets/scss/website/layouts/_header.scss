@@ -68,3 +68,17 @@
     }
   }
 }
+
+.shop-wacoal-btn {
+  position: absolute;
+  right: 0;
+  @include ProximaNova-Light;
+  font-size: get-vw(32px);
+  color: var(--color-white);
+  text-transform: uppercase;
+  background: var(--color-black);
+  padding-left: get-vw(101px);
+  padding-right: get-vw(101px);
+  padding-top: get-vw(23px);
+  padding-bottom: get-vw(23px);
+}

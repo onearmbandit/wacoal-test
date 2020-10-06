@@ -140,16 +140,17 @@ if ($template == 'wacoal') {
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = get_the_terms($blog, 'category');
                 $post_tagline = get_field('tag_line', $blog);
-
+                $cat_ID = $categories[0]->term_id;
+                $cat_url = get_term_link($cat_ID);
                 ?>
                 <article class="blog-tile">
                     <div class="blog-tile--image">
                         <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                     <div class="blog-tile--category">
-                        <?php if (! empty($categories) ) {
-                            echo esc_html($categories[0]->name);
-                        }?>
+                        <?php if (! empty($categories) ) {?>
+                           <a href="<?php echo esc_url($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
+                        <?php }?>
                     </div>
                     <h5 class="blog-tile--heading">
                         <?php echo esc_attr(get_the_title($blog));?>

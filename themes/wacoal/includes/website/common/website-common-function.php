@@ -471,7 +471,8 @@ function Wacoal_Get_image( $image, $width = null, $ratio = null )
 
     if ($image && ! empty($image) && ! empty($image[0]) ) {
 
-        $url = Wacoal_Reconstruct_url($image[0]);
+        // $url = Wacoal_Reconstruct_url($image[0]);
+        $url = $image[0];
 
         $dimention = null;
 

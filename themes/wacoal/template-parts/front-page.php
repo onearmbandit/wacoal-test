@@ -37,12 +37,13 @@ endif;?>>
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
                 $categories = wacoal_get_primary_category($slider_blog->ID);
+                $cat_ID = $categories->term_id;
                 ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
-                        <p class="evergreen-article--content__subtitle">
+                        <a href="<?php echo esc_url(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
                             <?php echo esc_attr($categories->name);?>
-                        </p>
+                        </a>
                         <h3 class="evergreen-article--content__title">
                             <?php echo esc_attr($slider_blog->post_title);?>
                         </h3>
@@ -108,13 +109,14 @@ endif;?>>
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($featured_blog->ID);
+                $cat_ID = $categories->term_id;
                 ?>
                 <div class="swiper-slide">
                     <article class="featured-box">
                         <div class="featured-box--content">
-                            <p class="featured-box--content__subtitle">
+                            <a href="<?php echo esc_url(get_term_link($cat_ID));?>" class="featured-box--content__subtitle">
                                 <?php echo esc_attr($categories->name);?>
-                            </p>
+                            </a>
                             <h4 class="featured-box--content__title">
                                 <?php echo esc_attr($featured_blog->post_title);?>
                             </h4>
@@ -158,15 +160,16 @@ endif;?>>
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($postId);
                 $post_tagline = get_field('tag_line', $postId);
+                $cat_ID = $categories->term_id;
                 ?>
                 <article class="blog-tile">
                     <div class="blog-tile--image">
                         <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                     <div class="blog-tile--category">
-                        <?php if (! empty($categories) ) {
-                            echo esc_html($categories->name);
-                        }?>
+                        <?php if (! empty($categories) ) {?>
+                           <a href="<?php echo esc_url(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
+                        <?php }?>
                     </div>
                     <h5 class="blog-tile--heading">
                         <?php echo esc_attr(get_the_title($postId));?>
