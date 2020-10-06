@@ -11,8 +11,9 @@
  */
 
 ?>
-<?php if(!empty($top_banner_link)):?>
-<a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true): echo "target='_blank'"; endif;?>>
+<?php if(!empty($top_banner_link)) :?>
+<a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true) : echo "target='_blank'";
+endif;?>>
 <?php endif;?>
 <section class="banner-with-image"
     style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
@@ -23,7 +24,7 @@
             <?php echo esc_attr($top_banner_subtitle);?>
         </p>
 </section>
-<?php if(!empty($top_banner_link)):?>
+<?php if(!empty($top_banner_link)) :?>
 </a>
 <?php endif;?>
 <section class="spacer-80"></section>
@@ -36,6 +37,7 @@
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
                 $categories = wacoal_get_primary_category($slider_blog->ID);
+                $post_tagline = get_field('tag_line', $slider_blog->ID);
                 ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
@@ -46,7 +48,7 @@
                             <?php echo esc_attr($slider_blog->post_title);?>
                         </h3>
                         <p class="evergreen-article--content__para">
-                            <?php echo wp_kses_post($slider_blog->post_excerpt);?>
+                            <?php echo wp_kses_post($post_tagline);?>
                         </p>
                     </div>
 
@@ -107,6 +109,7 @@
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($featured_blog->ID);
+                $post_tagline = get_field('tag_line', $featured_blog->ID);
                 ?>
                 <div class="swiper-slide">
                     <article class="featured-box">
@@ -118,7 +121,7 @@
                                 <?php echo esc_attr($featured_blog->post_title);?>
                             </h4>
                             <p class="featured-box--content__para">
-                                <?php echo wp_kses_post($featured_blog->post_excerpt);?>
+                                <?php echo wp_kses_post($post_tagline);?>
                             </p>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
                                 class="btn primary">learn more</a>
@@ -145,7 +148,7 @@
 
 <section class="spacer-80"></section>
 <!-- More From Blog -->
-<?php if(!empty($related_blogs['posts']) > 0):?>
+<?php if(!empty($related_blogs['posts']) > 0) :?>
     <section class="more-blog">
         <div class="more-blog--title">
                 <?php echo esc_html($related_blogs['headline']);?>
@@ -156,6 +159,7 @@
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = get_the_terms($blog, 'category');
+                $post_tagline = get_field('tag_line', $blog);
                 ?>
                 <article class="blog-tile">
                     <div class="blog-tile--image">
@@ -170,7 +174,7 @@
                         <?php echo esc_attr(get_the_title($blog));?>
                     </h5>
                     <p class="blog-tile--para">
-                    <?php echo  wp_kses_post(get_the_excerpt($blog));?>
+                    <?php echo  wp_kses_post($post_tagline);?>
                     </p>
                     <a href="<?php echo esc_url(get_permalink($blog));?>"
                         class="btn primary">Learn More</a>

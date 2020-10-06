@@ -113,6 +113,25 @@ acf_add_local_field_group(
                 ),
             ),
         ),
+        array(
+            'key' => 'field_5f7c29df3836f',
+            'label' => 'Links Open in new tab',
+            'name' => 'open_in_new_tab',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 1,
+            'ui' => 0,
+            'ui_on_text' => '',
+            'ui_off_text' => '',
+        ),
     ),
     'location' => array(
         array(

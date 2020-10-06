@@ -53,6 +53,7 @@
             $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             $categories = get_the_terms($blog->ID, 'category');
+            $post_tagline = get_field('tag_line', $blog);
 
             ?>
             <article class="blog-tile">
@@ -68,7 +69,7 @@
                     <?php echo esc_attr($blog->post_title);?>
                 </h5>
                 <p class="blog-tile--para">
-                <?php echo  wp_kses_post($blog->post_excerpt);?>
+                <?php echo  wp_kses_post($post_tagline);?>
                 </p>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>

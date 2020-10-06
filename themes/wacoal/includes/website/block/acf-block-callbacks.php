@@ -53,15 +53,15 @@ function wacoal_data_image_block_render_callback( $block )
  */
 function wacoal_quotes_block_render_callback( $block )
 {
-    $testimonial_image_id    = get_field('image');
-    $testimonial_image_array = wp_get_attachment_image_src($testimonial_image_id, 'full');
-    $testimonial_image_alt   = wacoal_get_image_alt($testimonial_image_id, 'Quote Image');
-    $testimonial_image_url   = Wacoal_Get_image($testimonial_image_array);
-    $testimonial_quote_text  = get_field('quote_text');
+    $quotes_image_id    = get_field('image');
+    $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
+    $quotes_image_alt   = wacoal_get_image_alt($quotes_image_id, 'Quote Image');
+    $quotes_image_url   = Wacoal_Get_image($quotes_image_array);
+    $quote_text  = get_field('quote_text');
 
     $shortcode_template = 'template-parts/block/wacoal-quotes.php';
 
-    if (! empty($testimonial_quote_text) ) {
+    if (! empty($quote_text) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
@@ -190,6 +190,7 @@ function wacoal_gallery_block_render_callback( $block )
 {
 
     $product_fields       = get_field('gallery');
+    $new_tab              = get_field('open_in_new_tab');
     $shortcode_template   = '/template-parts/block/wacoal-product-gallery.php';
 
     if (! empty($product_fields) ) {

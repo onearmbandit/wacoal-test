@@ -77,7 +77,7 @@ else{
             foreach( $featured_posts as $featured_post ) {
                 $featured_post_id      = $featured_post->ID;
                 $featured_post_title   = get_the_title( $featured_post_id );
-                $featured_post_excerpt = get_the_excerpt( $featured_post_id );
+                $post_tagline          = get_field('tag_line', $featured_post_id);
                 $featured_image        = get_the_post_thumbnail_url( $featured_post_id );
                 $posts_to_exclude[]    = $featured_post->ID;
                 ?>
@@ -85,7 +85,7 @@ else{
                 <div class="featured-box--content">
                     <p class="featured-box--content__subtitle"><?php echo esc_attr( $cat_name ); ?></p>
                     <h4 class="featured-box--content__title"><?php echo esc_attr( $featured_post_title ); ?></h4>
-                    <p class="featured-box--content__para"><?php echo wp_kses_post( $featured_post_excerpt ); ?></p>
+                    <p class="featured-box--content__para"><?php echo wp_kses_post( $post_tagline ); ?></p>
                     <a href="<?php echo esc_url( get_permalink( $featured_post_id ) ); ?>" class="btn primary">learn more</a>
                 </div>
                 <div class="featured-box--image">
@@ -141,6 +141,7 @@ else{
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = get_the_terms($blog, 'category');
+                $post_tagline = get_field('tag_line', $blog);
 
                 ?>
                 <article class="blog-tile">
@@ -156,7 +157,7 @@ else{
                         <?php echo esc_attr(get_the_title($blog));?>
                     </h5>
                     <p class="blog-tile--para">
-                    <?php echo  wp_kses_post(get_the_excerpt($blog));?>
+                    <?php echo  wp_kses_post($post_tagline);?>
                     </p>
                     <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
                 </article>
