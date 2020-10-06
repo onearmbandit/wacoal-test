@@ -14,10 +14,11 @@
 <article class="blog-tile">
     <div class="blog-tile--image">
         <?php
-        $thumbnail_id = get_post_thumbnail_id();
+        $thumbnail_id  = get_post_thumbnail_id();
         $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
         $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
-        //the_post_thumbnail(array(334, 220)); ?>
+        $post_tagline  = get_field('tag_line');
+        ?>
         <img src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
     </div>
     <div class="blog-tile--category">
@@ -28,7 +29,7 @@
     ?>
 
     <p class="blog-tile--para">
-    <?php the_excerpt(); ?>
+        <?php echo esc_attr($post_tagline); ?>
     </p>
     <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
 </article>

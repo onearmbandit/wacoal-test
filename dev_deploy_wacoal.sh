@@ -29,6 +29,3 @@ pwd
 cd ../../..
 
 # scp -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem /home/swapnil/Projects/wacoal/plugins/advanced-custom-fields-pro.zip ubuntu@54.176.104.254:/home/ubuntu/wordpress/wacoal/wp-content/plugins
-
-
-blog.wacoal-america.mark4.oablab.com blog.wacoal-canada.mark4.oablab.com btemptdblog.wacoal-america.mark4.oablab.com

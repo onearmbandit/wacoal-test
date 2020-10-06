@@ -37,7 +37,6 @@ endif;?>>
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
                 $categories = wacoal_get_primary_category($slider_blog->ID);
-                $post_tagline = get_field('tag_line', $slider_blog->ID);
                 ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
@@ -48,7 +47,7 @@ endif;?>>
                             <?php echo esc_attr($slider_blog->post_title);?>
                         </h3>
                         <p class="evergreen-article--content__para">
-                            <?php echo wp_kses_post($post_tagline);?>
+                            <?php echo wp_kses_post($slider_blog->tag_line);?>
                         </p>
                     </div>
 
@@ -109,7 +108,6 @@ endif;?>>
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($featured_blog->ID);
-                $post_tagline = get_field('tag_line', $featured_blog->ID);
                 ?>
                 <div class="swiper-slide">
                     <article class="featured-box">
@@ -121,7 +119,7 @@ endif;?>>
                                 <?php echo esc_attr($featured_blog->post_title);?>
                             </h4>
                             <p class="featured-box--content__para">
-                                <?php echo wp_kses_post($post_tagline);?>
+                                <?php echo wp_kses_post($featured_blog->tag_line);?>
                             </p>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
                                 class="btn primary">learn more</a>
@@ -154,12 +152,12 @@ endif;?>>
                 <?php echo esc_html($related_blogs['headline']);?>
         </div>
         <div class="more-blog--wrapper">
-            <?php foreach ($related_blogs['posts'] as  $blog) {
-                $thumbnail_id = get_post_thumbnail_id($blog);
+            <?php foreach ($related_blogs['posts'] as  $postId) {
+                $thumbnail_id = get_post_thumbnail_id($postId);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
-                $categories = get_the_terms($blog, 'category');
-                $post_tagline = get_field('tag_line', $blog);
+                $categories = wacoal_get_primary_category($postId);
+                $post_tagline = get_field('tag_line', $postId);
                 ?>
                 <article class="blog-tile">
                     <div class="blog-tile--image">
@@ -167,16 +165,16 @@ endif;?>>
                     </div>
                     <div class="blog-tile--category">
                         <?php if (! empty($categories) ) {
-                            echo esc_html($categories[0]->name);
+                            echo esc_html($categories->name);
                         }?>
                     </div>
                     <h5 class="blog-tile--heading">
-                        <?php echo esc_attr(get_the_title($blog));?>
+                        <?php echo esc_attr(get_the_title($postId));?>
                     </h5>
                     <p class="blog-tile--para">
                     <?php echo  wp_kses_post($post_tagline);?>
                     </p>
-                    <a href="<?php echo esc_url(get_permalink($blog));?>"
+                    <a href="<?php echo esc_url(get_permalink($postId));?>"
                         class="btn primary">Learn More</a>
                 </article>
             <?php } ?>
