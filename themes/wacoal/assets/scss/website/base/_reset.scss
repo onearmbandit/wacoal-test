@@ -28,6 +28,10 @@ a, a:hover, a:focus {
   text-decoration: none;
 }
 
+a {
+  color: inherit;
+}
+
 ol, ul{
   list-style: none;
 }
