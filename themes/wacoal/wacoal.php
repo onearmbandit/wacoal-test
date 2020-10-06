@@ -35,7 +35,7 @@ $tagline  = get_field('tag_line', get_the_ID());
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
-                        <img src="<?php echo  esc_url(get_theme_file_uri()); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                        <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                     </div>
                     <div class="wacoal-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
@@ -55,7 +55,7 @@ $tagline  = get_field('tag_line', get_the_ID());
 
              $thumbnail = Wacoal_Get_image(get_the_post_thumbnail_url($blog));
             if (empty($thumbnail)) {
-                $thumbnail = get_theme_file_uri().'/assets/images/blog-img-1.png';
+                $thumbnail = esc_url(THEMEURI).'/assets/images/blog-img-1.png';
             }
             $thumbnail_id = get_post_thumbnail_id($blog);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);

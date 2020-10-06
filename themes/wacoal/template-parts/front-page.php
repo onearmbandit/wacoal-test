@@ -67,10 +67,10 @@ endif;?>>
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
   </div>
 </section>
@@ -90,7 +90,7 @@ endif;?>>
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
-                        <img src="<?php echo  esc_url(get_theme_file_uri()); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                        <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                     </div>
                     <div class="wacoal-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
@@ -136,10 +136,10 @@ endif;?>>
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img src="<?php echo  get_theme_file_uri(); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
     </div>
 </section>
