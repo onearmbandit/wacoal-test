@@ -33,16 +33,14 @@ $recent_posts = Wacoal_Query_posts(
 );
 
 ?>
-    <!-- <div id="primary" class="content-area">
-        <main id="main" class="site-main">
+
         <?php
         while ( have_posts() ) :
             the_post();
             include locate_template('template-parts/content-post.php');
-             //get_template_part('template-parts/content', 'post');
+
         endwhile;
         ?>
-        </main>
-    </div> -->
+
 <?php
 wacoal_page_entry_bottom();

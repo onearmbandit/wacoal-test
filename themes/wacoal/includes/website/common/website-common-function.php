@@ -11,25 +11,6 @@
  */
 
 /**
- * Function used to add the body classes
- *
- * @param array $classes body classes.
- */
-function wacoal_body_classes( $classes )
-{
-    if (! is_singular() ) {
-        $classes[] = 'hfeed';
-    }
-
-    if (! is_active_sidebar('sidebar-1') ) {
-        $classes[] = 'no-sidebar';
-    }
-
-    return $classes;
-}
-add_filter('body_class', 'wacoal_body_classes');
-
-/**
  * To ‘ping‘ all the sites that were linked to in your post
  *
  * @return void
@@ -404,7 +385,6 @@ function wacoal_post_date( $wacoal_post_id )
     return $wacoal_post_date;
 }
 
-
 /**
  * Undocumented function
  *
@@ -506,99 +486,132 @@ function Wacoal_Get_image( $image, $width = null, $ratio = null )
         return '';
     }
 }
+/**
+ * Function for  pagination
+ *
+ * @return html Return the pagination html.
+ */
 function wacoal_paging_nav() {
 
-    if( is_singular() )
+    if (is_singular() ) {
         return;
+    }
 
     global $wp_query;
 
-    /** Stop execution if there's only 1 page */
-    if( $wp_query->max_num_pages <= 1 )
+    /**
+ * Stop execution if there's only 1 page
+*/
+    if ($wp_query->max_num_pages <= 1 ) {
         return;
+    }
 
 
-    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-    $max   = intval( $wp_query->max_num_pages );
+    $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+    $max   = intval($wp_query->max_num_pages);
 
-    /** Add current page to the array */
-    if ( $paged >= 1 )
+    /**
+ * Add current page to the array
+*/
+    if ($paged >= 1 ) {
         $links[] = $paged;
+    }
 
-    /** Add the pages around the current page to the array */
-    if ( $paged >= 3 ) {
+    /**
+ * Add the pages around the current page to the array
+*/
+    if ($paged >= 3 ) {
         $links[] = $paged - 1;
         $links[] = $paged - 2;
     }
 
-    if ( ( $paged + 2 ) <= $max ) {
+    if (( $paged + 2 ) <= $max ) {
         $links[] = $paged + 2;
         $links[] = $paged + 1;
     }
 
     echo '<section class="pagination"><div class="pagination--wrapper"><div class="pagination-box">' . "\n";
 
-    /** Previous Post Link */
+    /**
+ * Previous Post Link
+*/
     // if ( get_previous_posts_link() )
-    printf( '<div class="pagination-box--btn prev"><a href="%s"><img src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link() ));
+    printf('<div class="pagination-box--btn prev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
     echo '<ul class="pagination-box--numbers">';
-    /** Link to first page, plus ellipses if necessary */
-    if ( ! in_array( 1, $links ) ) {
+    /**
+ * Link to first page, plus ellipses if necessary
+*/
+    if (! in_array(1, $links) ) {
         $class = 1 == $paged ? ' class="active"' : '';
 
-        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
 
-        if ( ! in_array( 2, $links ) )
+        if (! in_array(2, $links) ) {
             echo '<li>…</li>';
+        }
     }
 
-    /** Link to current page, plus 2 pages in either direction if necessary */
-    sort( $links );
+    /**
+ * Link to current page, plus 2 pages in either direction if necessary
+*/
+    sort($links);
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
-        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), esc_attr($link) );
+        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), esc_attr($link));
     }
 
-    /** Link to last page, plus ellipses if necessary */
-    if ( ! in_array( $max, $links ) ) {
-        if ( ! in_array( $max - 1, $links ) )
+    /**
+ * Link to last page, plus ellipses if necessary
+*/
+    if (! in_array($max, $links) ) {
+        if (! in_array($max - 1, $links) ) {
             echo '<li class="nav-links">…</li>' . "\n";
-
-        $class = $paged == $max ? ' class="active"' : '';
-        printf( '<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), esc_attr($max) );
-    }
-    echo '</ul>';
-    /** Next Post Link */
-    if ( get_next_posts_link() )
-        printf( '<div class="pagination-box--btn next"><a href="%s"><img src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link() ));
-
-    echo '</div></div></section>' . "\n";
-    }
-    function wacoal_exclude_posts_from_specific_category( $query ) {
-
-        if ( is_admin() || ! $query->is_main_query() )
-            return;
-
-
-        if ($query->is_archive() ) {
-
-            $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
-
-            $featured_posts = get_posts(
-                array(
-                'numberposts' => 2,
-                'cat' => $get_cat_ID->term_id,
-                'offset' => 0,
-                'orderby' => 'post_date',
-                'order' => 'DESC',
-                'post_status'=>'publish'
-                )
-            );
-            foreach( $featured_posts as $featured_post ) {
-                $posts_to_exclude[]    = $featured_post->ID;
-            }
-            $query->set('post__not_in', $posts_to_exclude);
         }
 
+        $class = $paged == $max ? ' class="active"' : '';
+        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max));
     }
-    add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );
+    echo '</ul>';
+    /**
+ * Next Post Link
+*/
+    if (get_next_posts_link() ) {
+        printf('<div class="pagination-box--btn next"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
+    }
+
+    echo '</div></div></section>' . "\n";
+}
+
+ /**
+  * Function to remove 2 recent posts from post listing
+  *
+  * @param  array $query wp_query array
+  * @return array $query wp_query array
+  */
+function wacoal_exclude_posts_from_specific_category( $query ) {
+
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ($query->is_archive() ) {
+
+        $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
+
+        $featured_posts = get_posts(
+            array(
+            'numberposts' => 2,
+            'cat' => $get_cat_ID->term_id,
+            'offset' => 0,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_status'=>'publish'
+            )
+        );
+        foreach( $featured_posts as $featured_post ) {
+            $posts_to_exclude[]    = $featured_post->ID;
+        }
+        $query->set('post__not_in', $posts_to_exclude);
+    }
+
+}
+add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );

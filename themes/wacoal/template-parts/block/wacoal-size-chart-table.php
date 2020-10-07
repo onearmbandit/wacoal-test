@@ -26,7 +26,7 @@
             <figure>
                 <?php if ($chart_image_id && !empty($chart_image_id)) {
                     ?>
-                <img src="<?php echo esc_url($chart_image_url); ?>"
+                <img class="lazyload" data-src="<?php echo esc_url($chart_image_url); ?>"
                     alt="<?php echo wp_kses_post($chart_image_alt); ?>" />
                     <?php
                 } ?>

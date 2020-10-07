@@ -32,7 +32,7 @@ if (is_admin() ) {
                     <div class="swiper-slide">
                         <!-- <img src="<?php //echo esc_url(Wacoal_Get_image($image_url, 300)); ?>"
                             alt="Slider Image" /> -->
-                            <img src="<?php echo esc_url($image_url); ?>"
+                            <img class="lazyload" data-src="<?php echo esc_url($image_url); ?>"
                             alt="<?php echo wp_kses_post($image_alt);?>" />
                     </div>
                 <?php } ?>
@@ -40,10 +40,10 @@ if (is_admin() ) {
 
             <div class="swiper-pagination custom-swiper-pagination"></div>
             <div class="swiper-button-next swiper-buttun-background">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
             </div>
             <div class="swiper-button-prev swiper-buttun-background">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
             </div>
         </div>
     </section>

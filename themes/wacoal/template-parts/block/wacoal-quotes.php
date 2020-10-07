@@ -19,7 +19,7 @@
         if ($quotes_image_id && !empty($quotes_image_id)) {
             ?>
         <div class="product-quote--image">
-            <img src="<?php echo esc_url($quotes_image_url); ?>"
+            <img class="lazyload" data-src="<?php echo esc_url($quotes_image_url); ?>"
                 alt="<?php echo wp_kses_post($quotes_image_alt)?>" />
         </div>
             <?php

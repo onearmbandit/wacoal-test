@@ -35,7 +35,7 @@ if ($product_fields && !empty($product_fields)) {
                 <a href = "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
                endif;?>>
             <div class="product-gallery--box__image">
-                <img src="<?php echo  esc_url($product_image_url); ?>" alt="<?php echo wp_kses_post($product_image_alt); ?>" />
+                <img class="lazyload" data-src="<?php echo  esc_url($product_image_url); ?>" alt="<?php echo wp_kses_post($product_image_alt); ?>" />
             </div>
                 </a>
                 <?php
