@@ -20,6 +20,11 @@
     flex: 1;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
+
+    @include respond-above(sm) {
+      flex-direction: row;
+    }
   }
 
   &--right {

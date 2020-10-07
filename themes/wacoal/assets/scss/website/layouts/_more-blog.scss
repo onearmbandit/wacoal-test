@@ -66,6 +66,14 @@
     flex: 1;
     padding: calcRem(0, 23);
 
+    &:not(:last-child) {
+      margin-bottom: calcRem(30);
+
+      @include respond-above(sm) {
+        margin-bottom: 0;
+      }
+    }
+
     &:nth-child(2) {
       @include respond-above(sm) {
         margin-left: get-vw(97px);
@@ -84,17 +92,32 @@
     }
 
     &--image {
+      width: 100%;
+      height: calcRem(212);
+
+      @include respond-above(sm) {
+        height: get-vw(318px);
+      }
       img {
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
     &--category {
       @include ProximaNova-Light;
-      font-size: get-vw(28px);
-      line-height: get-vw(32px);
-      margin-bottom: get-vw(7px);
-      margin-top: get-vw(18px);
+      font-size: calcRem(19);
+      line-height: calcRem(22);
+      margin-bottom: calcRem(2);
+      margin-top: calcRem(13);
+
+      @include respond-above(sm) {
+        font-size: get-vw(28px);
+        line-height: get-vw(32px);
+        margin-bottom: get-vw(7px);
+        margin-top: get-vw(18px);
+      }
     }
 
     &--heading {
@@ -103,13 +126,23 @@
 
     &--para {
       @include ProximaNova-Light;
-      font-size: get-vw(20px);
-      line-height: get-vw(26px);
-      margin-top: get-vw(7px);
+      font-size: calcRem(14);
+      line-height: calcRem(18);
+      margin-top: calcRem(5);
+
+      @include respond-above(sm) {
+        font-size: get-vw(20px);
+        line-height: get-vw(26px);
+        margin-top: get-vw(7px);
+      }
     }
 
     .btn {
-      margin-top: get-vw(22px);
+      margin-top: calcRem(30);
+
+      @include respond-above(sm) {
+        margin-top: get-vw(22px);
+      }
     }
   }
 }
@@ -157,4 +190,48 @@
     }
   }
 
+}
+
+
+.category-posts {
+  margin-top: calcRem(23px);
+
+  @include respond-above(sm) {
+    margin-top: 0;
+  }
+
+  .more-blog {
+    margin-bottom: calcRem(36);
+
+    @include respond-above(sm) {
+      margin-bottom: get-vw(60px);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      height: calcRem(127);
+      top: -18px;
+      background: var(--color-article-bg);
+
+      @include respond-above(sm) {
+        width: 92%;
+        left: 4%;
+        background: var(--color-article-bg);
+        top: get-vw(-30px);
+      }
+    }
+
+    .blog-tile {
+      &:not(:first-child) {
+        display: none;
+
+        @include respond-above(sm) {
+          display: block;
+        }
+      }
+    }
+  }
 }

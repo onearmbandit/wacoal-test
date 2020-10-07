@@ -20,10 +20,10 @@ $cat_name         = $current_cat_data->name;
 
 <!-- Banner with background color -->
 <section class="banner-with-background">
-    <h2 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h2>
-    <p class="banner-with-background--subtitle">
+    <h1 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h1>
+    <div class="banner-with-background--subtitle">
         <?php echo category_description(); ?>
-    </p>
+    </div>
 </section>
 
 <section class="spacer-120"></section>
