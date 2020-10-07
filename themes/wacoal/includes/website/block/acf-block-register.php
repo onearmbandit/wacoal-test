@@ -23,8 +23,17 @@ function wacoal_acf_init()
             'description'     => __('A custom Wacoal Image block.'),
             'render_callback' => 'wacoal_data_image_block_render_callback',
             'category'        => 'common',
-            'icon'            => 'admin-comments',
+            'icon'            => 'dashicons-admin-media',
             'keywords'        => array( 'wacoal-data-image' ),
+            'example'           => array(
+                'attributes' => array(
+                    'mode' => 'preview',
+                    'data' => array(
+                      'image'   => "Your image is here",
+                      'image_caption'        => "Your image_caption is here"
+                    )
+                )
+            )
             )
         );
         acf_register_block(
