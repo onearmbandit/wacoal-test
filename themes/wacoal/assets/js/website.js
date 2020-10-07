@@ -28,7 +28,8 @@ $(document).on('click', '.nav-links a', function (event) {
     data: {
       action: 'wacoal_ajax_pagination',
       query_vars: wacoal_js_var.query_vars,
-      page: page
+      page: page,
+      nonce:wacoal_js_var.nonce,
     },
     success: function (html) {
       $('#post-listing').find('div.category-posts').html('');
@@ -54,7 +55,8 @@ $(document).on('click', '.next a', function (event) {
       data: {
         action: 'wacoal_ajax_pagination',
         query_vars: wacoal_js_var.query_vars,
-        page: page
+        page: page,
+        nonce:wacoal_js_var.nonce,
       },
       success: function (html) {
         $('#post-listing').find('div.category-posts').html('');
@@ -85,7 +87,8 @@ $(document).on('click', '.prev a', function (event) {
       data: {
         action: 'wacoal_ajax_pagination',
         query_vars: wacoal_js_var.query_vars,
-        page: page
+        page: page,
+        nonce:wacoal_js_var.nonce,
       },
       success: function (html) {
         $('#post-listing').find('div.category-posts').html('');

@@ -111,7 +111,7 @@ if ($template == 'wacoal') {
                 echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
             }
             include locate_template('template-parts/content-excerpt.php');
-            //get_template_part('template-parts/content', 'excerpt');
+
             if ($i%3 == 2 || $i == 2) {
                 echo '</div></section>';
             }
@@ -150,7 +150,7 @@ if ($template == 'wacoal') {
                     </div>
                     <div class="blog-tile--category">
                         <?php if (! empty($categories) ) {?>
-                           <a href="<?php echo esc_url($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
+                           <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
                         <?php }?>
                     </div>
                     <h5 class="blog-tile--heading">

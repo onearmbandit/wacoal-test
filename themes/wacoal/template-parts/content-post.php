@@ -65,7 +65,7 @@
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) { ?>
-                       <a href="<?php echo esc_url(get_term_link($cat_ID));?>" ><?php echo esc_html($categories[0]->name);?></a>
+                       <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" ><?php echo esc_html($categories[0]->name);?></a>
                     <?php }?>
                 </div>
                 <h5 class="blog-tile--heading">
