@@ -1,8 +1,13 @@
 <?php
 /**
  * Theme functions.
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 define('THEMEPATH', get_template_directory());
@@ -72,15 +77,11 @@ function Wacoal_Admin_scripts()
         wp_enqueue_media();
     }
 
-    wp_enqueue_style('jquery');
-    wp_enqueue_script('wacoal-admin-js', esc_url(THEMEURI) . '/assets/js/wpadmin.js', array('jquery'), null, true);
-    wp_localize_script(
-        'admin',
-        'wacoal_js_var_admin',
-        array(
-        'ajaxurl' => admin_url('admin-ajax.php'),
-        )
-    );
+    $distFileJson = file_get_contents(__DIR__ . '/dist/assets.json');
+    $distFile = json_decode($distFileJson, true);
+
+    wp_enqueue_script('wacoal-admin', esc_url(THEMEURI) . '/dist/' . $distFile['wpadmin']['js'], array('jquery'), null, true);
+    wp_enqueue_style('wacoal-admin1', STYLESHEETURI . '/dist/' . $distFile['wpadmin']['css']);
 }
 add_action('admin_enqueue_scripts', 'Wacoal_Admin_scripts');
 
@@ -89,11 +90,8 @@ add_action('admin_enqueue_scripts', 'Wacoal_Admin_scripts');
  */
 function acf_custom_text_toolbar_script()
 {
-
     wp_enqueue_script('admin-js', esc_url(THEMEURI) . '/assets/js/admin/acf-custom-text-toolbar.js', array( 'jquery' ), '1.0.0', true);
-
 }
-
 add_action('acf/input/admin_enqueue_scripts', 'acf_custom_text_toolbar_script');
 
 /**
@@ -138,4 +136,3 @@ if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
 }
 // LOCALDEV END.
 require THEMEPATH . '/includes/website/website-ajax-functions.php';
-

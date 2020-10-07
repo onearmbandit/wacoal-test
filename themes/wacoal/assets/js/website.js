@@ -3,11 +3,9 @@ require('jquery');
 require('../scss/website/index.scss');
 
 require('../js/website/main.js');
-
 require('../js/website/wacoal-swiper.js');
 
 import 'lazysizes';
-
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.loadMode = 1;
 
