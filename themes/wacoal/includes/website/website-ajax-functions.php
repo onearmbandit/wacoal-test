@@ -17,7 +17,7 @@ function wacoal_ajax_pagination() {
         $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
 
         $get_cat_ID=get_term_by('slug',$query_vars['category_name'],'category');
-
+        $cat_name         = $get_cat_ID->name;
         $featured_posts = get_posts(
             array(
             'numberposts' => 2,
@@ -49,7 +49,7 @@ function wacoal_ajax_pagination() {
             if($i%3 == 0 || $i==0){
                 echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
             }
-            get_template_part( 'template-parts/content', 'excerpt' );
+            include locate_template('template-parts/content-excerpt.php');
             if($i%3 == 2 || $i == 2){
                 echo '</div></section>';
             }
