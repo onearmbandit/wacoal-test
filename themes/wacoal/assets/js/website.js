@@ -16,7 +16,7 @@ $(".mobile-nav").click(function () {
 function find_page_number(element) {
   element.find('span').remove();
   return parseInt(element.html());
-  }});
+  };
 $(document).on('click', '.nav-links a', function (event) {
   event.preventDefault();
 
