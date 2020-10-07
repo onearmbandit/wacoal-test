@@ -22,6 +22,9 @@ $logo = get_field( 'header_logo', 'options' );
 </header>
 
 <nav class="header-navigation">
+    <div class="header-navigation-mobile">
+        <div class="mobile-nav">Blogs <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/mobile-nav-arrow.svg" alt="Mobile Navigation" /></div>
+    </div>
     <?php $args=array(
         'theme_location' => 'primary',
         'menu' =>'Header',

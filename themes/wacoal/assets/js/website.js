@@ -25,6 +25,10 @@ require('../js/website/wacoal-swiper.js');
   //   },
   // });
 
+  $(".mobile-nav").click(function(){
+    $(".header-navigation-mobile").toggleClass("mobile-nav-open");
+  });
+
 	function find_page_number( element ) {
 		element.find('span').remove();
 		return parseInt( element.html() );
