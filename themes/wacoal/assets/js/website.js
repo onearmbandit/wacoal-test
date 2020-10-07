@@ -9,16 +9,10 @@ import 'lazysizes';
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.loadMode = 1;
 
-  $(".mobile-nav").click(function(){
-    $(".header-navigation-mobile").toggleClass("mobile-nav-open");
-  });
+$(".mobile-nav").click(function () {
+  $(".header-navigation-mobile").toggleClass("mobile-nav-open");
+});
 
-	function find_page_number( element ) {
-		element.find('span').remove();
-		return parseInt( element.html() );
-  }
-  $(document).on( 'click', '.nav-links a', function( event ) {
-		event.preventDefault();
 function find_page_number(element) {
   element.find('span').remove();
   return parseInt(element.html());
