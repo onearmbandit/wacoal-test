@@ -135,4 +135,7 @@ if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
     );
 }
 // LOCALDEV END.
+/**
+ * Website ajax functions include
+*/
 require THEMEPATH . '/includes/website/website-ajax-functions.php';
