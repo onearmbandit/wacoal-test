@@ -39,8 +39,8 @@
 
       &__subtitle {
         @include ProximaNova-Light;
-        font-size: calcRem(16);
-        line-height: calcRem(18);
+        font-size: calcRem(19);
+        line-height: calcRem(19);
         margin-bottom: calcRem(8);
 
         @include respond-above(sm) {
@@ -73,14 +73,17 @@
 
     &--image {
       width: var(--width-100);
+      min-height: calcRem(258);
       display: flex;
 
       @include respond-above(sm) {
-        width: 34.011vw;
+        width: get-vw(653px);
+        min-height: get-vw(597px);
       }
 
       img {
         width: 100%;
+        // height: 100%;
         object-fit: cover;
       }
     }
