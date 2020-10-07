@@ -73,12 +73,12 @@
 
     &--image {
       width: var(--width-100);
-      min-height: calcRem(258);
+      height: calcRem(258);
       display: flex;
 
       @include respond-above(sm) {
         width: get-vw(653px);
-        min-height: get-vw(597px);
+        height: get-vw(597px);
       }
 
       img {
@@ -94,5 +94,14 @@
         flex-direction: row-reverse;
       }
     }
+  }
+}
+
+
+.page-wrapper {
+
+  &--content {
+    width: get-vw(1514px);
+    margin: auto;
   }
 }

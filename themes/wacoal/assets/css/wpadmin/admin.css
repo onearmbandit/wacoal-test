@@ -1,0 +1,13 @@
+/* Question Answer block Css */
+.article-questions.even-sequence .article-questions--image {
+  width: 30%;
+}
+
+
+/* Quote block Css */
+.product-quote .product-quote--image{
+  width: 30%;
+}
+.product-quote .product-quote--content{
+  font-size: 1.4em;
+}

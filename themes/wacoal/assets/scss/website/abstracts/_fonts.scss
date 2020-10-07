@@ -30,7 +30,24 @@
   font-family: 'ProximaNova-Xbold';
 }
 
-
+.proximanova-thin {
+  @include ProximaNova-Thin;
+}
+.proximanova-light {
+  @include ProximaNova-Light;
+}
+.proximanova-reg {
+  @include ProximaNova-Reg;
+}
+.proximanova-sbold {
+  @include ProximaNova-Sbold;
+}
+.proximanova-bold {
+  @include ProximaNova-Bold;
+}
+.proximanova-xbold {
+  @include ProximaNova-Xbold;
+}
 
 //
 // BentonModDisp Font
@@ -53,4 +70,17 @@
 
 @mixin BentonModDisp-BoldItalic {
   font-family: 'BentonModDisp-BoldItalic';
+}
+
+.bentonmod-reg {
+  @include BentonModDisp-Regular;
+}
+.bentonmod-regilatic {
+  @include BentonModDisp-RegularItalic;
+}
+.bentonmod-bold {
+  @include BentonModDisp-Bold;
+}
+.bentonmod-bolditalic {
+  @include BentonModDisp-BoldItalic;
 }

@@ -34,6 +34,7 @@ module.exports = function () {
     appSrc: resolveApp('.'),
     appBuild: resolveApp('../dist'),
     appIndexJs: resolveApp('js/website.js'),
+    appIndexWpAdminJs: resolveApp('js/wpadmin.js'),
     appNodeModules: resolveApp('../../node_modules'),
   };
 
@@ -42,9 +43,10 @@ module.exports = function () {
     website: [
       appPaths.appIndexJs
     ],
+    wpadmin: [
+      appPaths.appIndexWpAdminJs
+    ],
   };
-
-
 
   const loaders = {
     css: {

@@ -35,7 +35,12 @@
 </section>
 
 <!-- WP gutenberg block content -->
-<?php the_content(); ?>
+<section class="page-wrapper">
+    <div class="page-wrapper--content">
+        <?php the_content(); ?>
+    </div>
+</section>
+
 
 <section class="spacer-80"></section>
 

@@ -1,7 +1,13 @@
 .footer-section {
   background: var(--color-black);
   width: var(--width-100);
-  padding: calcRem(88.9, 0, 71);
+  padding-top: calcRem(30);
+  padding-bottom: calcRem(22);
+
+  @include respond-above(sm) {
+    padding-top: get-vw(90px);
+    padding-bottom: get-vw(71px);
+  }
 }
 
 .footer-wrapper {
@@ -60,7 +66,7 @@
     @include BentonModDisp-Bold;
     font-size: calcRem(13);
     color: var(--color-white);
-    margin-bottom: calcRem(13);
+    margin-bottom: calcRem(20);
 
     @include respond-above(sm) {
       font-size: calcRem(9);
@@ -136,6 +142,14 @@
       }
     }
 
+  }
+}
+
+.footer-links--title + div {
+  display: none;
+
+  @include respond-above(sm) {
+    display: block;
   }
 }
 
