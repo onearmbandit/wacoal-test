@@ -87,12 +87,13 @@
   &--content {
     max-width: get-vw(519px);
     margin: auto;
-    padding-top: get-vw(40px);
+    padding-top: get-vw(41px);
     padding-bottom: get-vw(50px);
 
     &__subtitle {
       margin-bottom: get-vw(26px);
       display: block;
+      font-size: get-vw(32px);
     }
 
     &__title {
