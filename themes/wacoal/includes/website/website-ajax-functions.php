@@ -9,6 +9,11 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Wacoal
  */
+/**
+ * Function for ajax pagination
+ *
+ * @return string Return the posts html.
+ */
 add_action( 'wp_ajax_nopriv_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
 add_action( 'wp_ajax_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
 

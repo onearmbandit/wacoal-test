@@ -506,6 +506,11 @@ function Wacoal_Get_image( $image, $width = null, $ratio = null )
         return '';
     }
 }
+/**
+ * Function for  pagination
+ *
+ * @return html Return the pagination html.
+ */
 function wacoal_paging_nav() {
 
     if( is_singular() )
@@ -573,32 +578,39 @@ function wacoal_paging_nav() {
         printf( '<div class="pagination-box--btn next"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link() ));
 
     echo '</div></div></section>' . "\n";
-    }
-    function wacoal_exclude_posts_from_specific_category( $query ) {
+}
 
-        if ( is_admin() || ! $query->is_main_query() )
-            return;
+ /**
+  * Function to remove 2 recent posts from post listing
+  *
+  * @param  array $query wp_query array
+  * @return array $query wp_query array
+  */
+function wacoal_exclude_posts_from_specific_category( $query ) {
+
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
 
 
-        if ($query->is_archive() ) {
+    if ($query->is_archive() ) {
 
-            $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
+        $get_cat_ID=get_term_by('slug',$query->query_vars['category_name'],'category');
 
-            $featured_posts = get_posts(
-                array(
-                'numberposts' => 2,
-                'cat' => $get_cat_ID->term_id,
-                'offset' => 0,
-                'orderby' => 'post_date',
-                'order' => 'DESC',
-                'post_status'=>'publish'
-                )
-            );
-            foreach( $featured_posts as $featured_post ) {
-                $posts_to_exclude[]    = $featured_post->ID;
-            }
-            $query->set('post__not_in', $posts_to_exclude);
+        $featured_posts = get_posts(
+            array(
+            'numberposts' => 2,
+            'cat' => $get_cat_ID->term_id,
+            'offset' => 0,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_status'=>'publish'
+            )
+        );
+        foreach( $featured_posts as $featured_post ) {
+            $posts_to_exclude[]    = $featured_post->ID;
         }
-
+        $query->set('post__not_in', $posts_to_exclude);
     }
-    add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );
+
+}
+add_action( 'pre_get_posts', 'wacoal_exclude_posts_from_specific_category' );
