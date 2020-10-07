@@ -61,7 +61,7 @@
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
+                    <img class="lazyload" data-src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) { ?>

@@ -26,7 +26,7 @@ $tagline  = get_field('tag_line', get_the_ID());
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
         <div class="wacoal-101--image">
-            <img src="<?php echo  esc_url($static_section['image']['url']); ?>" alt="Wacoal 101" />
+            <img class="lazyload" data-src="<?php echo  esc_url($static_section['image']['url']); ?>" alt="Wacoal 101" />
         </div>
         <div class="wacoal-101--content">
             <div class="wacoal-101--content__title">
@@ -35,7 +35,7 @@ $tagline  = get_field('tag_line', get_the_ID());
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
-                        <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                        <img class="lazyload" data-src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
                     </div>
                     <div class="wacoal-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
@@ -64,7 +64,7 @@ $tagline  = get_field('tag_line', get_the_ID());
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img src="<?php echo esc_url($thumbnail);?>" alt="" />
+                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail);?>" alt="" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {
