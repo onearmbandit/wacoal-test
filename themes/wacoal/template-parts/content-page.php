@@ -26,10 +26,10 @@
 </section>
 
 <!-- WP gutenberg block content -->
-<section class="page-wrapper">
-    <div class="page-wrapper--content">
+<section class="full-width-container">
+<div class="full-width-container--wrapper">
         <?php the_content(); ?>
-    </div>
+</div>
 </section>
 
 <!-- More From Blog -->

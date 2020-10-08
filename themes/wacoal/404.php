@@ -14,14 +14,14 @@ $recent_posts = Wacoal_Query_posts(
 $description=get_field('description', 'options');
 
 ?>
-<!-- Banner section -->
-<section class="banner-without-background" >
-    <div class="banner-without-background--subtitle">
+
+<section class="page-404" >
+    <div class="page-404--wrapper">
         <?php echo wp_kses_post($description);?>
     </div>
 </section>
 
-<section class="spacer-80"></section>
+
 <!-- More From Blog -->
 <section class="more-blog">
     <div class="more-blog--title">

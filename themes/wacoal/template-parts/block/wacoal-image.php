@@ -12,9 +12,7 @@
 
 ?>
 
-<section class="article-questions odd-sequence single-img">
-    <div class="article-questions--wrapper">
-        <div class="article-questions--image">
+    <div class="full-width-container--image">
             <figure>
                 <?php if($block_image_id && !empty($block_image_id)) {
                     ?>
@@ -29,6 +27,5 @@
                 }
                 ?>
             </figure>
-        </div>
     </div>
-</section>
+

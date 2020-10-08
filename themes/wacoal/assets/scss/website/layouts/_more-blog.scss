@@ -91,6 +91,8 @@
     flex: 1;
     padding: calcRem(0, 23);
 
+    max-width: get-vw(493.67px);
+
     &:not(:last-child) {
       margin-bottom: calcRem(30);
 
