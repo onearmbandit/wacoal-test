@@ -12,14 +12,26 @@
 
 ?>
 
-<section class="banner-with-background" >
-
-    <p class="banner-with-background--subtitle">
-       Wacoal 101
-    </p>
-    <h1 class="banner-with-background--heading"><?php the_title();?></h1>
+<!-- Title Category section -->
+<section class="article-header">
+    <div class="article-header--wrapper">
+        <a href="<?php echo esc_url($primary_category_url); ?>"
+            class="article-header--wrapper__category">
+            <?php echo esc_attr($primary_category->name); ?>
+        </a>
+        <h2 class="article-header--wrapper__heading">
+            <?php echo esc_attr(the_title()); ?>
+        </h2>
+    </div>
 </section>
-<section class="spacer-80"></section>
+
+<!-- WP gutenberg block content -->
+<section class="page-wrapper">
+    <div class="page-wrapper--content">
+        <?php the_content(); ?>
+    </div>
+</section>
+
 <!-- More From Blog -->
 <section class="more-blog">
     <div class="more-blog--title">

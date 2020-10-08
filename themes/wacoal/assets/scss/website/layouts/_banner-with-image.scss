@@ -4,12 +4,14 @@
   background-size: cover;
   height: calcRem(442);
   padding: calcRem(38, 0, 0, 11);
+  margin-bottom: calcRem(20);
 
   @include respond-above(sm) {
     height: get-vw(482px);
     background-image: url("../../images/landing-banner.png");
     padding-top: get-vw(32px);
     padding-left: get-vw(63px);
+    margin-bottom: get-vw(44px);
   }
 
   &--heading {
@@ -18,6 +20,7 @@
 
     @include respond-above(sm) {
       max-width: get-vw(852px);
+      font-size: get-vw(191px);
     }
   }
 

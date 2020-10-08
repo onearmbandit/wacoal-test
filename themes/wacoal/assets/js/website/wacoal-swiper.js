@@ -39,8 +39,8 @@ require('../../scss/website/wacoal-swiper.scss');
   });
 
   let featuredSwiper = new Swiper('.featured-article', {
-    slidesPerView: 1.2,
-    spaceBetween: 70,
+    slidesPerView: 1,
+    spaceBetween: 83,
     centeredSlides: true,
     loop: true,
     pagination: {
@@ -51,6 +51,13 @@ require('../../scss/website/wacoal-swiper.scss');
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 1.25,
+        spaceBetween: 83
+      }
+    }
   });
 
   let articleDetailsSlider = new Swiper('.article-details-slider', {

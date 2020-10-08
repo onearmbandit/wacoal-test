@@ -22,12 +22,14 @@
 }
 
 .swiper-container {
-  margin-bottom: get-vw(56px);
+  // margin-bottom: get-vw(56px);
 
   .swiper-wrapper {
     padding-bottom: get-vw(20px);
   }
-
+  .swiper-button-next, .swiper-button-prev {
+    transform: translateY(-50%);
+  }
   &.swiper-container-horizontal {
 
     .custom-swiper-pagination {
@@ -35,10 +37,16 @@
       position: relative;
 
       .swiper-pagination-bullet {
-        width: get-vw(15px);
-        height: get-vw(15px);
-        margin-left: get-vw(5px);
-        margin-right: get-vw(5px);
+        width: calcRem(10);
+        height: calcRem(10);
+
+        @include respond-above(sm) {
+          width: get-vw(15px);
+          height: get-vw(15px);
+          margin-left: get-vw(5px);
+          margin-right: get-vw(5px);
+        }
+
 
         &-active {
           background: var(--color-black);
@@ -66,19 +74,69 @@
       }
     }
   }
+
+  &.featured-article {
+    margin-bottom: calcRem(46);
+
+    @include respond-above(sm) {
+      margin-bottom: get-vw(87.2px);
+    }
+
+    .swiper-slide {
+      @include respond-below(sm) {
+        padding: 0 23px;
+      }
+    }
+    .swiper-buttun-background {
+
+      @include respond-above(sm) {
+        background: transparent;
+      }
+    }
+
+    .swiper-button-next {
+      right: 0;
+
+      @include respond-above(sm) {
+        right: get-vw(110px);
+      }
+    }
+
+    .swiper-button-prev {
+      left: 0;
+
+      @include respond-above(sm) {
+        left: get-vw(110px);
+      }
+    }
+  }
 }
 
 
 .center-slide-slider {
 
   .swiper-button-next {
-    right: get-vw(280px);;
+    right: 0;
+    @include respond-above(sm) {
+      right: get-vw(280px);
+    }
   }
 
   .swiper-button-prev {
-    left: get-vw(280px);
+    left: 0;
+    @include respond-above(sm) {
+      left: get-vw(280px);
+    }
   }
 
+}
+
+.evergreen-article--slider {
+  margin-bottom: calcRem(35);
+
+  @include respond-above(sm) {
+    margin-bottom: get-vw(82.3px);
+  }
 }
 .evergreen-article {
   text-align: center;
@@ -87,6 +145,7 @@
   &--content {
     padding-top: calcRem(16);
     height: calcRem(230);
+
     @include respond-above(sm) {
       max-width: get-vw(600px);
       height: get-vw(432px);
@@ -117,7 +176,6 @@
       text-transform: uppercase;
 
       @include respond-above(sm) {
-        // min-height: get-vw(91px);
         font-size: get-vw(24px);
         line-height: get-vw(31px);
       }
@@ -126,7 +184,11 @@
 
   &--image {
     width: 100%;
-    height: get-vw(881px);
+    height: calcRem(442);
+
+    @include respond-above(sm) {
+      height: get-vw(881px);
+    }
     img {
       width: 100%;
       height: 100%;

@@ -26,7 +26,6 @@ $cat_name         = $current_cat_data->name;
     </div>
 </section>
 
-<section class="spacer-120"></section>
 <?php
 
 $recent_posts= get_field('more_from_blog', 'category_'.$current_cat_id);
@@ -100,7 +99,7 @@ if ($template == 'wacoal') {
     </section>
 
     <!-- -->
-    <section class="spacer-80"></section>
+    <section class="spacer-120"></section>
     <div id="post-listing">
     <?php if (have_posts()) { ?>
 
@@ -126,7 +125,7 @@ if ($template == 'wacoal') {
     </div>
 <?php }?>
 <!-- More From Blog -->
-<section class="spacer-80"></section>
+<section class="spacer-120"></section>
 <?php if(!empty($recent_posts['posts'])) :?>
     <section class="more-blog">
         <div class="more-blog--title">
@@ -165,8 +164,7 @@ if ($template == 'wacoal') {
         </div>
     </section>
 <?php endif;?>
-<!-- -->
-<section class="spacer-120"></section>
+
 
     </main><!-- #main -->
 </div><!-- #primary -->

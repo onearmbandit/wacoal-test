@@ -2,10 +2,12 @@
   background: var(--color-hero-bg);
   text-align: center;
   padding: calcRem(44, 0);
+  margin-bottom: calcRem(22);
 
   @include respond-above(sm) {
     padding-top: get-vw(89px);
     padding-bottom: get-vw(89px);
+    margin-bottom: get-vw(114px);
   }
 
   &--heading {

@@ -27,7 +27,7 @@ endif;?>>
 <?php if(!empty($top_banner_link)) :?>
 </a>
 <?php endif;?>
-<section class="spacer-80"></section>
+
 <!-- Evergreen Articles Slider -->
 <section class="evergreen-article--slider">
     <div class="swiper-container center-slide-slider">
@@ -76,8 +76,6 @@ endif;?>>
   </div>
 </section>
 
-<!-- -->
-<section class="spacer-80"></section>
 <!-- Wacoal 101 -->
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
@@ -148,7 +146,6 @@ endif;?>>
     </div>
 </section>
 
-<section class="spacer-80"></section>
 <!-- More From Blog -->
 <?php if(!empty($related_blogs['posts'])) :?>
     <section class="more-blog">
@@ -187,5 +184,3 @@ endif;?>>
     </section>
 
 <?php endif;?>
- <!-- -->
-<section class="spacer-120"></section>
