@@ -173,7 +173,7 @@
   }
 
   &--box {
-    max-width: get-vw(250px);
+    width: get-vw(250px);
     text-align: center;
 
     &__image {
@@ -182,6 +182,8 @@
 
       img {
         max-width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
