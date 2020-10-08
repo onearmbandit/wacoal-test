@@ -13,8 +13,8 @@
 ?>
 
 <section class="article-questions odd-sequence single-img">
-    <div class="">
-        <div class="">
+    <div class="article-questions--wrapper">
+        <div class="article-questions--image">
             <figure>
                 <?php if($block_image_id && !empty($block_image_id)) {
                     ?>

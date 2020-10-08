@@ -1,5 +1,31 @@
 <?php
+/**
+ * Single page to collect all data
+ * php version 7.4
+ *
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
+ */
+
 wacoal_page_entry_top('');
+
+$primary_category     = wacoal_get_primary_category($post->ID);
+$primary_category_url = get_term_link($primary_category->term_id);
+
+$recent_posts = Wacoal_Query_posts(
+    array(
+        'post_type' => array('post'),
+        'post__not_in' => array($post->ID),
+        'posts_per_page' => 3,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    )
+);
 ?>
 
 	<div id="primary" class="content-area">
@@ -8,13 +34,8 @@ wacoal_page_entry_top('');
 		<?php
 		while ( have_posts() ) :
 			the_post();
+            include locate_template('template-parts/content-page.php');
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
 
 		endwhile; // End of the loop.
 		?>
