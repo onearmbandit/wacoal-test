@@ -19,13 +19,6 @@ if ($block_image_id && !empty($block_image_id)) {
             if ($video_fields_option == 'embed_video') {
                 echo $video_field;
             }
-            elseif($video_fields_option == 'insert_url') {
-                ?>
-        <video controls autoplay>
-          <source src="<?php echo esc_url($video_field)?>" type="video/mp4">
-        </video>
-                <?php
-            }
             elseif($video_fields_option == 'video_file') {
                 $video_url = wp_get_attachment_url($video_field);
                 ?>
@@ -36,21 +29,15 @@ if ($block_image_id && !empty($block_image_id)) {
             }
             ?>
             <div class="video-caption">
-            VIDEO CAPTION - Lorem ipsum dolor
-            sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor
-            incididunt ut labore et dolore
-            magna aliqua. Ultrices sagittis
-            orci a scelerisque purus
+            <?php echo wp_kses_post($video_caption);?>
             </div>
         </div>
 
         <div class="video-image--wrapper__right">
             <figure>
                 <img class="lazyload" data-src="<?php echo esc_url($block_image_url); ?>"
-                    alt="<?php echo wp_kses_post($caption); ?>" />
-                <!-- <figcaption><?php //echo wp_kses_post($caption); ?></figcaption> -->
-                <figcaption>@influencername CAPTION</figcaption>
+                    alt="<?php echo wp_kses_post($block_image_alt); ?>" />
+                <figcaption><?php echo wp_kses_post($image_caption); ?></figcaption>
             </figure>
         </div>
 
@@ -60,24 +47,16 @@ if ($block_image_id && !empty($block_image_id)) {
 } else {
     if ($video_fields_option == 'embed_video') {
         echo $video_field;
-    } elseif ($video_fields_option == 'insert_url') {
-        ?>
-        <section class="video-full-width">
-<video controls autoplay>
-  <source src="<?php echo esc_url($video_field)?>" type="video/mp4">
-</video>
-<div class="video-caption">VIDEO CAPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ultrices sagittis orci a scelerisque purus</div>
-    </section>
-        <?php
     } elseif ($video_fields_option == 'video_file') {
         $video_url = wp_get_attachment_url($video_field); ?>
-        <div>
+        <section class="video-full-width">
 <video controls autoplay>
   <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
 </video>
-    </div>
+<div class="video-caption">
+        <?php echo wp_kses_post($video_caption);?>
+</div>
+        </section>
         <?php
     }
 }

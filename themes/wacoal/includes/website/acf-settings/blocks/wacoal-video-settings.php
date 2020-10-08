@@ -32,7 +32,6 @@ acf_add_local_field_group(
                 'select_option' => 'Select Option',
                 'video_file' => 'Select or Add Video',
                 'embed_video' => 'Embed Video',
-                'insert_url' => 'Insert URL',
             ),
             'default_value' => false,
             'allow_null' => 0,
@@ -92,30 +91,6 @@ acf_add_local_field_group(
             ),
             'width' => '',
             'height' => '',
-        ),
-        array(
-            'key' => 'field_5f7f07d4e8e65',
-            'label' => 'Insert URL',
-            'name' => 'insert_url',
-            'type' => 'url',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => array(
-                array(
-                    array(
-                        'field' => 'field_5f7f0618e8e62',
-                        'operator' => '==',
-                        'value' => 'insert_url',
-                    ),
-                ),
-            ),
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'default_value' => '',
-            'placeholder' => '',
         ),
         array(
             'key' => 'field_5f7f20249dc95',

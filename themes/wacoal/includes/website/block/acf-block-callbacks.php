@@ -358,8 +358,6 @@ function wacoal_video_block_render_callback( $block )
 
     if($video_fields_option == 'embed_video') {
         $video_field = get_field('embed_video');
-    }elseif($video_fields_option == 'insert_url') {
-        $video_field = get_field('insert_url');
     }
     elseif($video_fields_option == 'video_file') {
         $video_field = get_field('select_or_add_video');
