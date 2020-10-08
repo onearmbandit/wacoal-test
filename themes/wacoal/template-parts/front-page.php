@@ -58,7 +58,7 @@ endif;?>>
                     </div>
                     <div class="evergreen-article--button">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
-                        class="btn primary">learn more</a>
+                        class="btn primary big">learn more</a>
                     </div>
                 </div>
             <?php } ?>
@@ -126,7 +126,7 @@ endif;?>>
                                 <?php echo wp_kses_post($featured_blog->tag_line);?>
                             </p>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
-                                class="btn primary">learn more</a>
+                                class="btn primary big">learn more</a>
                         </div>
                         <div class="featured-box--image">
                             <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"

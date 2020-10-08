@@ -103,12 +103,15 @@
 }
 
 .header-navigation-mobile + .header-navigation--ul {
-  flex-direction: column;
-  padding: 0;
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: all 0.2s ease;
+
+  @include respond-below(sm) {
+    flex-direction: column;
+    padding: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.2s ease;
+  }
 }
 .header-navigation-mobile.mobile-nav-open + .header-navigation--ul{
   height: calcRem(90);

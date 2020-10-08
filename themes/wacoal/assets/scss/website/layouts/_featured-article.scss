@@ -42,11 +42,12 @@
         font-size: calcRem(19);
         line-height: calcRem(19);
         margin-bottom: calcRem(8);
+        display: block;
 
         @include respond-above(sm) {
           font-size: get-vw(33px);
           line-height: get-vw(33px);
-          margin-bottom: get-vw(20px);
+          margin-bottom: get-vw(18px);
         }
       }
 

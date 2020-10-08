@@ -17,27 +17,37 @@
       font-size:calcRem(17);
       @include BentonModDisp-Bold;
       text-transform:   uppercase;
-      padding: calcRem(12, 20, 9);
+      padding: calcRem(9, 17, 7);
 
       @include respond-above(sm) {
-          font-size: calcRem(12);
-          padding: calcRem(8, 12, 5);
+          font-size: get-vw(25px);
+          padding-top: get-vw(13.5px);
+          padding-right: get-vw(28px);
+          padding-bottom: get-vw(13.5px);
+          padding-left: get-vw(28px);
       }
 
-      @include respond-above(md) {
-        font-size: calcRem(16);
-        padding: calcRem(9, 16, 6);
+      &.big {
+        font-size: get-vw(29px);
+          padding-top: get-vw(14.5px);
+          padding-right: get-vw(30.5px);
+          padding-bottom: get-vw(14.5px);
+          padding-left: get-vw(30.5px);
       }
+      // @include respond-above(md) {
+      //   font-size: calcRem(16);
+      //   padding: calcRem(9, 16, 6);
+      // }
 
-      @include respond-above(lg) {
-        font-size: calcRem(20);
-        padding: calcRem(10, 18, 7);
-      }
+      // @include respond-above(lg) {
+      //   font-size: calcRem(20);
+      //   padding: calcRem(10, 18, 7);
+      // }
 
-      @include respond-above(xl) {
-        font-size: calcRem(30);
-        padding: calcRem(16, 27, 13);
-      }
+      // @include respond-above(xl) {
+      //   font-size: calcRem(30);
+      //   padding: calcRem(16, 27, 13);
+      // }
 
       &:hover {
 

@@ -87,7 +87,7 @@ if ($template == 'wacoal') {
                     <p class="featured-box--content__subtitle"><?php echo esc_attr($cat_name); ?></p>
                     <h4 class="featured-box--content__title"><?php echo esc_attr($featured_post_title); ?></h4>
                     <p class="featured-box--content__para"><?php echo wp_kses_post($post_tagline); ?></p>
-                    <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary">learn more</a>
+                    <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
                 </div>
                 <div class="featured-box--image">
                     <img class="lazyload" data-src="<?php echo esc_url($featured_image); ?>" alt="Featured Article" />
