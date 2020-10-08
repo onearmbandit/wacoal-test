@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom qustion answer settings
+ * Custom question answer settings
  * php version 7.4
  *
  * @category Wacoal
@@ -13,11 +13,11 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f7598f9da32f',
-    'title' => 'Wacoal question answer settings',
+    'title' => 'Wacoal Question Answer Settings',
     'fields' => array(
         array(
             'key' => 'field_5f75a314def12',
-            'label' => 'question answer',
+            'label' => 'Question Answer',
             'name' => 'question_answer',
             'type' => 'repeater',
             'instructions' => '',
@@ -76,7 +76,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f75afafff0fb',
-            'label' => 'image',
+            'label' => 'Image',
             'name' => 'image',
             'type' => 'image',
             'instructions' => '',
@@ -100,7 +100,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f7bfd26271a1',
-            'label' => 'caption',
+            'label' => 'Image Caption',
             'name' => 'caption',
             'type' => 'text',
             'instructions' => '',

@@ -13,11 +13,11 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f757fe698d71',
-    'title' => 'Wacoal subhead with description settings',
+    'title' => 'Wacoal Subhead with Description Settings',
     'fields' => array(
         array(
             'key' => 'field_5f757ff68e119',
-            'label' => 'Title or subhead',
+            'label' => 'Title or Subhead',
             'name' => 'title_or_subhead',
             'type' => 'wysiwyg',
             'instructions' => '',
@@ -36,7 +36,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f7580988e11a',
-            'label' => 'description',
+            'label' => 'Description',
             'name' => 'description',
             'type' => 'wysiwyg',
             'instructions' => '',

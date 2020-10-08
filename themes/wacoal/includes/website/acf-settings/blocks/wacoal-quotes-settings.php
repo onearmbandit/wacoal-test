@@ -41,7 +41,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f74806cd886a',
-            'label' => 'quote text',
+            'label' => 'Quote Text',
             'name' => 'quote_text',
             'type' => 'wysiwyg',
             'instructions' => '',

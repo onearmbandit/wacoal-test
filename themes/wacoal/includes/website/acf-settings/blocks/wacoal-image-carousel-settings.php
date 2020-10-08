@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f7481779f059',
-    'title' => 'Wacoal Image Carousel',
+    'title' => 'Wacoal Image Carousel Settings',
     'fields' => array(
         array(
             'key' => 'field_5f7481852db06',

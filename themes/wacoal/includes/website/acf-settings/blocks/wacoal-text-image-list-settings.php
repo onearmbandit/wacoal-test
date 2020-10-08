@@ -63,7 +63,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f748499bd0d2',
-                    'label' => 'List heading',
+                    'label' => 'List Heading',
                     'name' => 'list_heading',
                     'type' => 'text',
                     'instructions' => '',
@@ -82,7 +82,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f7485f0bd0d7',
-                    'label' => 'List subheading 1',
+                    'label' => 'List Subheading 1',
                     'name' => 'list_subheading_1',
                     'type' => 'text',
                     'instructions' => '',
@@ -108,7 +108,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f74860abd0d8',
-                    'label' => 'List subheading 2',
+                    'label' => 'List Subheading 2',
                     'name' => 'list_subheading_2',
                     'type' => 'text',
                     'instructions' => '',

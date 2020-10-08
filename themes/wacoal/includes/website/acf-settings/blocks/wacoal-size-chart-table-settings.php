@@ -13,11 +13,11 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f7b0234c8153',
-    'title' => 'Wacoal size chart table settings',
+    'title' => 'Wacoal Size Chart Table Settings',
     'fields' => array(
         array(
             'key' => 'field_5f7b029ff24d5',
-            'label' => 'size chart',
+            'label' => 'Size Chart',
             'name' => 'size_chart',
             'type' => 'repeater',
             'instructions' => '',
@@ -36,7 +36,7 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f7b02b4f24d6',
-                    'label' => 'chart image',
+                    'label' => 'Chart Image',
                     'name' => 'chart_image',
                     'type' => 'image',
                     'instructions' => '',
@@ -80,3 +80,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
