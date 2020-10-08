@@ -90,8 +90,8 @@
   .blog-tile {
     flex: 1;
     padding: calcRem(0, 23);
+    max-width: 100%;
 
-    max-width: get-vw(493.67px);
 
     &:not(:last-child) {
       margin-bottom: calcRem(30);
@@ -116,6 +116,7 @@
 
     @include respond-above(sm) {
       padding: 0;
+      max-width: get-vw(493.67px);
     }
 
     &--image {
@@ -177,9 +178,13 @@
 .pagination {
 
   &--wrapper {
-    max-width: get-vw(400px);
+    max-width: calcRem(336);
     width: 100%;
     margin: auto;
+
+    @include respond-above(sm) {
+      max-width: get-vw(400px);
+    }
   }
 
   .pagination-box {
@@ -188,26 +193,41 @@
     align-items: center;
 
     &--btn {
-        width: get-vw(69px);
-        height: get-vw(40px);
+        width: calcRem(46);
+        height: calcRem(27);
         display: flex;
         align-items: center;
         justify-content: center;
         background: var(--color-article-bg);
-        margin-left: get-vw(37px);
-        margin-right: get-vw(37px);
+        margin: calcRem(0, 37);
+
+
+        @include respond-above(sm) {
+          width: get-vw(69px);
+          height: get-vw(40px);
+          margin-left: get-vw(37px);
+          margin-right: get-vw(37px);
+        }
     }
 
     &--numbers {
       display: flex;
 
       li {
-        letter-spacing: get-vw(10px);
+        letter-spacing: calcRem(10);
+
+        @include respond-above(sm) {
+          letter-spacing: get-vw(10px);
+        }
 
         a {
           @include ProximaNova-Light;
-          font-size: get-vw(19px);
+          font-size: calcRem(19);
           color: var(--color-gray);
+
+          @include respond-above(sm) {
+            font-size: get-vw(19px);
+          }
 
           &.active {
             color: var(--color-black);
