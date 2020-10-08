@@ -1,0 +1,18 @@
+.full-width-container {
+
+  &--wrapper {
+    width: 100%;
+    padding: calcRem(0, 23);
+    margin-bottom: calcRem(40);
+
+    @include respond-above(sm) {
+      width: get-vw(1720px);
+      margin: auto;
+      margin-bottom: get-vw(80px);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.page-404 {
+
+  &--wrapper {
+    text-align: center;
+    padding: calcRem(168, 0, 155);
+
+    @include respond-above(sm) {
+      padding-top: get-vw(266px);
+      padding-bottom: get-vw(258px);
+    }
+
+    p{
+      font-size: calcRem(18);
+
+      @include respond-above(sm) {
+        font-size: get-vw(25px);
+      }
+
+      &:nth-child(2) {
+        @include ProximaNova-Bold;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
