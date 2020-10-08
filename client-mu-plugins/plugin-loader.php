@@ -10,7 +10,6 @@
  * @see https://vip.wordpress.com/documentation/vip-go/understanding-your-vip-go-codebase/
  */
 
-
 // wpcom_vip_load_plugin( 'plugin-name' );
 /**
  * Note the above requires a specific naming structure: /plugin-name/plugin-name.php

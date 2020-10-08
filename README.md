@@ -1,4 +1,4 @@
-Wordprss Headless with React (ssr)
+Wacoal
 ==================================
 
 ## Table of Contents
