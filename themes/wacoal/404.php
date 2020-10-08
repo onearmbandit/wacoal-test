@@ -37,7 +37,7 @@ $description=get_field('description', 'options');
             $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
             $categories = get_the_terms($blog->ID, 'category');
-            $post_tagline = get_field('tag_line', $blog);
+            $post_tagline = get_field('tag_line', $blog->ID);
             $cat_ID = $categories[0]->term_id;
             $cat_url = get_term_link($cat_ID);
 
