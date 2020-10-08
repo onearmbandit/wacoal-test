@@ -118,6 +118,33 @@ acf_add_local_field_group(
             'placeholder' => '',
         ),
         array(
+            'key' => 'field_5f7f20249dc95',
+            'label' => 'Video Caption',
+            'name' => 'video_caption',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5f7f0618e8e62',
+                        'operator' => '!=',
+                        'value' => 'select_option',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
             'key' => 'field_5f7f08842a46e',
             'label' => 'Add Image',
             'name' => 'add_image',
@@ -148,7 +175,14 @@ acf_add_local_field_group(
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5f7f08842a46e',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -180,5 +214,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
-

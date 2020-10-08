@@ -154,7 +154,7 @@ function wacoal_acf_init()
             'description'       => __('A custom video block.'),
             'render_callback'   => 'wacoal_video_block_render_callback',
             'category'          => 'common',
-            'icon'              => 'admin',
+            'icon'              => 'format-video',
             'keywords'          => array( 'size-chart' ),
             )
         );
