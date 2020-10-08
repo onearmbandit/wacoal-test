@@ -1,5 +1,20 @@
 <?php
+/**
+ * Single page to collect all data
+ * php version 7.4
+ *
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
+ */
+
 wacoal_page_entry_top('');
+
+$primary_category     = wacoal_get_primary_category($post->ID);
+$primary_category_url = get_term_link($primary_category->term_id);
+
 $recent_posts = Wacoal_Query_posts(
     array(
         'post_type' => array('post'),
