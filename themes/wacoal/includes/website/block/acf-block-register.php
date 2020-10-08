@@ -23,7 +23,7 @@ function wacoal_acf_init()
             'description'     => __('A custom Wacoal Image block.'),
             'render_callback' => 'wacoal_data_image_block_render_callback',
             'category'        => 'common',
-            'icon'            => 'dashicons-admin-media',
+            'icon'            => 'welcome-widgets-menus',
             'keywords'        => array( 'wacoal-data-image' ),
             'example'           => array(
                 'attributes' => array(
@@ -43,7 +43,7 @@ function wacoal_acf_init()
             'description' => __('A custom quotes block.'),
             'render_callback' => 'wacoal_quotes_block_render_callback',
             'category' => 'formatting',
-            'icon' => 'admin-comments',
+            'icon' => 'format-quote',
             'keywords' => array( 'testimonial', 'quote' ),
             )
         );
@@ -54,7 +54,7 @@ function wacoal_acf_init()
                 'description'       => __('A custom product gallery block.'),
                 'render_callback'   => 'wacoal_gallery_block_render_callback',
                 'category'          => 'formatting',
-                'icon'              => 'admin-comments',
+                'icon'              => 'format-gallery',
                 'keywords'          => array( 'product-gallery', 'gallery' ),
             )
         );
@@ -65,7 +65,7 @@ function wacoal_acf_init()
                 'description'       => __('A custom image carousel block.'),
                 'render_callback'   => 'wacoal_image_carousel_render_callback',
                 'category'          => 'formatting',
-                'icon'              => 'admin-comments',
+                'icon'              => 'embed-photo',
                 'keywords'          => array( 'image-carousel', 'gallery' ),
             )
         );
@@ -76,7 +76,7 @@ function wacoal_acf_init()
             'description'       => __('A custom List format block.'),
             'render_callback'   => 'wacoal_text_img_list_format_render_callback',
             'category'          => 'formatting',
-            'icon'              => 'admin-comments',
+            'icon'              => 'id-alt',
             'keywords'          => array( 'list-format' ),
             )
         );
@@ -87,7 +87,7 @@ function wacoal_acf_init()
             'description'       => __('A custom Text Only List format block.'),
             'render_callback'   => 'wacoal_text_only_list_format_render_callback',
             'category'          => 'formatting',
-            'icon'              => 'admin-comments',
+            'icon'              => 'list-view',
             'keywords'          => array( 'list-format' ),
             )
         );
@@ -99,7 +99,7 @@ function wacoal_acf_init()
             'description'       => __('A custom subhead description block.'),
             'render_callback'   => 'wacoal_subhead_description_render_callback',
             'category'          => 'common',
-            'icon'              => 'block-editor',
+            'icon'              => 'archive',
             'keywords'          => array( 'title', 'description' ),
             )
         );
@@ -110,7 +110,7 @@ function wacoal_acf_init()
             'description'       => __('A custom question answer block.'),
             'render_callback'   => 'wacoal_question_answer_render_callback',
             'category'          => 'common',
-            'icon'              => 'block-editor',
+            'icon'              => 'editor-help',
             'keywords'          => array( 'question', 'answer' ),
             )
         );
@@ -121,7 +121,7 @@ function wacoal_acf_init()
             'description'       => __('A custom text and link block.'),
             'render_callback'   => 'wacoal_static_link_render_callback',
             'category'          => 'common',
-            'icon'              => 'block-editor',
+            'icon'              => 'admin-links',
             'keywords'          => array( 'text', 'link', 'image' ),
             )
         );
@@ -132,7 +132,7 @@ function wacoal_acf_init()
             'description'       => __('A custom image block.'),
             'render_callback'   => 'wacoal_image_render_callback',
             'category'          => 'common',
-            'icon'              => 'block-editor',
+            'icon'              => 'format-image',
             'keywords'          => array( 'text', 'link', 'image' ),
             )
         );
@@ -143,7 +143,7 @@ function wacoal_acf_init()
             'description'       => __('A custom size chart table block.'),
             'render_callback'   => 'wacoal_size_chart_table_block_render_callback',
             'category'          => 'common',
-            'icon'              => 'admin',
+            'icon'              => 'editor-table',
             'keywords'          => array( 'size-chart' ),
             )
         );
