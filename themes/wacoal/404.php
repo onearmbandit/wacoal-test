@@ -11,12 +11,13 @@ $recent_posts = Wacoal_Query_posts(
         'post_status'=>'publish'
     )
 );
+$description=get_field('description', 'options');
+
 ?>
 <!-- Banner section -->
 <section class="banner-without-background" >
     <div class="banner-without-background--subtitle">
-        <p>ERROR 404 page not found</p>
-        <p><strong>Need Help? <a href="">contact us</a></strong></p>
+        <?php echo wp_kses_post($description);?>
     </div>
 </section>
 

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Custom Menu page creation
+ *
+ * @package Wacoal
+ */
 
 if (function_exists('acf_add_options_page')) {
 
@@ -8,7 +13,7 @@ if (function_exists('acf_add_options_page')) {
         'menu_title' => 'Theme Options',
         'menu_slug' => 'theme-settings',
         'capability' => 'edit_posts',
-        'redirect' => false,
+        'redirect' => true,
         )
     );
 
@@ -32,6 +37,13 @@ if (function_exists('acf_add_options_page')) {
         array(
         'page_title' => 'Homepage Settings',
         'menu_title' => 'Homepage',
+        'parent_slug' => 'theme-settings',
+        )
+    );
+    acf_add_options_sub_page(
+        array(
+        'page_title' => '404 page Settings',
+        'menu_title' => '404 page',
         'parent_slug' => 'theme-settings',
         )
     );
