@@ -23,8 +23,17 @@ function wacoal_acf_init()
             'description'     => __('A custom Wacoal Image block.'),
             'render_callback' => 'wacoal_data_image_block_render_callback',
             'category'        => 'common',
-            'icon'            => 'admin-comments',
+            'icon'            => 'dashicons-admin-media',
             'keywords'        => array( 'wacoal-data-image' ),
+            'example'           => array(
+                'attributes' => array(
+                    'mode' => 'preview',
+                    'data' => array(
+                      'image'   => "Your image is here",
+                      'image_caption'        => "Your image_caption is here"
+                    )
+                )
+            )
             )
         );
         acf_register_block(
@@ -82,17 +91,7 @@ function wacoal_acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
-        // acf_register_block(
-        //     array(
-        //     'name'              => 'wacoal-size-chart',
-        //     'title'             => __('Wacoal Size Chart'),
-        //     'description'       => __('A custom size chart block.'),
-        //     'render_callback'   => 'wacoal_size_chart_block_render_callback',
-        //     'category'          => 'common',
-        //     'icon'              => 'table',
-        //     'keywords'          => array( 'size-chart' ),
-        //     )
-        // );
+
         acf_register_block(
             array(
             'name'              => 'wacoal-subhead-description',

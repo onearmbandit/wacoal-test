@@ -18,6 +18,14 @@ add_action( 'wp_ajax_nopriv_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
 add_action( 'wp_ajax_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
 
 function wacoal_ajax_pagination() {
+    // Check for nonce security
+
+    if(isset($_POST['nonce']) && !empty($_POST['nonce'])){
+        $nonce = $_POST['nonce'];
+    }
+    if ( ! wp_verify_nonce( $nonce, 'ajax-nonce' ) )
+        die ( 'Busted!');
+
     if(isset($_POST['query_vars'])){
         $query_vars = json_decode( stripslashes( $_POST['query_vars'] ), true );
 
@@ -40,7 +48,7 @@ function wacoal_ajax_pagination() {
         $query_vars['post__not_in'] = $posts_to_exclude;
     }
     $posts = new WP_Query( $query_vars );
-    $GLOBALS['wp_query'] = $posts;
+    //$GLOBALS['wp_query'] = $posts;
 
 
 

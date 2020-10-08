@@ -12,7 +12,7 @@
 
 ?>
 
-<section class="article-questions odd-sequence" style="text-align:center;">
+<section class="article-questions odd-sequence single-img">
     <div class="">
         <div class="">
             <figure>

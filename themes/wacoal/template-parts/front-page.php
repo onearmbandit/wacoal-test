@@ -41,7 +41,7 @@ endif;?>>
                 ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
-                        <a href="<?php echo esc_url(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
+                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
                             <?php echo esc_attr($categories->name);?>
                         </a>
                         <h3 class="evergreen-article--content__title">
@@ -116,7 +116,7 @@ endif;?>>
                 <div class="swiper-slide">
                     <article class="featured-box">
                         <div class="featured-box--content">
-                            <a href="<?php echo esc_url(get_term_link($cat_ID));?>" class="featured-box--content__subtitle">
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="featured-box--content__subtitle">
                                 <?php echo esc_attr($categories->name);?>
                             </a>
                             <h4 class="featured-box--content__title">
@@ -170,7 +170,7 @@ endif;?>>
                     </div>
                     <div class="blog-tile--category">
                         <?php if (! empty($categories) ) {?>
-                           <a href="<?php echo esc_url(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
+                           <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
                         <?php }?>
                     </div>
                     <h5 class="blog-tile--heading">

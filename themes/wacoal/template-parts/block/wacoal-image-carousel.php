@@ -30,9 +30,7 @@ if (is_admin() ) {
 
                     ?>
                     <div class="swiper-slide">
-                        <!-- <img src="<?php //echo esc_url(Wacoal_Get_image($image_url, 300)); ?>"
-                            alt="Slider Image" /> -->
-                            <img class="lazyload" data-src="<?php echo esc_url($image_url); ?>"
+                        <img class="lazyload" data-src="<?php echo esc_url($image_url); ?>"
                             alt="<?php echo wp_kses_post($image_alt);?>" />
                     </div>
                 <?php } ?>

@@ -22,6 +22,10 @@ function wacoal_pingback_header()
     }
 }
 add_action('wp_head', 'wacoal_pingback_header');
+/**
+ * Add posted time to post listing
+ * @return void
+ */
 
 if (!function_exists('wacoal_posted_on')) {
 
@@ -49,7 +53,10 @@ if (!function_exists('wacoal_posted_on')) {
 
     }
 };
-
+/**
+ * change Author html
+ * @return html
+ */
 if (!function_exists('wacoal_posted_by')) {
 
     function wacoal_posted_by()
@@ -63,7 +70,10 @@ if (!function_exists('wacoal_posted_by')) {
 
     }
 };
-
+/**
+ * change edit post link
+ * @return void
+ */
 if (!function_exists('wacoal_entry_footer')) {
 
     function wacoal_entry_footer()
@@ -117,7 +127,10 @@ if (!function_exists('wacoal_entry_footer')) {
         );
     }
 };
-
+/**
+ * change html of post thumbnail
+ * @return html
+ */
 if (!function_exists('wacoal_post_thumbnail')) {
 
     function wacoal_post_thumbnail()
@@ -153,14 +166,20 @@ if (!function_exists('wacoal_post_thumbnail')) {
 endif; // End is_singular().
     }
 };
-
+/**
+ * Get header html
+ * @param string $classname class name.
+ */
 function wacoal_page_entry_top($classname)
 {
     get_header('files/main-header');
     echo "<div class=\"$classname\" id=\"js-$classname\">\n"; // phpcs:ignore
     get_template_part('template-parts/content-header');
 }
-
+/**
+ * Get footer html
+ *
+ */
 function wacoal_page_entry_bottom()
 {
     get_template_part('template-parts/content-footer');
@@ -179,6 +198,8 @@ function wacoal_get_page_acf_fields($pageId)
 
 /**
  * Get wacoal Image source
+ * @param int $attachmentId attachment id.
+ * @return array $image_src
  */
 function wacoal_get_image_src($attachmentId, $size = 'full', $icon = false)
 {
@@ -188,6 +209,8 @@ function wacoal_get_image_src($attachmentId, $size = 'full', $icon = false)
 
 /**
  * Get wacoal Image alt
+ * @param int $attachmentId attachment id.
+ * @return string $image_alt
  */
 function wacoal_get_image_alt($attachmentId, $default = null)
 {
@@ -200,6 +223,8 @@ function wacoal_get_image_alt($attachmentId, $default = null)
 
 /**
  * wacoal remove p tag from content
+ * @param string $content post content.
+ * @return string $content
  */
 function wacoal_remove_p_tag($content)
 {
@@ -209,7 +234,11 @@ function wacoal_remove_p_tag($content)
 }
 
 /**
- * Add Menu link class.
+* Add Menu link class.
+* @param WP_Post  $item  The current menu item.
+* @param stdClass $args  An object of wp_nav_menu() arguments.
+* @param int      $depth Depth of menu item. Used for padding.
+* @return array $atts
  */
 function wacoal_add_menu_link_class($atts, $item, $args)
 {
@@ -225,8 +254,11 @@ add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
 
 /**
  * Add Menu li class.
- *
- * @param array $file_types file types.
+* @param string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
+* @param WP_Post  $item    The current menu item.
+* @param stdClass $args    An object of wp_nav_menu() arguments.
+* @param int      $depth   Depth of menu item. Used for padding.
+* @return array $classes
  */
 function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
 {
@@ -245,6 +277,7 @@ add_filter('nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4);
  * Add support for svg images.
  *
  * @param array $file_types file types.
+ * @return array $file_types
  */
 function wacoal_add_svg_file_types_to_uploads($file_types)
 {
@@ -258,7 +291,7 @@ function wacoal_add_svg_file_types_to_uploads($file_types)
 add_action('upload_mimes', 'wacoal_add_svg_file_types_to_uploads');
 
 /**
- * register widget
+ * Register Sidebar,Footer Column One,Footer Column two,Footer Column three,Footer Column four widget
  */
 function wacoal_widgets_init()
 {
@@ -414,11 +447,6 @@ function wacoal_get_primary_category( $post_id )
 }
 
 
-/**
- * ---------------
- */
-
-
  /**
   * Function to create the URL
   *
@@ -451,7 +479,7 @@ function Wacoal_Get_image( $image, $width = null, $ratio = null )
 
     if ($image && ! empty($image) && ! empty($image[0]) ) {
 
-        // $url = Wacoal_Reconstruct_url($image[0]);
+
         $url = $image[0];
 
         $dimention = null;
@@ -500,8 +528,8 @@ function wacoal_paging_nav() {
     global $wp_query;
 
     /**
- * Stop execution if there's only 1 page
-*/
+     * Stop execution if there's only 1 page
+    */
     if ($wp_query->max_num_pages <= 1 ) {
         return;
     }
@@ -511,15 +539,15 @@ function wacoal_paging_nav() {
     $max   = intval($wp_query->max_num_pages);
 
     /**
- * Add current page to the array
-*/
+     * Add current page to the array
+    */
     if ($paged >= 1 ) {
         $links[] = $paged;
     }
 
     /**
- * Add the pages around the current page to the array
-*/
+     * Add the pages around the current page to the array
+    */
     if ($paged >= 3 ) {
         $links[] = $paged - 1;
         $links[] = $paged - 2;
@@ -533,14 +561,14 @@ function wacoal_paging_nav() {
     echo '<section class="pagination"><div class="pagination--wrapper"><div class="pagination-box">' . "\n";
 
     /**
- * Previous Post Link
-*/
+     * Previous Post Link
+    */
     // if ( get_previous_posts_link() )
     printf('<div class="pagination-box--btn prev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
     echo '<ul class="pagination-box--numbers">';
     /**
- * Link to first page, plus ellipses if necessary
-*/
+     * Link to first page, plus ellipses if necessary
+    */
     if (! in_array(1, $links) ) {
         $class = 1 == $paged ? ' class="active"' : '';
 
@@ -552,8 +580,8 @@ function wacoal_paging_nav() {
     }
 
     /**
- * Link to current page, plus 2 pages in either direction if necessary
-*/
+     * Link to current page, plus 2 pages in either direction if necessary
+    */
     sort($links);
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
@@ -561,8 +589,8 @@ function wacoal_paging_nav() {
     }
 
     /**
- * Link to last page, plus ellipses if necessary
-*/
+     * Link to last page, plus ellipses if necessary
+    */
     if (! in_array($max, $links) ) {
         if (! in_array($max - 1, $links) ) {
             echo '<li class="nav-links">…</li>' . "\n";
@@ -573,8 +601,8 @@ function wacoal_paging_nav() {
     }
     echo '</ul>';
     /**
- * Next Post Link
-*/
+     * Next Post Link
+    */
     if (get_next_posts_link() ) {
         printf('<div class="pagination-box--btn next"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
     }

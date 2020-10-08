@@ -61,7 +61,8 @@ function Wacoal_scripts()
         'wacoal_js_var',
         array(
         'ajaxurl' => admin_url('admin-ajax.php'),
-        'query_vars' => wp_json_encode($wp_query->query)
+        'query_vars' => wp_json_encode($wp_query->query),
+        'nonce' => wp_create_nonce('ajax-nonce'),
         )
     );
 
