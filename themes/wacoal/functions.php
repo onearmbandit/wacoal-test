@@ -84,7 +84,6 @@ function Wacoal_Admin_scripts()
     $distFile = json_decode($distFileJson, true);
 
     if ('post' === $post->post_type || 'page' === $post->post_type ) {
-        error_log('in post');
         wp_enqueue_script('wacoal-admin', esc_url(THEMEURI) . '/dist/' . $distFile['wpadmin']['js'], array('jquery'), null, true);
         wp_enqueue_style('wacoal-admin', STYLESHEETURI . '/dist/' . $distFile['wpadmin']['css']);
     }
