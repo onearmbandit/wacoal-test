@@ -72,7 +72,7 @@ add_action('wp_enqueue_scripts', 'Wacoal_scripts');
 /**
  * Admin Enqueue scripts and styles.
  */
-function Wacoal_Admin_scripts()
+function Wacoal_Admin_scripts($hook)
 {
     global $post;
 
@@ -83,9 +83,11 @@ function Wacoal_Admin_scripts()
     $distFileJson = file_get_contents(__DIR__ . '/dist/assets.json');
     $distFile = json_decode($distFileJson, true);
 
-    if ('post' === $post->post_type || 'page' === $post->post_type ) {
-        wp_enqueue_script('wacoal-admin', esc_url(THEMEURI) . '/dist/' . $distFile['wpadmin']['js'], array('jquery'), null, true);
-        wp_enqueue_style('wacoal-admin', STYLESHEETURI . '/dist/' . $distFile['wpadmin']['css']);
+    if ($hook == 'post-new.php' || $hook == 'post.php' ) {
+        if ('post' === $post->post_type || 'page' === $post->post_type ) {
+            wp_enqueue_script('wacoal-admin', esc_url(THEMEURI) . '/dist/' . $distFile['wpadmin']['js'], array('jquery'), null, true);
+            wp_enqueue_style('wacoal-admin', STYLESHEETURI . '/dist/' . $distFile['wpadmin']['css']);
+        }
     }
 }
 add_action('admin_enqueue_scripts', 'Wacoal_Admin_scripts', 10, 1);

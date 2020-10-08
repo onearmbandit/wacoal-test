@@ -16,7 +16,6 @@
     <div class="">
         <?php
         foreach ($chart_images as $chart) {
-
             $chart_image_id     = $chart['chart_image'];
             $chart_image_array  = wp_get_attachment_image_src($chart_image_id, 'full');
             $chart_image_alt    = wacoal_get_image_alt($chart_image_id, 'Block Image');
@@ -27,7 +26,8 @@
                 <?php if ($chart_image_id && !empty($chart_image_id)) {
                     ?>
                 <img class="lazyload" data-src="<?php echo esc_url($chart_image_url); ?>"
-                    alt="<?php echo wp_kses_post($chart_image_alt); ?>" />
+                    alt="<?php echo wp_kses_post($chart_image_alt); ?>"
+                    style="max-width:100%"/>
                     <?php
                 } ?>
             </figure>
