@@ -17,10 +17,13 @@
   &--heading {
     max-width: calcRem(251);
     text-transform: uppercase;
+    font-size: calcRem(73);
+    line-height: calcRem(70);
 
     @include respond-above(sm) {
       max-width: get-vw(852px);
       font-size: get-vw(191px);
+      line-height: get-vw(182px);
     }
   }
 

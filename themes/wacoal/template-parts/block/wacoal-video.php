@@ -13,9 +13,8 @@
 if ($block_image_id && !empty($block_image_id)) {
     ?>
 
-<section class="article-questions odd-sequence">
-    <div class="article-questions--wrapper">
-        <div class="article-questions--content">
+<section class="video-image--wrapper">
+        <div class="video-image--wrapper__left">
            <?php
             if ($video_fields_option == 'embed_video') {
                 echo $video_field;
@@ -36,16 +35,25 @@ if ($block_image_id && !empty($block_image_id)) {
                 <?php
             }
             ?>
+            <div class="video-caption">
+            VIDEO CAPTION - Lorem ipsum dolor
+            sit amet, consectetur adipiscing
+            elit, sed do eiusmod tempor
+            incididunt ut labore et dolore
+            magna aliqua. Ultrices sagittis
+            orci a scelerisque purus
+            </div>
         </div>
 
-        <div class="article-questions--image">
+        <div class="video-image--wrapper__right">
             <figure>
                 <img class="lazyload" data-src="<?php echo esc_url($block_image_url); ?>"
                     alt="<?php echo wp_kses_post($caption); ?>" />
-                <figcaption><?php echo wp_kses_post($caption); ?></figcaption>
+                <!-- <figcaption><?php //echo wp_kses_post($caption); ?></figcaption> -->
+                <figcaption>@influencername CAPTION</figcaption>
             </figure>
         </div>
-    </div>
+
 </section>
 
     <?php
@@ -54,11 +62,14 @@ if ($block_image_id && !empty($block_image_id)) {
         echo $video_field;
     } elseif ($video_fields_option == 'insert_url') {
         ?>
-        <div>
+        <section class="video-full-width">
 <video controls autoplay>
   <source src="<?php echo esc_url($video_field)?>" type="video/mp4">
 </video>
-    </div>
+<div class="video-caption">VIDEO CAPTION - Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ultrices sagittis orci a scelerisque purus</div>
+    </section>
         <?php
     } elseif ($video_fields_option == 'video_file') {
         $video_url = wp_get_attachment_url($video_field); ?>

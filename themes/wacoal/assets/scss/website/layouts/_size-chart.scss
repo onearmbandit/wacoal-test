@@ -9,16 +9,18 @@
       margin: auto;
     }
 
-    img {
-      max-width: 100%;
-    }
   }
 
   &--image {
     margin-bottom: calcRem(40);
+    text-align: center;
 
     @include respond-above(sm) {
       margin-bottom: get-vw(80px);
+    }
+
+    img {
+      max-width: 100%;
     }
   }
 }
