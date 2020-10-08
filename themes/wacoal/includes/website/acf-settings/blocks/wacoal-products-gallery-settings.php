@@ -12,7 +12,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f747913ade3e',
-    'title' => 'Wacoal Product Gallery',
+    'title' => 'Wacoal Product Gallery Settings',
     'fields' => array(
         array(
             'key' => 'field_5f747919248e0',
@@ -115,7 +115,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f7c29df3836f',
-            'label' => 'Links Open in new tab',
+            'label' => 'Links Open In New Tab',
             'name' => 'open_in_new_tab',
             'type' => 'true_false',
             'instructions' => '',

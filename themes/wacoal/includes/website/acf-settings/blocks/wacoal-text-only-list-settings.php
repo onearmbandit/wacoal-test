@@ -36,7 +36,7 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f7ab06e1c7bc',
-                    'label' => 'list align type',
+                    'label' => 'List Align Type',
                     'name' => 'list_align_type',
                     'type' => 'select',
                     'instructions' => '',
@@ -62,7 +62,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f7ab4c6b7ffa',
-                    'label' => 'list header',
+                    'label' => 'List Header',
                     'name' => 'list_header',
                     'type' => 'text',
                     'instructions' => '',
@@ -81,7 +81,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f7ab1291c7bd',
-                    'label' => 'list subhead',
+                    'label' => 'List Subhead',
                     'name' => 'list_subhead',
                     'type' => 'text',
                     'instructions' => '',
@@ -100,7 +100,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f7ab1801c7be',
-                    'label' => 'List description',
+                    'label' => 'List Description',
                     'name' => 'list_description',
                     'type' => 'wysiwyg',
                     'instructions' => '',
@@ -139,4 +139,5 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 

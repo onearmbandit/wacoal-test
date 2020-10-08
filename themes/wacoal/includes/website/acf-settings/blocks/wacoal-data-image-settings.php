@@ -13,11 +13,11 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f73140bb70c0',
-    'title' => 'Wacoal data with image settings',
+    'title' => 'Wacoal Data With Image Settings',
     'fields' => array(
         array(
             'key' => 'field_5f732dd2e1f36',
-            'label' => 'Data with image',
+            'label' => 'Data With Image',
             'name' => 'data_with_image',
             'type' => 'group',
             'instructions' => '',
@@ -32,7 +32,7 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f732e32e1f37',
-                    'label' => 'paragraph content',
+                    'label' => 'Paragraph Content',
                     'name' => 'paragraph_content',
                     'type' => 'wysiwyg',
                     'instructions' => '',
@@ -75,7 +75,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f733005e1f39',
-                    'label' => 'Image caption',
+                    'label' => 'Image Caption',
                     'name' => 'image_caption',
                     'type' => 'text',
                     'instructions' => '',

@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f7af7a7f2d90',
-    'title' => 'Wacoal image',
+    'title' => 'Wacoal Image Settings',
     'fields' => array(
         array(
             'key' => 'field_5f7af7c3b24da',
@@ -41,7 +41,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f7af7f0b24db',
-            'label' => 'Image caption',
+            'label' => 'Image Caption',
             'name' => 'image_caption',
             'type' => 'text',
             'instructions' => '',
@@ -78,3 +78,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+

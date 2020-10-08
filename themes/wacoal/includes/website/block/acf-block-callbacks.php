@@ -335,3 +335,47 @@ function wacoal_static_link_render_callback( $block )
     }
 
 }
+
+/**
+ * Callback function for staic links block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_video_block_render_callback( $block )
+{
+
+    $video_fields_option = get_field('video');
+    $block_image_id = get_field('add_image');
+    if ($block_image_id && !empty($block_image_id)) {
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt = wacoal_get_image_alt($block_image_id, 'Block Image');
+        $block_image_url = Wacoal_Get_image($block_image_array);
+        $image_caption = get_field('image_caption');
+    }
+    error_log('$video_fields'.print_r($video_fields_option, 1));
+    // $video_field = '';
+    if($video_fields_option == 'embed_video') {
+        $video_field = get_field('embed_video');
+    }elseif($video_fields_option == 'insert_url') {
+        $video_field = get_field('insert_url');
+    }
+    elseif($video_fields_option == 'video_file') {
+        $video_field = get_field('select_or_add_video');
+    }
+    $shortcode_template  = '/template-parts/block/wacoal-video.php';
+
+    error_log('$video_fields'.print_r($video_field, 1));
+
+    if (! empty($video_fields_option) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Video:</u></h4>
+            <span style="color:red">Empty Wacoal Video Block</span>
+            <?php
+        }
+    }
+
+}
