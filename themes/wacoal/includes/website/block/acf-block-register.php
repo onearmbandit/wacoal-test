@@ -147,6 +147,17 @@ function wacoal_acf_init()
             'keywords'          => array( 'size-chart' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'              => 'wacoal-video',
+            'title'             => __('Wacoal Video'),
+            'description'       => __('A custom video block.'),
+            'render_callback'   => 'wacoal_video_block_render_callback',
+            'category'          => 'common',
+            'icon'              => 'admin',
+            'keywords'          => array( 'size-chart' ),
+            )
+        );
     }
 }
 
