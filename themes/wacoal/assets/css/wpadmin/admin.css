@@ -1,0 +1,44 @@
+/* Question Answer block Css */
+.article-questions.even-sequence .article-questions--image {
+  width: 30%;
+}
+
+
+/* Quote block Css */
+.product-quote .product-quote--image{
+  width: 30%;
+}
+.product-quote .product-quote--content{
+  font-size: 1.4em;
+}
+
+/*Data with image block CSS*/
+.article-questions--wrapper .article-questions--image {
+  width: 30%;
+  margin-left: 1em;
+}
+.article-questions--wrapper .article-questions--content {
+  min-width: 70%;
+  max-width: 70%;
+  line-height: 1em;
+}
+
+/*Product gallery wrapper block CSS*/
+.product-gallery:before {
+  width: 100%;
+}
+.product-gallery .product-gallery--box {
+  padding: 0 10px;
+}
+
+/*Text only list format block CSS*/
+.list-text-format .list-box.list-box-one .list-box--content,
+.list-text-format .list-box.list-box-two .list-box--content,
+.list-text-format .list-box.list-box-three .list-box--content {
+  flex: unset;
+}
+
+/*Text image list format block CSS*/
+.list-format .list--image {
+  width: 30%;
+}

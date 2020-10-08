@@ -1,0 +1,86 @@
+// Proxima Nova Font
+@include custom-font(ProximaNova-Thin, '../../fonts/proxima-nova/ProximaNova-Thin');
+@include custom-font(ProximaNova-Light, '../../fonts/proxima-nova/ProximaNova-Light');
+@include custom-font(ProximaNova-Reg, '../../fonts/proxima-nova/ProximaNova-Reg');
+@include custom-font(ProximaNova-Sbold, '../../fonts/proxima-nova/ProximaNova-Sbold');
+@include custom-font(ProximaNova-Bold, '../../fonts/proxima-nova/ProximaNova-Bold');
+@include custom-font(ProximaNova-Xbold, '../../fonts/proxima-nova/ProximaNova-Xbold');
+
+@mixin ProximaNova-Thin {
+    font-family: 'ProximaNova-Thin';
+}
+
+@mixin ProximaNova-Light {
+  font-family: 'ProximaNova-Light';
+}
+
+@mixin ProximaNova-Reg {
+  font-family: 'ProximaNova-Reg';
+}
+
+@mixin ProximaNova-Sbold {
+  font-family: 'ProximaNova-Sbold';
+}
+
+@mixin ProximaNova-Bold {
+  font-family: 'ProximaNova-Bold';
+}
+
+@mixin ProximaNova-Xbold {
+  font-family: 'ProximaNova-Xbold';
+}
+
+.proximanova-thin {
+  @include ProximaNova-Thin;
+}
+.proximanova-light {
+  @include ProximaNova-Light;
+}
+.proximanova-reg {
+  @include ProximaNova-Reg;
+}
+.proximanova-sbold {
+  @include ProximaNova-Sbold;
+}
+.proximanova-bold {
+  @include ProximaNova-Bold;
+}
+.proximanova-xbold {
+  @include ProximaNova-Xbold;
+}
+
+//
+// BentonModDisp Font
+@include custom-font(BentonModDisp-Regular, '../../fonts/benton/BentonModDisp-Regular');
+@include custom-font(BentonModDisp-RegularItalic, '../../fonts/benton/BentonModDisp-RegularItalic');
+@include custom-font(BentonModDisp-Bold, '../../fonts/benton/BentonModDisp-Bold');
+@include custom-font(BentonModDisp-BoldItalic, '../../fonts/benton/BentonModDisp-BoldItalic');
+
+@mixin BentonModDisp-Regular {
+  font-family: 'BentonModDisp-Regular';
+}
+
+@mixin BentonModDisp-RegularItalic {
+  font-family: 'BentonModDisp-RegularItalic';
+}
+
+@mixin BentonModDisp-Bold {
+  font-family: 'BentonModDisp-Bold';
+}
+
+@mixin BentonModDisp-BoldItalic {
+  font-family: 'BentonModDisp-BoldItalic';
+}
+
+.bentonmod-reg {
+  @include BentonModDisp-Regular;
+}
+.bentonmod-regilatic {
+  @include BentonModDisp-RegularItalic;
+}
+.bentonmod-bold {
+  @include BentonModDisp-Bold;
+}
+.bentonmod-bolditalic {
+  @include BentonModDisp-BoldItalic;
+}

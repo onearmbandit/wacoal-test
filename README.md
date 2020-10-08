@@ -1,43 +1,105 @@
-# VIP Go Skeleton
+Wacoal
+==================================
 
-Welcome to VIP! This repo is a starting point for building your VIP Go site, including all the base folders to be built on.
+## Table of Contents
 
-## Guidebooks
+*   [Introduction](#introduction)
+*   [Install WP Cli](#install-wp-cli)
+*   [Install WP Core & theme](#install-wp-core-&-theme)
+*   [Wp-config.php file edits](#Update-wp-config)
+*   [Local Project Setup](#Local-Project-Setup)
+*   [Daily Project run commands](#Daily-Project-run-commands)
 
-We'd recommend starting with one of the following guidebooks. They include everything you need to know about launching and developing with VIP:
+## Introduction
 
-* [Launching with VIP](https://wpvip.com/documentation/launching-with-vip/)
-* [Developing with VIP](https://wpvip.com/documentation/developing-with-vip/)
+## Install WP Cli
 
-## Quick links to relevant documentation
+see docs to install wp-cli which is used to install & update
+core wordpress files & plugins
 
-To dig straight into our documentation and get up and running, try:
+```bash
+  curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+  chmod +x wp-cli.phar
+  sudo mv wp-cli.phar /usr/local/bin/wp
+```
 
-* [Understanding your VIP Go codebase](https://wpvip.com/documentation/vip-go/understanding-your-vip-go-codebase/)
-* [VIP Go local development](https://wpvip.com/documentation/vip-go/local-vip-go-development-environment/)
+## Install WP Core & theme
 
-## Usage
+only for local development
 
-All the following directories are required and must not be removed:
+```bash
+wp core download
+mysqladmin -u admin -p create wp-react-ssr
+wp config create --dbname=wp-react-ssr --dbuser=admin --dbpass=admin
+wp core install --admin_user=admin --admin_email=admin@admin.com --admin_password=admin --url=http://localhost:8000/ --title="Wordprss Headless with React (ssr)"
+ln -s $(pwd)/theme wp/wp-content/themes/wp-react-ssr
+wp theme activate wp-react-ssr
+```
 
-* `client-mu-plugins`: for always active, global plugins (similar to `mu-plugins`) — see [our documentation](https://wpvip.com/documentation/vip-go/managing-plugins/#installing-to-the-client-mu-plugins-directory) for more information.
-* `images`: Store your site's favicons here, per [this documentation](https://wpvip.com/documentation/vip-go/understanding-your-vip-go-codebase/#favicons). All other public-facing images should be uploaded or [imported](https://wpvip.com/documentation/launching-with-vip/content-migration/) to the WordPress dashboard or stored as part of your `/theme/` assets.
-* `languages`: For `.po` and `.mo` translation files, which specify the translated strings for the site.
-* `plugins`: Your site's plugins — more details [here](https://wpvip.com/documentation/vip-go/managing-plugins/#installing-to-the-plugins-directory).
-* `private`: Provides access to files that are not directly web accessible, but can be accessed by your theme or plugin code — [more details here](https://wpvip.com/documentation/vip-go/understanding-your-vip-go-codebase/#using-private).
-* `themes`: Themes to be made available to your sites. We recommend keeping the default theme available for [testing purposes](https://wpvip.com/documentation/testing-your-site/).
-* `vip-config`: For custom configuration changes and additional `sunrise.php` [code](https://wpvip.com/documentation/vip-go/sunrise-php-on-vip-go/). This folder’s `vip-config.php` file is used in place of `wp-config.php`.
+## Update wp-config
 
-These directories will also be available on production web servers. Any additional directories created in your GitHub repository that are not included in the above list will not be mounted onto your site, and so will not be web-accessible.
+add following after `$table_prefix`
 
-## Support
+```php
+define( 'WACOAL_ENABLE_LOCAL_SETTINGS', true );
+define( 'WACOAL_PHOTON_URL', 'http://photon.local' );
+define('WP_ENV', 'development');
+define('WP_SITEURL', 'http://wacoal.local/');
+define('WP_HOME', 'http://wacoal.local/');
 
-If you need help with anything, VIP's support team is [just a ticket away](https://wpvip.com/documentation/vip-go/accessing-vip-support/).
+define('WP_DEBUG',true);
+define('WP_DEBUG_LOG',true);
+define('WP_DEBUG_DISPLAY',false);
 
-## Your content here
- 
-Feel free to add to or replace this README.md content with content unique to your project, for example:
- 
-* Project-specific notes; like a list of VIP environments and branches,
-* Workflow documentation; so everyone working in this repo can follow a defined process, or
-* Instructions for testing new features.
+if ( file_exists( __DIR__ . '/wp-content/vip-config/vip-config.php' ) ) {
+  require_once __DIR__ . '/wp-content/vip-config/vip-config.php';
+}
+```
+
+## Local Project Setup
+
+```bash
+Step 1: Clone the project using SSH/HTTP to your machine.
+
+Step 2: (Go to project folder) cd wacoal
+
+Step 3: yarn install (Only once when initial project setup)
+
+Step 4: yarn sniff:setup (Only once when initial project setup)
+
+Step 5: yarn docker:start
+
+Step 6: yarn docker:setup (Only once when initial project setup)
+
+Step 7: yarn start
+
+```
+
+## Daily Project run commands
+
+```
+  01) yarn docker:start
+
+  02) yarn docker:ip
+      (Copy IP address and use the same in host file of local machine and docker container)
+
+  03) sudo nano /etc/hosts
+      (Use the copied IP address and paste in the file with below example)
+
+      example:- 172.27.0.4 wacoal.local photon.local
+
+      (Replace IP address in above example with yours and save the file)
+
+  04) yarn docker:shell
+
+      (Use the copied IP address and paste in the file with below example)
+
+      example:- echo "172.27.0.4 photon.local wacoal.local" >> /etc/hosts
+
+      (Replace IP address in above example with yours and save the file)
+
+  05) yarn start
+```
+
+
+#### MIT License
