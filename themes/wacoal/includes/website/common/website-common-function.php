@@ -666,3 +666,20 @@ function wacoal_add_taxonomies_to_pages()
     register_taxonomy_for_object_type('category', 'page');
 }
 add_action('init', 'wacoal_add_taxonomies_to_pages');
+
+function wacoal_block_categories( $categories, $post ) {
+    if ( $post->post_type !== 'post' ) {
+        return $categories;
+    }
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'wacoal',
+                'title' => __( 'Wacoal category', 'wacoal' ),
+                'icon'  => 'wordpress',
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'wacoal_block_categories', 10, 2 );
