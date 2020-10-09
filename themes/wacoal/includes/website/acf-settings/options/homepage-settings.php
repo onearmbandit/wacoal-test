@@ -307,71 +307,7 @@ acf_add_local_field_group(
             'max' => '',
             'return_format' => 'id',
         ),
-        array(
-            'key' => 'field_5f6c78fc194b4',
-            'label' => 'More from blog',
-            'name' => 'more_from_blog',
-            'type' => 'group',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'layout' => 'block',
-            'sub_fields' => array(
-                array(
-                    'key' => 'field_5f6de623f3a7a',
-                    'label' => 'Headline',
-                    'name' => 'headline',
-                    'type' => 'text',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'default_value' => '',
-                    'placeholder' => '',
-                    'prepend' => '',
-                    'append' => '',
-                    'maxlength' => '',
-                ),
-                array(
-                    'key' => 'field_5f6de631f3a7b',
-                    'label' => 'posts',
-                    'name' => 'posts',
-                    'type' => 'relationship',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'wrapper' => array(
-                        'width' => '',
-                        'class' => '',
-                        'id' => '',
-                    ),
-                    'post_type' => array(
-                        0 => 'post',
-                    ),
-                    'taxonomy' => '',
-                    'filters' => array(
-                        0 => 'search',
-                        1 => 'post_type',
-                        2 => 'taxonomy',
-                    ),
-                    'elements' => array(
-                        0 => 'featured_image',
-                    ),
-                    'min' => '',
-                    'max' => 3,
-                    'return_format' => 'id',
-                ),
-            ),
-        ),
+
     ),
     'location' => array(
         array(

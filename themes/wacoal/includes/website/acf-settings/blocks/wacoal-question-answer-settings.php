@@ -36,7 +36,7 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f75a388def13',
-                    'label' => 'question text',
+                    'label' => 'Question Text',
                     'name' => 'question_text',
                     'type' => 'wysiwyg',
                     'instructions' => '',
@@ -50,12 +50,12 @@ acf_add_local_field_group(
                     'default_value' => '',
                     'tabs' => 'all',
                     'toolbar' => 'content_toolbar',
-                    'media_upload' => 1,
+                    'media_upload' => 0,
                     'delay' => 0,
                 ),
                 array(
                     'key' => 'field_5f75a3a1def14',
-                    'label' => 'answer text',
+                    'label' => 'Answer Text',
                     'name' => 'answer_text',
                     'type' => 'wysiwyg',
                     'instructions' => '',
@@ -137,4 +137,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
