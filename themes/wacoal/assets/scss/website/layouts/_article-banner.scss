@@ -1,11 +1,11 @@
 .article-details-banner {
   width: var(--width-100);
-  background-image: url("../../images/landing-banner-mobile.png");
+  background-image: url("../../images/article-banner.png");
   background-size: cover;
-  height: calcRem(442);
+  height: calcRem(229);
+  background-position: center;
 
   @include respond-above(sm) {
     height: get-vw(804px);
-    background-image: url("../../images/article-banner.png");
   }
 }

@@ -100,9 +100,10 @@
 
 
 .page-wrapper {
+  width: calc(100% - 46px);
+  margin: auto;
 
   &--content {
     width: get-vw(1720px);
-    margin: auto;
   }
 }
