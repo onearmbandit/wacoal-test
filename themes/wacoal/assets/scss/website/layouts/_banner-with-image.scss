@@ -5,6 +5,7 @@
   height: calcRem(442);
   padding: calcRem(38, 0, 0, 11);
   margin-bottom: calcRem(20);
+  flex-direction: column;
 
   @include respond-above(sm) {
     height: get-vw(482px);
@@ -44,6 +45,22 @@
 
     @include respond-above(xl) {
       font-size: calcRem(32);
+    }
+  }
+
+  &.desktop-banner {
+      display: none;
+
+      @include respond-above(sm) {
+        display: flex;
+      }
+  }
+
+  &.mobile-banner {
+    display: flex;
+
+    @include respond-above(sm) {
+      display: none;
     }
   }
 }

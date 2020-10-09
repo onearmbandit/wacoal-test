@@ -15,7 +15,17 @@
 <a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true) : echo "target='_blank'";
 endif;?>>
 <?php endif;?>
-<section class="banner-with-image"
+<section class="banner-with-image desktop-banner"
+    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+        <h1 class="banner-with-image--heading">
+            <?php echo esc_attr($top_banner_title);?>
+        </h1>
+        <p class="banner-with-image--subtitle">
+            <?php echo esc_attr($top_banner_subtitle);?>
+        </p>
+</section>
+
+<section class="banner-with-image mobile-banner"
     style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
