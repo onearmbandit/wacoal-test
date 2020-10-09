@@ -12,8 +12,7 @@
 
 ?>
 
-<section class="article-questions odd-sequence" style="text-align:center;">
-    <div class="">
+<section class="full-width-container--wrapper">
         <?php
         foreach ($chart_images as $chart) {
             $chart_image_id     = $chart['chart_image'];
@@ -21,7 +20,7 @@
             $chart_image_alt    = wacoal_get_image_alt($chart_image_id, 'Block Image');
             $chart_image_url    = Wacoal_Get_image($chart_image_array);
             ?>
-        <div class="">
+        <div class="full-width-container--image">
             <figure>
                 <?php if ($chart_image_id && !empty($chart_image_id)) {
                     ?>
@@ -35,5 +34,4 @@
             <?php
         }
         ?>
-    </div>
 </section>
