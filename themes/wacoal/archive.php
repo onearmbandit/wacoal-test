@@ -28,17 +28,7 @@ $cat_name         = $current_cat_data->name;
 
 <?php
 
-$recent_posts = Wacoal_Query_posts(
-    array(
-        'post_type' => array('post'),
-
-        'posts_per_page' => 3,
-        'offset' => 0,
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'post_status'=>'publish'
-    )
-);
+$recent_posts= get_field('more_from_blog', 'category_'.$current_cat_id);
 $template= get_field('template', 'category_'.$current_cat_id);
 if ($template == 'wacoal') {
     $static_section= get_field('static_section', 'category_'.$current_cat_id);?>
@@ -135,41 +125,46 @@ if ($template == 'wacoal') {
     </div>
 <?php }?>
 <!-- More From Blog -->
+
 <section class="spacer-120"></section>
-<section class="more-blog">
-    <div class="more-blog--title">
-            <?php echo esc_html("More From The Blog");?>
-    </div>
-    <div class="more-blog--wrapper">
-        <?php foreach ($recent_posts as $key => $blog) {
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
-            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-            $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
-            $categories = wacoal_get_primary_category($blog->ID);
-            $post_tagline = get_field('tag_line', $blog->ID);
-            $cat_ID = $categories->term_id;
-            ?>
-            <article class="blog-tile">
-                <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                </div>
-                <div class="blog-tile--category">
-                    <?php if (! empty($categories) ) {?>
-                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
-                    <?php }?>
-                </div>
-                <h5 class="blog-tile--heading">
-                    <?php echo esc_attr(get_the_title($blog->ID));?>
-                </h5>
-                <p class="blog-tile--para">
-                <?php echo  wp_kses_post($post_tagline);?>
-                </p>
-                <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
-                    class="btn primary">Learn More</a>
-            </article>
-        <?php } ?>
-    </div>
-</section>
+<?php if(!empty($recent_posts['posts'])) :?>
+    <section class="more-blog">
+        <div class="more-blog--title">
+                <?php echo esc_html($recent_posts['headline']);?>
+        </div>
+        <div class="more-blog--wrapper">
+            <?php foreach ($recent_posts['posts'] as  $blog) { ?>
+                <?php
+
+                $thumbnail_id = get_post_thumbnail_id($blog);
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+                $categories = get_the_terms($blog, 'category');
+                $post_tagline = get_field('tag_line', $blog);
+                $cat_ID = $categories[0]->term_id;
+                $cat_url = get_term_link($cat_ID);
+                ?>
+                <article class="blog-tile">
+                    <div class="blog-tile--image">
+                        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+                    <div class="blog-tile--category">
+                        <?php if (! empty($categories) ) {?>
+                           <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
+                        <?php }?>
+                    </div>
+                    <h5 class="blog-tile--heading">
+                        <?php echo esc_attr(get_the_title($blog));?>
+                    </h5>
+                    <p class="blog-tile--para">
+                    <?php echo  wp_kses_post($post_tagline);?>
+                    </p>
+                    <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
+                </article>
+            <?php } ?>
+        </div>
+    </section>
+<?php endif;?>
 
 
     </main><!-- #main -->
