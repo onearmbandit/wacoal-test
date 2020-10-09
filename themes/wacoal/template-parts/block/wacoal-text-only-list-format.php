@@ -45,7 +45,9 @@ if ($block_lists && !empty($block_lists)) {
                 if ($list_subhead && !empty($list_subhead)) {
                     ?>
                 <div class="list-box--heading">
-                    <?php echo wp_kses_post($list_subhead); ?>
+                    <span>
+                        <?php echo wp_kses_post($list_subhead); ?>
+                    </span>
                 </div>
                     <?php
                 }
@@ -68,7 +70,9 @@ if ($block_lists && !empty($block_lists)) {
             if ($list_subhead && !empty($list_subhead)) {
                 ?>
             <div class="list-box--heading">
-                <?php echo wp_kses_post($list_subhead); ?>
+                <span>
+                    <?php echo wp_kses_post($list_subhead); ?>
+                </span>
             </div>
                 <?php
             } ?>
@@ -109,7 +113,9 @@ if ($block_lists && !empty($block_lists)) {
             if ($list_subhead && !empty($list_subhead)) {
                 ?>
             <div class="list-box--heading">
-                <?php echo wp_kses_post($list_subhead); ?>
+                <span>
+                    <?php echo wp_kses_post($list_subhead); ?>
+                </span>
             </div>
                 <?php
             } ?>

@@ -1,6 +1,6 @@
 .more-blog {
   position: relative;
-  margin-bottom: calcRem(25);
+  margin-bottom: calcRem(53);
 
   @include respond-above(sm) {
     margin-bottom: get-vw(134.3px);
@@ -93,13 +93,13 @@
     max-width: 100%;
 
 
-    &:not(:last-child) {
-      margin-bottom: calcRem(30);
+    // &:not(:last-child) {
+    //   margin-bottom: calcRem(30);
 
-      @include respond-above(sm) {
-        margin-bottom: 0;
-      }
-    }
+    //   @include respond-above(sm) {
+    //     margin-bottom: 0;
+    //   }
+    // }
 
     &:nth-child(2) {
       @include respond-above(sm) {
@@ -248,10 +248,10 @@
   // }
 
   .more-blog {
-    margin-bottom: calcRem(36);
+    margin-bottom: calcRem(54);
 
     @include respond-above(sm) {
-      margin-bottom: get-vw(60px);
+      margin-bottom: get-vw(90px);
     }
 
     &::before {

@@ -12,7 +12,7 @@
 
 ?>
 
-    <div class="full-width-container--image">
+    <div class="full-width--image">
             <figure>
                 <?php if($block_image_id && !empty($block_image_id)) {
                     ?>

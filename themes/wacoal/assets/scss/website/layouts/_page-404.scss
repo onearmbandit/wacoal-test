@@ -13,7 +13,7 @@
       font-size: calcRem(18);
 
       @include respond-above(sm) {
-        font-size: get-vw(25px);
+        font-size: calcRem(25px);
       }
 
       &:nth-child(2) {

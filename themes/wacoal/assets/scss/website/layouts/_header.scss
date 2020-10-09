@@ -91,6 +91,7 @@
   display: flex;
   align-items: center;
   padding-left: calcRem(26);
+  font-size: calcRem(15);
 
   @include respond-above(sm) {
     display: none;

@@ -12,6 +12,7 @@
   .featured-box {
     display: flex;
     flex-direction: column-reverse;
+    align-items: stretch;
 
     @include respond-above(sm) {
       flex-direction: row;
@@ -79,7 +80,8 @@
 
       @include respond-above(sm) {
         width: get-vw(653px);
-        height: get-vw(597px);
+        min-height: get-vw(597px);
+        height: auto;
       }
 
       img {
@@ -100,10 +102,13 @@
 
 
 .page-wrapper {
-  width: calc(100% - 46px);
-  margin: auto;
 
   &--content {
-    width: get-vw(1720px);
+    width: calc(100% - 36px);
+    margin: auto;
+
+    @include respond-above(sm) {
+      width: get-vw(1720px);
+    }
   }
 }

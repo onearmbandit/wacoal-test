@@ -55,6 +55,14 @@ require('../../scss/website/wacoal-swiper.scss');
     breakpoints: {
       768: {
         slidesPerView: 1.25,
+        spaceBetween: 42
+      },
+      1025: {
+        slidesPerView: 1.25,
+        spaceBetween: 55
+      },
+      1281: {
+        slidesPerView: 1.25,
         spaceBetween: 83
       }
     }

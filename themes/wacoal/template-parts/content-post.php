@@ -41,9 +41,6 @@
     </div>
 </section>
 
-
-<section class="spacer-80"></section>
-
 <!-- More From Blog -->
 <section class="more-blog">
     <div class="more-blog--title">
@@ -88,5 +85,3 @@
 
     </div>
 </section>
-<!-- -->
-<section class="spacer-120"></section>

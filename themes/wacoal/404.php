@@ -66,7 +66,6 @@ $description=get_field('description', 'options');
 
     </div>
 </section>
-<!-- -->
-<section class="spacer-120"></section>
+
 <?php
 wacoal_page_entry_bottom();

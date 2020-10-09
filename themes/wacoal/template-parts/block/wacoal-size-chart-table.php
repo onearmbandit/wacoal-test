@@ -20,7 +20,8 @@
             $chart_image_alt    = wacoal_get_image_alt($chart_image_id, 'Block Image');
             $chart_image_url    = Wacoal_Get_image($chart_image_array);
             ?>
-        <div class="full-width-container--image">
+        <!-- <div class="full-width-container--image"> -->
+        <div class="full-width--chart">
             <figure>
                 <?php if ($chart_image_id && !empty($chart_image_id)) {
                     ?>
