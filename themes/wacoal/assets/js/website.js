@@ -101,5 +101,28 @@ $(document).on('click', '.prev a', function (event) {
   }
 
 });
+$(document).on('click', '.more', function (event) {
+  var input= $("#offset").val();
+  var offset= parseInt(input)+3;
+  $.ajax({
+    url: wacoal_js_var.ajaxurl,
+    type: 'post',
+    data: {
+      action: 'wacoal_load_more',
+      // query_vars: wacoal_js_var.query_vars,
+      // page: page,
+      offset:offset,
+      nonce:wacoal_js_var.nonce,
+    },
+    success: function (html) {
+      $("#offset").val(offset);
+      $(html).insertAfter($(".more-blog").last());
+      if(html == 0){
+        $(".more").attr("disabled","disabled");
+      }
+      //$(".more-blog").after(html);
 
+    }
+  });
+});
 (function ($) {})(jQuery);

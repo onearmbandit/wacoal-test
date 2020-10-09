@@ -16,7 +16,7 @@
 endif;?>>
 <?php endif;?>
 <section class="banner-with-image"
-    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
+    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
         </h1>
@@ -148,10 +148,11 @@ endif;?>>
 
 <!-- More From Blog -->
 
-
+<input type="hidden" name="offset" id="offset" value="0">
 <section class="more-blog">
     <div class="more-blog--title">
             <?php echo esc_html("More From The Blog");?>
+
     </div>
     <div class="more-blog--wrapper">
         <?php foreach ($recent_posts as $key => $blog) {
@@ -184,4 +185,4 @@ endif;?>>
     </div>
 </section>
 
-
+<button class="more">See More</button>
