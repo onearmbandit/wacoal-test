@@ -26,7 +26,7 @@ endif;?>>
 </section>
 
 <section class="banner-with-image mobile-banner"
-    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_mobile_banner_image_url));?>);">
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
         </h1>
