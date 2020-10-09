@@ -22,13 +22,13 @@ if ($block_image_id && !empty($block_image_id)) {
             elseif($video_fields_option == 'video_file') {
                 $video_url = wp_get_attachment_url($video_field);
                 ?>
-        <video controls autoplay>
+        <video controls>
           <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
         </video>
                 <?php
             } elseif($video_fields_option == 'external_url') {
                 ?>
-            <video controls autoplay>
+            <video controls>
           <source src="<?php echo esc_url($video_field)?>" type="video/mp4">
             </video>
                 <?php
@@ -56,7 +56,7 @@ if ($block_image_id && !empty($block_image_id)) {
     } elseif ($video_fields_option == 'video_file') {
         $video_url = wp_get_attachment_url($video_field); ?>
         <section class="video-full-width">
-<video controls autoplay>
+<video controls>
   <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
 </video>
 <div class="video-caption">

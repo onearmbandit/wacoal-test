@@ -150,6 +150,11 @@
 //
 .product-gallery {
   position: relative;
+  margin-bottom: calcRem(58px);
+
+  @include respond-above(sm) {
+    margin-bottom: get-vw(163px);
+  }
 
   &:before {
     content: '';
@@ -495,11 +500,13 @@
 
   @include respond-above(sm) {
     width: get-vw(1720px);
+    height: get-vw(1001px);
     margin-bottom: get-vw(146px);
   }
 
-  video {
+  video, iframe {
     width: 100%;
+    height: 100%;
   }
 
   .video-caption {
