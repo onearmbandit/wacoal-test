@@ -155,7 +155,18 @@ function wacoal_acf_init()
             'render_callback'   => 'wacoal_video_block_render_callback',
             'category'          => 'common',
             'icon'              => 'format-video',
-            'keywords'          => array( 'size-chart' ),
+            'keywords'          => array( 'video' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'              => 'wacoal-video-with-image',
+            'title'             => __('Wacoal Video and Image'),
+            'description'       => __('A custom video and image block.'),
+            'render_callback'   => 'wacoal_video_image_block_render_callback',
+            'category'          => 'common',
+            'icon'              => 'format-video',
+            'keywords'          => array( 'video' ),
             )
         );
     }

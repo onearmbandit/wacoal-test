@@ -42,3 +42,14 @@
 .list-format .list--image {
   width: 30%;
 }
+
+/*Video block CSS*/
+.video-full-width,
+.video-full-width .video-caption {
+  width:100%;
+}
+
+/*Video Image and Video block CSS*/
+.video-image--wrapper {
+  width:100%;
+}
