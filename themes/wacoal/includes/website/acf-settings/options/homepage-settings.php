@@ -33,10 +33,34 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f6b0bdafa9de',
-                    'label' => 'Banner Image',
+                    'label' => 'Desktop Banner Image',
                     'name' => 'banner_image',
                     'type' => 'image',
-                    'instructions' => '',
+                    'instructions' => 'Image display above 768px',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'id',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+                array(
+                    'key' => 'field_5f8065c8fd45e',
+                    'label' => 'Mobile Banner Image',
+                    'name' => 'moible_banner_image',
+                    'type' => 'image',
+                    'instructions' => 'Image display below 768px',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(
@@ -307,7 +331,6 @@ acf_add_local_field_group(
             'max' => '',
             'return_format' => 'id',
         ),
-
     ),
     'location' => array(
         array(
@@ -328,3 +351,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
