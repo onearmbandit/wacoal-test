@@ -148,10 +148,11 @@ endif;?>>
 
 <!-- More From Blog -->
 
-
+<input type="hidden" name="offset" id="offset" value="0">
 <section class="more-blog">
     <div class="more-blog--title">
             <?php echo esc_html("More From The Blog");?>
+
     </div>
     <div class="more-blog--wrapper">
         <?php foreach ($recent_posts as $key => $blog) {
@@ -184,4 +185,4 @@ endif;?>>
     </div>
 </section>
 
-
+<button class="more">See More</button>
