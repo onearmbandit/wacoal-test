@@ -2,7 +2,7 @@
 /**
  * Hi there, VIP dev!
  *
- * vip-config.php is where you put things you'd usually put in wp-config.php. Don't worry about database settings
+ * This is where you put things you'd usually put in wp-config.php. Don't worry about database settings
  * and such, we've taken care of that for you. This is just for if you need to define an API key or something
  * of that nature.
  *
@@ -14,49 +14,56 @@
  * Happy Coding!
  *
  * - The WordPress.com VIP Team
+ *
+ * @package wacoal
  **/
 
-/**
- * Set a high default limit to avoid too many revisions from polluting the database.
- *
- * Posts with extremely high revisions can result in fatal errors or have performance issues.
- *
- * Feel free to adjust this depending on your use cases.
- */
-if ( ! defined( 'WP_POST_REVISIONS' ) ) {
-	define( 'WP_POST_REVISIONS', 500 );
+define( 'WPCOM_VIP_USE_JETPACK_PHOTON', true );
+
+// refer https://wpvip.com/documentation/setting-up-redirects-on-vip-go/#vip-go-domain-redirects-in-vip-config-php
+
+$http_host        = $_SERVER['HTTP_HOST'];   //phpcs:ignore
+$request_uri      = $_SERVER['REQUEST_URI']; //phpcs:ignore
+
+$redirect_domains = [
+	'blog.wacoal-america.com'   => [
+		'www.blog.wacoal-america.com',
+		'www.blog.wacoalamerica.com',
+		'blog.wacoalamerica.com'
+	],
+	'btemptdblog.wacoal-america.com'   => [
+		'www.btemptdblog.wacoal-america.com',
+		'www.btemptdblog.wacoalamerica.com',
+		'btemptdblog.wacoalamerica.com'
+	],
+	'blog.wacoal.ca'   => [
+		'www.blog.wacoal.ca',
+	],
+];
+
+// Safety checks for redirection:
+// 1. Don't redirect for '/cache-healthcheck?' or monitoring will break
+// 2. Don't redirect in WP CLI context.
+foreach ( $redirect_domains as $redirect_to => $redirect_from_domains ) {
+	if (
+			'/cache-healthcheck?' !== $request_uri && // safety
+			! ( defined( 'WP_CLI' ) && WP_CLI ) && // safety
+			$redirect_to !== $http_host &&
+			in_array( $http_host, $redirect_from_domains, true )
+		) {
+		header( 'Location: https://' . $redirect_to . $request_uri, true, 301 );
+		exit;
+	}
 }
 
-/**
- * The VIP_JETPACK_IS_PRIVATE constant is enabled by default in non-production environments.
- *
- * It disables programmatic access to content via the WordPress.com REST API and Jetpack Search;
- * subscriptions via the WordPress.com Reader; and syndication via the WordPress.com Firehose.
- *
- * You can disable "private" mode (e.g. for testing) in non-production environment by setting the constant to `true` below (or just by removing the lines).
- *
- * @see https://wpvip.com/documentation/vip-go/restricting-access-to-a-site-hosted-on-vip-go/#controlling-content-distribution-via-jetpack
- */
-if ( ! defined( 'VIP_JETPACK_IS_PRIVATE' ) &&
-	defined( 'VIP_GO_APP_ENVIRONMENT' ) &&
-	'production' !== VIP_GO_APP_ENVIRONMENT ) {
-	define( 'VIP_JETPACK_IS_PRIVATE', true );
-}
+$proxy_lib = ABSPATH . '/wp-content/mu-plugins/lib/proxy/ip-forward.php';
+if ( ! empty( $_SERVER['HTTP_TRUE_CLIENT_IP'] ) && file_exists( $proxy_lib ) ) {
+    require_once( __DIR__ . '/remote-proxy-ips.php' );
+    require_once( $proxy_lib );
 
-/**
- * Disable New Relic Browser instrumentation.
- *
- * By default, the New Relic extension automatically enables Browser instrumentation.
- *
- * This injects some New Relic specific javascript onto all pages on the VIP Platform.
- *
- * This isn't always desireable (e.g. impacts performance) so let's turn it off.
- *
- * If you would like to enable Browser instrumentation, please remove the lines below.
- *
- * @see https://docs.newrelic.com/docs/agents/php-agent/features/new-relic-browser-php-agent#disable
- * @see https://wpvip.com/documentation/vip-go/new-relic-on-vip-go/
- */
-if ( function_exists( 'newrelic_disable_autorum' ) ) {
-	newrelic_disable_autorum();
+    Automattic\VIP\Proxy\fix_remote_address(
+        $_SERVER['HTTP_TRUE_CLIENT_IP'],
+        $_SERVER['HTTP_X_FORWARDED_FOR'],
+        MY_PROXY_IP_ALLOW_LIST
+        );
 }
