@@ -84,8 +84,8 @@ if ($template == 'wacoal') {
             <article class="featured-box">
                 <div class="featured-box--content">
                     <p class="featured-box--content__subtitle"><?php echo esc_attr($cat_name); ?></p>
-                    <h4 class="featured-box--content__title"><?php echo esc_attr($featured_post_title); ?></h4>
-                    <p class="featured-box--content__para"><?php echo wp_kses_post($post_tagline); ?></p>
+                    <h4 class="featured-box--content__title"><?php echo esc_attr(wacoal_limit_text($featured_post_title, 56)); ?></h4>
+                    <p class="featured-box--content__para"><?php echo wp_kses_post(wacoal_limit_text($post_tagline, 160)); ?></p>
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
                 </div>
                 <div class="featured-box--image">

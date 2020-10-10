@@ -98,11 +98,11 @@ class Wacoal_Post
         }
 
         if ('post_title' === $field ) {
-            $field_value = wacoal_limit_text($field_value, 45);
+            $field_value = wacoal_limit_text($field_value, 50);
         }
 
         if ('tag_line' === $field ) {
-            $field_value = wacoal_limit_text($field_value, 70);
+            $field_value = wacoal_limit_text($field_value, 170);
         }
 
         return $field_value;
