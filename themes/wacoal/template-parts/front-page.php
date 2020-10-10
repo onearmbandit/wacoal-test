@@ -55,7 +55,7 @@ endif;?>>
                             <?php echo esc_attr($categories->name);?>
                         </a>
                         <h3 class="evergreen-article--content__title">
-                            <?php echo esc_attr(wacoal_limit_text($slider_blog->post_title, 21));?>
+                            <?php echo esc_attr(wacoal_limit_text($slider_blog->post_title, 17));?>
                         </h3>
                         <p class="evergreen-article--content__para">
                             <?php echo wp_kses_post(wacoal_limit_text($slider_blog->tag_line, 160));?>
@@ -128,7 +128,7 @@ endif;?>>
                                 <?php echo esc_attr($categories->name);?>
                             </a>
                             <h4 class="featured-box--content__title">
-                                <?php echo esc_attr(wacoal_limit_text($featured_blog->post_title, 35));?>
+                                <?php echo esc_attr(wacoal_limit_text($featured_blog->post_title, 30));?>
                             </h4>
                             <p class="featured-box--content__para">
                                 <?php echo wp_kses_post(wacoal_limit_text($featured_blog->tag_line, 160));?>
