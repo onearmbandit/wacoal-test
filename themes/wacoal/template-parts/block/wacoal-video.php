@@ -35,7 +35,7 @@
     if ($video_caption && !empty($video_caption)) {
         ?>
         <div class="video-caption">
-                <?php echo wp_kses_post($video_caption); ?>
+                <?php echo wp_kses_post(wacoal_remove_p_tag($video_caption)); ?>
         </div>
         <?php
     }

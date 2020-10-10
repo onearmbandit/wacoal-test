@@ -121,7 +121,7 @@ acf_add_local_field_group(
             'key' => 'field_5f7f20249dc95',
             'label' => 'Video Caption',
             'name' => 'video_caption',
-            'type' => 'text',
+            'type' => 'wysiwyg',
             'instructions' => '',
             'required' => 0,
             'conditional_logic' => array(
@@ -136,13 +136,13 @@ acf_add_local_field_group(
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'video_cap',
             ),
             'default_value' => '',
-            'placeholder' => '',
-            'prepend' => '',
-            'append' => '',
-            'maxlength' => '',
+            'tabs' => 'all',
+            'toolbar' => 'content_toolbar',
+            'media_upload' => 1,
+            'delay' => 0,
         ),
         array(
             'key' => 'field_5f7f08842a46e',

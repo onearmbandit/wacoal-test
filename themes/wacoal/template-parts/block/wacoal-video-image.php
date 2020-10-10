@@ -60,7 +60,7 @@ if ($block_image_id && !empty($block_image_id)) {
   <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
 </video>
 <div class="video-caption">
-        <?php echo wp_kses_post($video_caption);?>
+        <?php echo wp_kses_post(wacoal_remove_p_tag($video_caption));?>
 </div>
         </section>
         <?php
