@@ -255,6 +255,15 @@
       display: none;
     }
   }
+
+  strong {
+    @include BentonModDisp-Bold;
+  }
+
+  a {
+    @include BentonModDisp-Bold;
+    text-decoration: underline;
+  }
 }
 
 
@@ -565,6 +574,15 @@
       display: none;
     }
   }
+
+  strong {
+    @include BentonModDisp-Bold;
+  }
+
+  a {
+    @include BentonModDisp-Bold;
+    text-decoration: underline;
+  }
 }
 
 //
@@ -602,6 +620,15 @@
         margin-bottom: get-vw(65px);
       }
     }
+  }
+
+  strong {
+    @include BentonModDisp-Bold;
+  }
+
+  a {
+    @include BentonModDisp-Bold;
+    text-decoration: underline;
   }
 }
 
@@ -842,7 +869,14 @@
     }
 
   }
+  strong {
+    @include BentonModDisp-Bold;
+  }
 
+  a {
+    @include BentonModDisp-Bold;
+    text-decoration: underline;
+  }
 }
 
 //
