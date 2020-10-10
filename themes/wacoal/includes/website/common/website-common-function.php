@@ -667,8 +667,9 @@ function wacoal_add_taxonomies_to_pages()
 }
 add_action('init', 'wacoal_add_taxonomies_to_pages');
 
-function wacoal_block_categories( $categories, $post ) {
-    if ( $post->post_type !== 'post' ) {
+function wacoal_block_categories( $categories, $post )
+{
+    if ($post->post_type !== 'post' ) {
         return $categories;
     }
     return array_merge(
@@ -676,10 +677,19 @@ function wacoal_block_categories( $categories, $post ) {
         array(
             array(
                 'slug' => 'wacoal',
-                'title' => __( 'Wacoal category', 'wacoal' ),
+                'title' => __('Wacoal category', 'wacoal'),
                 'icon'  => 'wordpress',
             ),
         )
     );
 }
-add_filter( 'block_categories', 'wacoal_block_categories', 10, 2 );
+add_filter('block_categories', 'wacoal_block_categories', 10, 2);
+
+
+function wacoal_limit_text($text, $limit)
+{
+    if (strlen($text) > $limit) {
+        $text  = substr($text, 0, $limit) . '...';
+    }
+    return $text;
+}
