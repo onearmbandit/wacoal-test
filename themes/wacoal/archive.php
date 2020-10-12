@@ -156,9 +156,9 @@ if ($template == 'wacoal') {
                     <h5 class="blog-tile--heading">
                         <?php echo esc_attr(get_the_title($blog));?>
                     </h5>
-                    <p class="blog-tile--para">
+                    <div class="blog-tile--para">
                     <?php echo  wp_kses_post($post_tagline);?>
-                    </p>
+                    </div>
                     <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
                 </article>
             <?php } ?>

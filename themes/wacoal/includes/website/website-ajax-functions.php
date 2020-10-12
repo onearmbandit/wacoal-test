@@ -127,9 +127,9 @@ function wacoal_load_more(){
                 <h5 class="blog-tile--heading">
                     <?php echo esc_attr(get_the_title($blog->ID));?>
                 </h5>
-                <p class="blog-tile--para">
-                <?php echo  wp_kses_post($post_tagline);?>
-                </p>
+                <div class="blog-tile--para">
+                    <?php echo  wp_kses_post($post_tagline);?>
+                </div>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
                     class="btn primary">Learn More</a>
             </article>
