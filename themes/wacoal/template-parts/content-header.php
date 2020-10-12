@@ -19,6 +19,9 @@ $logo = get_field( 'header_logo', 'options' );
     <a class="shop-wacoal-btn" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
         <?php echo esc_html(get_field('header_button_text', 'options'));?>
     </a>
+    <a class="shop-wacoal-btn mobile" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
+        <?php echo esc_html(get_field('mob_header_button_text', 'options'));?>
+    </a>
 </header>
 
 <nav class="header-navigation">

@@ -53,7 +53,7 @@ acf_add_local_field_group(
                 'id' => '',
             ),
             'default_value' => '',
-            'placeholder' => 'Enter header button text',
+            'placeholder' => 'Enter desktop header button text',
             'prepend' => '',
             'append' => '',
             'maxlength' => '',
@@ -72,7 +72,7 @@ acf_add_local_field_group(
                 'id' => '',
             ),
             'default_value' => '',
-            'placeholder' => 'Enter header button text',
+            'placeholder' => 'Enter mobile header button text',
             'prepend' => '',
             'append' => '',
             'maxlength' => '',
@@ -113,3 +113,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
