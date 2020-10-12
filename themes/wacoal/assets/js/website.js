@@ -126,4 +126,13 @@ $(document).on('click', '.more', function (event) {
     }
   });
 });
+
+$(document).ready(function() {
+
+  if($(window).width() <= 767){
+    $('.footer-links--title').click(function() {
+      $(this).parent().toggleClass('open');
+    });
+  }
+});
 (function ($) {})(jQuery);

@@ -28,20 +28,29 @@ if (is_admin() ) {
                     $image_alt    = wacoal_get_image_alt($image_id, 'Carousel Image');
                     $image_url    = Wacoal_Get_image($image_array);
 
+                    $mob_image_id     = $image['mobile_image'];
+                    $mob_image_array  = wp_get_attachment_image_src($mob_image_id, 'full');
+                    $mob_image_alt    = wacoal_get_image_alt($mob_image_id, 'Mobile Carousel Image');
+                    $mob_image_url    = Wacoal_Get_image($mob_image_array);
+
                     ?>
                     <div class="swiper-slide">
-                        <img class="lazyload" data-src="<?php echo esc_url($image_url); ?>"
-                            alt="<?php echo wp_kses_post($image_alt);?>" />
+                        <img class="lazyload article-swiper-image--desktop" data-src="<?php echo esc_url($image_url); ?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo wp_kses_post($image_alt);?>" />
+                        <img class="lazyload article-swiper-image--mobile" data-src="<?php echo esc_url($mob_image_url); ?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo wp_kses_post($mob_image_alt);?>" />
                     </div>
                 <?php } ?>
             </div>
 
             <div class="swiper-pagination custom-swiper-pagination"></div>
             <div class="swiper-button-next swiper-buttun-background">
-                <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
             </div>
             <div class="swiper-button-prev swiper-buttun-background">
-                <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
             </div>
         </div>
     </section>

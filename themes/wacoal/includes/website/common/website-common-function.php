@@ -574,7 +574,7 @@ function wacoal_paging_nav()
      * Previous Post Link
     */
     // if ( get_previous_posts_link() )
-    printf('<div class="pagination-box--btn prev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
+    printf('<div class="pagination-box--btn prev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
     echo '<ul class="pagination-box--numbers">';
     /**
      * Link to first page, plus ellipses if necessary
@@ -614,7 +614,7 @@ function wacoal_paging_nav()
      * Next Post Link
     */
     if (get_next_posts_link() ) {
-        printf('<div class="pagination-box--btn next"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
+        printf('<div class="pagination-box--btn next"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></div>' . "\n", esc_url(get_next_posts_page_link()));
     }
 
     echo '</div></div></section>' . "\n";
@@ -667,8 +667,9 @@ function wacoal_add_taxonomies_to_pages()
 }
 add_action('init', 'wacoal_add_taxonomies_to_pages');
 
-function wacoal_block_categories( $categories, $post ) {
-    if ( $post->post_type !== 'post' ) {
+function wacoal_block_categories( $categories, $post )
+{
+    if ($post->post_type !== 'post' ) {
         return $categories;
     }
     return array_merge(
@@ -676,10 +677,19 @@ function wacoal_block_categories( $categories, $post ) {
         array(
             array(
                 'slug' => 'wacoal',
-                'title' => __( 'Wacoal category', 'wacoal' ),
+                'title' => __('Wacoal category', 'wacoal'),
                 'icon'  => 'wordpress',
             ),
         )
     );
 }
-add_filter( 'block_categories', 'wacoal_block_categories', 10, 2 );
+add_filter('block_categories', 'wacoal_block_categories', 10, 2);
+
+
+function wacoal_limit_text($text, $limit)
+{
+    if (strlen($text) > $limit) {
+        $text  = substr($text, 0, $limit) . '...';
+    }
+    return $text;
+}

@@ -12,6 +12,7 @@
   .featured-box {
     display: flex;
     flex-direction: column-reverse;
+    align-items: stretch;
 
     @include respond-above(sm) {
       flex-direction: row;
@@ -62,6 +63,15 @@
           line-height: get-vw(33px);
           margin-top: get-vw(20px);
         }
+
+        strong {
+          @include ProximaNova-Bold;
+        }
+
+        a {
+          @include ProximaNova-Bold;
+          text-decoration: underline;
+        }
       }
 
       .btn {
@@ -79,7 +89,8 @@
 
       @include respond-above(sm) {
         width: get-vw(653px);
-        height: get-vw(597px);
+        min-height: get-vw(597px);
+        // height: auto;
       }
 
       img {
@@ -102,7 +113,11 @@
 .page-wrapper {
 
   &--content {
-    width: get-vw(1720px);
+    width: calc(100% - 36px);
     margin: auto;
+
+    @include respond-above(sm) {
+      width: get-vw(1720px);
+    }
   }
 }

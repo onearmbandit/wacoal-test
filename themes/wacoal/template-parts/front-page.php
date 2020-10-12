@@ -15,8 +15,18 @@
 <a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true) : echo "target='_blank'";
 endif;?>>
 <?php endif;?>
-<section class="banner-with-image"
-    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
+<section class="banner-with-image desktop-banner"
+    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+        <h1 class="banner-with-image--heading">
+            <?php echo esc_attr($top_banner_title);?>
+        </h1>
+        <p class="banner-with-image--subtitle">
+            <?php echo esc_attr($top_banner_subtitle);?>
+        </p>
+</section>
+
+<section class="banner-with-image mobile-banner"
+    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_mobile_banner_image_url));?>);">
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
         </h1>
@@ -45,16 +55,17 @@ endif;?>>
                             <?php echo esc_attr($categories->name);?>
                         </a>
                         <h3 class="evergreen-article--content__title">
-                            <?php echo esc_attr($slider_blog->post_title);?>
+                            <?php echo esc_attr(wacoal_limit_text($slider_blog->post_title, 17));?>
                         </h3>
-                        <p class="evergreen-article--content__para">
-                            <?php echo wp_kses_post($slider_blog->tag_line);?>
-                        </p>
+                        <div class="evergreen-article--content__para">
+                            <?php echo wp_kses_post(wacoal_limit_text($slider_blog->tag_line, 160));?>
+                        </div>
                     </div>
 
                     <div class="evergreen-article--image">
                         <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                     <div class="evergreen-article--button">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
@@ -68,10 +79,12 @@ endif;?>>
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
   </div>
 </section>
@@ -82,6 +95,7 @@ endif;?>>
         <div class="wacoal-101--image">
             <img class="lazyload"
                 data-src="<?php echo  esc_url($static_section['image']); ?>"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt="Wacoal 101" />
         </div>
         <div class="wacoal-101--content">
@@ -91,7 +105,8 @@ endif;?>>
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
-                        <img class="lazyload" data-src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                        <img class="lazyload" data-src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wacoal 101 Arrow" />
                     </div>
                     <div class="wacoal-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
@@ -118,17 +133,17 @@ endif;?>>
                                 <?php echo esc_attr($categories->name);?>
                             </a>
                             <h4 class="featured-box--content__title">
-                                <?php echo esc_attr($featured_blog->post_title);?>
+                                <?php echo esc_attr(wacoal_limit_text($featured_blog->post_title, 30));?>
                             </h4>
-                            <p class="featured-box--content__para">
-                                <?php echo wp_kses_post($featured_blog->tag_line);?>
-                            </p>
+                            <div class="featured-box--content__para">
+                                <?php echo wp_kses_post(wacoal_limit_text($featured_blog->tag_line, 160));?>
+                            </div>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
                                 class="btn primary big">learn more</a>
                         </div>
                         <div class="featured-box--image">
                             <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </div>
                     </article>
                 </div>
@@ -138,10 +153,12 @@ endif;?>>
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
     </div>
 </section>
@@ -165,7 +182,8 @@ endif;?>>
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>
@@ -185,4 +203,6 @@ endif;?>>
     </div>
 </section>
 
-<button class="more">See More</button>
+<div class="see-more--wrapper">
+    <button class="more btn primary">See More</button>
+</div>

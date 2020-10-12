@@ -45,7 +45,8 @@ $description=get_field('description', 'options');
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
+                    <img class="lazyload" data-src="<?php echo  esc_url($thumbnail); ?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) { ?>
@@ -66,7 +67,6 @@ $description=get_field('description', 'options');
 
     </div>
 </section>
-<!-- -->
-<section class="spacer-120"></section>
+
 <?php
 wacoal_page_entry_bottom();

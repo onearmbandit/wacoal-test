@@ -1,8 +1,13 @@
 <?php
 /**
  * Wacoal list acf settings
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
 acf_add_local_field_group(
@@ -143,7 +148,7 @@ acf_add_local_field_group(
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
-                        'id' => '',
+                        'id' => 'list_content',
                     ),
                     'default_value' => '',
                     'tabs' => 'all',
@@ -173,3 +178,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+

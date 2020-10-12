@@ -20,7 +20,8 @@
             ?>
         <div class="product-quote--image">
             <img class="lazyload" data-src="<?php echo esc_url($quotes_image_url); ?>"
-                alt="<?php echo wp_kses_post($quotes_image_alt)?>" />
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            alt="<?php echo wp_kses_post($quotes_image_alt)?>" />
         </div>
             <?php
         }

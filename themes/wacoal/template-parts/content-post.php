@@ -26,9 +26,9 @@
         <h2 class="article-header--wrapper__heading">
             <?php echo esc_attr($post_title); ?>
         </h2>
-        <p class="article-header--wrapper__para">
+        <div class="article-header--wrapper__para">
             <?php echo wp_kses_post($tag_line); ?>
-        </p>
+        </div>
         <div class="article-header--wrapper__seperator">
         </div>
     </div>
@@ -40,9 +40,6 @@
         <?php the_content(); ?>
     </div>
 </section>
-
-
-<section class="spacer-80"></section>
 
 <!-- More From Blog -->
 <section class="more-blog">
@@ -67,7 +64,8 @@
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo  esc_url($thumbnail); ?>" alt="<?php echo  esc_attr($alt); ?>" />
+                    <img class="lazyload" data-src="<?php echo  esc_url($thumbnail); ?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) { ?>
@@ -88,5 +86,3 @@
 
     </div>
 </section>
-<!-- -->
-<section class="spacer-120"></section>

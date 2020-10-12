@@ -13,7 +13,7 @@
       font-size: calcRem(18);
 
       @include respond-above(sm) {
-        font-size: get-vw(25px);
+        font-size: calcRem(25px);
       }
 
       &:nth-child(2) {
@@ -21,6 +21,15 @@
       }
 
       a {
+        text-decoration: underline;
+      }
+
+      strong {
+        @include ProximaNova-Bold;
+      }
+
+      a {
+        @include ProximaNova-Bold;
         text-decoration: underline;
       }
     }

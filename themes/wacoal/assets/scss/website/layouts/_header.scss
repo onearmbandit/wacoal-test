@@ -73,14 +73,35 @@
   position: absolute;
   right: 0;
   @include ProximaNova-Light;
-  font-size: get-vw(32px);
   color: var(--color-white);
   text-transform: uppercase;
   background: var(--color-black);
-  padding-left: get-vw(101px);
-  padding-right: get-vw(101px);
-  padding-top: get-vw(23px);
-  padding-bottom: get-vw(23px);
+  font-size: calcRem(11);
+  padding: 11px 17px;
+
+  @include respond-above(sm) {
+    padding-left: get-vw(101px);
+    padding-right: get-vw(101px);
+    padding-top: get-vw(23px);
+    padding-bottom: get-vw(23px);
+    font-size: get-vw(32px);
+  }
+
+  &.shop-wacoal-btn-desktop {
+    display: none;
+
+    @include respond-above(sm) {
+      display: block;
+    }
+  }
+
+  &.shop-wacoal-btn-mobile {
+    display: block;
+
+    @include respond-above(sm) {
+      display: none;
+    }
+  }
 }
 
 
@@ -91,6 +112,7 @@
   display: flex;
   align-items: center;
   padding-left: calcRem(26);
+  font-size: calcRem(15);
 
   @include respond-above(sm) {
     display: none;

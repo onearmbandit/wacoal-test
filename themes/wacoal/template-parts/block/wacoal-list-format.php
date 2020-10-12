@@ -28,8 +28,9 @@ if ($block_lists && !empty($block_lists)) {
             <?php
             if ($list_image_url && !empty($list_image_url)) {
                 ?>
-            <div class="list--image">
-                <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>" alt="List Image" />
+            <div class="list--image list--image__desktop">
+                <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
             </div>
                 <?php
             } ?>
@@ -59,6 +60,15 @@ if ($block_lists && !empty($block_lists)) {
                     <?php
                 }
 
+                if ($list_image_url && !empty($list_image_url)) {
+                    ?>
+                <div class="list--image list--image__mobile">
+                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                </div>
+                    <?php
+                }
+
                 if ($list_desc && !empty($list_desc)) {
                     ?>
                 <div class="list--content__para">
@@ -77,8 +87,9 @@ if ($block_lists && !empty($block_lists)) {
             <?php
             if ($list_image_url && !empty($list_image_url)) {
                 ?>
-            <div class="list--image">
-                <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>" alt="List Image" />
+            <div class="list--image list--image__desktop">
+                <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
             </div>
                 <?php
             } ?>
@@ -104,6 +115,16 @@ if ($block_lists && !empty($block_lists)) {
                     ?>
                 <div class="list--content__subheading-two">
                     <?php echo wp_kses_post($list_subheading_2); ?>
+                </div>
+                    <?php
+                }
+
+
+                if ($list_image_url && !empty($list_image_url)) {
+                    ?>
+                <div class="list--image list--image__mobile">
+                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
                 </div>
                     <?php
                 }

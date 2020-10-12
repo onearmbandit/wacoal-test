@@ -19,7 +19,8 @@
         $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
         $post_tagline  = get_field('tag_line');
         ?>
-        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
     </div>
     <div class="blog-tile--category">
     <?php echo esc_attr($cat_name); ?>
@@ -29,7 +30,7 @@
     ?>
 
     <p class="blog-tile--para">
-        <?php echo esc_attr($post_tagline); ?>
+        <?php echo wp_kses_post($post_tagline); ?>
     </p>
     <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
 </article>
