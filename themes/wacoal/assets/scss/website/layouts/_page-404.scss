@@ -23,6 +23,15 @@
       a {
         text-decoration: underline;
       }
+
+      strong {
+        @include ProximaNova-Bold;
+      }
+
+      a {
+        @include ProximaNova-Bold;
+        text-decoration: underline;
+      }
     }
   }
 }

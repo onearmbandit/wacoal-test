@@ -63,6 +63,15 @@
           line-height: get-vw(33px);
           margin-top: get-vw(20px);
         }
+
+        strong {
+          @include ProximaNova-Bold;
+        }
+
+        a {
+          @include ProximaNova-Bold;
+          text-decoration: underline;
+        }
       }
 
       .btn {

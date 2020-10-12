@@ -193,6 +193,8 @@ endif;?>>
             </article>
         <?php } ?>
     </div>
-
-    <button class="more">See More</button>
 </section>
+
+<div class="see-more--wrapper">
+    <button class="more btn primary">See More</button>
+</div>
