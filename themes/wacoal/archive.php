@@ -120,7 +120,7 @@ if ($template == 'wacoal') {
         </div>
 
     <?php } ?>
-        <section class="spacer-80"></section>
+
             <?php wacoal_paging_nav();?>
     </div>
 <?php }?>

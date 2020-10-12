@@ -103,7 +103,7 @@ function wacoal_load_more(){
     if(!empty($recent_posts)){
     ob_start();
     ?>
-        <section class="more-blog">
+        <section class="more-blog more-blog-multirow">
 
         <div class="more-blog--wrapper">
         <?php

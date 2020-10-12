@@ -26,9 +26,9 @@
         <h2 class="article-header--wrapper__heading">
             <?php echo esc_attr($post_title); ?>
         </h2>
-        <p class="article-header--wrapper__para">
+        <div class="article-header--wrapper__para">
             <?php echo wp_kses_post($tag_line); ?>
-        </p>
+        </div>
         <div class="article-header--wrapper__seperator">
         </div>
     </div>
