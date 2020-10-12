@@ -29,7 +29,7 @@
     ?>
 
     <p class="blog-tile--para">
-        <?php echo esc_attr($post_tagline); ?>
+        <?php echo wp_kses_post($post_tagline); ?>
     </p>
     <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
 </article>

@@ -64,7 +64,8 @@ endif;?>>
 
                     <div class="evergreen-article--image">
                         <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                     <div class="evergreen-article--button">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
@@ -78,10 +79,12 @@ endif;?>>
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
   </div>
 </section>
@@ -92,6 +95,7 @@ endif;?>>
         <div class="wacoal-101--image">
             <img class="lazyload"
                 data-src="<?php echo  esc_url($static_section['image']); ?>"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt="Wacoal 101" />
         </div>
         <div class="wacoal-101--content">

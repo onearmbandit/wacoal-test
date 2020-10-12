@@ -50,7 +50,7 @@ acf_add_local_field_group(
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'quotes_content',
             ),
             'default_value' => '',
             'tabs' => 'all',

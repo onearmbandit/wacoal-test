@@ -22,7 +22,7 @@
                 }
                 if ($caption && !empty($caption)) {
                     ?>
-                <figcaption><?php echo wp_kses_post($caption); ?></figcaption>
+                <figcaption><?php echo wp_kses_post(wacoal_remove_p_tag($caption)); ?></figcaption>
                     <?php
                 }
                 ?>

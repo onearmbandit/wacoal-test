@@ -45,7 +45,7 @@ acf_add_local_field_group(
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
-                        'id' => '',
+                        'id' => 'question_text',
                     ),
                     'default_value' => '',
                     'tabs' => 'all',
@@ -64,7 +64,7 @@ acf_add_local_field_group(
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
-                        'id' => '',
+                        'id' => 'answer_text',
                     ),
                     'default_value' => '',
                     'tabs' => 'all',
