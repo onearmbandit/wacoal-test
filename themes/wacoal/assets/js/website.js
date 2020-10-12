@@ -119,7 +119,8 @@ $(document).on('click', '.more', function (event) {
       $(html).insertAfter($(".more-blog").last());
       $(window).scrollTop($(".more-blog").last().offset().top);
       if(html == 0){
-        $(".more").attr("disabled","disabled");
+        // $(".more").attr("disabled","disabled");
+        $('.more').parent('div').addClass('disable');
       }
 
 
