@@ -58,6 +58,37 @@ acf_add_local_field_group(
                     'max_size' => '',
                     'mime_types' => '',
                 ),
+                array(
+                    'key' => 'field_5f841529440f8',
+                    'label' => 'Mobile Image',
+                    'name' => 'mobile_image',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 1,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5f7481952db07',
+                                'operator' => '!=empty',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'id',
+                    'preview_size' => 'full',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
             ),
         ),
     ),
@@ -80,4 +111,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
