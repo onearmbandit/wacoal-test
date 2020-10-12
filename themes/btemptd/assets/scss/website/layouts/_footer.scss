@@ -1,0 +1,230 @@
+.footer-section {
+  background: var(--color-black);
+  width: var(--width-100);
+  padding-top: calcRem(30);
+  padding-bottom: calcRem(22);
+
+  @include respond-above(sm) {
+    padding-top: get-vw(90px);
+    padding-bottom: get-vw(71px);
+  }
+}
+
+.footer-wrapper {
+  width: calc(var(--width-100) - 70px);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include respond-above(sm) {
+    width: get-vw(1630px);
+    flex-direction: row;
+  }
+
+  &--left {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include respond-above(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &--right {
+    flex: 1;
+    max-width: calcRem(272);
+
+    @include respond-above(sm) {
+      max-width: get-vw(510px);
+      margin-left: get-vw(128px);
+    }
+  }
+
+  &--copyright {
+    width: var(--width-100);
+    color: var(--color-white);
+    @include ProximaNova-Reg;
+    font-size: calcRem(8);
+    margin-top: calcRem(22);
+
+    @include respond-above(sm) {
+      font-size: calcRem(7);
+      margin-top: get-vw(70px);
+    }
+
+    @include respond-above(md) {
+      font-size: get-vw(14px);
+    }
+  }
+}
+
+.footer-links {
+  &--title {
+    @include BentonModDisp-Bold;
+    font-size: calcRem(13);
+    color: var(--color-white);
+    margin-bottom: calcRem(20);
+
+    @include respond-above(sm) {
+      font-size: calcRem(9);
+      margin-bottom: calcRem(13.8);
+    }
+
+    @include respond-above(md) {
+      font-size: calcRem(12.5);
+      margin-bottom: calcRem(20);
+    }
+
+    @include respond-above(lg) {
+      font-size: calcRem(14);
+      margin-bottom: calcRem(24.8);
+    }
+
+    @include respond-above(xl) {
+      font-size: calcRem(20);
+      margin-bottom: calcRem(37.7);
+    }
+
+  }
+
+  &--ul {
+
+    &__list {
+      text-transform: uppercase;
+      letter-spacing: calcRem(1);
+      display: flex;
+
+      &:not(:last-child){
+        margin-bottom: calcRem(9);
+
+        @include respond-above(sm) {
+          margin-bottom: calcRem(9);
+        }
+
+        @include respond-above(md) {
+          margin-bottom: calcRem(13.8);
+        }
+
+        @include respond-above(lg) {
+          margin-bottom: calcRem(16.5);
+        }
+
+        @include respond-above(xl) {
+          margin-bottom: calcRem(25.7);
+        }
+
+      }
+    }
+
+    &__link {
+      color: var(--color-white);
+      @include ProximaNova-Sbold;
+      font-size: calcRem(10);
+
+
+      @include respond-above(sm) {
+        font-size: calcRem(6);
+      }
+
+      @include respond-above(md) {
+        font-size: calcRem(8);
+      }
+
+      @include respond-above(lg) {
+        font-size: calcRem(10);
+      }
+
+      @include respond-above(xl) {
+        font-size: calcRem(14);
+      }
+    }
+
+  }
+}
+
+.footer-links--title + div {
+  display: none;
+
+  @include respond-above(sm) {
+    display: block;
+  }
+}
+
+.footer-images {
+  display: flex;
+  justify-content: space-between;
+
+  &--img {
+    width: calcRem(64);
+    height: calcRem(64);
+
+    @include respond-above(sm) {
+      width: get-vw(120px);
+      height: get-vw(120px);
+    }
+  }
+}
+
+.footer-social {
+  display: flex;
+  margin-top: calcRem(20);
+
+  @include respond-above(sm) {
+    margin-top: get-vw(84px);
+  }
+
+  &--icon {
+    width: calcRem(16);
+    height: calcRem(16);
+    display: flex;
+    align-items: center;
+
+    @include respond-above(sm) {
+      width: calcRem(15);
+      height: calcRem(15);
+    }
+
+    @include respond-above(md) {
+      width: calcRem(18);
+      height: calcRem(18);
+    }
+
+    @include respond-above(lg) {
+      width: calcRem(24);
+      height: calcRem(24);
+    }
+
+    @include respond-above(xl) {
+      width: calcRem(36);
+      height: calcRem(36);
+    }
+
+    &:not(:first-child) {
+      margin-left: calcRem(13);
+
+      @include respond-above(sm) {
+        margin-left: calcRem(12);
+      }
+
+      @include respond-above(md) {
+        margin-left: calcRem(16);
+      }
+
+      @include respond-above(lg) {
+        margin-left: calcRem(18);
+      }
+
+      @include respond-above(xl) {
+        margin-left: calcRem(29);
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+}

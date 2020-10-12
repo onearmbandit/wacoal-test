@@ -13,6 +13,7 @@ services:
       - ${PWD}/vip-config:/var/www/html/wp-content/vip-config
       - ${PWD}/client-mu-plugins/plugin-loader.php:/var/www/html/wp-content/mu-plugins/plugin-loader.php
       - ${PWD}/themes/wacoal:/var/www/html/wp-content/themes/wacoal
+      - ${PWD}/themes/btemptd:/var/www/html/wp-content/themes/btemptd
       - ${PWD}/plugins:/var/www/html/wp-content/plugins
       - ${PWD}/vip-config/sunrise.php:/var/www/html/wp-content/sunrise.php
       - ${PWD}/docker/php/dbadmin.php:/var/www/html/dbadmin.php
@@ -40,6 +41,7 @@ services:
       - ${PWD}/vip-config:/var/www/html/wp-content/vip-config
       - ${PWD}/client-mu-plugins/plugin-loader.php:/var/www/html/wp-content/mu-plugins/plugin-loader.php
       - ${PWD}/themes/wacoal:/var/www/html/wp-content/themes/wacoal
+      - ${PWD}/themes/btemptd:/var/www/html/wp-content/themes/btemptd
       - ${PWD}/plugins:/var/www/html/wp-content/plugins
       - ${PWD}/vip-config/sunrise.php:/var/www/html/wp-content/sunrise.php
       - ${PWD}/docker/php/dbadmin.php:/var/www/html/dbadmin.php
