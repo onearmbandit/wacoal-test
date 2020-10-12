@@ -81,7 +81,7 @@
       @include respond-above(sm) {
         width: get-vw(653px);
         min-height: get-vw(597px);
-        height: auto;
+        // height: auto;
       }
 
       img {

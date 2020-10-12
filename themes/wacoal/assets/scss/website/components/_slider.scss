@@ -22,6 +22,10 @@
 
   .swiper-wrapper {
     // padding-bottom: get-vw(20px);
+    .swiper-slide {
+      overflow: hidden;
+      width: 100.1%;
+    }
   }
   .swiper-button-next, .swiper-button-prev {
     transform: translateY(-50%);
@@ -168,7 +172,7 @@
 
   &--content {
     padding-top: calcRem(16);
-    min-height: calcRem(230);
+    height: calcRem(230);
     padding-bottom: calcRem(12);
 
     @include respond-above(sm) {
@@ -261,6 +265,22 @@
 
     img {
       max-width: 100%;
+    }
+
+    .article-swiper-image--desktop {
+      display: none;
+
+      @include respond-above(sm) {
+        display: block;
+      }
+    }
+
+    .article-swiper-image--mobile {
+      display: block;
+
+      @include respond-above(sm) {
+        display: none;
+      }
     }
   }
 }
