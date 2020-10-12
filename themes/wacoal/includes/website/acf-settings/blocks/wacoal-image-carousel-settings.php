@@ -36,7 +36,7 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f7481952db07',
-                    'label' => 'Image',
+                    'label' => 'Desktop Image',
                     'name' => 'image',
                     'type' => 'image',
                     'instructions' => '',
@@ -111,3 +111,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
