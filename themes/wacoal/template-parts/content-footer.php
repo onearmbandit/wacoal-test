@@ -32,7 +32,8 @@ $oembeded = get_field('instagram_feeds', 'options');
             <div class="footer-social">
                 <?php foreach($social_share as $key => $value){ ?>
                    <a href="<?php echo esc_url($value['link']['url']);?>" class="footer-social--icon" target="_blank">
-                    <img class="lazyload" data-src="<?php echo esc_url($value['icon']['url']);?>" alt="<?php echo esc_attr($value['icon']['alt']);?>" />
+                    <img class="lazyload" data-src="<?php echo esc_url($value['icon']['url']);?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($value['icon']['alt']);?>" />
                     </a>
                 <?php } ?>
 

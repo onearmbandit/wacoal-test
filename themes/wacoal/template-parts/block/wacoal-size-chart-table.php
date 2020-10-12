@@ -26,7 +26,8 @@
                 <?php if ($chart_image_id && !empty($chart_image_id)) {
                     ?>
                 <img class="lazyload" data-src="<?php echo esc_url($chart_image_url); ?>"
-                    alt="<?php echo wp_kses_post($chart_image_alt); ?>"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                alt="<?php echo wp_kses_post($chart_image_alt); ?>"
                     style="max-width:100%"/>
                     <?php
                 } ?>

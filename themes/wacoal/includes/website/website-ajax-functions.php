@@ -117,7 +117,8 @@ function wacoal_load_more(){
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>

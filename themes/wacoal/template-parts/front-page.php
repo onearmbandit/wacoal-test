@@ -105,7 +105,8 @@ endif;?>>
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
-                        <img class="lazyload" data-src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="Wacoal 101 Arrow" />
+                        <img class="lazyload" data-src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wacoal 101 Arrow" />
                     </div>
                     <div class="wacoal-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
                 </div>
@@ -142,7 +143,7 @@ endif;?>>
                         </div>
                         <div class="featured-box--image">
                             <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </div>
                     </article>
                 </div>
@@ -152,10 +153,12 @@ endif;?>>
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
         </div>
     </div>
 </section>
@@ -179,7 +182,8 @@ endif;?>>
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>
