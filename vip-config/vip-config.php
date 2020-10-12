@@ -18,7 +18,7 @@
  * @package wacoal
  **/
 
-define( 'WPCOM_VIP_USE_JETPACK_PHOTON', true );
+define('WPCOM_VIP_USE_JETPACK_PHOTON', true);
 
 // refer https://wpvip.com/documentation/setting-up-redirects-on-vip-go/#vip-go-domain-redirects-in-vip-config-php
 
@@ -26,44 +26,44 @@ $http_host        = $_SERVER['HTTP_HOST'];   //phpcs:ignore
 $request_uri      = $_SERVER['REQUEST_URI']; //phpcs:ignore
 
 $redirect_domains = [
-	'blog.wacoal-america.com'   => [
-		'www.blog.wacoal-america.com',
-		'www.blog.wacoalamerica.com',
-		'blog.wacoalamerica.com'
-	],
-	'btemptdblog.wacoal-america.com'   => [
-		'www.btemptdblog.wacoal-america.com',
-		'www.btemptdblog.wacoalamerica.com',
-		'btemptdblog.wacoalamerica.com'
-	],
-	'blog.wacoal.ca'   => [
-		'www.blog.wacoal.ca',
-	],
+    'blog.wacoal-america.com'   => [
+        'www.blog.wacoal-america.com',
+        'www.blog.wacoalamerica.com',
+        'blog.wacoalamerica.com'
+    ],
+    'btemptdblog.wacoal-america.com'   => [
+        'www.btemptdblog.wacoal-america.com',
+        'www.btemptdblog.wacoalamerica.com',
+        'btemptdblog.wacoalamerica.com'
+    ],
+    'blog.wacoal.ca'   => [
+        'www.blog.wacoal.ca',
+    ],
 ];
 
 // Safety checks for redirection:
 // 1. Don't redirect for '/cache-healthcheck?' or monitoring will break
 // 2. Don't redirect in WP CLI context.
 foreach ( $redirect_domains as $redirect_to => $redirect_from_domains ) {
-	if (
-			'/cache-healthcheck?' !== $request_uri && // safety
-			! ( defined( 'WP_CLI' ) && WP_CLI ) && // safety
-			$redirect_to !== $http_host &&
-			in_array( $http_host, $redirect_from_domains, true )
-		) {
-		header( 'Location: https://' . $redirect_to . $request_uri, true, 301 );
-		exit;
-	}
+    if ('/cache-healthcheck?' !== $request_uri  // safety
+        && ! ( defined('WP_CLI') && WP_CLI )  // safety
+        && $redirect_to !== $http_host
+        && in_array($http_host, $redirect_from_domains, true)
+    ) {
+        header('Location: https://' . $redirect_to . $request_uri, true, 301);
+        exit;
+    }
 }
 
 $proxy_lib = ABSPATH . '/wp-content/mu-plugins/lib/proxy/ip-forward.php';
-if ( ! empty( $_SERVER['HTTP_TRUE_CLIENT_IP'] ) && file_exists( $proxy_lib ) ) {
-    require_once( __DIR__ . '/remote-proxy-ips.php' );
-    require_once( $proxy_lib );
+$forwarded_ips = explode(",", $SERVER['HTTP_TRUE_CLIENT_IP']);
+if ($forwarded_ips[0] && ! empty($_SERVER['REMOTE_ADDR']) && file_exists($proxy_lib) ) {
+    include_once __DIR__ . '/remote-proxy-ips.php';
+    include_once $proxy_lib;
 
     Automattic\VIP\Proxy\fix_remote_address(
-        $_SERVER['HTTP_TRUE_CLIENT_IP'],
-        $_SERVER['HTTP_X_FORWARDED_FOR'],
+        $forwarded_ips[0],
+        $_SERVER['REMOTE_ADDR'],
         MY_PROXY_IP_ALLOW_LIST
-        );
+    );
 }
