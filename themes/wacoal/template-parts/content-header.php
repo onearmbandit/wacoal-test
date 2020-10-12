@@ -16,10 +16,10 @@ $logo = get_field( 'header_logo', 'options' );
     <a href="<?php echo esc_url(home_url());?>">
         <img class="header-section--logo lazyload" data-src="<?php echo esc_url($logo);?>" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wacoal"/>
     </a>
-    <a class="shop-wacoal-btn" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
+    <a class="shop-wacoal-btn shop-wacoal-btn-desktop" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
         <?php echo esc_html(get_field('header_button_text', 'options'));?>
     </a>
-    <a class="shop-wacoal-btn mobile" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
+    <a class="shop-wacoal-btn shop-wacoal-btn-mobile" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
         <?php echo esc_html(get_field('mob_header_button_text', 'options'));?>
     </a>
 </header>

@@ -30,7 +30,9 @@ if (is_admin() ) {
 
                     ?>
                     <div class="swiper-slide">
-                        <img class="lazyload" data-src="<?php echo esc_url($image_url); ?>"
+                        <img class="lazyload article-swiper-image--desktop" data-src="<?php echo esc_url($image_url); ?>"
+                            alt="<?php echo wp_kses_post($image_alt);?>" />
+                        <img class="lazyload article-swiper-image--mobile" data-src="<?php echo esc_url($image_url); ?>"
                             alt="<?php echo wp_kses_post($image_alt);?>" />
                     </div>
                 <?php } ?>

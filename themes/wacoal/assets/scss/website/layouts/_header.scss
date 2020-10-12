@@ -81,6 +81,22 @@
   padding-right: get-vw(101px);
   padding-top: get-vw(23px);
   padding-bottom: get-vw(23px);
+
+  &.shop-wacoal-btn-desktop {
+    display: none;
+
+    @include respond-above(sm) {
+      display: block;
+    }
+  }
+
+  &.shop-wacoal-btn-mobile {
+    display: block;
+
+    @include respond-above(sm) {
+      display: none;
+    }
+  }
 }
 
 
