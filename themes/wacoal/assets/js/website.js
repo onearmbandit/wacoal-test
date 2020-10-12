@@ -117,10 +117,11 @@ $(document).on('click', '.more', function (event) {
     success: function (html) {
       $("#offset").val(offset);
       $(html).insertAfter($(".more-blog").last());
+      $(window).scrollTop($(".more-blog").last().offset().top);
       if(html == 0){
         $(".more").attr("disabled","disabled");
       }
-      //$(".more-blog").after(html);
+
 
     }
   });
