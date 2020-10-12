@@ -1,0 +1,44 @@
+//
+// Convert pixel value in to rem value
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+@function calcRem($values...) {
+  $max     : length($values);
+  $pxValues: '';
+
+  @for $i from 1 through $max {
+      $value   : strip-unit(nth($values, $i));
+      $pxValues: #{$pxValues + $value/16}rem;
+
+      @if $i < $max {
+          $pxValues: #{$pxValues + " "};
+      }
+  }
+
+  @return $pxValues;
+}
+
+/* how to use */
+/*
+font-size: calcRem(16);
+margin: calcRem(10, 11, 12, 13);
+*/
+
+
+
+// @function vw($px-vw, $base-vw: 1920px)    {
+//   @return ($px-vw * 100vw) / $base-vw;
+// }
+
+$vw-viewport: 1920;
+@function get-vw($font){
+  $vw-context: $vw-viewport * 0.01 * 1px;
+  @return $font / $vw-context * 1vw;
+  @return $font;
+}
+
+/* font-size: vw(16px) */

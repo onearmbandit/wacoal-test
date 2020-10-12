@@ -19,7 +19,8 @@
         $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
         $post_tagline  = get_field('tag_line');
         ?>
-        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
     </div>
     <div class="blog-tile--category">
     <?php echo esc_attr($cat_name); ?>
