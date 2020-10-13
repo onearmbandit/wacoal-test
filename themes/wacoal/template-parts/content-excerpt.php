@@ -29,9 +29,9 @@
     the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
     ?>
 
-    <p class="blog-tile--para">
+    <div class="blog-tile--para">
         <?php echo wp_kses_post($post_tagline); ?>
-    </p>
+    </div>
     <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
 </article>
 

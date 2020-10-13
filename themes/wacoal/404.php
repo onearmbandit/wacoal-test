@@ -56,9 +56,9 @@ $description=get_field('description', 'options');
                 <h5 class="blog-tile--heading">
                     <?php echo esc_attr($blog->post_title);?>
                 </h5>
-                <p class="blog-tile--para">
+                <div class="blog-tile--para">
                 <?php echo  wp_kses_post($post_tagline);?>
-                </p>
+                    </div>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>

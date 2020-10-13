@@ -337,4 +337,8 @@
   @include respond-above(sm) {
     margin-bottom: get-vw(134.3px);
   }
+
+  &.disable {
+    display: none;
+  }
 }

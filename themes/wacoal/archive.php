@@ -87,7 +87,7 @@ if ($template == 'wacoal') {
                 <div class="featured-box--content">
                     <p class="featured-box--content__subtitle"><?php echo esc_attr($cat_name); ?></p>
                     <h4 class="featured-box--content__title"><?php echo esc_attr(wacoal_limit_text($featured_post_title, 32)); ?></h4>
-                    <p class="featured-box--content__para"><?php echo wp_kses_post(wacoal_limit_text($post_tagline, 120)); ?></p>
+                    <p class="featured-box--content__para"><?php echo wp_kses_post(wacoal_limit_text($post_tagline, 100)); ?></p>
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
                 </div>
                 <div class="featured-box--image">
@@ -160,9 +160,9 @@ if ($template == 'wacoal') {
                     <h5 class="blog-tile--heading">
                         <?php echo esc_attr(get_the_title($blog));?>
                     </h5>
-                    <p class="blog-tile--para">
+                    <div class="blog-tile--para">
                     <?php echo  wp_kses_post($post_tagline);?>
-                    </p>
+                    </div>
                     <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
                 </article>
             <?php } ?>

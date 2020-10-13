@@ -114,17 +114,6 @@ function wacoal_acf_init()
             'keywords'          => array( 'question', 'answer' ),
             )
         );
-        // acf_register_block(
-        //     array(
-        //     'name'              => 'wacoal-static-link',
-        //     'title'             => __('Wacoal 101 static links'),
-        //     'description'       => __('A custom text and link block.'),
-        //     'render_callback'   => 'wacoal_static_link_render_callback',
-        //     'category'          => 'wacoal',
-        //     'icon'              => 'admin-links',
-        //     'keywords'          => array( 'text', 'link', 'image' ),
-        //     )
-        // );
         acf_register_block(
             array(
             'name'              => 'wacoal-image',
@@ -169,6 +158,28 @@ function wacoal_acf_init()
             'keywords'          => array( 'video' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'              => 'wacoal-horizontal-line',
+            'title'             => __('Wacoal Horizontal Line'),
+            'description'       => __('A custom horizontal block.'),
+            'render_callback'   => 'wacoal_horizontal_block_render_callback',
+            'category'          => 'common',
+            'icon'              => 'format-line',
+            'keywords'          => array( 'line' ),
+            )
+        );
+                // acf_register_block(
+        //     array(
+        //     'name'              => 'wacoal-static-link',
+        //     'title'             => __('Wacoal 101 static links'),
+        //     'description'       => __('A custom text and link block.'),
+        //     'render_callback'   => 'wacoal_static_link_render_callback',
+        //     'category'          => 'wacoal',
+        //     'icon'              => 'admin-links',
+        //     'keywords'          => array( 'text', 'link', 'image' ),
+        //     )
+        // );
     }
 }
 
