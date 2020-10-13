@@ -415,3 +415,18 @@ function wacoal_video_image_block_render_callback( $block )
     }
 
 }
+
+/**
+ * Callback function for horizontal line block
+ *
+ * @param  [type] $block Block.
+ * @return void
+ */
+function wacoal_horizontal_block_render_callback( $block )
+{
+
+    $shortcode_template  = '/template-parts/block/wacoal-horizontal-line.php';
+
+        include locate_template($shortcode_template);
+
+}
