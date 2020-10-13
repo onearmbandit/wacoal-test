@@ -9,15 +9,13 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Wacoal
  */
-
-if ($block_image_id && !empty($block_image_id)) {
-    ?>
+?>
 
 <section class="video-image--wrapper">
         <div class="video-image--wrapper__left">
            <?php
             if ($video_fields_option == 'embed_video') {
-                echo $video_field;
+                echo wp_kses_post($video_field);
             }
             elseif($video_fields_option == 'video_file') {
                 $video_url = wp_get_attachment_url($video_field);
@@ -49,22 +47,3 @@ if ($block_image_id && !empty($block_image_id)) {
         </div>
 
 </section>
-
-    <?php
-} else {
-    if ($video_fields_option == 'embed_video') {
-        echo $video_field;
-    } elseif ($video_fields_option == 'video_file') {
-        $video_url = wp_get_attachment_url($video_field); ?>
-        <section class="video-full-width">
-<video controls>
-  <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
-</video>
-<div class="video-caption">
-        <?php echo wp_kses_post(wacoal_remove_p_tag($video_caption));?>
-</div>
-        </section>
-        <?php
-    }
-}
-?>

@@ -4,8 +4,6 @@
   "scripts": {
     "start": "NODE_ENV=development NODE_SITE=wacoal node ./webpack/start.js",
     "build": "NODE_ENV=production NODE_SITE=wacoal node ./webpack/build.js",
-    "wacoal-start": "NODE_ENV=development NODE_SITE=wacoal node ./webpack/start.js",
-    "wacoal-build": "NODE_ENV=production NODE_SITE=wacoal node ./webpack/build.js",
     "btemptd-start": "NODE_ENV=development NODE_SITE=btemptd node ./webpack/start.js",
     "btemptd-build": "NODE_ENV=production NODE_SITE=btemptd node ./webpack/build.js",
     "sniff:setup": "chmod +x sniff_setup.sh && ./sniff_setup.sh",
@@ -14,7 +12,8 @@
     "docker:shell": "docker exec -it wacoal-php /bin/bash",
     "docker:ip": "docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' wacoal-nginx",
     "photon:setup": "unzip -o docker/photon_local.zip",
-    "phpcs": "phpcs --standard=WordPress-VIP-Go -sp --basepath=. --ignore=themes/wacoal/dist* themes/wacoal*"
+    "phpcs": "phpcs --standard=WordPress-VIP-Go -sp --basepath=. --ignore=themes/wacoal/dist* themes/wacoal*",
+    "btemptd-phpcs": "phpcs --standard=WordPress-VIP-Go -sp --basepath=. --ignore=themes/btemptd/dist* themes/btemptd*"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
