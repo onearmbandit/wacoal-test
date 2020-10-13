@@ -11,21 +11,6 @@
  */
 
 btemptd_page_entry_top('');
-
-$primary_category     = btemptd_get_primary_category($post->ID);
-$primary_category_url = get_term_link($primary_category->term_id);
-
-$recent_posts = btemptd_Query_posts(
-    array(
-        'post_type' => array('post'),
-        'post__not_in' => array($post->ID),
-        'posts_per_page' => 3,
-        'offset' => 0,
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'post_status'=>'publish'
-    )
-);
 ?>
 
 	<div id="primary" class="content-area">
