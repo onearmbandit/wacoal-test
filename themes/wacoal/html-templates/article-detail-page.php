@@ -10,7 +10,7 @@
  * @link     Wacoal
  */
 
-wacoal_page_entry_top('');
+Wacoal_Page_Entry_top('');
 ?>
 
 <!-- PLease DO NOT modify this file, we have all HTML components here -->
@@ -496,4 +496,4 @@ wacoal_page_entry_top('');
     </div>
 </section>
 <?php
-wacoal_page_entry_bottom();
+Wacoal_Page_Entry_bottom();

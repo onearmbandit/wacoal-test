@@ -9,7 +9,7 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Wacoal
  */
-wacoal_page_entry_top('');
+Wacoal_Page_Entry_top('');
 $current_cat_data = get_queried_object();
 $current_cat_id   = $current_cat_data->term_id;
 $cat_name         = $current_cat_data->name;
@@ -175,4 +175,4 @@ if ($template == 'wacoal') {
 </div><!-- #primary -->
 
 <?php
-wacoal_page_entry_bottom();
+Wacoal_Page_Entry_bottom();

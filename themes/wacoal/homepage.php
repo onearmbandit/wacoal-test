@@ -10,7 +10,7 @@
  * @link     Wacoal
  */
 
-wacoal_page_entry_top('');
+Wacoal_Page_Entry_top('');
 
 $top_banner_fields      = get_field('top_banner', 'options');
 $slider_fields      = get_field('slider_posts', 'options');
@@ -453,4 +453,4 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 
 <?php
-wacoal_page_entry_bottom();
+Wacoal_Page_Entry_bottom();

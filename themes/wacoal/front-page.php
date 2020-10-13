@@ -10,7 +10,7 @@
  * @link     Wacoal
  */
 
-wacoal_page_entry_top('');
+Wacoal_Page_Entry_top('');
 
 $top_banner_fields    = get_field('top_banner', 'options');
 $top_desktop_banner_image_id  = $top_banner_fields['banner_image'];
@@ -86,4 +86,4 @@ $recent_posts = Wacoal_Query_posts(
 
 require locate_template('template-parts/front-page.php');
 
-wacoal_page_entry_bottom();
+Wacoal_Page_Entry_bottom();

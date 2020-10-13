@@ -1,5 +1,16 @@
 <?php
-wacoal_page_entry_top('');
+/**
+ * 404 template file
+ * php version 7.4
+ *
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
+ */
+
+Wacoal_Page_Entry_top('');
 $recent_posts = Wacoal_Query_posts(
     array(
         'post_type' => array('post'),
@@ -69,4 +80,4 @@ $description=get_field('description', 'options');
 </section>
 
 <?php
-wacoal_page_entry_bottom();
+Wacoal_Page_Entry_bottom();

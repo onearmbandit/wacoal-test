@@ -19,20 +19,20 @@
         <?php if ('post' === get_post_type() ) : ?>
         <div class="entry-meta">
             <?php
-            wacoal_posted_on();
-            wacoal_posted_by();
+            Wacoal_Posted_on();
+            Wacoal_Posted_by();
             ?>
         </div><!-- .entry-meta -->
         <?php endif; ?>
     </header><!-- .entry-header -->
 
-    <?php wacoal_post_thumbnail(); ?>
+    <?php Wacoal_Post_thumbnail(); ?>
 
     <div class="entry-summary">
         <?php the_excerpt(); ?>
     </div><!-- .entry-summary -->
 
     <footer class="entry-footer">
-        <?php wacoal_entry_footer(); ?>
+        <?php Wacoal_Entry_footer(); ?>
     </footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -10,7 +10,7 @@
  * @link     Wacoal
  */
 
-wacoal_page_entry_top('');
+Wacoal_Page_Entry_top('');
 
 $primary_category     = wacoal_get_primary_category($post->ID);
 $primary_category_url = get_term_link($primary_category->term_id);
@@ -28,20 +28,20 @@ $recent_posts = Wacoal_Query_posts(
 );
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+        <?php
+        while ( have_posts() ) :
+            the_post();
             include locate_template('template-parts/content-page.php');
 
 
-		endwhile; // End of the loop.
-		?>
+        endwhile; // End of the loop.
+        ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
-wacoal_page_entry_bottom();
+Wacoal_Page_Entry_bottom();
