@@ -187,13 +187,19 @@
 
   &--content {
     padding-top: calcRem(16);
-    height: calcRem(230);
+    min-height: calcRem(230);
     padding-bottom: calcRem(12);
+    max-width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @include respond-above(sm) {
       max-width: get-vw(600px);
       height: get-vw(432px);
-      margin: auto;
       padding-top: get-vw(41px);
       padding-bottom: get-vw(50px);
     }

@@ -12,9 +12,9 @@
 
 ?>
 
-<section class="article-header">
-    <div class="article-header--wrapper">
-        <div class="article-header--wrapper__seperator">
+<section class="wacoal-seperator">
+    <div class="wacoal-seperator--wrapper">
+        <div class="wacoal-seperator--wrapper__seperator">
         </div>
     </div>
 </section>
