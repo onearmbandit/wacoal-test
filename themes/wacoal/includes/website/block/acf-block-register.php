@@ -165,7 +165,7 @@ function wacoal_acf_init()
             'description'       => __('A custom horizontal block.'),
             'render_callback'   => 'wacoal_horizontal_block_render_callback',
             'category'          => 'common',
-            'icon'              => 'format-line',
+            'icon'              => 'minus',
             'keywords'          => array( 'line' ),
             )
         );

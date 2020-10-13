@@ -53,3 +53,8 @@
 .video-image--wrapper {
   width:100%;
 }
+
+/*Horizonatal line block CSS*/
+.wacoal-seperator {
+  margin-bottom: 0;
+}

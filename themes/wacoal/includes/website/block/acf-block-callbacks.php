@@ -429,4 +429,10 @@ function wacoal_horizontal_block_render_callback( $block )
 
         include locate_template($shortcode_template);
 
+    if (is_admin() ) {
+        ?>
+            <h4><u>Wacoal Horizontal Line:</u></h4>
+        <?php
+    }
+
 }
