@@ -15,7 +15,7 @@
     <div class="video-full-width--wrapper">
     <?php
     if ($video_fields_option == 'embed_video') {
-        echo wp_kses_post($video_field);
+        echo $video_field; // phpcs:ignore
     } elseif ($video_fields_option == 'video_file') {
         $video_url = wp_get_attachment_url($video_field); ?>
 
