@@ -165,7 +165,7 @@ endif;?>>
 
 <!-- More From Blog -->
 <?php $counts= wp_count_posts();
-print_r($counts);
+
 ?>
 <input type="hidden" name="offset" id="offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
