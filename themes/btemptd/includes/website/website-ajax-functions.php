@@ -48,9 +48,6 @@ function btemptd_ajax_pagination() {
         $query_vars['post__not_in'] = $posts_to_exclude;
     }
     $posts = new WP_Query( $query_vars );
-    //$GLOBALS['wp_query'] = $posts;
-
-
 
     if( ! $posts->have_posts() ) {
         get_template_part( 'content', 'none' );

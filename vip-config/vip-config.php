@@ -15,7 +15,7 @@
  *
  * - The WordPress.com VIP Team
  *
- * @package wacoal
+ * @package Wacoal
  **/
 
 define('WPCOM_VIP_USE_JETPACK_PHOTON', true);
