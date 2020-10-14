@@ -14,9 +14,9 @@ define('THEMEPATH', get_template_directory());
 define('THEMEURI', get_template_directory_uri());
 define('STYLESHEETURI', get_stylesheet_directory_uri());
 
-if (!function_exists('btemptd_setup')) {
+if (!function_exists('Btemptd_setup')) {
 
-    function btemptd_setup()
+    function Btemptd_setup()
     {
 
         add_theme_support('automatic-feed-links');
@@ -41,12 +41,12 @@ if (!function_exists('btemptd_setup')) {
         );
     }
 }
-add_action('after_setup_theme', 'btemptd_setup');
+add_action('after_setup_theme', 'Btemptd_setup');
 
 /**
  * Enqueue scripts and styles.
  */
-function btemptd_scripts()
+function Btemptd_scripts()
 {
 
     global $wp_query;
@@ -67,12 +67,12 @@ function btemptd_scripts()
     );
 
 }
-add_action('wp_enqueue_scripts', 'btemptd_scripts');
+add_action('wp_enqueue_scripts', 'Btemptd_scripts');
 
 /**
  * Admin Enqueue scripts and styles.
  */
-function btemptd_Admin_scripts($hook)
+function Btemptd_Admin_scripts($hook)
 {
     global $post;
 
@@ -90,16 +90,9 @@ function btemptd_Admin_scripts($hook)
         }
     }
 }
-add_action('admin_enqueue_scripts', 'btemptd_Admin_scripts', 10, 1);
+add_action('admin_enqueue_scripts', 'Btemptd_Admin_scripts', 10, 1);
 
-/**
- * Admin Enqueue ACF scripts.
- */
-function acf_custom_text_toolbar_script()
-{
-    wp_enqueue_script('admin-js', esc_url(THEMEURI) . '/assets/js/admin/acf-custom-text-toolbar.js', array( 'jquery' ), '1.0.0', true);
-}
-add_action('acf/input/admin_enqueue_scripts', 'acf_custom_text_toolbar_script');
+
 
 /**
  * Admin functions include
