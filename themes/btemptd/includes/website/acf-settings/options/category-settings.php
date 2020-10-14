@@ -1,12 +1,19 @@
 <?php
 /**
  * Custom category settings
+ * php version 7.4
  *
- * @package Btemptd
+ * @category Btemptd
+ * @package  Btemptd
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Btemptd
  */
-if( function_exists('acf_add_local_field_group') ):
 
-    acf_add_local_field_group(array(
+if(function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(
+        array(
         'key' => 'group_5f844159adb42',
         'title' => 'Category page settings',
         'fields' => array(
@@ -167,6 +174,25 @@ if( function_exists('acf_add_local_field_group') ):
                                 'mime_types' => '',
                             ),
                             array(
+                                'key' => 'field_5f86be6ae01de',
+                                'label' => 'Title',
+                                'name' => 'title',
+                                'type' => 'text',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'default_value' => '',
+                                'placeholder' => '',
+                                'prepend' => '',
+                                'append' => '',
+                                'maxlength' => '',
+                            ),
+                            array(
                                 'key' => 'field_5f856c0106b18',
                                 'label' => 'Question',
                                 'name' => 'question',
@@ -204,10 +230,10 @@ if( function_exists('acf_add_local_field_group') ):
                         ),
                     ),
                     array(
-                        'key' => 'field_5f856c1c06b19',
-                        'label' => 'Gallery',
-                        'name' => 'gallery',
-                        'type' => 'repeater',
+                        'key' => 'field_5f86bea51ffe2',
+                        'label' => 'Category',
+                        'name' => 'category',
+                        'type' => 'group',
                         'instructions' => '',
                         'required' => 0,
                         'conditional_logic' => 0,
@@ -216,16 +242,83 @@ if( function_exists('acf_add_local_field_group') ):
                             'class' => '',
                             'id' => '',
                         ),
-                        'collapsed' => '',
-                        'min' => 0,
-                        'max' => 0,
-                        'layout' => 'table',
-                        'button_label' => '',
+                        'layout' => 'block',
                         'sub_fields' => array(
                             array(
-                                'key' => 'field_5f856c2806b1a',
-                                'label' => 'Title',
-                                'name' => 'title',
+                                'key' => 'field_5f86bf241ffe3',
+                                'label' => 'Category 1',
+                                'name' => 'category_1',
+                                'type' => 'group',
+                                'instructions' => '',
+                                'required' => 0,
+                                'conditional_logic' => 0,
+                                'wrapper' => array(
+                                    'width' => '',
+                                    'class' => '',
+                                    'id' => '',
+                                ),
+                                'layout' => 'block',
+                                'sub_fields' => array(
+                                    array(
+                                        'key' => 'field_5f86bfab1ffe4',
+                                        'label' => 'Title',
+                                        'name' => 'title',
+                                        'type' => 'text',
+                                        'instructions' => '',
+                                        'required' => 0,
+                                        'conditional_logic' => 0,
+                                        'wrapper' => array(
+                                            'width' => '',
+                                            'class' => '',
+                                            'id' => '',
+                                        ),
+                                        'default_value' => '',
+                                        'placeholder' => '',
+                                        'prepend' => '',
+                                        'append' => '',
+                                        'maxlength' => '',
+                                    ),
+                                    array(
+                                        'key' => 'field_5f86bfc11ffe5',
+                                        'label' => 'Image',
+                                        'name' => 'image',
+                                        'type' => 'text',
+                                        'instructions' => '',
+                                        'required' => 0,
+                                        'conditional_logic' => 0,
+                                        'wrapper' => array(
+                                            'width' => '',
+                                            'class' => '',
+                                            'id' => '',
+                                        ),
+                                        'default_value' => '',
+                                        'placeholder' => '',
+                                        'prepend' => '',
+                                        'append' => '',
+                                        'maxlength' => '',
+                                    ),
+                                    array(
+                                        'key' => 'field_5f86c0441ffe6',
+                                        'label' => 'Link',
+                                        'name' => 'link',
+                                        'type' => 'url',
+                                        'instructions' => '',
+                                        'required' => 0,
+                                        'conditional_logic' => 0,
+                                        'wrapper' => array(
+                                            'width' => '',
+                                            'class' => '',
+                                            'id' => '',
+                                        ),
+                                        'default_value' => '',
+                                        'placeholder' => '',
+                                    ),
+                                ),
+                            ),
+                            array(
+                                'key' => 'field_5f86c0761ffeb',
+                                'label' => 'Size Chart',
+                                'name' => 'size_chart',
                                 'type' => 'text',
                                 'instructions' => '',
                                 'required' => 0,
@@ -242,10 +335,10 @@ if( function_exists('acf_add_local_field_group') ):
                                 'maxlength' => '',
                             ),
                             array(
-                                'key' => 'field_5f856c2f06b1b',
-                                'label' => 'Image',
-                                'name' => 'image',
-                                'type' => 'image',
+                                'key' => 'field_5f86c05d1ffe7',
+                                'label' => 'Category 2',
+                                'name' => 'category_2',
+                                'type' => 'group',
                                 'instructions' => '',
                                 'required' => 0,
                                 'conditional_logic' => 0,
@@ -254,16 +347,63 @@ if( function_exists('acf_add_local_field_group') ):
                                     'class' => '',
                                     'id' => '',
                                 ),
-                                'return_format' => 'id',
-                                'preview_size' => 'medium',
-                                'library' => 'all',
-                                'min_width' => '',
-                                'min_height' => '',
-                                'min_size' => '',
-                                'max_width' => '',
-                                'max_height' => '',
-                                'max_size' => '',
-                                'mime_types' => '',
+                                'layout' => 'block',
+                                'sub_fields' => array(
+                                    array(
+                                        'key' => 'field_5f86c05d1ffe8',
+                                        'label' => 'Title',
+                                        'name' => 'title',
+                                        'type' => 'text',
+                                        'instructions' => '',
+                                        'required' => 0,
+                                        'conditional_logic' => 0,
+                                        'wrapper' => array(
+                                            'width' => '',
+                                            'class' => '',
+                                            'id' => '',
+                                        ),
+                                        'default_value' => '',
+                                        'placeholder' => '',
+                                        'prepend' => '',
+                                        'append' => '',
+                                        'maxlength' => '',
+                                    ),
+                                    array(
+                                        'key' => 'field_5f86c05d1ffe9',
+                                        'label' => 'Image',
+                                        'name' => 'image',
+                                        'type' => 'text',
+                                        'instructions' => '',
+                                        'required' => 0,
+                                        'conditional_logic' => 0,
+                                        'wrapper' => array(
+                                            'width' => '',
+                                            'class' => '',
+                                            'id' => '',
+                                        ),
+                                        'default_value' => '',
+                                        'placeholder' => '',
+                                        'prepend' => '',
+                                        'append' => '',
+                                        'maxlength' => '',
+                                    ),
+                                    array(
+                                        'key' => 'field_5f86c05d1ffea',
+                                        'label' => 'Link',
+                                        'name' => 'link',
+                                        'type' => 'url',
+                                        'instructions' => '',
+                                        'required' => 0,
+                                        'conditional_logic' => 0,
+                                        'wrapper' => array(
+                                            'width' => '',
+                                            'class' => '',
+                                            'id' => '',
+                                        ),
+                                        'default_value' => '',
+                                        'placeholder' => '',
+                                    ),
+                                ),
                             ),
                         ),
                     ),
@@ -287,6 +427,7 @@ if( function_exists('acf_add_local_field_group') ):
         'hide_on_screen' => '',
         'active' => true,
         'description' => '',
-    ));
+        )
+    );
 
-    endif;
+endif;

@@ -10,7 +10,7 @@
  * @link     Btemptd
  */
 
-btemptd_page_entry_top('');
+Btemptd_Page_Entry_top('');
 
 $top_banner_fields      = get_field('top_banner', 'options');
 $slider_fields      = get_field('slider_posts', 'options');
@@ -33,21 +33,14 @@ $featured_posts = get_posts(
     )
 );
 ?>
-
-
-
 <!-- Banner with image -->
 <section class="banner-with-image">
     <h1 class="banner-with-image--heading">Under the wire</h1>
     <p class="banner-with-image--subtitle">The btemptd Blog</p>
 </section>
-
-
 <!-- This sesction will create 80 pixel height gap between sections for big screens
 and will change the height gap respective to screen size as for Mobile 22px, iPad 32px, iPad Pro 44px, Small Monitor 54px -->
 <section class="spacer-80"></section>
-
-
 <!-- Banner with background color -->
 <section class="banner-with-background">
     <h1 class="banner-with-background--heading">btemptd 101</h1>
@@ -57,12 +50,8 @@ and will change the height gap respective to screen size as for Mobile 22px, iPa
         LOREM IPSUM
     </p>
 </section>
-
-
 <!-- -->
 <section class="spacer-80"></section>
-
-
 <!-- Banner with background color -->
 <section class="banner-with-background">
     <h1 class="banner-with-background--heading">bra'drobe</h1>
@@ -453,4 +442,4 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 
 
 <?php
-btemptd_page_entry_bottom();
+Btemptd_Page_Entry_bottom();

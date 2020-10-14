@@ -10,23 +10,23 @@
  * @link     Btemptd
  */
 
-btemptd_page_entry_top('');
+Btemptd_Page_Entry_top('');
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-            include locate_template('template-parts/content-page.php');
+    <?php
+    while ( have_posts() ) :
+        the_post();
+        include locate_template('template-parts/content-page.php');
 
 
-		endwhile; // End of the loop.
-		?>
+    endwhile; // End of the loop.
+    ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
-btemptd_page_entry_bottom();
+Btemptd_Page_Entry_bottom();

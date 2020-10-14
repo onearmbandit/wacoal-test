@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: 404
- *  * php version 7.4
+ * php version 7.4
  *
  * @category Btemptd
  * @package  Btemptd
@@ -9,7 +9,7 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Btemptd
  */
-btemptd_page_entry_top('');
+Btemptd_Page_Entry_top('');
 ?>
 
 <section class="page-404" >
@@ -29,4 +29,4 @@ btemptd_page_entry_top('');
 <!-- -->
 <section class="spacer-120"></section>
 <?php
-btemptd_page_entry_bottom();
+Btemptd_Page_Entry_bottom();

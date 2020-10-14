@@ -1,12 +1,18 @@
 <?php
 /**
  * Custom header settings
+ * php version 7.4
  *
- * @package Btemptd
+ * @category Btemptd
+ * @package  Btemptd
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Btemptd
  */
-if( function_exists('acf_add_local_field_group') ):
+if(function_exists('acf_add_local_field_group')):
 
-    acf_add_local_field_group(array(
+    acf_add_local_field_group(
+        array(
         'key' => 'group_5f843c8fba133',
         'title' => 'Header Settings',
         'fields' => array(
@@ -34,25 +40,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'max_size' => '',
                 'mime_types' => '',
             ),
-            // array(
-            //     'key' => 'field_5f843e6367c5d',
-            //     'label' => 'Header headline',
-            //     'name' => 'header_headline',
-            //     'type' => 'text',
-            //     'instructions' => '',
-            //     'required' => 0,
-            //     'conditional_logic' => 0,
-            //     'wrapper' => array(
-            //         'width' => '',
-            //         'class' => '',
-            //         'id' => '',
-            //     ),
-            //     'default_value' => '',
-            //     'placeholder' => '',
-            //     'prepend' => '',
-            //     'append' => '',
-            //     'maxlength' => '',
-            // ),
+
             array(
                 'key' => 'field_5f843e0467c5b',
                 'label' => 'Header button text',
@@ -106,6 +94,7 @@ if( function_exists('acf_add_local_field_group') ):
         'hide_on_screen' => '',
         'active' => true,
         'description' => '',
-    ));
+        )
+    );
 
-    endif;
+endif;

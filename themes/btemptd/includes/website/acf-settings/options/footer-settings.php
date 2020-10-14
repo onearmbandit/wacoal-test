@@ -1,12 +1,18 @@
 <?php
 /**
  * Custom footer settings
+ * php version 7.4
  *
- * @package Btemptd
+ * @category Btemptd
+ * @package  Btemptd
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Btemptd
  */
-if( function_exists('acf_add_local_field_group') ):
+if(function_exists('acf_add_local_field_group')):
 
-    acf_add_local_field_group(array(
+    acf_add_local_field_group(
+        array(
         'key' => 'group_5f843efa4d26c',
         'title' => 'Footer Settings',
         'fields' => array(
@@ -308,6 +314,7 @@ if( function_exists('acf_add_local_field_group') ):
         'hide_on_screen' => '',
         'active' => true,
         'description' => '',
-    ));
+        )
+    );
 
-    endif;
+endif;
