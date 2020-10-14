@@ -929,6 +929,37 @@
       }
     }
 
+    &.myth-box {
+      .list-box--number {
+        span {
+          @include BentonModDisp-BoldItalic;
+          color: var(--color-error);
+          opacity: 0.14;
+        }
+      }
+    }
+
+    &.myth-box:nth-child(odd) {
+
+    }
+
+    &.myth-box:nth-child(even) {
+
+      @include respond-above(sm) {
+        flex-direction: row-reverse;
+
+        .list-box--number {
+          border-right: inherit;
+          border-left: 1px solid var(--color-black);
+        }
+
+        .list-box--content {
+          margin-left: inherit;
+          margin-right: get-vw(64px);
+        }
+      }
+    }
+
   }
   strong {
     @include BentonModDisp-Bold;
