@@ -51,6 +51,7 @@ acf_add_local_field_group(
                         'center_aligned' => 'Center Aligned',
                         'left_aligned' => 'Left Aligned',
                         'right_aligned' => 'Right Aligned',
+                        'myth_block' => 'Myth Style Block',
                     ),
                     'default_value' => false,
                     'allow_null' => 0,
