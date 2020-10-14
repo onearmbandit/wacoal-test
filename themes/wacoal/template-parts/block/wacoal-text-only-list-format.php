@@ -118,14 +118,14 @@ if ($block_lists && !empty($block_lists)) {
             ?>
             <div class="list-box list-box-three">
             <?php
-                if ($list_header && !empty($list_header)) {
-                    ?>
+            if ($list_header && !empty($list_header)) {
+                ?>
                 <div class="list-box--number list-box--number__mobile">
                 <span><?php echo esc_attr($row_index); ?></span>
                     <h2><?php echo wp_kses_post($list_header); ?></h2>
                 </div>
                     <?php
-                } ?>
+            } ?>
             <?php
             if ($list_subhead && !empty($list_subhead)) {
                 ?>
