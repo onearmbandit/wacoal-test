@@ -25,12 +25,12 @@ if (is_admin() ) {
 
                     $image_id     = $image['image'];
                     $image_array  = wp_get_attachment_image_src($image_id, 'full');
-                    $image_alt    = wacoal_get_image_alt($image_id, 'Carousel Image');
+                    $image_alt    = Wacoal_Get_Image_alt($image_id, 'Carousel Image');
                     $image_url    = Wacoal_Get_image($image_array);
 
                     $mob_image_id     = $image['mobile_image'];
                     $mob_image_array  = wp_get_attachment_image_src($mob_image_id, 'full');
-                    $mob_image_alt    = wacoal_get_image_alt($mob_image_id, 'Mobile Carousel Image');
+                    $mob_image_alt    = Wacoal_Get_Image_alt($mob_image_id, 'Mobile Carousel Image');
                     $mob_image_url    = Wacoal_Get_image($mob_image_array);
 
                     ?>

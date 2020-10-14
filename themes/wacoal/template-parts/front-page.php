@@ -45,7 +45,7 @@ endif;?>>
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
                 $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'slider-img');
+                $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'slider-img');
                 $categories = wacoal_get_primary_category($slider_blog->ID);
                 $cat_ID = $categories->term_id;
                 ?>
@@ -122,7 +122,7 @@ endif;?>>
             <?php foreach ($featured_blog_slider as $key => $featured_blog) {
                 $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+                $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
                 $categories = wacoal_get_primary_category($featured_blog->ID);
                 $cat_ID = $categories->term_id;
                 ?>
@@ -178,7 +178,7 @@ endif;?>>
         <?php foreach ($recent_posts as $key => $blog) {
             $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-            $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+            $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
             $categories = wacoal_get_primary_category($blog->ID);
             $post_tagline = get_field('tag_line', $blog->ID);
             $cat_ID = $categories->term_id;

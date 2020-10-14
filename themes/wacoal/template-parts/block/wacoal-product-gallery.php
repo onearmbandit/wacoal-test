@@ -20,7 +20,7 @@ if ($product_fields && !empty($product_fields)) {
         foreach ($product_fields as $product) {
             $product_image_id     = $product['image'];
             $product_image_array  = wp_get_attachment_image_src($product_image_id, 'full');
-            $product_image_alt    = wacoal_get_image_alt($product_image_id, 'Product Image');
+            $product_image_alt    = Wacoal_Get_Image_alt($product_image_id, 'Product Image');
             $product_image_url    = Wacoal_Get_image($product_image_array);
             $product_name         = $product['name'];
             $product_size         = $product['size'];

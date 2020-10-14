@@ -10,7 +10,7 @@
  * @link     Wacoal
  */
 
-Wacoal_Page_Entry_top('');
+wacoal_page_entry_top('');
 
 $article_banner = get_field('banner_image');
 $post_title     = get_the_title($post->ID);
@@ -43,4 +43,4 @@ $recent_posts = Wacoal_Query_posts(
         ?>
 
 <?php
-Wacoal_Page_Entry_bottom();
+wacoal_page_entry_bottom();

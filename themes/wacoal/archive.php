@@ -141,7 +141,7 @@ if ($template == 'wacoal') {
 
                 $thumbnail_id = get_post_thumbnail_id($blog);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+                $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
                 $categories = get_the_terms($blog, 'category');
                 $post_tagline = get_field('tag_line', $blog);
                 $cat_ID = $categories[0]->term_id;

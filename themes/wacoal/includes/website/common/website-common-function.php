@@ -203,8 +203,12 @@ function Wacoal_Page_Entry_bottom()
 
 /**
  * ACF get fields of page by PageId
+ *
+ * @param $pageId page id
+ *
+ * @return $fields acf fields on page
  */
-function wacoal_get_page_acf_fields($pageId)
+function Wacoal_Get_Page_Acf_fields($pageId)
 {
     $fields = get_fields($pageId);
     return $fields;
@@ -213,10 +217,13 @@ function wacoal_get_page_acf_fields($pageId)
 /**
  * Get wacoal Image source
  *
- * @param  int $attachmentId attachment id.
+ * @param $attachmentId attachment id.
+ * @param $size         image size.
+ * @param $icon         true or false
+ *
  * @return array $image_src
  */
-function wacoal_get_image_src($attachmentId, $size = 'full', $icon = false)
+function Wacoal_Get_Image_src($attachmentId, $size = 'full', $icon = false)
 {
     $image_src = wp_get_attachment_image_src($attachmentId, $size, $icon);
     return $image_src[0];
@@ -225,10 +232,12 @@ function wacoal_get_image_src($attachmentId, $size = 'full', $icon = false)
 /**
  * Get wacoal Image alt
  *
- * @param  int $attachmentId attachment id.
+ * @param int $attachmentId attachment id.
+ * @param $default      image alt
+ *
  * @return string $image_alt
  */
-function wacoal_get_image_alt($attachmentId, $default = null)
+function Wacoal_Get_Image_alt($attachmentId, $default = null)
 {
     $image_alt = get_post_meta($attachmentId, '_wp_attachment_image_alt', true);
     if ($image_alt == '') {

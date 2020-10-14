@@ -24,7 +24,7 @@ function wacoal_data_image_block_render_callback( $block )
     $block_content      = ! empty($block_fields['paragraph_content']) ? $block_fields['paragraph_content'] : '';
     $block_image_id     = $block_fields['image'];
     $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
-    $block_image_alt    = wacoal_get_image_alt($block_image_id, 'Block Image');
+    $block_image_alt    = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
     $block_image_url    = Wacoal_Get_image($block_image_array);
     $caption            = $block_fields['image_caption'];
     $separator          = $block_fields['enable_separator'];
@@ -55,7 +55,7 @@ function wacoal_quotes_block_render_callback( $block )
 {
     $quotes_image_id    = get_field('image');
     $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
-    $quotes_image_alt   = wacoal_get_image_alt($quotes_image_id, 'Quote Image');
+    $quotes_image_alt   = Wacoal_Get_Image_alt($quotes_image_id, 'Quote Image');
     $quotes_image_url   = Wacoal_Get_image($quotes_image_array);
     $quote_text  = get_field('quote_text');
 
@@ -110,7 +110,7 @@ function wacoal_question_answer_render_callback( $block )
     $block_qna = get_field('question_answer');
     $block_image_id = get_field('image');
     $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-    $block_image_alt   = wacoal_get_image_alt($block_image_id, 'Block Image');
+    $block_image_alt   = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
     $block_image_url   = Wacoal_Get_image($block_image_array);
     $image_caption     = get_field('caption');
 
@@ -244,7 +244,7 @@ function wacoal_image_render_callback( $block )
 {
     $block_image_id     = get_field('image');
     $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
-    $block_image_alt    = wacoal_get_image_alt($block_image_id, 'Block Image');
+    $block_image_alt    = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
     $block_image_url    = Wacoal_Get_image($block_image_array);
     $caption            = get_field('image_caption');
 
@@ -387,7 +387,7 @@ function wacoal_video_image_block_render_callback( $block )
 
     if ($block_image_id && !empty($block_image_id)) {
         $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt = wacoal_get_image_alt($block_image_id, 'Block Image');
+        $block_image_alt = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
         $block_image_url = Wacoal_Get_image($block_image_array);
         $image_caption = get_field('image_caption');
     }

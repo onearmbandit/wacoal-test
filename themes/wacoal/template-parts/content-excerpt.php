@@ -16,7 +16,7 @@
         <?php
         $thumbnail_id  = get_post_thumbnail_id();
         $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-        $thumbnail_alt = wacoal_get_image_alt($thumbnail_id, 'featured-img');
+        $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
         $post_tagline  = get_field('tag_line');
         ?>
         <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
