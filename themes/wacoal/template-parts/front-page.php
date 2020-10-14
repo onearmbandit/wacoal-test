@@ -55,10 +55,10 @@ endif;?>>
                             <?php echo esc_attr($categories->name);?>
                         </a>
                         <h3 class="evergreen-article--content__title">
-                            <?php echo esc_attr(wacoal_limit_text($slider_blog->post_title, 17));?>
+                            <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 17));?>
                         </h3>
                         <div class="evergreen-article--content__para">
-                            <?php echo wp_kses_post(wacoal_limit_text($slider_blog->tag_line, 160));?>
+                            <?php echo wp_kses_post(Wacoal_Limit_text($slider_blog->tag_line, 160));?>
                         </div>
                     </div>
 
@@ -133,10 +133,10 @@ endif;?>>
                                 <?php echo esc_attr($categories->name);?>
                             </a>
                             <h4 class="featured-box--content__title">
-                                <?php echo esc_attr(wacoal_limit_text($featured_blog->post_title, 30));?>
+                                <?php echo esc_attr(Wacoal_Limit_text($featured_blog->post_title, 30));?>
                             </h4>
                             <div class="featured-box--content__para">
-                                <?php echo wp_kses_post(wacoal_limit_text($featured_blog->tag_line, 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text($featured_blog->tag_line, 160));?>
                             </div>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
                                 class="btn primary big">learn more</a>

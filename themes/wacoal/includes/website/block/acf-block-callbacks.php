@@ -10,7 +10,6 @@
  * @link     Wacoal
  */
 
-
 /**
  * Callback function for image block
  *
@@ -18,7 +17,7 @@
  *
  * @return void
  */
-function wacoal_data_image_block_render_callback( $block )
+function Wacoal_Data_Image_Block_Render_callback( $block )
 {
     $block_fields       = get_field('data_with_image');
     $block_content      = ! empty($block_fields['paragraph_content']) ? $block_fields['paragraph_content'] : '';
@@ -43,7 +42,6 @@ function wacoal_data_image_block_render_callback( $block )
     }
 }
 
-
 /**
  * Callback function for testimonial block
  *
@@ -51,7 +49,7 @@ function wacoal_data_image_block_render_callback( $block )
  *
  * @return void
  */
-function wacoal_quotes_block_render_callback( $block )
+function Wacoal_Quotes_Block_Render_callback( $block )
 {
     $quotes_image_id    = get_field('image');
     $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
@@ -80,7 +78,7 @@ function wacoal_quotes_block_render_callback( $block )
  *
  * @return void
  */
-function wacoal_image_carousel_render_callback( $block )
+function Wacoal_Image_Carousel_Render_callback( $block )
 {
     $slider_images     = get_field('slider');
     $shortcode_template = 'template-parts/block/wacoal-image-carousel.php';
@@ -104,7 +102,7 @@ function wacoal_image_carousel_render_callback( $block )
  *
  * @return void
  */
-function wacoal_question_answer_render_callback( $block )
+function Wacoal_Question_Answer_Render_callback( $block )
 {
 
     $block_qna = get_field('question_answer');
@@ -126,7 +124,6 @@ function wacoal_question_answer_render_callback( $block )
             <?php
         }
     }
-
 }
 
 /**
@@ -136,7 +133,7 @@ function wacoal_question_answer_render_callback( $block )
  *
  * @return void
  */
-function wacoal_text_img_list_format_render_callback( $block )
+function Wacoal_Text_Img_List_Format_Render_callback( $block )
 {
     $block_lists       = get_field('lists');
     $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
@@ -163,7 +160,7 @@ function wacoal_text_img_list_format_render_callback( $block )
  *
  * @return void
  */
-function wacoal_text_only_list_format_render_callback($block)
+function Wacoal_Text_Only_List_Format_Render_callback($block)
 {
     $block_lists = get_field('list');
     $shortcode_template = '/template-parts/block/wacoal-text-only-list-format.php';
@@ -187,7 +184,7 @@ function wacoal_text_only_list_format_render_callback($block)
  *
  * @return void
  */
-function wacoal_myth_list_format_render_callback($block)
+function Wacoal_Myth_List_Format_Render_callback($block)
 {
     $block_lists = get_field('list');
     $shortcode_template = '/template-parts/block/wacoal-myth-list-format.php';
@@ -207,10 +204,11 @@ function wacoal_myth_list_format_render_callback($block)
 /**
  * Callback function for product gallery block
  *
- * @param  [type] $block Block.
+ * @param $block Block.
+ *
  * @return void
  */
-function wacoal_gallery_block_render_callback( $block )
+function Wacoal_Gallery_Block_Render_callback( $block )
 {
 
     $product_fields       = get_field('gallery');
@@ -237,7 +235,7 @@ function wacoal_gallery_block_render_callback( $block )
  *
  * @return void
  */
-function wacoal_subhead_description_render_callback( $block )
+function Wacoal_Subhead_Description_Render_callback( $block )
 {
     $subhead_text = get_field('title_or_subhead');
     $desc_text  = get_field('description');
@@ -254,7 +252,6 @@ function wacoal_subhead_description_render_callback( $block )
             <?php
         }
     }
-
 }
 
 /**
@@ -264,7 +261,7 @@ function wacoal_subhead_description_render_callback( $block )
  *
  * @return void
  */
-function wacoal_image_render_callback( $block )
+function Wacoal_Image_Render_callback( $block )
 {
     $block_image_id     = get_field('image');
     $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
@@ -284,7 +281,6 @@ function wacoal_image_render_callback( $block )
             <?php
         }
     }
-
 }
 
 /**
@@ -294,7 +290,7 @@ function wacoal_image_render_callback( $block )
  *
  * @return void
  */
-function wacoal_size_chart_table_block_render_callback( $block )
+function Wacoal_Size_Chart_Table_Block_Render_callback( $block )
 {
     $chart_images     = get_field('size_chart');
 
@@ -310,75 +306,26 @@ function wacoal_size_chart_table_block_render_callback( $block )
             <?php
         }
     }
-
-}
-
-
-/**
- * Callback function for size chart block
- *
- * @param  [type] $block Block.
- * @return void
- */
-function wacoal_size_chart_block_render_callback( $block )
-{
-    global $wp, $post;
-
-    $table_heading = get_field('table_name');
-    $table = get_field('table');
-    $table_data_header = $table['header'];
-    $table_data = $table['body'];
-    $default_template   = '/template-parts/block/wacoal-size-chart-table.php';
-
-    include get_theme_file_path($default_template);
-}
-
-/**
- * Callback function for staic links block
- *
- * @param  [type] $block Block.
- * @return void
- */
-function wacoal_static_link_render_callback( $block )
-{
-
-    $block_fields = get_field('static_section');
-    $block_image_id  = $block_fields['image'];
-    $block_image_url = wp_get_attachment_image_src($block_image_id, 'full');
-    $shortcode_template  = '/template-parts/block/wacoal-static-links.php';
-
-    if (! empty($block_image_id) ) {
-        include locate_template($shortcode_template);
-    } else {
-        if (is_admin() ) {
-            ?>
-            <h4><u>Wacoal 101 Static Links:</u></h4>
-            <span style="color:red">Empty Wacoal 101 Static Links Block</span>
-            <?php
-        }
-    }
-
 }
 
 /**
  * Callback function for video block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
-function wacoal_video_block_render_callback( $block )
+function Wacoal_Video_Block_Render_callback( $block )
 {
 
     $video_fields_option = get_field('video');
     $video_caption = get_field('video_caption');
 
-    if($video_fields_option == 'embed_video') {
+    if ($video_fields_option == 'embed_video') {
         $video_field = get_field('embed_video');
-    }
-    elseif($video_fields_option == 'video_file') {
+    } elseif ($video_fields_option == 'video_file') {
         $video_field = get_field('select_or_add_video');
-    }
-    elseif($video_fields_option == 'external_url') {
+    } elseif ($video_fields_option == 'external_url') {
         $video_field = get_field('insert_external_video_url');
     }
     $shortcode_template  = '/template-parts/block/wacoal-video.php';
@@ -393,18 +340,17 @@ function wacoal_video_block_render_callback( $block )
             <?php
         }
     }
-
 }
 
 /**
  * Callback function for video with image block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
-function wacoal_video_image_block_render_callback( $block )
+function Wacoal_Video_Image_Block_Render_callback( $block )
 {
-
     $video_fields_option = get_field('video');
     $block_image_id = get_field('add_image');
     $video_caption = get_field('video_caption');
@@ -416,13 +362,11 @@ function wacoal_video_image_block_render_callback( $block )
         $image_caption = get_field('image_caption');
     }
 
-    if($video_fields_option == 'embed_video') {
+    if ($video_fields_option == 'embed_video') {
         $video_field = get_field('embed_video');
-    }
-    elseif($video_fields_option == 'video_file') {
+    } elseif ($video_fields_option == 'video_file') {
         $video_field = get_field('select_or_add_video');
-    }
-    elseif($video_fields_option == 'external_url') {
+    } elseif ($video_fields_option == 'external_url') {
         $video_field = get_field('insert_external_video_url');
     }
     $shortcode_template  = '/template-parts/block/wacoal-video-image.php';
@@ -443,20 +387,18 @@ function wacoal_video_image_block_render_callback( $block )
 /**
  * Callback function for horizontal line block
  *
- * @param  [type] $block Block.
+ * @param [type] $block Block.
+ *
  * @return void
  */
-function wacoal_horizontal_block_render_callback( $block )
+function Wacoal_Horizontal_Block_Render_callback( $block )
 {
-
     $shortcode_template  = '/template-parts/block/wacoal-horizontal-line.php';
-
-        include locate_template($shortcode_template);
+    include locate_template($shortcode_template);
 
     if (is_admin() ) {
         ?>
             <h4><u>Wacoal Horizontal Line:</u></h4>
         <?php
     }
-
 }

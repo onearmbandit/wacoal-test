@@ -1,10 +1,14 @@
 <?php
 /**
  * Custom Menu page creation
+ * php version 7.4
  *
- * @package Wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
-
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(

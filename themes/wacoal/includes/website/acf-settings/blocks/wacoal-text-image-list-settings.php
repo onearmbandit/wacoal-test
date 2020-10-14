@@ -1,6 +1,6 @@
 <?php
 /**
- * Wacoal list acf settings
+ * Wacoal text imagelist acf settings
  * php version 7.4
  *
  * @category Wacoal

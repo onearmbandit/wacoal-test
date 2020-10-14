@@ -670,7 +670,7 @@ function Wacoal_Exclude_Posts_From_Specific_category( $query )
             'post_status'=>'publish'
             )
         );
-        foreach( $featured_posts as $featured_post ) {
+        foreach ( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post->ID;
         }
         $query->set('post__not_in', $posts_to_exclude);
@@ -716,8 +716,15 @@ function Wacoal_Block_categories( $categories, $post )
 }
 add_filter('block_categories', 'Wacoal_Block_categories', 10, 2);
 
-
-function wacoal_limit_text($text, $limit)
+/**
+ * Function used to truncate the text.
+ *
+ * @param string $text  string to truncate.
+ * @param int    $limit number to truncate the text.
+ *
+ * @return void
+ */
+function Wacoal_Limit_text($text, $limit)
 {
     if (strlen($text) > $limit) {
         $text  = substr($text, 0, $limit) . '...';
