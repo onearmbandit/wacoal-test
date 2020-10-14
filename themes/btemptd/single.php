@@ -10,16 +10,16 @@
  * @link     Btemptd
  */
 
-btemptd_page_entry_top('');
+Btemptd_Page_Entry_top('');
 ?>
 
-        <?php
-        while ( have_posts() ) :
-            the_post();
-            include locate_template('template-parts/content-post.php');
+    <?php
+    while ( have_posts() ) :
+        the_post();
+        include locate_template('template-parts/content-post.php');
 
-        endwhile;
-        ?>
+    endwhile;
+    ?>
 
 <?php
-btemptd_page_entry_bottom();
+Btemptd_Page_Entry_bottom();
