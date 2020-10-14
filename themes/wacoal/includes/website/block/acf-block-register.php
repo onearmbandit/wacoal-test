@@ -91,7 +91,6 @@ function wacoal_acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
-
         acf_register_block(
             array(
             'name'              => 'wacoal-subhead-description',
@@ -167,6 +166,17 @@ function wacoal_acf_init()
             'category'          => 'common',
             'icon'              => 'minus',
             'keywords'          => array( 'line' ),
+            )
+        );
+        acf_register_block_type(
+            array(
+            'name'              => 'wacoal-myth-list-format',
+            'title'             => __('Wacoal Myth List Format'),
+            'description'       => __('A custom Myth List format block.'),
+            'render_callback'   => 'wacoal_myth_list_format_render_callback',
+            'category'          => 'wacoal',
+            'icon'              => 'list-view',
+            'keywords'          => array( 'list-format' ),
             )
         );
                 // acf_register_block(

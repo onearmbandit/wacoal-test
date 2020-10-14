@@ -157,24 +157,48 @@ function wacoal_text_img_list_format_render_callback( $block )
 }
 
 /**
+ * Callback function for text only header list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function wacoal_text_only_list_format_render_callback($block)
+{
+    $block_lists = get_field('list');
+    $shortcode_template = '/template-parts/block/wacoal-text-only-list-format.php';
+
+    if (!empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin()) {
+            ?>
+            <h4><u>Wacoal Lists:</u></h4>
+            <span style="color:red">Empty Wacoal Text Only Lists Block</span>
+            <?php
+        }
+    }
+}
+
+/**
  * Callback function for text image header list block
  *
  * @param [type] $block Block.
  *
  * @return void
  */
-function wacoal_text_only_list_format_render_callback( $block )
+function wacoal_myth_list_format_render_callback($block)
 {
-    $block_lists       = get_field('list');
-    $shortcode_template   = '/template-parts/block/wacoal-text-only-list-format.php';
+    $block_lists = get_field('list');
+    $shortcode_template = '/template-parts/block/wacoal-myth-list-format.php';
 
-    if (! empty($block_lists) ) {
+    if (!empty($block_lists)) {
         include locate_template($shortcode_template);
     } else {
-        if (is_admin() ) {
+        if (is_admin()) {
             ?>
             <h4><u>Wacoal Lists:</u></h4>
-            <span style="color:red">Empty Wacoal Text Only Lists Block</span>
+            <span style="color:red">Empty Wacoal Myth Lists Block</span>
             <?php
         }
     }
