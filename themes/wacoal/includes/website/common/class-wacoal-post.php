@@ -94,7 +94,7 @@ class Wacoal_Post
         }
 
         if ('post_date' === $field ) {
-            $field_value = wacoal_post_date($this->wacoal_post->ID);
+            $field_value = Wacoal_Post_date($this->wacoal_post->ID);
         }
 
         return $field_value;

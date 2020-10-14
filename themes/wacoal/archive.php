@@ -124,7 +124,7 @@ if ($template == 'wacoal') {
 
     <?php } ?>
 
-            <?php wacoal_paging_nav();?>
+            <?php Wacoal_Paging_nav();?>
     </div>
 <?php }?>
 <!-- More From Blog -->

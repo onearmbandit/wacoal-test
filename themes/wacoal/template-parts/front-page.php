@@ -46,7 +46,7 @@ endif;?>>
                 $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'slider-img');
-                $categories = wacoal_get_primary_category($slider_blog->ID);
+                $categories = Wacoal_Get_Primary_category($slider_blog->ID);
                 $cat_ID = $categories->term_id;
                 ?>
                 <div class="swiper-slide evergreen-article">
@@ -123,7 +123,7 @@ endif;?>>
                 $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-                $categories = wacoal_get_primary_category($featured_blog->ID);
+                $categories = Wacoal_Get_Primary_category($featured_blog->ID);
                 $cat_ID = $categories->term_id;
                 ?>
                 <div class="swiper-slide">
@@ -179,7 +179,7 @@ endif;?>>
             $thumbnail_id = get_post_thumbnail_id($blog->ID);
             $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-            $categories = wacoal_get_primary_category($blog->ID);
+            $categories = Wacoal_Get_Primary_category($blog->ID);
             $post_tagline = get_field('tag_line', $blog->ID);
             $cat_ID = $categories->term_id;
             ?>

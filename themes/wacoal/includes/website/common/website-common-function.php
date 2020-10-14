@@ -247,12 +247,13 @@ function Wacoal_Get_Image_alt($attachmentId, $default = null)
 }
 
 /**
- * wacoal remove p tag from content
+ * Wacoal remove p tag from content
  *
- * @param  string $content post content.
+ * @param string $content post content.
+ *
  * @return string $content
  */
-function wacoal_remove_p_tag($content)
+function Wacoal_Remove_P_tag($content)
 {
     $content = str_ireplace('<p>', '', $content);
     $content = str_ireplace('</p>', '', $content);
@@ -262,12 +263,13 @@ function wacoal_remove_p_tag($content)
 /**
  * Add Menu link class.
  *
- * @param  WP_Post  $item  The current menu item.
- * @param  stdClass $args  An object of wp_nav_menu() arguments.
- * @param  int      $depth Depth of menu item. Used for padding.
+ * @param int      $atts Class of menu.
+ * @param WP_Post  $item The current menu item.
+ * @param stdClass $args An object of wp_nav_menu() arguments.
+ *
  * @return array $atts
  */
-function wacoal_add_menu_link_class($atts, $item, $args)
+function Wacoal_Add_Menu_Link_class($atts, $item, $args)
 {
     if ($args->theme_location == 'primary') {
         $atts['class'] = 'header-navigation--link';
@@ -277,18 +279,19 @@ function wacoal_add_menu_link_class($atts, $item, $args)
 
     return $atts;
 }
-add_filter('nav_menu_link_attributes', 'wacoal_add_menu_link_class', 1, 3);
+add_filter('nav_menu_link_attributes', 'Wacoal_Add_Menu_Link_class', 1, 3);
 
 /**
  * Add Menu li class.
  *
- * @param  string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
- * @param  WP_Post  $item    The current menu item.
- * @param  stdClass $args    An object of wp_nav_menu() arguments.
- * @param  int      $depth   Depth of menu item. Used for padding.
+ * @param string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
+ * @param WP_Post  $item    The current menu item.
+ * @param stdClass $args    An object of wp_nav_menu() arguments.
+ * @param int      $depth   Depth of menu item. Used for padding.
+ *
  * @return array $classes
  */
-function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
+function Wacoal_Add_Menu_Li_class( $classes, $item, $args, $depth )
 {
 
     if ($args->theme_location == 'primary') {
@@ -299,15 +302,16 @@ function wacoal_add_menu_li_class( $classes, $item, $args, $depth )
 
     return $classes;
 }
-add_filter('nav_menu_css_class', 'wacoal_add_menu_li_class', 10, 4);
+add_filter('nav_menu_css_class', 'Wacoal_Add_Menu_Li_class', 10, 4);
 
 /**
  * Add support for svg images.
  *
- * @param  array $file_types file types.
+ * @param array $file_types file types.
+ *
  * @return array $file_types
  */
-function wacoal_add_svg_file_types_to_uploads($file_types)
+function Wacoal_Add_Svg_File_Types_To_uploads($file_types)
 {
 
     $new_filetypes = array();
@@ -316,12 +320,15 @@ function wacoal_add_svg_file_types_to_uploads($file_types)
 
     return $file_types;
 }
-add_action('upload_mimes', 'wacoal_add_svg_file_types_to_uploads');
+add_action('upload_mimes', 'Wacoal_Add_Svg_File_Types_To_uploads');
 
 /**
- * Register Sidebar,Footer Column One,Footer Column two,Footer Column three,Footer Column four widget
+ * Register Sidebar,Footer Column One,Footer
+ * Column two,Footer Column three,Footer Column four widget.
+ *
+ * @return $html footer widgets
  */
-function wacoal_widgets_init()
+function Wacoal_Widgets_init()
 {
     register_sidebar(
         array(
@@ -381,8 +388,7 @@ function wacoal_widgets_init()
 
 
 }
-add_action('widgets_init', 'wacoal_widgets_init');
-
+add_action('widgets_init', 'Wacoal_Widgets_init');
 
 /**
  * Function get all the posts from 'post' post type
@@ -408,13 +414,12 @@ function Wacoal_Query_posts( $args )
 
     foreach ( $wmag_query->posts as $post ) {
 
-        $meta         = Wacoal_get_post_details($post->ID);
+        $meta         = Wacoal_Get_Post_details($post->ID);
         $wmag_posts[] = new Wacoal_Post($post, $meta);
     }
 
     return $wmag_posts;
 }
-
 
 /**
  * Function to get the post details of provide post id.
@@ -423,7 +428,7 @@ function Wacoal_Query_posts( $args )
  *
  * @return $meta
  */
-function Wacoal_get_post_details( int $wacoal_post_id )
+function Wacoal_Get_Post_details( int $wacoal_post_id )
 {
 
     $meta = get_post_meta($wacoal_post_id);
@@ -434,10 +439,11 @@ function Wacoal_get_post_details( int $wacoal_post_id )
 /**
  * Function used to return the post published date in New York format.
  *
- * @param  int $wacoal_post_id post id to date in newyork timezone.
+ * @param int $wacoal_post_id post id to date in newyork timezone.
+ *
  * @return string return date for provided post id.
  */
-function wacoal_post_date( $wacoal_post_id )
+function Wacoal_Post_date( $wacoal_post_id )
 {
 
     $post_date = get_the_date('F j, Y g:i a', $wacoal_post_id);
@@ -447,13 +453,13 @@ function wacoal_post_date( $wacoal_post_id )
 }
 
 /**
- * Undocumented function
+ * Function used to get primary category.
  *
  * @param int $post_id post id to fetch categories.
  *
  * @return array
  */
-function wacoal_get_primary_category( $post_id )
+function Wacoal_Get_Primary_category( $post_id )
 {
     $primary_category = null;
 
@@ -474,11 +480,11 @@ function wacoal_get_primary_category( $post_id )
     return $primary_category;
 }
 
-
  /**
   * Function to create the URL
   *
-  * @param  string $url URL.
+  * @param string $url URL.
+  *
   * @return string
   */
 function Wacoal_Reconstruct_url( $url )
@@ -490,8 +496,6 @@ function Wacoal_Reconstruct_url( $url )
 
     return $constructed_url;
 }
-
-
 
 /**
  * Function to create the image with crop points
@@ -506,7 +510,6 @@ function Wacoal_Get_image( $image, $width = null, $ratio = null )
 {
 
     if ($image && ! empty($image) && ! empty($image[0]) ) {
-
 
         $url = $image[0];
 
@@ -542,14 +545,14 @@ function Wacoal_Get_image( $image, $width = null, $ratio = null )
         return '';
     }
 }
+
 /**
  * Function for  pagination
  *
  * @return html Return the pagination html.
  */
-function wacoal_paging_nav()
+function Wacoal_Paging_nav()
 {
-
     if (is_singular() ) {
         return;
     }
@@ -562,7 +565,6 @@ function wacoal_paging_nav()
     if ($wp_query->max_num_pages <= 1 ) {
         return;
     }
-
 
     $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
     $max   = intval($wp_query->max_num_pages);
@@ -629,6 +631,7 @@ function wacoal_paging_nav()
         printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max));
     }
     echo '</ul>';
+
     /**
      * Next Post Link
     */
@@ -642,10 +645,11 @@ function wacoal_paging_nav()
  /**
   * Function to remove 2 recent posts from post listing
   *
-  * @param  array $query wp_query array
+  * @param array $query wp_query array
+  *
   * @return array $query wp_query array
   */
-function wacoal_exclude_posts_from_specific_category( $query )
+function Wacoal_Exclude_Posts_From_Specific_category( $query )
 {
 
     if (is_admin() || ! $query->is_main_query() ) {
@@ -673,20 +677,28 @@ function wacoal_exclude_posts_from_specific_category( $query )
     }
 
 }
-add_action('pre_get_posts', 'wacoal_exclude_posts_from_specific_category');
+add_action('pre_get_posts', 'Wacoal_Exclude_Posts_From_Specific_category');
 
 /**
  * Function to enable the taxonomies on pages
  *
  * @return void
  */
-function wacoal_add_taxonomies_to_pages()
+function Wacoal_Add_Taxonomies_To_pages()
 {
     register_taxonomy_for_object_type('category', 'page');
 }
-add_action('init', 'wacoal_add_taxonomies_to_pages');
+add_action('init', 'Wacoal_Add_Taxonomies_To_pages');
 
-function wacoal_block_categories( $categories, $post )
+/**
+ * Function used to create block category
+ *
+ * @param $categories $array
+ * @param $post       post type
+ *
+ * @return void
+ */
+function Wacoal_Block_categories( $categories, $post )
 {
     if ($post->post_type !== 'post' ) {
         return $categories;
@@ -702,7 +714,7 @@ function wacoal_block_categories( $categories, $post )
         )
     );
 }
-add_filter('block_categories', 'wacoal_block_categories', 10, 2);
+add_filter('block_categories', 'Wacoal_Block_categories', 10, 2);
 
 
 function wacoal_limit_text($text, $limit)

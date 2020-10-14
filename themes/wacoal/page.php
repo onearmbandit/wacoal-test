@@ -12,7 +12,7 @@
 
 Wacoal_Page_Entry_top('');
 
-$primary_category     = wacoal_get_primary_category($post->ID);
+$primary_category     = Wacoal_Get_Primary_category($post->ID);
 $primary_category_url = get_term_link($primary_category->term_id);
 
 $recent_posts = Wacoal_Query_posts(
