@@ -16,7 +16,7 @@ $logo = get_field( 'header_logo', 'options' );
     <a href="<?php echo esc_url(home_url());?>">
         <img class="header-section--logo lazyload" data-src="<?php echo esc_url($logo);?>" alt="btemptd" />
     </a>
-    <a class="shop-btemptd-btn" href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>" target="_blank">
+    <a class="shop-btemptd-btn" href="<?php echo esc_url(get_field('header_button_link', 'options'));?>" target="_blank">
         <?php echo esc_html(get_field('header_button_text', 'options'));?>
     </a>
 </header>
@@ -27,7 +27,7 @@ $logo = get_field( 'header_logo', 'options' );
     </div>
     <?php $args=array(
         'theme_location' => 'primary',
-        'menu' =>'Header',
+        'menu' =>'Header menu',
         'container' => false ,
         'items_wrap' => '<ul id="%1$s" class="header-navigation--ul">%3$s</ul>',
 
