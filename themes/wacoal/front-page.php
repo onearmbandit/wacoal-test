@@ -23,7 +23,7 @@ $top_mobile_banner_image_id  = $top_banner_fields['moible_banner_image'];
 $top_mobile_banner_image_url = wp_get_attachment_image_src($top_mobile_banner_image_id, 'full');
 
 $post_not_in=array();
-$slider_blogs[] = get_field('slider_posts', 'options');
+$slider_blogs = get_field('slider_posts', 'options');
 $slider_blogs_ids = ! empty($slider_blogs) ? array_values($slider_blogs) : array();
 $slider_blogs_posts = Wacoal_Query_posts(
     array(
@@ -45,7 +45,7 @@ foreach ( $slider_blogs_ids as $slider_blog_id ) {
     }
 }
 
-$featured_blogs []    = get_field('featured_posts', 'options');
+$featured_blogs   = get_field('featured_posts', 'options');
 $featured_blogs_ids = ! empty($featured_blogs) ? array_values($featured_blogs) : array();
 $featured_blogs_posts = Wacoal_Query_posts(
     array(
