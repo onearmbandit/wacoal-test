@@ -11,34 +11,55 @@
  */
 
 ?>
+
+<!-- Top Banner Section Start -->
 <?php if(!empty($top_banner_link)) :?>
 <a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true) : echo "target='_blank'";
 endif;?>>
 <?php endif;?>
+
 <section class="banner-with-image desktop-banner"
     style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+
+    <?php if($top_banner_title && !empty($top_banner_title)) :?>
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
         </h1>
+    <?php endif; ?>
+
+    <?php if($top_banner_subtitle && !empty($top_banner_subtitle)) :?>
         <p class="banner-with-image--subtitle">
             <?php echo esc_attr($top_banner_subtitle);?>
         </p>
+    <?php endif; ?>
+
 </section>
 
 <section class="banner-with-image mobile-banner"
     style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_mobile_banner_image_url));?>);">
+
+    <?php if($top_banner_title && !empty($top_banner_title)) :?>
         <h1 class="banner-with-image--heading">
             <?php echo esc_attr($top_banner_title);?>
         </h1>
+    <?php endif; ?>
+
+    <?php if($top_banner_subtitle && !empty($top_banner_subtitle)) :?>
         <p class="banner-with-image--subtitle">
             <?php echo esc_attr($top_banner_subtitle);?>
         </p>
+    <?php endif; ?>
+
 </section>
+
 <?php if(!empty($top_banner_link)) :?>
 </a>
 <?php endif;?>
 
-<!-- Evergreen Articles Slider -->
+<!-- Top Banner Section Start -->
+
+<!-- Evergreen Articles Slider Start -->
+<?php if(count($slider_blogs) < 1) : ?>
 <section class="evergreen-article--slider">
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
@@ -49,29 +70,46 @@ endif;?>>
                 $categories = Wacoal_Get_Primary_category($slider_blog->ID);
                 $cat_ID = $categories->term_id;
                 ?>
+
+                <?php if($slider_blog->ID && !empty($slider_blog->ID)) : ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
+
+                    <?php if($cat_ID && !empty($cat_ID)) :?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
                             <?php echo esc_attr($categories->name);?>
                         </a>
+                    <?php endif; ?>
+
+                    <?php if($slider_blog->post_title && !empty($slider_blog->post_title)) :?>
                         <h3 class="evergreen-article--content__title">
                             <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 17));?>
                         </h3>
+                    <?php endif; ?>
+
+                    <?php if($slider_blog->tag_line && !empty($slider_blog->tag_line)) : ?>
                         <div class="evergreen-article--content__para">
                             <?php echo wp_kses_post(Wacoal_Limit_text($slider_blog->tag_line, 160));?>
                         </div>
+                    <?php endif; ?>
+
                     </div>
 
+                    <?php if($thumbnail_id && !empty($thumbnail_id)) : ?>
                     <div class="evergreen-article--image">
                         <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                         alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
+                    <?php endif; ?>
+
                     <div class="evergreen-article--button">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
                         class="btn primary big">learn more</a>
                     </div>
                 </div>
+                <?php endif; ?>
+
             <?php } ?>
 
         </div>
@@ -88,20 +126,34 @@ endif;?>>
         </div>
   </div>
 </section>
+<?php endif; ?>
 
-<!-- Wacoal 101 -->
+<!-- Evergreen Articles Slider End-->
+
+<!-- Wacoal 101 Start -->
+
+<?php if(have_rows($static_section) || $static_section['image'] ) : ?>
+
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
+
+    <?php if($static_section['image'] && !empty($static_section['image'])) : ?>
         <div class="wacoal-101--image">
             <img class="lazyload"
                 data-src="<?php echo  esc_url($static_section['image']); ?>"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt="Wacoal 101" />
         </div>
-        <div class="wacoal-101--content">
+    <?php endif;?>
+
+       <div class="wacoal-101--content">
+
+       <?php if($static_section['title'] && !empty($static_section['title'])) : ?>
             <div class="wacoal-101--content__title">
                <?php echo esc_attr($static_section['title']);?>
             </div>
+       <?php endif; ?>
+
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
                     <div class="wacoal-101--list__icon">
@@ -114,6 +166,9 @@ endif;?>>
         </div>
     </div>
 </section>
+
+<?php endif; ?>
+<!-- Wacoal 101 End -->
 
 <section class="spacer-120"></section>
 <section class="featured-article--slider">
@@ -203,7 +258,7 @@ endif;?>>
         <?php } ?>
     </div>
 </section>
-<?php if($counts->publish > 3):?>
+<?php if($counts->publish > 3) :?>
 <div class="see-more--wrapper">
     <button class="more btn primary">See More</button>
 </div>
