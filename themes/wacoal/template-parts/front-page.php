@@ -70,7 +70,6 @@ endif;?>>
                 $cat_ID = $categories->term_id;
                 ?>
 
-                <?php if($slider_blog->ID && !empty($slider_blog->ID)) : ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
 
@@ -107,7 +106,6 @@ endif;?>>
                         class="btn primary big">learn more</a>
                     </div>
                 </div>
-                <?php endif; ?>
 
             <?php } ?>
 
