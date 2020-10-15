@@ -78,7 +78,7 @@ endif;?>>
                         </a>
 
                         <h3 class="evergreen-article--content__title">
-                            <?php echo esc_attr($slider_blog->post_title);?>
+                            <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 78));?>
                         </h3>
 
                         <div class="evergreen-article--content__para">

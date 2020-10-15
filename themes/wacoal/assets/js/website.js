@@ -5,7 +5,7 @@ require('../scss/website/index.scss');
 require('../js/website/main.js');
 require('../js/website/wacoal-swiper.js');
 
-if($('body').hasClass('page-template-homepage')){
+if($('body').hasClass('home')){
   require('../js/website/home-page.js');
 }
 
