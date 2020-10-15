@@ -120,28 +120,6 @@ if (function_exists('wpcom_vip_load_gutenberg') ) {
     wpcom_vip_load_gutenberg(true);
 }
 
-// LOCALDEV START.
-/**
- * Below this all code is local dev only, in circle ci configuration this code is removed in a '-built' branch
-*/
-if (defined('WACOAL_ENABLE_LOCAL_SETTINGS') && WACOAL_ENABLE_LOCAL_SETTINGS ) {
-
-    add_filter(
-        'wp_get_attachment_image_src',
-        function ( $image ) {
-            $image[0] = jetpack_photon_url($image[0]);
-            return $image;
-        }
-    );
-
-    add_filter(
-        'jetpack_photon_domain',
-        function ( $domain ) {
-            return WACOAL_PHOTON_URL;
-        }
-    );
-}
-// LOCALDEV END.
 /**
  * Website ajax functions include
 */
