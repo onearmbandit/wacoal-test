@@ -703,16 +703,23 @@ function Wacoal_Block_categories( $categories, $post )
     if ($post->post_type !== 'post' ) {
         return $categories;
     }
-    return array_merge(
-        $categories,
-        array(
-            array(
-                'slug' => 'wacoal',
-                'title' => __('Wacoal category', 'wacoal'),
-                'icon'  => 'wordpress',
-            ),
-        )
+    $temp = array(
+        'slug' => 'wacoal',
+        'title' => __('Wacoal category', 'wacoal'),
+        'icon'  => 'wordpress',
     );
+    $newCategories = array();
+    $newCategories[0] = $temp;
+
+
+    foreach ($categories as $category) {
+        $newCategories[] = $category;
+    }
+
+
+    return $newCategories;
+
+
 }
 add_filter('block_categories', 'Wacoal_Block_categories', 10, 2);
 
