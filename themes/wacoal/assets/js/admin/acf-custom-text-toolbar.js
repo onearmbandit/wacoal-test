@@ -1,6 +1,6 @@
 (function ($) {
 
-  // acf.add_filter('wysiwyg_quicktags_settings', function ( qtInit, id, field ) {
+  acf.add_filter('wysiwyg_quicktags_settings', function ( qtInit, id, field ) {
 
 
   //   console.log("checking hour"+field[0].id);
@@ -18,7 +18,7 @@
       qtInit.buttons = 'strong,em,del,link,ol,ul';
     }
 
-  // });
+  });
 
 
 })(jQuery);
