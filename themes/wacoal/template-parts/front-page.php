@@ -164,9 +164,7 @@ endif;?>>
 </section>
 
 <!-- More From Blog -->
-<?php $counts= wp_count_posts();
-
-?>
+<?php $counts= wp_count_posts();?>
 <input type="hidden" name="offset" id="offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
 <section class="more-blog">
@@ -205,7 +203,8 @@ endif;?>>
         <?php } ?>
     </div>
 </section>
-
+<?php if($counts->publish > 3):?>
 <div class="see-more--wrapper">
     <button class="more btn primary">See More</button>
 </div>
+<?php endif;?>
