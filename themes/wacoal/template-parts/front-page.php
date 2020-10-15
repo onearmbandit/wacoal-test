@@ -73,33 +73,25 @@ endif;?>>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
 
-                    <?php if($cat_ID && !empty($cat_ID)) :?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
                             <?php echo esc_attr($categories->name);?>
                         </a>
-                    <?php endif; ?>
 
-                    <?php if($slider_blog->post_title && !empty($slider_blog->post_title)) :?>
                         <h3 class="evergreen-article--content__title">
                             <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 17));?>
                         </h3>
-                    <?php endif; ?>
 
-                    <?php if($slider_blog->tag_line && !empty($slider_blog->tag_line)) : ?>
                         <div class="evergreen-article--content__para">
                             <?php echo wp_kses_post(Wacoal_Limit_text($slider_blog->tag_line, 160));?>
                         </div>
-                    <?php endif; ?>
 
                     </div>
 
-                    <?php if($thumbnail_id && !empty($thumbnail_id)) : ?>
                     <div class="evergreen-article--image">
                         <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                         alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
-                    <?php endif; ?>
 
                     <div class="evergreen-article--button">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
