@@ -59,7 +59,6 @@ endif;?>>
 <!-- Top Banner Section Start -->
 
 <!-- Evergreen Articles Slider Start -->
-<?php if(count($slider_blogs) < 1) : ?>
 <section class="evergreen-article--slider">
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
@@ -126,7 +125,6 @@ endif;?>>
         </div>
   </div>
 </section>
-<?php endif; ?>
 
 <!-- Evergreen Articles Slider End-->
 
