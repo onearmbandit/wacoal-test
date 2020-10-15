@@ -15,7 +15,7 @@
  *
  * - The WordPress.com VIP Team
  *
- * @package Wacoal
+ * @package wacoal
  **/
 
 define('WPCOM_VIP_USE_JETPACK_PHOTON', true);
@@ -26,10 +26,8 @@ $http_host        = $_SERVER['HTTP_HOST'];   //phpcs:ignore
 $request_uri      = $_SERVER['REQUEST_URI']; //phpcs:ignore
 
 $redirect_domains = [
-    'blog.wacoal-america.com'   => [
-        'www.blog.wacoal-america.com',
-        'www.blog.wacoalamerica.com',
-        'blog.wacoalamerica.com'
+    'www.wacoal-america.com'   => [
+        'wacoal-america.com',
     ],
     'btemptdblog.wacoal-america.com'   => [
         'www.btemptdblog.wacoal-america.com',
@@ -40,6 +38,7 @@ $redirect_domains = [
         'www.blog.wacoal.ca',
     ],
 ];
+
 
 // Safety checks for redirection:
 // 1. Don't redirect for '/cache-healthcheck?' or monitoring will break
@@ -56,7 +55,8 @@ foreach ( $redirect_domains as $redirect_to => $redirect_from_domains ) {
 }
 
 $proxy_lib = ABSPATH . '/wp-content/mu-plugins/lib/proxy/ip-forward.php';
-$forwarded_ips = explode(",", $SERVER['HTTP_TRUE_CLIENT_IP']);
+$forwarded_ips = explode( ',', $SERVER['HTTP_X_FORWARDED_FOR'] );
+$forwarded_ips = array_map( ‘trim’, $forwarded_ips );
 if ($forwarded_ips[0] && ! empty($_SERVER['REMOTE_ADDR']) && file_exists($proxy_lib) ) {
     include_once __DIR__ . '/remote-proxy-ips.php';
     include_once $proxy_lib;
