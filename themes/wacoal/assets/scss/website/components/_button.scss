@@ -38,25 +38,29 @@
           padding-left: get-vw(30.5px);
         }
       }
-      // @include respond-above(md) {
-      //   font-size: calcRem(16);
-      //   padding: calcRem(9, 16, 6);
-      // }
-
-      // @include respond-above(lg) {
-      //   font-size: calcRem(20);
-      //   padding: calcRem(10, 18, 7);
-      // }
-
-      // @include respond-above(xl) {
-      //   font-size: calcRem(30);
-      //   padding: calcRem(16, 27, 13);
-      // }
 
       &:hover {
-
+        background: var(--color-black);
+        color: var(--color-white);
       }
+  }
 
+  &.secondary {
+      border-color: var(--color-nav-bg);
+      background-color: var(--color-nav-bg);
+      color: var(--color-black);
+      font-size: calcRem(16);
+      @include ProximaNova-Bold;
+      text-transform:   uppercase;
+      padding: calcRem(14, 42, 13);
+
+      @include respond-above(sm) {
+        font-size: get-vw(25px);
+        padding-top: get-vw(24px);
+        padding-right: get-vw(60px);
+        padding-bottom: get-vw(22px);
+        padding-left: get-vw(60px);
+      }
   }
 
 }

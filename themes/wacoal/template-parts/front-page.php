@@ -260,6 +260,6 @@ endif;?>>
 </section>
 <?php if($counts->publish > 3) :?>
 <div class="see-more--wrapper">
-    <button class="more btn primary">See More</button>
+    <button class="more btn secondary">See More</button>
 </div>
 <?php endif;?>
