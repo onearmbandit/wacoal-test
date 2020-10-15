@@ -59,7 +59,6 @@ endif;?>>
 <!-- Top Banner Section Start -->
 
 <!-- Evergreen Articles Slider Start -->
-<?php if(count($slider_blogs) < 1) : ?>
 <section class="evergreen-article--slider">
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
@@ -71,7 +70,6 @@ endif;?>>
                 $cat_ID = $categories->term_id;
                 ?>
 
-                <?php if($slider_blog->ID && !empty($slider_blog->ID)) : ?>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
 
@@ -108,7 +106,6 @@ endif;?>>
                         class="btn primary big">learn more</a>
                     </div>
                 </div>
-                <?php endif; ?>
 
             <?php } ?>
 
@@ -126,7 +123,6 @@ endif;?>>
         </div>
   </div>
 </section>
-<?php endif; ?>
 
 <!-- Evergreen Articles Slider End-->
 
