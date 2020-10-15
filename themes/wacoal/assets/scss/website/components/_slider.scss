@@ -198,7 +198,7 @@
     align-items: center;
 
     @include respond-above(sm) {
-      max-width: get-vw(600px);
+      max-width: get-vw(840px);
       height: get-vw(432px);
       padding-top: get-vw(41px);
       padding-bottom: get-vw(50px);
@@ -218,6 +218,14 @@
 
     &__title {
       text-transform: uppercase;
+
+      font-size: calcRem(26);
+      line-height: calcRem(25);
+
+      @include respond-above(sm) {
+        font-size: get-vw(60px);
+        line-height: get-vw(57px);
+      }
     }
 
     &__para {
@@ -229,7 +237,8 @@
       @include respond-above(sm) {
         font-size: get-vw(24px);
         line-height: get-vw(31px);
-        margin-top: 0;
+        margin-top: calcRem(10);
+        max-width: get-vw(600px);
       }
 
       strong {
