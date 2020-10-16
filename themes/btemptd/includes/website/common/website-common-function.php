@@ -447,3 +447,35 @@ function Btemptd_Paging_nav()
     echo '</div></div></section>' . "\n";
 }
 
+/**
+ * Function used to create block category
+ *
+ * @param $categories $array
+ * @param $post       post type
+ *
+ * @return void
+ */
+function Btemptd_Block_categories( $categories, $post )
+{
+    if ($post->post_type !== 'post' ) {
+        return $categories;
+    }
+    $temp = array(
+        'slug' => 'btemptd',
+        'title' => __('Btemptd category', 'btemptd'),
+        'icon'  => 'wordpress',
+    );
+    $newCategories = array();
+    $newCategories[0] = $temp;
+
+
+    foreach ($categories as $category) {
+        $newCategories[] = $category;
+    }
+
+
+    return $newCategories;
+
+
+}
+add_filter('block_categories', 'Btemptd_Block_categories', 10, 2);
