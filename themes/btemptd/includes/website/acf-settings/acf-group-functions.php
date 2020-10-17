@@ -1,8 +1,13 @@
 <?php
 /**
  * Group function settings
+ * php version 7.4
  *
- * @package Btemptd
+ * @category Btemptd
+ * @package  Btemptd
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Btemptd
  */
 
 
