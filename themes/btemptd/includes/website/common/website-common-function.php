@@ -25,7 +25,7 @@ add_action('wp_head', 'Btemptd_Pingback_header');
 /**
  * Get header html
  *
- * @param string $classname class name.
+ * @param  string $classname class name.
  * @return  html
  */
 function Btemptd_Page_Entry_top($classname)
@@ -91,7 +91,7 @@ function Btemptd_Remove_ptag($content)
     $content = str_ireplace('</p>', '', $content);
     return $content;
 }
-/**
+/*
  * Add Menu link class.
  *
  * @param  $item  The current menu item.
@@ -113,12 +113,13 @@ add_filter('nav_menu_link_attributes', 'Btemptd_Add_Menu_Link_class', 1, 3);
 /**
  * Add Menu li class.
  *
- * @param  string $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
- * @param  WP_Post  $item    The current menu item.
- * @param  stdClass $args    An object of wp_nav_menu() arguments.
- * @param  int      $depth   Depth of menu item. Used for padding.
+ * @param string $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
+ * @param WP_Post  $item    The current menu item.
+ * @param stdClass $args    An object of wp_nav_menu() arguments.
+ * @param int      $depth   Depth of menu item. Used for padding.
  * @return array $classes
  */
+
 function Btemptd_Add_Menu_Li_class( $classes, $item, $args, $depth )
 {
 
