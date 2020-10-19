@@ -8,7 +8,7 @@
     text-align: center;
 
     &__category {
-      @include ProximaNova-Light;
+      // @include ProximaNova-Light;
       font-size: get-vw(43px);
       margin-bottom: get-vw(44px);
       display: block;
@@ -19,7 +19,7 @@
     }
 
     &__para {
-      @include ProximaNova-Thin;
+      // @include ProximaNova-Thin;
       font-size: get-vw(39px);
       line-height: get-vw(51px);
       text-transform: uppercase;
@@ -54,7 +54,7 @@
 
   &--content {
     flex: 1;
-    @include BentonModDisp-Regular;
+    // @include BentonModDisp-Regular;
     font-size: calcRem(14);
     line-height: calcRem(18);
 
@@ -92,7 +92,7 @@
     }
 
     figcaption {
-      @include ProximaNova-Light;
+      // @include ProximaNova-Light;
       font-size: get-vw(10px);
       color: var(--color-gray);
       text-align: center;
@@ -137,7 +137,7 @@
     margin-bottom: get-vw(40px);
     span {
         font-size: get-vw(46px);
-        @include BentonModDisp-Bold;
+        // @include BentonModDisp-Bold;
     }
   }
 
@@ -193,7 +193,7 @@
     }
 
     &__title {
-      @include ProximaNova-Bold;
+      // @include ProximaNova-Bold;
       font-size: get-vw(22px);
       line-height: get-vw(26px);
       text-transform: uppercase;
@@ -231,7 +231,7 @@
 
   &--content {
     flex: 1;
-    @include BentonModDisp-RegularItalic;
+    // @include BentonModDisp-RegularItalic;
     font-size: calcRem(12);
     line-height: calcRem(16);
     text-align: center;
@@ -301,24 +301,24 @@
       flex: 1;
 
       &__heading {
-          @include BentonModDisp-Bold;
+          // @include BentonModDisp-Bold;
           font-size: get-vw(69px);
           margin-bottom: get-vw(20px);
       }
 
       &__subheading-one {
-        @include BentonModDisp-Bold;
+        // @include BentonModDisp-Bold;
         font-size: get-vw(30px);
       }
 
       &__subheading-two {
-        @include BentonModDisp-RegularItalic;
+        // @include BentonModDisp-RegularItalic;
         font-size: get-vw(31px);
         margin-bottom: get-vw(40px);
       }
 
       &__para {
-        @include BentonModDisp-Regular;
+        // @include BentonModDisp-Regular;
         font-size: get-vw(30px);
         line-height: get-vw(40px);
       }
@@ -345,7 +345,7 @@
   &--wrapper {
     max-width: get-vw(1280px);
     margin: auto;
-    @include BentonModDisp-Regular;
+    // @include BentonModDisp-Regular;
     text-align: center;
 
     &__title {
@@ -378,7 +378,7 @@
       position: relative;
 
       span {
-        @include BentonModDisp-Bold;
+        // @include BentonModDisp-Bold;
         font-size: get-vw(541px);
         color: rgba(235, 222, 213, 0.45);
         left: 50%;
@@ -395,7 +395,7 @@
     }
 
     &--heading {
-      @include BentonModDisp-BoldItalic;
+      // @include BentonModDisp-BoldItalic;
       font-size: get-vw(56px);
       line-height: get-vw(51px);
       border-bottom: 1px solid var(--color-black);
@@ -405,7 +405,7 @@
     &--para {
       font-size: get-vw(30px);
       line-height: get-vw(40px);
-      @include BentonModDisp-Regular;
+      // @include BentonModDisp-Regular;
     }
 
     &.list-box-one {
@@ -514,7 +514,7 @@
     margin: auto;
     font-size: calcRem(9);
     line-height: calcRem(13);
-    @include ProximaNova-Light;
+    // @include ProximaNova-Light;
     color: var(--color-gray);
     text-align: center;
     margin-top: calcRem(12);
@@ -554,7 +554,7 @@
     .video-caption {
       font-size: calcRem(14);
       line-height: calcRem(16);
-      @include ProximaNova-Light;
+      // @include ProximaNova-Light;
       color: var(--color-gray);
       text-align: center;
       margin-top: calcRem(19);
@@ -581,7 +581,7 @@
     .image-caption {
       font-size: calcRem(13);
       line-height: calcRem(16);
-      @include ProximaNova-Sbold;
+      // @include ProximaNova-Sbold;
       margin-top: calcRem(10);
 
       @include respond-above(sm) {

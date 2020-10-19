@@ -56,7 +56,7 @@
 
   &--link {
     color: var(--color-black);
-    @include ProximaNova-Sbold;
+    // @include ProximaNova-Sbold;
     font-size: calcRem(12);
 
     @include respond-above(md) {
@@ -72,7 +72,7 @@
 .shop-btemptd-btn {
   position: absolute;
   right: 0;
-  @include ProximaNova-Light;
+  @include NeutraText-DemiAlt;
   font-size: get-vw(32px);
   color: var(--color-white);
   text-transform: uppercase;
@@ -81,6 +81,22 @@
   padding-right: get-vw(101px);
   padding-top: get-vw(23px);
   padding-bottom: get-vw(23px);
+
+  &.shop-btemptd-btn-desktop {
+    display: none;
+
+    @include respond-above(sm) {
+      display: block;
+    }
+  }
+
+  &.shop-btemptd-btn-mobile {
+    display: block;
+
+    @include respond-above(sm) {
+      display: none;
+    }
+  }
 }
 
 

@@ -852,9 +852,9 @@
 /***/ }),
 
 /***/ "./themes/btemptd/assets/css/wpadmin/admin.css":
-/*!****************************************************!*\
+/*!*****************************************************!*\
   !*** ./themes/btemptd/assets/css/wpadmin/admin.css ***!
-  \****************************************************/
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -863,9 +863,9 @@
 /***/ }),
 
 /***/ "./themes/btemptd/assets/js/wpadmin.js":
-/*!********************************************!*\
+/*!*********************************************!*\
   !*** ./themes/btemptd/assets/js/wpadmin.js ***!
-  \********************************************/
+  \*********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -883,16 +883,14 @@ __webpack_require__(/*! ../css/wpadmin/admin.css */ "./themes/btemptd/assets/css
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.loadMode = 1;
 
-(function ($) {
-  console.log('inside wpadmin section');
-})(jQuery);
+(function ($) {})(jQuery);
 
 /***/ }),
 
 /***/ "./themes/btemptd/assets/scss/website/index.scss":
-/*!******************************************************!*\
+/*!*******************************************************!*\
   !*** ./themes/btemptd/assets/scss/website/index.scss ***!
-  \******************************************************/
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -901,13 +899,13 @@ window.lazySizesConfig.loadMode = 1;
 /***/ }),
 
 /***/ 1:
-/*!**************************************************!*\
+/*!***************************************************!*\
   !*** multi ./themes/btemptd/assets/js/wpadmin.js ***!
-  \**************************************************/
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/btemptd/themes/btemptd/assets/js/wpadmin.js */"./themes/btemptd/assets/js/wpadmin.js");
+module.exports = __webpack_require__(/*! /Users/admin/Documents/Projects/Wacoal/wacoal/themes/btemptd/assets/js/wpadmin.js */"./themes/btemptd/assets/js/wpadmin.js");
 
 
 /***/ }),

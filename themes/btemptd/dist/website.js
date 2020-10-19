@@ -10937,10 +10937,10 @@ Swiper.use(components);
 
 /***/ }),
 
-/***/ "./themes/wacoal/assets/js/website.js":
-/*!********************************************!*\
-  !*** ./themes/wacoal/assets/js/website.js ***!
-  \********************************************/
+/***/ "./themes/btemptd/assets/js/website.js":
+/*!*********************************************!*\
+  !*** ./themes/btemptd/assets/js/website.js ***!
+  \*********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -10954,11 +10954,11 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__(/*! jquery */ "jquery");
 
-__webpack_require__(/*! ../scss/website/index.scss */ "./themes/wacoal/assets/scss/website/index.scss");
+__webpack_require__(/*! ../scss/website/index.scss */ "./themes/btemptd/assets/scss/website/index.scss");
 
-__webpack_require__(/*! ../js/website/main.js */ "./themes/wacoal/assets/js/website/main.js");
+__webpack_require__(/*! ../js/website/main.js */ "./themes/btemptd/assets/js/website/main.js");
 
-__webpack_require__(/*! ../js/website/wacoal-swiper.js */ "./themes/wacoal/assets/js/website/wacoal-swiper.js");
+__webpack_require__(/*! ../js/website/btemptd-swiper.js */ "./themes/btemptd/assets/js/website/btemptd-swiper.js");
 
 
 window.lazySizesConfig = window.lazySizesConfig || {};
@@ -10979,13 +10979,13 @@ $(document).on('click', '.nav-links a', function (event) {
   $('.nav-links a').removeClass('active');
   $(this).addClass('active');
   $.ajax({
-    url: wacoal_js_var.ajaxurl,
+    url: btemptd_js_var.ajaxurl,
     type: 'post',
     data: {
-      action: 'wacoal_ajax_pagination',
-      query_vars: wacoal_js_var.query_vars,
+      action: 'btemptd_ajax_pagination',
+      query_vars: btemptd_js_var.query_vars,
       page: page,
-      nonce: wacoal_js_var.nonce
+      nonce: btemptd_js_var.nonce
     },
     success: function success(html) {
       $('#post-listing').find('div.category-posts').html(''); //$('#post-listing .pagination').remove();
@@ -11006,13 +11006,13 @@ $(document).on('click', '.next a', function (event) {
     $('.nav-links a').removeClass('active');
     next.addClass("active");
     $.ajax({
-      url: wacoal_js_var.ajaxurl,
+      url: btemptd_js_var.ajaxurl,
       type: 'post',
       data: {
-        action: 'wacoal_ajax_pagination',
-        query_vars: wacoal_js_var.query_vars,
+        action: 'btemptd_ajax_pagination',
+        query_vars: btemptd_js_var.query_vars,
         page: page,
-        nonce: wacoal_js_var.nonce
+        nonce: btemptd_js_var.nonce
       },
       success: function success(html) {
         $('#post-listing').find('div.category-posts').html(''); //$('#post-listing .pagination').remove();
@@ -11038,13 +11038,13 @@ $(document).on('click', '.prev a', function (event) {
   if (page >= 1) {
     $(this).addClass('active');
     $.ajax({
-      url: wacoal_js_var.ajaxurl,
+      url: btemptd_js_var.ajaxurl,
       type: 'post',
       data: {
-        action: 'wacoal_ajax_pagination',
-        query_vars: wacoal_js_var.query_vars,
+        action: 'btemptd_ajax_pagination',
+        query_vars: btemptd_js_var.query_vars,
         page: page,
-        nonce: wacoal_js_var.nonce
+        nonce: btemptd_js_var.nonce
       },
       success: function success(html) {
         $('#post-listing').find('div.category-posts').html('');
@@ -11057,14 +11057,14 @@ $(document).on('click', '.more', function (event) {
   var input = $("#offset").val();
   var offset = parseInt(input) + 3;
   $.ajax({
-    url: wacoal_js_var.ajaxurl,
+    url: btemptd_js_var.ajaxurl,
     type: 'post',
     data: {
-      action: 'wacoal_load_more',
-      // query_vars: wacoal_js_var.query_vars,
+      action: 'btemptd_load_more',
+      // query_vars: btemptd_js_var.query_vars,
       // page: page,
       offset: offset,
-      nonce: wacoal_js_var.nonce
+      nonce: btemptd_js_var.nonce
     },
     success: function success(html) {
       $("#offset").val(offset);
@@ -11082,10 +11082,44 @@ $(document).on('click', '.more', function (event) {
 
 /***/ }),
 
-/***/ "./themes/wacoal/assets/js/website/main.js":
-/*!*************************************************!*\
-  !*** ./themes/wacoal/assets/js/website/main.js ***!
-  \*************************************************/
+/***/ "./themes/btemptd/assets/js/website/btemptd-swiper.js":
+/*!************************************************************!*\
+  !*** ./themes/btemptd/assets/js/website/btemptd-swiper.js ***!
+  \************************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/js/swiper.esm.bundle.js");
+
+
+__webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btemptd/assets/scss/website/btemptd-swiper.scss");
+
+(function ($) {
+  var featuredArticles = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.featured-articles-slider', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    } // breakpoints: {
+    //   768: {
+    //     slidesPerView: 3.8,
+    //     spaceBetween: 27
+    //   }
+    // }
+
+  });
+})(jQuery);
+
+/***/ }),
+
+/***/ "./themes/btemptd/assets/js/website/main.js":
+/*!**************************************************!*\
+  !*** ./themes/btemptd/assets/js/website/main.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11095,93 +11129,10 @@ $(document).on('click', '.more', function (event) {
 
 /***/ }),
 
-/***/ "./themes/wacoal/assets/js/website/wacoal-swiper.js":
-/*!**********************************************************!*\
-  !*** ./themes/wacoal/assets/js/website/wacoal-swiper.js ***!
-  \**********************************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/js/swiper.esm.bundle.js");
-
-
-__webpack_require__(/*! ../../scss/website/wacoal-swiper.scss */ "./themes/wacoal/assets/scss/website/wacoal-swiper.scss");
-
-(function ($) {
-  var fullWidthSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.full-width-slider', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
-  });
-  var centerSlideSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.center-slide-slider', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1.7,
-        spaceBetween: 70
-      }
-    }
-  });
-  var featuredSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.featured-article', {
-    slidesPerView: 1,
-    spaceBetween: 83,
-    centeredSlides: true,
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1.25,
-        spaceBetween: 83
-      }
-    }
-  });
-  var articleDetailsSlider = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.article-details-slider', {
-    slidesPerView: 'auto',
-    centeredSlides: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    }
-  });
-})(jQuery);
-
-/***/ }),
-
-/***/ "./themes/wacoal/assets/scss/website/index.scss":
-/*!******************************************************!*\
-  !*** ./themes/wacoal/assets/scss/website/index.scss ***!
-  \******************************************************/
+/***/ "./themes/btemptd/assets/scss/website/btemptd-swiper.scss":
+/*!****************************************************************!*\
+  !*** ./themes/btemptd/assets/scss/website/btemptd-swiper.scss ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11189,10 +11140,10 @@ __webpack_require__(/*! ../../scss/website/wacoal-swiper.scss */ "./themes/wacoa
 
 /***/ }),
 
-/***/ "./themes/wacoal/assets/scss/website/wacoal-swiper.scss":
-/*!**************************************************************!*\
-  !*** ./themes/wacoal/assets/scss/website/wacoal-swiper.scss ***!
-  \**************************************************************/
+/***/ "./themes/btemptd/assets/scss/website/index.scss":
+/*!*******************************************************!*\
+  !*** ./themes/btemptd/assets/scss/website/index.scss ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11201,13 +11152,13 @@ __webpack_require__(/*! ../../scss/website/wacoal-swiper.scss */ "./themes/wacoa
 /***/ }),
 
 /***/ 0:
-/*!**************************************************!*\
-  !*** multi ./themes/wacoal/assets/js/website.js ***!
-  \**************************************************/
+/*!***************************************************!*\
+  !*** multi ./themes/btemptd/assets/js/website.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/html/wacoal/themes/wacoal/assets/js/website.js */"./themes/wacoal/assets/js/website.js");
+module.exports = __webpack_require__(/*! /Users/admin/Documents/Projects/Wacoal/wacoal/themes/btemptd/assets/js/website.js */"./themes/btemptd/assets/js/website.js");
 
 
 /***/ }),

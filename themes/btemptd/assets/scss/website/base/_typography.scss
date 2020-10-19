@@ -1,52 +1,52 @@
 h1, h2, h3, h4{
-  @include BentonModDisp-Regular;
+
+  @include NeutraText-LightAlt;
 }
 h1 {
-  font-size: calcRem(54);
-  line-height: calcRem(49);
+  font-size: calcRem(52);
+  line-height: calcRem(50);
 
   @include respond-above(sm) {
-    font-size: get-vw(165px);
-    line-height: 1;
+    font-size: get-vw(191px);
+    line-height: get-vw(182px);
   }
 }
 
 h2 {
-  font-size: calcRem(36);
-  line-height: calcRem(35);
+  font-size: calcRem(42);
+  line-height: calcRem(45);
 
   @include respond-above(sm) {
-      font-size: get-vw(115px);
-      line-height: get-vw(109px);
+      font-size: get-vw(142px);
+      line-height: get-vw(136px);
   }
 }
 
 h3 {
-  font-size: calcRem(54);
-  line-height: calcRem(49);
+  font-size: calcRem(36);
+  line-height: calcRem(34);
 
   @include respond-above(sm) {
-    font-size: get-vw(93px);
-    line-height: get-vw(89px);
+    font-size: get-vw(94px);
+    line-height: get-vw(90px);
   }
 }
 
-h4 {
-  font-size: calcRem(50);
-  line-height: calcRem(44);
+// h4 {
+//   font-size: calcRem(50);
+//   line-height: calcRem(44);
 
-  @include respond-above(sm) {
-    font-size: get-vw(85px);
-    line-height: 1;
-  }
-}
+//   @include respond-above(sm) {
+//     font-size: get-vw(85px);
+//     line-height: 1;
+//   }
+// }
 
-h5 {
-  font-size: calcRem(24);
-  line-height: 1;
-  @include BentonModDisp-Bold;
+// h5 {
+//   font-size: calcRem(24);
+//   line-height: 1;
 
-  @include respond-above(sm) {
-    font-size: get-vw(35px);
-  }
-}
+//   @include respond-above(sm) {
+//     font-size: get-vw(35px);
+//   }
+// }

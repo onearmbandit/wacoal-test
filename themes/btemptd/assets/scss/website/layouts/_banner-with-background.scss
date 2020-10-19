@@ -21,7 +21,7 @@
     text-transform: uppercase;
 
     @include respond-above(sm) {
-      @include ProximaNova-Light;
+      // @include ProximaNova-Light;
       margin-top: get-vw(20px);
       font-size: get-vw(32px);
       line-height: get-vw(42px);

@@ -46,7 +46,7 @@
   &--copyright {
     width: var(--width-100);
     color: var(--color-white);
-    @include ProximaNova-Reg;
+    // @include ProximaNova-Reg;
     font-size: calcRem(8);
     margin-top: calcRem(22);
 
@@ -63,7 +63,7 @@
 
 .footer-links {
   &--title {
-    @include BentonModDisp-Bold;
+    // @include BentonModDisp-Bold;
     font-size: calcRem(13);
     color: var(--color-white);
     margin-bottom: calcRem(20);
@@ -121,7 +121,7 @@
 
     &__link {
       color: var(--color-white);
-      @include ProximaNova-Sbold;
+      // @include ProximaNova-Sbold;
       font-size: calcRem(10);
 
 

@@ -69,7 +69,7 @@
 
     &__content {
       font-size: calcRem(29);
-      @include BentonModDisp-Regular;
+      // @include BentonModDisp-Regular;
       margin-left: calcRem(13px);
 
       @include respond-above(sm) {

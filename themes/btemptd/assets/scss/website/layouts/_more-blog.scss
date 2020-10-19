@@ -42,7 +42,7 @@
   &--title {
     position: relative;
     z-index: 1;
-    @include ProximaNova-Light;
+    // @include ProximaNova-Light;
     font-size: calcRem(22);
     color: var(--color-gray);
     text-align: center;
@@ -134,7 +134,7 @@
     }
 
     &--category {
-      @include ProximaNova-Light;
+      // @include ProximaNova-Light;
       font-size: calcRem(19);
       line-height: calcRem(22);
       margin-bottom: calcRem(2);
@@ -153,7 +153,7 @@
     }
 
     &--para {
-      @include ProximaNova-Light;
+      // @include ProximaNova-Light;
       font-size: calcRem(14);
       line-height: calcRem(18);
       margin-top: calcRem(5);
@@ -221,7 +221,7 @@
         }
 
         a {
-          @include ProximaNova-Light;
+          // @include ProximaNova-Light;
           font-size: calcRem(19);
           color: var(--color-gray);
 

@@ -1,17 +1,24 @@
 .banner-with-image {
   width: var(--width-100);
-  background-image: url("../../images/landing-banner-mobile.png");
-  background-size: cover;
-  height: calcRem(442);
-  padding: calcRem(38, 0, 0, 11);
-  margin-bottom: calcRem(20);
+  height: calcRem(307);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-primary);
+  margin-bottom: calcRem(27);
 
   @include respond-above(sm) {
-    height: get-vw(482px);
-    background-image: url("../../images/landing-banner.png");
-    padding-top: get-vw(32px);
-    padding-left: get-vw(63px);
-    margin-bottom: get-vw(44px);
+    height: get-vw(483px);
+    flex-direction: row;
+    margin-bottom: get-vw(45px);
+  }
+
+  &--content {
+
+    @include respond-above(sm) {
+      flex: 1;
+      padding-top: get-vw(48px);
+      padding-left: get-vw(63px);
+    }
   }
 
   &--heading {
@@ -33,17 +40,16 @@
     @include respond-above(sm) {
       font-size: calcRem(11);
     }
+  }
 
-    @include respond-above(md) {
-      font-size: calcRem(15);
-    }
+  &--image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 
-    @include respond-above(lg) {
-      font-size: calcRem(22);
-    }
-
-    @include respond-above(xl) {
-      font-size: calcRem(32);
+    @include respond-above(sm) {
+      width: get-vw(922px);
     }
   }
 }

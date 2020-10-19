@@ -1,26 +1,67 @@
-.full-width-container {
+.size-chart {
 
-  &--wrapper {
-    width: 100%;
-    padding: calcRem(0, 23);
-
-    @include respond-above(sm) {
-      width: get-vw(1720px);
-      margin: auto;
-    }
-
+  @include respond-above(sm) {
+    margin-top: get-vw(43px);
+    margin-bottom: get-vw(90px);
   }
 
-  &--image {
-    margin-bottom: calcRem(40);
+  &--wrapper {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    @include NeutraText-BoldAlt;
+    text-transform: uppercase;
+
+    @include respond-above(sm) {
+      width: get-vw(1590px);
+      font-size: get-vw(32px);
+    }
+  }
+
+  &--left {
+    background: var(--color-tile-bg);
+    position: relative;
     text-align: center;
 
     @include respond-above(sm) {
-      margin-bottom: get-vw(80px);
+      width: get-vw(480px);
     }
 
-    img {
-      max-width: 100%;
+
+  }
+
+  &--middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--color-tile-bg);
+
+    @include respond-above(sm) {
+      width: get-vw(520px);
+    }
+
+    .cta {
+      position: absolute;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
     }
   }
+
+  &--right {
+    background: var(--color-tile-bg);
+    position: relative;
+    text-align: center;
+
+    @include respond-above(sm) {
+      width: get-vw(480px);
+    }
+  }
+
 }
