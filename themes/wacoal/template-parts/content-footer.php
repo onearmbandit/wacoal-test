@@ -43,7 +43,7 @@ $oembeded = get_field('instagram_feeds', 'options');
 
     <div class="footer-wrapper">
         <div class="footer-wrapper--copyright">
-            <?php echo esc_html($copyright_value);?>
+            <?php echo wp_kses_post($copyright_value);?>
         </div>
     </div>
 </footer>
