@@ -245,6 +245,22 @@ acf_add_local_field_group(
                     'maxlength' => '',
                 ),
                 array(
+                    'key' => 'field_5f8d415c8cba4',
+                    'label' => 'Title Link',
+                    'name' => 'title_link',
+                    'type' => 'url',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                ),
+                array(
                     'key' => 'field_5f7309e1252fc',
                     'label' => 'Links',
                     'name' => 'links',

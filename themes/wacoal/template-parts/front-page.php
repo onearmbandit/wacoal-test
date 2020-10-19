@@ -137,9 +137,11 @@ endif;?>>
        <div class="wacoal-101--content">
 
        <?php if($static_section['title'] && !empty($static_section['title'])) : ?>
-            <div class="wacoal-101--content__title">
-               <?php echo esc_attr($static_section['title']);?>
-            </div>
+            <a href="<?php echo esc_url($static_section['title_link']);?>">
+                <div class="wacoal-101--content__title">
+                    <?php echo esc_attr($static_section['title']);?>
+                </div>
+            </a>
        <?php endif; ?>
 
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
