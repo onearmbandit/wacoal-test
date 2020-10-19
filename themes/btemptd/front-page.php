@@ -10,10 +10,10 @@
  * @link     Btemptd
  */
 
-btemptd_page_entry_top('');
-
-
-
+Btemptd_Page_Entry_top('');
+$banner_url=get_field('banner', 'option');
+$banner_title=get_field('banner_title', 'option');
+$banner_subtitle=get_field('banner_subtitle', 'option');
 require locate_template('template-parts/front-page.php');
 
-btemptd_page_entry_bottom();
+Btemptd_Page_Entry_bottom();
