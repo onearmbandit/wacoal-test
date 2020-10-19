@@ -58,6 +58,15 @@
     @include respond-above(md) {
       font-size: get-vw(14px);
     }
+
+    strong {
+      @include ProximaNova-Bold;
+    }
+
+    a {
+      @include ProximaNova-Bold;
+      text-decoration: underline;
+    }
   }
 }
 
