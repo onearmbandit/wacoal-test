@@ -15,25 +15,24 @@ acf_add_local_field_group(
     'key' => 'group_5f6c45075a8b4',
     'title' => 'Footer Settings',
     'fields' => array(
-
         array(
             'key' => 'field_5f6c4526eaabb',
             'label' => 'Copyright text',
             'name' => 'copyright_text',
-            'type' => 'textarea',
+            'type' => 'wysiwyg',
             'instructions' => '',
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'copyright_text',
             ),
             'default_value' => '',
-            'placeholder' => '',
-            'maxlength' => '',
-            'rows' => 2,
-            'new_lines' => '',
+            'tabs' => 'all',
+            'toolbar' => 'content_toolbar',
+            'media_upload' => 1,
+            'delay' => 0,
         ),
         array(
             'key' => 'field_5f6c4aa4fa6be',
@@ -312,4 +311,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
