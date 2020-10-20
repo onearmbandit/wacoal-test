@@ -63,7 +63,7 @@ Btemptd_Page_Entry_top('');
         </div>
 
         <div class="reason-box odd">
-            <div class="reason-box--content">
+            <div class="reason-box--content box-shadow-right">
                 <div  class="reason-box--content__number">1.</div>
                 <div class="reason-box--content__para">
                 Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
@@ -76,7 +76,7 @@ Btemptd_Page_Entry_top('');
         </div>
 
         <div class="reason-box even">
-            <div class="reason-box--content">
+            <div class="reason-box--content box-shadow-right">
                 <div  class="reason-box--content__number">2.</div>
                 <div class="reason-box--content__para">
                 Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
@@ -89,7 +89,7 @@ Btemptd_Page_Entry_top('');
         </div>
 
         <div class="reason-box odd">
-            <div class="reason-box--content">
+            <div class="reason-box--content box-shadow-right">
                 <div  class="reason-box--content__number">3.</div>
                 <div class="reason-box--content__para">
                 Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
@@ -101,6 +101,100 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
+</section>
+
+<section class="wow-factor">
+    <div class="wow-factor--wrapper top">
+        <div class="wow-factor--left box-shadow-right">
+            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-down.svg" alt="" />
+            Our savvy customers
+            (check out all the rave reviews HERE)
+            and style insiders agree, the
+            b.wow’d Push Up Bra is an
+            “add to cart” essential.
+        </div>
+        <div class="wow-factor--right box-shadow-right">
+            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-down.svg" alt="" />
+            Click HERE for
+            instant WOW factor!
+        </div>
+    </div>
+    <div class="wow-factor--wrapper bottom">
+        <div class="wow-factor--banner">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/wow-factor-banner.png" alt="Image" />
+        </div>
+    </div>
+</section>
+
+<!-- Explore the Blog -->
+<section class="explore-blog">
+    <div class="explore-blog--title">Explore the blog</div>
+
+    <div class="explore-blog--bg">
+    <div class="explore-blog--wrapper">
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-1.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-2.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-3.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
 </section>
 
 <?php
