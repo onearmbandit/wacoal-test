@@ -28,7 +28,7 @@ $recent_posts = Btemptd_Query_posts(
         'post_status'=>'publish'
     )
 );
-$count_posts = wp_count_posts( $post_type = 'post' );
+$counts = wp_count_posts( $post_type = 'post' );
 
 require locate_template('template-parts/front-page.php');
 

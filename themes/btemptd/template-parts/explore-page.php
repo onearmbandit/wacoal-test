@@ -11,6 +11,12 @@
  */
 
 ?>
+<?php if(!empty($current_cat_id)):
+    $current_cat_id = $current_cat_id;
+else:
+    $current_cat_id = 0;
+endif;?>
+<input type="hidden" name="cat" id="cat_id" value="<?php echo $current_cat_id;?>">
 <input type="hidden" name="offset" id="offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
 <section class="explore-blog">
@@ -47,7 +53,7 @@
 
     </div>
     </div>
-    <?php if($count_posts->publish > 3):?>
+    <?php if($counts->publish > 3):?>
         <button class="more btn secondary">See More</button>
     <?php endif;?>
 </section>

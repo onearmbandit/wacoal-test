@@ -90,7 +90,8 @@ function Btemptd_Load_more(){
             'offset' => $_POST['offset'],
             'orderby' => 'post_date',
             'order' => 'DESC',
-            'post_status'=>'publish'
+            'post_status'=>'publish',
+            'category__not_in' => $_POST['cat_id'],
         )
     );
 
@@ -131,7 +132,7 @@ function Btemptd_Load_more(){
         $output = ob_get_contents();
         ob_end_clean();
     } else {
-        $output = 0;
+        $output = '';
     }
 
     echo $output;
