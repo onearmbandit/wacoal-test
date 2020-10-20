@@ -37,7 +37,7 @@ $template= get_field('template', 'category_'.$current_cat_id);
 if ($template == 'simple') :
 
     $faq_section = get_field('static_section', 'category_'.$current_cat_id);
-    error_log('$faq_section'.print_r($faq_section, 1));
+
 
     ?>
 
