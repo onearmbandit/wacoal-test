@@ -21,9 +21,7 @@
  */
 function Btemptd_Text_Img_List_Format_Render_callback( $block )
 {
-    $block_lists       = get_field('lists');
-    $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
-    $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
+    $block_lists       =  get_field('reviews');
 
     $shortcode_template   = '/template-parts/block/btemptd-list-format.php';
 
@@ -47,13 +45,14 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
  */
 function Btemptd_Img_List_Format_Render_callback( $block )
 {
-    $block_lists       = get_field('lists');
-    $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
-    $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
+
+    $cta_1_text  = get_field('review_link_1');
+    $cta_2_text  = get_field('review_link_2');
+    $block_image = get_field('image');
 
     $shortcode_template   = '/template-parts/block/btemptd-image-format.php';
 
-    if (! empty($block_lists) ) {
+    if (! empty($cta_1_text || $cta_2_text) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
