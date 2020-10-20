@@ -118,3 +118,22 @@ if ($template == 'simple') :
 </section>
 
 <?php endif; ?>
+<?php
+
+$recent_posts = Btemptd_Query_posts(
+    array(
+        'post_type' => array('post'),
+        'category__not_in' => $current_cat_id,
+        'posts_per_page' => 3,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    )
+);
+if(!empty($recent_posts)):
+    require locate_template('template-parts/explore-page.php');
+
+endif;
+
+Btemptd_Page_Entry_bottom();
