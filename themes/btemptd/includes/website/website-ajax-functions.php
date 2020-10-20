@@ -29,21 +29,21 @@ function Btemptd_Ajax_pagination() {
 
         $get_cat_ID=get_term_by('slug',$query_vars['category_name'],'category');
         $cat_name         = $get_cat_ID->name;
-        $featured_posts = get_posts(
-            array(
-            'numberposts' => 2,
-            'cat' => $get_cat_ID->term_id,
-            'offset' => 0,
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'post_status'=>'publish'
-            )
-        );
-        foreach( $featured_posts as $featured_post ) {
-            $posts_to_exclude[]    = $featured_post->ID;
-        }
+        // $featured_posts = get_posts(
+        //     array(
+        //     'numberposts' => 2,
+        //     'cat' => $get_cat_ID->term_id,
+        //     'offset' => 0,
+        //     'orderby' => 'post_date',
+        //     'order' => 'DESC',
+        //     'post_status'=>'publish'
+        //     )
+        // );
+        // foreach( $featured_posts as $featured_post ) {
+        //     $posts_to_exclude[]    = $featured_post->ID;
+        // }
         $query_vars['paged'] = (!empty(sanitize_text_field($_POST['page'])))? sanitize_text_field($_POST['page']) : 1;
-        $query_vars['post__not_in'] = $posts_to_exclude;
+       // $query_vars['post__not_in'] = $posts_to_exclude;
     }
     $posts = new WP_Query( $query_vars );
 
@@ -55,11 +55,11 @@ function Btemptd_Ajax_pagination() {
         while ( $posts->have_posts() ) {
             $posts->the_post();
             if($i%3 == 0 || $i==0){
-                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
+                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper">';
             }
             include locate_template('template-parts/content-excerpt.php');
             if($i%3 == 2 || $i == 2){
-                echo '</div></section>';
+                echo '</div></div></section>';
             }
             $i++;
         }
