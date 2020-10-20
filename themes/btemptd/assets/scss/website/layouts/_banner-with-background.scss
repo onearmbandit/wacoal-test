@@ -1,5 +1,5 @@
 .banner-with-background {
-  background: var(--color-hero-bg);
+  background: var(--color-primary);
   text-align: center;
   padding: calcRem(44, 0);
   margin-bottom: calcRem(22);
@@ -21,9 +21,9 @@
     text-transform: uppercase;
 
     @include respond-above(sm) {
-      // @include ProximaNova-Light;
+      @include NeutraText-BookAlt;
       margin-top: get-vw(20px);
-      font-size: get-vw(32px);
+      font-size: get-vw(35px);
       line-height: get-vw(42px);
     }
   }

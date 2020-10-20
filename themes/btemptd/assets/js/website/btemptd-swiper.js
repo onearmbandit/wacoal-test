@@ -7,16 +7,14 @@ require('../../scss/website/btemptd-swiper.scss');
     slidesPerView: 1,
     centeredSlides: true,
     loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
-    },
-    // breakpoints: {
-    //   768: {
-    //     slidesPerView: 3.8,
-    //     spaceBetween: 27
-    //   }
-    // }
+    }
   });
 
 

@@ -21,7 +21,7 @@
 
 
 .header-navigation {
-  background: var(--color-nav-bg);
+  background: var(--color-tile-bg);
   width: var(--width-100);
 
   &--ul{
@@ -29,16 +29,8 @@
     justify-content: center;
     padding: calcRem(10, 0);
 
-    @include respond-above(md) {
-      padding: calcRem(14, 0);
-    }
-
-    @include respond-above(lg) {
-      padding: calcRem(20, 0);
-    }
-
-    @include respond-above(xl) {
-      padding: calcRem(32, 0);
+    @include respond-above(sm) {
+      padding: calcRem(36, 0);
     }
   }
 
@@ -56,15 +48,11 @@
 
   &--link {
     color: var(--color-black);
-    // @include ProximaNova-Sbold;
+    @include NeutraText-Bold;
     font-size: calcRem(12);
 
-    @include respond-above(md) {
-      font-size: calcRem(15);
-    }
-
-    @include respond-above(xl) {
-      font-size: calcRem(21);
+    @include respond-above(sm) {
+      font-size: calcRem(22);
     }
   }
 }

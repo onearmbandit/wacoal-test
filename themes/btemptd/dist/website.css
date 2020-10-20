@@ -80,6 +80,7 @@ margin: calcRem(10, 11, 12, 13);
   --color-heighlight-2:     #F7A399;
   --color-light-yellow:     #F1EFD9;
   --color-gray:             #585858;
+  --color-gray-light:       #999999;
   --color-tile-bg:          #F8F3F0; }
 
 /*
@@ -241,21 +242,15 @@ Files inside this folder can contain specific element styles and layout.
         max-width: 23.75vw; } }
 
 .header-navigation {
-  background: var(--color-nav-bg);
+  background: var(--color-tile-bg);
   width: var(--width-100); }
   .header-navigation--ul {
     display: flex;
     justify-content: center;
     padding: 0.625rem 0rem; }
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .header-navigation--ul {
-        padding: 0.875rem 0rem; } }
-    @media (min-width: 1280px) {
-      .header-navigation--ul {
-        padding: 1.25rem 0rem; } }
-    @media (min-width: 1600px) {
-      .header-navigation--ul {
-        padding: 2rem 0rem; } }
+        padding: 2.25rem 0rem; } }
   .header-navigation--list {
     margin: 0rem 1.4375rem; }
     @media (min-width: 1024px) {
@@ -266,13 +261,11 @@ Files inside this folder can contain specific element styles and layout.
         margin: 0rem 2.8125rem; } }
   .header-navigation--link {
     color: var(--color-black);
+    font-family: 'NeutraText-Bold';
     font-size: 0.75rem; }
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .header-navigation--link {
-        font-size: 0.9375rem; } }
-    @media (min-width: 1600px) {
-      .header-navigation--link {
-        font-size: 1.3125rem; } }
+        font-size: 1.375rem; } }
 
 .shop-btemptd-btn {
   position: absolute;
@@ -533,7 +526,7 @@ Files inside this folder can contain specific element styles and layout.
         width: 48.02083vw; } }
 
 .banner-with-background {
-  background: var(--color-hero-bg);
+  background: var(--color-primary);
   text-align: center;
   padding: 2.75rem 0rem;
   margin-bottom: 1.375rem; }
@@ -551,8 +544,9 @@ Files inside this folder can contain specific element styles and layout.
     text-transform: uppercase; }
     @media (min-width: 768px) {
       .banner-with-background--subtitle {
+        font-family: 'NeutraText-BookAlt';
         margin-top: 1.04167vw;
-        font-size: 1.66667vw;
+        font-size: 1.82292vw;
         line-height: 2.1875vw; } }
 
 .full-width-section--wrapper {
@@ -661,6 +655,17 @@ Files inside this folder can contain specific element styles and layout.
 
 .explore-blog {
   position: relative; }
+  .explore-blog--title {
+    background: var(--color-tile-bg);
+    font-family: 'NeutraText-DemiAlt';
+    text-align: center; }
+    @media (min-width: 768px) {
+      .explore-blog--title {
+        font-size: 2.86458vw;
+        line-height: 3.38542vw;
+        padding-top: 0.98958vw;
+        padding-bottom: 0.52083vw;
+        margin-bottom: 2.91667vw; } }
   .explore-blog--wrapper {
     margin: auto;
     display: flex; }
@@ -716,6 +721,31 @@ Files inside this folder can contain specific element styles and layout.
   @media (min-width: 768px) {
     .featured-articles--wrapper {
       width: 96.5625vw; } }
+  @media (min-width: 768px) {
+    .featured-articles--wrapper .swiper-button--wrapper {
+      width: 31.875vw;
+      height: 1.25vw;
+      position: absolute;
+      bottom: 0.9375vw;
+      right: 0; } }
+  .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination {
+    left: 50%;
+    transform: translateX(-50%); }
+    .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination .swiper-pagination-bullet {
+      background: var(--color-gray-light);
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 15px;
+      height: 15px; }
+    .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination .swiper-pagination-bullet-active {
+      background: var(--color-black); }
+  .featured-articles--wrapper .swiper-button--wrapper-inner {
+    margin: auto;
+    position: relative; }
+    @media (min-width: 768px) {
+      .featured-articles--wrapper .swiper-button--wrapper-inner {
+        width: 13.54167vw;
+        height: 1.25vw; } }
 
 .featured-articles .swiper-wrapper .swiper-slide {
   display: flex; }
@@ -753,6 +783,117 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 1.51042vw;
         line-height: 1.66667vw;
         margin-bottom: 2.29167vw; } }
+
+@media (min-width: 768px) {
+  .article-header {
+    margin-bottom: 4.11458vw; } }
+
+.article-header--wrapper {
+  margin: auto;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .article-header--wrapper {
+      width: 76.5625vw; } }
+
+.article-header--banner {
+  width: 100%;
+  background-size: cover;
+  background-position: center; }
+  @media (min-width: 768px) {
+    .article-header--banner {
+      height: 35.3125vw;
+      margin-bottom: 1.92708vw; } }
+
+.article-header--category {
+  font-family: 'NeutraText-BookAlt'; }
+  @media (min-width: 768px) {
+    .article-header--category {
+      font-size: 1.71875vw;
+      line-height: 1.875vw;
+      margin-bottom: 3.75vw; } }
+
+.article-header--title {
+  font-family: 'NeutraText-BookAlt';
+  text-transform: uppercase; }
+  @media (min-width: 768px) {
+    .article-header--title {
+      font-size: 4.89583vw;
+      line-height: 4.6875vw; } }
+
+.article-header--para {
+  font-family: 'NeutraText-LightAlt'; }
+  @media (min-width: 768px) {
+    .article-header--para {
+      font-size: 2.39583vw;
+      line-height: 2.44792vw; } }
+
+.three-reason--wrapper {
+  margin: auto; }
+  @media (min-width: 768px) {
+    .three-reason--wrapper {
+      width: 92.1875vw; } }
+
+.three-reason--title {
+  text-align: center;
+  font-family: 'NeutraText-DemiAlt'; }
+  @media (min-width: 768px) {
+    .three-reason--title {
+      font-size: 1.66667vw;
+      line-height: 2.13542vw;
+      margin-bottom: 2.08333vw; } }
+
+.three-reason .reason-box {
+  display: flex;
+  width: 100%;
+  position: relative; }
+  @media (min-width: 768px) {
+    .three-reason .reason-box {
+      height: 29.58333vw; } }
+  .three-reason .reason-box--content {
+    background: var(--color-tile-bg);
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: absolute; }
+    @media (min-width: 768px) {
+      .three-reason .reason-box--content {
+        width: 55.20833vw;
+        min-height: 14.27083vw;
+        padding-left: 2.60417vw;
+        padding-right: 4.16667vw; } }
+    .three-reason .reason-box--content__number {
+      font-family: 'NeutraText-BoldAlt'; }
+      @media (min-width: 768px) {
+        .three-reason .reason-box--content__number {
+          font-size: 9.73958vw;
+          line-height: 4.63542vw; } }
+    .three-reason .reason-box--content__para {
+      font-family: 'NeutraText-BookAlt'; }
+      @media (min-width: 768px) {
+        .three-reason .reason-box--content__para {
+          font-size: 1.51042vw;
+          line-height: 1.82292vw;
+          margin-left: 2.5vw; } }
+  @media (min-width: 768px) {
+    .three-reason .reason-box--image {
+      width: 40.36458vw;
+      height: 100%; } }
+  .three-reason .reason-box.odd {
+    justify-content: flex-end; }
+    @media (min-width: 768px) {
+      .three-reason .reason-box.odd .reason-box--content {
+        left: 0;
+        top: 2.08333vw; } }
+  .three-reason .reason-box.even {
+    justify-content: flex-start; }
+    @media (min-width: 768px) {
+      .three-reason .reason-box.even {
+        margin-top: -10.41667vw; } }
+    @media (min-width: 768px) {
+      .three-reason .reason-box.even .reason-box--content {
+        right: 0;
+        top: inherit;
+        bottom: 2.08333vw; } }
 
 @font-face {
   font-family: 'swiper-icons';

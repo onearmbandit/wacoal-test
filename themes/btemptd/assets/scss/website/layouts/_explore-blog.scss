@@ -1,7 +1,19 @@
 .explore-blog {
   position: relative;
 
+  &--title {
+    background: var(--color-tile-bg);
+    @include NeutraText-DemiAlt;
+    text-align: center;
 
+    @include respond-above(sm) {
+      font-size: get-vw(55px);
+      line-height: get-vw(65px);
+      padding-top: get-vw(19px);
+      padding-bottom: get-vw(10px);
+      margin-bottom: get-vw(56px);
+    }
+  }
 
   &--wrapper {
     margin: auto;
