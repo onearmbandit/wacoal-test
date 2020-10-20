@@ -94,12 +94,7 @@ add_action('admin_enqueue_scripts', 'Btemptd_Admin_scripts', 10, 1);
 
 
 
-/**
- * Admin functions include
- */
-if (is_admin()) {
-    include THEMEPATH . '/includes/admin/admin-functions.php';
-}
+
 
 /**
  * Website functions include
