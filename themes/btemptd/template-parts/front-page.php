@@ -20,12 +20,17 @@
     </div>
 </section>
 <!-- full width section -->
+<?php if(!empty($static_section['faq'])): ?>
 <section class="full-width-section">
     <?php foreach($static_section['faq'] as $section_key=> $section ): ?>
         <?php if($section_key % 2 == 0):?>
+            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
+            $image=Btemptd_Get_image($image_attributes);
+
+            ?>
             <div class="full-width-section--wrapper">
                 <div class="full-width-section--image box-shadow-right">
-                    <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/img-1.png" />
+                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
                 <div class="full-width-section--content">
                     <div class="content-title">
@@ -40,9 +45,13 @@
                 </div>
             </div>
         <?php else:?>
+            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
+            $image=Btemptd_Get_image($image_attributes);
+
+            ?>
             <div class="full-width-section--wrapper even">
                 <div class="full-width-section--image box-shadow-left">
-                    <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/img-1.png" />
+                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
                 <div class="full-width-section--content">
                     <div class="arrow">
@@ -60,3 +69,119 @@
     <?php endforeach; ?>
 
 </section>
+<?php endif;?>
+<!-- featured article -->
+
+<?php if(!empty($slider_posts)):?>
+<section class="featured-articles">
+    <div class="featured-articles--wrapper">
+        <div class="swiper-container featured-articles-slider">
+            <div class="swiper-wrapper">
+                <?php foreach($slider_posts as $slider_post): ?>
+                <?php
+                    $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide--image">
+                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+
+                    </div>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <?php $cat=Btemptd_Get_Primary_category($slider_post) ;?>
+                            <?php echo esc_attr($cat->name);?>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                           <?php echo get_the_title($slider_post);?>
+                        </div>
+                        <div class="swiper-slide--content__para">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad… minim veniam, quis nostrud
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+
+
+            </div>
+
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spacer-80"></div>
+<?php endif;?>
+
+<?php if(!empty($featured_posts)):?>
+<section class="featured-articles">
+    <div class="featured-articles--wrapper">
+        <div class="swiper-container featured-articles-slider">
+            <div class="swiper-wrapper">
+                <?php foreach($featured_posts as $featured_post): ?>
+                <?php
+                    $thumbnail_id  = get_post_thumbnail_id($featured_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide--image">
+                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+
+                    </div>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
+                            <?php echo esc_attr($cat->name);?>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                           <?php echo get_the_title($featured_post);?>
+                        </div>
+                        <div class="swiper-slide--content__para">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad… minim veniam, quis nostrud
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+
+
+            </div>
+
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spacer-80"></div>
+<?php endif;?>
