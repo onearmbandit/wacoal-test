@@ -97,10 +97,10 @@
                             <?php echo esc_attr($cat->name);?>
                         </div>
                         <div class="swiper-slide--content__title">
-                           <?php echo get_the_title($slider_post);?>
+                           <?php echo esc_attr(get_the_title($slider_post));?>
                         </div>
                         <div class="swiper-slide--content__para">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad… minim veniam, quis nostrud
+                        <?php echo esc_attr(get_field('tagline',$slider_post));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -154,10 +154,10 @@
                             <?php echo esc_attr($cat->name);?>
                         </div>
                         <div class="swiper-slide--content__title">
-                           <?php echo get_the_title($featured_post);?>
+                           <?php echo esc_attr(get_the_title($featured_post));?>
                         </div>
                         <div class="swiper-slide--content__para">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad… minim veniam, quis nostrud
+                            <?php echo esc_attr(get_field('tagline',$featured_post));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
