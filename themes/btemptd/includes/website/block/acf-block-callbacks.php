@@ -13,7 +13,7 @@
 
 
 /**
- * Callback function for text image header list block
+ * Callback function for review list block
  *
  * @param [type] $block Block.
  *
@@ -25,7 +25,7 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
     $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
     $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
 
-    $shortcode_template   = '/template-parts/block/wacoal-list-format.php';
+    $shortcode_template   = '/template-parts/block/btemptd-list-format.php';
 
     if (! empty($block_lists) ) {
         include locate_template($shortcode_template);
@@ -34,6 +34,32 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
             ?>
             <h4><u>Btemptd Reviews Lists:</u></h4>
             <span style="color:red">Empty Btemptd Reviews Lists Block</span>
+            <?php
+        }
+    }
+}
+/**
+ * Callback function for text image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Img_List_Format_Render_callback( $block )
+{
+    $block_lists       = get_field('lists');
+    $block_heading      = ! empty(get_field('heading')) ? get_field('heading') : '';
+    $block_subheading   = ! empty(get_field('short_description')) ? get_field('short_description') : '';
+
+    $shortcode_template   = '/template-parts/block/btemptd-image-format.php';
+
+    if (! empty($block_lists) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Image Block:</u></h4>
+            <span style="color:red">Empty Btemptd Image Block</span>
             <?php
         }
     }

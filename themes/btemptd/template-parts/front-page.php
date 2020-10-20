@@ -11,178 +11,177 @@
  */
 
 ?>
-<?php if(!empty($top_banner_link)) :?>
-<a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true) : echo "target='_blank'";
-endif;?>>
-<?php endif;?>
-<section class="banner-with-image"
-    style="background-image:url(<?php  echo esc_attr(btemptd_Get_image($top_banner_image_url));?>);">
-        <h1 class="banner-with-image--heading">
-            <?php echo esc_attr($top_banner_title);?>
-        </h1>
-        <p class="banner-with-image--subtitle">
-            <?php echo esc_attr($top_banner_subtitle);?>
-        </p>
-</section>
-<?php if(!empty($top_banner_link)) :?>
-</a>
-<?php endif;?>
-
-<!-- Evergreen Articles Slider -->
-<section class="evergreen-article--slider">
-    <div class="swiper-container center-slide-slider">
-        <div class="swiper-wrapper">
-            <?php foreach ($slider_blog_slider as $key => $slider_blog) {
-                $thumbnail_id = get_post_thumbnail_id($slider_blog->ID);
-                $thumbnail_url = btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = btemptd_get_image_alt($thumbnail_id, 'slider-img');
-                $categories = btemptd_get_primary_category($slider_blog->ID);
-                $cat_ID = $categories->term_id;
-                ?>
-                <div class="swiper-slide evergreen-article">
-                    <div class="evergreen-article--content">
-                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
-                            <?php echo esc_attr($categories->name);?>
-                        </a>
-                        <h3 class="evergreen-article--content__title">
-                            <?php echo esc_attr($slider_blog->post_title);?>
-                        </h3>
-                        <p class="evergreen-article--content__para">
-                            <?php echo wp_kses_post($slider_blog->tag_line);?>
-                        </p>
-                    </div>
-
-                    <div class="evergreen-article--image">
-                        <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                    </div>
-                    <div class="evergreen-article--button">
-                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
-                        class="btn primary big">learn more</a>
-                    </div>
-                </div>
-            <?php } ?>
-
-        </div>
-
-        <div class="swiper-pagination custom-swiper-pagination"></div>
-
-        <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
-        </div>
-        <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
-        </div>
-  </div>
-</section>
-
-<!-- btemptd 101 -->
-<section class="btemptd-101">
-    <div class="btemptd-101--wrapper">
-        <div class="btemptd-101--image">
-            <img class="lazyload"
-                data-src="<?php echo  esc_url($static_section['image']); ?>"
-                alt="btemptd 101" />
-        </div>
-        <div class="btemptd-101--content">
-            <div class="btemptd-101--content__title">
-               <?php echo esc_attr($static_section['title']);?>
-            </div>
-            <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
-                <div class="btemptd-101--list">
-                    <div class="btemptd-101--list__icon">
-                        <img class="lazyload" data-src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/wacol-101-arrow.svg" alt="btemptd 101 Arrow" />
-                    </div>
-                    <div class="btemptd-101--list__content"><a target="_blank" href="<?php echo esc_url($page_obj['link']);?>"><?php echo esc_attr($page_obj['title']);?></a></div>
-                </div>
-            <?php } ?>
-        </div>
+<section class="banner-with-image">
+    <div class="banner-with-image--content">
+        <h1 class="banner-with-image--heading"><?php echo esc_attr($banner_title);?></h1>
+        <p class="banner-with-image--subtitle"><?php echo esc_attr($banner_subtitle);?></p>
+    </div>
+    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_attr($banner_url);?>);">
     </div>
 </section>
+<!-- full width section -->
+<?php if(!empty($static_section['faq'])): ?>
+<section class="full-width-section">
+    <?php foreach($static_section['faq'] as $section_key=> $section ): ?>
+        <?php if($section_key % 2 == 0):?>
+            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
+            $image=Btemptd_Get_image($image_attributes);
 
-<section class="spacer-120"></section>
-<section class="featured-article--slider">
-    <div class="swiper-container featured-article">
-        <div class="swiper-wrapper">
-            <?php foreach ($featured_blog_slider as $key => $featured_blog) {
-                $thumbnail_id = get_post_thumbnail_id($featured_blog->ID);
-                $thumbnail_url = btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = btemptd_get_image_alt($thumbnail_id, 'featured-img');
-                $categories = btemptd_get_primary_category($featured_blog->ID);
-                $cat_ID = $categories->term_id;
+            ?>
+            <div class="full-width-section--wrapper">
+                <div class="full-width-section--image box-shadow-right">
+                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
+                </div>
+                <div class="full-width-section--content">
+                    <div class="content-title">
+                        <?php echo esc_attr($section['title']);?>
+                    </div>
+                    <div class="quote">
+                        <?php echo esc_attr($section['question']);?>
+                    </div>
+                    <div class="arrow">
+                        <a href=""><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                    </div>
+                </div>
+            </div>
+        <?php else:?>
+            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
+            $image=Btemptd_Get_image($image_attributes);
+
+            ?>
+            <div class="full-width-section--wrapper even">
+                <div class="full-width-section--image box-shadow-left">
+                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
+                </div>
+                <div class="full-width-section--content">
+                    <div class="arrow">
+                       <a href=""> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                    </div>
+                    <div class="content-title">
+                        <?php echo esc_attr($section['title']);?>
+                    </div>
+                    <div class="quote">
+                        <?php echo esc_attr($section['question']);?>
+                    </div>
+                </div>
+            </div>
+        <?php endif;?>
+    <?php endforeach; ?>
+
+</section>
+<?php endif;?>
+<!-- featured article -->
+
+<?php if(!empty($slider_posts)):?>
+<section class="featured-articles">
+    <div class="featured-articles--wrapper">
+        <div class="swiper-container featured-articles-slider">
+            <div class="swiper-wrapper">
+                <?php foreach($slider_posts as $slider_post): ?>
+                <?php
+                    $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
                 ?>
                 <div class="swiper-slide">
-                    <article class="featured-box">
-                        <div class="featured-box--content">
-                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="featured-box--content__subtitle">
-                                <?php echo esc_attr($categories->name);?>
+                    <div class="swiper-slide--image">
+                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+
+                    </div>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <?php $cat=Btemptd_Get_Primary_category($slider_post) ;?>
+                            <?php echo esc_attr($cat->name);?>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                           <?php echo esc_attr(get_the_title($slider_post));?>
+                        </div>
+                        <div class="swiper-slide--content__para">
+                        <?php echo esc_attr(get_field('tagline',$slider_post));?>
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
                             </a>
-                            <h4 class="featured-box--content__title">
-                                <?php echo esc_attr($featured_blog->post_title);?>
-                            </h4>
-                            <p class="featured-box--content__para">
-                                <?php echo wp_kses_post($featured_blog->tag_line);?>
-                            </p>
-                            <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
-                                class="btn primary big">learn more</a>
                         </div>
-                        <div class="featured-box--image">
-                            <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                        </div>
-                    </article>
+                    </div>
                 </div>
-            <?php } ?>
-        </div>
+                <?php endforeach;?>
 
-        <div class="swiper-pagination custom-swiper-pagination"></div>
 
-        <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
-        </div>
-        <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+
+            </div>
+
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
         </div>
     </div>
 </section>
+<div class="spacer-80"></div>
+<?php endif;?>
 
-<!-- More From Blog -->
+<?php if(!empty($featured_posts)):?>
+<section class="featured-articles">
+    <div class="featured-articles--wrapper">
+        <div class="swiper-container featured-articles-slider">
+            <div class="swiper-wrapper">
+                <?php foreach($featured_posts as $featured_post): ?>
+                <?php
+                    $thumbnail_id  = get_post_thumbnail_id($featured_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
 
-<input type="hidden" name="offset" id="offset" value="0">
-<section class="more-blog">
-    <div class="more-blog--title">
-            <?php echo esc_html("More From The Blog");?>
+                ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide--image">
+                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
 
-    </div>
-    <div class="more-blog--wrapper">
-        <?php foreach ($recent_posts as $key => $blog) {
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
-            $thumbnail_url = btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-            $thumbnail_alt = btemptd_get_image_alt($thumbnail_id, 'featured-img');
-            $categories = btemptd_get_primary_category($blog->ID);
-            $post_tagline = get_field('tag_line', $blog->ID);
-            $cat_ID = $categories->term_id;
-            ?>
-            <article class="blog-tile">
-                <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
+                            <?php echo esc_attr($cat->name);?>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                           <?php echo esc_attr(get_the_title($featured_post));?>
+                        </div>
+                        <div class="swiper-slide--content__para">
+                            <?php echo esc_attr(get_field('tagline',$featured_post));?>
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="blog-tile--category">
-                    <?php if (! empty($categories) ) {?>
-                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
-                    <?php }?>
-                </div>
-                <h5 class="blog-tile--heading">
-                    <?php echo esc_attr(get_the_title($blog->ID));?>
-                </h5>
-                <p class="blog-tile--para">
-                <?php echo  wp_kses_post($post_tagline);?>
-                </p>
-                <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
-                    class="btn primary">Learn More</a>
-            </article>
-        <?php } ?>
+                <?php endforeach;?>
+
+
+
+            </div>
+
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+        </div>
     </div>
 </section>
-
-<button class="more">See More</button>
+<div class="spacer-80"></div>
+<?php endif;?>

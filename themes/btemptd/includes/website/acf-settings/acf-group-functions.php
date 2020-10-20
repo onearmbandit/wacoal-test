@@ -22,7 +22,7 @@ if (function_exists('acf_add_local_field_group') ) {
     /**
      * Acf theme block options File Include
      */
-    foreach ( glob(THEMEPATH . '/includes/website/acf-settings/blocks/*.php') as $filename ) {
+    foreach ( glob(THEMEPATH . '/includes/website/acf-settings/block/*.php') as $filename ) {
         include $filename;
     }
 

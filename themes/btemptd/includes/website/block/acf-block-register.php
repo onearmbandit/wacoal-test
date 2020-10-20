@@ -22,9 +22,20 @@ function Wacoal_Acf_init()
         acf_register_block_type(
             array(
             'name'              => 'btemptd-text-image-list-format',
-            'title'             => __('Btemptd Text Image List Format'),
+            'title'             => __('Btemptd Review List Format'),
             'description'       => __('A custom List format block.'),
             'render_callback'   => 'Btemptd_Text_Img_List_Format_Render_callback',
+            'category'          => 'btemptd',
+            'icon'              => 'id-alt',
+            'keywords'          => array( 'list-format' ),
+            )
+        );
+        acf_register_block_type(
+            array(
+            'name'              => 'btemptd-image-format',
+            'title'             => __('Btemptd Text Image Format'),
+            'description'       => __('A custom List format block.'),
+            'render_callback'   => 'Btemptd_Img_List_Format_Render_callback',
             'category'          => 'btemptd',
             'icon'              => 'id-alt',
             'keywords'          => array( 'list-format' ),
