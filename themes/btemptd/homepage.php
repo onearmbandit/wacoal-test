@@ -101,38 +101,7 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 
-<!-- size chart section -->
-<!-- <section class="size-chart">
-    <div class="size-chart--wrapper">
-        <div class="size-chart--left box-shadow-right">
-            <div class="size-chart--image">
-                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/bras-size-chart.png" />
-            </div>
-            <div class="size-chart--content">
-                Bras
-            </div>
-        </div>
-        <div class="size-chart--middle box-shadow">
-            <div class="cta left">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
-            </div>
-            <div class="cta right">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
-            </div>
-            <div class="size-chart--middle__content">
-                size chart
-            </div>
-        </div>
-        <div class="size-chart--right box-shadow-right">
-            <div class="size-chart--image">
-                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/panties-size-chart.png" />
-            </div>
-            <div class="size-chart--content">
-                Panties
-            </div>
-        </div>
-    </div>
-</section> -->
+
 
 
 <!-- Entry page full width Slider -->

@@ -14,6 +14,8 @@ Btemptd_Page_Entry_top('');
 $banner_url=get_field('banner', 'option');
 $banner_title=get_field('banner_title', 'option');
 $banner_subtitle=get_field('banner_subtitle', 'option');
+$static_section=get_field('static_section', 'option');
+print_r($static_section);
 require locate_template('template-parts/front-page.php');
 
 Btemptd_Page_Entry_bottom();
