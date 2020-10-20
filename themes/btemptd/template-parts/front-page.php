@@ -34,10 +34,10 @@
                 </div>
                 <div class="full-width-section--content">
                     <div class="content-title">
-                        <?php echo esc_attr($section['title']);?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote">
-                        <?php echo esc_attr($section['question']);?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                     <div class="arrow">
                         <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
@@ -58,10 +58,10 @@
                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
                     </div>
                     <div class="content-title">
-                        <?php echo esc_attr($section['title']);?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote">
-                        <?php echo esc_attr($section['question']);?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                 </div>
             </div>
