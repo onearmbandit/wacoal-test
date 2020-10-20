@@ -55,7 +55,7 @@
 <?php $recent_posts = Btemptd_Query_posts(
     array(
         'post_type' => array('post'),
-
+        'post__not_in' => array(get_the_ID()),
         'posts_per_page' => 3,
         'offset' => 0,
         'orderby' => 'post_date',
