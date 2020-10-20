@@ -94,12 +94,7 @@ add_action('admin_enqueue_scripts', 'Btemptd_Admin_scripts', 10, 1);
 
 
 
-/**
- * Admin functions include
- */
-if (is_admin()) {
-    include THEMEPATH . '/includes/admin/admin-functions.php';
-}
+
 
 /**
  * Website functions include
@@ -113,6 +108,16 @@ if (function_exists('wpcom_vip_load_gutenberg') ) {
     wpcom_vip_load_gutenberg(true);
 }
 
+/**
+ * Admin Enqueue ACF scripts.
+ *
+ * @return $toolbar
+ */
+function Acf_Custom_Text_Toolbar_script()
+{
+    wp_enqueue_script('admin-js', esc_url(THEMEURI) . '/assets/js/admin/acf-custom-text-toolbar.js', array( 'jquery' ), '1.0.0', true);
+}
+add_action('acf/input/admin_enqueue_scripts', 'acf_custom_text_toolbar_script');
 
 /**
  * Website ajax functions include

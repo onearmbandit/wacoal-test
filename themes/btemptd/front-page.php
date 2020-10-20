@@ -17,6 +17,19 @@ $banner_subtitle=get_field('banner_subtitle', 'option');
 $static_section=get_field('static_section', 'option');
 $slider_posts=get_field('slider_posts', 'option');
 $featured_posts=get_field('featured_posts', 'option');
+$recent_posts = Btemptd_Query_posts(
+    array(
+        'post_type' => array('post'),
+
+        'posts_per_page' => 3,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    )
+);
+$counts = wp_count_posts( $post_type = 'post' );
+
 require locate_template('template-parts/front-page.php');
 
 Btemptd_Page_Entry_bottom();
