@@ -14,10 +14,8 @@
  *
  * @return string Return the posts html.
  */
-add_action( 'wp_ajax_nopriv_btemptd_ajax_pagination', 'btemptd_ajax_pagination' );
-add_action( 'wp_ajax_btemptd_ajax_pagination', 'btemptd_ajax_pagination' );
 
-function btemptd_ajax_pagination() {
+function Btemptd_Ajax_pagination() {
     // Check for nonce security
 
     if(isset($_POST['nonce']) && !empty($_POST['nonce'])){
@@ -70,4 +68,75 @@ function btemptd_ajax_pagination() {
 
     die();
 }
+add_action('wp_ajax_nopriv_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
+add_action('wp_ajax_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
+/**
+ * Function for load more
+ *
+ * @return string Return the posts html.
+ */
 
+function Btemptd_Load_more(){
+    if(isset($_POST['nonce']) && !empty($_POST['nonce'])){
+        $nonce = $_POST['nonce'];
+    }
+    if(!wp_verify_nonce($nonce, 'ajax-nonce' ))
+        die ('Busted!');
+
+    $recent_posts = Btemptd_Query_posts(
+        array(
+            'post_type' => array('post'),
+            'posts_per_page' => 3,
+            'offset' => $_POST['offset'],
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_status'=>'publish'
+        )
+    );
+
+
+    if(!empty($recent_posts)){
+        ob_start();
+    ?>
+        <div class="explore-blog--wrapper">
+        <?php foreach($recent_posts as $key =>$recent_post):
+            $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
+            $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+            $categories = Btemptd_Get_Primary_category($recent_post->ID);
+            ?>
+            <div class="explore-blog--box">
+                <div class="explore-blog--image">
+                    <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                </div>
+
+                <div class="explore-blog--content">
+                    <div class="explore-blog--content__cta">
+                        <a href="<?php echo get_permalink($recent_post->ID);?>">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                        </a>
+                    </div>
+                    <div class="explore-blog--content__category">
+                        <?php echo esc_attr($categories->name);?>
+                    </div>
+                    <div class="explore-blog--content__title">
+                        <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach;?>
+
+    </div>
+        <?php
+        $output = ob_get_contents();
+        ob_end_clean();
+    } else {
+        $output = 0;
+    }
+
+    echo $output;
+    die();
+}
+
+add_action('wp_ajax_nopriv_btemptd_load_more', 'Btemptd_Load_more');
+add_action('wp_ajax_btemptd_load_more', 'Btemptd_Load_more');

@@ -11,6 +11,8 @@
  */
 
 ?>
+<input type="hidden" name="offset" id="offset" value="0">
+<input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
 <section class="explore-blog">
     <div class="explore-blog--title">Explore the blog</div>
 
