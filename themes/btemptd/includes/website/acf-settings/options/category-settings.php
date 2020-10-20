@@ -166,10 +166,11 @@ acf_add_local_field_group(
                     ),
                 ),
             ),
+
             array(
-                'key' => 'field_5f8ee153add97',
-                'label' => 'Slider posts',
-                'name' => 'slider_posts',
+                'key' => 'field_5f8ee181add98',
+                'label' => 'Featured posts',
+                'name' => 'featured_posts',
                 'type' => 'relationship',
                 'instructions' => '',
                 'required' => 0,
@@ -196,9 +197,9 @@ acf_add_local_field_group(
                 'return_format' => 'id',
             ),
             array(
-                'key' => 'field_5f8ee181add98',
-                'label' => 'Featured posts',
-                'name' => 'featured_posts',
+                'key' => 'field_5f8ee153add97',
+                'label' => 'Slider posts',
+                'name' => 'slider_posts',
                 'type' => 'relationship',
                 'instructions' => '',
                 'required' => 0,

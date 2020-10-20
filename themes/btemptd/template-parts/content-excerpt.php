@@ -11,26 +11,31 @@
  */
 
 ?>
-<article class="blog-tile">
-    <div class="blog-tile--image">
-        <?php
-        $thumbnail_id  = get_post_thumbnail_id();
-        $thumbnail_url = btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-        $thumbnail_alt = btemptd_get_image_alt($thumbnail_id, 'featured-img');
-        $post_tagline  = get_field('tag_line');
-        ?>
-        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+<?php
+$thumbnail_id  = get_post_thumbnail_id();
+$thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+$thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+$post_tagline  = get_field('tag_line');
+$categories    = Btemptd_Get_Primary_category(get_the_ID());
+?>
+<div class="explore-blog--box">
+    <div class="explore-blog--image">
+        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
     </div>
-    <div class="blog-tile--category">
-    <?php echo esc_attr($cat_name); ?>
-    </div>
-    <?php
-    the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
-    ?>
 
-    <p class="blog-tile--para">
-        <?php echo esc_attr($post_tagline); ?>
-    </p>
-    <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
-</article>
+    <div class="explore-blog--content">
+        <div class="explore-blog--content__cta">
+            <a href="<?php echo esc_url(get_permalink());?>">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+            </a>
+        </div>
+        <div class="explore-blog--content__category">
+            <?php echo esc_attr($cat_name);?>
+        </div>
+        <div class="explore-blog--content__title">
+            <?php echo esc_attr(get_the_title());?>
+        </div>
+    </div>
+</div>
+
 
