@@ -11,8 +11,6 @@
  * @link     Btemptd
  */
 
-
-
 acf_add_local_field_group(
     array(
     'key' => 'group_5f8458404b48f',
@@ -156,7 +154,7 @@ acf_add_local_field_group(
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f854cc55f610',
-                    'label' => 'Faq',
+                    'label' => 'B. You 101',
                     'name' => 'faq',
                     'type' => 'repeater',
                     'instructions' => '',
@@ -220,20 +218,20 @@ acf_add_local_field_group(
                             'key' => 'field_5f854d215f613',
                             'label' => 'Question',
                             'name' => 'question',
-                            'type' => 'text',
+                            'type' => 'wysiwyg',
                             'instructions' => '',
                             'required' => 0,
                             'conditional_logic' => 0,
                             'wrapper' => array(
                                 'width' => '',
                                 'class' => '',
-                                'id' => '',
+                                'id' => 'static_content',
                             ),
                             'default_value' => '',
-                            'placeholder' => '',
-                            'prepend' => '',
-                            'append' => '',
-                            'maxlength' => '',
+                            'tabs' => 'all',
+                            'toolbar' => 'content_toolbar',
+                            'media_upload' => 1,
+                            'delay' => 0,
                         ),
                         array(
                             'key' => 'field_5f854d345f614',
@@ -333,4 +331,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
