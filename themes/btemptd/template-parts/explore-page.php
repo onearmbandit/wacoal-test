@@ -45,6 +45,7 @@
 
     </div>
     </div>
-
-
+    <?php if($count_posts->publish > 3):?>
+        <button class="more btn secondary">See More</button>
+    <?php endif;?>
 </section>

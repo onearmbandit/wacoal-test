@@ -131,7 +131,7 @@ acf_add_local_field_group(
                 'sub_fields' => array(
                     array(
                         'key' => 'field_5f856bc706b15',
-                        'label' => 'faq',
+                        'label' => 'b. you 101',
                         'name' => 'faq',
                         'type' => 'repeater',
                         'instructions' => '',
