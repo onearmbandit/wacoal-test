@@ -40,7 +40,7 @@
                         <?php echo esc_attr($section['question']);?>
                     </div>
                     <div class="arrow">
-                        <a href=""><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="full-width-section--content">
                     <div class="arrow">
-                       <a href=""> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
                     </div>
                     <div class="content-title">
                         <?php echo esc_attr($section['title']);?>
@@ -70,7 +70,64 @@
 
 </section>
 <?php endif;?>
+
 <!-- featured article -->
+<?php if(!empty($featured_posts)):?>
+<section class="featured-articles">
+    <div class="featured-articles--wrapper">
+        <div class="swiper-container featured-articles-slider">
+            <div class="swiper-wrapper">
+                <?php foreach($featured_posts as $featured_post): ?>
+                <?php
+                    $thumbnail_id  = get_post_thumbnail_id($featured_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide--image">
+                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+
+                    </div>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
+                            <?php echo esc_attr($cat->name);?>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                           <?php echo esc_attr(get_the_title($featured_post));?>
+                        </div>
+                        <div class="swiper-slide--content__para">
+                            <?php echo esc_attr(get_field('tagline',$featured_post));?>
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+
+
+            </div>
+
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+            </div>
+        </div>
+    </div>
+</section>
+<div class="spacer-80"></div>
+<?php endif;?>
 
 <?php if(!empty($slider_posts)):?>
 <section class="featured-articles">
@@ -129,59 +186,46 @@
 <div class="spacer-80"></div>
 <?php endif;?>
 
-<?php if(!empty($featured_posts)):?>
-<section class="featured-articles">
-    <div class="featured-articles--wrapper">
-        <div class="swiper-container featured-articles-slider">
-            <div class="swiper-wrapper">
-                <?php foreach($featured_posts as $featured_post): ?>
-                <?php
-                    $thumbnail_id  = get_post_thumbnail_id($featured_post);
-                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
 
-                ?>
-                <div class="swiper-slide">
-                    <div class="swiper-slide--image">
-                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+<!-- Entry page full width Slider -->
 
+<?php if(!empty($recent_posts)):?>
+<section class="explore-blog">
+    <div class="explore-blog--title">Explore the blog</div>
+
+    <div class="explore-blog--bg">
+    <div class="explore-blog--wrapper">
+        <?php foreach($recent_posts as $key =>$recent_post):
+            $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
+            $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+            $categories = Btemptd_Get_Primary_category($recent_post->ID);
+            ?>
+            <div class="explore-blog--box">
+                <div class="explore-blog--image">
+                    <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                </div>
+
+                <div class="explore-blog--content">
+                    <div class="explore-blog--content__cta">
+                        <a href="<?php echo get_permalink($recent_post->ID);?>">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                        </a>
                     </div>
-
-                    <div class="swiper-slide--content">
-                        <div class="swiper-slide--content__category">
-                            <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
-                            <?php echo esc_attr($cat->name);?>
-                        </div>
-                        <div class="swiper-slide--content__title">
-                           <?php echo esc_attr(get_the_title($featured_post));?>
-                        </div>
-                        <div class="swiper-slide--content__para">
-                            <?php echo esc_attr(get_field('tagline',$featured_post));?>
-                        </div>
-                        <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
-                            </a>
-                        </div>
+                    <div class="explore-blog--content__category">
+                        <?php echo esc_attr($categories->name);?>
+                    </div>
+                    <div class="explore-blog--content__title">
+                        <?php echo esc_attr(get_the_title($recent_post->ID));?>
                     </div>
                 </div>
-                <?php endforeach;?>
-
-
-
             </div>
+        <?php endforeach;?>
 
-            <div class="swiper-pagination custom-swiper-pagination"></div>
-
-            <div class="swiper-button-next button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
-            </div>
-            <div class="swiper-button-prev button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
-            </div>
-        </div>
     </div>
+    </div>
+
+
 </section>
-<div class="spacer-80"></div>
 <?php endif;?>
+
