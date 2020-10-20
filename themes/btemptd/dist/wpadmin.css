@@ -877,7 +877,9 @@ Files inside this folder can contain specific element styles and layout.
   @media (min-width: 768px) {
     .three-reason .reason-box--image {
       width: 40.36458vw;
-      height: 100%; } }
+      height: 100%;
+      z-index: -2;
+      position: relative; } }
   .three-reason .reason-box.odd {
     justify-content: flex-end; }
     @media (min-width: 768px) {
@@ -894,6 +896,79 @@ Files inside this folder can contain specific element styles and layout.
         right: 0;
         top: inherit;
         bottom: 2.08333vw; } }
+
+.wow-factor--wrapper {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  position: relative; }
+  @media (min-width: 768px) {
+    .wow-factor--wrapper {
+      width: 92.1875vw; } }
+  .wow-factor--wrapper.top {
+    z-index: 2; }
+  .wow-factor--wrapper.bottom {
+    z-index: 1; }
+    @media (min-width: 768px) {
+      .wow-factor--wrapper.bottom {
+        margin-top: -2.08333vw;
+        margin-bottom: 4.6875vw; } }
+
+.wow-factor--left {
+  background: var(--color-tile-bg);
+  position: relative;
+  font-family: 'NeutraText-DemiAlt';
+  text-align: center; }
+  @media (min-width: 768px) {
+    .wow-factor--left {
+      width: 34.89583vw;
+      font-size: 1.66667vw;
+      line-height: 2.86458vw;
+      padding-top: 5.10417vw;
+      padding-right: 3.75vw;
+      padding-bottom: 2.76042vw;
+      padding-left: 3.75vw;
+      margin-left: 6.5625vw;
+      margin-top: -8.02083vw; } }
+  .wow-factor--left .cta-button {
+    position: absolute;
+    top: -2.08333vw;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (min-width: 768px) {
+      .wow-factor--left .cta-button {
+        width: 6.61458vw;
+        height: 6.61458vw; } }
+
+.wow-factor--right {
+  background: var(--color-tile-bg);
+  position: relative;
+  font-family: 'NeutraText-DemiAlt';
+  text-align: center; }
+  @media (min-width: 768px) {
+    .wow-factor--right {
+      width: 35.52083vw;
+      font-size: 2.29167vw;
+      line-height: 3.75vw;
+      padding-top: 5.10417vw;
+      padding-right: 3.75vw;
+      padding-bottom: 2.76042vw;
+      padding-left: 3.75vw;
+      margin-left: 7.60417vw;
+      margin-top: 8.02083vw; } }
+  .wow-factor--right .cta-button {
+    position: absolute;
+    top: -2.08333vw;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (min-width: 768px) {
+      .wow-factor--right .cta-button {
+        width: 6.61458vw;
+        height: 6.61458vw; } }
+
+@media (min-width: 768px) {
+  .wow-factor--banner {
+    height: 39.21875vw; } }
 
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {

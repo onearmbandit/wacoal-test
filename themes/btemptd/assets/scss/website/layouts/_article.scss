@@ -125,6 +125,8 @@
         @include respond-above(sm) {
           width: get-vw(775px);
           height: 100%;
+          z-index: -2;
+          position: relative;
         }
       }
 
@@ -156,5 +158,103 @@
             }
           }
       }
+  }
+}
+
+
+.wow-factor {
+
+  &--wrapper {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @include respond-above(sm) {
+      width: get-vw(1770px);
+    }
+
+    &.top {
+
+      z-index: 2;
+    }
+
+    &.bottom {
+
+      z-index: 1;
+      @include respond-above(sm) {
+        margin-top: get-vw(-40px);
+        margin-bottom: get-vw(90px);
+      }
+    }
+  }
+
+  &--left {
+    background: var(--color-tile-bg);
+    position: relative;
+    @include NeutraText-DemiAlt;
+    text-align: center;
+
+    @include respond-above(sm) {
+      width: get-vw(670px);
+      font-size: get-vw(32px);
+      line-height: get-vw(55px);
+      padding-top: get-vw(98px);
+      padding-right: get-vw(72px);
+      padding-bottom: get-vw(53px);
+      padding-left: get-vw(72px);
+      margin-left: get-vw(126px);
+      margin-top: get-vw(-154px);
+    }
+
+    .cta-button {
+      position: absolute;
+      top: get-vw(-40px);
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include respond-above(sm) {
+        width: get-vw(127px);
+        height: get-vw(127px);
+      }
+    }
+  }
+
+  &--right {
+    background: var(--color-tile-bg);
+    position: relative;
+    @include NeutraText-DemiAlt;
+    text-align: center;
+
+    @include respond-above(sm) {
+      width: get-vw(682px);
+      font-size: get-vw(44px);
+      line-height: get-vw(72px);
+      padding-top: get-vw(98px);
+      padding-right: get-vw(72px);
+      padding-bottom: get-vw(53px);
+      padding-left: get-vw(72px);
+      margin-left: get-vw(146px);
+      margin-top: get-vw(154px);
+    }
+
+    .cta-button {
+      position: absolute;
+      top: get-vw(-40px);
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include respond-above(sm) {
+        width: get-vw(127px);
+        height: get-vw(127px);
+      }
+    }
+  }
+
+  &--banner {
+
+    @include respond-above(sm) {
+      height: get-vw(753px);
+    }
   }
 }

@@ -152,7 +152,7 @@ Btemptd_Page_Entry_top('');
 </section> -->
 
 
-<!-- Entry page full width Slider -->
+<!-- Explore the Blog -->
 <section class="explore-blog">
     <div class="explore-blog--title">Explore the blog</div>
 
