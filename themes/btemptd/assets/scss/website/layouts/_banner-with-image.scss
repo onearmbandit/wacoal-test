@@ -13,10 +13,14 @@
   }
 
   &--content {
+    display: flex;
+    // align-items: center;
+    flex-direction: column;
+    justify-content: center;
 
     @include respond-above(sm) {
       flex: 1;
-      padding-top: get-vw(48px);
+      // padding-top: get-vw(48px);
       padding-left: get-vw(63px);
     }
   }
@@ -49,7 +53,7 @@
     background-position: center;
 
     @include respond-above(sm) {
-      width: get-vw(922px);
+      width: get-vw(900px);
     }
   }
 }

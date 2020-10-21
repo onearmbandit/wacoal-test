@@ -165,13 +165,17 @@ if ($template == 'simple') :
 
                 </div>
 
+                <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
                 <div class="swiper-pagination custom-swiper-pagination"></div>
 
                 <div class="swiper-button-next button-transparent">
-                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
                 </div>
                 <div class="swiper-button-prev button-transparent">
-                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+                </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -180,7 +184,7 @@ if ($template == 'simple') :
     <?php endif;?>
 
     <?php if(!empty($slider_posts)):?>
-    <section class="featured-articles">
+    <section class="featured-articles even">
         <div class="featured-articles--wrapper">
             <div class="swiper-container featured-articles-slider">
                 <div class="swiper-wrapper">
@@ -222,18 +226,22 @@ if ($template == 'simple') :
 
                 </div>
 
+                <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
                 <div class="swiper-pagination custom-swiper-pagination"></div>
 
                 <div class="swiper-button-next button-transparent">
-                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
                 </div>
                 <div class="swiper-button-prev button-transparent">
-                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+                </div>
+                </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="spacer-80"></div>
+
     <?php endif;?>
     <div id="post-listing">
     <?php if (have_posts()) { ?>

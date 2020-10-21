@@ -1,5 +1,5 @@
 .footer-section {
-  background: var(--color-black);
+  background: var(--color-tile-bg);
   width: var(--width-100);
   padding-top: calcRem(30);
   padding-bottom: calcRem(22);
@@ -45,8 +45,8 @@
 
   &--copyright {
     width: var(--width-100);
-    color: var(--color-white);
-    // @include ProximaNova-Reg;
+    color: var(--color-black);
+    @include NeutraText-Book;
     font-size: calcRem(8);
     margin-top: calcRem(22);
 
@@ -63,9 +63,9 @@
 
 .footer-links {
   &--title {
-    // @include BentonModDisp-Bold;
+    @include NeutraText-Bold;
     font-size: calcRem(13);
-    color: var(--color-white);
+    color: var(--color-black);
     margin-bottom: calcRem(20);
 
     @include respond-above(sm) {
@@ -93,7 +93,7 @@
   &--ul {
 
     &__list {
-      text-transform: uppercase;
+      // text-transform: uppercase;
       letter-spacing: calcRem(1);
       display: flex;
 
@@ -120,8 +120,8 @@
     }
 
     &__link {
-      color: var(--color-white);
-      // @include ProximaNova-Sbold;
+      color: var(--color-black);
+      @include NeutraText-DemiAlt;
       font-size: calcRem(10);
 
 

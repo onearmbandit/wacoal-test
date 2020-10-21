@@ -201,6 +201,7 @@ Files inside this folder should contain all styles relating to a reusable compon
     background-color: transparent;
     color: var(--color-black);
     font-size: 1.0625rem;
+    font-family: 'NeutraText-DemiAlt';
     text-transform: uppercase;
     padding: 0.5625rem 1.25rem 0.4375rem; }
     @media (min-width: 768px) {
@@ -272,13 +273,13 @@ Files inside this folder can contain specific element styles and layout.
   right: 0;
   font-family: 'NeutraText-DemiAlt';
   font-size: 1.66667vw;
-  color: var(--color-white);
+  color: var(--color-black);
   text-transform: uppercase;
-  background: var(--color-black);
-  padding-left: 5.26042vw;
-  padding-right: 5.26042vw;
-  padding-top: 1.19792vw;
-  padding-bottom: 1.19792vw; }
+  background: var(--color-tile-bg);
+  padding-left: 4.6875vw;
+  padding-right: 4.6875vw;
+  padding-top: 1.5625vw;
+  padding-bottom: 1.40625vw; }
   .shop-btemptd-btn.shop-btemptd-btn-desktop {
     display: none; }
     @media (min-width: 768px) {
@@ -320,7 +321,7 @@ Files inside this folder can contain specific element styles and layout.
   padding-bottom: 1.25rem; }
 
 .footer-section {
-  background: var(--color-black);
+  background: var(--color-tile-bg);
   width: var(--width-100);
   padding-top: 1.875rem;
   padding-bottom: 1.375rem; }
@@ -356,7 +357,8 @@ Files inside this folder can contain specific element styles and layout.
         margin-left: 6.66667vw; } }
   .footer-wrapper--copyright {
     width: var(--width-100);
-    color: var(--color-white);
+    color: var(--color-black);
+    font-family: 'NeutraText-Book';
     font-size: 0.5rem;
     margin-top: 1.375rem; }
     @media (min-width: 768px) {
@@ -368,8 +370,9 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 0.72917vw; } }
 
 .footer-links--title {
+  font-family: 'NeutraText-Bold';
   font-size: 0.8125rem;
-  color: var(--color-white);
+  color: var(--color-black);
   margin-bottom: 1.25rem; }
   @media (min-width: 768px) {
     .footer-links--title {
@@ -389,7 +392,6 @@ Files inside this folder can contain specific element styles and layout.
       margin-bottom: 2.35625rem; } }
 
 .footer-links--ul__list {
-  text-transform: uppercase;
   letter-spacing: 0.0625rem;
   display: flex; }
   .footer-links--ul__list:not(:last-child) {
@@ -408,7 +410,8 @@ Files inside this folder can contain specific element styles and layout.
         margin-bottom: 1.60625rem; } }
 
 .footer-links--ul__link {
-  color: var(--color-white);
+  color: var(--color-black);
+  font-family: 'NeutraText-DemiAlt';
   font-size: 0.625rem; }
   @media (min-width: 768px) {
     .footer-links--ul__link {
@@ -496,11 +499,14 @@ Files inside this folder can contain specific element styles and layout.
       height: 25.15625vw;
       flex-direction: row;
       margin-bottom: 2.34375vw; } }
-  @media (min-width: 768px) {
-    .banner-with-image--content {
-      flex: 1;
-      padding-top: 2.5vw;
-      padding-left: 3.28125vw; } }
+  .banner-with-image--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    @media (min-width: 768px) {
+      .banner-with-image--content {
+        flex: 1;
+        padding-left: 3.28125vw; } }
   .banner-with-image--heading {
     max-width: 15.6875rem;
     text-transform: uppercase;
@@ -523,7 +529,7 @@ Files inside this folder can contain specific element styles and layout.
     background-position: center; }
     @media (min-width: 768px) {
       .banner-with-image--image {
-        width: 48.02083vw; } }
+        width: 46.875vw; } }
 
 .banner-with-background {
   background: var(--color-primary);
@@ -619,11 +625,15 @@ Files inside this folder can contain specific element styles and layout.
         .category-posts .more-blog .blog-tile:not(:first-child) {
           display: block; } }
 
+@media (min-width: 768px) {
+  .full-width-section {
+    margin-bottom: 3.22917vw; } }
+
 .full-width-section--wrapper {
   display: flex; }
   @media (min-width: 768px) {
     .full-width-section--wrapper {
-      margin-bottom: 2.08333vw;
+      margin-bottom: 2.13542vw;
       height: 14.32292vw; } }
   .full-width-section--wrapper.even {
     flex-direction: row-reverse; }
@@ -727,7 +737,7 @@ Files inside this folder can contain specific element styles and layout.
   position: relative; }
   @media (min-width: 768px) {
     .explore-blog {
-      margin-bottom: 7.29167vw; } }
+      margin-top: 5.72917vw; } }
   .explore-blog:after {
     content: '';
     position: absolute;
@@ -762,6 +772,9 @@ Files inside this folder can contain specific element styles and layout.
       width: 27.08333vw; } }
   .explore-blog--image {
     display: flex; }
+    @media (min-width: 768px) {
+      .explore-blog--image {
+        height: 17.23958vw; } }
     .explore-blog--image img {
       height: 100%;
       -o-object-fit: cover;
@@ -800,8 +813,47 @@ Files inside this folder can contain specific element styles and layout.
           font-size: 2.1875vw;
           line-height: 2.34375vw; } }
 
+.see-more--wrapper {
+  width: 100%;
+  margin: auto;
+  position: relative; }
+  @media (min-width: 768px) {
+    .see-more--wrapper {
+      height: 5.20833vw;
+      margin-bottom: 7.29167vw; } }
+  .see-more--wrapper .see-more-button {
+    font-family: 'NeutraText-BoldAlt';
+    background: var(--color-tile-bg);
+    color: var(--color-secondary);
+    border: none;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (min-width: 768px) {
+      .see-more--wrapper .see-more-button {
+        font-size: 1.66667vw;
+        padding-top: 1.35417vw;
+        padding-right: 3.02083vw;
+        padding-bottom: 1.35417vw;
+        padding-left: 3.02083vw;
+        bottom: -2.08333vw; } }
+    .see-more--wrapper .see-more-button .cta-button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%); }
+      @media (min-width: 768px) {
+        .see-more--wrapper .see-more-button .cta-button {
+          width: 3.75vw;
+          height: 3.75vw; } }
+
+@media (min-width: 768px) {
+  .featured-articles {
+    margin-bottom: 2.03125vw; } }
+
 .featured-articles--wrapper {
-  margin: auto; }
+  margin: auto;
+  position: relative; }
   @media (min-width: 768px) {
     .featured-articles--wrapper {
       width: 96.5625vw; } }
@@ -828,7 +880,6 @@ Files inside this folder can contain specific element styles and layout.
     position: relative; }
     @media (min-width: 768px) {
       .featured-articles--wrapper .swiper-button--wrapper-inner {
-        width: 13.54167vw;
         height: 1.25vw; } }
 
 .featured-articles .swiper-wrapper .swiper-slide {
@@ -867,6 +918,17 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 1.51042vw;
         line-height: 1.66667vw;
         margin-bottom: 2.29167vw; } }
+    @media (min-width: 768px) {
+      .featured-articles .swiper-wrapper .swiper-slide--content__cta {
+        width: 6.61458vw;
+        height: 6.61458vw; } }
+
+.featured-articles.even .swiper-slide {
+  flex-direction: row-reverse; }
+
+.featured-articles.even .swiper-button--wrapper {
+  right: inherit;
+  left: 0; }
 
 @media (min-width: 768px) {
   .article-header {

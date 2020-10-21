@@ -1,10 +1,14 @@
 .full-width-section {
 
+  @include respond-above(sm) {
+    margin-bottom: get-vw(62px);
+  }
+
   &--wrapper {
     display: flex;
 
     @include respond-above(sm) {
-      margin-bottom: get-vw(40px);
+      margin-bottom: get-vw(41px);
       height: get-vw(275px);
     }
 

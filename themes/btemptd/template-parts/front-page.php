@@ -13,8 +13,10 @@
 ?>
 <section class="banner-with-image">
     <div class="banner-with-image--content">
+        <div>
         <h1 class="banner-with-image--heading"><?php echo esc_attr($banner_title);?></h1>
         <p class="banner-with-image--subtitle"><?php echo esc_attr($banner_subtitle);?></p>
+        </div>
     </div>
     <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_attr($banner_url);?>);">
     </div>
@@ -74,7 +76,7 @@
 <!-- featured article -->
 <?php if(!empty($featured_posts)):?>
 <section class="featured-articles">
-    <div class="featured-articles--wrapper">
+    <div class="featured-articles--wrapper box-shadow-right">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
                 <?php foreach($featured_posts as $featured_post): ?>
@@ -115,23 +117,27 @@
 
             </div>
 
+            <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
             <div class="swiper-pagination custom-swiper-pagination"></div>
 
             <div class="swiper-button-next button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
             </div>
             <div class="swiper-button-prev button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+            </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<div class="spacer-80"></div>
+
 <?php endif;?>
 
 <?php if(!empty($slider_posts)):?>
-<section class="featured-articles">
-    <div class="featured-articles--wrapper">
+<section class="featured-articles even">
+    <div class="featured-articles--wrapper box-shadow-right">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
@@ -172,18 +178,21 @@
 
             </div>
 
+            <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
             <div class="swiper-pagination custom-swiper-pagination"></div>
 
             <div class="swiper-button-next button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
             </div>
             <div class="swiper-button-prev button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+            </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<div class="spacer-80"></div>
 <?php endif;?>
 
 

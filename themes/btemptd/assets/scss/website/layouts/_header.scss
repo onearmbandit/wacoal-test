@@ -62,13 +62,13 @@
   right: 0;
   @include NeutraText-DemiAlt;
   font-size: get-vw(32px);
-  color: var(--color-white);
+  color: var(--color-black);
   text-transform: uppercase;
-  background: var(--color-black);
-  padding-left: get-vw(101px);
-  padding-right: get-vw(101px);
-  padding-top: get-vw(23px);
-  padding-bottom: get-vw(23px);
+  background: var(--color-tile-bg);
+  padding-left: get-vw(90px);
+  padding-right: get-vw(90px);
+  padding-top: get-vw(30px);
+  padding-bottom: get-vw(27px);
 
   &.shop-btemptd-btn-desktop {
     display: none;

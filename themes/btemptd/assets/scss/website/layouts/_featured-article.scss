@@ -1,7 +1,12 @@
 .featured-articles {
 
+  @include respond-above(sm) {
+    margin-bottom: get-vw(39px);
+  }
+
   &--wrapper {
     margin: auto;
+    position: relative;
 
     @include respond-above(sm) {
       width: get-vw(1854px);
@@ -39,8 +44,9 @@
     .swiper-button--wrapper-inner {
       margin: auto;
       position: relative;
+
       @include respond-above(sm) {
-        width: get-vw(260px);
+        // width: get-vw(260px);
         height: get-vw(24px);
       }
     }
@@ -106,8 +112,24 @@
 
         &__cta {
 
+          @include respond-above(sm) {
+            width: get-vw(127px);
+            height: get-vw(127px);
+          }
         }
       }
+    }
+  }
+
+  &.even {
+
+    .swiper-slide {
+      flex-direction: row-reverse;
+    }
+
+    .swiper-button--wrapper {
+      right: inherit;
+      left: 0;
     }
   }
 }

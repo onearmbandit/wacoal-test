@@ -53,7 +53,9 @@ endif;?>
 
     </div>
     </div>
-    <?php if($counts->publish > 3):?>
-        <button class="more btn secondary">See More</button>
-    <?php endif;?>
 </section>
+<?php if($counts->publish > 3):?>
+        <div class="see-more--wrapper">
+            <button class="see-more-button">See More <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></button>
+        </div>
+    <?php endif;?>
