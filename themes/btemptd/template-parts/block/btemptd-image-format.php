@@ -17,14 +17,14 @@
 
     <?php if($cta_1_text && !empty($cta_1_text)) :?>
         <div class="wow-factor--left box-shadow-right">
-            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-down.svg" alt="" />
+            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-down.svg" alt="arrow" />
             <?php echo wp_kses_post($cta_1_text); ?>
         </div>
     <?php endif; ?>
 
     <?php if($cta_2_text && !empty($cta_2_text)) :?>
         <div class="wow-factor--right box-shadow-right">
-            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-down.svg" alt="" />
+            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-down.svg" alt="arrow" />
             <?php echo wp_kses_post($cta_2_text); ?>
         </div>
     <?php endif; ?>
@@ -34,7 +34,7 @@
     <?php if($block_image_id && !empty($block_image_id)) :?>
     <div class="wow-factor--wrapper bottom">
         <div class="wow-factor--banner">
-                <img class="img-fluid" src="<?php echo  esc_url($block_image_url); ?>" alt="Image" />
+                <img class="img-fluid" src="<?php echo  esc_url($block_image_url); ?>" alt="<?php echo wp_kses_post($block_image_alt);?>" />
         </div>
     </div>
     <?php endif;?>
