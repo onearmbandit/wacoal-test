@@ -1,3 +1,15 @@
+<?php
+/**
+ * Main header file.
+ * php version 7.4
+ *
+ * @category Btemptd
+ * @package  Btemptd
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Btemptd
+ */
+?>
 <!DOCTYPE html>
 
 <html <?php language_attributes(); ?> class="no-js">
@@ -9,7 +21,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <title><?php wp_title(''); ?>
     </title>
-    <link rel="shortcut icon" href="<?php echo esc_url( esc_url(THEMEURI) ); ?>/assets/images/favicon.png"
+    <link rel="shortcut icon" href="<?php echo esc_url(THEMEURI); ?>/assets/images/favicon.png"
         type="image/x-icon" />
 
     <?php if (is_singular() && pings_open(get_queried_object())) : ?>

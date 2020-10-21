@@ -171,7 +171,15 @@ acf_add_local_field_group(
             'type' => 'relationship',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5f844163a2da3',
+                        'operator' => '!=',
+                        'value' => 'simple',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -200,7 +208,15 @@ acf_add_local_field_group(
             'type' => 'relationship',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5f844163a2da3',
+                        'operator' => '!=',
+                        'value' => 'simple',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
