@@ -11,7 +11,10 @@
  */
 
 Btemptd_Page_Entry_top('');
-$banner_url=get_field('banner', 'option');
+$banner_image_id=get_field('banner', 'option');
+$banner_image_array = wp_get_attachment_image_src($banner_image_id, 'full');
+$banner_image_alt = Btemptd_Get_Image_alt($banner_image_id, 'Banner Image');
+$banner_image_url = Btemptd_Get_Image($banner_image_array);
 $banner_title=get_field('banner_title', 'option');
 $banner_subtitle=get_field('banner_subtitle', 'option');
 $static_section=get_field('static_section', 'option');

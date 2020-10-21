@@ -16,7 +16,7 @@
         <h1 class="banner-with-image--heading"><?php echo esc_attr($banner_title);?></h1>
         <p class="banner-with-image--subtitle"><?php echo esc_attr($banner_subtitle);?></p>
     </div>
-    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_attr($banner_url);?>);">
+    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
     </div>
 </section>
 <!-- full width section -->

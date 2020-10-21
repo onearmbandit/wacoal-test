@@ -29,7 +29,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'return_format' => 'url',
+            'return_format' => 'id',
             'preview_size' => 'full',
             'library' => 'all',
             'min_width' => '',
@@ -53,7 +53,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'return_format' => 'url',
+            'return_format' => 'id',
             'preview_size' => 'full',
             'library' => 'all',
             'min_width' => '',
@@ -167,8 +167,8 @@ acf_add_local_field_group(
                     ),
                     'collapsed' => '',
                     'min' => 0,
-                    'max' => 3,
-                    'layout' => 'table',
+                    'max' => 0,
+                    'layout' => 'row',
                     'button_label' => '',
                     'sub_fields' => array(
                         array(
