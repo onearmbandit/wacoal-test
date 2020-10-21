@@ -150,7 +150,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'layout' => 'block',
+            'layout' => 'row',
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f854cc55f610',
