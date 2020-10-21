@@ -225,11 +225,11 @@ acf_add_local_field_group(
                             'wrapper' => array(
                                 'width' => '',
                                 'class' => '',
-                                'id' => 'static_content',
+                                'id' => 'static_content_block',
                             ),
                             'default_value' => '',
                             'tabs' => 'all',
-                            'toolbar' => 'content_toolbar',
+                            'toolbar' => 'static_section_toolbar',
                             'media_upload' => 1,
                             'delay' => 0,
                         ),
