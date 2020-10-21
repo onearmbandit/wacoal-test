@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f8d9a0bf2c92',
-    'title' => 'Btemptd Image settings',
+    'title' => 'Btemptd CTA with Image settings',
     'fields' => array(
         array(
             'key' => 'field_5f8ed9bfa3908',
@@ -26,11 +26,11 @@ acf_add_local_field_group(
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'para_content',
             ),
             'default_value' => '',
             'tabs' => 'all',
-            'toolbar' => 'full',
+            'toolbar' => 'content_toolbar',
             'media_upload' => 1,
             'delay' => 0,
         ),
@@ -49,7 +49,7 @@ acf_add_local_field_group(
             ),
             'default_value' => '',
             'tabs' => 'all',
-            'toolbar' => 'full',
+            'toolbar' => 'content_toolbar',
             'media_upload' => 1,
             'delay' => 0,
         ),
@@ -66,7 +66,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'return_format' => 'url',
+            'return_format' => 'id',
             'preview_size' => 'full',
             'library' => 'all',
             'min_width' => '',
