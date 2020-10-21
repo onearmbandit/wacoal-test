@@ -50,6 +50,7 @@ if ($template == 'simple') :
         $faq_image_url = Btemptd_Get_Image($faq_image_array);
         $faq_title = $page_obj['title'];
         $faq_ques = $page_obj['question'];
+        $faq_link = $page_obj['url'];
 
         if ($key % 2 == 0) {
             ?>
@@ -75,7 +76,7 @@ if ($template == 'simple') :
             </div>
             <?php endif; ?>
 
-            <div class="arrow">
+            <a class="arrow" href="<?php echo esc_url($faq_link);?>">
                 <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
             </div>
         </div>
