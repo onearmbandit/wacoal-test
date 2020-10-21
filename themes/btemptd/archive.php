@@ -50,6 +50,7 @@ if ($template == 'simple') :
         $faq_image_url = Btemptd_Get_Image($faq_image_array);
         $faq_title = $page_obj['title'];
         $faq_ques = $page_obj['question'];
+        $faq_link = $page_obj['url'];
 
         if ($key % 2 == 0) {
             ?>
@@ -75,7 +76,7 @@ if ($template == 'simple') :
             </div>
             <?php endif; ?>
 
-            <div class="arrow">
+            <a class="arrow" href="<?php echo esc_url($faq_link);?>" target="_blank">
                 <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
             </div>
         </div>
@@ -143,14 +144,14 @@ if ($template == 'simple') :
 
                         <div class="swiper-slide--content">
                             <div class="swiper-slide--content__category">
-                                <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
-                                <?php echo esc_attr($cat->name);?>
+                                <?php $cat_name=Btemptd_Get_Primary_category($featured_post) ;?>
+                                <?php echo esc_attr($cat_name->name);?>
                             </div>
                             <div class="swiper-slide--content__title">
                             <?php echo esc_attr(get_the_title($featured_post));?>
                             </div>
                             <div class="swiper-slide--content__para">
-                                <?php echo esc_attr(get_field('tagline',$featured_post));?>
+                                <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$featured_post)));?>
                             </div>
                             <div class="swiper-slide--content__cta">
                                 <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -204,14 +205,14 @@ if ($template == 'simple') :
 
                         <div class="swiper-slide--content">
                             <div class="swiper-slide--content__category">
-                                <?php $cat=Btemptd_Get_Primary_category($slider_post) ;?>
-                                <?php echo esc_attr($cat->name);?>
+                                <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
+                                <?php echo esc_attr($cat_name->name);?>
                             </div>
                             <div class="swiper-slide--content__title">
                             <?php echo esc_attr(get_the_title($slider_post));?>
                             </div>
                             <div class="swiper-slide--content__para">
-                            <?php echo esc_attr(get_field('tagline',$slider_post));?>
+                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
                             </div>
                             <div class="swiper-slide--content__cta">
                                 <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -294,6 +295,7 @@ $the_query = new WP_Query( $args );
 $arr['publish']=$the_query->found_posts;
 $counts= array();
 $counts= (object)$arr;
+
 if(!empty($recent_posts)):
     require locate_template('template-parts/explore-page.php');
 

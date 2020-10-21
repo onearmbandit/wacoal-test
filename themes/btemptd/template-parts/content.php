@@ -10,5 +10,3 @@
  * @link     Btemptd
  */
 
-?>
-

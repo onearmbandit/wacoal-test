@@ -29,7 +29,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'return_format' => 'url',
+            'return_format' => 'id',
             'preview_size' => 'full',
             'library' => 'all',
             'min_width' => '',
@@ -53,7 +53,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'return_format' => 'url',
+            'return_format' => 'id',
             'preview_size' => 'full',
             'library' => 'all',
             'min_width' => '',
@@ -150,7 +150,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'layout' => 'block',
+            'layout' => 'row',
             'sub_fields' => array(
                 array(
                     'key' => 'field_5f854cc55f610',
@@ -167,8 +167,8 @@ acf_add_local_field_group(
                     ),
                     'collapsed' => '',
                     'min' => 0,
-                    'max' => 3,
-                    'layout' => 'table',
+                    'max' => 0,
+                    'layout' => 'row',
                     'button_label' => '',
                     'sub_fields' => array(
                         array(
@@ -225,11 +225,11 @@ acf_add_local_field_group(
                             'wrapper' => array(
                                 'width' => '',
                                 'class' => '',
-                                'id' => 'static_content',
+                                'id' => 'static_content_block',
                             ),
                             'default_value' => '',
                             'tabs' => 'all',
-                            'toolbar' => 'content_toolbar',
+                            'toolbar' => 'static_section_toolbar',
                             'media_upload' => 1,
                             'delay' => 0,
                         ),

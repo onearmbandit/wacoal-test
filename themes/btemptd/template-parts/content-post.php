@@ -63,7 +63,7 @@
         'post_status'=>'publish'
     )
 );
-$counts = wp_count_posts( $post_type = 'post' );?>
+$counts = wp_count_posts( 'post' );?>
 <?php if(!empty($recent_posts)):?>
-    <?php require locate_template('template-parts/explore-page.php');?>
+    <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif;?>

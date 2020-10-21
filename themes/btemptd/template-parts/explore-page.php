@@ -15,14 +15,15 @@
     $current_cat_id = $current_cat_id;
 else:
     $current_cat_id = 0;
-endif;?>
-<input type="hidden" name="cat" id="cat_id" value="<?php echo $current_cat_id;?>">
+endif;
+?>
+<input type="hidden" name="cat" id="cat_id" value="<?php echo esc_attr($current_cat_id);?>">
 <input type="hidden" name="offset" id="offset" value="0">
-<input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
+<input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts->publish);?>">
 <section class="explore-blog">
-    <div class="explore-blog--title">Explore the blog</div>
+    <div class="explore-blog--title">EXPLORE THE BLOG</div>
 
-    <div class="explore-blog--bg">
+    <div class="explore-blog--bg explore-see-more">
     <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
             $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
@@ -30,14 +31,14 @@ endif;?>
             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
             $categories = Btemptd_Get_Primary_category($recent_post->ID);
             ?>
-            <div class="explore-blog--box">
+            <div class="explore-blog--box ">
                 <div class="explore-blog--image">
                     <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
                 </div>
 
                 <div class="explore-blog--content">
                     <div class="explore-blog--content__cta">
-                        <a href="<?php echo get_permalink($recent_post->ID);?>">
+                        <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
                         </a>
                     </div>

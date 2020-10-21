@@ -25,8 +25,9 @@ add_action('wp_head', 'Btemptd_Pingback_header');
 /**
  * Get header html
  *
- * @param  string $classname class name.
- * @return  html
+ * @param string $classname class name.
+ *
+ * @return html
  */
 function Btemptd_Page_Entry_top($classname)
 {
@@ -34,8 +35,11 @@ function Btemptd_Page_Entry_top($classname)
     echo "<div class=\"$classname\" id=\"js-$classname\">\n"; // phpcs:ignore
     get_template_part('template-parts/content-header');
 }
+
 /**
  * Get footer html
+ *
+ * @return footer html
  */
 function Btemptd_Page_Entry_bottom()
 {
@@ -45,18 +49,12 @@ function Btemptd_Page_Entry_bottom()
 }
 
 /**
- * ACF get fields of page by PageId
- */
-function Btemptd_get_page_acf_fields($pageId)
-{
-    $fields = get_fields($pageId);
-    return $fields;
-}
-
-/**
  * Get btemptd Image source
  *
- * @param  int $attachmentId attachment id.
+ * @param int    $attachmentId attachment id.
+ * @param string $size         size of image.
+ * @param $icon         icon
+ *
  * @return array $image_src
  */
 function Btemptd_Get_Image_src($attachmentId, $size = 'full', $icon = false)
@@ -68,7 +66,9 @@ function Btemptd_Get_Image_src($attachmentId, $size = 'full', $icon = false)
 /**
  * Get btemptd Image alt
  *
- * @param  int $attachmentId attachment id.
+ * @param int    $attachmentId attachment id.
+ * @param string $default      image default size.
+ *
  * @return string $image_alt
  */
 function Btemptd_Get_Image_alt($attachmentId, $default = null)
@@ -79,10 +79,12 @@ function Btemptd_Get_Image_alt($attachmentId, $default = null)
     }
     return $image_alt;
 }
+
 /**
- * btemptd remove p tag from content
+ * Btemptd remove p tag from content
  *
- * @param  string $content post content.
+ * @param string $content post content.
+ *
  * @return string $content
  */
 function Btemptd_Remove_ptag($content)
@@ -91,11 +93,14 @@ function Btemptd_Remove_ptag($content)
     $content = str_ireplace('</p>', '', $content);
     return $content;
 }
-/*
+
+/**
  * Add Menu link class.
  *
- * @param  $item  The current menu item.
- * @param  $args  An object of wp_nav_menu() arguments.
+ * @param $atts Attributes.
+ * @param $item The current menu item.
+ * @param $args An object of wp_nav_menu() arguments.
+ *
  * @return array $atts
  */
 function Btemptd_Add_Menu_Link_class($atts, $item, $args)
@@ -113,13 +118,13 @@ add_filter('nav_menu_link_attributes', 'Btemptd_Add_Menu_Link_class', 1, 3);
 /**
  * Add Menu li class.
  *
- * @param string $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
+ * @param string   $classes Array of the CSS classes that are applied to the menu item's `<li>` element.
  * @param WP_Post  $item    The current menu item.
  * @param stdClass $args    An object of wp_nav_menu() arguments.
  * @param int      $depth   Depth of menu item. Used for padding.
+ *
  * @return array $classes
  */
-
 function Btemptd_Add_Menu_Li_class( $classes, $item, $args, $depth )
 {
 
@@ -136,7 +141,8 @@ add_filter('nav_menu_css_class', 'Btemptd_Add_Menu_Li_class', 10, 4);
 /**
  * Add support for svg images.
  *
- * @param  array $file_types file types.
+ * @param array $file_types file types.
+ *
  * @return array $file_types
  */
 function Btemptd_Add_Svg_File_Types_To_uploads($file_types)
@@ -151,7 +157,9 @@ function Btemptd_Add_Svg_File_Types_To_uploads($file_types)
 add_action('upload_mimes', 'Btemptd_Add_Svg_File_Types_To_uploads');
 
 /**
- * Register Sidebar,Footer Column One,Footer Column two,Footer Column three,Footer Column four widget
+ * Register Sidebar,Footer Column One,Footer Column two,Footer Column three,Footer Column four widget.
+ *
+ * @return $footer widgets.
  */
 function Btemptd_Widgets_init()
 {
@@ -205,7 +213,6 @@ function Btemptd_Widgets_init()
 }
 add_action('widgets_init', 'Btemptd_Widgets_init');
 
-
 /**
  * Function get all the posts from 'post' post type
  *
@@ -237,7 +244,6 @@ function Btemptd_Query_posts( $args )
     return $wmag_posts;
 }
 
-
 /**
  * Function to get the post details of provide post id.
  *
@@ -253,10 +259,8 @@ function Btemptd_Get_Post_details( int $btemptd_post_id )
     return $meta;
 }
 
-
-
 /**
- * Undocumented function
+ * Function used to get primary key.
  *
  * @param int $post_id post id to fetch categories.
  *
@@ -283,11 +287,11 @@ function Btemptd_Get_Primary_category( $post_id )
     return $primary_category;
 }
 
-
  /**
   * Function to create the URL
   *
-  * @param  string $url URL.
+  * @param string $url URL.
+  *
   * @return string Return the URL.
   */
 function Btemptd_Reconstruct_url( $url )
@@ -299,8 +303,6 @@ function Btemptd_Reconstruct_url( $url )
 
     return $constructed_url;
 }
-
-
 
 /**
  * Function to create the image with crop points
@@ -315,7 +317,6 @@ function Btemptd_Get_image( $image, $width = null, $ratio = null )
 {
 
     if ($image && ! empty($image) && ! empty($image[0]) ) {
-
 
         $url = $image[0];
 
@@ -351,6 +352,7 @@ function Btemptd_Get_image( $image, $width = null, $ratio = null )
         return '';
     }
 }
+
 /**
  * Function for  pagination
  *
@@ -371,7 +373,6 @@ function Btemptd_Paging_nav()
     if ($wp_query->max_num_pages <= 1 ) {
         return;
     }
-
 
     $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
     $max   = intval($wp_query->max_num_pages);
@@ -469,14 +470,11 @@ function Btemptd_Block_categories( $categories, $post )
     $newCategories = array();
     $newCategories[0] = $temp;
 
-
     foreach ($categories as $category) {
         $newCategories[] = $category;
     }
 
-
     return $newCategories;
-
 
 }
 add_filter('block_categories', 'Btemptd_Block_categories', 10, 2);

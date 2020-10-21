@@ -10,5 +10,4 @@
  * @link     Btemptd
  */
 
-// Not in Use
-?>
+

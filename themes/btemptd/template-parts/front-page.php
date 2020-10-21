@@ -11,6 +11,10 @@
  */
 
 ?>
+<?php if(!empty($banner_link)) :?>
+<a href="<?php echo esc_url($banner_link);?>" <?php if($open_in_new_tab == true) : echo "target='_blank'";
+endif;?>>
+<?php endif;?>
 <section class="banner-with-image">
     <div class="banner-with-image--content">
         <div>
@@ -18,9 +22,12 @@
         <p class="banner-with-image--subtitle"><?php echo esc_attr($banner_subtitle);?></p>
         </div>
     </div>
-    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_attr($banner_url);?>);">
+    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
     </div>
 </section>
+<?php if(!empty($banner_link)) :?>
+</a>
+<?php endif;?>
 <!-- full width section -->
 <?php if(!empty($static_section['faq'])): ?>
 <section class="full-width-section">
@@ -39,7 +46,7 @@
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote">
-                        <?php echo esc_attr(Btemptd_Remove_ptag($section['question']));?>
+                        <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                     <div class="arrow">
                         <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
@@ -63,7 +70,7 @@
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote">
-                        <?php echo esc_attr(Btemptd_Remove_ptag($section['question']));?>
+                        <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                 </div>
             </div>
@@ -95,14 +102,14 @@
 
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
-                            <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
-                            <?php echo esc_attr($cat->name);?>
+                            <?php $cat_name=Btemptd_Get_Primary_category($featured_post) ;?>
+                            <?php echo esc_attr($cat_name->name);?>
                         </div>
                         <div class="swiper-slide--content__title">
                            <?php echo esc_attr(get_the_title($featured_post));?>
                         </div>
                         <div class="swiper-slide--content__para">
-                            <?php echo esc_attr(get_field('tagline',$featured_post));?>
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline',$featured_post)));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -156,14 +163,14 @@
 
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
-                            <?php $cat=Btemptd_Get_Primary_category($slider_post) ;?>
-                            <?php echo esc_attr($cat->name);?>
+                            <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
+                            <?php echo esc_attr($cat_name->name);?>
                         </div>
                         <div class="swiper-slide--content__title">
                            <?php echo esc_attr(get_the_title($slider_post));?>
                         </div>
                         <div class="swiper-slide--content__para">
-                        <?php echo esc_attr(get_field('tagline',$slider_post));?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -200,5 +207,5 @@
 
 <?php if(!empty($recent_posts)):?>
     <?php require locate_template('template-parts/explore-page.php');?>
-<?php endif;?>
+<?php endif;
 

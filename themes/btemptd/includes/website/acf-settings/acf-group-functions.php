@@ -50,3 +50,20 @@ function Content_toolbar( $toolbars )
     return $toolbars;
 }
 add_filter('acf/fields/wysiwyg/toolbars', 'Content_toolbar');
+
+/**
+ * Function creates the custom toolbar for Static section.
+ *
+ * @param array $toolbars list of toolbars.
+ *
+ * @return array $toolbars custom list.
+ */
+function Static_Sec_toolbar( $toolbars )
+{
+
+    $toolbars['Static Section Toolbar']    = array();
+    $toolbars['Static Section Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist', 'blockquote' );
+
+    return $toolbars;
+}
+add_filter('acf/fields/wysiwyg/toolbars', 'Static_Sec_toolbar');
