@@ -10,7 +10,6 @@
  * @link     Btemptd
  */
 
-
 acf_add_local_field_group(
     array(
     'key' => 'group_5f843c8fba133',
@@ -29,7 +28,7 @@ acf_add_local_field_group(
                 'class' => '',
                 'id' => '',
             ),
-            'return_format' => 'url',
+            'return_format' => 'id',
             'preview_size' => 'medium',
             'library' => 'all',
             'min_width' => '',
@@ -40,7 +39,6 @@ acf_add_local_field_group(
             'max_size' => '',
             'mime_types' => '',
         ),
-
         array(
             'key' => 'field_5f843e0467c5b',
             'label' => 'Header button text',
@@ -115,4 +113,5 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 

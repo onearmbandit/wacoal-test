@@ -4,7 +4,7 @@
 
     if ($field[0].id == 'static_content' || $field[0].id == 'footer_content' ||
         $field[0].id == 'para_content') {
-      qtInit.buttons = 'strong,em,del,link,ol,ul';
+      qtInit.buttons = 'strong,em,del,link,ol,ul,block';
     }
 
     return qtInit;
