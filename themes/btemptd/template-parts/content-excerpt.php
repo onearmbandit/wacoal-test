@@ -30,7 +30,7 @@ $categories    = Btemptd_Get_Primary_category(get_the_ID());
             </a>
         </div>
         <div class="explore-blog--content__category">
-            <?php echo esc_attr($cat_name);?>
+            <?php echo esc_attr($current_cat_data->name);?>
         </div>
         <div class="explore-blog--content__title">
             <?php echo esc_attr(get_the_title());?>

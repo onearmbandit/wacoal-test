@@ -15,7 +15,8 @@
     $current_cat_id = $current_cat_id;
 else:
     $current_cat_id = 0;
-endif;?>
+endif;
+?>
 <input type="hidden" name="cat" id="cat_id" value="<?php echo esc_attr($current_cat_id);?>">
 <input type="hidden" name="offset" id="offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts->publish);?>">

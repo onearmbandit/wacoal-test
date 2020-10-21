@@ -287,6 +287,7 @@ $the_query = new WP_Query( $args );
 $arr['publish']=$the_query->found_posts;
 $counts= array();
 $counts= (object)$arr;
+
 if(!empty($recent_posts)):
     require locate_template('template-parts/explore-page.php');
 
