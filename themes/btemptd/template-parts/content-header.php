@@ -10,11 +10,14 @@
  * @link     Btemptd
  */
 
-$logo = get_field( 'header_logo', 'options' );
+$logo_id = get_field('header_logo', 'options');
+$logo_image_array = wp_get_attachment_image_src($logo_id, 'full');
+$logo_image_alt = Btemptd_Get_Image_alt($logo_id, "btempt'd logo");
+$logo_image_url = Btemptd_Get_Image($logo_image_array);
 ?>
 <header class="header-section">
     <a href="<?php echo esc_url(home_url());?>">
-        <img class="header-section--logo" src="<?php echo esc_url($logo);?> " alt="btempt'd logo">
+        <img class="header-section--logo" src="<?php echo esc_url($logo_image_url);?> " alt="<?php echo wp_kses_post($logo_image_alt);?>">
     </a>
     <a class="shop-btemptd-btn shop-btemptd-btn-desktop" href="<?php echo esc_url(get_field('header_button_link', 'options'));?>" target="_blank">
     <?php echo esc_html(get_field('header_button_text', 'options'));?>   </a>
@@ -32,5 +35,5 @@ $logo = get_field( 'header_logo', 'options' );
         'items_wrap' => '<ul id="%1$s" class="header-navigation--ul">%3$s</ul>',
 
     );
-    wp_nav_menu($args); ?>
+                                                wp_nav_menu($args); ?>
 </nav>
