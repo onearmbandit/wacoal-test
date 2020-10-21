@@ -94,9 +94,9 @@ acf_add_local_field_group(
                                 'class' => '',
                                 'id' => '',
                             ),
-                            'return_format' => '',
+                            'return_format' => 'id',
                             'preview_size' => 'medium',
-                            'library' => '',
+                            'library' => 'all',
                             'min_width' => '',
                             'min_height' => '',
                             'min_size' => '',
@@ -151,9 +151,9 @@ acf_add_local_field_group(
                                 'class' => '',
                                 'id' => '',
                             ),
-                            'return_format' => '',
+                            'return_format' => 'id',
                             'preview_size' => 'medium',
-                            'library' => '',
+                            'library' => 'all',
                             'min_width' => '',
                             'min_height' => '',
                             'min_size' => '',
@@ -208,9 +208,9 @@ acf_add_local_field_group(
                                 'class' => '',
                                 'id' => '',
                             ),
-                            'return_format' => '',
+                            'return_format' => 'id',
                             'preview_size' => 'medium',
-                            'library' => '',
+                            'library' => 'all',
                             'min_width' => '',
                             'min_height' => '',
                             'min_size' => '',
@@ -265,7 +265,7 @@ acf_add_local_field_group(
                                 'class' => '',
                                 'id' => '',
                             ),
-                            'return_format' => 'url',
+                            'return_format' => 'id',
                             'preview_size' => 'medium',
                             'library' => 'all',
                             'min_width' => '',
@@ -332,5 +332,6 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 
 
