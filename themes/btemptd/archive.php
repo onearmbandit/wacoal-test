@@ -76,7 +76,7 @@ if ($template == 'simple') :
             </div>
             <?php endif; ?>
 
-            <a class="arrow" href="<?php echo esc_url($faq_link);?>">
+            <a class="arrow" href="<?php echo esc_url($faq_link);?>" target="_blank">
                 <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
             </div>
         </div>
@@ -151,7 +151,7 @@ if ($template == 'simple') :
                             <?php echo esc_attr(get_the_title($featured_post));?>
                             </div>
                             <div class="swiper-slide--content__para">
-                                <?php echo esc_attr(get_field('tagline',$featured_post));?>
+                                <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$featured_post)));?>
                             </div>
                             <div class="swiper-slide--content__cta">
                                 <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -208,7 +208,7 @@ if ($template == 'simple') :
                             <?php echo esc_attr(get_the_title($slider_post));?>
                             </div>
                             <div class="swiper-slide--content__para">
-                            <?php echo esc_attr(get_field('tagline',$slider_post));?>
+                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
                             </div>
                             <div class="swiper-slide--content__cta">
                                 <a href="<?php echo esc_url(get_permalink($slider_post));?>">
