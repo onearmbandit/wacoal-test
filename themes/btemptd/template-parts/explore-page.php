@@ -16,9 +16,9 @@
 else:
     $current_cat_id = 0;
 endif;?>
-<input type="hidden" name="cat" id="cat_id" value="<?php echo $current_cat_id;?>">
+<input type="hidden" name="cat" id="cat_id" value="<?php echo esc_attr($current_cat_id);?>">
 <input type="hidden" name="offset" id="offset" value="0">
-<input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
+<input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts->publish);?>">
 <section class="explore-blog">
     <div class="explore-blog--title">EXPLORE THE BLOG</div>
 
@@ -37,7 +37,7 @@ endif;?>
 
                 <div class="explore-blog--content">
                     <div class="explore-blog--content__cta">
-                        <a href="<?php echo get_permalink($recent_post->ID);?>">
+                        <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
                         </a>
                     </div>

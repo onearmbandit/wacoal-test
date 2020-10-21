@@ -144,8 +144,8 @@ if ($template == 'simple') :
 
                         <div class="swiper-slide--content">
                             <div class="swiper-slide--content__category">
-                                <?php $cat=Btemptd_Get_Primary_category($featured_post) ;?>
-                                <?php echo esc_attr($cat->name);?>
+                                <?php $cat_name=Btemptd_Get_Primary_category($featured_post) ;?>
+                                <?php echo esc_attr($cat_name->name);?>
                             </div>
                             <div class="swiper-slide--content__title">
                             <?php echo esc_attr(get_the_title($featured_post));?>
@@ -201,8 +201,8 @@ if ($template == 'simple') :
 
                         <div class="swiper-slide--content">
                             <div class="swiper-slide--content__category">
-                                <?php $cat=Btemptd_Get_Primary_category($slider_post) ;?>
-                                <?php echo esc_attr($cat->name);?>
+                                <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
+                                <?php echo esc_attr($cat_name->name);?>
                             </div>
                             <div class="swiper-slide--content__title">
                             <?php echo esc_attr(get_the_title($slider_post));?>
