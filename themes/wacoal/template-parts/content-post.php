@@ -83,8 +83,6 @@
                 </article>
             <?php } ?>
 
-
-
         </div>
     </section>
 <?php endif; ?>
