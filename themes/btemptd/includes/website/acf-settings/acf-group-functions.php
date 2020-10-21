@@ -45,7 +45,7 @@ foreach ( glob(THEMEPATH . '/includes/website/block/*.php') as $filename ) {
 function Content_toolbar( $toolbars )
 {
     $toolbars['Content Toolbar']    = array();
-    $toolbars['Content Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist' );
+    $toolbars['Content Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist', 'blockquote' );
 
     return $toolbars;
 }

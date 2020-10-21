@@ -37,7 +37,7 @@
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote">
-                        <?php echo esc_attr(Btemptd_Remove_ptag($section['question']));?>
+                        <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                     <div class="arrow">
                         <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
@@ -61,7 +61,7 @@
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote">
-                        <?php echo esc_attr(Btemptd_Remove_ptag($section['question']));?>
+                        <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                 </div>
             </div>
