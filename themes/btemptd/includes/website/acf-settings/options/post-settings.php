@@ -39,25 +39,24 @@ acf_add_local_field_group(
             'max_size' => '',
             'mime_types' => '',
         ),
-
         array(
             'key' => 'field_5f8440a7ac73c',
             'label' => 'Tagline',
             'name' => 'tagline',
-            'type' => 'textarea',
+            'type' => 'wysiwyg',
             'instructions' => '',
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'para_content',
             ),
             'default_value' => '',
-            'placeholder' => '',
-            'maxlength' => '',
-            'rows' => 2,
-            'new_lines' => '',
+            'tabs' => 'all',
+            'toolbar' => 'content_toolbar',
+            'media_upload' => 1,
+            'delay' => 0,
         ),
         array(
             'key' => 'field_5f844099ac73b',
@@ -70,11 +69,11 @@ acf_add_local_field_group(
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'para_content',
             ),
             'default_value' => '',
             'tabs' => 'all',
-            'toolbar' => 'full',
+            'toolbar' => 'content_toolbar',
             'media_upload' => 1,
             'delay' => 0,
         ),
@@ -98,4 +97,5 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 

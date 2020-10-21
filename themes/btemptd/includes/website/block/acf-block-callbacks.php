@@ -48,7 +48,10 @@ function Btemptd_Img_List_Format_Render_callback( $block )
 
     $cta_1_text  = get_field('review_link_1');
     $cta_2_text  = get_field('review_link_2');
-    $block_image = get_field('image');
+    $block_image_id = get_field('image');
+    $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+    $block_image_alt = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+    $block_image_url = Btemptd_Get_Image($block_image_array);
 
     $shortcode_template   = '/template-parts/block/btemptd-image-format.php';
 
