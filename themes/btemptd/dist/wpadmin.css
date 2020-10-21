@@ -549,6 +549,76 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 1.82292vw;
         line-height: 2.1875vw; } }
 
+.pagination--wrapper {
+  max-width: 21rem;
+  width: 100%;
+  margin: auto; }
+  @media (min-width: 768px) {
+    .pagination--wrapper {
+      max-width: 20.83333vw; } }
+
+.pagination .pagination-box {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+  .pagination .pagination-box--btn {
+    width: 2.875rem;
+    height: 1.6875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-article-bg);
+    margin: 0rem 2.3125rem; }
+    @media (min-width: 768px) {
+      .pagination .pagination-box--btn {
+        width: 3.59375vw;
+        height: 2.08333vw;
+        margin-left: 1.92708vw;
+        margin-right: 1.92708vw; } }
+  .pagination .pagination-box--numbers {
+    display: flex; }
+    .pagination .pagination-box--numbers li {
+      letter-spacing: 0.625rem; }
+      @media (min-width: 768px) {
+        .pagination .pagination-box--numbers li {
+          letter-spacing: 0.52083vw; } }
+      .pagination .pagination-box--numbers li a {
+        font-family: 'NeutraText-BookAlt';
+        font-size: 1.1875rem;
+        color: var(--color-gray); }
+        @media (min-width: 768px) {
+          .pagination .pagination-box--numbers li a {
+            font-size: 0.98958vw; } }
+        .pagination .pagination-box--numbers li a.active {
+          color: var(--color-black); }
+
+.category-posts {
+  margin-top: 1.4375rem; }
+  .category-posts .more-blog {
+    margin-bottom: 2.25rem; }
+    @media (min-width: 768px) {
+      .category-posts .more-blog {
+        margin-bottom: 3.125vw; } }
+    .category-posts .more-blog::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 0;
+      height: 7.9375rem;
+      top: -18px;
+      background: var(--color-article-bg); }
+      @media (min-width: 768px) {
+        .category-posts .more-blog::before {
+          width: 92%;
+          left: 4%;
+          background: var(--color-article-bg);
+          top: -1.5625vw; } }
+    .category-posts .more-blog .blog-tile:not(:first-child) {
+      display: none; }
+      @media (min-width: 768px) {
+        .category-posts .more-blog .blog-tile:not(:first-child) {
+          display: block; } }
+
 .full-width-section--wrapper {
   display: flex; }
   @media (min-width: 768px) {
@@ -655,6 +725,20 @@ Files inside this folder can contain specific element styles and layout.
 
 .explore-blog {
   position: relative; }
+  @media (min-width: 768px) {
+    .explore-blog {
+      margin-bottom: 7.29167vw; } }
+  .explore-blog:after {
+    content: '';
+    position: absolute;
+    background: var(--color-primary);
+    width: 100%;
+    left: 0;
+    z-index: -1; }
+    @media (min-width: 768px) {
+      .explore-blog:after {
+        height: 28.59375vw;
+        bottom: -4.27083vw; } }
   .explore-blog--title {
     background: var(--color-tile-bg);
     font-family: 'NeutraText-DemiAlt';
