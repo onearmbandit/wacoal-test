@@ -11,6 +11,10 @@
  */
 
 ?>
+<?php if(!empty($banner_link)) :?>
+<a href="<?php echo esc_url($banner_link);?>" <?php if($open_in_new_tab == true) : echo "target='_blank'";
+endif;?>>
+<?php endif;?>
 <section class="banner-with-image">
     <div class="banner-with-image--content">
         <h1 class="banner-with-image--heading"><?php echo esc_attr($banner_title);?></h1>
@@ -19,6 +23,9 @@
     <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
     </div>
 </section>
+<?php if(!empty($banner_link)) :?>
+</a>
+<?php endif;?>
 <!-- full width section -->
 <?php if(!empty($static_section['faq'])): ?>
 <section class="full-width-section">
