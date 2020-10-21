@@ -10,7 +10,6 @@
  * @link     Btemptd
  */
 
-
 acf_add_local_field_group(
     array(
     'key' => 'group_5f843efa4d26c',
@@ -27,11 +26,11 @@ acf_add_local_field_group(
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
-                'id' => '',
+                'id' => 'footer_content',
             ),
             'default_value' => '',
             'tabs' => 'all',
-            'toolbar' => 'full',
+            'toolbar' => 'content_toolbar',
             'media_upload' => 1,
             'delay' => 0,
         ),
@@ -332,6 +331,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
-
 
