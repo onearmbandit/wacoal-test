@@ -223,6 +223,161 @@ Btemptd_Page_Entry_top('');
 
 </section>
 
+<!-- Pagination -->
+<section class="pagination">
+    <div class="pagination--wrapper">
+        <div class="pagination-box">
+            <div class="pagination-box--btn">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pagination-prev-icon.svg" alt="Prev Icon" />
+            </div>
+            <ul class="pagination-box--numbers">
+                <li><a href="#" class="active">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">...</a></li>
+                <li><a href="#">6</a></li>
+            </ul>
+            <div class="pagination-box--btn">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pagination-next-icon.svg" alt="Next Icon" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Explore the Blog -->
+<!-- <section class="explore-blog blog-multiple">
+    <div class="explore-blog--bg">
+    <div class="explore-blog--wrapper">
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-1.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-2.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-3.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</section>
+
+<section class="explore-blog blog-multiple">
+    <div class="explore-blog--bg">
+    <div class="explore-blog--wrapper">
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-1.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-2.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-blog--box">
+            <div class="explore-blog--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-img-3.png" />
+            </div>
+
+            <div class="explore-blog--content">
+                <div class="explore-blog--content__cta">
+                    <a>
+                        <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                    </a>
+                </div>
+                <div class="explore-blog--content__category">
+                    category
+                </div>
+                <div class="explore-blog--content__title">
+                    Featured Article Title Lorem Ipsum
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section> -->
+
 
 <!-- featured article -->
 <section class="featured-articles">
