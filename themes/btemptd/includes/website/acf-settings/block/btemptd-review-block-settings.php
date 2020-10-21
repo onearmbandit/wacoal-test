@@ -10,7 +10,6 @@
  * @link     Btemptd
  */
 
-
 acf_add_local_field_group(
     array(
     'key' => 'group_5f896c57aedba',
@@ -99,68 +98,6 @@ acf_add_local_field_group(
                 ),
             ),
         ),
-        array(
-            'key' => 'field_5f898ff35a0c0',
-            'label' => 'Review Link 1',
-            'name' => 'review_link_1',
-            'type' => 'wysiwyg',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'default_value' => '',
-            'tabs' => 'all',
-            'toolbar' => 'full',
-            'media_upload' => 1,
-            'delay' => 0,
-        ),
-        array(
-            'key' => 'field_5f8990415a0c1',
-            'label' => 'Review Link 2',
-            'name' => 'review_link_2',
-            'type' => 'wysiwyg',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'default_value' => '',
-            'tabs' => 'all',
-            'toolbar' => 'full',
-            'media_upload' => 1,
-            'delay' => 0,
-        ),
-        array(
-            'key' => 'field_5f899049172b3',
-            'label' => 'Image',
-            'name' => 'image',
-            'type' => 'image',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'return_format' => 'url',
-            'preview_size' => 'full',
-            'library' => 'all',
-            'min_width' => '',
-            'min_height' => '',
-            'min_size' => '',
-            'max_width' => '',
-            'max_height' => '',
-            'max_size' => '',
-            'mime_types' => '',
-        ),
     ),
     'location' => array(
         array(
@@ -181,5 +118,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
 

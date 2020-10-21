@@ -10,6 +10,8 @@
  * @link     Btemptd
  */
 
+
+
 acf_add_local_field_group(
     array(
         'key' => 'group_5f844159adb42',
@@ -41,71 +43,6 @@ acf_add_local_field_group(
                 'placeholder' => '',
             ),
             array(
-                'key' => 'field_5f8441ada2da4',
-                'label' => 'Explore the blog',
-                'name' => 'explore_the_blog',
-                'type' => 'group',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'layout' => 'block',
-                'sub_fields' => array(
-                    array(
-                        'key' => 'field_5f845774a2da5',
-                        'label' => 'Title',
-                        'name' => 'title',
-                        'type' => 'text',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'default_value' => '',
-                        'placeholder' => '',
-                        'prepend' => '',
-                        'append' => '',
-                        'maxlength' => '',
-                    ),
-                    array(
-                        'key' => 'field_5f845785a2da6',
-                        'label' => 'Posts',
-                        'name' => 'posts',
-                        'type' => 'relationship',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'post_type' => array(
-                            0 => 'post',
-                        ),
-                        'taxonomy' => '',
-                        'filters' => array(
-                            0 => 'search',
-                            1 => 'post_type',
-                            2 => 'taxonomy',
-                        ),
-                        'elements' => array(
-                            0 => 'featured_image',
-                        ),
-                        'min' => '',
-                        'max' => '',
-                        'return_format' => 'id',
-                    ),
-                ),
-            ),
-            array(
                 'key' => 'field_5f856bb206b14',
                 'label' => 'Static section',
                 'name' => 'static_section',
@@ -130,7 +67,7 @@ acf_add_local_field_group(
                 'sub_fields' => array(
                     array(
                         'key' => 'field_5f856bc706b15',
-                        'label' => 'b. you 101',
+                        'label' => 'B. You 101',
                         'name' => 'faq',
                         'type' => 'repeater',
                         'instructions' => '',
@@ -144,7 +81,7 @@ acf_add_local_field_group(
                         'collapsed' => '',
                         'min' => 0,
                         'max' => 0,
-                        'layout' => 'table',
+                        'layout' => 'row',
                         'button_label' => '',
                         'sub_fields' => array(
                             array(
@@ -194,20 +131,20 @@ acf_add_local_field_group(
                                 'key' => 'field_5f856c0106b18',
                                 'label' => 'Question',
                                 'name' => 'question',
-                                'type' => 'text',
+                                'type' => 'wysiwyg',
                                 'instructions' => '',
                                 'required' => 0,
                                 'conditional_logic' => 0,
                                 'wrapper' => array(
                                     'width' => '',
                                     'class' => '',
-                                    'id' => '',
+                                    'id' => 'static_content',
                                 ),
                                 'default_value' => '',
-                                'placeholder' => '',
-                                'prepend' => '',
-                                'append' => '',
-                                'maxlength' => '',
+                                'tabs' => 'all',
+                                'toolbar' => 'content_toolbar',
+                                'media_upload' => 1,
+                                'delay' => 0,
                             ),
                             array(
                                 'key' => 'field_5f856beb06b17',
@@ -229,6 +166,65 @@ acf_add_local_field_group(
                     ),
                 ),
             ),
+
+            array(
+                'key' => 'field_5f8ee181add98',
+                'label' => 'Featured posts',
+                'name' => 'featured_posts',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'search',
+                    1 => 'post_type',
+                    2 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
+            array(
+                'key' => 'field_5f8ee153add97',
+                'label' => 'Slider posts',
+                'name' => 'slider_posts',
+                'type' => 'relationship',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array(
+                    0 => 'post',
+                ),
+                'taxonomy' => '',
+                'filters' => array(
+                    0 => 'search',
+                    1 => 'post_type',
+                    2 => 'taxonomy',
+                ),
+                'elements' => array(
+                    0 => 'featured_image',
+                ),
+                'min' => '',
+                'max' => '',
+                'return_format' => 'id',
+            ),
         ),
         'location' => array(
             array(
@@ -249,3 +245,4 @@ acf_add_local_field_group(
         'description' => '',
     )
 );
+
