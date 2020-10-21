@@ -17,10 +17,12 @@
       success: function (html) {
         $("#offset").val(offset);
 
-        $(".explore-blog--bg").append(html);
-        var article_count= $(".explore-blog--box").length;
+        $(".explore-see-more").append(html);
+        var article_count= $(".explore-see-more .explore-blog--box").length;
+
         if(html == 0 || total == article_count){
           $(".more").attr("disabled","disabled");
+          $(".more").addClass("disabled");
         }
 
 

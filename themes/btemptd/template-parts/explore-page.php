@@ -20,9 +20,9 @@ endif;?>
 <input type="hidden" name="offset" id="offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
 <section class="explore-blog">
-    <div class="explore-blog--title">Explore the blog</div>
+    <div class="explore-blog--title">EXPLORE THE BLOG</div>
 
-    <div class="explore-blog--bg">
+    <div class="explore-blog--bg explore-see-more">
     <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
             $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
@@ -30,7 +30,7 @@ endif;?>
             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
             $categories = Btemptd_Get_Primary_category($recent_post->ID);
             ?>
-            <div class="explore-blog--box">
+            <div class="explore-blog--box ">
                 <div class="explore-blog--image">
                     <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
                 </div>
@@ -54,6 +54,6 @@ endif;?>
     </div>
     </div>
     <?php if($counts->publish > 3):?>
-        <button class="more btn secondary">See More</button>
+        <button class="more btn secondary">SEE MORE</button>
     <?php endif;?>
 </section>
