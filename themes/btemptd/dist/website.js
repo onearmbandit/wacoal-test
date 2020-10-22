@@ -11108,7 +11108,7 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
 
 (function ($) {
   console.log('inside website main.js');
-  $(document).on('click', '.more', function (event) {
+  $(document).on('click', '.see-more-button', function (event) {
     var input = $("#offset").val();
     var offset = parseInt(input) + 3;
     var total = $("#total").val();
@@ -11127,8 +11127,7 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
         var article_count = $(".explore-see-more .explore-blog--box").length;
 
         if (html == 0 || total == article_count) {
-          $(".more").attr("disabled", "disabled");
-          $(".more").addClass("disabled");
+          $(".see-more-button").addClass("disabled");
         }
       }
     });
