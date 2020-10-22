@@ -25,9 +25,9 @@ $cat_name         = $current_cat_data->name;
 <?php endif;?>
 
 <?php if(category_description() && !empty(category_description())) :?>
-    <p class="banner-with-background--subtitle">
+    <div class="banner-with-background--subtitle">
         <?php echo category_description(); ?>
-    </p>
+    </div>
 <?php endif;?>
 
 </section>
@@ -251,7 +251,7 @@ if ($template == 'simple') :
         <?php $i=0;?>
         <?php while ( have_posts() ) : the_post();
             if ($i%3 == 0 || $i==0) {
-                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper">';
+                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
             }
             include locate_template('template-parts/content-excerpt.php');
 

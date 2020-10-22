@@ -24,6 +24,9 @@ $oembeded = get_field('instagram_feeds', 'options');
             <?php dynamic_sidebar('footer-4');?>
         </div>
         <div class="footer-wrapper--right">
+            <div class="footer-subscribe">
+                <input type="text" placeholder="Email Address"><button type="button">subscribe</button>
+            </div>
             <div class="footer-images">
                 <iframe src="<?php echo esc_url($oembeded);?>" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0px; overflow: hidden; height: 81.9px;"></iframe>
             </div>

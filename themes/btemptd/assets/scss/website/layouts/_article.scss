@@ -10,6 +10,7 @@
 
     @include respond-above(sm) {
         width: get-vw(1470px);
+        margin-top: get-vw(30px);
     }
   }
 
@@ -92,6 +93,7 @@
         display: flex;
         align-items: center;
         position: absolute;
+        color: var(--color-text);
 
         @include respond-above(sm) {
           width: get-vw(1060px);
@@ -169,6 +171,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    color: var(--color-text);
 
     @include respond-above(sm) {
       width: get-vw(1770px);
@@ -184,7 +187,6 @@
       z-index: 1;
       @include respond-above(sm) {
         margin-top: get-vw(-40px);
-        margin-bottom: get-vw(90px);
       }
     }
   }
@@ -252,9 +254,11 @@
   }
 
   &--banner {
+    width: 100%;
 
     @include respond-above(sm) {
       height: get-vw(753px);
+      margin-bottom: get-vw(90px);
     }
   }
 }

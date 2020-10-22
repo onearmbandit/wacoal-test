@@ -81,7 +81,8 @@ margin: calcRem(10, 11, 12, 13);
   --color-light-yellow:     #F1EFD9;
   --color-gray:             #585858;
   --color-gray-light:       #999999;
-  --color-tile-bg:          #F8F3F0; }
+  --color-tile-bg:          #F8F3F0;
+  --color-text:             #5E455E; }
 
 /*
 This file is used to contain all base imports.
@@ -251,19 +252,17 @@ Files inside this folder can contain specific element styles and layout.
     padding: 0.625rem 0rem; }
     @media (min-width: 768px) {
       .header-navigation--ul {
-        padding: 2.25rem 0rem; } }
+        padding: 2.1875rem 0rem; } }
   .header-navigation--list {
     margin: 0rem 1.4375rem; }
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .header-navigation--list {
-        margin: 0rem 1.6875rem; } }
-    @media (min-width: 1600px) {
-      .header-navigation--list {
-        margin: 0rem 2.8125rem; } }
+        margin: 0rem 5.4375rem; } }
   .header-navigation--link {
     color: var(--color-black);
     font-family: 'NeutraText-Bold';
-    font-size: 0.75rem; }
+    font-size: 0.75rem;
+    text-transform: uppercase; }
     @media (min-width: 768px) {
       .header-navigation--link {
         font-size: 1.375rem; } }
@@ -432,6 +431,33 @@ Files inside this folder can contain specific element styles and layout.
     .footer-links--title + div {
       display: block; } }
 
+.footer-subscribe {
+  display: flex; }
+  @media (min-width: 768px) {
+    .footer-subscribe {
+      margin-bottom: 3.85417vw; } }
+  .footer-subscribe input {
+    border: 1px solid #CBCBCB;
+    background: var(--color-white);
+    font-family: 'NeutraText-DemiAlt'; }
+    @media (min-width: 768px) {
+      .footer-subscribe input {
+        font-size: 14px;
+        height: 3.22917vw;
+        width: 17.91667vw;
+        padding-left: 1.25vw; } }
+  .footer-subscribe button {
+    background: #8A8A8A;
+    border: none;
+    text-transform: uppercase;
+    font-family: 'NeutraText-Bold';
+    color: var(--color-white);
+    flex: 1; }
+    @media (min-width: 768px) {
+      .footer-subscribe button {
+        font-size: 0.88542vw;
+        height: 3.33333vw; } }
+
 .footer-images {
   display: flex;
   justify-content: space-between; }
@@ -448,7 +474,7 @@ Files inside this folder can contain specific element styles and layout.
   margin-top: 1.25rem; }
   @media (min-width: 768px) {
     .footer-social {
-      margin-top: 4.375vw; } }
+      margin-top: 2.29167vw; } }
   .footer-social--icon {
     width: 1rem;
     height: 1rem;
@@ -518,10 +544,11 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 9.94792vw;
         line-height: 9.47917vw; } }
   .banner-with-image--subtitle {
-    font-size: 1.125rem; }
+    font-size: 1.125rem;
+    font-family: 'NeutraText-BookAlt'; }
     @media (min-width: 768px) {
       .banner-with-image--subtitle {
-        font-size: 0.6875rem; } }
+        font-size: 2rem; } }
   .banner-with-image--image {
     width: 100%;
     height: 100%;
@@ -579,8 +606,10 @@ Files inside this folder can contain specific element styles and layout.
       .pagination .pagination-box--btn {
         width: 3.59375vw;
         height: 2.08333vw;
-        margin-left: 1.92708vw;
-        margin-right: 1.92708vw; } }
+        margin-left: 3.125vw;
+        margin-right: 3.125vw; } }
+    .pagination .pagination-box--btn img {
+      width: 100%; }
   .pagination .pagination-box--numbers {
     display: flex; }
     .pagination .pagination-box--numbers li {
@@ -594,7 +623,7 @@ Files inside this folder can contain specific element styles and layout.
         color: var(--color-gray); }
         @media (min-width: 768px) {
           .pagination .pagination-box--numbers li a {
-            font-size: 0.98958vw; } }
+            font-size: 1.45833vw; } }
         .pagination .pagination-box--numbers li a.active {
           color: var(--color-black); }
 
@@ -671,19 +700,46 @@ Files inside this folder can contain specific element styles and layout.
       flex: 1;
       justify-content: space-between; } }
   .full-width-section--content .content-title {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    color: var(--color-text);
+    letter-spacing: 0.45px; }
     @media (min-width: 768px) {
       .full-width-section--content .content-title {
         font-family: 'NeutraText-BoldAlt';
         font-size: 1.66667vw;
-        margin-left: 6.30208vw; } }
-  @media (min-width: 768px) {
-    .full-width-section--content .quote {
-      font-family: 'NeutraText-BookAlt';
-      font-size: 1.66667vw; } }
+        margin-left: 6.30208vw;
+        letter-spacing: 0.10417vw; } }
+  .full-width-section--content .quote {
+    position: relative;
+    display: flex;
+    align-items: center; }
+    @media (min-width: 768px) {
+      .full-width-section--content .quote {
+        font-family: 'NeutraText-BookAlt';
+        font-size: 1.66667vw; } }
+    .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
+      content: '';
+      background-size: cover;
+      position: relative; }
+      @media (min-width: 768px) {
+        .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
+          width: 2.86458vw;
+          height: 2.86458vw; } }
+    .full-width-section--content .quote.quote-icon::before {
+      background-image: url(bf5aea2b7755018a38ff581b3812fb38.svg);
+      margin-top: -2.08333vw;
+      margin-right: 0.52083vw; }
+    .full-width-section--content .quote.quote-icon::after {
+      background-image: url(54b5c487886eed843bcae48b6011de2d.svg);
+      margin-top: 2.08333vw;
+      margin-left: 0.52083vw; }
   @media (min-width: 768px) {
     .full-width-section--content .arrow {
-      margin-right: 4.6875vw; } }
+      margin-right: 4.6875vw;
+      width: 6.61458vw;
+      height: 6.61458vw; } }
+  .full-width-section--content .arrow img {
+    width: 100%; }
 
 @media (min-width: 768px) {
   .size-chart {
@@ -744,7 +800,7 @@ Files inside this folder can contain specific element styles and layout.
     background: var(--color-primary);
     width: 100%;
     left: 0;
-    z-index: -1; }
+    z-index: -2; }
     @media (min-width: 768px) {
       .explore-blog:after {
         height: 28.59375vw;
@@ -767,9 +823,14 @@ Files inside this folder can contain specific element styles and layout.
       .explore-blog--wrapper {
         width: 84.375vw;
         justify-content: space-between; } }
-  @media (min-width: 768px) {
-    .explore-blog--box {
-      width: 27.08333vw; } }
+    @media (min-width: 768px) {
+      .explore-blog--wrapper.blog-wrapper {
+        width: 88.54167vw; } }
+  .explore-blog--box {
+    position: relative; }
+    @media (min-width: 768px) {
+      .explore-blog--box {
+        width: 27.08333vw; } }
   .explore-blog--image {
     display: flex; }
     @media (min-width: 768px) {
@@ -805,13 +866,38 @@ Files inside this folder can contain specific element styles and layout.
       letter-spacing: 1px; }
       @media (min-width: 768px) {
         .explore-blog--content__category {
-          font-size: 1.51042vw; } }
+          font-size: 1.51042vw;
+          margin-bottom: 0.9375vw; } }
     .explore-blog--content__title {
       font-family: 'NeutraText-DemiAlt'; }
       @media (min-width: 768px) {
         .explore-blog--content__title {
           font-size: 2.1875vw;
-          line-height: 2.34375vw; } }
+          line-height: 2.34375vw;
+          min-height: 4.6875vw; } }
+    .explore-blog--content.blog-pagination {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .explore-blog--content.blog-pagination .blog-pagination-content {
+        flex: 1; }
+      @media (min-width: 768px) {
+        .explore-blog--content.blog-pagination .blog-pagination-cta {
+          width: 2.39583vw;
+          height: 2.39583vw; } }
+      .explore-blog--content.blog-pagination .blog-pagination-cta img {
+        width: 100%; }
+
+@media (min-width: 768px) {
+  .category-posts .explore-blog {
+    margin-bottom: 9.375vw; } }
+
+.category-posts .explore-blog:after {
+  background: var(--color-tile-bg); }
+
+.category-posts .explore-blog--content {
+  background: var(--color-heighlight-1);
+  color: var(--color-black); }
 
 .see-more--wrapper {
   width: 100%;
@@ -939,7 +1025,8 @@ Files inside this folder can contain specific element styles and layout.
   text-align: center; }
   @media (min-width: 768px) {
     .article-header--wrapper {
-      width: 76.5625vw; } }
+      width: 76.5625vw;
+      margin-top: 1.5625vw; } }
 
 .article-header--banner {
   width: 100%;
@@ -1000,7 +1087,8 @@ Files inside this folder can contain specific element styles and layout.
     flex: 1;
     display: flex;
     align-items: center;
-    position: absolute; }
+    position: absolute;
+    color: var(--color-text); }
     @media (min-width: 768px) {
       .three-reason .reason-box--content {
         width: 55.20833vw;
@@ -1047,7 +1135,8 @@ Files inside this folder can contain specific element styles and layout.
   margin: auto;
   display: flex;
   align-items: center;
-  position: relative; }
+  position: relative;
+  color: var(--color-text); }
   @media (min-width: 768px) {
     .wow-factor--wrapper {
       width: 92.1875vw; } }
@@ -1057,8 +1146,7 @@ Files inside this folder can contain specific element styles and layout.
     z-index: 1; }
     @media (min-width: 768px) {
       .wow-factor--wrapper.bottom {
-        margin-top: -2.08333vw;
-        margin-bottom: 4.6875vw; } }
+        margin-top: -2.08333vw; } }
 
 .wow-factor--left {
   background: var(--color-tile-bg);
@@ -1112,9 +1200,12 @@ Files inside this folder can contain specific element styles and layout.
         width: 6.61458vw;
         height: 6.61458vw; } }
 
-@media (min-width: 768px) {
-  .wow-factor--banner {
-    height: 39.21875vw; } }
+.wow-factor--banner {
+  width: 100%; }
+  @media (min-width: 768px) {
+    .wow-factor--banner {
+      height: 39.21875vw;
+      margin-bottom: 4.6875vw; } }
 
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {

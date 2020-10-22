@@ -30,19 +30,15 @@
     padding: calcRem(10, 0);
 
     @include respond-above(sm) {
-      padding: calcRem(36, 0);
+      padding: calcRem(35, 0);
     }
   }
 
   &--list {
     margin: calcRem(0, 23);
 
-    @include respond-above(md) {
-      margin: calcRem(0, 27);
-    }
-
-    @include respond-above(xl) {
-      margin: calcRem(0, 45);
+    @include respond-above(sm) {
+      margin: calcRem(0, 87);
     }
   }
 
@@ -50,6 +46,7 @@
     color: var(--color-black);
     @include NeutraText-Bold;
     font-size: calcRem(12);
+    text-transform: uppercase;
 
     @include respond-above(sm) {
       font-size: calcRem(22);

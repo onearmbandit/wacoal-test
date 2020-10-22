@@ -29,10 +29,14 @@
         @include respond-above(sm) {
           width: get-vw(69px);
           height: get-vw(40px);
-          margin-left: get-vw(37px);
-          margin-right: get-vw(37px);
+          margin-left: get-vw(60px);
+          margin-right: get-vw(60px);
         }
-    }     
+
+        img {
+          width: 100%;
+        }
+    }
 
     &--numbers {
       display: flex;
@@ -50,7 +54,7 @@
           color: var(--color-gray);
 
           @include respond-above(sm) {
-            font-size: get-vw(19px);
+            font-size: get-vw(28px);
           }
 
           &.active {

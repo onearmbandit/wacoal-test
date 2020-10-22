@@ -18,22 +18,24 @@ $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
 $post_tagline  = get_field('tag_line');
 $categories    = Btemptd_Get_Primary_category(get_the_ID());
 ?>
-<div class="explore-blog--box">
+<div class="explore-blog--box box-shadow-right">
     <div class="explore-blog--image">
         <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
     </div>
 
-    <div class="explore-blog--content">
-        <div class="explore-blog--content__cta">
-            <a href="<?php echo esc_url(get_permalink());?>">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
-            </a>
-        </div>
+    <div class="explore-blog--content blog-pagination">
+        <div class="blog-pagination-content">
         <div class="explore-blog--content__category">
             <?php echo esc_attr($current_cat_data->name);?>
         </div>
         <div class="explore-blog--content__title">
             <?php echo esc_attr(get_the_title());?>
+        </div>
+        </div>
+        <div class="blog-pagination-cta">
+            <a href="<?php echo esc_url(get_permalink());?>">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
+            </a>
         </div>
     </div>
 </div>

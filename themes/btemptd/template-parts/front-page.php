@@ -45,7 +45,7 @@ endif;?>>
                     <div class="content-title">
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
-                    <div class="quote">
+                    <div class="quote quote-icon">
                         <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                     <div class="arrow">

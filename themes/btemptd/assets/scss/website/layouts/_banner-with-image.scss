@@ -40,9 +40,10 @@
 
   &--subtitle {
     font-size: calcRem(18);
+    @include NeutraText-BookAlt;
 
     @include respond-above(sm) {
-      font-size: calcRem(11);
+      font-size: calcRem(32);
     }
   }
 

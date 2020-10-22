@@ -75,19 +75,51 @@
 
     .content-title {
       text-transform: uppercase;
+      color: var(--color-text);
+      letter-spacing: 0.45px;
 
       @include respond-above(sm) {
         @include NeutraText-BoldAlt;
         font-size: get-vw(32px);
         margin-left: get-vw(121px);
+        letter-spacing: get-vw(2px);
       }
     }
 
     .quote {
+      position: relative;
+      display: flex;
+      align-items: center;
 
       @include respond-above(sm) {
         @include NeutraText-BookAlt;
         font-size: get-vw(32px);
+      }
+
+      &.quote-icon {
+
+        &::before, &::after {
+          content: '';
+          background-size: cover;
+          position: relative;
+
+          @include respond-above(sm) {
+            width: get-vw(55px);
+            height: get-vw(55px);
+          }
+        }
+
+        &::before {
+          background-image: url("../../images/quote-left.svg");
+          margin-top: get-vw(-40px);
+          margin-right: get-vw(10px);
+        }
+
+        &::after {
+          background-image: url("../../images/quote-right.svg");
+          margin-top: get-vw(40px);
+          margin-left: get-vw(10px);
+        }
       }
     }
 
@@ -95,6 +127,12 @@
 
       @include respond-above(sm) {
         margin-right: get-vw(90px);
+        width: get-vw(127px);
+        height: get-vw(127px);
+      }
+
+      img {
+        width: 100%;
       }
     }
 
