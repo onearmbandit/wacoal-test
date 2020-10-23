@@ -41,6 +41,28 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'              => 'btemptd-list-image-format',
+            'title'             => __('Btemptd List with Image Data Format'),
+            'description'       => __('A custom List Image format block.'),
+            'render_callback'   => 'Btemptd_List_Image_Data_Format_Render_callback',
+            'category'          => 'btemptd',
+            'icon'              => 'list-view',
+            'keywords'          => array( 'list-format' ),
+            )
+        );
+        acf_register_block_type(
+            array(
+            'name'              => 'btemptd-para-format',
+            'title'             => __('Btemptd Paragraph Block Format'),
+            'description'       => __('A custom Paragraph format block.'),
+            'render_callback'   => 'Btemptd_Para_Format_Render_callback',
+            'category'          => 'btemptd',
+            'icon'              => 'id-alt',
+            'keywords'          => array( 'paragraph', 'content' ),
+            )
+        );
 
 
     }
