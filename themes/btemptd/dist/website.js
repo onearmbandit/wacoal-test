@@ -11107,7 +11107,6 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
 /***/ (function(module, exports) {
 
 (function ($) {
-  console.log('inside website main.js');
   $(document).on('click', '.see-more-button', function (event) {
     var input = $("#offset").val();
     var offset = parseInt(input) + 3;
@@ -11123,11 +11122,12 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
       },
       success: function success(html) {
         $("#offset").val(offset);
-        $(".explore-see-more").append(html);
-        var article_count = $(".explore-see-more .explore-blog--box").length;
+        $(html).insertAfter($(".explore-blog").last());
+        var article_count = $(".explore-blog .explore-blog--box").length;
 
         if (html == 0 || total == article_count) {
           $(".see-more-button").addClass("disabled");
+          $(".see-more-button").hide();
         }
       }
     });
@@ -11165,7 +11165,7 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Documents/Projects/Wacoal/wacoal/themes/btemptd/assets/js/website.js */"./themes/btemptd/assets/js/website.js");
+module.exports = __webpack_require__(/*! /var/www/html/wacoal/themes/btemptd/assets/js/website.js */"./themes/btemptd/assets/js/website.js");
 
 
 /***/ }),

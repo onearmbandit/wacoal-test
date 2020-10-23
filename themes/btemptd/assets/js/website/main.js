@@ -1,5 +1,5 @@
 (function ($) {
-  console.log('inside website main.js');
+
   $(document).on('click', '.see-more-button', function (event) {
 
     var input = $("#offset").val();
@@ -16,13 +16,15 @@
       },
       success: function (html) {
         $("#offset").val(offset);
+        $(html).insertAfter( $( ".explore-blog" ).last() );
 
-        $(".explore-see-more").append(html);
-        var article_count= $(".explore-see-more .explore-blog--box").length;
+
+        var article_count= $(".explore-blog .explore-blog--box").length;
 
         if(html == 0 || total == article_count){
 
           $(".see-more-button").addClass("disabled");
+          $(".see-more-button").hide();
         }
 
 

@@ -22,8 +22,8 @@ endif;
 <input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts->publish);?>">
 <section class="explore-blog">
     <div class="explore-blog--title">EXPLORE THE BLOG</div>
-
-    <div class="explore-blog--bg explore-see-more">
+    <div class="explore-see-more">
+    <div class="explore-blog--bg ">
     <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
             $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
@@ -51,7 +51,7 @@ endif;
                 </div>
             </div>
         <?php endforeach;?>
-
+    </div>
     </div>
     </div>
 </section>

@@ -44,8 +44,10 @@ foreach ( glob(THEMEPATH . '/includes/website/block/*.php') as $filename ) {
  */
 function Content_toolbar( $toolbars )
 {
+
+
     $toolbars['Content Toolbar']    = array();
-    $toolbars['Content Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist' );
+    $toolbars['Content Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist');
 
     return $toolbars;
 }
@@ -62,8 +64,10 @@ function Static_Sec_toolbar( $toolbars )
 {
 
     $toolbars['Static Section Toolbar']    = array();
-    $toolbars['Static Section Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist', 'blockquote' );
+    $toolbars['Static Section Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist' );
 
     return $toolbars;
 }
 add_filter('acf/fields/wysiwyg/toolbars', 'Static_Sec_toolbar');
+
+

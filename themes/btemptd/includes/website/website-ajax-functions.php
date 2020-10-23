@@ -99,6 +99,8 @@ function Btemptd_Load_more(){
     if(!empty($recent_posts)){
         ob_start();
     ?>
+        <div class="explore-blog">
+        <div class="explore-blog--bg ">
         <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
             $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
@@ -127,7 +129,9 @@ function Btemptd_Load_more(){
             </div>
         <?php endforeach;?>
 
-    </div>
+        </div>
+        </div>
+        </div>
         <?php
         $output = ob_get_contents();
         ob_end_clean();

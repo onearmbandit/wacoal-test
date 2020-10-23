@@ -48,7 +48,7 @@ $oembeded = get_field('instagram_feeds', 'options');
 
     <div class="footer-wrapper">
         <div class="footer-wrapper--copyright">
-            <?php echo esc_attr(Btemptd_Remove_ptag($copyright_value));?>
+            <?php echo Btemptd_Remove_ptag($copyright_value);?>
         </div>
     </div>
 </footer>
