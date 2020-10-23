@@ -11118,12 +11118,14 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
         action: 'btemptd_load_more',
         cat_id: $("#cat_id").val(),
         offset: offset,
-        nonce: btemptd_js_var.nonce
+        nonce: btemptd_js_var.nonce,
+        post_id: $("#hidden_post").val()
       },
       success: function success(html) {
         $("#offset").val(offset);
-        $(html).insertAfter($(".explore-blog").last());
-        var article_count = $(".explore-blog .explore-blog--box").length;
+        $(html).insertAfter($(".explore-see-more").last());
+        var article_count = $(".explore-see-more .explore-blog--box").length;
+        console.log(article_count);
 
         if (html == 0 || total == article_count) {
           $(".see-more-button").addClass("disabled");

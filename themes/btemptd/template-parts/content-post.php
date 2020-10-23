@@ -64,6 +64,7 @@
     )
 );
 $counts = wp_count_posts( 'post' );?>
+<input type="hidden" id="hidden_post" name="hidden_post" value="<?php echo get_the_ID();?>">
 <?php if(!empty($recent_posts)):?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif;?>

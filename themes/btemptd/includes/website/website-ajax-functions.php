@@ -77,6 +77,7 @@ add_action('wp_ajax_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
  */
 
 function Btemptd_Load_more(){
+
     if(isset($_POST['nonce']) && !empty($_POST['nonce'])){
         $nonce = $_POST['nonce'];
     }
@@ -86,6 +87,7 @@ function Btemptd_Load_more(){
     $recent_posts = Btemptd_Query_posts(
         array(
             'post_type' => array('post'),
+            'post__not_in' => array($_POST['post_id']),
             'posts_per_page' => 3,
             'offset' => $_POST['offset'],
             'orderby' => 'post_date',
@@ -99,7 +101,7 @@ function Btemptd_Load_more(){
     if(!empty($recent_posts)){
         ob_start();
     ?>
-        <div class="explore-blog">
+        <div class="explore-blog explore-see-more">
         <div class="explore-blog--bg ">
         <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
