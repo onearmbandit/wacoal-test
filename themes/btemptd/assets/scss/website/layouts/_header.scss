@@ -38,7 +38,9 @@
     margin: calcRem(0, 23);
 
     @include respond-above(sm) {
-      margin: calcRem(0, 87);
+      // margin: calcRem(0, 87);
+      margin-left: get-vw(87px);
+      margin-right: get-vw(87px);
     }
   }
 

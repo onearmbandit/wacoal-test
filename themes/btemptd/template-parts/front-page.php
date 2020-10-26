@@ -202,7 +202,7 @@ endif;?>>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
                             </a>
                         </div>
                     </div>

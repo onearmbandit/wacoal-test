@@ -43,7 +43,7 @@
     @include NeutraText-BookAlt;
 
     @include respond-above(sm) {
-      font-size: calcRem(32);
+      font-size: get-vw(32px);
     }
   }
 

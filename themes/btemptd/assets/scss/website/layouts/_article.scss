@@ -67,6 +67,21 @@
       letter-spacing: get-vw(1.61px);
     }
   }
+
+  &--para-half {
+    @include NeutraText-LightAlt;
+    font-size: calcRem(22);
+    letter-spacing: 0.5px;
+    max-width: 90%;
+    margin: auto;
+
+    @include respond-above(sm) {
+      max-width: 50%;
+      font-size: get-vw(46px);
+      line-height: get-vw(47px);
+      letter-spacing: get-vw(1.61px);
+    }
+  }
 }
 
 
@@ -92,7 +107,7 @@
     @include respond-above(sm) {
       font-size: get-vw(32px);
       line-height: get-vw(41px);
-      margin-bottom: get-vw(40px);
+      margin-bottom: get-vw(80px);
     }
   }
 
@@ -104,6 +119,10 @@
       @include respond-above(sm) {
         height: get-vw(568px);
         // align-items: flex-start;
+
+        &:last-child {
+          margin-bottom: get-vw(80px);
+        }
       }
 
       &--content {

@@ -21,7 +21,7 @@ $cat_name         = $current_cat_data->name;
 <section class="banner-with-background">
 
 <?php if($current_cat_id && !empty($current_cat_id)) : ?>
-    <h1 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h1>
+    <h2 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h2>
 <?php endif;?>
 
 <?php if(category_description() && !empty(category_description())) :?>
