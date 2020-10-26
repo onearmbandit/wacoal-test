@@ -49,7 +49,7 @@
     text-transform: uppercase;
 
     @include respond-above(sm) {
-      font-size: calcRem(22);
+      font-size: get-vw(22px);
     }
   }
 }

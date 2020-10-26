@@ -1,7 +1,7 @@
 .full-width-section {
 
   @include respond-above(sm) {
-    margin-bottom: get-vw(62px);
+    margin-bottom: get-vw(103px);
   }
 
   &--wrapper {
@@ -96,6 +96,7 @@
       display: flex;
       align-items: center;
       @include NeutraText-BookAlt;
+      color: var(--color-text);
 
       @include respond-above(sm) {
         font-size: get-vw(32px);

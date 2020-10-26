@@ -1,5 +1,5 @@
 .footer-section {
-  background: var(--color-tile-bg);
+  background: var(--color-footer-bg);
   width: var(--width-100);
   padding: calcRem(30, 36, 22);
 
@@ -58,6 +58,10 @@
 
     @include respond-above(md) {
       font-size: get-vw(14px);
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 }
@@ -189,6 +193,7 @@
     flex: 1;
     height: calcRem(34);
     font-size: calcRem(10);
+    cursor: pointer;
 
     @include respond-above(sm) {
       font-size: get-vw(17px);

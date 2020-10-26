@@ -172,7 +172,7 @@ endif;?>>
 
 <?php if(!empty($slider_posts)):?>
 <section class="featured-articles desktop even">
-    <div class="featured-articles--wrapper box-shadow-right">
+    <div class="featured-articles--wrapper box-shadow-left">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>

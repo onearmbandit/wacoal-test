@@ -139,10 +139,21 @@
 
   &.even {
     margin-top: 0;
-    .swiper-slide {
+    .swiper-wrapper {
 
-      @include respond-above(sm) {
-        flex-direction: row-reverse;
+      .swiper-slide {
+
+        @include respond-above(sm) {
+          flex-direction: row-reverse;
+        }
+
+        &--content {
+          text-align: right;
+        }
+
+        &__cta {
+          margin-left: auto;
+        }
       }
     }
 
