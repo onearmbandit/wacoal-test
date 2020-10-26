@@ -29,10 +29,10 @@ endif;?>>
 </a>
 <?php endif;?>
 <!-- full width section -->
-<?php if(!empty($static_section['faq'])): ?>
+<?php if(!empty($static_section['faq'])) : ?>
 <section class="full-width-section">
     <?php foreach($static_section['faq'] as $section_key=> $section ): ?>
-        <?php if($section_key % 2 == 0):?>
+        <?php if($section_key % 2 == 0) :?>
             <?php $image_attributes = wp_get_attachment_image_src($section['image']);
             $image=Btemptd_Get_image($image_attributes);
 
@@ -378,10 +378,6 @@ endif;?>>
         </div>
     </div>
 </section> -->
-
-<section class="article-para-bold">
-    It is one of our all-time best sellers, and if it isn’t already in your bra wardrobe, here are 3 reasons why it should be:
-</section>
 
 <!-- Entry page full width Slider -->
 

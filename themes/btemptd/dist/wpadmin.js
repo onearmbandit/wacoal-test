@@ -905,7 +905,7 @@ window.lazySizesConfig.loadMode = 1;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Documents/Projects/Wacoal/wacoal/themes/btemptd/assets/js/wpadmin.js */"./themes/btemptd/assets/js/wpadmin.js");
+module.exports = __webpack_require__(/*! /home/vidya/Projects/wacoal/themes/btemptd/assets/js/wpadmin.js */"./themes/btemptd/assets/js/wpadmin.js");
 
 
 /***/ }),

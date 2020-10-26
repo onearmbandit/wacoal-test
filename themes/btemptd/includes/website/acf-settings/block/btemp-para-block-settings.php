@@ -46,6 +46,7 @@ acf_add_local_field_group(
                     'choices' => array(
                         'full_width' => 'Full Width',
                         'center_width' => 'Center Block',
+                        'bold_content' => 'Bold Content Block',
                     ),
                     'default_value' => false,
                     'allow_null' => 0,
