@@ -103,3 +103,30 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for paragraph block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Para_Format_Render_callback( $block )
+{
+    $block_fields = get_field('group');
+    $para_type =  $block_fields['select_type'];
+    $content = $block_fields['content'];
+
+    $shortcode_template   = '/template-parts/block/btemptd-para-block.php';
+
+    if (! empty($para_type) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Paragraph Block:</u></h4>
+            <span style="color:red">Empty Btemptd Paragraph Block</span>
+            <?php
+        }
+    }
+}

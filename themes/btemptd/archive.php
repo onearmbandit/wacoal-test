@@ -36,105 +36,105 @@ $cat_name         = $current_cat_data->name;
 $template= get_field('template', 'category_'.$current_cat_id);
 if ($template == 'simple') :
 
-    $faq_section = get_field('static_section', 'category_'.$current_cat_id);
-
+    $static_section = get_field('static_section', 'category_'.$current_cat_id);
 
     ?>
-
+    <?php if(!empty($static_section['faq'])) : ?>
 <section class="full-width-section">
-    <?php
-    foreach ($faq_section['faq'] as $key => $page_obj) {
-        $faq_image_id = $page_obj['image'];
-        $faq_image_array = wp_get_attachment_image_src($faq_image_id, 'full');
-        $faq_image_alt = Btemptd_Get_Image_alt($faq_image_id, 'Block Image');
-        $faq_image_url = Btemptd_Get_Image($faq_image_array);
-        $faq_title = $page_obj['title'];
-        $faq_ques = $page_obj['question'];
-        $faq_link = $page_obj['url'];
+        <?php foreach($static_section['faq'] as $section_key=> $section ): ?>
+            <?php if($section_key % 2 == 0) :?>
+                <?php $image_attributes = wp_get_attachment_image_src($section['image']);
+                $image=Btemptd_Get_image($image_attributes);
 
-        if ($key % 2 == 0) {
-            ?>
-    <div class="full-width-section--wrapper">
-
-            <?php if ($faq_image_id && !empty($faq_image_id)) :?>
-        <div class="full-width-section--image box-shadow-right">
-            <img class="img-fluid" src="<?php echo  esc_url($faq_image_url)?>" />
-        </div>
-            <?php endif; ?>
-
-        <div class="full-width-section--content">
-
-            <?php if ($faq_title && !empty($faq_title)) :?>
-            <div class="content-title">
-                <?php echo wp_kses_post($faq_title); ?>
-            </div>
-            <?php endif; ?>
-
-            <?php if ($faq_ques && !empty($faq_ques)) :?>
-            <div class="quote">
-                <?php echo wp_kses_post($faq_ques); ?>
-            </div>
-            <?php endif; ?>
-
-            <a class="arrow" href="<?php echo esc_url($faq_link);?>" target="_blank">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
-            </div>
-        </div>
-    </div>
-            <?php
-        } else {?>
-
-    <div class="full-width-section--wrapper even">
-
-            <?php if ($faq_image_id && !empty($faq_image_id)) :?>
-                <div class="full-width-section--image box-shadow-left">
-                    <img class="img-fluid" src="<?php echo  esc_url($faq_image_url)?>" />
+                ?>
+            <div class="full-width-section--wrapper">
+                <div class="full-width-section--image box-shadow-right">
+                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
-            <?php endif; ?>
+                <div class="full-width-section--content desktop">
+                    <div class="content-title">
+                        <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                    </div>
+                    <div class="quote quote-icon">
+                        <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                    </div>
+                    <div class="arrow">
+                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                    </div>
+                </div>
 
-        <div class="full-width-section--content">
-            <div class="arrow">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
+                <div class="full-width-section--content mobile">
+                    <div class="">
+                        <div class="content-title">
+                            <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                        </div>
+                        <div class="quote quote-icon">
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                        </div>
+                    </div>
+                    <div class="arrow">
+                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                    </div>
+                </div>
             </div>
+        <?php else:?>
+            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
+            $image=Btemptd_Get_image($image_attributes);
 
-            <?php if ($faq_title && !empty($faq_title)) :?>
-            <div class="content-title">
-                <?php echo wp_kses_post($faq_title); ?>
+            ?>
+            <div class="full-width-section--wrapper even">
+                <div class="full-width-section--image box-shadow-left">
+                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
+                </div>
+                <div class="full-width-section--content desktop">
+                    <div class="arrow">
+                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                    </div>
+                    <div class="content-title">
+                        <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                    </div>
+                    <div class="quote">
+                        <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                    </div>
+                </div>
+
+                <div class="full-width-section--content mobile">
+                    <div class="arrow">
+                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                    </div>
+                    <div>
+                        <div class="content-title">
+                            <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                        </div>
+                        <div class="quote">
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <?php endif; ?>
-
-            <?php if ($faq_ques && !empty($faq_ques)) :?>
-            <div class="quote">
-                <?php echo wp_kses_post($faq_ques); ?>
-            </div>
-            <?php endif; ?>
-
-        </div>
-    </div>
-
-        <?php }
-    }
-    ?>
+        <?php endif;?>
+        <?php endforeach; ?>
 
 </section>
+    <?php endif;?>
 <?php else:?>
     <?php
     $featured_posts= get_field('featured_posts', 'category_'.$current_cat_id);
     $slider_posts= get_field('slider_posts', 'category_'.$current_cat_id);
     ?>
     <!-- featured article -->
-    <?php if(!empty($featured_posts)):?>
+    <?php if(!empty($featured_posts)) :?>
     <section class="featured-articles">
         <div class="featured-articles--wrapper">
             <div class="swiper-container featured-articles-slider">
                 <div class="swiper-wrapper">
                     <?php foreach($featured_posts as $featured_post): ?>
-                    <?php
+                        <?php
                         $thumbnail_id  = get_post_thumbnail_id($featured_post);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
 
-                    ?>
+                        ?>
                     <div class="swiper-slide">
                         <div class="swiper-slide--image">
                         <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
@@ -144,14 +144,14 @@ if ($template == 'simple') :
 
                         <div class="swiper-slide--content">
                             <div class="swiper-slide--content__category">
-                                <?php $cat_name=Btemptd_Get_Primary_category($featured_post) ;?>
+                                <?php $cat_name=Btemptd_Get_Primary_category($featured_post);?>
                                 <?php echo esc_attr($cat_name->name);?>
                             </div>
                             <div class="swiper-slide--content__title">
                             <?php echo esc_attr(get_the_title($featured_post));?>
                             </div>
                             <div class="swiper-slide--content__para">
-                                <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$featured_post)));?>
+                                <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
                             </div>
                             <div class="swiper-slide--content__cta">
                                 <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -184,18 +184,18 @@ if ($template == 'simple') :
     <div class="spacer-80"></div>
     <?php endif;?>
 
-    <?php if(!empty($slider_posts)):?>
+    <?php if(!empty($slider_posts)) :?>
     <section class="featured-articles even">
         <div class="featured-articles--wrapper">
             <div class="swiper-container featured-articles-slider">
                 <div class="swiper-wrapper">
                     <?php foreach($slider_posts as $slider_post): ?>
-                    <?php
+                        <?php
                         $thumbnail_id  = get_post_thumbnail_id($slider_post);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
 
-                    ?>
+                        ?>
                     <div class="swiper-slide">
                         <div class="swiper-slide--image">
                         <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
@@ -205,14 +205,14 @@ if ($template == 'simple') :
 
                         <div class="swiper-slide--content">
                             <div class="swiper-slide--content__category">
-                                <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
+                                <?php $cat_name=Btemptd_Get_Primary_category($slider_post);?>
                                 <?php echo esc_attr($cat_name->name);?>
                             </div>
                             <div class="swiper-slide--content__title">
                             <?php echo esc_attr(get_the_title($slider_post));?>
                             </div>
                             <div class="swiper-slide--content__para">
-                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
+                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
                             </div>
                             <div class="swiper-slide--content__cta">
                                 <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -291,13 +291,13 @@ $args = array(
     'order' => 'DESC',
     'post_status'=>'publish'
   );
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query($args);
 $arr['publish']=$the_query->found_posts;
 $counts= array();
 $counts= (object)$arr;
 
-if(!empty($recent_posts)):
-    require locate_template('template-parts/explore-page.php');
+if(!empty($recent_posts)) :
+    include locate_template('template-parts/explore-page.php');
 
 endif;
 
