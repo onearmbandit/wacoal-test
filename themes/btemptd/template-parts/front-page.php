@@ -325,7 +325,7 @@ endif;?>>
     </div>
 </section> -->
 
-<section class="image-content image-content-gif">
+<!-- <section class="image-content image-content-gif">
     <div class="image-content--wrapper">
         <div class="odd">
             <div class="image-content--image">
@@ -377,7 +377,7 @@ endif;?>>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Entry page full width Slider -->
 
