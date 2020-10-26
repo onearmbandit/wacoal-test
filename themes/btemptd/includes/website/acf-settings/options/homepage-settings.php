@@ -18,7 +18,7 @@ acf_add_local_field_group(
     'fields' => array(
         array(
             'key' => 'field_5f84584933907',
-            'label' => 'Banner',
+            'label' => 'Desktop Banner',
             'name' => 'banner',
             'type' => 'image',
             'instructions' => '',
