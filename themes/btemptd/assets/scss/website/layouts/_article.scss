@@ -575,3 +575,32 @@
     }
 }
 }
+
+
+.article--para {
+  @include NeutraText-BookAlt;
+    font-size: calcRem(16);
+    line-height: calcRem(20);
+    max-width: 90%;
+    margin: auto;
+
+  @include respond-above(sm) {
+    width: get-vw(1280px);
+    font-size: get-vw(21px);
+    line-height: get-vw(34px);
+  }
+}
+
+.article--para-half {
+  @include NeutraText-BookAlt;
+    font-size: calcRem(16);
+    line-height: calcRem(20);
+    max-width: 90%;
+    margin: auto;
+
+  @include respond-above(sm) {
+    width: get-vw(600px);
+    font-size: get-vw(21px);
+    line-height: get-vw(34px);
+  }
+}

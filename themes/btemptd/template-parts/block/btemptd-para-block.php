@@ -12,14 +12,14 @@
 
 if ($para_type == 'full_width') {
     ?>
-     <div class="article-header--para">
+     <section class="article--para">
         <?php echo wp_kses_post($content);?>
-    </div>
+    </section>
 <?php }
 if ($para_type == 'center_width') { ?>
-    <div class="article-header--para-half">
+    <section class="article--para-half">
         <?php echo wp_kses_post($content);?>
-    </div>
+    </section>
 <?php }
 ?>
 

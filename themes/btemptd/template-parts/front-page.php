@@ -379,6 +379,10 @@ endif;?>>
     </div>
 </section> -->
 
+<section class="article-para">
+
+</section>
+
 <!-- Entry page full width Slider -->
 
 <?php if(!empty($recent_posts)):?>
