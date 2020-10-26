@@ -22,9 +22,10 @@
             $list_image_url = Btemptd_Get_Image($list_image_array);
             $list_quotes_text = $list['quotes_text'];
             $list_name = $list['name'];
+            $add_button = $list['add_button'];
             if ($add_button == true) {
-                $button_label = $list_data['button_text'];
-                $button_url = $list_data['button_url'];
+                $button_label = $list['button_text'];
+                $button_url = $list['button_url'];
             }
             if ($key % 2 == 0) {
                 ?>
@@ -56,7 +57,7 @@
                             ?>
                         <div class="shop-button">
                             <a class="see-more-button" href="<?php echo esc_url($button_url); ?>">
-                                <php echo wp_kses_post($button_label);?>
+                                <?php echo wp_kses_post($button_label);?>
                             </a>
                         </div>
                         <?php endif; ?>
@@ -97,7 +98,7 @@
                     ?>
                     <div class="shop-button">
                     <a class="see-more-button" href="<?php echo esc_url($button_url); ?>">
-                        <php echo wp_kses_post($button_label);?>
+                        <?php echo wp_kses_post($button_label);?>
                     </a>
                     </div>
                 <?php endif; ?>
