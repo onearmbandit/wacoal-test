@@ -18,7 +18,7 @@
       success: function (html) {
         $("#offset").val(offset);
         $(html).insertAfter( $( ".explore-see-more" ).last() );
-
+        $(window).scrollTop($(".explore-see-more").last().offset().top-180);
 
         var article_count= $(".explore-see-more .explore-blog--box").length;
         console.log(article_count);
