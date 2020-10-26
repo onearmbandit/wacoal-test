@@ -1516,6 +1516,32 @@ Files inside this folder can contain specific element styles and layout.
   margin-bottom: 0;
   align-items: stretch; }
 
+.image-content .see-more-button {
+  font-family: 'NeutraText-BoldAlt';
+  background: var(--color-tile-bg);
+  color: var(--color-secondary);
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  display: inline-block; }
+  @media (min-width: 768px) {
+    .image-content .see-more-button {
+      font-size: 1.66667vw;
+      padding-top: 1.35417vw;
+      padding-right: 3.02083vw;
+      padding-bottom: 1.35417vw;
+      padding-left: 3.02083vw; } }
+  .image-content .see-more-button .cta-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (min-width: 768px) {
+      .image-content .see-more-button .cta-button {
+        width: 3.75vw;
+        height: 3.75vw;
+        bottom: -2.91667vw; } }
+
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {
   width: 30%; }

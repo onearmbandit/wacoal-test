@@ -343,7 +343,7 @@ endif;?>>
                             –@ericaluoo
                         </div>
                         <div class="shop-button">
-                            <a>Shop Now</a>
+                            <a class="see-more-button">Shop Now</a>
                         </div>
                     </div>
                     <div class="quote-right">
@@ -368,7 +368,7 @@ endif;?>>
                             –@ericaluoo
                         </div>
                         <div class="shop-button">
-                            <a>Shop Now</a>
+                            <a class="see-more-button">Shop Now</a>
                         </div>
                     </div>
                     <div class="quote-right">

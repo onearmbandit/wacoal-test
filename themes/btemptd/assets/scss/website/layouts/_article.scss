@@ -511,4 +511,35 @@
       align-items: stretch;
     }
   }
+
+  .see-more-button {
+    @include NeutraText-BoldAlt;
+    background: var(--color-tile-bg);
+    color: var(--color-secondary);
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+
+    @include respond-above(sm) {
+      font-size: get-vw(32px);
+      padding-top: get-vw(26px);
+      padding-right: get-vw(58px);
+      padding-bottom: get-vw(26px);
+      padding-left: get-vw(58px);
+    }
+
+    .cta-button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include respond-above(sm) {
+        width: get-vw(72px);
+        height: get-vw(72px);
+        bottom: get-vw(-56px);
+      }
+    }
+}
 }
