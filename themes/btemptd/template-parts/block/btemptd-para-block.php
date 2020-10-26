@@ -17,7 +17,7 @@ if ($para_type == 'full_width') {
     </div>
 <?php }
 if ($para_type == 'center_width') { ?>
-    <div class="article-header--para">
+    <div class="article-header--para-half">
         <?php echo wp_kses_post($content);?>
     </div>
 <?php }
