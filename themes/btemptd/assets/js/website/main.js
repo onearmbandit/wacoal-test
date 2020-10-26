@@ -1,5 +1,5 @@
 (function ($) {
-  console.log('inside website main.js');
+
   $(document).on('click', '.see-more-button', function (event) {
 
     var input = $("#offset").val();
@@ -13,16 +13,19 @@
         cat_id:$("#cat_id").val(),
         offset:offset,
         nonce:btemptd_js_var.nonce,
+        post_id:$("#hidden_post").val(),
       },
       success: function (html) {
         $("#offset").val(offset);
+        $(html).insertAfter( $( ".explore-see-more" ).last() );
 
-        $(".explore-see-more").append(html);
+
         var article_count= $(".explore-see-more .explore-blog--box").length;
-
+        console.log(article_count);
         if(html == 0 || total == article_count){
 
           $(".see-more-button").addClass("disabled");
+          $(".see-more-button").hide();
         }
 
 

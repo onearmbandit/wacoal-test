@@ -13,6 +13,7 @@
 $copyright_value = get_field('copyright_text', 'options');
 $social_share = get_field('social_share', 'options');
 $oembeded = get_field('instagram_feeds', 'options');
+$subscribe = get_field('subscribe_link', 'options');
 ?>
 <footer class="footer-section">
     <div class="footer-wrapper">
@@ -24,9 +25,13 @@ $oembeded = get_field('instagram_feeds', 'options');
             <?php dynamic_sidebar('footer-4');?>
         </div>
         <div class="footer-wrapper--right">
-            <div class="footer-subscribe">
-                <input type="text" placeholder="Email Address"><button type="button">subscribe</button>
-            </div>
+            <?php if(!empty($subscribe)):?>
+            <form method="post" action="<?php echo $subscribe;?>">
+                <div class="footer-subscribe">
+                    <input type="text" placeholder="Email Address"><button type="submit">subscribe</button>
+                </div>
+            </form>
+            <?php endif;?>
             <div class="footer-images">
                 <iframe src="<?php echo esc_url($oembeded);?>" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0px; overflow: hidden; height: 81.9px;"></iframe>
             </div>
@@ -48,7 +53,7 @@ $oembeded = get_field('instagram_feeds', 'options');
 
     <div class="footer-wrapper">
         <div class="footer-wrapper--copyright">
-            <?php echo esc_attr(Btemptd_Remove_ptag($copyright_value));?>
+            <?php echo Btemptd_Remove_ptag($copyright_value);?>
         </div>
     </div>
 </footer>
