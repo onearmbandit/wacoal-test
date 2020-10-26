@@ -10962,7 +10962,17 @@ __webpack_require__(/*! ../js/website/btemptd-pagination.js */ "./themes/btemptd
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.loadMode = 1;
 
-(function ($) {})(jQuery);
+(function ($) {
+  $(".mobile-nav").click(function () {
+    $(".header-navigation-mobile").toggleClass("mobile-nav-open");
+  });
+
+  if ($(window).width() <= 767) {
+    $('.footer-links--title').click(function () {
+      $(this).parent().toggleClass('open');
+    });
+  }
+})(jQuery);
 
 /***/ }),
 
@@ -11085,6 +11095,19 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
   var featuredArticles = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.featured-articles-slider', {
     slidesPerView: 1,
     centeredSlides: true,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+  var featuredArticlesMo = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.featured-articles-slider-mo', {
+    slidesPerView: 1,
+    // centeredSlides: true,
     loop: true,
     pagination: {
       el: '.swiper-pagination',

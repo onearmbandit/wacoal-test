@@ -1,4 +1,5 @@
 .article-header {
+  margin-bottom: calcRem(25);
 
   @include respond-above(sm) {
     margin-bottom: get-vw(79px);
@@ -18,6 +19,7 @@
     width: 100%;
     background-size: cover;
     background-position: center;
+    height: calcRem(182);
 
     @include respond-above(sm) {
       height: get-vw(678px);
@@ -27,6 +29,8 @@
 
   &--category {
     @include NeutraText-BookAlt;
+    margin-top: calcRem(16);
+    margin-bottom: calcRem(18);
 
     @include respond-above(sm) {
       font-size: get-vw(33px);
@@ -38,25 +42,39 @@
   &--title {
     @include NeutraText-BookAlt;
     text-transform: uppercase;
+    font-size: calcRem(36);
+    line-height: calcRem(34);
+    margin-bottom: 4px;
 
     @include respond-above(sm) {
       font-size: get-vw(94px);
       line-height: get-vw(90px);
+      margin-bottom: 0;
     }
   }
 
   &--para {
     @include NeutraText-LightAlt;
+    font-size: calcRem(22);
+    letter-spacing: 0.5px;
+    max-width: 90%;
+    margin: auto;
 
     @include respond-above(sm) {
+      max-width: 100%;
       font-size: get-vw(46px);
       line-height: get-vw(47px);
+      letter-spacing: get-vw(1.61px);
     }
   }
 }
 
 
 .three-reason {
+
+  @include respond-below(sm) {
+    padding: calcRem(0, 18);
+  }
 
   &--wrapper {
     margin: auto;
@@ -69,6 +87,7 @@
   &--title {
     text-align: center;
     @include NeutraText-DemiAlt;
+    margin-bottom: calcRem(16);
 
     @include respond-above(sm) {
       font-size: get-vw(32px);
@@ -94,6 +113,8 @@
         align-items: center;
         position: absolute;
         color: var(--color-text);
+        width: calcRem(198);
+        right: 0;
 
         @include respond-above(sm) {
           width: get-vw(1060px);
@@ -105,6 +126,20 @@
         &__number {
           @include NeutraText-BoldAlt;
 
+          @include respond-below(sm) {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: var(--color-primary);
+            width: calcRem(79);
+            height: calcRem(79);
+            border-radius: 50%;
+            font-size: calcRem(56);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
           @include respond-above(sm) {
             font-size: get-vw(187px);
             line-height: get-vw(89px);
@@ -113,16 +148,22 @@
 
         &__para {
           @include NeutraText-BookAlt;
+          padding: calcRem(35, 28);
+          font-size: calcRem(14);
+          line-height: calcRem(16);
 
           @include respond-above(sm) {
             font-size: get-vw(29px);
             line-height: get-vw(35px);
             margin-left: get-vw(48px);
+            padding: 0;
           }
         }
       }
 
       &--image {
+        width: calcRem(154);
+        height: calcRem(205);
 
         @include respond-above(sm) {
           width: get-vw(775px);
@@ -133,8 +174,10 @@
       }
 
       &.odd {
-          justify-content: flex-end;
 
+        @include respond-above(sm) {
+          justify-content: flex-end;
+        }
           .reason-box--content {
 
             @include respond-above(sm) {
@@ -178,8 +221,11 @@
     }
 
     &.top {
-
       z-index: 2;
+
+      @include respond-below(sm) {
+        flex-direction: column;
+      }
     }
 
     &.bottom {
@@ -196,6 +242,11 @@
     position: relative;
     @include NeutraText-DemiAlt;
     text-align: center;
+    padding: calcRem(35);
+    width: calcRem(333);
+    font-size: calcRem(16);
+    line-height: calcRem(28);
+
 
     @include respond-above(sm) {
       width: get-vw(670px);
@@ -211,13 +262,17 @@
 
     .cta-button {
       position: absolute;
-      top: get-vw(-40px);
-      left: 50%;
-      transform: translateX(-50%);
+      top: calcRem(-22px);
+      left: calcRem(40);
+      width: calcRem(45);
+      height: calcRem(45);
 
       @include respond-above(sm) {
         width: get-vw(127px);
         height: get-vw(127px);
+        top: get-vw(-40px);
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
@@ -227,6 +282,10 @@
     position: relative;
     @include NeutraText-DemiAlt;
     text-align: center;
+    margin-top: calcRem(54);
+    padding: calcRem(40, 44, 22);
+    font-size: calcRem(17);
+    line-height: calcRem(30);
 
     @include respond-above(sm) {
       width: get-vw(682px);
@@ -242,11 +301,14 @@
 
     .cta-button {
       position: absolute;
-      top: get-vw(-40px);
+      width: calcRem(45);
+      height: calcRem(45);
+      top: calcRem(-22px);
       left: 50%;
       transform: translateX(-50%);
 
       @include respond-above(sm) {
+        top: get-vw(-40px);
         width: get-vw(127px);
         height: get-vw(127px);
       }
@@ -255,10 +317,18 @@
 
   &--banner {
     width: 100%;
+    height: calcRem(211);
+    margin-top: calcRem(-20);
 
     @include respond-above(sm) {
       height: get-vw(753px);
       margin-bottom: get-vw(90px);
+      margin-top: 0;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
     }
   }
 }

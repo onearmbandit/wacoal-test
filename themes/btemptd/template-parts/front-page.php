@@ -41,12 +41,26 @@ endif;?>>
                 <div class="full-width-section--image box-shadow-right">
                     <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
-                <div class="full-width-section--content">
+                <div class="full-width-section--content desktop">
                     <div class="content-title">
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
                     <div class="quote quote-icon">
                         <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                    </div>
+                    <div class="arrow">
+                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                    </div>
+                </div>
+
+                <div class="full-width-section--content mobile">
+                    <div class="">
+                        <div class="content-title">
+                            <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                        </div>
+                        <div class="quote quote-icon">
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                        </div>
                     </div>
                     <div class="arrow">
                         <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
@@ -62,7 +76,7 @@ endif;?>>
                 <div class="full-width-section--image box-shadow-left">
                     <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
-                <div class="full-width-section--content">
+                <div class="full-width-section--content desktop">
                     <div class="arrow">
                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
                     </div>
@@ -71,6 +85,20 @@ endif;?>>
                     </div>
                     <div class="quote">
                         <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                    </div>
+                </div>
+
+                <div class="full-width-section--content mobile">
+                    <div class="arrow">
+                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                    </div>
+                    <div>
+                        <div class="content-title">
+                            <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                        </div>
+                        <div class="quote">
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,7 +110,7 @@ endif;?>>
 
 <!-- featured article -->
 <?php if(!empty($featured_posts)):?>
-<section class="featured-articles">
+<section class="featured-articles desktop">
     <div class="featured-articles--wrapper box-shadow-right">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
@@ -143,7 +171,7 @@ endif;?>>
 <?php endif;?>
 
 <?php if(!empty($slider_posts)):?>
-<section class="featured-articles even">
+<section class="featured-articles desktop even">
     <div class="featured-articles--wrapper box-shadow-right">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
@@ -175,6 +203,68 @@ endif;?>>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
                                 <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+
+
+            </div>
+
+            <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif;?>
+
+<?php if(!empty($slider_posts)):?>
+<section class="featured-articles-mobile">
+    <div class="featured-articles-mobile--wrapper">
+        <div class="swiper-container featured-articles-slider-mo">
+            <div class="swiper-wrapper">
+                <?php foreach($slider_posts as $slider_post): ?>
+                <?php
+                    $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
+                ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
+                            <?php echo esc_attr($cat_name->name);?>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                           <?php echo esc_attr(get_the_title($slider_post));?>
+                        </div>
+                    </div>
+                    <div class="swiper-slide--image">
+                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+
+                    </div>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__para">
+                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                Read more
                             </a>
                         </div>
                     </div>

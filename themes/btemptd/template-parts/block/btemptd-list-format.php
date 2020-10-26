@@ -27,7 +27,7 @@
         if ($key % 2 == 0) {
             ?>
         <div class="reason-box odd">
-            <div class="reason-box--content">
+            <div class="reason-box--content box-shadow-right">
                 <div  class="reason-box--content__number">
                     <?php echo wp_kses_post($key + 1) . '.'; ?>
                 </div>
@@ -51,7 +51,7 @@
         } else { ?>
 
         <div class="reason-box even">
-            <div class="reason-box--content">
+            <div class="reason-box--content box-shadow-right">
                 <div  class="reason-box--content__number">
                     <?php echo wp_kses_post($key + 1) . '.'; ?>
                 </div>

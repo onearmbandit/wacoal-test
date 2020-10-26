@@ -1,12 +1,13 @@
 .footer-section {
   background: var(--color-tile-bg);
   width: var(--width-100);
-  padding-top: calcRem(30);
-  padding-bottom: calcRem(22);
+  padding: calcRem(30, 36, 22);
 
   @include respond-above(sm) {
     padding-top: get-vw(90px);
     padding-bottom: get-vw(71px);
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -155,15 +156,21 @@
 
 .footer-subscribe {
   display: flex;
+  margin: calcRem(9, 0, 25);
 
   @include respond-above(sm) {
     margin-bottom: get-vw(74px);
+    margin-top: 0;
   }
 
   input {
     border: 1px solid #CBCBCB;
     background: var(--color-white);
     @include NeutraText-DemiAlt;
+    height: calcRem(34);
+    width: calcRem(194);
+    font-size: calcRem(10);
+    padding-left: calcRem(13);
 
     @include respond-above(sm) {
       font-size: 14px;
@@ -180,6 +187,8 @@
     @include NeutraText-Bold;
     color: var(--color-white);
     flex: 1;
+    height: calcRem(34);
+    font-size: calcRem(10);
 
     @include respond-above(sm) {
       font-size: get-vw(17px);

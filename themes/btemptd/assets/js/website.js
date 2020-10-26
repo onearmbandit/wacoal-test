@@ -12,4 +12,14 @@ window.lazySizesConfig.loadMode = 1;
 
 
 
-(function ($) {})(jQuery);
+(function ($) {
+  $(".mobile-nav").click(function () {
+    $(".header-navigation-mobile").toggleClass("mobile-nav-open");
+  });
+  if($(window).width() <= 767){
+    $('.footer-links--title').click(function() {
+      $(this).parent().toggleClass('open');
+    });
+  }
+
+})(jQuery);

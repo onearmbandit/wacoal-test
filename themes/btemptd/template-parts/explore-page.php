@@ -36,7 +36,7 @@ endif;
                     <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
                 </div>
 
-                <div class="explore-blog--content">
+                <div class="explore-blog--content box">
                     <div class="explore-blog--content__cta">
                         <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
