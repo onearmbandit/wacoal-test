@@ -11147,6 +11147,7 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
       success: function success(html) {
         $("#offset").val(offset);
         $(html).insertAfter($(".explore-see-more").last());
+        $(window).scrollTop($(".explore-see-more").last().offset().top - 180);
         var article_count = $(".explore-see-more .explore-blog--box").length;
         console.log(article_count);
 
@@ -11190,7 +11191,7 @@ __webpack_require__(/*! ../../scss/website/btemptd-swiper.scss */ "./themes/btem
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/admin/Documents/Projects/Wacoal/wacoal/themes/btemptd/assets/js/website.js */"./themes/btemptd/assets/js/website.js");
+module.exports = __webpack_require__(/*! /home/vidya/Projects/wacoal/themes/btemptd/assets/js/website.js */"./themes/btemptd/assets/js/website.js");
 
 
 /***/ }),
