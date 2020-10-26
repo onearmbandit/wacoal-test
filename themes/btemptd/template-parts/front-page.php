@@ -379,8 +379,8 @@ endif;?>>
     </div>
 </section> -->
 
-<section class="article-para">
-
+<section class="article-para-bold">
+    It is one of our all-time best sellers, and if it isn’t already in your bra wardrobe, here are 3 reasons why it should be:
 </section>
 
 <!-- Entry page full width Slider -->

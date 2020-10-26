@@ -604,3 +604,19 @@
     line-height: get-vw(34px);
   }
 }
+
+.article-para-bold {
+  @include NeutraText-DemiAlt;
+    font-size: calcRem(16);
+    line-height: calcRem(20);
+    max-width: 90%;
+    margin: 20px auto;
+
+  @include respond-above(sm) {
+    width: get-vw(1280px);
+    font-size: get-vw(32px);
+    line-height: get-vw(41px);
+    margin-top: get-vw(40px);
+    margin-bottom: get-vw(40px);
+  }
+}

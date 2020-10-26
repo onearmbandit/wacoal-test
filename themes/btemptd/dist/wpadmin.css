@@ -1609,6 +1609,20 @@ Files inside this folder can contain specific element styles and layout.
       font-size: 1.09375vw;
       line-height: 1.77083vw; } }
 
+.article-para-bold {
+  font-family: 'NeutraText-DemiAlt';
+  font-size: 1rem;
+  line-height: 1.25rem;
+  max-width: 90%;
+  margin: 20px auto; }
+  @media (min-width: 768px) {
+    .article-para-bold {
+      width: 66.66667vw;
+      font-size: 1.66667vw;
+      line-height: 2.13542vw;
+      margin-top: 2.08333vw;
+      margin-bottom: 2.08333vw; } }
+
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {
   width: 30%; }
