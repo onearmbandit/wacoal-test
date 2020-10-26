@@ -293,7 +293,7 @@ endif;?>>
 <?php endif;?>
 
 
-<section class="image-content">
+<!-- <section class="image-content">
     <div class="image-content--wrapper">
         <div class="odd">
             <div class="image-content--image">
@@ -323,7 +323,7 @@ endif;?>>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Entry page full width Slider -->
 
