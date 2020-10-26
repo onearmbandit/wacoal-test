@@ -325,6 +325,60 @@ endif;?>>
     </div>
 </section>
 
+<section class="image-content image-content-gif">
+    <div class="image-content--wrapper">
+        <div class="odd">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content">
+                    <div class="quote-left">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
+                    </div>
+                    <div class="content-inner">
+                        <div class="image-content--content__title">
+                        It’s so soft and comfortable I almost forget I’m wearing it!
+                        </div>
+                        <div class="image-content--content__tag">
+                            –@ericaluoo
+                        </div>
+                        <div class="shop-button">
+                            <a>Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="quote-right">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
+                    </div>
+            </div>
+        </div>
+
+        <div class="even">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content">
+                    <div class="quote-left">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
+                    </div>
+                    <div class="content-inner">
+                        <div class="image-content--content__title">
+                            When a bra-less kinda girl finally finds her bra-match…SO GOOD.
+                        </div>
+                        <div class="image-content--content__tag">
+                            –@ericaluoo
+                        </div>
+                        <div class="shop-button">
+                            <a>Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="quote-right">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Entry page full width Slider -->
 
 <?php if(!empty($recent_posts)):?>

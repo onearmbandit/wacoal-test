@@ -1459,6 +1459,63 @@ Files inside this folder can contain specific element styles and layout.
     .image-content .even .image-content--content {
       margin-right: 3.33333vw; } }
 
+@media (min-width: 768px) {
+  .image-content.image-content-gif .image-content--image {
+    width: 33.33333vw;
+    height: 33.33333vw; } }
+
+.image-content.image-content-gif .image-content--content {
+  background: transparent;
+  color: var(--color-text);
+  position: relative;
+  text-align: center;
+  margin: 0; }
+  @media (min-width: 768px) {
+    .image-content.image-content-gif .image-content--content {
+      width: 33.33333vw; } }
+  .image-content.image-content-gif .image-content--content__title {
+    font-family: 'NeutraText-BoldAlt'; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content__title {
+        font-size: 1.09375vw;
+        line-height: 1.77083vw;
+        margin-bottom: 1.5625vw; } }
+  .image-content.image-content-gif .image-content--content__tag {
+    font-family: 'NeutraText-BookItalicAlt'; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content__tag {
+        font-size: 1.09375vw;
+        line-height: 1.77083vw; } }
+  @media (min-width: 768px) {
+    .image-content.image-content-gif .image-content--content .content-inner {
+      position: absolute;
+      width: 20.3125vw;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%); } }
+  .image-content.image-content-gif .image-content--content .quote-left {
+    position: absolute; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content .quote-left {
+        width: 2.8125vw;
+        top: 4.01042vw;
+        left: 4.01042vw; } }
+  .image-content.image-content-gif .image-content--content .quote-right {
+    position: absolute; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content .quote-right {
+        width: 2.8125vw;
+        bottom: 4.01042vw;
+        right: 4.01042vw; } }
+
+.image-content.image-content-gif .odd {
+  margin-bottom: 0;
+  align-items: stretch; }
+
+.image-content.image-content-gif .even {
+  margin-bottom: 0;
+  align-items: stretch; }
+
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {
   width: 30%; }
