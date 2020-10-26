@@ -10,8 +10,6 @@
  * @link     Wacoal
  */
 
-
-
 /**
  * Callback function for review list block
  *
@@ -36,6 +34,7 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
         }
     }
 }
+
 /**
  * Callback function for text image block
  *
@@ -62,6 +61,41 @@ function Btemptd_Img_List_Format_Render_callback( $block )
             ?>
             <h4><u>Btemptd Image Block:</u></h4>
             <span style="color:red">Empty Btemptd Image Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for image list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_List_Image_Data_Format_Render_callback( $block )
+{
+
+    $list_type  = get_field('list_type');
+    if ($list_type == 'simple_data') {
+        $list_data = get_field('content_with_title');
+        $list_block_data  = $list_data['list_image_data'];
+        $add_button = $list_data['add_button'];
+        if ($add_button == true) {
+            $button_label = $list_data['button_label'];
+            $button_url = $list_data['button_url'];
+        }
+    }
+
+    $shortcode_template   = '/template-parts/block/btemptd-image-list-format.php';
+
+    if (! empty($list_type) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd List Block:</u></h4>
+            <span style="color:red">Empty Btemptd List Block</span>
             <?php
         }
     }
