@@ -1391,6 +1391,74 @@ Files inside this folder can contain specific element styles and layout.
        object-fit: cover;
     height: 100%; }
 
+@media (min-width: 768px) {
+  .image-content {
+    margin-top: 4.0625vw;
+    margin-bottom: 6.40625vw; } }
+
+.image-content--wrapper {
+  margin: auto; }
+  @media (min-width: 768px) {
+    .image-content--wrapper {
+      width: 66.66667vw; } }
+
+@media (min-width: 768px) {
+  .image-content--image {
+    width: 29.16667vw;
+    height: 29.16667vw; } }
+
+.image-content--image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%; }
+
+.image-content--content {
+  background: var(--color-tile-bg);
+  color: var(--color-text);
+  position: relative; }
+  @media (min-width: 768px) {
+    .image-content--content {
+      width: 30.05208vw;
+      padding-top: 2.70833vw;
+      padding-right: 2.70833vw;
+      padding-bottom: 2.70833vw;
+      padding-left: 2.70833vw; } }
+  .image-content--content__head {
+    font-family: 'NeutraText-BoldItalicAlt'; }
+    @media (min-width: 768px) {
+      .image-content--content__head {
+        font-size: 4.0625vw;
+        margin-bottom: 1.875vw; } }
+  .image-content--content__para {
+    font-family: 'NeutraText-BookAlt'; }
+    @media (min-width: 768px) {
+      .image-content--content__para {
+        font-size: 1.04167vw;
+        line-height: 1.25vw; } }
+
+.image-content .odd {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+  @media (min-width: 768px) {
+    .image-content .odd {
+      margin-bottom: 2.29167vw; } }
+  @media (min-width: 768px) {
+    .image-content .odd .image-content--content {
+      margin-left: 3.33333vw; } }
+
+.image-content .even {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+  @media (min-width: 768px) {
+    .image-content .even {
+      flex-direction: row-reverse;
+      margin-bottom: 2.29167vw; } }
+  @media (min-width: 768px) {
+    .image-content .even .image-content--content {
+      margin-right: 3.33333vw; } }
+
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {
   width: 30%; }

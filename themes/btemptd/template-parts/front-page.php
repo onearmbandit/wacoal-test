@@ -293,6 +293,38 @@ endif;?>>
 <?php endif;?>
 
 
+<section class="image-content">
+    <div class="image-content--wrapper">
+        <div class="odd">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content box-shadow-right">
+                <div class="image-content--content__head">
+                    Comfort
+                </div>
+                <div class="image-content--content__para">
+                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
+                </div>
+            </div>
+        </div>
+
+        <div class="even">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content box-shadow-right">
+            <div class="image-content--content__head">
+                Convertibility
+            </div>
+            <div class="image-content--content__para">
+                Many tweens wear clothing that’s more casual— such as tank tops with skinny straps that might expose bare shoulders. We suggest bras with a J-hook on the back straps for the choice of converting the bra into a racerback style.
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Entry page full width Slider -->
 
 <?php if(!empty($recent_posts)):?>
