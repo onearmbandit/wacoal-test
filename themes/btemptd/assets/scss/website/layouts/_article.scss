@@ -68,18 +68,31 @@
     }
   }
 
-  &--para-half {
+  &--para-two {
+    @include NeutraText-BookAlt;
+    font-size: calcRem(16);
+    line-height: calcRem(20);
+    max-width: 90%;
+    margin: auto;
+
+    @include respond-above(sm) {
+      max-width: 100%;
+      font-size: get-vw(21px);
+      line-height: get-vw(34px);
+    }
+  }
+
+  &--para--two-half {
     @include NeutraText-LightAlt;
-    font-size: calcRem(22);
-    letter-spacing: 0.5px;
+    font-size: calcRem(16);
+    line-height: calcRem(20);
     max-width: 90%;
     margin: auto;
 
     @include respond-above(sm) {
       max-width: 50%;
-      font-size: get-vw(46px);
-      line-height: get-vw(47px);
-      letter-spacing: get-vw(1.61px);
+      font-size: get-vw(21px);
+      line-height: get-vw(34px);
     }
   }
 }

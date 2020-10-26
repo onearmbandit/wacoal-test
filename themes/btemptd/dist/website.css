@@ -1209,18 +1209,28 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 2.39583vw;
         line-height: 2.44792vw;
         letter-spacing: 0.08385vw; } }
-  .article-header--para-half {
-    font-family: 'NeutraText-LightAlt';
-    font-size: 1.375rem;
-    letter-spacing: 0.5px;
+  .article-header--para-two {
+    font-family: 'NeutraText-BookAlt';
+    font-size: 1rem;
+    line-height: 1.25rem;
     max-width: 90%;
     margin: auto; }
     @media (min-width: 768px) {
-      .article-header--para-half {
+      .article-header--para-two {
+        max-width: 100%;
+        font-size: 1.09375vw;
+        line-height: 1.77083vw; } }
+  .article-header--para--two-half {
+    font-family: 'NeutraText-LightAlt';
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 90%;
+    margin: auto; }
+    @media (min-width: 768px) {
+      .article-header--para--two-half {
         max-width: 50%;
-        font-size: 2.39583vw;
-        line-height: 2.44792vw;
-        letter-spacing: 0.08385vw; } }
+        font-size: 1.09375vw;
+        line-height: 1.77083vw; } }
 
 @media (max-width: 767px) {
   .three-reason {
