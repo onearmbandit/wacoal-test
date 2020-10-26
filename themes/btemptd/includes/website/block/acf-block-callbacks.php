@@ -77,7 +77,9 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
 {
 
     $list_type  = get_field('list_type');
+
     if ($list_type == 'simple_data') {
+        $shortcode_template   = '/template-parts/block/btemptd-image-list-format.php';
         $list_data = get_field('content_with_title');
         $list_block_data  = $list_data['list_image_data'];
         $add_button = $list_data['add_button'];
@@ -85,9 +87,10 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
             $button_label = $list_data['button_label'];
             $button_url = $list_data['button_url'];
         }
+    } elseif ($list_type == 'quotes_data') {
+        $shortcode_template   = '/template-parts/block/btemptd-quotes-list-format.php';
+        $list_data = get_field('content_with_quotes');
     }
-
-    $shortcode_template   = '/template-parts/block/btemptd-image-list-format.php';
 
     if (! empty($list_type) ) {
         include locate_template($shortcode_template);
@@ -96,6 +99,33 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
             ?>
             <h4><u>Btemptd List Block:</u></h4>
             <span style="color:red">Empty Btemptd List Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for paragraph block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Para_Format_Render_callback( $block )
+{
+    $block_fields = get_field('group');
+    $para_type =  $block_fields['select_type'];
+    $content = $block_fields['content'];
+
+    $shortcode_template   = '/template-parts/block/btemptd-para-block.php';
+
+    if (! empty($para_type) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Paragraph Block:</u></h4>
+            <span style="color:red">Empty Btemptd Paragraph Block</span>
             <?php
         }
     }
