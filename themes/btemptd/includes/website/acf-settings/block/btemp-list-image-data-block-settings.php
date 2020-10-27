@@ -145,6 +145,22 @@ acf_add_local_field_group(
                             'media_upload' => 1,
                             'delay' => 0,
                         ),
+                        array(
+                            'key' => 'field_5f98151fae465',
+                            'label' => 'Block Link',
+                            'name' => 'block_link',
+                            'type' => 'url',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                        ),
                     ),
                 ),
                 array(
@@ -400,4 +416,5 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 

@@ -22,17 +22,24 @@ if ($list_type == 'simple_data') :
         $list_image_url = Btemptd_Get_Image($list_image_array);
         $list_title = $list['title'];
         $list_desc = $list['description'];
+        $list_block_link = $list['block_link'];
 
         if ($key % 2 == 0) {
             ?>
         <div class="odd">
             <?php if ($list_image_id && !empty($list_image_id)) :
-                ?>
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url($list_image_url); ?>"
-                    alt="<?php echo wp_kses_post($list_image_alt); ?>" />
-            </div>
-                <?php
+
+                if($list_block_link && !empty($list_block_link)) :?>
+                    <a href="<?php echo esc_url($list_block_link);?>" target='_blank'>
+                <?php endif;?>
+
+                <div class="image-content--image">
+                    <img class="img-fluid" src="<?php echo  esc_url($list_image_url); ?>"
+                        alt="<?php echo wp_kses_post($list_image_alt); ?>" />
+                </div>
+                <?php if($list_block_link && !empty($list_block_link)) :?>
+                    </a>
+                <?php endif;
             endif; ?>
             <div class="image-content--content box-shadow-right">
                 <?php if ($list_title && !empty($list_title)) :?>
@@ -54,12 +61,16 @@ if ($list_type == 'simple_data') :
             ?>
         <div class="even">
             <?php if ($list_image_id && !empty($list_image_id)) :
-                ?>
+                if($list_block_link && !empty($list_block_link)) :?>
+                    <a href="<?php echo esc_url($list_block_link);?>" target='_blank'>
+                <?php endif;?>
             <div class="image-content--image">
                 <img class="img-fluid" src="<?php echo esc_url($list_image_url); ?>"
                 alt="<?php echo wp_kses_post($list_image_alt); ?>" />
             </div>
-                <?php
+                <?php if($list_block_link && !empty($list_block_link)) :?>
+                    </a>
+                <?php endif;
             endif; ?>
             <div class="image-content--content box-shadow-right">
             <?php if ($list_title && !empty($list_title)) :?>
