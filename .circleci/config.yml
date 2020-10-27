@@ -22,6 +22,18 @@ jobs:
       - run:
           name: Remove local dev only code
           command: sed --in-place '/LOCALDEV START/,/LOCALDEV END/{//p;d;}' themes/wacoal/functions.php
+      - run: npm run btemptd:build
+      - run:
+          name: Test the btemptd-build
+          command: |
+            if [ -f themes/btemptd/dist/assets.json ]; then
+              echo "Btemptd Build succeeded";
+            else
+              echo "Btemptd Build failed, assets.json file missing"; exit 1
+            fi
+      - run:
+          name: Remove local dev only code
+          command: sed --in-place '/LOCALDEV START/,/LOCALDEV END/{//p;d;}' themes/btemptd/functions.php
       - deploy:
           name: Deploy -built branch to github
           command: bash <(curl -s "https://raw.githubusercontent.com/Automattic/vip-go-build/master/deploy.sh")
