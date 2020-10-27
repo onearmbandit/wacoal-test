@@ -75,7 +75,6 @@ function Btemptd_Img_List_Format_Render_callback( $block )
  */
 function Btemptd_List_Image_Data_Format_Render_callback( $block )
 {
-
     $list_type  = get_field('list_type');
 
     if ($list_type == 'simple_data') {
