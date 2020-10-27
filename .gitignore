@@ -24,6 +24,7 @@ wp/*
 sniffs/*
 test.php
 /themes/wacoal/dist/*
+/themes/btemptd/dist/*
 photon_local/*
 yarn-error.log
 

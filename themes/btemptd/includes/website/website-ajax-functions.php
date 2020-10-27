@@ -105,14 +105,19 @@ function Btemptd_Load_more(){
         <div class="explore-blog--bg ">
         <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
-            $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
+            $thumbnail_id  = get_post_thumbnail_id($recent_post->ID);
             $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-            $categories = Btemptd_Get_Primary_category($recent_post->ID);
+            $categories    = Btemptd_Get_Primary_category($recent_post->ID);
+            $cat_ID        = $categories->term_id;
             ?>
             <div class="explore-blog--box">
                 <div class="explore-blog--image">
-                    <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                    <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                        <img class="img-fluid"
+                             src="<?php echo esc_url($thumbnail_url); ?>"
+                             alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                    </a>
                 </div>
 
                 <div class="explore-blog--content">
@@ -122,10 +127,14 @@ function Btemptd_Load_more(){
                         </a>
                     </div>
                     <div class="explore-blog--content__category">
-                        <?php echo esc_attr($categories->name);?>
+                        <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                            <?php echo esc_attr($categories->name);?>
+                        </a>
                     </div>
                     <div class="explore-blog--content__title">
-                        <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                        <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                            <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                        </a>
                     </div>
                 </div>
             </div>

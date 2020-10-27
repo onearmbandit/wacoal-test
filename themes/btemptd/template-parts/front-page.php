@@ -29,10 +29,10 @@ endif;?>>
 </a>
 <?php endif;?>
 <!-- full width section -->
-<?php if(!empty($static_section['faq'])): ?>
+<?php if(!empty($static_section['faq'])) : ?>
 <section class="full-width-section">
     <?php foreach($static_section['faq'] as $section_key=> $section ): ?>
-        <?php if($section_key % 2 == 0):?>
+        <?php if($section_key % 2 == 0) :?>
             <?php $image_attributes = wp_get_attachment_image_src($section['image']);
             $image=Btemptd_Get_image($image_attributes);
 
@@ -68,9 +68,9 @@ endif;?>>
                 </div>
             </div>
         <?php else:?>
-            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
-            $image=Btemptd_Get_image($image_attributes);
-
+            <?php
+                $image_attributes = wp_get_attachment_image_src($section['image']);
+                $image=Btemptd_Get_image($image_attributes);
             ?>
             <div class="full-width-section--wrapper even">
                 <div class="full-width-section--image box-shadow-left">
@@ -109,35 +109,41 @@ endif;?>>
 <?php endif;?>
 
 <!-- featured article -->
-<?php if(!empty($featured_posts)):?>
+<?php if(!empty($featured_posts)) :?>
 <section class="featured-articles desktop">
     <div class="featured-articles--wrapper box-shadow-right">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
                 <?php foreach($featured_posts as $featured_post): ?>
-                <?php
+                    <?php
                     $thumbnail_id  = get_post_thumbnail_id($featured_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-
-                ?>
+                    $cat_name      = Btemptd_Get_Primary_category($featured_post);
+                    $cat_ID        = $cat_name->term_id;
+                    ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--image">
-                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-
+                        <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
                     </div>
 
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
-                            <?php $cat_name=Btemptd_Get_Primary_category($featured_post) ;?>
-                            <?php echo esc_attr($cat_name->name);?>
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name->name);?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__title">
-                           <?php echo esc_attr(get_the_title($featured_post));?>
+                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                <?php echo esc_attr(get_the_title($featured_post));?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__para">
-                            <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline',$featured_post)));?>
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -148,8 +154,6 @@ endif;?>>
                 </div>
                 <?php endforeach;?>
 
-
-
             </div>
 
             <div class="swiper-button--wrapper">
@@ -170,35 +174,41 @@ endif;?>>
 
 <?php endif;?>
 
-<?php if(!empty($slider_posts)):?>
+<?php if(!empty($slider_posts)) :?>
 <section class="featured-articles desktop even">
     <div class="featured-articles--wrapper box-shadow-left">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
-                <?php
+                    <?php
                     $thumbnail_id  = get_post_thumbnail_id($slider_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-
-                ?>
+                    $cat_name      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_ID        = $cat_name->term_id;
+                    ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--image">
-                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-
+                        <a href ="<?php echo esc_url(get_permalink($slider_post));?>" >
+                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
                     </div>
 
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
-                            <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
-                            <?php echo esc_attr($cat_name->name);?>
+                            <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name->name);?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__title">
-                           <?php echo esc_attr(get_the_title($slider_post));?>
+                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <?php echo esc_attr(get_the_title($slider_post));?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__para">
-                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -209,8 +219,6 @@ endif;?>>
                 </div>
                 <?php endforeach;?>
 
-
-
             </div>
 
             <div class="swiper-button--wrapper">
@@ -230,37 +238,45 @@ endif;?>>
 </section>
 <?php endif;?>
 
-<?php if(!empty($slider_posts)):?>
+<?php if(!empty($slider_posts)) :?>
 <section class="featured-articles-mobile">
     <div class="featured-articles-mobile--wrapper">
         <div class="swiper-container featured-articles-slider-mo">
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
-                <?php
+                    <?php
                     $thumbnail_id  = get_post_thumbnail_id($slider_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                    $cat_name      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_ID        = $cat_name->term_id;
 
-                ?>
+                    ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
-                            <?php $cat_name=Btemptd_Get_Primary_category($slider_post) ;?>
-                            <?php echo esc_attr($cat_name->name);?>
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name->name);?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__title">
-                           <?php echo esc_attr(get_the_title($slider_post));?>
+                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <?php echo esc_attr(get_the_title($slider_post));?>
+                            </a>
                         </div>
                     </div>
                     <div class="swiper-slide--image">
-                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-
+                        <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                            <img class="lazyload img-fluid"
+                                data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
                     </div>
 
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__para">
-                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline',$slider_post)));?>
+                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -271,8 +287,6 @@ endif;?>>
                 </div>
                 <?php endforeach;?>
 
-
-
             </div>
 
             <div class="swiper-button--wrapper">
@@ -292,100 +306,7 @@ endif;?>>
 </section>
 <?php endif;?>
 
-
-<!-- <section class="image-content">
-    <div class="image-content--wrapper">
-        <div class="odd">
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
-            </div>
-            <div class="image-content--content box-shadow-right">
-                <div class="image-content--content__head">
-                    Comfort
-                </div>
-                <div class="image-content--content__para">
-                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
-                </div>
-            </div>
-        </div>
-
-        <div class="even">
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
-            </div>
-            <div class="image-content--content box-shadow-right">
-            <div class="image-content--content__head">
-                Convertibility
-            </div>
-            <div class="image-content--content__para">
-                Many tweens wear clothing that’s more casual— such as tank tops with skinny straps that might expose bare shoulders. We suggest bras with a J-hook on the back straps for the choice of converting the bra into a racerback style.
-            </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- <section class="image-content image-content-gif">
-    <div class="image-content--wrapper">
-        <div class="odd">
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
-            </div>
-            <div class="image-content--content">
-                    <div class="quote-left">
-                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
-                    </div>
-                    <div class="content-inner">
-                        <div class="image-content--content__title">
-                        It’s so soft and comfortable I almost forget I’m wearing it!
-                        </div>
-                        <div class="image-content--content__tag">
-                            –@ericaluoo
-                        </div>
-                        <div class="shop-button">
-                            <a class="see-more-button">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="quote-right">
-                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
-                    </div>
-            </div>
-        </div>
-
-        <div class="even">
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
-            </div>
-            <div class="image-content--content">
-                    <div class="quote-left">
-                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
-                    </div>
-                    <div class="content-inner">
-                        <div class="image-content--content__title">
-                            When a bra-less kinda girl finally finds her bra-match…SO GOOD.
-                        </div>
-                        <div class="image-content--content__tag">
-                            –@ericaluoo
-                        </div>
-                        <div class="shop-button">
-                            <a class="see-more-button">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="quote-right">
-                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
-                    </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<section class="article-para-bold">
-    It is one of our all-time best sellers, and if it isn’t already in your bra wardrobe, here are 3 reasons why it should be:
-</section>
-
-<!-- Entry page full width Slider -->
-
-<?php if(!empty($recent_posts)):?>
-    <?php require locate_template('template-parts/explore-page.php');?>
+<?php if(!empty($recent_posts)) :?>
+    <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif;
 
