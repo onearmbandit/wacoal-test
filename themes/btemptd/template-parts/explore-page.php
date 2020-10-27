@@ -11,7 +11,7 @@
  */
 
 ?>
-<?php if(!empty($current_cat_id)):
+<?php if(!empty($current_cat_id)) :
     $current_cat_id = $current_cat_id;
 else:
     $current_cat_id = 0;
@@ -29,11 +29,16 @@ endif;
             $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
             $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-            $categories = Btemptd_Get_Primary_category($recent_post->ID);
+            $categories    = Btemptd_Get_Primary_category($recent_post->ID);
+            $cat_ID        = $categories->term_id;
             ?>
             <div class="explore-blog--box ">
                 <div class="explore-blog--image">
-                    <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                    <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                        <img class="img-fluid"
+                             src="<?php echo esc_url($thumbnail_url); ?>"
+                             alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                    </a>
                 </div>
 
                 <div class="explore-blog--content box">
@@ -43,10 +48,14 @@ endif;
                         </a>
                     </div>
                     <div class="explore-blog--content__category">
-                        <?php echo esc_attr($categories->name);?>
+                        <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                            <?php echo esc_attr($categories->name);?>
+                        </a>
                     </div>
                     <div class="explore-blog--content__title">
-                        <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                        <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                            <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -55,8 +64,8 @@ endif;
     </div>
     </div>
 </section>
-<?php if($counts->publish > 3):?>
+<?php if($counts->publish > 3) :?>
         <div class="see-more--wrapper">
             <button class="see-more-button">See More <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></button>
         </div>
-    <?php endif;?>
+<?php endif;?>
