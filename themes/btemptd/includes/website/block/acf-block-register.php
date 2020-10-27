@@ -23,7 +23,7 @@ function Wacoal_Acf_init()
             array(
             'name'              => 'btemptd-text-image-list-format',
             'title'             => __('Btemptd Review List Format'),
-            'description'       => __('A custom List format block.'),
+            'description'       => __('A custom Review List format block.'),
             'render_callback'   => 'Btemptd_Text_Img_List_Format_Render_callback',
             'category'          => 'btemptd',
             'icon'              => 'id-alt',
