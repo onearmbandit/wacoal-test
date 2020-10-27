@@ -20,16 +20,22 @@ $categories    = Btemptd_Get_Primary_category(get_the_ID());
 ?>
 <div class="explore-blog--box box-shadow-right">
     <div class="explore-blog--image">
-        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+        <a href="<?php echo esc_url(get_permalink());?>">
+            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+        </a>
     </div>
 
     <div class="explore-blog--content blog-pagination">
         <div class="blog-pagination-content">
         <div class="explore-blog--content__category">
-            <?php echo esc_attr($current_cat_data->name);?>
+            <a href="<?php echo esc_url_raw(get_term_link($current_cat_id));?>">
+                <?php echo esc_attr($current_cat_data->name);?>
+            </a>
         </div>
         <div class="explore-blog--content__title">
-            <?php echo esc_attr(get_the_title());?>
+            <a href="<?php echo esc_url(get_permalink());?>">
+                <?php echo esc_attr(get_the_title());?>
+            </a>
         </div>
         </div>
         <div class="blog-pagination-cta">

@@ -248,22 +248,30 @@ endif;?>>
                     $thumbnail_id  = get_post_thumbnail_id($slider_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                    $cat_name      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_ID        = $cat_name->term_id;
 
                     ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
-                            <?php $cat_name=Btemptd_Get_Primary_category($slider_post);?>
-                            <?php echo esc_attr($cat_name->name);?>
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name->name);?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__title">
-                           <?php echo esc_attr(get_the_title($slider_post));?>
+                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <?php echo esc_attr(get_the_title($slider_post));?>
+                            </a>
                         </div>
                     </div>
                     <div class="swiper-slide--image">
-                    <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-
+                        <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                            <img class="lazyload img-fluid"
+                                data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
                     </div>
 
                     <div class="swiper-slide--content">
