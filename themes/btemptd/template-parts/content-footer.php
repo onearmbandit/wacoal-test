@@ -28,7 +28,10 @@ $subscribe = get_field('subscribe_link', 'options');
             <?php if(!empty($subscribe)):?>
             <form method="post" action="<?php echo $subscribe;?>">
                 <div class="footer-subscribe">
-                    <input type="text" placeholder="Email Address"><button type="submit">subscribe</button>
+                    <input type="footerEmailAddr" placeholder="Email Address" name="email" id="footerEmailAddr">
+                        <button type="submit"
+                        onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)"
+                        >subscribe</button>
                 </div>
             </form>
             <?php endif;?>
