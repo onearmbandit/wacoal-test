@@ -349,14 +349,14 @@ Files inside this folder can contain specific element styles and layout.
     flex-direction: column; }
     @media (min-width: 768px) {
       .footer-wrapper--left {
-        flex-direction: row; } }
+        flex-direction: row;
+        margin-left: 14.0625vw; } }
   .footer-wrapper--right {
     flex: 1;
     max-width: 17rem; }
     @media (min-width: 768px) {
       .footer-wrapper--right {
-        max-width: 26.5625vw;
-        margin-left: 6.66667vw; } }
+        max-width: 26.5625vw; } }
   .footer-wrapper--copyright {
     width: var(--width-100);
     color: var(--color-black);
@@ -366,12 +366,18 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .footer-wrapper--copyright {
         font-size: 0.4375rem;
-        margin-top: 3.64583vw; } }
+        margin-top: 1.45833vw; } }
     @media (min-width: 1024px) {
       .footer-wrapper--copyright {
         font-size: 0.72917vw; } }
     .footer-wrapper--copyright a {
       text-decoration: underline; }
+
+.bottom-footer {
+  border-top: 1px solid var(--color-black); }
+  @media (min-width: 768px) {
+    .bottom-footer {
+      margin-top: 4.16667vw; } }
 
 .footer-links--title {
   font-family: 'NeutraText-Bold';
@@ -438,11 +444,23 @@ Files inside this folder can contain specific element styles and layout.
 
 .footer-subscribe {
   display: flex;
+  flex-direction: column;
   margin: 0.5625rem 0rem 1.5625rem; }
   @media (min-width: 768px) {
     .footer-subscribe {
       margin-bottom: 3.85417vw;
       margin-top: 0; } }
+  .footer-subscribe .title {
+    font-family: 'NeutraText-BoldAlt';
+    font-size: 0.72917vw;
+    margin-bottom: 1.04167vw;
+    text-transform: uppercase; }
+  .footer-subscribe .sub-title {
+    font-family: 'NeutraText-BookAlt';
+    font-size: 0.72917vw;
+    margin-bottom: 0.78125vw; }
+  .footer-subscribe .input-button-wrapper {
+    position: relative; }
   .footer-subscribe input {
     border: 1px solid #CBCBCB;
     background: var(--color-white);
@@ -455,22 +473,24 @@ Files inside this folder can contain specific element styles and layout.
       .footer-subscribe input {
         font-size: 14px;
         height: 3.22917vw;
-        width: 17.91667vw;
+        width: 100%;
         padding-left: 1.25vw; } }
   .footer-subscribe button {
-    background: #8A8A8A;
+    background: transparent;
     border: none;
-    text-transform: uppercase;
     font-family: 'NeutraText-Bold';
-    color: var(--color-white);
-    flex: 1;
+    color: var(--color-black);
     height: 2.125rem;
     font-size: 0.625rem;
-    cursor: pointer; }
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0; }
     @media (min-width: 768px) {
       .footer-subscribe button {
         font-size: 0.88542vw;
-        height: 3.33333vw; } }
+        height: 3.33333vw;
+        width: 2.08333vw; } }
 
 .footer-images {
   display: flex;
@@ -488,7 +508,7 @@ Files inside this folder can contain specific element styles and layout.
   margin-top: 1.25rem; }
   @media (min-width: 768px) {
     .footer-social {
-      margin-top: 2.29167vw; } }
+      margin-top: 1.45833vw; } }
   .footer-social--icon {
     width: 1rem;
     height: 1rem;
