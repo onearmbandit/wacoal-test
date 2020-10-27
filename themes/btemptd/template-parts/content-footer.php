@@ -26,7 +26,7 @@ $subscribe = get_field('subscribe_link', 'options');
         </div>
         <div class="footer-wrapper--right">
             <?php if(!empty($subscribe)):?>
-            <form method="post" action="<?php echo $subscribe;?>">
+            <form method="post" action="<?php echo esc_url($subscribe);?>">
                 <div class="footer-subscribe">
                     <input type="footerEmailAddr" placeholder="Email Address" name="email" id="footerEmailAddr">
                         <button type="submit"
@@ -41,10 +41,7 @@ $subscribe = get_field('subscribe_link', 'options');
 
 
             <div class="footer-social">
-                <?php foreach($social_share as $key => $value):
-
-
-                    ?>
+                <?php foreach($social_share as $key => $value): ?>
                     <a href="<?php echo esc_url($value['link']);?>" class="footer-social--icon" target="_blank">
                         <img class="lazyload" data-src="<?php echo esc_url(wp_get_attachment_url($value['image']));?>" alt="" />
                     </a>
@@ -56,7 +53,7 @@ $subscribe = get_field('subscribe_link', 'options');
 
     <div class="footer-wrapper">
         <div class="footer-wrapper--copyright">
-            <?php echo Btemptd_Remove_ptag($copyright_value);?>
+            <?php echo wp_kses_post(Btemptd_Remove_ptag($copyright_value));?>
         </div>
     </div>
 </footer>

@@ -29,4 +29,3 @@ if($para_type == 'bold_content') :
     <?php
 endif;
 ?>
-
