@@ -17,6 +17,26 @@ $subscribe = get_field('subscribe_link', 'options');
 ?>
 <footer class="footer-section">
     <div class="footer-wrapper">
+        <div class="footer-wrapper--right">
+            <!-- <?php if(!empty($subscribe)):?> -->
+            <!-- <form method="post" action="<?php echo $subscribe;?>">
+                <div class="footer-subscribe">
+                    <input type="text" placeholder="Email Address"><button type="submit">subscribe</button>
+                </div>
+            </form> -->
+            <!-- <?php endif;?> -->
+
+            <div class="footer-subscribe">
+                <div class="title">Stay Connected</div>
+                <div class="sub-title">New product releases, markdowns and more!</div>
+                <div class="input-button-wrapper">
+                    <input type="text" placeholder="Email Address">
+                    <button type="submit">
+                        <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/subscribe-arrow.svg" />
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="footer-wrapper--left">
 
             <?php dynamic_sidebar('footer-1');?>
@@ -24,36 +44,21 @@ $subscribe = get_field('subscribe_link', 'options');
             <?php dynamic_sidebar('footer-3');?>
             <?php dynamic_sidebar('footer-4');?>
         </div>
-        <div class="footer-wrapper--right">
-            <?php if(!empty($subscribe)):?>
-            <form method="post" action="<?php echo esc_url($subscribe);?>">
-                <div class="footer-subscribe">
-                    <input type="footerEmailAddr" placeholder="Email Address" name="email" id="footerEmailAddr">
-                        <button type="submit"
-                        onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)"
-                        >subscribe</button>
-                </div>
-            </form>
-            <?php endif;?>
-            <div class="footer-images">
-                <iframe src="<?php echo esc_url($oembeded);?>" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0px; overflow: hidden; height: 81.9px;"></iframe>
+    </div>
+
+    <div class="bottom-footer">
+        <div class="footer-wrapper">
+            <div class="footer-wrapper--copyright">
+                <?php echo Btemptd_Remove_ptag($copyright_value);?>
             </div>
-
-
             <div class="footer-social">
-                <?php foreach($social_share as $key => $value): ?>
+                <?php foreach($social_share as $key => $value):
+                    ?>
                     <a href="<?php echo esc_url($value['link']);?>" class="footer-social--icon" target="_blank">
                         <img class="lazyload" data-src="<?php echo esc_url(wp_get_attachment_url($value['image']));?>" alt="" />
                     </a>
                 <?php endforeach; ?>
-
             </div>
-        </div>
-    </div>
-
-    <div class="footer-wrapper">
-        <div class="footer-wrapper--copyright">
-            <?php echo wp_kses_post(Btemptd_Remove_ptag($copyright_value));?>
         </div>
     </div>
 </footer>
