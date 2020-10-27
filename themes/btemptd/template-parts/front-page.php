@@ -12,22 +12,40 @@
 
 ?>
 <?php if(!empty($banner_link)) :?>
-<a href="<?php echo esc_url($banner_link);?>" <?php if($open_in_new_tab == true) : echo "target='_blank'";
-endif;?>>
-<?php endif;?>
+<a href="<?php echo esc_url($banner_link);?>"
+    <?php if($open_in_new_tab == true) : echo "target='_blank'";
+    endif;?>>
+<?php endif;
+if(!empty($banner_image_id) || !empty($banner_title) || !empty($banner_subtitle)) :
+    ?>
 <section class="banner-with-image">
     <div class="banner-with-image--content">
+    <?php if(!empty($banner_title) || !empty($banner_subtitle)) :?>
         <div>
-        <h1 class="banner-with-image--heading"><?php echo esc_attr($banner_title);?></h1>
-        <p class="banner-with-image--subtitle"><?php echo esc_attr($banner_subtitle);?></p>
+        <?php if(!empty($banner_title)) :?>
+            <h1 class="banner-with-image--heading">
+                <?php echo esc_attr($banner_title);?>
+            </h1>
+        <?php endif;
+        if(!empty($banner_subtitle)) :
+            ?>
+            <p class="banner-with-image--subtitle">
+                <?php echo esc_attr($banner_subtitle);?>
+            </p>
+        <?php endif;?>
         </div>
+    <?php endif;?>
     </div>
-    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
+    <div class="banner-with-image--image"
+         style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
     </div>
 </section>
-<?php if(!empty($banner_link)) :?>
+        <?php
+endif;
+if(!empty($banner_link)) :?>
 </a>
 <?php endif;?>
+
 <!-- full width section -->
 <?php if(!empty($static_section['faq'])) : ?>
 <section class="full-width-section">
