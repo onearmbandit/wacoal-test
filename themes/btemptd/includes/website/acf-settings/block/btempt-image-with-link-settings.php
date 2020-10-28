@@ -1,6 +1,6 @@
 <?php
 /**
- * Btemptd text imagelist acf settings
+ * Btemptd CTA with image acf settings
  * php version 7.4
  *
  * @category Btemptd
@@ -17,7 +17,7 @@ acf_add_local_field_group(
     'fields' => array(
         array(
             'key' => 'field_5f8ed9bfa3908',
-            'label' => 'Review Link 1',
+            'label' => 'Review Link 1 Text',
             'name' => 'review_link_1',
             'type' => 'wysiwyg',
             'instructions' => '',
@@ -35,8 +35,31 @@ acf_add_local_field_group(
             'delay' => 0,
         ),
         array(
+            'key' => 'field_5f992720e50cd',
+            'label' => 'Review Link 1',
+            'name' => 'review_link_1_url',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5f8ed9bfa3908',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
             'key' => 'field_5f8d9a0c143b6',
-            'label' => 'Review Link 2',
+            'label' => 'Review Link 2 Text',
             'name' => 'review_link_2',
             'type' => 'wysiwyg',
             'instructions' => '',
@@ -52,6 +75,29 @@ acf_add_local_field_group(
             'toolbar' => 'content_toolbar',
             'media_upload' => 1,
             'delay' => 0,
+        ),
+        array(
+            'key' => 'field_5f992765e50ce',
+            'label' => 'Review Link 2',
+            'name' => 'review_link_2_url',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5f8d9a0c143b6',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
         ),
         array(
             'key' => 'field_5f8d9a0c143f1',

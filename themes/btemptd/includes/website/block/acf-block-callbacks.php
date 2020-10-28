@@ -46,7 +46,9 @@ function Btemptd_Img_List_Format_Render_callback( $block )
 {
 
     $cta_1_text  = get_field('review_link_1');
+    $cta_1_link  = get_field('review_link_1_url');
     $cta_2_text  = get_field('review_link_2');
+    $cta_2_link  = get_field('review_link_2_url');
     $block_image_id = get_field('image');
     $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
     $block_image_alt = Btemptd_Get_Image_alt($block_image_id, 'Block Image');

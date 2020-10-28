@@ -93,7 +93,7 @@ if ($list_type == 'simple_data') :
     </div>
     <?php if ($add_button) :?>
     <div class="see-more--wrapper">
-        <a href ="<?php echo esc_url($button_url);?>">
+        <a href ="<?php echo esc_url($button_url);?>" target="_blank">
             <button class="see-more-button">
                 <?php echo wp_kses_post($button_label);?>
             </button>
