@@ -1102,7 +1102,8 @@ Files inside this folder can contain specific element styles and layout.
   margin: 20px auto 40px;
   position: relative;
   height: 3.5625rem;
-  display: inline-block; }
+  display: inline-block;
+  text-align: center; }
   @media (min-width: 768px) {
     .see-more--wrapper {
       height: 5.20833vw;
@@ -1779,7 +1780,8 @@ Files inside this folder can contain specific element styles and layout.
       padding-top: 1.82292vw;
       padding-right: 4.58333vw;
       padding-bottom: 1.5625vw;
-      padding-left: 4.58333vw; } }
+      padding-left: 4.58333vw;
+      margin-top: 2.08333vw; } }
   .image-content .shop-now-button .cta-button {
     position: absolute;
     left: 50%;

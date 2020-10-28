@@ -220,6 +220,7 @@
   // display: none;
   height: calcRem(57);
   display: inline-block;
+  text-align: center;
 
 
   @include respond-above(sm) {

@@ -613,12 +613,14 @@
     padding: calcRem(20, 40, 13);
     position: relative;
 
+
     @include respond-above(sm) {
       font-size: get-vw(32px);
       padding-top: get-vw(35px);
       padding-right: get-vw(88px);
       padding-bottom: get-vw(30px);
       padding-left: get-vw(88px);
+      margin-top: get-vw(40px);
     }
 
     .cta-button {
