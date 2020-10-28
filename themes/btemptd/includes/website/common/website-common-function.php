@@ -411,7 +411,7 @@ function Btemptd_Paging_nav()
     if (! in_array(1, $links) ) {
         $class = 1 == $paged ? ' class="active"' : '';
 
-        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
+        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1'); // phpcs:ignore
 
         if (! in_array(2, $links) ) {
             echo '<li>…</li>';
@@ -424,7 +424,7 @@ function Btemptd_Paging_nav()
     sort($links);
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
-        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), esc_attr($link));
+        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), esc_attr($link)); // phpcs:ignore
     }
 
     /**
@@ -436,7 +436,7 @@ function Btemptd_Paging_nav()
         }
 
         $class = $paged == $max ? ' class="active"' : '';
-        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max));
+        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max)); // phpcs:ignore
     }
     echo '</ul>';
     /**
