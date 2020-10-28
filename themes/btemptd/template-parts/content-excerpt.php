@@ -29,7 +29,7 @@ $categories    = Btemptd_Get_Primary_category(get_the_ID());
         <div class="blog-pagination-content">
         <div class="explore-blog--content__category">
             <a href="<?php echo esc_url_raw(get_term_link($current_cat_id));?>">
-                <?php echo esc_attr($current_cat_data->name);?>
+                <?php echo esc_attr($cat_name);?>
             </a>
         </div>
         <div class="explore-blog--content__title">
