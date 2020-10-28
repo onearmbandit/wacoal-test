@@ -1600,25 +1600,29 @@ Files inside this folder can contain specific element styles and layout.
     margin-bottom: 6.40625vw; } }
 
 .image-content--wrapper {
-  margin: auto; }
+  margin: auto;
+  width: calc(100% - 36px); }
   @media (min-width: 768px) {
     .image-content--wrapper {
       width: 66.66667vw; } }
 
-@media (min-width: 768px) {
-  .image-content--image {
-    width: 29.16667vw;
-    height: 29.16667vw; } }
-
-.image-content--image img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 100%; }
+.image-content--image {
+  margin-bottom: 0.875rem; }
+  @media (min-width: 768px) {
+    .image-content--image {
+      width: 29.16667vw;
+      height: 29.16667vw;
+      margin-bottom: 0; } }
+  .image-content--image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%; }
 
 .image-content--content {
   background: var(--color-tile-bg);
   color: var(--color-text);
-  position: relative; }
+  position: relative;
+  padding: 1.6875rem 1.125rem; }
   @media (min-width: 768px) {
     .image-content--content {
       width: 30.05208vw;
@@ -1627,13 +1631,17 @@ Files inside this folder can contain specific element styles and layout.
       padding-bottom: 2.70833vw;
       padding-left: 2.70833vw; } }
   .image-content--content__head {
-    font-family: 'NeutraText-BoldItalicAlt'; }
+    font-family: 'NeutraText-BoldItalicAlt';
+    font-size: 3rem;
+    margin-bottom: 1.125rem; }
     @media (min-width: 768px) {
       .image-content--content__head {
         font-size: 4.0625vw;
         margin-bottom: 1.875vw; } }
   .image-content--content__para {
-    font-family: 'NeutraText-BookAlt'; }
+    font-family: 'NeutraText-BookAlt';
+    font-size: 0.875rem;
+    line-height: 1rem; }
     @media (min-width: 768px) {
       .image-content--content__para {
         font-size: 1.04167vw;
@@ -1642,10 +1650,13 @@ Files inside this folder can contain specific element styles and layout.
 .image-content .odd {
   display: flex;
   width: 100%;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2.5rem; }
   @media (min-width: 768px) {
     .image-content .odd {
-      margin-bottom: 2.29167vw; } }
+      margin-bottom: 2.29167vw;
+      flex-direction: row; } }
   @media (min-width: 768px) {
     .image-content .odd .image-content--content {
       margin-left: 3.33333vw; } }
@@ -1653,7 +1664,9 @@ Files inside this folder can contain specific element styles and layout.
 .image-content .even {
   display: flex;
   width: 100%;
-  align-items: center; }
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2.5rem; }
   @media (min-width: 768px) {
     .image-content .even {
       flex-direction: row-reverse;
@@ -1669,7 +1682,7 @@ Files inside this folder can contain specific element styles and layout.
 
 .image-content.image-content-gif .image-content--content {
   background: transparent;
-  color: var(--color-text);
+  color: var(--color-black);
   position: relative;
   text-align: center;
   margin: 0; }
@@ -1677,18 +1690,23 @@ Files inside this folder can contain specific element styles and layout.
     .image-content.image-content-gif .image-content--content {
       width: 33.33333vw; } }
   .image-content.image-content-gif .image-content--content__title {
-    font-family: 'NeutraText-BoldAlt'; }
+    font-family: 'NeutraText-BoldAlt';
+    margin-bottom: 1.125rem;
+    font-size: 1.0625rem;
+    line-height: 1.75rem; }
     @media (min-width: 768px) {
       .image-content.image-content-gif .image-content--content__title {
         font-size: 1.09375vw;
         line-height: 1.77083vw;
         margin-bottom: 1.5625vw; } }
   .image-content.image-content-gif .image-content--content__tag {
-    font-family: 'NeutraText-BookItalicAlt'; }
+    font-family: 'NeutraText-BookItalicAlt';
+    margin-bottom: 2.125rem; }
     @media (min-width: 768px) {
       .image-content.image-content-gif .image-content--content__tag {
         font-size: 1.09375vw;
-        line-height: 1.77083vw; } }
+        line-height: 1.77083vw;
+        margin-bottom: 3.4375vw; } }
   @media (min-width: 768px) {
     .image-content.image-content-gif .image-content--content .content-inner {
       position: absolute;
@@ -1697,19 +1715,27 @@ Files inside this folder can contain specific element styles and layout.
       top: 50%;
       transform: translateX(-50%) translateY(-50%); } }
   .image-content.image-content-gif .image-content--content .quote-left {
-    position: absolute; }
+    position: relative;
+    width: 2.625rem; }
+    @media (max-width: 767px) {
+      .image-content.image-content-gif .image-content--content .quote-left {
+        margin-bottom: 1.625rem; } }
     @media (min-width: 768px) {
       .image-content.image-content-gif .image-content--content .quote-left {
         width: 2.8125vw;
         top: 4.01042vw;
-        left: 4.01042vw; } }
+        left: 4.01042vw;
+        position: absolute; } }
   .image-content.image-content-gif .image-content--content .quote-right {
-    position: absolute; }
+    position: relative;
+    width: 2.625rem;
+    margin-left: auto; }
     @media (min-width: 768px) {
       .image-content.image-content-gif .image-content--content .quote-right {
         width: 2.8125vw;
         bottom: 4.01042vw;
-        right: 4.01042vw; } }
+        right: 4.01042vw;
+        position: absolute; } }
 
 .image-content.image-content-gif .odd {
   margin-bottom: 0;
@@ -1727,23 +1753,28 @@ Files inside this folder can contain specific element styles and layout.
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
-  display: inline-block; }
+  display: inline-block;
+  padding: 1.25rem 2.5rem 0.8125rem;
+  position: relative; }
   @media (min-width: 768px) {
     .image-content .see-more-button {
       font-size: 1.66667vw;
-      padding-top: 1.35417vw;
-      padding-right: 3.02083vw;
-      padding-bottom: 1.35417vw;
-      padding-left: 3.02083vw; } }
+      padding-top: 1.82292vw;
+      padding-right: 4.58333vw;
+      padding-bottom: 1.5625vw;
+      padding-left: 4.58333vw; } }
   .image-content .see-more-button .cta-button {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    width: 1.8125rem;
+    height: 1.8125rem;
+    top: -1.25rem; }
     @media (min-width: 768px) {
       .image-content .see-more-button .cta-button {
-        width: 3.75vw;
-        height: 3.75vw;
-        bottom: -2.91667vw; } }
+        width: 2.70833vw;
+        height: 2.70833vw;
+        top: -1.66667vw; } }
 
 .article--para {
   font-family: 'NeutraText-BookAlt';
