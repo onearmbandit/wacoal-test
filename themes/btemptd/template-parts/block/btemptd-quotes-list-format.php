@@ -30,12 +30,22 @@
             if ($key % 2 == 0) {
                 ?>
         <div class="odd">
-                <?php if ($list_image_id && !empty($list_image_id)) : ?>
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url($list_image_url); ?>"
-                alt="<?php echo wp_kses_post($list_image_alt); ?>" />
-            </div>
+                <?php if ($list_image_id && !empty($list_image_id)) :
+                    if($add_button && !empty($button_url)) :?>
+
+                <a href="<?php echo esc_url($button_url);?>" target='_blank'>
+
+                    <?php endif;?>
+                    <div class="image-content--image">
+                        <img class="img-fluid" src="<?php echo  esc_url($list_image_url); ?>"
+                        alt="<?php echo wp_kses_post($list_image_alt); ?>" />
+                    </div>
                     <?php
+                    if($add_button && !empty($button_url)) :?>
+
+                        </a>
+
+                    <?php endif;
                 endif; ?>
             <div class="image-content--content">
                     <div class="quote-left">
@@ -72,12 +82,23 @@
                 ?>
 
         <div class="even">
-                <?php if ($list_image_id && !empty($list_image_id)) : ?>
-            <div class="image-content--image">
-                <img class="img-fluid" src="<?php echo  esc_url($list_image_url); ?>"
-                alt="<?php echo wp_kses_post($list_image_alt); ?>" />
-            </div>
-                <?php endif; ?>
+                <?php if ($list_image_id && !empty($list_image_id)) :
+                    if($add_button && !empty($button_url)) :?>
+
+                <a href="<?php echo esc_url($button_url);?>" target='_blank'>
+
+                    <?php endif;?>
+                    <div class="image-content--image">
+                        <img class="img-fluid" src="<?php echo  esc_url($list_image_url); ?>"
+                        alt="<?php echo wp_kses_post($list_image_alt); ?>" />
+                    </div>
+                    <?php
+                    if($add_button && !empty($button_url)) :?>
+
+                </a>
+
+                    <?php endif;
+                endif; ?>
             <div class="image-content--content">
                 <div class="quote-left">
                     <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />

@@ -12,93 +12,159 @@
 
 ?>
 <?php if(!empty($banner_link)) :?>
-<a href="<?php echo esc_url($banner_link);?>" <?php if($open_in_new_tab == true) : echo "target='_blank'";
-endif;?>>
-<?php endif;?>
+<a href="<?php echo esc_url($banner_link);?>"
+    <?php if($open_in_new_tab == true) : echo "target='_blank'";
+    endif;?>>
+<?php endif;
+if(!empty($banner_image_id) || !empty($banner_title) || !empty($banner_subtitle)) :
+    ?>
 <section class="banner-with-image">
     <div class="banner-with-image--content">
+    <?php if(!empty($banner_title) || !empty($banner_subtitle)) :?>
         <div>
-        <h1 class="banner-with-image--heading"><?php echo esc_attr($banner_title);?></h1>
-        <p class="banner-with-image--subtitle"><?php echo esc_attr($banner_subtitle);?></p>
+        <?php if(!empty($banner_title)) :?>
+            <h1 class="banner-with-image--heading">
+                <?php echo esc_attr($banner_title);?>
+            </h1>
+        <?php endif;
+        if(!empty($banner_subtitle)) :
+            ?>
+            <p class="banner-with-image--subtitle">
+                <?php echo esc_attr($banner_subtitle);?>
+            </p>
+        <?php endif;?>
         </div>
+    <?php endif;?>
     </div>
-    <div class="banner-with-image--image" style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
+    <div class="banner-with-image--image"
+         style="background-image: url(<?php  echo esc_url($banner_image_url);?>);">
     </div>
 </section>
-<?php if(!empty($banner_link)) :?>
+        <?php
+endif;
+if(!empty($banner_link)) :?>
 </a>
 <?php endif;?>
+
 <!-- full width section -->
 <?php if(!empty($static_section['faq'])) : ?>
 <section class="full-width-section">
     <?php foreach($static_section['faq'] as $section_key=> $section ): ?>
         <?php if($section_key % 2 == 0) :?>
-            <?php $image_attributes = wp_get_attachment_image_src($section['image']);
-            $image=Btemptd_Get_image($image_attributes);
-
+            <?php
+            $image_attributes = wp_get_attachment_image_src($section['image']);
+            $image_url        = Btemptd_Get_image($image_attributes);
             ?>
             <div class="full-width-section--wrapper">
+                <?php if($section['image'] && !empty($section['image'])) :?>
                 <div class="full-width-section--image box-shadow-right">
-                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
+                    <img class="img-fluid"
+                         src="<?php echo  esc_url($image_url); ?>" />
                 </div>
+                <?php endif;?>
                 <div class="full-width-section--content desktop">
-                    <div class="content-title">
-                        <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
-                    </div>
+                    <?php if($section['title'] && !empty($section['title'])) :?>
+                        <div class="content-title">
+                            <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
+                        </div>
+                        <?php
+                    endif;
+                    if($section['question'] && !empty($section['question'])) :
+                        ?>
                     <div class="quote quote-icon">
                         <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
+                        <?php
+                    endif;
+                    if($section['link'] && !empty($section['link'])) :
+                        ?>
                     <div class="arrow">
-                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                        <a href="<?php echo esc_url($section['link']);?>"
+                           target="_blank">
+                           <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
+                        </a>
                     </div>
+                    <?php endif;?>
                 </div>
 
                 <div class="full-width-section--content mobile">
                     <div class="">
+                    <?php if($section['title'] && !empty($section['title'])) :?>
                         <div class="content-title">
                             <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                         </div>
+                    <?php endif;
+                    if($section['question'] && !empty($section['question'])) :
+                        ?>
                         <div class="quote quote-icon">
                             <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                         </div>
+                    <?php endif;?>
                     </div>
+                    <?php if($section['link'] && !empty($section['link'])) : ?>
                     <div class="arrow">
-                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                        <a href="<?php echo esc_url($section['link']);?>"
+                           target="_blank">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
+                        </a>
                     </div>
+                    <?php endif;?>
                 </div>
             </div>
         <?php else:?>
             <?php
                 $image_attributes = wp_get_attachment_image_src($section['image']);
-                $image=Btemptd_Get_image($image_attributes);
+                $image_url            =Btemptd_Get_image($image_attributes);
             ?>
             <div class="full-width-section--wrapper even">
+            <?php if($section['image'] && !empty($section['image'])) :?>
                 <div class="full-width-section--image box-shadow-left">
-                    <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
+                    <img class="img-fluid" src="<?php echo  esc_url($image_url); ?>" />
                 </div>
+            <?php endif;?>
                 <div class="full-width-section--content desktop">
+                    <?php if($section['link'] && !empty($section['link'])) :?>
                     <div class="arrow">
-                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                       <a href="<?php echo esc_url($section['link']);?>"
+                          target="_blank">
+                          <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
+                        </a>
                     </div>
+                    <?php endif;
+                    if($section['title'] && !empty($section['title'])) :?>
                     <div class="content-title">
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                     </div>
+                    <?php endif;
+                    if($section['question'] && !empty($section['question'])) :
+                        ?>
                     <div class="quote">
                         <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
+                    <?php endif;?>
                 </div>
 
                 <div class="full-width-section--content mobile">
+                <?php if($section['link'] && !empty($section['link'])) :?>
                     <div class="arrow">
-                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                       <a href="<?php echo esc_url($section['link']);?>"
+                          target="_blank">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
+                       </a>
                     </div>
+                <?php endif;?>
                     <div>
+                        <?php  if($section['title'] && !empty($section['title'])) :?>
                         <div class="content-title">
                             <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                         </div>
+                        <?php endif;
+                        if($section['question'] && !empty($section['question'])) :
+                            ?>
                         <div class="quote">
                             <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                         </div>
+                        <?php endif;?>
                     </div>
                 </div>
             </div>
