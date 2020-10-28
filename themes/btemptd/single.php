@@ -16,6 +16,7 @@ $article_banner     = get_field('banner');
 $article_banner_array  = wp_get_attachment_image_src($article_banner, 'full');
 $article_banner_alt    = Btemptd_Get_Image_alt($article_banner, 'Block Image');
 $article_banner_url    = Btemptd_Get_Image($article_banner_array);
+$article_banner_link    = get_field('banner_link');
 $post_title            = get_the_title($post->ID);
 $tag_line              = get_field('tagline');
 $sub_headline          = get_field('sub_headline');

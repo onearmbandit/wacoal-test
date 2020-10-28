@@ -14,7 +14,13 @@
 
 <section class="article-header">
     <div class="article-header--wrapper">
+    <?php if(!empty($article_banner_link)) :?>
+        <a href="<?php echo esc_url($article_banner_link);?>" target="_blank";>
+    <?php endif;?>
         <div class="article-header--banner" style="background-image:url(<?php  echo esc_url($article_banner_url);?>);"></div>
+        <?php if(!empty($article_banner_link)) :?>
+        </a>
+        <?php endif;?>
 
         <div class="article-header--category">
             <a href="<?php echo esc_url($primary_category_url); ?>"
@@ -73,11 +79,11 @@ $args = array(
     'order' => 'DESC',
     'post_status'=>'publish'
   );
-$the_query = new WP_Query( $args );
+$the_query = new WP_Query($args);
 $arr['publish']=$the_query->found_posts;
 $counts= array();
 $counts= (object)$arr;?>
 <input type="hidden" id="hidden_post" name="hidden_post" value="<?php echo get_the_ID();?>">
-<?php if(!empty($recent_posts)):?>
+<?php if(!empty($recent_posts)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif;?>
