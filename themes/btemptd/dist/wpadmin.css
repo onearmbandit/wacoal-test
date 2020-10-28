@@ -82,7 +82,8 @@ margin: calcRem(10, 11, 12, 13);
   --color-gray:             #585858;
   --color-gray-light:       #999999;
   --color-tile-bg:          #F8F3F0;
-  --color-text:             #5E455E; }
+  --color-text:             #5E455E;
+  --color-footer-bg:        #f4f4f4; }
 
 /*
 This file is used to contain all base imports.
@@ -169,7 +170,7 @@ h1 {
       line-height: 9.47917vw; } }
 
 h2 {
-  font-size: 2.625rem;
+  font-size: 2.9375rem;
   line-height: 2.8125rem; }
   @media (min-width: 768px) {
     h2 {
@@ -257,7 +258,8 @@ Files inside this folder can contain specific element styles and layout.
     margin: 0rem 1.4375rem; }
     @media (min-width: 768px) {
       .header-navigation--list {
-        margin: 0rem 5.4375rem; } }
+        margin-left: 4.53125vw;
+        margin-right: 4.53125vw; } }
   .header-navigation--link {
     color: var(--color-black);
     font-family: 'NeutraText-Bold';
@@ -265,7 +267,7 @@ Files inside this folder can contain specific element styles and layout.
     text-transform: uppercase; }
     @media (min-width: 768px) {
       .header-navigation--link {
-        font-size: 1.375rem; } }
+        font-size: 1.14583vw; } }
 
 .shop-btemptd-btn {
   position: absolute;
@@ -296,7 +298,10 @@ Files inside this folder can contain specific element styles and layout.
   height: 3.75rem;
   display: flex;
   align-items: center;
-  padding-left: 1.625rem; }
+  padding-left: 1.625rem;
+  font-family: 'NeutraText-BoldAlt';
+  font-size: 0.9375rem;
+  text-transform: uppercase; }
   @media (min-width: 768px) {
     .header-navigation-mobile {
       display: none;
@@ -320,14 +325,15 @@ Files inside this folder can contain specific element styles and layout.
   padding-bottom: 1.25rem; }
 
 .footer-section {
-  background: var(--color-tile-bg);
+  background: var(--color-footer-bg);
   width: var(--width-100);
-  padding-top: 1.875rem;
-  padding-bottom: 1.375rem; }
+  padding: 1.875rem 2.25rem 1.375rem; }
   @media (min-width: 768px) {
     .footer-section {
       padding-top: 4.6875vw;
-      padding-bottom: 3.69792vw; } }
+      padding-bottom: 3.69792vw;
+      padding-left: 0;
+      padding-right: 0; } }
 
 .footer-wrapper {
   width: calc(var(--width-100) - 70px);
@@ -337,23 +343,35 @@ Files inside this folder can contain specific element styles and layout.
   flex-direction: column; }
   @media (min-width: 768px) {
     .footer-wrapper {
-      width: 84.89583vw;
+      width: 84.89583vw; } }
+  @media (min-width: 1280px) {
+    .footer-wrapper {
       flex-direction: row; } }
   .footer-wrapper--left {
     flex: 1;
     display: flex;
     justify-content: space-between;
     flex-direction: column; }
-    @media (min-width: 768px) {
+    @media (max-width: 767px) {
       .footer-wrapper--left {
+        border-top: 1px solid var(--color-black);
+        padding-top: 20px; } }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .footer-wrapper--left {
+        width: 100%;
         flex-direction: row; } }
+    @media (min-width: 1280px) {
+      .footer-wrapper--left {
+        flex-direction: row;
+        margin-left: 14.0625vw; } }
   .footer-wrapper--right {
-    flex: 1;
-    max-width: 17rem; }
-    @media (min-width: 768px) {
+    flex: 1; }
+    @media (min-width: 768px) and (max-width: 1279px) {
       .footer-wrapper--right {
-        max-width: 26.5625vw;
-        margin-left: 6.66667vw; } }
+        width: 100%; } }
+    @media (min-width: 1280px) {
+      .footer-wrapper--right {
+        max-width: 26.5625vw; } }
   .footer-wrapper--copyright {
     width: var(--width-100);
     color: var(--color-black);
@@ -363,20 +381,39 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .footer-wrapper--copyright {
         font-size: 0.4375rem;
-        margin-top: 3.64583vw; } }
+        margin-top: 1.45833vw; } }
     @media (min-width: 1024px) {
       .footer-wrapper--copyright {
         font-size: 0.72917vw; } }
+    .footer-wrapper--copyright a {
+      text-decoration: underline; }
+
+@media (max-width: 767px) {
+  .bottom-footer {
+    text-align: center; } }
+
+@media (min-width: 768px) {
+  .bottom-footer {
+    margin-top: 4.16667vw;
+    border-top: 1px solid var(--color-black); } }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bottom-footer .footer-wrapper {
+    flex-direction: row; } }
 
 .footer-links--title {
   font-family: 'NeutraText-Bold';
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--color-black);
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-black);
+  padding-bottom: 1.375rem;
+  position: relative; }
   @media (min-width: 768px) {
     .footer-links--title {
       font-size: 0.5625rem;
-      margin-bottom: 0.8625rem; } }
+      margin-bottom: 0.8625rem;
+      border-bottom: none; } }
   @media (min-width: 1024px) {
     .footer-links--title {
       font-size: 0.78125rem;
@@ -389,6 +426,16 @@ Files inside this folder can contain specific element styles and layout.
     .footer-links--title {
       font-size: 1.25rem;
       margin-bottom: 2.35625rem; } }
+  @media (max-width: 767px) {
+    .footer-links--title:after {
+      content: '';
+      position: absolute;
+      background: url(363a7691d630c662cb8dcde0bcee499f.svg);
+      background-position: center;
+      background-size: cover;
+      width: 14px;
+      height: 14px;
+      right: 15px; } }
 
 .footer-links--ul__list {
   letter-spacing: 0.0625rem;
@@ -410,8 +457,8 @@ Files inside this folder can contain specific element styles and layout.
 
 .footer-links--ul__link {
   color: var(--color-black);
-  font-family: 'NeutraText-DemiAlt';
-  font-size: 0.625rem; }
+  font-family: 'NeutraText-BookAlt';
+  font-size: 0.875rem; }
   @media (min-width: 768px) {
     .footer-links--ul__link {
       font-size: 0.375rem; } }
@@ -431,28 +478,72 @@ Files inside this folder can contain specific element styles and layout.
     .footer-links--title + div {
       display: block; } }
 
+.footer-links.open .footer-links--title + div {
+  display: block;
+  margin-bottom: 20px; }
+
+@media (max-width: 767px) {
+  .footer-links.open .footer-links--title:after {
+    background: url(3873b7fd702198e9b55a922e79a7abac.svg); } }
+
+@media (max-width: 767px) {
+  .footer-links.open {
+    border-bottom: 1px solid var(--color-black);
+    margin-bottom: 20px; } }
+
 .footer-subscribe {
-  display: flex; }
+  display: flex;
+  flex-direction: column;
+  margin: 0.5625rem 0rem 1.5625rem; }
   @media (min-width: 768px) {
     .footer-subscribe {
-      margin-bottom: 3.85417vw; } }
+      margin-bottom: 3.85417vw;
+      margin-top: 0; } }
+  .footer-subscribe .title {
+    font-family: 'NeutraText-BoldAlt';
+    font-size: 0.9375rem;
+    margin-bottom: 1.25rem; }
+    @media (min-width: 768px) {
+      .footer-subscribe .title {
+        font-size: 0.72917vw;
+        margin-bottom: 1.04167vw;
+        text-transform: uppercase; } }
+  .footer-subscribe .sub-title {
+    font-family: 'NeutraText-BookAlt';
+    font-size: 0.9375rem;
+    margin-bottom: 0.9375rem; }
+    @media (min-width: 768px) {
+      .footer-subscribe .sub-title {
+        font-size: 0.72917vw;
+        margin-bottom: 0.78125vw; } }
+  .footer-subscribe .input-button-wrapper {
+    position: relative; }
   .footer-subscribe input {
     border: 1px solid #CBCBCB;
     background: var(--color-white);
-    font-family: 'NeutraText-DemiAlt'; }
+    font-family: 'NeutraText-DemiAlt';
+    height: 3.25rem;
+    width: 100%;
+    font-size: 0.625rem;
+    padding-left: 0.8125rem; }
     @media (min-width: 768px) {
       .footer-subscribe input {
         font-size: 14px;
         height: 3.22917vw;
-        width: 17.91667vw;
+        width: 100%;
         padding-left: 1.25vw; } }
   .footer-subscribe button {
-    background: #8A8A8A;
+    background: transparent;
     border: none;
-    text-transform: uppercase;
     font-family: 'NeutraText-Bold';
-    color: var(--color-white);
-    flex: 1; }
+    color: var(--color-black);
+    height: 3.25rem;
+    font-size: 0.625rem;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2.5rem; }
     @media (min-width: 768px) {
       .footer-subscribe button {
         font-size: 0.88542vw;
@@ -472,9 +563,13 @@ Files inside this folder can contain specific element styles and layout.
 .footer-social {
   display: flex;
   margin-top: 1.25rem; }
+  @media (max-width: 767px) {
+    .footer-social {
+      align-items: center;
+      justify-content: center; } }
   @media (min-width: 768px) {
     .footer-social {
-      margin-top: 2.29167vw; } }
+      margin-top: 1.45833vw; } }
   .footer-social--icon {
     width: 1rem;
     height: 1rem;
@@ -519,7 +614,7 @@ Files inside this folder can contain specific element styles and layout.
   display: flex;
   flex-direction: column;
   background: var(--color-primary);
-  margin-bottom: 1.6875rem; }
+  margin-bottom: 1.25rem; }
   @media (min-width: 768px) {
     .banner-with-image {
       height: 25.15625vw;
@@ -528,7 +623,8 @@ Files inside this folder can contain specific element styles and layout.
   .banner-with-image--content {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    padding: 1.375rem 1.25rem; }
     @media (min-width: 768px) {
       .banner-with-image--content {
         flex: 1;
@@ -536,8 +632,8 @@ Files inside this folder can contain specific element styles and layout.
   .banner-with-image--heading {
     max-width: 15.6875rem;
     text-transform: uppercase;
-    font-size: 4.5625rem;
-    line-height: 4.375rem; }
+    font-size: 3.25rem;
+    line-height: 3.125rem; }
     @media (min-width: 768px) {
       .banner-with-image--heading {
         max-width: 45.3125vw;
@@ -545,10 +641,13 @@ Files inside this folder can contain specific element styles and layout.
         line-height: 9.47917vw; } }
   .banner-with-image--subtitle {
     font-size: 1.125rem;
-    font-family: 'NeutraText-BookAlt'; }
+    font-family: 'NeutraText-BookAlt';
+    margin-left: 0.3125rem;
+    margin-top: 0.4375rem; }
     @media (min-width: 768px) {
       .banner-with-image--subtitle {
-        font-size: 2rem; } }
+        font-size: 1.66667vw;
+        margin-left: 0.78125vw; } }
   .banner-with-image--image {
     width: 100%;
     height: 100%;
@@ -567,17 +666,17 @@ Files inside this folder can contain specific element styles and layout.
     .banner-with-background {
       padding-top: 4.63542vw;
       padding-bottom: 4.63542vw;
-      margin-bottom: 5.9375vw; } }
+      margin-bottom: 2.34375vw; } }
   .banner-with-background--heading {
     text-transform: uppercase; }
   .banner-with-background--subtitle {
-    font-size: 0.9375rem;
-    line-height: 1.1875rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
     margin-top: 0.5rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-family: 'NeutraText-BookAlt'; }
     @media (min-width: 768px) {
       .banner-with-background--subtitle {
-        font-family: 'NeutraText-BookAlt';
         margin-top: 1.04167vw;
         font-size: 1.82292vw;
         line-height: 2.1875vw; } }
@@ -654,16 +753,39 @@ Files inside this folder can contain specific element styles and layout.
         .category-posts .more-blog .blog-tile:not(:first-child) {
           display: block; } }
 
+.page-404--wrapper {
+  text-align: center;
+  padding: 10.5rem 0rem 9.6875rem; }
+  @media (min-width: 768px) {
+    .page-404--wrapper {
+      padding-top: 13.85417vw;
+      padding-bottom: 13.4375vw; } }
+  .page-404--wrapper p {
+    font-size: 1.125rem;
+    font-family: 'NeutraText-BookAlt'; }
+    @media (min-width: 768px) {
+      .page-404--wrapper p {
+        font-size: 1.30208vw; } }
+    .page-404--wrapper p:nth-child(2) {
+      font-family: 'NeutraText-BoldAlt'; }
+    .page-404--wrapper p a {
+      text-decoration: underline; }
+
 @media (min-width: 768px) {
   .full-width-section {
-    margin-bottom: 3.22917vw; } }
+    margin-bottom: 5.36458vw; } }
 
 .full-width-section--wrapper {
-  display: flex; }
+  display: flex;
+  margin-bottom: 1.125rem; }
   @media (min-width: 768px) {
     .full-width-section--wrapper {
       margin-bottom: 2.13542vw;
       height: 14.32292vw; } }
+  @media (max-width: 767px) {
+    .full-width-section--wrapper .full-width-section--content {
+      margin-left: 10px;
+      padding: 1.125rem 1.25rem; } }
   .full-width-section--wrapper.even {
     flex-direction: row-reverse; }
     @media (min-width: 768px) {
@@ -676,20 +798,31 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .full-width-section--wrapper.even .full-width-section--content .quote {
         margin-right: 6.30208vw; } }
-    @media (min-width: 768px) {
-      .full-width-section--wrapper.even .full-width-section--content .arrow {
-        margin-right: inherit;
-        margin-left: 4.6875vw; } }
+    .full-width-section--wrapper.even .full-width-section--content .arrow {
+      margin-right: 1.4375rem;
+      margin-left: 0; }
+      @media (min-width: 768px) {
+        .full-width-section--wrapper.even .full-width-section--content .arrow {
+          margin-right: inherit;
+          margin-left: 4.6875vw; } }
+    @media (max-width: 767px) {
+      .full-width-section--wrapper.even .full-width-section--content {
+        margin-right: 10px;
+        margin-left: 0; } }
 
 .full-width-section--image {
-  position: relative; }
+  position: relative;
+  width: 6.5625rem;
+  height: 5.875rem; }
   @media (min-width: 768px) {
     .full-width-section--image {
       width: 15.72917vw;
       height: 13.4375vw;
       margin-right: 2.8125vw; } }
   .full-width-section--image .img-fluid {
-    height: 100%; }
+    height: 100%;
+    position: relative;
+    z-index: 1; }
 
 .full-width-section--content {
   display: flex;
@@ -700,31 +833,40 @@ Files inside this folder can contain specific element styles and layout.
       flex: 1;
       justify-content: space-between; } }
   .full-width-section--content .content-title {
+    font-family: 'NeutraText-BoldAlt';
     text-transform: uppercase;
     color: var(--color-text);
-    letter-spacing: 0.45px; }
+    letter-spacing: 0.45px;
+    font-size: 1.125rem;
+    margin-bottom: 0.8125rem; }
     @media (min-width: 768px) {
       .full-width-section--content .content-title {
-        font-family: 'NeutraText-BoldAlt';
         font-size: 1.66667vw;
         margin-left: 6.30208vw;
-        letter-spacing: 0.10417vw; } }
+        letter-spacing: 0.10417vw;
+        margin-bottom: 0; } }
   .full-width-section--content .quote {
     position: relative;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    font-family: 'NeutraText-BookAlt';
+    color: var(--color-text);
+    font-size: 0.75rem;
+    line-height: 1rem; }
     @media (min-width: 768px) {
       .full-width-section--content .quote {
-        font-family: 'NeutraText-BookAlt';
-        font-size: 1.66667vw; } }
+        font-size: 1.66667vw;
+        line-height: 1; } }
     .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
       content: '';
       background-size: cover;
-      position: relative; }
+      position: relative;
+      display: none; }
       @media (min-width: 768px) {
         .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
           width: 2.86458vw;
-          height: 2.86458vw; } }
+          height: 2.86458vw;
+          display: block; } }
     .full-width-section--content .quote.quote-icon::before {
       background-image: url(bf5aea2b7755018a38ff581b3812fb38.svg);
       margin-top: -2.08333vw;
@@ -733,13 +875,28 @@ Files inside this folder can contain specific element styles and layout.
       background-image: url(54b5c487886eed843bcae48b6011de2d.svg);
       margin-top: 2.08333vw;
       margin-left: 0.52083vw; }
-  @media (min-width: 768px) {
-    .full-width-section--content .arrow {
-      margin-right: 4.6875vw;
-      width: 6.61458vw;
-      height: 6.61458vw; } }
-  .full-width-section--content .arrow img {
-    width: 100%; }
+  .full-width-section--content .arrow {
+    width: 2.8125rem;
+    height: 2.8125rem;
+    margin-left: 1.4375rem; }
+    @media (min-width: 768px) {
+      .full-width-section--content .arrow {
+        margin-right: 4.6875vw;
+        width: 6.61458vw;
+        height: 6.61458vw; } }
+    .full-width-section--content .arrow img {
+      width: 100%; }
+  .full-width-section--content.desktop {
+    display: none; }
+    @media (min-width: 768px) {
+      .full-width-section--content.desktop {
+        display: flex; } }
+  .full-width-section--content.mobile {
+    display: flex;
+    flex: 1; }
+    @media (min-width: 768px) {
+      .full-width-section--content.mobile {
+        display: none; } }
 
 @media (min-width: 768px) {
   .size-chart {
@@ -790,17 +947,21 @@ Files inside this folder can contain specific element styles and layout.
       width: 25vw; } }
 
 .explore-blog {
-  position: relative; }
+  position: relative;
+  margin-bottom: 4.375rem; }
   @media (min-width: 768px) {
     .explore-blog {
-      margin-top: 5.72917vw; } }
+      margin-top: 5.72917vw;
+      margin-bottom: 0; } }
   .explore-blog:after {
     content: '';
     position: absolute;
     background: var(--color-primary);
     width: 100%;
     left: 0;
-    z-index: -2; }
+    z-index: -2;
+    height: 37.0625rem;
+    bottom: -2.125rem; }
     @media (min-width: 768px) {
       .explore-blog:after {
         height: 28.59375vw;
@@ -808,7 +969,10 @@ Files inside this folder can contain specific element styles and layout.
   .explore-blog--title {
     background: var(--color-tile-bg);
     font-family: 'NeutraText-DemiAlt';
-    text-align: center; }
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 1.1875rem 0rem 0.9375rem;
+    margin-bottom: 1.5625rem; }
     @media (min-width: 768px) {
       .explore-blog--title {
         font-size: 2.86458vw;
@@ -818,21 +982,31 @@ Files inside this folder can contain specific element styles and layout.
         margin-bottom: 2.91667vw; } }
   .explore-blog--wrapper {
     margin: auto;
-    display: flex; }
+    display: flex;
+    flex-direction: column; }
     @media (min-width: 768px) {
       .explore-blog--wrapper {
         width: 84.375vw;
-        justify-content: space-between; } }
+        justify-content: space-between;
+        flex-direction: row; } }
     @media (min-width: 768px) {
       .explore-blog--wrapper.blog-wrapper {
         width: 88.54167vw; } }
   .explore-blog--box {
-    position: relative; }
+    position: relative;
+    width: 19.5rem;
+    margin: auto; }
     @media (min-width: 768px) {
       .explore-blog--box {
         width: 27.08333vw; } }
+    @media (max-width: 767px) {
+      .explore-blog--box:nth-child(2) {
+        margin-top: 1.5rem; }
+      .explore-blog--box:nth-child(3) {
+        display: none; } }
   .explore-blog--image {
-    display: flex; }
+    display: flex;
+    height: 12.4375rem; }
     @media (min-width: 768px) {
       .explore-blog--image {
         height: 17.23958vw; } }
@@ -843,7 +1017,8 @@ Files inside this folder can contain specific element styles and layout.
   .explore-blog--content {
     background: var(--color-secondary);
     position: relative;
-    color: var(--color-white); }
+    color: var(--color-white);
+    padding: 1.25rem 1.625rem 0.8125rem; }
     @media (min-width: 768px) {
       .explore-blog--content {
         padding-top: 2.13542vw;
@@ -852,24 +1027,31 @@ Files inside this folder can contain specific element styles and layout.
         padding-left: 1.92708vw; } }
     .explore-blog--content__cta {
       position: absolute;
-      top: 0; }
+      top: -0.75rem; }
       @media (min-width: 768px) {
         .explore-blog--content__cta {
           left: 1.92708vw;
           top: -1.19792vw; } }
-      @media (min-width: 768px) {
-        .explore-blog--content__cta img {
-          width: 2.44792vw;
-          height: 2.44792vw; } }
+      .explore-blog--content__cta img {
+        width: 1.5625rem;
+        height: 1.5625rem; }
+        @media (min-width: 768px) {
+          .explore-blog--content__cta img {
+            width: 2.44792vw;
+            height: 2.44792vw; } }
     .explore-blog--content__category {
       font-family: 'NeutraText-BookAlt';
-      letter-spacing: 1px; }
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      font-size: 1.125rem; }
       @media (min-width: 768px) {
         .explore-blog--content__category {
           font-size: 1.51042vw;
           margin-bottom: 0.9375vw; } }
     .explore-blog--content__title {
-      font-family: 'NeutraText-DemiAlt'; }
+      font-family: 'NeutraText-DemiAlt';
+      font-size: 1.25rem;
+      line-height: 1.25rem; }
       @media (min-width: 768px) {
         .explore-blog--content__title {
           font-size: 2.1875vw;
@@ -881,12 +1063,15 @@ Files inside this folder can contain specific element styles and layout.
       align-items: center; }
       .explore-blog--content.blog-pagination .blog-pagination-content {
         flex: 1; }
-      @media (min-width: 768px) {
-        .explore-blog--content.blog-pagination .blog-pagination-cta {
-          width: 2.39583vw;
-          height: 2.39583vw; } }
-      .explore-blog--content.blog-pagination .blog-pagination-cta img {
-        width: 100%; }
+      .explore-blog--content.blog-pagination .blog-pagination-cta {
+        width: 2.8125rem;
+        height: 2.8125rem; }
+        @media (min-width: 768px) {
+          .explore-blog--content.blog-pagination .blog-pagination-cta {
+            width: 2.39583vw;
+            height: 2.39583vw; } }
+        .explore-blog--content.blog-pagination .blog-pagination-cta img {
+          width: 100%; }
 
 @media (min-width: 768px) {
   .category-posts .explore-blog {
@@ -901,12 +1086,16 @@ Files inside this folder can contain specific element styles and layout.
 
 .see-more--wrapper {
   width: 100%;
-  margin: auto;
-  position: relative; }
+  margin: 20px auto 40px;
+  position: relative;
+  height: 3.5625rem;
+  display: inline-block; }
   @media (min-width: 768px) {
     .see-more--wrapper {
       height: 5.20833vw;
-      margin-bottom: 7.29167vw; } }
+      margin: auto;
+      margin-bottom: 7.29167vw;
+      display: block; } }
   .see-more--wrapper .see-more-button {
     font-family: 'NeutraText-BoldAlt';
     background: var(--color-tile-bg);
@@ -915,7 +1104,11 @@ Files inside this folder can contain specific element styles and layout.
     text-transform: uppercase;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    cursor: pointer;
+    outline: none;
+    font-size: 1.1875rem;
+    padding: 1.375rem 3.375rem; }
     @media (min-width: 768px) {
       .see-more--wrapper .see-more-button {
         font-size: 1.66667vw;
@@ -927,15 +1120,26 @@ Files inside this folder can contain specific element styles and layout.
     .see-more--wrapper .see-more-button .cta-button {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      width: 2.1875rem;
+      height: 2.1875rem;
+      top: -1.5625rem; }
       @media (min-width: 768px) {
         .see-more--wrapper .see-more-button .cta-button {
           width: 3.75vw;
-          height: 3.75vw; } }
+          height: 3.75vw;
+          bottom: -2.91667vw;
+          top: inherit; } }
 
 @media (min-width: 768px) {
   .featured-articles {
     margin-bottom: 2.03125vw; } }
+
+.featured-articles.desktop {
+  display: none; }
+  @media (min-width: 768px) {
+    .featured-articles.desktop {
+      display: flex; } }
 
 .featured-articles--wrapper {
   margin: auto;
@@ -974,12 +1178,13 @@ Files inside this folder can contain specific element styles and layout.
     .featured-articles .swiper-wrapper .swiper-slide {
       height: 41.35417vw;
       width: 100%; } }
-  .featured-articles .swiper-wrapper .swiper-slide--image {
-    flex: 1; }
-    .featured-articles .swiper-wrapper .swiper-slide--image img {
-      height: 100%;
-      -o-object-fit: cover;
-         object-fit: cover; }
+  @media (min-width: 768px) {
+    .featured-articles .swiper-wrapper .swiper-slide--image {
+      flex: 1; } }
+  .featured-articles .swiper-wrapper .swiper-slide--image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
   .featured-articles .swiper-wrapper .swiper-slide--content {
     background: var(--color-tile-bg);
     font-family: 'NeutraText-BookAlt'; }
@@ -1004,76 +1209,187 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 1.51042vw;
         line-height: 1.66667vw;
         margin-bottom: 2.29167vw; } }
+    .featured-articles .swiper-wrapper .swiper-slide--content__cta {
+      width: 2.8125rem;
+      height: 2.8125rem; }
+      @media (min-width: 768px) {
+        .featured-articles .swiper-wrapper .swiper-slide--content__cta {
+          width: 6.61458vw;
+          height: 6.61458vw; } }
+      .featured-articles .swiper-wrapper .swiper-slide--content__cta img {
+        width: 100%; }
+
+.featured-articles.even {
+  margin-top: 0; }
+  @media (min-width: 768px) {
+    .featured-articles.even .swiper-wrapper .swiper-slide {
+      flex-direction: row-reverse; } }
+  .featured-articles.even .swiper-wrapper .swiper-slide--content {
+    text-align: right; }
+    .featured-articles.even .swiper-wrapper .swiper-slide--content__cta {
+      margin-left: auto; }
+  .featured-articles.even .swiper-button--wrapper {
+    right: inherit;
+    left: 0; }
+
+.featured-articles-mobile {
+  display: block;
+  background: var(--color-tile-bg);
+  padding: 2.1875rem 1.25rem;
+  margin-top: 2.125rem;
+  height: 44.625rem;
+  margin-bottom: 2.125rem; }
+  @media (min-width: 768px) {
+    .featured-articles-mobile {
+      display: none; } }
+  .featured-articles-mobile--wrapper .swiper-slide--content {
+    font-family: 'NeutraText-BookAlt';
+    text-align: center;
+    display: flex;
+    flex-direction: column; }
+    .featured-articles-mobile--wrapper .swiper-slide--content__category {
+      font-size: 1.3125rem;
+      margin-bottom: 1.5625rem; }
+    .featured-articles-mobile--wrapper .swiper-slide--content__title {
+      font-size: 1.25rem;
+      line-height: 1.1875rem;
+      margin-bottom: 1.5625rem; }
+    .featured-articles-mobile--wrapper .swiper-slide--content__para {
+      font-size: 1.25rem;
+      line-height: 1.375rem; }
+    .featured-articles-mobile--wrapper .swiper-slide--content__cta a {
+      border: 1px solid var(--color-black);
+      font-family: 'NeutraText-DemiAlt';
+      font-size: 1.125rem;
+      padding: 1.375rem 1.9375rem 1.125rem;
+      display: inline-block;
+      margin-top: 2.75rem;
+      position: relative;
+      text-transform: uppercase; }
+      .featured-articles-mobile--wrapper .swiper-slide--content__cta a img {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -33px; }
+  .featured-articles-mobile--wrapper .swiper-slide--image {
+    width: 14.625rem;
+    height: 19.1875rem;
+    margin: 0 auto 25px; }
+    .featured-articles-mobile--wrapper .swiper-slide--image img {
+      -o-object-fit: cover;
+         object-fit: cover;
+      height: 100%;
+      -o-object-position: 50% 50%;
+         object-position: 50% 50%; }
+  .featured-articles-mobile .swiper-pagination {
+    position: relative; }
+  .featured-articles-mobile .custom-swiper-pagination .swiper-pagination-bullet {
+    background: var(--color-gray-light);
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 10px;
+    height: 10px;
+    margin-top: 1.5625rem; }
+  .featured-articles-mobile .custom-swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--color-black); }
+
+.article-header {
+  margin-bottom: 1.5625rem; }
+  @media (min-width: 768px) {
+    .article-header {
+      margin-bottom: 4.11458vw; } }
+  .article-header--wrapper {
+    margin: auto;
+    text-align: center; }
     @media (min-width: 768px) {
-      .featured-articles .swiper-wrapper .swiper-slide--content__cta {
-        width: 6.61458vw;
-        height: 6.61458vw; } }
+      .article-header--wrapper {
+        width: 76.5625vw;
+        margin-top: 1.5625vw; } }
+  .article-header--banner {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    height: 11.375rem; }
+    @media (min-width: 768px) {
+      .article-header--banner {
+        height: 35.3125vw;
+        margin-bottom: 1.92708vw; } }
+  .article-header--category {
+    font-family: 'NeutraText-BookAlt';
+    margin-top: 1rem;
+    margin-bottom: 1.125rem; }
+    @media (min-width: 768px) {
+      .article-header--category {
+        font-size: 1.71875vw;
+        line-height: 1.875vw;
+        margin-bottom: 3.75vw; } }
+  .article-header--title {
+    font-family: 'NeutraText-BookAlt';
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 2.125rem;
+    margin-bottom: 4px; }
+    @media (min-width: 768px) {
+      .article-header--title {
+        font-size: 4.89583vw;
+        line-height: 4.6875vw;
+        margin-bottom: 0; } }
+  .article-header--para {
+    font-family: 'NeutraText-LightAlt';
+    font-size: 1.375rem;
+    letter-spacing: 0.5px;
+    max-width: 90%;
+    margin: auto; }
+    @media (min-width: 768px) {
+      .article-header--para {
+        max-width: 100%;
+        font-size: 2.39583vw;
+        line-height: 2.44792vw;
+        letter-spacing: 0.08385vw; } }
+  .article-header--para-two {
+    font-family: 'NeutraText-BookAlt';
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 90%;
+    margin: auto; }
+    @media (min-width: 768px) {
+      .article-header--para-two {
+        max-width: 100%;
+        font-size: 1.09375vw;
+        line-height: 1.77083vw; } }
+  .article-header--para--two-half {
+    font-family: 'NeutraText-LightAlt';
+    font-size: 1rem;
+    line-height: 1.25rem;
+    max-width: 90%;
+    margin: auto; }
+    @media (min-width: 768px) {
+      .article-header--para--two-half {
+        max-width: 50%;
+        font-size: 1.09375vw;
+        line-height: 1.77083vw; } }
 
-.featured-articles.even .swiper-slide {
-  flex-direction: row-reverse; }
-
-.featured-articles.even .swiper-button--wrapper {
-  right: inherit;
-  left: 0; }
-
-@media (min-width: 768px) {
-  .article-header {
-    margin-bottom: 4.11458vw; } }
-
-.article-header--wrapper {
-  margin: auto;
-  text-align: center; }
-  @media (min-width: 768px) {
-    .article-header--wrapper {
-      width: 76.5625vw;
-      margin-top: 1.5625vw; } }
-
-.article-header--banner {
-  width: 100%;
-  background-size: cover;
-  background-position: center; }
-  @media (min-width: 768px) {
-    .article-header--banner {
-      height: 35.3125vw;
-      margin-bottom: 1.92708vw; } }
-
-.article-header--category {
-  font-family: 'NeutraText-BookAlt'; }
-  @media (min-width: 768px) {
-    .article-header--category {
-      font-size: 1.71875vw;
-      line-height: 1.875vw;
-      margin-bottom: 3.75vw; } }
-
-.article-header--title {
-  font-family: 'NeutraText-BookAlt';
-  text-transform: uppercase; }
-  @media (min-width: 768px) {
-    .article-header--title {
-      font-size: 4.89583vw;
-      line-height: 4.6875vw; } }
-
-.article-header--para {
-  font-family: 'NeutraText-LightAlt'; }
-  @media (min-width: 768px) {
-    .article-header--para {
-      font-size: 2.39583vw;
-      line-height: 2.44792vw; } }
+@media (max-width: 767px) {
+  .three-reason {
+    padding: 0rem 1.125rem; } }
 
 .three-reason--wrapper {
   margin: auto; }
   @media (min-width: 768px) {
     .three-reason--wrapper {
-      width: 92.1875vw; } }
+      width: 84.375vw; } }
 
 .three-reason--title {
   text-align: center;
-  font-family: 'NeutraText-DemiAlt'; }
+  font-family: 'NeutraText-DemiAlt';
+  margin-bottom: 1rem; }
   @media (min-width: 768px) {
     .three-reason--title {
       font-size: 1.66667vw;
       line-height: 2.13542vw;
-      margin-bottom: 2.08333vw; } }
+      margin-bottom: 4.16667vw; } }
 
 .three-reason .reason-box {
   display: flex;
@@ -1081,55 +1397,101 @@ Files inside this folder can contain specific element styles and layout.
   position: relative; }
   @media (min-width: 768px) {
     .three-reason .reason-box {
-      height: 29.58333vw; } }
+      height: 26.92708vw; }
+      .three-reason .reason-box:last-child {
+        margin-bottom: 4.16667vw; } }
   .three-reason .reason-box--content {
     background: var(--color-tile-bg);
     flex: 1;
     display: flex;
     align-items: center;
     position: absolute;
-    color: var(--color-text); }
+    color: var(--color-text);
+    width: 12.375rem;
+    right: 0; }
     @media (min-width: 768px) {
       .three-reason .reason-box--content {
         width: 55.20833vw;
-        min-height: 14.27083vw;
+        min-height: 13.02083vw;
         padding-left: 2.60417vw;
         padding-right: 4.16667vw; } }
     .three-reason .reason-box--content__number {
       font-family: 'NeutraText-BoldAlt'; }
+      @media (max-width: 767px) {
+        .three-reason .reason-box--content__number {
+          position: absolute;
+          right: 0;
+          top: 0;
+          background: var(--color-primary);
+          width: 4.9375rem;
+          height: 4.9375rem;
+          border-radius: 50%;
+          font-size: 3.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center; } }
       @media (min-width: 768px) {
         .three-reason .reason-box--content__number {
           font-size: 9.73958vw;
           line-height: 4.63542vw; } }
     .three-reason .reason-box--content__para {
-      font-family: 'NeutraText-BookAlt'; }
+      font-family: 'NeutraText-BookAlt';
+      padding: 2.1875rem 1.75rem;
+      font-size: 0.875rem;
+      line-height: 1rem; }
       @media (min-width: 768px) {
         .three-reason .reason-box--content__para {
           font-size: 1.51042vw;
           line-height: 1.82292vw;
-          margin-left: 2.5vw; } }
-  @media (min-width: 768px) {
-    .three-reason .reason-box--image {
-      width: 40.36458vw;
-      height: 100%;
-      z-index: -2;
-      position: relative; } }
-  .three-reason .reason-box.odd {
-    justify-content: flex-end; }
+          margin-left: 2.5vw;
+          padding: 0; } }
+  .three-reason .reason-box--image {
+    width: 9.625rem;
+    height: 12.8125rem; }
     @media (min-width: 768px) {
-      .three-reason .reason-box.odd .reason-box--content {
-        left: 0;
-        top: 2.08333vw; } }
+      .three-reason .reason-box--image {
+        width: 36.97917vw;
+        height: 100%;
+        z-index: -2;
+        position: relative; } }
+  @media (min-width: 768px) {
+    .three-reason .reason-box.odd {
+      justify-content: flex-end; } }
+  @media (min-width: 768px) {
+    .three-reason .reason-box.odd .reason-box--content {
+      left: 0;
+      top: 2.08333vw; } }
+  .three-reason .reason-box.odd .reason-box--image {
+    position: relative; }
+    .three-reason .reason-box.odd .reason-box--image .tag-name {
+      position: absolute;
+      left: -1.35417vw;
+      bottom: 0;
+      transform: rotate(-90deg);
+      transform-origin: left;
+      font-family: 'NeutraText-DemiAlt';
+      font-size: 1.35417vw;
+      color: var(--color-text); }
   .three-reason .reason-box.even {
     justify-content: flex-start; }
     @media (min-width: 768px) {
       .three-reason .reason-box.even {
-        margin-top: -10.41667vw; } }
+        margin-top: -6.77083vw;
+        margin-bottom: 3.64583vw; } }
     @media (min-width: 768px) {
       .three-reason .reason-box.even .reason-box--content {
         right: 0;
         top: inherit;
         bottom: 2.08333vw; } }
+    .three-reason .reason-box.even .reason-box--image {
+      position: relative; }
+      .three-reason .reason-box.even .reason-box--image .tag-name {
+        position: absolute;
+        left: 0;
+        bottom: -1.82292vw;
+        font-family: 'NeutraText-DemiAlt';
+        font-size: 1.35417vw;
+        color: var(--color-text); }
 
 .wow-factor--wrapper {
   margin: auto;
@@ -1142,6 +1504,9 @@ Files inside this folder can contain specific element styles and layout.
       width: 92.1875vw; } }
   .wow-factor--wrapper.top {
     z-index: 2; }
+    @media (max-width: 767px) {
+      .wow-factor--wrapper.top {
+        flex-direction: column; } }
   .wow-factor--wrapper.bottom {
     z-index: 1; }
     @media (min-width: 768px) {
@@ -1152,7 +1517,11 @@ Files inside this folder can contain specific element styles and layout.
   background: var(--color-tile-bg);
   position: relative;
   font-family: 'NeutraText-DemiAlt';
-  text-align: center; }
+  text-align: center;
+  padding: 2.1875rem;
+  width: 20.8125rem;
+  font-size: 1rem;
+  line-height: 1.75rem; }
   @media (min-width: 768px) {
     .wow-factor--left {
       width: 34.89583vw;
@@ -1166,19 +1535,27 @@ Files inside this folder can contain specific element styles and layout.
       margin-top: -8.02083vw; } }
   .wow-factor--left .cta-button {
     position: absolute;
-    top: -2.08333vw;
-    left: 50%;
-    transform: translateX(-50%); }
+    top: -1.375rem;
+    left: 2.5rem;
+    width: 2.8125rem;
+    height: 2.8125rem; }
     @media (min-width: 768px) {
       .wow-factor--left .cta-button {
         width: 6.61458vw;
-        height: 6.61458vw; } }
+        height: 6.61458vw;
+        top: -2.08333vw;
+        left: 50%;
+        transform: translateX(-50%); } }
 
 .wow-factor--right {
   background: var(--color-tile-bg);
   position: relative;
   font-family: 'NeutraText-DemiAlt';
-  text-align: center; }
+  text-align: center;
+  margin-top: 3.375rem;
+  padding: 2.5rem 2.75rem 1.375rem;
+  font-size: 1.0625rem;
+  line-height: 1.875rem; }
   @media (min-width: 768px) {
     .wow-factor--right {
       width: 35.52083vw;
@@ -1192,20 +1569,219 @@ Files inside this folder can contain specific element styles and layout.
       margin-top: 8.02083vw; } }
   .wow-factor--right .cta-button {
     position: absolute;
-    top: -2.08333vw;
+    width: 2.8125rem;
+    height: 2.8125rem;
+    top: -1.375rem;
     left: 50%;
     transform: translateX(-50%); }
     @media (min-width: 768px) {
       .wow-factor--right .cta-button {
+        top: -2.08333vw;
         width: 6.61458vw;
         height: 6.61458vw; } }
 
 .wow-factor--banner {
-  width: 100%; }
+  width: 100%;
+  height: 13.1875rem;
+  margin-top: -1.25rem; }
   @media (min-width: 768px) {
     .wow-factor--banner {
       height: 39.21875vw;
-      margin-bottom: 4.6875vw; } }
+      margin-bottom: 4.6875vw;
+      margin-top: 0; } }
+  .wow-factor--banner img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 100%; }
+
+@media (min-width: 768px) {
+  .image-content {
+    margin-top: 4.0625vw;
+    margin-bottom: 6.40625vw; } }
+
+.image-content--wrapper {
+  margin: auto; }
+  @media (min-width: 768px) {
+    .image-content--wrapper {
+      width: 66.66667vw; } }
+
+@media (min-width: 768px) {
+  .image-content--image {
+    width: 29.16667vw;
+    height: 29.16667vw; } }
+
+.image-content--image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%; }
+
+.image-content--content {
+  background: var(--color-tile-bg);
+  color: var(--color-text);
+  position: relative; }
+  @media (min-width: 768px) {
+    .image-content--content {
+      width: 30.05208vw;
+      padding-top: 2.70833vw;
+      padding-right: 2.70833vw;
+      padding-bottom: 2.70833vw;
+      padding-left: 2.70833vw; } }
+  .image-content--content__head {
+    font-family: 'NeutraText-BoldItalicAlt'; }
+    @media (min-width: 768px) {
+      .image-content--content__head {
+        font-size: 4.0625vw;
+        margin-bottom: 1.875vw; } }
+  .image-content--content__para {
+    font-family: 'NeutraText-BookAlt'; }
+    @media (min-width: 768px) {
+      .image-content--content__para {
+        font-size: 1.04167vw;
+        line-height: 1.25vw; } }
+
+.image-content .odd {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+  @media (min-width: 768px) {
+    .image-content .odd {
+      margin-bottom: 2.29167vw; } }
+  @media (min-width: 768px) {
+    .image-content .odd .image-content--content {
+      margin-left: 3.33333vw; } }
+
+.image-content .even {
+  display: flex;
+  width: 100%;
+  align-items: center; }
+  @media (min-width: 768px) {
+    .image-content .even {
+      flex-direction: row-reverse;
+      margin-bottom: 2.29167vw; } }
+  @media (min-width: 768px) {
+    .image-content .even .image-content--content {
+      margin-right: 3.33333vw; } }
+
+@media (min-width: 768px) {
+  .image-content.image-content-gif .image-content--image {
+    width: 33.33333vw;
+    height: 33.33333vw; } }
+
+.image-content.image-content-gif .image-content--content {
+  background: transparent;
+  color: var(--color-text);
+  position: relative;
+  text-align: center;
+  margin: 0; }
+  @media (min-width: 768px) {
+    .image-content.image-content-gif .image-content--content {
+      width: 33.33333vw; } }
+  .image-content.image-content-gif .image-content--content__title {
+    font-family: 'NeutraText-BoldAlt'; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content__title {
+        font-size: 1.09375vw;
+        line-height: 1.77083vw;
+        margin-bottom: 1.5625vw; } }
+  .image-content.image-content-gif .image-content--content__tag {
+    font-family: 'NeutraText-BookItalicAlt'; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content__tag {
+        font-size: 1.09375vw;
+        line-height: 1.77083vw; } }
+  @media (min-width: 768px) {
+    .image-content.image-content-gif .image-content--content .content-inner {
+      position: absolute;
+      width: 20.3125vw;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%); } }
+  .image-content.image-content-gif .image-content--content .quote-left {
+    position: absolute; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content .quote-left {
+        width: 2.8125vw;
+        top: 4.01042vw;
+        left: 4.01042vw; } }
+  .image-content.image-content-gif .image-content--content .quote-right {
+    position: absolute; }
+    @media (min-width: 768px) {
+      .image-content.image-content-gif .image-content--content .quote-right {
+        width: 2.8125vw;
+        bottom: 4.01042vw;
+        right: 4.01042vw; } }
+
+.image-content.image-content-gif .odd {
+  margin-bottom: 0;
+  align-items: stretch; }
+
+.image-content.image-content-gif .even {
+  margin-bottom: 0;
+  align-items: stretch; }
+
+.image-content .see-more-button {
+  font-family: 'NeutraText-BoldAlt';
+  background: var(--color-tile-bg);
+  color: var(--color-secondary);
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  display: inline-block; }
+  @media (min-width: 768px) {
+    .image-content .see-more-button {
+      font-size: 1.66667vw;
+      padding-top: 1.35417vw;
+      padding-right: 3.02083vw;
+      padding-bottom: 1.35417vw;
+      padding-left: 3.02083vw; } }
+  .image-content .see-more-button .cta-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
+    @media (min-width: 768px) {
+      .image-content .see-more-button .cta-button {
+        width: 3.75vw;
+        height: 3.75vw;
+        bottom: -2.91667vw; } }
+
+.article--para {
+  font-family: 'NeutraText-BookAlt';
+  font-size: 1rem;
+  line-height: 1.25rem;
+  max-width: 90%;
+  margin: auto; }
+  @media (min-width: 768px) {
+    .article--para {
+      width: 66.66667vw;
+      font-size: 1.09375vw;
+      line-height: 1.77083vw; } }
+
+.article--para-half {
+  font-family: 'NeutraText-BookAlt';
+  font-size: 1rem;
+  line-height: 1.25rem;
+  max-width: 90%;
+  margin: auto; }
+  @media (min-width: 768px) {
+    .article--para-half {
+      width: 31.25vw;
+      font-size: 1.09375vw;
+      line-height: 1.77083vw; } }
+
+.article-para-bold {
+  font-family: 'NeutraText-DemiAlt';
+  font-size: 1rem;
+  line-height: 1.25rem;
+  max-width: 90%;
+  margin: 20px auto; }
+  @media (min-width: 768px) {
+    .article-para-bold {
+      width: 66.66667vw;
+      font-size: 1.66667vw;
+      line-height: 2.13542vw;
+      margin-top: 2.08333vw;
+      margin-bottom: 2.08333vw; } }
 
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {

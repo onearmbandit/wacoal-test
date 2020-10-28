@@ -11,13 +11,14 @@
 
     p{
       font-size: calcRem(18);
+      @include NeutraText-BookAlt;
 
       @include respond-above(sm) {
         font-size: get-vw(25px);
       }
 
       &:nth-child(2) {
-        // @include ProximaNova-Bold;
+        @include NeutraText-BoldAlt;
       }
 
       a {

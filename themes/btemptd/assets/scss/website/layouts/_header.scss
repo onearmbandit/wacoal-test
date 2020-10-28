@@ -38,7 +38,9 @@
     margin: calcRem(0, 23);
 
     @include respond-above(sm) {
-      margin: calcRem(0, 87);
+      // margin: calcRem(0, 87);
+      margin-left: get-vw(87px);
+      margin-right: get-vw(87px);
     }
   }
 
@@ -49,7 +51,7 @@
     text-transform: uppercase;
 
     @include respond-above(sm) {
-      font-size: calcRem(22);
+      font-size: get-vw(22px);
     }
   }
 }
@@ -92,6 +94,9 @@
   display: flex;
   align-items: center;
   padding-left: calcRem(26);
+  @include NeutraText-BoldAlt;
+  font-size: calcRem(15);
+  text-transform: uppercase;
 
   @include respond-above(sm) {
     display: none;

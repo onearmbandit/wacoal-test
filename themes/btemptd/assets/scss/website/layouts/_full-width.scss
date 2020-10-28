@@ -1,15 +1,23 @@
 .full-width-section {
 
   @include respond-above(sm) {
-    margin-bottom: get-vw(62px);
+    margin-bottom: get-vw(103px);
   }
 
   &--wrapper {
     display: flex;
+    margin-bottom: calcRem(18);
 
     @include respond-above(sm) {
       margin-bottom: get-vw(41px);
       height: get-vw(275px);
+    }
+
+    @include respond-below(sm){
+      .full-width-section--content {
+        margin-left: 10px;
+        padding: calcRem(18, 20);
+      }
     }
 
     &.even {
@@ -39,6 +47,8 @@
         }
 
         .arrow {
+          margin-right: calcRem(23);
+          margin-left: 0;
 
           @include respond-above(sm) {
             margin-right: inherit;
@@ -46,11 +56,20 @@
           }
         }
       }
+
+      @include respond-below(sm){
+        .full-width-section--content {
+          margin-right: 10px;
+          margin-left: 0;
+        }
+      }
     }
   }
 
   &--image {
     position: relative;
+    width: calcRem(105);
+    height: calcRem(94);
 
     @include respond-above(sm) {
       width: get-vw(302px);
@@ -60,6 +79,8 @@
 
     .img-fluid {
       height: 100%;
+      position: relative;
+      z-index: 1;
     }
   }
 
@@ -74,15 +95,18 @@
     }
 
     .content-title {
+      @include NeutraText-BoldAlt;
       text-transform: uppercase;
       color: var(--color-text);
       letter-spacing: 0.45px;
+      font-size: calcRem(18);
+      margin-bottom: calcRem(13);
 
       @include respond-above(sm) {
-        @include NeutraText-BoldAlt;
         font-size: get-vw(32px);
         margin-left: get-vw(121px);
         letter-spacing: get-vw(2px);
+        margin-bottom: 0;
       }
     }
 
@@ -90,10 +114,14 @@
       position: relative;
       display: flex;
       align-items: center;
+      @include NeutraText-BookAlt;
+      color: var(--color-text);
+      font-size: calcRem(12);
+      line-height: calcRem(16);
 
       @include respond-above(sm) {
-        @include NeutraText-BookAlt;
         font-size: get-vw(32px);
+        line-height: 1;
       }
 
       &.quote-icon {
@@ -102,10 +130,12 @@
           content: '';
           background-size: cover;
           position: relative;
+          display: none;
 
           @include respond-above(sm) {
             width: get-vw(55px);
             height: get-vw(55px);
+            display: block;
           }
         }
 
@@ -124,6 +154,9 @@
     }
 
     .arrow {
+      width: calcRem(45);
+      height: calcRem(45);
+      margin-left: calcRem(23);
 
       @include respond-above(sm) {
         margin-right: get-vw(90px);
@@ -133,6 +166,23 @@
 
       img {
         width: 100%;
+      }
+    }
+
+    &.desktop {
+      display: none;
+
+      @include respond-above(sm) {
+        display: flex;
+      }
+    }
+
+    &.mobile {
+      display: flex;
+      flex: 1;
+
+      @include respond-above(sm) {
+        display: none;
       }
     }
 

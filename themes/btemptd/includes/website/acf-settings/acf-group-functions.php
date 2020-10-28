@@ -64,7 +64,7 @@ function Static_Sec_toolbar( $toolbars )
 {
 
     $toolbars['Static Section Toolbar']    = array();
-    $toolbars['Static Section Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist' );
+    $toolbars['Static Section Toolbar'][1] = array( 'bold', 'italic', 'strikethrough', 'link', 'numlist', 'bullist', 'blockquote');
 
     return $toolbars;
 }
