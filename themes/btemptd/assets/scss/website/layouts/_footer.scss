@@ -20,6 +20,9 @@
 
   @include respond-above(sm) {
     width: get-vw(1630px);
+  }
+
+  @include respond-above(lg) {
     flex-direction: row;
   }
 
@@ -29,7 +32,17 @@
     justify-content: space-between;
     flex-direction: column;
 
-    @include respond-above(sm) {
+    @include respond-below(sm) {
+      border-top: 1px solid var(--color-black);
+      padding-top: 20px;
+    }
+
+    @include respond-between(sm, lg) {
+      width: 100%;
+      flex-direction: row;
+    }
+
+    @include respond-above(lg) {
       flex-direction: row;
       margin-left: get-vw(270px);
     }
@@ -37,9 +50,16 @@
 
   &--right {
     flex: 1;
-    max-width: calcRem(272);
 
-    @include respond-above(sm) {
+    // @include respond-below(sm) {
+    //   max-width: calcRem(272);
+    // }
+
+    @include respond-between(sm, lg) {
+      width: 100%;
+    }
+
+    @include respond-above(lg) {
       max-width: get-vw(510px);
     }
   }
@@ -68,23 +88,37 @@
 
 .bottom-footer {
 
-  border-top: 1px solid var(--color-black);
+  @include respond-below(sm) {
+    text-align: center;
+  }
 
   @include respond-above(sm) {
       margin-top: get-vw(80px);
+      border-top: 1px solid var(--color-black);
+  }
+
+  @include respond-between(sm, lg) {
+    .footer-wrapper {
+      flex-direction: row;
+    }
   }
 }
 
 .footer-links {
+
   &--title {
     @include NeutraText-Bold;
-    font-size: calcRem(13);
+    font-size: calcRem(15);
     color: var(--color-black);
     margin-bottom: calcRem(20);
+    border-bottom: 1px solid var(--color-black);
+    padding-bottom: calcRem(22);
+    position: relative;
 
     @include respond-above(sm) {
       font-size: calcRem(9);
       margin-bottom: calcRem(13.8);
+      border-bottom: none;
     }
 
     @include respond-above(md) {
@@ -100,6 +134,19 @@
     @include respond-above(xl) {
       font-size: calcRem(20);
       margin-bottom: calcRem(37.7);
+    }
+
+    @include respond-below(sm) {
+      &:after {
+        content: '';
+        position: absolute;
+        background: url('../../images/plus-icon.svg');
+        background-position: center;
+        background-size: cover;
+        width: 14px;
+        height: 14px;
+        right: 15px;
+      }
     }
 
   }
@@ -135,8 +182,8 @@
 
     &__link {
       color: var(--color-black);
-      @include NeutraText-DemiAlt;
-      font-size: calcRem(10);
+      @include NeutraText-BookAlt;
+      font-size: calcRem(14);
 
 
       @include respond-above(sm) {
@@ -167,6 +214,24 @@
   }
 }
 
+.footer-links.open .footer-links--title + div {
+  display: block;
+  margin-bottom: 20px;
+}
+.footer-links.open .footer-links--title {
+  @include respond-below(sm) {
+    &:after {
+      background: url('../../images/minus-icon.svg');
+    }
+  }
+}
+.footer-links.open {
+  @include respond-below(sm) {
+    border-bottom: 1px solid var(--color-black);
+    margin-bottom: 20px;
+  }
+}
+
 .footer-subscribe {
   display: flex;
   flex-direction: column;
@@ -179,15 +244,25 @@
 
   .title {
     @include NeutraText-BoldAlt;
-    font-size: get-vw(14px);
-    margin-bottom: get-vw(20px);
-    text-transform: uppercase;
+    font-size: calcRem(15);
+    margin-bottom: calcRem(20);
+
+    @include respond-above(sm) {
+      font-size: get-vw(14px);
+      margin-bottom: get-vw(20px);
+      text-transform: uppercase;
+    }
   }
 
   .sub-title {
     @include NeutraText-BookAlt;
-    font-size: get-vw(14px);
-    margin-bottom: get-vw(15px);
+    font-size: calcRem(15);
+    margin-bottom: calcRem(15);
+
+    @include respond-above(sm) {
+      font-size: get-vw(14px);
+      margin-bottom: get-vw(15px);
+    }
   }
 
   .input-button-wrapper {
@@ -198,8 +273,8 @@
     border: 1px solid #CBCBCB;
     background: var(--color-white);
     @include NeutraText-DemiAlt;
-    height: calcRem(34);
-    width: calcRem(194);
+    height: calcRem(52);
+    width: 100%;
     font-size: calcRem(10);
     padding-left: calcRem(13);
 
@@ -216,17 +291,17 @@
     border: none;
     @include NeutraText-Bold;
     color: var(--color-black);
-    height: calcRem(34);
+    height: calcRem(52);
     font-size: calcRem(10);
     cursor: pointer;
     position: absolute;
     right: 0;
     top: 0;
+    width: calcRem(40);
 
     @include respond-above(sm) {
       font-size: get-vw(17px);
       height: get-vw(64px);
-      width: get-vw(40px);
     }
   }
 }
@@ -249,6 +324,11 @@
 .footer-social {
   display: flex;
   margin-top: calcRem(20);
+
+  @include respond-below(sm) {
+    align-items: center;
+    justify-content: center;
+  }
 
   @include respond-above(sm) {
     margin-top: get-vw(28px);

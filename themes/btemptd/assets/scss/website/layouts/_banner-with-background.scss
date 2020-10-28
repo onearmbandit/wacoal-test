@@ -15,13 +15,13 @@
   }
 
   &--subtitle {
-    font-size: calcRem(15);
-    line-height: calcRem(19);
+    font-size: calcRem(18);
+    line-height: calcRem(22);
     margin-top: calcRem(8);
     text-transform: uppercase;
+    @include NeutraText-BookAlt;
 
     @include respond-above(sm) {
-      @include NeutraText-BookAlt;
       margin-top: get-vw(20px);
       font-size: get-vw(35px);
       line-height: get-vw(42px);

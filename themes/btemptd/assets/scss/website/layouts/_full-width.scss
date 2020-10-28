@@ -6,10 +6,18 @@
 
   &--wrapper {
     display: flex;
+    margin-bottom: calcRem(18);
 
     @include respond-above(sm) {
       margin-bottom: get-vw(41px);
       height: get-vw(275px);
+    }
+
+    @include respond-below(sm){
+      .full-width-section--content {
+        margin-left: 10px;
+        padding: calcRem(18, 20);
+      }
     }
 
     &.even {
@@ -39,11 +47,20 @@
         }
 
         .arrow {
+          margin-right: calcRem(23);
+          margin-left: 0;
 
           @include respond-above(sm) {
             margin-right: inherit;
             margin-left: get-vw(90px);
           }
+        }
+      }
+
+      @include respond-below(sm){
+        .full-width-section--content {
+          margin-right: 10px;
+          margin-left: 0;
         }
       }
     }
@@ -83,11 +100,13 @@
       color: var(--color-text);
       letter-spacing: 0.45px;
       font-size: calcRem(18);
+      margin-bottom: calcRem(13);
 
       @include respond-above(sm) {
         font-size: get-vw(32px);
         margin-left: get-vw(121px);
         letter-spacing: get-vw(2px);
+        margin-bottom: 0;
       }
     }
 
@@ -97,9 +116,12 @@
       align-items: center;
       @include NeutraText-BookAlt;
       color: var(--color-text);
+      font-size: calcRem(12);
+      line-height: calcRem(16);
 
       @include respond-above(sm) {
         font-size: get-vw(32px);
+        line-height: 1;
       }
 
       &.quote-icon {
@@ -134,6 +156,7 @@
     .arrow {
       width: calcRem(45);
       height: calcRem(45);
+      margin-left: calcRem(23);
 
       @include respond-above(sm) {
         margin-right: get-vw(90px);

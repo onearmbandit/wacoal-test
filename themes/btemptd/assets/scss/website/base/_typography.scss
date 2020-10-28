@@ -13,7 +13,7 @@ h1 {
 }
 
 h2 {
-  font-size: calcRem(42);
+  font-size: calcRem(47);
   line-height: calcRem(45);
 
   @include respond-above(sm) {
