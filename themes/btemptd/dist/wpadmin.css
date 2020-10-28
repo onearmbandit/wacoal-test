@@ -1128,7 +1128,8 @@ Files inside this folder can contain specific element styles and layout.
         .see-more--wrapper .see-more-button .cta-button {
           width: 3.75vw;
           height: 3.75vw;
-          bottom: -2.91667vw; } }
+          bottom: -2.91667vw;
+          top: inherit; } }
 
 @media (min-width: 768px) {
   .featured-articles {
@@ -1378,7 +1379,7 @@ Files inside this folder can contain specific element styles and layout.
   margin: auto; }
   @media (min-width: 768px) {
     .three-reason--wrapper {
-      width: 92.1875vw; } }
+      width: 84.375vw; } }
 
 .three-reason--title {
   text-align: center;
@@ -1396,7 +1397,7 @@ Files inside this folder can contain specific element styles and layout.
   position: relative; }
   @media (min-width: 768px) {
     .three-reason .reason-box {
-      height: 29.58333vw; }
+      height: 26.92708vw; }
       .three-reason .reason-box:last-child {
         margin-bottom: 4.16667vw; } }
   .three-reason .reason-box--content {
@@ -1411,7 +1412,7 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .three-reason .reason-box--content {
         width: 55.20833vw;
-        min-height: 14.27083vw;
+        min-height: 13.02083vw;
         padding-left: 2.60417vw;
         padding-right: 4.16667vw; } }
     .three-reason .reason-box--content__number {
@@ -1449,7 +1450,7 @@ Files inside this folder can contain specific element styles and layout.
     height: 12.8125rem; }
     @media (min-width: 768px) {
       .three-reason .reason-box--image {
-        width: 40.36458vw;
+        width: 36.97917vw;
         height: 100%;
         z-index: -2;
         position: relative; } }
@@ -1460,16 +1461,37 @@ Files inside this folder can contain specific element styles and layout.
     .three-reason .reason-box.odd .reason-box--content {
       left: 0;
       top: 2.08333vw; } }
+  .three-reason .reason-box.odd .reason-box--image {
+    position: relative; }
+    .three-reason .reason-box.odd .reason-box--image .tag-name {
+      position: absolute;
+      left: -1.35417vw;
+      bottom: 0;
+      transform: rotate(-90deg);
+      transform-origin: left;
+      font-family: 'NeutraText-DemiAlt';
+      font-size: 1.35417vw;
+      color: var(--color-text); }
   .three-reason .reason-box.even {
     justify-content: flex-start; }
     @media (min-width: 768px) {
       .three-reason .reason-box.even {
-        margin-top: -10.41667vw; } }
+        margin-top: -6.77083vw;
+        margin-bottom: 3.64583vw; } }
     @media (min-width: 768px) {
       .three-reason .reason-box.even .reason-box--content {
         right: 0;
         top: inherit;
         bottom: 2.08333vw; } }
+    .three-reason .reason-box.even .reason-box--image {
+      position: relative; }
+      .three-reason .reason-box.even .reason-box--image .tag-name {
+        position: absolute;
+        left: 0;
+        bottom: -1.82292vw;
+        font-family: 'NeutraText-DemiAlt';
+        font-size: 1.35417vw;
+        color: var(--color-text); }
 
 .wow-factor--wrapper {
   margin: auto;

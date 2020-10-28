@@ -108,7 +108,7 @@
     margin: auto;
 
     @include respond-above(sm) {
-      width: get-vw(1770px);
+      width: get-vw(1620px);
     }
   }
 
@@ -130,7 +130,7 @@
       position: relative;
 
       @include respond-above(sm) {
-        height: get-vw(568px);
+        height: get-vw(517px);
         // align-items: flex-start;
 
         &:last-child {
@@ -150,7 +150,7 @@
 
         @include respond-above(sm) {
           width: get-vw(1060px);
-          min-height: get-vw(274px);
+          min-height: get-vw(250px);
           padding-left: get-vw(50px);
           padding-right: get-vw(80px);
         }
@@ -198,7 +198,7 @@
         height: calcRem(205);
 
         @include respond-above(sm) {
-          width: get-vw(775px);
+          width: get-vw(710px);
           height: 100%;
           z-index: -2;
           position: relative;
@@ -210,20 +210,37 @@
         @include respond-above(sm) {
           justify-content: flex-end;
         }
-          .reason-box--content {
 
-            @include respond-above(sm) {
-              left: 0;
-              top: get-vw(40px);
-            }
+        .reason-box--content {
+
+          @include respond-above(sm) {
+            left: 0;
+            top: get-vw(40px);
           }
+        }
+
+        .reason-box--image {
+          position: relative;
+
+          .tag-name {
+            position: absolute;
+            left: get-vw(-26px);
+            bottom: 0;
+            transform: rotate(-90deg);
+            transform-origin: left;
+            @include NeutraText-DemiAlt;
+            font-size: get-vw(26px);
+            color: var(--color-text);
+          }
+        }
       }
 
       &.even {
         justify-content: flex-start;
 
           @include respond-above(sm) {
-            margin-top: get-vw(-200px);
+            margin-top: get-vw(-130px);
+            margin-bottom: get-vw(70px);
           }
 
           .reason-box--content {
@@ -232,6 +249,19 @@
               right: 0;
               top: inherit;
               bottom: get-vw(40px);
+            }
+          }
+
+          .reason-box--image {
+            position: relative;
+
+            .tag-name {
+              position: absolute;
+              left: 0;
+              bottom: get-vw(-35px);
+              @include NeutraText-DemiAlt;
+              font-size: get-vw(26px);
+              color: var(--color-text);
             }
           }
       }

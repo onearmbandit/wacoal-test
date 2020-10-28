@@ -52,6 +52,8 @@
                 <img class="img-fluid"
                     src="<?php echo esc_url($review_image_url); ?>"
                     alt="<?php echo esc_attr($review_image_alt);?>" />
+
+                <div class="tag-name">@alexiscaetllo</div>
             </div>
 
                 <?php if(!empty($review_link)) :?>
@@ -90,6 +92,8 @@
                 <img class="img-fluid"
                     src="<?php echo  esc_url($review_image_url); ?>"
                     alt="<?php echo esc_attr($review_image_alt);?>" />
+
+                <div class="tag-name">@alexiscaetllo</div>
             </div>
 
                 <?php if(!empty($review_link)) :?>
