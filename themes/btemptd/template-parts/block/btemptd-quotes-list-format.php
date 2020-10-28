@@ -66,7 +66,7 @@
                         if ($add_button) :
                             ?>
                         <div class="shop-button">
-                            <a class="see-more-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
+                            <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
                                 <?php echo wp_kses_post($button_label);?>
                             </a>
                         </div>
@@ -118,7 +118,7 @@
                 if ($add_button) :
                     ?>
                     <div class="shop-button">
-                    <a class="see-more-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
+                    <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
                         <?php echo wp_kses_post($button_label);?>
                     </a>
                     </div>

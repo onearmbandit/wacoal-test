@@ -1749,7 +1749,7 @@ Files inside this folder can contain specific element styles and layout.
   margin-bottom: 0;
   align-items: stretch; }
 
-.image-content .see-more-button {
+.image-content .shop-now-button {
   font-family: 'NeutraText-BoldAlt';
   background: var(--color-tile-bg);
   color: var(--color-secondary);
@@ -1761,13 +1761,13 @@ Files inside this folder can contain specific element styles and layout.
   padding: 1.25rem 2.5rem 0.8125rem;
   position: relative; }
   @media (min-width: 768px) {
-    .image-content .see-more-button {
+    .image-content .shop-now-button {
       font-size: 1.66667vw;
       padding-top: 1.82292vw;
       padding-right: 4.58333vw;
       padding-bottom: 1.5625vw;
       padding-left: 4.58333vw; } }
-  .image-content .see-more-button .cta-button {
+  .image-content .shop-now-button .cta-button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1775,7 +1775,7 @@ Files inside this folder can contain specific element styles and layout.
     height: 1.8125rem;
     top: -1.25rem; }
     @media (min-width: 768px) {
-      .image-content .see-more-button .cta-button {
+      .image-content .shop-now-button .cta-button {
         width: 2.70833vw;
         height: 2.70833vw;
         top: -1.66667vw; } }
