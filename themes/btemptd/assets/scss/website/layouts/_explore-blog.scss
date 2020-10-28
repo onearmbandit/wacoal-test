@@ -63,13 +63,15 @@
   &--box {
     position: relative;
     width: calcRem(312);
-    margin: auto;
+    display: flex;
+    flex-direction: column;
 
     @include respond-above(sm) {
       width: get-vw(520px);
     }
 
     @include respond-below(sm) {
+      margin: auto;
       &:nth-child(2) {
         margin-top: calcRem(24);
       }
@@ -98,6 +100,7 @@
     position: relative;
     color: var(--color-white);
     padding: calcRem(20, 26, 13);
+    flex: 1;
 
     @include respond-above(sm) {
       padding-top: get-vw(41px);

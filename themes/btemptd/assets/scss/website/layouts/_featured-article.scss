@@ -17,7 +17,7 @@
     position: relative;
 
     @include respond-above(sm) {
-      width: get-vw(1854px);
+      width: get-vw(1473px);
 
     }
 
@@ -66,7 +66,7 @@
       display: flex;
 
       @include respond-above(sm) {
-        height: get-vw(794px);
+        height: get-vw(630px);
         width: 100%;
       }
 
@@ -87,27 +87,27 @@
         @include NeutraText-BookAlt;
 
         @include respond-above(sm) {
-          width: get-vw(612px);
-          padding-top: get-vw(132px);
-          padding-right: get-vw(64px);
+          width: get-vw(580px);
+          padding-top: get-vw(69px);
+          padding-right: get-vw(52px);
           // padding-bottom: get-vw();
-          padding-left: get-vw(64px);
+          padding-left: get-vw(52px);
         }
 
         &__category {
 
           @include respond-above(sm) {
-            font-size: get-vw(34px);
-            line-height: get-vw(33px);
-            margin-bottom: get-vw(30px);
+            font-size: get-vw(24px);
+            line-height: get-vw(23px);
+            margin-bottom: get-vw(37px);
           }
         }
 
         &__title {
 
           @include respond-above(sm) {
-            font-size: get-vw(84px);
-            line-height: get-vw(79px);
+            font-size: get-vw(38px);
+            line-height: get-vw(36px);
             margin-bottom: get-vw(13px);
           }
         }
@@ -115,9 +115,9 @@
         &__para {
 
           @include respond-above(sm) {
-            font-size: get-vw(29px);
-            line-height: get-vw(32px);
-            margin-bottom: get-vw(44px);
+            font-size: get-vw(20px);
+            line-height: get-vw(22px);
+            margin-bottom: get-vw(37px);
           }
         }
 
@@ -125,8 +125,8 @@
           width: calcRem(45);
           height: calcRem(45);
           @include respond-above(sm) {
-            width: get-vw(127px);
-            height: get-vw(127px);
+            width: get-vw(101px);
+            height: get-vw(101px);
           }
 
           img {

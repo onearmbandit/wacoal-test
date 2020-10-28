@@ -995,15 +995,18 @@ Files inside this folder can contain specific element styles and layout.
   .explore-blog--box {
     position: relative;
     width: 19.5rem;
-    margin: auto; }
+    display: flex;
+    flex-direction: column; }
     @media (min-width: 768px) {
       .explore-blog--box {
         width: 27.08333vw; } }
     @media (max-width: 767px) {
-      .explore-blog--box:nth-child(2) {
-        margin-top: 1.5rem; }
-      .explore-blog--box:nth-child(3) {
-        display: none; } }
+      .explore-blog--box {
+        margin: auto; }
+        .explore-blog--box:nth-child(2) {
+          margin-top: 1.5rem; }
+        .explore-blog--box:nth-child(3) {
+          display: none; } }
   .explore-blog--image {
     display: flex;
     height: 12.4375rem; }
@@ -1018,7 +1021,8 @@ Files inside this folder can contain specific element styles and layout.
     background: var(--color-secondary);
     position: relative;
     color: var(--color-white);
-    padding: 1.25rem 1.625rem 0.8125rem; }
+    padding: 1.25rem 1.625rem 0.8125rem;
+    flex: 1; }
     @media (min-width: 768px) {
       .explore-blog--content {
         padding-top: 2.13542vw;
@@ -1146,7 +1150,7 @@ Files inside this folder can contain specific element styles and layout.
   position: relative; }
   @media (min-width: 768px) {
     .featured-articles--wrapper {
-      width: 96.5625vw; } }
+      width: 76.71875vw; } }
   @media (min-width: 768px) {
     .featured-articles--wrapper .swiper-button--wrapper {
       width: 31.875vw;
@@ -1176,7 +1180,7 @@ Files inside this folder can contain specific element styles and layout.
   display: flex; }
   @media (min-width: 768px) {
     .featured-articles .swiper-wrapper .swiper-slide {
-      height: 41.35417vw;
+      height: 32.8125vw;
       width: 100%; } }
   @media (min-width: 768px) {
     .featured-articles .swiper-wrapper .swiper-slide--image {
@@ -1190,32 +1194,32 @@ Files inside this folder can contain specific element styles and layout.
     font-family: 'NeutraText-BookAlt'; }
     @media (min-width: 768px) {
       .featured-articles .swiper-wrapper .swiper-slide--content {
-        width: 31.875vw;
-        padding-top: 6.875vw;
-        padding-right: 3.33333vw;
-        padding-left: 3.33333vw; } }
+        width: 30.20833vw;
+        padding-top: 3.59375vw;
+        padding-right: 2.70833vw;
+        padding-left: 2.70833vw; } }
     @media (min-width: 768px) {
       .featured-articles .swiper-wrapper .swiper-slide--content__category {
-        font-size: 1.77083vw;
-        line-height: 1.71875vw;
-        margin-bottom: 1.5625vw; } }
+        font-size: 1.25vw;
+        line-height: 1.19792vw;
+        margin-bottom: 1.92708vw; } }
     @media (min-width: 768px) {
       .featured-articles .swiper-wrapper .swiper-slide--content__title {
-        font-size: 4.375vw;
-        line-height: 4.11458vw;
+        font-size: 1.97917vw;
+        line-height: 1.875vw;
         margin-bottom: 0.67708vw; } }
     @media (min-width: 768px) {
       .featured-articles .swiper-wrapper .swiper-slide--content__para {
-        font-size: 1.51042vw;
-        line-height: 1.66667vw;
-        margin-bottom: 2.29167vw; } }
+        font-size: 1.04167vw;
+        line-height: 1.14583vw;
+        margin-bottom: 1.92708vw; } }
     .featured-articles .swiper-wrapper .swiper-slide--content__cta {
       width: 2.8125rem;
       height: 2.8125rem; }
       @media (min-width: 768px) {
         .featured-articles .swiper-wrapper .swiper-slide--content__cta {
-          width: 6.61458vw;
-          height: 6.61458vw; } }
+          width: 5.26042vw;
+          height: 5.26042vw; } }
       .featured-articles .swiper-wrapper .swiper-slide--content__cta img {
         width: 100%; }
 
