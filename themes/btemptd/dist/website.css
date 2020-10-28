@@ -170,7 +170,7 @@ h1 {
       line-height: 9.47917vw; } }
 
 h2 {
-  font-size: 2.625rem;
+  font-size: 2.9375rem;
   line-height: 2.8125rem; }
   @media (min-width: 768px) {
     h2 {
@@ -298,7 +298,10 @@ Files inside this folder can contain specific element styles and layout.
   height: 3.75rem;
   display: flex;
   align-items: center;
-  padding-left: 1.625rem; }
+  padding-left: 1.625rem;
+  font-family: 'NeutraText-BoldAlt';
+  font-size: 0.9375rem;
+  text-transform: uppercase; }
   @media (min-width: 768px) {
     .header-navigation-mobile {
       display: none;
@@ -340,21 +343,33 @@ Files inside this folder can contain specific element styles and layout.
   flex-direction: column; }
   @media (min-width: 768px) {
     .footer-wrapper {
-      width: 84.89583vw;
+      width: 84.89583vw; } }
+  @media (min-width: 1280px) {
+    .footer-wrapper {
       flex-direction: row; } }
   .footer-wrapper--left {
     flex: 1;
     display: flex;
     justify-content: space-between;
     flex-direction: column; }
-    @media (min-width: 768px) {
+    @media (max-width: 767px) {
+      .footer-wrapper--left {
+        border-top: 1px solid var(--color-black);
+        padding-top: 20px; } }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .footer-wrapper--left {
+        width: 100%;
+        flex-direction: row; } }
+    @media (min-width: 1280px) {
       .footer-wrapper--left {
         flex-direction: row;
         margin-left: 14.0625vw; } }
   .footer-wrapper--right {
-    flex: 1;
-    max-width: 17rem; }
-    @media (min-width: 768px) {
+    flex: 1; }
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .footer-wrapper--right {
+        width: 100%; } }
+    @media (min-width: 1280px) {
       .footer-wrapper--right {
         max-width: 26.5625vw; } }
   .footer-wrapper--copyright {
@@ -373,21 +388,32 @@ Files inside this folder can contain specific element styles and layout.
     .footer-wrapper--copyright a {
       text-decoration: underline; }
 
-.bottom-footer {
-  border-top: 1px solid var(--color-black); }
-  @media (min-width: 768px) {
-    .bottom-footer {
-      margin-top: 4.16667vw; } }
+@media (max-width: 767px) {
+  .bottom-footer {
+    text-align: center; } }
+
+@media (min-width: 768px) {
+  .bottom-footer {
+    margin-top: 4.16667vw;
+    border-top: 1px solid var(--color-black); } }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bottom-footer .footer-wrapper {
+    flex-direction: row; } }
 
 .footer-links--title {
   font-family: 'NeutraText-Bold';
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--color-black);
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-black);
+  padding-bottom: 1.375rem;
+  position: relative; }
   @media (min-width: 768px) {
     .footer-links--title {
       font-size: 0.5625rem;
-      margin-bottom: 0.8625rem; } }
+      margin-bottom: 0.8625rem;
+      border-bottom: none; } }
   @media (min-width: 1024px) {
     .footer-links--title {
       font-size: 0.78125rem;
@@ -400,6 +426,16 @@ Files inside this folder can contain specific element styles and layout.
     .footer-links--title {
       font-size: 1.25rem;
       margin-bottom: 2.35625rem; } }
+  @media (max-width: 767px) {
+    .footer-links--title:after {
+      content: '';
+      position: absolute;
+      background: url(363a7691d630c662cb8dcde0bcee499f.svg);
+      background-position: center;
+      background-size: cover;
+      width: 14px;
+      height: 14px;
+      right: 15px; } }
 
 .footer-links--ul__list {
   letter-spacing: 0.0625rem;
@@ -421,8 +457,8 @@ Files inside this folder can contain specific element styles and layout.
 
 .footer-links--ul__link {
   color: var(--color-black);
-  font-family: 'NeutraText-DemiAlt';
-  font-size: 0.625rem; }
+  font-family: 'NeutraText-BookAlt';
+  font-size: 0.875rem; }
   @media (min-width: 768px) {
     .footer-links--ul__link {
       font-size: 0.375rem; } }
@@ -442,6 +478,19 @@ Files inside this folder can contain specific element styles and layout.
     .footer-links--title + div {
       display: block; } }
 
+.footer-links.open .footer-links--title + div {
+  display: block;
+  margin-bottom: 20px; }
+
+@media (max-width: 767px) {
+  .footer-links.open .footer-links--title:after {
+    background: url(3873b7fd702198e9b55a922e79a7abac.svg); } }
+
+@media (max-width: 767px) {
+  .footer-links.open {
+    border-bottom: 1px solid var(--color-black);
+    margin-bottom: 20px; } }
+
 .footer-subscribe {
   display: flex;
   flex-direction: column;
@@ -452,21 +501,29 @@ Files inside this folder can contain specific element styles and layout.
       margin-top: 0; } }
   .footer-subscribe .title {
     font-family: 'NeutraText-BoldAlt';
-    font-size: 0.72917vw;
-    margin-bottom: 1.04167vw;
-    text-transform: uppercase; }
+    font-size: 0.9375rem;
+    margin-bottom: 1.25rem; }
+    @media (min-width: 768px) {
+      .footer-subscribe .title {
+        font-size: 0.72917vw;
+        margin-bottom: 1.04167vw;
+        text-transform: uppercase; } }
   .footer-subscribe .sub-title {
     font-family: 'NeutraText-BookAlt';
-    font-size: 0.72917vw;
-    margin-bottom: 0.78125vw; }
+    font-size: 0.9375rem;
+    margin-bottom: 0.9375rem; }
+    @media (min-width: 768px) {
+      .footer-subscribe .sub-title {
+        font-size: 0.72917vw;
+        margin-bottom: 0.78125vw; } }
   .footer-subscribe .input-button-wrapper {
     position: relative; }
   .footer-subscribe input {
     border: 1px solid #CBCBCB;
     background: var(--color-white);
     font-family: 'NeutraText-DemiAlt';
-    height: 2.125rem;
-    width: 12.125rem;
+    height: 3.25rem;
+    width: 100%;
     font-size: 0.625rem;
     padding-left: 0.8125rem; }
     @media (min-width: 768px) {
@@ -480,17 +537,17 @@ Files inside this folder can contain specific element styles and layout.
     border: none;
     font-family: 'NeutraText-Bold';
     color: var(--color-black);
-    height: 2.125rem;
+    height: 3.25rem;
     font-size: 0.625rem;
     cursor: pointer;
     position: absolute;
     right: 0;
-    top: 0; }
+    top: 0;
+    width: 2.5rem; }
     @media (min-width: 768px) {
       .footer-subscribe button {
         font-size: 0.88542vw;
-        height: 3.33333vw;
-        width: 2.08333vw; } }
+        height: 3.33333vw; } }
 
 .footer-images {
   display: flex;
@@ -506,6 +563,10 @@ Files inside this folder can contain specific element styles and layout.
 .footer-social {
   display: flex;
   margin-top: 1.25rem; }
+  @media (max-width: 767px) {
+    .footer-social {
+      align-items: center;
+      justify-content: center; } }
   @media (min-width: 768px) {
     .footer-social {
       margin-top: 1.45833vw; } }
@@ -553,7 +614,7 @@ Files inside this folder can contain specific element styles and layout.
   display: flex;
   flex-direction: column;
   background: var(--color-primary);
-  margin-bottom: 1.6875rem; }
+  margin-bottom: 1.25rem; }
   @media (min-width: 768px) {
     .banner-with-image {
       height: 25.15625vw;
@@ -562,7 +623,8 @@ Files inside this folder can contain specific element styles and layout.
   .banner-with-image--content {
     display: flex;
     flex-direction: column;
-    justify-content: center; }
+    justify-content: center;
+    padding: 1.375rem 1.25rem; }
     @media (min-width: 768px) {
       .banner-with-image--content {
         flex: 1;
@@ -570,8 +632,8 @@ Files inside this folder can contain specific element styles and layout.
   .banner-with-image--heading {
     max-width: 15.6875rem;
     text-transform: uppercase;
-    font-size: 4.5625rem;
-    line-height: 4.375rem; }
+    font-size: 3.25rem;
+    line-height: 3.125rem; }
     @media (min-width: 768px) {
       .banner-with-image--heading {
         max-width: 45.3125vw;
@@ -579,10 +641,13 @@ Files inside this folder can contain specific element styles and layout.
         line-height: 9.47917vw; } }
   .banner-with-image--subtitle {
     font-size: 1.125rem;
-    font-family: 'NeutraText-BookAlt'; }
+    font-family: 'NeutraText-BookAlt';
+    margin-left: 0.3125rem;
+    margin-top: 0.4375rem; }
     @media (min-width: 768px) {
       .banner-with-image--subtitle {
-        font-size: 1.66667vw; } }
+        font-size: 1.66667vw;
+        margin-left: 0.78125vw; } }
   .banner-with-image--image {
     width: 100%;
     height: 100%;
@@ -605,13 +670,13 @@ Files inside this folder can contain specific element styles and layout.
   .banner-with-background--heading {
     text-transform: uppercase; }
   .banner-with-background--subtitle {
-    font-size: 0.9375rem;
-    line-height: 1.1875rem;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
     margin-top: 0.5rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    font-family: 'NeutraText-BookAlt'; }
     @media (min-width: 768px) {
       .banner-with-background--subtitle {
-        font-family: 'NeutraText-BookAlt';
         margin-top: 1.04167vw;
         font-size: 1.82292vw;
         line-height: 2.1875vw; } }
@@ -711,11 +776,16 @@ Files inside this folder can contain specific element styles and layout.
     margin-bottom: 5.36458vw; } }
 
 .full-width-section--wrapper {
-  display: flex; }
+  display: flex;
+  margin-bottom: 1.125rem; }
   @media (min-width: 768px) {
     .full-width-section--wrapper {
       margin-bottom: 2.13542vw;
       height: 14.32292vw; } }
+  @media (max-width: 767px) {
+    .full-width-section--wrapper .full-width-section--content {
+      margin-left: 10px;
+      padding: 1.125rem 1.25rem; } }
   .full-width-section--wrapper.even {
     flex-direction: row-reverse; }
     @media (min-width: 768px) {
@@ -728,10 +798,17 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .full-width-section--wrapper.even .full-width-section--content .quote {
         margin-right: 6.30208vw; } }
-    @media (min-width: 768px) {
-      .full-width-section--wrapper.even .full-width-section--content .arrow {
-        margin-right: inherit;
-        margin-left: 4.6875vw; } }
+    .full-width-section--wrapper.even .full-width-section--content .arrow {
+      margin-right: 1.4375rem;
+      margin-left: 0; }
+      @media (min-width: 768px) {
+        .full-width-section--wrapper.even .full-width-section--content .arrow {
+          margin-right: inherit;
+          margin-left: 4.6875vw; } }
+    @media (max-width: 767px) {
+      .full-width-section--wrapper.even .full-width-section--content {
+        margin-right: 10px;
+        margin-left: 0; } }
 
 .full-width-section--image {
   position: relative;
@@ -760,21 +837,26 @@ Files inside this folder can contain specific element styles and layout.
     text-transform: uppercase;
     color: var(--color-text);
     letter-spacing: 0.45px;
-    font-size: 1.125rem; }
+    font-size: 1.125rem;
+    margin-bottom: 0.8125rem; }
     @media (min-width: 768px) {
       .full-width-section--content .content-title {
         font-size: 1.66667vw;
         margin-left: 6.30208vw;
-        letter-spacing: 0.10417vw; } }
+        letter-spacing: 0.10417vw;
+        margin-bottom: 0; } }
   .full-width-section--content .quote {
     position: relative;
     display: flex;
     align-items: center;
     font-family: 'NeutraText-BookAlt';
-    color: var(--color-text); }
+    color: var(--color-text);
+    font-size: 0.75rem;
+    line-height: 1rem; }
     @media (min-width: 768px) {
       .full-width-section--content .quote {
-        font-size: 1.66667vw; } }
+        font-size: 1.66667vw;
+        line-height: 1; } }
     .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
       content: '';
       background-size: cover;
@@ -795,7 +877,8 @@ Files inside this folder can contain specific element styles and layout.
       margin-left: 0.52083vw; }
   .full-width-section--content .arrow {
     width: 2.8125rem;
-    height: 2.8125rem; }
+    height: 2.8125rem;
+    margin-left: 1.4375rem; }
     @media (min-width: 768px) {
       .full-width-section--content .arrow {
         margin-right: 4.6875vw;
@@ -980,12 +1063,15 @@ Files inside this folder can contain specific element styles and layout.
       align-items: center; }
       .explore-blog--content.blog-pagination .blog-pagination-content {
         flex: 1; }
-      @media (min-width: 768px) {
-        .explore-blog--content.blog-pagination .blog-pagination-cta {
-          width: 2.39583vw;
-          height: 2.39583vw; } }
-      .explore-blog--content.blog-pagination .blog-pagination-cta img {
-        width: 100%; }
+      .explore-blog--content.blog-pagination .blog-pagination-cta {
+        width: 2.8125rem;
+        height: 2.8125rem; }
+        @media (min-width: 768px) {
+          .explore-blog--content.blog-pagination .blog-pagination-cta {
+            width: 2.39583vw;
+            height: 2.39583vw; } }
+        .explore-blog--content.blog-pagination .blog-pagination-cta img {
+          width: 100%; }
 
 @media (min-width: 768px) {
   .category-posts .explore-blog {
@@ -1000,12 +1086,14 @@ Files inside this folder can contain specific element styles and layout.
 
 .see-more--wrapper {
   width: 100%;
-  margin: auto;
+  margin: 20px auto 40px;
   position: relative;
-  display: none; }
+  height: 3.5625rem;
+  display: inline-block; }
   @media (min-width: 768px) {
     .see-more--wrapper {
       height: 5.20833vw;
+      margin: auto;
       margin-bottom: 7.29167vw;
       display: block; } }
   .see-more--wrapper .see-more-button {
@@ -1018,7 +1106,9 @@ Files inside this folder can contain specific element styles and layout.
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
-    outline: none; }
+    outline: none;
+    font-size: 1.1875rem;
+    padding: 1.375rem 3.375rem; }
     @media (min-width: 768px) {
       .see-more--wrapper .see-more-button {
         font-size: 1.66667vw;
@@ -1030,7 +1120,10 @@ Files inside this folder can contain specific element styles and layout.
     .see-more--wrapper .see-more-button .cta-button {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%); }
+      transform: translateX(-50%);
+      width: 2.1875rem;
+      height: 2.1875rem;
+      top: -1.5625rem; }
       @media (min-width: 768px) {
         .see-more--wrapper .see-more-button .cta-button {
           width: 3.75vw;
@@ -1154,15 +1247,31 @@ Files inside this folder can contain specific element styles and layout.
     display: flex;
     flex-direction: column; }
     .featured-articles-mobile--wrapper .swiper-slide--content__category {
-      font-size: 1.125rem;
+      font-size: 1.3125rem;
       margin-bottom: 1.5625rem; }
     .featured-articles-mobile--wrapper .swiper-slide--content__title {
-      font-size: 2.375rem;
-      line-height: 2.25rem;
+      font-size: 1.25rem;
+      line-height: 1.1875rem;
       margin-bottom: 1.5625rem; }
     .featured-articles-mobile--wrapper .swiper-slide--content__para {
       font-size: 1.25rem;
       line-height: 1.375rem; }
+    .featured-articles-mobile--wrapper .swiper-slide--content__cta a {
+      border: 1px solid var(--color-black);
+      font-family: 'NeutraText-DemiAlt';
+      font-size: 1.125rem;
+      padding: 1.375rem 1.9375rem 1.125rem;
+      display: inline-block;
+      margin-top: 2.75rem;
+      position: relative;
+      text-transform: uppercase; }
+      .featured-articles-mobile--wrapper .swiper-slide--content__cta a img {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -33px; }
   .featured-articles-mobile--wrapper .swiper-slide--image {
     width: 14.625rem;
     height: 19.1875rem;
@@ -1175,6 +1284,15 @@ Files inside this folder can contain specific element styles and layout.
          object-position: 50% 50%; }
   .featured-articles-mobile .swiper-pagination {
     position: relative; }
+  .featured-articles-mobile .custom-swiper-pagination .swiper-pagination-bullet {
+    background: var(--color-gray-light);
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 10px;
+    height: 10px;
+    margin-top: 1.5625rem; }
+  .featured-articles-mobile .custom-swiper-pagination .swiper-pagination-bullet-active {
+    background: var(--color-black); }
 
 .article-header {
   margin-bottom: 1.5625rem; }

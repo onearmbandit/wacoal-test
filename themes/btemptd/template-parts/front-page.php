@@ -304,6 +304,77 @@ if(!empty($banner_link)) :?>
 </section>
 <?php endif;?>
 
+
+<?php if(!empty($featured_posts)) :?>
+<section class="featured-articles-mobile">
+    <div class="featured-articles-mobile--wrapper">
+        <div class="swiper-container featured-articles-slider-mo">
+            <div class="swiper-wrapper">
+                <?php foreach($featured_posts as $featured_post): ?>
+                    <?php
+                    $thumbnail_id  = get_post_thumbnail_id($featured_post);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                    $cat_name      = Btemptd_Get_Primary_category($featured_post);
+                    $cat_ID        = $cat_name->term_id;
+                    ?>
+                <div class="swiper-slide">
+
+                <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name->name);?>
+                            </a>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                <?php echo esc_attr(get_the_title($featured_post));?>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide--image">
+                        <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide--content">
+
+                        <div class="swiper-slide--content__para">
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                        </div>
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" />
+                                Read more
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+            </div>
+
+            <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php endif;?>
+
 <?php if(!empty($slider_posts)) :?>
 <section class="featured-articles-mobile">
     <div class="featured-articles-mobile--wrapper">
@@ -346,6 +417,7 @@ if(!empty($banner_link)) :?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" />
                                 Read more
                             </a>
                         </div>
