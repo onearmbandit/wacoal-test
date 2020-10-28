@@ -133,8 +133,9 @@ if ($template == 'simple') :
                     $thumbnail_id  = get_post_thumbnail_id($featured_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name      = Btemptd_Get_Primary_category($featured_post);
-                    $cat_ID        = $cat_name->term_id;
+                    $cat_name_obj = Btemptd_Get_Primary_category($featured_post);
+                    $cat_ID        = $cat_name_obj->term_id;
+                    //print_r($cat_name_object);
                     ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--image">
@@ -148,7 +149,7 @@ if ($template == 'simple') :
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name->name);?>
+                                <?php echo esc_attr($cat_name_obj->name);?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__title">
@@ -197,8 +198,8 @@ if ($template == 'simple') :
                     $thumbnail_id  = get_post_thumbnail_id($slider_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name      = Btemptd_Get_Primary_category($slider_post);
-                    $cat_ID        = $cat_name->term_id;
+                    $cat_name_obj      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_ID        = $cat_name_obj->term_id;
                     ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--image">
@@ -212,7 +213,7 @@ if ($template == 'simple') :
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
                             <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name->name);?>
+                                <?php echo esc_attr($cat_name_obj->name);?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__title">
@@ -262,15 +263,15 @@ if ($template == 'simple') :
                     $thumbnail_id  = get_post_thumbnail_id($featured_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name      = Btemptd_Get_Primary_category($featured_post);
-                    $cat_ID        = $cat_name->term_id;
+                    $cat_name_obj      = Btemptd_Get_Primary_category($featured_post);
+                    $cat_ID        = $cat_name_obj->term_id;
                     ?>
                 <div class="swiper-slide">
 
                 <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name->name);?>
+                                <?php echo esc_attr($cat_name_obj->name);?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__title">
@@ -332,15 +333,15 @@ if ($template == 'simple') :
                         $thumbnail_id  = get_post_thumbnail_id($slider_post);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                        $cat_name      = Btemptd_Get_Primary_category($slider_post);
-                        $cat_ID        = $cat_name->term_id;
+                        $cat_name_obj      = Btemptd_Get_Primary_category($slider_post);
+                        $cat_ID        = $cat_name_obj->term_id;
 
                         ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name->name);?>
+                                <?php echo esc_attr($cat_name_obj->name);?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__title">
