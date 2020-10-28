@@ -12,7 +12,6 @@
 
 $copyright_value = get_field('copyright_text', 'options');
 $social_share = get_field('social_share', 'options');
-$oembeded = get_field('instagram_feeds', 'options');
 $subscribe = get_field('subscribe_link', 'options');
 ?>
 <footer class="footer-section">
