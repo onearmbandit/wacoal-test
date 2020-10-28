@@ -448,7 +448,7 @@ if(!empty($banner_link)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif; ?>
 
-<section class="image-content">
+<!-- <section class="image-content">
     <div class="image-content--wrapper">
         <div class="odd">
             <div class="image-content--image">
@@ -478,9 +478,9 @@ if(!empty($banner_link)) :?>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="image-content image-content-gif">
+<!-- <section class="image-content image-content-gif">
     <div class="image-content--wrapper">
         <div class="odd">
             <div class="image-content--image">
@@ -532,4 +532,4 @@ if(!empty($banner_link)) :?>
             </div>
         </div>
     </div>
-</section>
+</section> -->

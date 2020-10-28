@@ -24,11 +24,11 @@
     .swiper-button--wrapper {
 
       @include respond-above(sm) {
-        width: get-vw(612px);
+        width: get-vw(520px);
         height: get-vw(24px);
         position: absolute;
         bottom: get-vw(18px);
-        right: 0;
+        right: get-vw(30px);
       }
 
       .custom-swiper-pagination {
@@ -90,8 +90,11 @@
           width: get-vw(580px);
           padding-top: get-vw(69px);
           padding-right: get-vw(52px);
-          // padding-bottom: get-vw();
+          padding-bottom: get-vw(69px);
           padding-left: get-vw(52px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
 
         &__category {
@@ -159,7 +162,7 @@
 
     .swiper-button--wrapper {
       right: inherit;
-      left: 0;
+      left: get-vw(30px);
     }
   }
 }

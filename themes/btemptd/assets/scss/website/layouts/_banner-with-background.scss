@@ -18,8 +18,10 @@
     font-size: calcRem(18);
     line-height: calcRem(22);
     margin-top: calcRem(8);
-    text-transform: uppercase;
     @include NeutraText-BookAlt;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 
     @include respond-above(sm) {
       margin-top: get-vw(20px);

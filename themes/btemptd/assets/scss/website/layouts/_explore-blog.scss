@@ -49,14 +49,23 @@
 
     @include respond-above(sm) {
       width: get-vw(1620px);
-      justify-content: space-between;
+      // justify-content: space-between;
       flex-direction: row;
     }
 
     &.blog-wrapper {
+
       @include respond-above(sm) {
         width: get-vw(1700px);
+
+        .explore-blog--box {
+          &:nth-child(2) {
+            margin-left: get-vw(70px);
+            margin-right: get-vw(70px);
+          }
+        }
       }
+
     }
   }
 
@@ -68,6 +77,11 @@
 
     @include respond-above(sm) {
       width: get-vw(520px);
+
+      &:nth-child(2) {
+        margin-left: get-vw(27px);
+        margin-right: get-vw(27px);
+      }
     }
 
     @include respond-below(sm) {

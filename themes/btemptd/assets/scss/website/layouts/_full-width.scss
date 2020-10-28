@@ -6,11 +6,13 @@
 
   &--wrapper {
     display: flex;
+    margin: auto;
     margin-bottom: calcRem(18);
 
     @include respond-above(sm) {
       margin-bottom: get-vw(41px);
-      height: get-vw(275px);
+      height: get-vw(198px);
+      width: get-vw(1280px);
     }
 
     @include respond-below(sm){
@@ -52,7 +54,7 @@
 
           @include respond-above(sm) {
             margin-right: inherit;
-            margin-left: get-vw(90px);
+            margin-left: get-vw(54px);
           }
         }
       }
@@ -72,9 +74,9 @@
     height: calcRem(94);
 
     @include respond-above(sm) {
-      width: get-vw(302px);
-      height: get-vw(258px);
-      margin-right: get-vw(54px);
+      width: get-vw(201px);
+      height: get-vw(179px);
+      margin-right: get-vw(36px);
     }
 
     .img-fluid {
@@ -103,8 +105,8 @@
       margin-bottom: calcRem(13);
 
       @include respond-above(sm) {
-        font-size: get-vw(32px);
-        margin-left: get-vw(121px);
+        font-size: get-vw(21px);
+        margin-left: get-vw(81px);
         letter-spacing: get-vw(2px);
         margin-bottom: 0;
       }
@@ -120,7 +122,7 @@
       line-height: calcRem(16);
 
       @include respond-above(sm) {
-        font-size: get-vw(32px);
+        font-size: get-vw(21px);
         line-height: 1;
       }
 
@@ -159,9 +161,9 @@
       margin-left: calcRem(23);
 
       @include respond-above(sm) {
-        margin-right: get-vw(90px);
-        width: get-vw(127px);
-        height: get-vw(127px);
+        margin-right: get-vw(60px);
+        width: get-vw(85px);
+        height: get-vw(85px);
       }
 
       img {
