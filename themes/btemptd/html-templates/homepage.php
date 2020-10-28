@@ -468,5 +468,92 @@ Btemptd_Page_Entry_top('');
         </div>
     </div>
 </section>
+
+<section class="image-content">
+    <div class="image-content--wrapper">
+        <div class="odd">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content box-shadow-right">
+                <div class="image-content--content__head">
+                    Comfort
+                </div>
+                <div class="image-content--content__para">
+                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
+                </div>
+            </div>
+        </div>
+
+        <div class="even">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content box-shadow-right">
+            <div class="image-content--content__head">
+                Convertibility
+            </div>
+            <div class="image-content--content__para">
+                Many tweens wear clothing that’s more casual— such as tank tops with skinny straps that might expose bare shoulders. We suggest bras with a J-hook on the back straps for the choice of converting the bra into a racerback style.
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="image-content image-content-gif">
+    <div class="image-content--wrapper">
+        <div class="odd">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content">
+                    <div class="quote-left">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
+                    </div>
+                    <div class="content-inner">
+                        <div class="image-content--content__title">
+                        It’s so soft and comfortable I almost forget I’m wearing it!
+                        </div>
+                        <div class="image-content--content__tag">
+                            –@ericaluoo
+                        </div>
+                        <div class="shop-button">
+                            <a class="see-more-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                        </div>
+                    </div>
+                    <div class="quote-right">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
+                    </div>
+            </div>
+        </div>
+
+        <div class="even">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content">
+                    <div class="quote-left">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
+                    </div>
+                    <div class="content-inner">
+                        <div class="image-content--content__title">
+                            When a bra-less kinda girl finally finds her bra-match…SO GOOD.
+                        </div>
+                        <div class="image-content--content__tag">
+                            –@ericaluoo
+                        </div>
+                        <div class="shop-button">
+                            <a class="see-more-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                        </div>
+                    </div>
+                    <div class="quote-right">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php
 Btemptd_Page_Entry_bottom();
