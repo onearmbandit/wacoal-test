@@ -478,9 +478,9 @@ if(!empty($banner_link)) :?>
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
-<!-- <section class="image-content image-content-gif">
+<section class="image-content image-content-gif">
     <div class="image-content--wrapper">
         <div class="odd">
             <div class="image-content--image">
@@ -498,7 +498,7 @@ if(!empty($banner_link)) :?>
                             –@ericaluoo
                         </div>
                         <div class="shop-button">
-                            <a class="see-more-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                            <a class="shop-now-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
                         </div>
                     </div>
                     <div class="quote-right">
@@ -523,7 +523,7 @@ if(!empty($banner_link)) :?>
                             –@ericaluoo
                         </div>
                         <div class="shop-button">
-                            <a class="see-more-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                            <a class="shop-now-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
                         </div>
                     </div>
                     <div class="quote-right">
