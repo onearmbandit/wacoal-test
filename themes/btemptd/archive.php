@@ -393,25 +393,42 @@ if ($template == 'simple') :
     <?php endif;?>
 
     <div id="post-listing">
-    <?php if (have_posts()) { ?>
+
+    <?php
+
+    if (have_posts()) {
+        if ($wp_query->post_count >= 3) {
+            ?>
 
         <div class="category-posts">
-        <?php $i=0;?>
-        <?php while ( have_posts() ) : the_post();
-            if ($i%3 == 0 || $i==0) {
-                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
-            }
-            include locate_template('template-parts/content-excerpt.php');
+            <?php $i = 0; ?>
+            <?php while (have_posts()) : the_post();
+                if ($i % 3 == 0 || $i == 0) {
+                    echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
+                }
+                include locate_template('template-parts/content-excerpt.php');
 
-            if ($i%3 == 2 || $i == 2) {
-                echo '</div></div></section>';
-            }
-            $i++;
-        endwhile;?>
+                if ($i % 3 == 2 || $i == 2) {
+                    echo '</div></div></section>';
+                }
+                $i++;
+            endwhile; ?>
 
         </div>
 
-    <?php } ?>
+            <?php
+        } else { ?>
+        <div class="category-posts">
+            <?php
+            echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
+            while (have_posts()) : the_post();
+                include locate_template('template-parts/content-excerpt.php');
+            endwhile;
+             echo '</div></div></section>'; ?>
+        </div>
+
+        <?php        }
+    }?>
 
             <?php Btemptd_Paging_nav();?>
     </div>
