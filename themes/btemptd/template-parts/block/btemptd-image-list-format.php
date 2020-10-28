@@ -90,15 +90,14 @@ if ($list_type == 'simple_data') :
             <?php
         }
     }?>
-    </div>
-    <?php if ($add_button) :?>
+        <?php if ($add_button) :?>
     <div class="see-more--wrapper">
-        <a href ="<?php echo esc_url($button_url);?>" target="_blank">
-            <button class="shop-now-button">
+        <a class="shop-now-button" href="<?php echo esc_url($button_url);?>" target="_blank">
+            <img class="cta-button" src="<?php echo esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" />
                 <?php echo wp_kses_post($button_label);?>
-            </button>
         </a>
     </div>
-    <?php endif;?>
+        <?php endif;?>
+    </div>
 </section>
 <?php endif; ?>
