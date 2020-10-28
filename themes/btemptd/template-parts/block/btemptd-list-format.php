@@ -52,8 +52,11 @@
                 <img class="img-fluid"
                     src="<?php echo esc_url($review_image_url); ?>"
                     alt="<?php echo esc_attr($review_image_alt);?>" />
-
-                <div class="tag-name">@alexiscaetllo</div>
+                    <?php if($review_name && !empty($review_name)) :?>
+                <div class="tag-name">
+                        <?php echo wp_kses_post($review_name);?>
+                </div>
+                    <?php endif; ?>
             </div>
 
                 <?php if(!empty($review_link)) :?>
@@ -93,7 +96,11 @@
                     src="<?php echo  esc_url($review_image_url); ?>"
                     alt="<?php echo esc_attr($review_image_alt);?>" />
 
-                <div class="tag-name">@alexiscaetllo</div>
+                    <?php if($review_name && !empty($review_name)) :?>
+                <div class="tag-name">
+                        <?php echo wp_kses_post($review_name);?>
+                </div>
+                    <?php endif;?>
             </div>
 
                 <?php if(!empty($review_link)) :?>

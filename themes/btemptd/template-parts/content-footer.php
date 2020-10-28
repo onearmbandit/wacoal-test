@@ -45,7 +45,7 @@ $subscribe = get_field('subscribe_link', 'options');
     <div class="bottom-footer">
         <div class="footer-wrapper">
             <div class="footer-wrapper--copyright">
-                <?php echo Btemptd_Remove_ptag($copyright_value);?>
+                <?php echo wp_kses_post(Btemptd_Remove_ptag($copyright_value));?>
             </div>
             <div class="footer-social">
                 <?php foreach($social_share as $key => $value):
