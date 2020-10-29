@@ -56,12 +56,21 @@ if(!empty($banner_link)) :?>
             $image_url        = Btemptd_Get_image($image_attributes);
             ?>
             <div class="full-width-section--wrapper">
-                <?php if($section['image'] && !empty($section['image'])) :?>
+                <?php
+                if($section['image'] && !empty($section['image'])) :
+                    if($section['link'] && !empty($section['link'])) :
+                        ?>
+                    <a href="<?php echo esc_url($section['link']);?>" target="_blank">
+                    <?php endif; ?>
                 <div class="full-width-section--image box-shadow-right">
                     <img class="img-fluid"
                          src="<?php echo  esc_url($image_url); ?>" />
                 </div>
-                <?php endif;?>
+                    <?php if($section['link'] && !empty($section['link'])) : ?>
+                </a>
+                        <?php
+                    endif;
+                endif;?>
                 <div class="full-width-section--content desktop">
                     <?php if($section['title'] && !empty($section['title'])) :?>
                         <div class="content-title">
@@ -117,11 +126,21 @@ if(!empty($banner_link)) :?>
                 $image_url            =Btemptd_Get_image($image_attributes);
             ?>
             <div class="full-width-section--wrapper even">
-            <?php if($section['image'] && !empty($section['image'])) :?>
+            <?php
+            if($section['image'] && !empty($section['image'])) :
+                if($section['link'] && !empty($section['link'])) :
+                    ?>
+                    <a href="<?php echo esc_url($section['link']);?>" target="_blank">
+                <?php endif;
+                ?>
                 <div class="full-width-section--image box-shadow-left">
                     <img class="img-fluid" src="<?php echo  esc_url($image_url); ?>" />
                 </div>
-            <?php endif;?>
+                <?php  if($section['link'] && !empty($section['link'])) : ?>
+               </a>
+                    <?php
+                endif;
+            endif;?>
                 <div class="full-width-section--content desktop">
                     <?php if($section['link'] && !empty($section['link'])) :?>
                     <div class="arrow">

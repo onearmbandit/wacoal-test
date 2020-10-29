@@ -48,9 +48,18 @@ if ($template == 'simple') :
 
                 ?>
             <div class="full-width-section--wrapper">
+                <?php
+                if($section['url'] && !empty($section['url'])) :
+                    ?>
+                    <a href="<?php echo esc_url($section['url']);?>" target="_blank">
+                <?php endif; ?>
                 <div class="full-width-section--image box-shadow-right">
                     <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
+                <?php if($section['url'] && !empty($section['url'])) : ?>
+                </a>
+                    <?php
+                endif;?>
                 <div class="full-width-section--content desktop">
                     <div class="content-title">
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
@@ -59,7 +68,7 @@ if ($template == 'simple') :
                         <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                     </div>
                     <div class="arrow">
-                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                        <a href="<?php echo esc_url($section['url']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
                     </div>
                 </div>
 
@@ -73,7 +82,7 @@ if ($template == 'simple') :
                         </div>
                     </div>
                     <div class="arrow">
-                        <a href="<?php echo esc_url($section['link']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                        <a href="<?php echo esc_url($section['url']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
                     </div>
                 </div>
             </div>
@@ -83,12 +92,21 @@ if ($template == 'simple') :
 
             ?>
             <div class="full-width-section--wrapper even">
+            <?php
+            if($section['url'] && !empty($section['url'])) :
+                ?>
+                    <a href="<?php echo esc_url($section['url']);?>" target="_blank">
+            <?php endif; ?>
                 <div class="full-width-section--image box-shadow-left">
                     <img class="img-fluid" src="<?php echo  esc_url($image); ?>" />
                 </div>
+                <?php if($section['url'] && !empty($section['url'])) :
+                    ?>
+                </a>
+                <?php endif; ?>
                 <div class="full-width-section--content desktop">
                     <div class="arrow">
-                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                       <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
                     </div>
                     <div class="content-title">
                         <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
@@ -100,7 +118,7 @@ if ($template == 'simple') :
 
                 <div class="full-width-section--content mobile">
                     <div class="arrow">
-                       <a href="<?php echo esc_url($section['link']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                       <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
                     </div>
                     <div>
                         <div class="content-title">
