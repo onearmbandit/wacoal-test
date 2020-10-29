@@ -478,3 +478,37 @@ function Btemptd_Block_categories( $categories, $post )
 
 }
 add_filter('block_categories', 'Btemptd_Block_categories', 10, 2);
+
+/**
+ * Function to remove 2 recent posts from post listing
+ *
+ * @param array $query wp_query array
+ *
+ * @return array $query wp_query array
+ */
+function Btemp_Exclude_Posts_From_Specific_category( $query )
+{
+
+    if (is_admin() || ! $query->is_main_query() ) {
+        return;
+    }
+
+    if ($query->is_archive() ) {
+
+        $get_cat_ID = get_term_by('slug', $query->query_vars['category_name'], 'category');
+        $cat_ID     = $get_cat_ID->term_id;
+        $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
+        $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
+
+        foreach ( $featured_posts as $featured_post ) {
+            $posts_to_exclude[]    = $featured_post;
+        }
+        foreach ( $slider_posts as $slider_post ) {
+            array_push($posts_to_exclude, $slider_post);
+        }
+        $query->set('post__not_in', $posts_to_exclude);
+    }
+
+}
+  add_action('pre_get_posts', 'Btemp_Exclude_Posts_From_Specific_category');
+
