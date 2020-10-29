@@ -1193,6 +1193,9 @@ Files inside this folder can contain specific element styles and layout.
       background: var(--color-black); }
   .featured-articles--wrapper .swiper-button--wrapper .swiper-button-next, .featured-articles--wrapper .swiper-button--wrapper .swiper-button-prev {
     width: 10px; }
+    @media (max-width: 767px) {
+      .featured-articles--wrapper .swiper-button--wrapper .swiper-button-next, .featured-articles--wrapper .swiper-button--wrapper .swiper-button-prev {
+        top: 270px; } }
     .featured-articles--wrapper .swiper-button--wrapper .swiper-button-next img, .featured-articles--wrapper .swiper-button--wrapper .swiper-button-prev img {
       width: 100%; }
   .featured-articles--wrapper .swiper-button--wrapper-inner {
@@ -1317,6 +1320,17 @@ Files inside this folder can contain specific element styles and layout.
       height: 100%;
       -o-object-position: 50% 50%;
          object-position: 50% 50%; }
+  .featured-articles-mobile .swiper-button-next, .featured-articles-mobile .swiper-button-prev {
+    width: 10px; }
+    @media (max-width: 767px) {
+      .featured-articles-mobile .swiper-button-next, .featured-articles-mobile .swiper-button-prev {
+        top: 280px; } }
+    .featured-articles-mobile .swiper-button-next img, .featured-articles-mobile .swiper-button-prev img {
+      width: 100%; }
+  .featured-articles-mobile .swiper-button-next {
+    right: 5px; }
+  .featured-articles-mobile .swiper-button-prev {
+    left: 5px; }
   .featured-articles-mobile .swiper-pagination {
     position: relative; }
   .featured-articles-mobile .custom-swiper-pagination .swiper-pagination-bullet {
@@ -1370,6 +1384,11 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 4.89583vw;
         line-height: 4.6875vw;
         margin-bottom: 0; } }
+    .article-header--title strong {
+      font-family: 'NeutraText-BoldAlt'; }
+    .article-header--title a {
+      font-family: 'NeutraText-BoldAlt';
+      text-decoration: underline; }
   .article-header--para {
     font-family: 'NeutraText-LightAlt';
     font-size: 1.375rem;
@@ -1382,6 +1401,11 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 2.39583vw;
         line-height: 2.44792vw;
         letter-spacing: 0.08385vw; } }
+    .article-header--para strong {
+      font-family: 'NeutraText-BoldAlt'; }
+    .article-header--para a {
+      font-family: 'NeutraText-BoldAlt';
+      text-decoration: underline; }
   .article-header--para-two {
     font-family: 'NeutraText-BookAlt';
     font-size: 1rem;
@@ -1393,6 +1417,11 @@ Files inside this folder can contain specific element styles and layout.
         max-width: 100%;
         font-size: 1.09375vw;
         line-height: 1.77083vw; } }
+    .article-header--para-two strong {
+      font-family: 'NeutraText-BoldAlt'; }
+    .article-header--para-two a {
+      font-family: 'NeutraText-BoldAlt';
+      text-decoration: underline; }
   .article-header--para--two-half {
     font-family: 'NeutraText-LightAlt';
     font-size: 1rem;
@@ -1425,6 +1454,11 @@ Files inside this folder can contain specific element styles and layout.
       font-size: 1.66667vw;
       line-height: 2.13542vw;
       margin-bottom: 4.16667vw; } }
+  .three-reason--title strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .three-reason--title a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
 
 .three-reason .reason-box {
   display: flex;
@@ -1486,6 +1520,11 @@ Files inside this folder can contain specific element styles and layout.
           line-height: 1.82292vw;
           margin-left: 2.5vw;
           padding: 0; } }
+      .three-reason .reason-box--content__para strong {
+        font-family: 'NeutraText-BoldAlt'; }
+      .three-reason .reason-box--content__para a {
+        font-family: 'NeutraText-BoldAlt';
+        text-decoration: underline; }
   .three-reason .reason-box--image {
     width: 9.625rem;
     height: 12.8125rem; }
@@ -1523,7 +1562,10 @@ Files inside this folder can contain specific element styles and layout.
       color: var(--color-text); }
       @media (max-width: 767px) {
         .three-reason .reason-box.odd .reason-box--image .tag-name {
-          display: none; } }
+          transform: rotate(0deg);
+          font-size: 0.6875rem;
+          bottom: -15px;
+          left: 0px; } }
   .three-reason .reason-box.even {
     justify-content: flex-start; }
     @media (max-width: 767px) {
@@ -1552,7 +1594,10 @@ Files inside this folder can contain specific element styles and layout.
         color: var(--color-text); }
         @media (max-width: 767px) {
           .three-reason .reason-box.even .reason-box--image .tag-name {
-            display: none; } }
+            font-size: 0.6875rem;
+            right: 0;
+            left: inherit;
+            bottom: -15px; } }
 
 .wow-factor--wrapper {
   margin: auto;
@@ -1570,6 +1615,9 @@ Files inside this folder can contain specific element styles and layout.
         flex-direction: column; } }
   .wow-factor--wrapper.bottom {
     z-index: 1; }
+    @media (max-width: 767px) {
+      .wow-factor--wrapper.bottom {
+        margin-bottom: 2.875rem; } }
     @media (min-width: 768px) {
       .wow-factor--wrapper.bottom {
         margin-top: -2.08333vw; } }
@@ -1607,6 +1655,11 @@ Files inside this folder can contain specific element styles and layout.
         top: -2.08333vw;
         left: 50%;
         transform: translateX(-50%); } }
+  .wow-factor--left strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .wow-factor--left a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
 
 .wow-factor--right {
   background: var(--color-tile-bg);
@@ -1616,7 +1669,8 @@ Files inside this folder can contain specific element styles and layout.
   margin-top: 3.375rem;
   padding: 2.5rem 2.75rem 1.375rem;
   font-size: 1.0625rem;
-  line-height: 1.875rem; }
+  line-height: 1.875rem;
+  width: 16.625rem; }
   @media (min-width: 768px) {
     .wow-factor--right {
       width: 35.52083vw;
@@ -1640,6 +1694,11 @@ Files inside this folder can contain specific element styles and layout.
         top: -2.08333vw;
         width: 6.61458vw;
         height: 6.61458vw; } }
+  .wow-factor--right strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .wow-factor--right a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
 
 .wow-factor--banner {
   width: 100%;
@@ -1707,6 +1766,11 @@ Files inside this folder can contain specific element styles and layout.
       .image-content--content__para {
         font-size: 1.04167vw;
         line-height: 1.25vw; } }
+    .image-content--content__para strong {
+      font-family: 'NeutraText-BoldAlt'; }
+    .image-content--content__para a {
+      font-family: 'NeutraText-BoldAlt';
+      text-decoration: underline; }
 
 .image-content .odd {
   display: flex;
@@ -1843,24 +1907,36 @@ Files inside this folder can contain specific element styles and layout.
   font-size: 1rem;
   line-height: 1.25rem;
   max-width: 90%;
-  margin: auto; }
+  margin: 20px auto; }
   @media (min-width: 768px) {
     .article--para {
       width: 66.66667vw;
       font-size: 1.09375vw;
-      line-height: 1.77083vw; } }
+      line-height: 1.77083vw;
+      margin: 40px auto; } }
+  .article--para strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .article--para a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
 
 .article--para-half {
   font-family: 'NeutraText-BookAlt';
   font-size: 1rem;
   line-height: 1.25rem;
   max-width: 90%;
-  margin: auto; }
+  margin: 20px auto; }
   @media (min-width: 768px) {
     .article--para-half {
       width: 31.25vw;
       font-size: 1.09375vw;
-      line-height: 1.77083vw; } }
+      line-height: 1.77083vw;
+      margin: 40px auto; } }
+  .article--para-half strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .article--para-half a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
 
 .article-para-bold {
   font-family: 'NeutraText-DemiAlt';
@@ -1875,6 +1951,11 @@ Files inside this folder can contain specific element styles and layout.
       line-height: 2.13542vw;
       margin-top: 2.08333vw;
       margin-bottom: 2.08333vw; } }
+  .article-para-bold strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .article-para-bold a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
 
 /* Question Answer block Css */
 .article-questions.even-sequence .article-questions--image {

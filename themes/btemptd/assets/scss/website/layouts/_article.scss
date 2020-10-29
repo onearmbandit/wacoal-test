@@ -51,6 +51,15 @@
       line-height: get-vw(90px);
       margin-bottom: 0;
     }
+
+    strong {
+      @include NeutraText-BoldAlt;
+    }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
+    }
   }
 
   &--para {
@@ -66,6 +75,15 @@
       line-height: get-vw(47px);
       letter-spacing: get-vw(1.61px);
     }
+
+    strong {
+      @include NeutraText-BoldAlt;
+    }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
+    }
   }
 
   &--para-two {
@@ -79,6 +97,15 @@
       max-width: 100%;
       font-size: get-vw(21px);
       line-height: get-vw(34px);
+    }
+
+    strong {
+      @include NeutraText-BoldAlt;
+    }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
     }
   }
 
@@ -122,6 +149,15 @@
       font-size: get-vw(32px);
       line-height: get-vw(41px);
       margin-bottom: get-vw(80px);
+    }
+
+    strong {
+      @include NeutraText-BoldAlt;
+    }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
     }
   }
 
@@ -199,6 +235,15 @@
             margin-left: get-vw(48px);
             padding: 0;
           }
+
+          strong {
+            @include NeutraText-BoldAlt;
+          }
+
+          a {
+            @include NeutraText-BoldAlt;
+            text-decoration: underline;
+          }
         }
       }
 
@@ -254,7 +299,10 @@
             color: var(--color-text);
 
             @include respond-below(sm) {
-              display: none;
+              transform: rotate(0deg);
+              font-size: calcRem(11);
+              bottom: -15px;
+              left: 0px;
             }
           }
         }
@@ -290,7 +338,10 @@
 
             .tag-name {
               @include respond-below(sm) {
-                display: none;
+                font-size: calcRem(11);
+                right: 0;
+                left: inherit;
+                bottom: -15px;
               }
               position: absolute;
               left: 0;
@@ -329,6 +380,10 @@
     &.bottom {
 
       z-index: 1;
+
+      @include respond-below(sm) {
+        margin-bottom: calcRem(46);
+      }
       @include respond-above(sm) {
         margin-top: get-vw(-40px);
       }
@@ -373,6 +428,15 @@
         transform: translateX(-50%);
       }
     }
+
+    strong {
+      @include NeutraText-BoldAlt;
+    }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
+    }
   }
 
   &--right {
@@ -384,6 +448,7 @@
     padding: calcRem(40, 44, 22);
     font-size: calcRem(17);
     line-height: calcRem(30);
+    width: calcRem(266);
 
     @include respond-above(sm) {
       width: get-vw(682px);
@@ -410,6 +475,15 @@
         width: get-vw(127px);
         height: get-vw(127px);
       }
+    }
+
+    strong {
+      @include NeutraText-BoldAlt;
+    }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
     }
   }
 
@@ -497,6 +571,15 @@
       @include respond-above(sm) {
         font-size: get-vw(20px);
         line-height: get-vw(24px);
+      }
+
+      strong {
+        @include NeutraText-BoldAlt;
+      }
+
+      a {
+        @include NeutraText-BoldAlt;
+        text-decoration: underline;
       }
     }
   }
@@ -682,12 +765,22 @@
     font-size: calcRem(16);
     line-height: calcRem(20);
     max-width: 90%;
-    margin: auto;
+    margin: 20px auto;
 
   @include respond-above(sm) {
     width: get-vw(1280px);
     font-size: get-vw(21px);
     line-height: get-vw(34px);
+    margin: 40px auto;
+  }
+
+  strong {
+    @include NeutraText-BoldAlt;
+  }
+
+  a {
+    @include NeutraText-BoldAlt;
+    text-decoration: underline;
   }
 }
 
@@ -696,12 +789,22 @@
     font-size: calcRem(16);
     line-height: calcRem(20);
     max-width: 90%;
-    margin: auto;
+    margin: 20px auto;
 
   @include respond-above(sm) {
     width: get-vw(600px);
     font-size: get-vw(21px);
     line-height: get-vw(34px);
+    margin: 40px auto;
+  }
+
+  strong {
+    @include NeutraText-BoldAlt;
+  }
+
+  a {
+    @include NeutraText-BoldAlt;
+    text-decoration: underline;
   }
 }
 
@@ -718,5 +821,14 @@
     line-height: get-vw(41px);
     margin-top: get-vw(40px);
     margin-bottom: get-vw(40px);
+  }
+
+  strong {
+    @include NeutraText-BoldAlt;
+  }
+
+  a {
+    @include NeutraText-BoldAlt;
+    text-decoration: underline;
   }
 }
