@@ -33,10 +33,13 @@ function Btemptd_Ajax_pagination()
         $cat_name         = $get_cat_ID->name;
         $cat_ID      = $get_cat_ID->term_id;
         $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
-        // $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
+        $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
 
         foreach( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post;
+        }
+        foreach( $slider_posts as $slider_post ) {
+            array_push($posts_to_exclude, $slider_post);
         }
         $query_vars['paged'] = (!empty(sanitize_text_field($_POST['page'])))? sanitize_text_field($_POST['page']) : 1;
         $query_vars['post__not_in'] = $posts_to_exclude;

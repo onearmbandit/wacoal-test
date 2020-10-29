@@ -498,9 +498,13 @@ function Btemp_Exclude_Posts_From_Specific_category( $query )
         $get_cat_ID = get_term_by('slug', $query->query_vars['category_name'], 'category');
         $cat_ID     = $get_cat_ID->term_id;
         $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
+        $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
 
         foreach ( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post;
+        }
+        foreach ( $slider_posts as $slider_post ) {
+            array_push($posts_to_exclude, $slider_post);
         }
         $query->set('post__not_in', $posts_to_exclude);
     }
