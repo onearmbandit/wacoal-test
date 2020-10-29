@@ -54,7 +54,7 @@ function Btemptd_Ajax_pagination()
         while ( $posts->have_posts() ) {
             $posts->the_post();
             if ($i%3 == 0 || $i==0) {
-                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper">';
+                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
             }
             include locate_template('template-parts/content-excerpt.php');
             if ($i%3 == 2 || $i == 2) {
