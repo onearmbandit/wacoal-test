@@ -269,6 +269,7 @@
 
   .swiper-button-next, .swiper-button-prev {
     width: 10px;
+    outline: none;
 
     @include respond-below(sm) {
       top: 280px;

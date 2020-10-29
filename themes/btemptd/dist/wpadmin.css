@@ -648,7 +648,8 @@ Files inside this folder can contain specific element styles and layout.
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-position: center; }
+    background-position: center;
+    background-repeat: no-repeat; }
     @media (min-width: 768px) {
       .banner-with-image--image {
         width: 46.875vw; } }
@@ -1325,7 +1326,8 @@ Files inside this folder can contain specific element styles and layout.
       -o-object-position: 50% 50%;
          object-position: 50% 50%; }
   .featured-articles-mobile .swiper-button-next, .featured-articles-mobile .swiper-button-prev {
-    width: 10px; }
+    width: 10px;
+    outline: none; }
     @media (max-width: 767px) {
       .featured-articles-mobile .swiper-button-next, .featured-articles-mobile .swiper-button-prev {
         top: 280px; } }
@@ -1889,7 +1891,8 @@ Files inside this folder can contain specific element styles and layout.
   outline: none;
   display: inline-block;
   padding: 1.25rem 2.5rem 0.8125rem;
-  position: relative; }
+  position: relative;
+  text-decoration: none !important; }
   @media (min-width: 768px) {
     .image-content .shop-now-button {
       font-size: 1.66667vw;
