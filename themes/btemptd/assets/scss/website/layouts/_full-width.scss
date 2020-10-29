@@ -128,31 +128,35 @@
 
       &.quote-icon {
 
-        &::before, &::after {
-          content: '';
-          background-size: cover;
+        blockquote {
           position: relative;
-          display: none;
 
-          @include respond-above(sm) {
-            width: get-vw(55px);
-            height: get-vw(55px);
-            display: block;
+          &::before, &::after {
+            content: '';
+            background-size: cover;
+            position: relative;
+            display: none;
+
+            @include respond-above(sm) {
+              width: get-vw(55px);
+              height: get-vw(55px);
+              display: block;
+            }
+          }
+
+          &::before {
+            background-image: url("../../images/quote-left.svg");
+            margin-top: get-vw(-40px);
+            margin-right: get-vw(10px);
+          }
+
+          &::after {
+            background-image: url("../../images/quote-right.svg");
+            margin-top: get-vw(40px);
+            margin-left: get-vw(10px);
           }
         }
-
-        &::before {
-          background-image: url("../../images/quote-left.svg");
-          margin-top: get-vw(-40px);
-          margin-right: get-vw(10px);
         }
-
-        &::after {
-          background-image: url("../../images/quote-right.svg");
-          margin-top: get-vw(40px);
-          margin-left: get-vw(10px);
-        }
-      }
     }
 
     .arrow {

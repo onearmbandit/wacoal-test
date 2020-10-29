@@ -73,7 +73,7 @@ if ($template == 'simple') :
                 </div>
 
                 <div class="full-width-section--content mobile">
-                    <div class="">
+                    <div class="content-mobile">
                         <div class="content-title">
                             <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                         </div>
@@ -120,7 +120,7 @@ if ($template == 'simple') :
                     <div class="arrow">
                        <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
                     </div>
-                    <div>
+                    <div class="content-mobile">
                         <div class="content-title">
                             <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
                         </div>

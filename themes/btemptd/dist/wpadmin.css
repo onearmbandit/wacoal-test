@@ -859,24 +859,26 @@ Files inside this folder can contain specific element styles and layout.
       .full-width-section--content .quote {
         font-size: 1.09375vw;
         line-height: 1; } }
-    .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
-      content: '';
-      background-size: cover;
-      position: relative;
-      display: none; }
-      @media (min-width: 768px) {
-        .full-width-section--content .quote.quote-icon::before, .full-width-section--content .quote.quote-icon::after {
-          width: 2.86458vw;
-          height: 2.86458vw;
-          display: block; } }
-    .full-width-section--content .quote.quote-icon::before {
-      background-image: url(bf5aea2b7755018a38ff581b3812fb38.svg);
-      margin-top: -2.08333vw;
-      margin-right: 0.52083vw; }
-    .full-width-section--content .quote.quote-icon::after {
-      background-image: url(54b5c487886eed843bcae48b6011de2d.svg);
-      margin-top: 2.08333vw;
-      margin-left: 0.52083vw; }
+    .full-width-section--content .quote.quote-icon blockquote {
+      position: relative; }
+      .full-width-section--content .quote.quote-icon blockquote::before, .full-width-section--content .quote.quote-icon blockquote::after {
+        content: '';
+        background-size: cover;
+        position: relative;
+        display: none; }
+        @media (min-width: 768px) {
+          .full-width-section--content .quote.quote-icon blockquote::before, .full-width-section--content .quote.quote-icon blockquote::after {
+            width: 2.86458vw;
+            height: 2.86458vw;
+            display: block; } }
+      .full-width-section--content .quote.quote-icon blockquote::before {
+        background-image: url(bf5aea2b7755018a38ff581b3812fb38.svg);
+        margin-top: -2.08333vw;
+        margin-right: 0.52083vw; }
+      .full-width-section--content .quote.quote-icon blockquote::after {
+        background-image: url(54b5c487886eed843bcae48b6011de2d.svg);
+        margin-top: 2.08333vw;
+        margin-left: 0.52083vw; }
   .full-width-section--content .arrow {
     width: 2.8125rem;
     height: 2.8125rem;
@@ -1839,6 +1841,11 @@ Files inside this folder can contain specific element styles and layout.
       left: 50%;
       top: 50%;
       transform: translateX(-50%) translateY(-50%); } }
+  .image-content.image-content-gif .image-content--content .content-inner strong {
+    font-family: 'NeutraText-BoldAlt'; }
+  .image-content.image-content-gif .image-content--content .content-inner a {
+    font-family: 'NeutraText-BoldAlt';
+    text-decoration: underline; }
   .image-content.image-content-gif .image-content--content .quote-left {
     position: relative;
     width: 2.625rem; }

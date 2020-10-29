@@ -678,6 +678,15 @@
           top: 50%;
           transform: translateX(-50%) translateY(-50%);
         }
+
+        strong {
+          @include NeutraText-BoldAlt;
+        }
+
+        a {
+          @include NeutraText-BoldAlt;
+          text-decoration: underline;
+        }
       }
       .quote-left {
         position: relative;
