@@ -158,7 +158,7 @@
     .arrow {
       width: calcRem(45);
       height: calcRem(45);
-      margin-left: calcRem(23);
+      margin-left: calcRem(18);
 
       @include respond-above(sm) {
         margin-right: get-vw(60px);
@@ -182,6 +182,10 @@
     &.mobile {
       display: flex;
       flex: 1;
+
+      .content-mobile {
+        flex: 1;
+      }
 
       @include respond-above(sm) {
         display: none;

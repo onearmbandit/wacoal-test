@@ -4,10 +4,11 @@
   &--wrapper {
     max-width: calcRem(336);
     width: 100%;
-    margin: auto;
+    margin: 40px auto;
 
     @include respond-above(sm) {
       max-width: get-vw(400px);
+      margin: auto;
     }
   }
 
@@ -15,6 +16,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    justify-content: center;
 
     &--btn {
         width: calcRem(46);

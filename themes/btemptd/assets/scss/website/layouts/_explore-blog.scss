@@ -66,6 +66,22 @@
         }
       }
 
+      @include respond-below(sm) {
+        .explore-blog--box {
+          width: calcRem(351);
+        }
+
+        .explore-blog--content__category {
+          font-size: calcRem(20);
+          line-height: calcRem(30);
+        }
+
+        .explore-blog--content__title {
+          font-size: calcRem(28);
+          line-height: calcRem(30);
+        }
+      }
+
     }
   }
 

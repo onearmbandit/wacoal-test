@@ -11,6 +11,13 @@
   }
 }
 
+.footer-section {
+  margin-top: get-vw(140px);
+}
+.see-more--wrapper + .footer-section {
+  margin-top: 0;
+}
+
 .footer-wrapper {
   width: calc(var(--width-100) - 70px);
   margin: auto;
@@ -68,8 +75,8 @@
     width: var(--width-100);
     color: var(--color-black);
     @include NeutraText-Book;
-    font-size: calcRem(8);
-    margin-top: calcRem(22);
+    font-size: calcRem(9);
+    margin-top: calcRem(10);
 
     @include respond-above(sm) {
       font-size: calcRem(7);
@@ -90,6 +97,7 @@
 
   @include respond-below(sm) {
     text-align: center;
+    margin-bottom: 40px;
   }
 
   @include respond-above(sm) {
@@ -117,23 +125,20 @@
 
     @include respond-above(sm) {
       font-size: calcRem(9);
-      margin-bottom: calcRem(13.8);
+      margin-bottom: 0;
       border-bottom: none;
     }
 
     @include respond-above(md) {
       font-size: calcRem(12.5);
-      margin-bottom: calcRem(20);
     }
 
     @include respond-above(lg) {
       font-size: calcRem(14);
-      margin-bottom: calcRem(24.8);
     }
 
     @include respond-above(xl) {
       font-size: calcRem(20);
-      margin-bottom: calcRem(37.7);
     }
 
     @include respond-below(sm) {
@@ -219,6 +224,8 @@
   margin-bottom: 20px;
 }
 .footer-links.open .footer-links--title {
+  border: none;
+  padding-bottom: 0;
   @include respond-below(sm) {
     &:after {
       background: url('../../images/minus-icon.svg');
@@ -246,11 +253,11 @@
     @include NeutraText-BoldAlt;
     font-size: calcRem(15);
     margin-bottom: calcRem(20);
+    text-transform: uppercase;
 
     @include respond-above(sm) {
       font-size: get-vw(14px);
       margin-bottom: get-vw(20px);
-      text-transform: uppercase;
     }
   }
 
@@ -335,29 +342,14 @@
   }
 
   &--icon {
-    width: calcRem(16);
-    height: calcRem(16);
+    width: calcRem(31);
+    height: calcRem(31);
     display: flex;
     align-items: center;
 
     @include respond-above(sm) {
-      width: calcRem(15);
-      height: calcRem(15);
-    }
-
-    @include respond-above(md) {
-      width: calcRem(18);
-      height: calcRem(18);
-    }
-
-    @include respond-above(lg) {
-      width: calcRem(24);
-      height: calcRem(24);
-    }
-
-    @include respond-above(xl) {
-      width: calcRem(36);
-      height: calcRem(36);
+      width: get-ve(36px);
+      height: get-vw(36px);
     }
 
     &:not(:first-child) {

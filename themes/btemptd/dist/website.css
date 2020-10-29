@@ -273,7 +273,7 @@ Files inside this folder can contain specific element styles and layout.
   position: absolute;
   right: 0;
   font-family: 'NeutraText-DemiAlt';
-  font-size: 1.66667vw;
+  font-size: 0.6875rem;
   color: var(--color-black);
   text-transform: uppercase;
   background: var(--color-tile-bg);
@@ -285,7 +285,8 @@ Files inside this folder can contain specific element styles and layout.
     display: none; }
     @media (min-width: 768px) {
       .shop-btemptd-btn.shop-btemptd-btn-desktop {
-        display: block; } }
+        display: block;
+        font-size: 1.66667vw; } }
   .shop-btemptd-btn.shop-btemptd-btn-mobile {
     display: block; }
     @media (min-width: 768px) {
@@ -335,6 +336,12 @@ Files inside this folder can contain specific element styles and layout.
       padding-left: 0;
       padding-right: 0; } }
 
+.footer-section {
+  margin-top: 7.29167vw; }
+
+.see-more--wrapper + .footer-section {
+  margin-top: 0; }
+
 .footer-wrapper {
   width: calc(var(--width-100) - 70px);
   margin: auto;
@@ -376,8 +383,8 @@ Files inside this folder can contain specific element styles and layout.
     width: var(--width-100);
     color: var(--color-black);
     font-family: 'NeutraText-Book';
-    font-size: 0.5rem;
-    margin-top: 1.375rem; }
+    font-size: 0.5625rem;
+    margin-top: 0.625rem; }
     @media (min-width: 768px) {
       .footer-wrapper--copyright {
         font-size: 0.4375rem;
@@ -390,7 +397,8 @@ Files inside this folder can contain specific element styles and layout.
 
 @media (max-width: 767px) {
   .bottom-footer {
-    text-align: center; } }
+    text-align: center;
+    margin-bottom: 40px; } }
 
 @media (min-width: 768px) {
   .bottom-footer {
@@ -412,20 +420,17 @@ Files inside this folder can contain specific element styles and layout.
   @media (min-width: 768px) {
     .footer-links--title {
       font-size: 0.5625rem;
-      margin-bottom: 0.8625rem;
+      margin-bottom: 0;
       border-bottom: none; } }
   @media (min-width: 1024px) {
     .footer-links--title {
-      font-size: 0.78125rem;
-      margin-bottom: 1.25rem; } }
+      font-size: 0.78125rem; } }
   @media (min-width: 1280px) {
     .footer-links--title {
-      font-size: 0.875rem;
-      margin-bottom: 1.55rem; } }
+      font-size: 0.875rem; } }
   @media (min-width: 1600px) {
     .footer-links--title {
-      font-size: 1.25rem;
-      margin-bottom: 2.35625rem; } }
+      font-size: 1.25rem; } }
   @media (max-width: 767px) {
     .footer-links--title:after {
       content: '';
@@ -482,9 +487,12 @@ Files inside this folder can contain specific element styles and layout.
   display: block;
   margin-bottom: 20px; }
 
-@media (max-width: 767px) {
-  .footer-links.open .footer-links--title:after {
-    background: url(3873b7fd702198e9b55a922e79a7abac.svg); } }
+.footer-links.open .footer-links--title {
+  border: none;
+  padding-bottom: 0; }
+  @media (max-width: 767px) {
+    .footer-links.open .footer-links--title:after {
+      background: url(3873b7fd702198e9b55a922e79a7abac.svg); } }
 
 @media (max-width: 767px) {
   .footer-links.open {
@@ -502,12 +510,12 @@ Files inside this folder can contain specific element styles and layout.
   .footer-subscribe .title {
     font-family: 'NeutraText-BoldAlt';
     font-size: 0.9375rem;
-    margin-bottom: 1.25rem; }
+    margin-bottom: 1.25rem;
+    text-transform: uppercase; }
     @media (min-width: 768px) {
       .footer-subscribe .title {
         font-size: 0.72917vw;
-        margin-bottom: 1.04167vw;
-        text-transform: uppercase; } }
+        margin-bottom: 1.04167vw; } }
   .footer-subscribe .sub-title {
     font-family: 'NeutraText-BookAlt';
     font-size: 0.9375rem;
@@ -571,26 +579,14 @@ Files inside this folder can contain specific element styles and layout.
     .footer-social {
       margin-top: 1.45833vw; } }
   .footer-social--icon {
-    width: 1rem;
-    height: 1rem;
+    width: 1.9375rem;
+    height: 1.9375rem;
     display: flex;
     align-items: center; }
     @media (min-width: 768px) {
       .footer-social--icon {
-        width: 0.9375rem;
-        height: 0.9375rem; } }
-    @media (min-width: 1024px) {
-      .footer-social--icon {
-        width: 1.125rem;
-        height: 1.125rem; } }
-    @media (min-width: 1280px) {
-      .footer-social--icon {
-        width: 1.5rem;
-        height: 1.5rem; } }
-    @media (min-width: 1600px) {
-      .footer-social--icon {
-        width: 2.25rem;
-        height: 2.25rem; } }
+        width: get-ve(36px);
+        height: 1.875vw; } }
     .footer-social--icon:not(:first-child) {
       margin-left: 0.8125rem; }
       @media (min-width: 768px) {
@@ -686,15 +682,17 @@ Files inside this folder can contain specific element styles and layout.
 .pagination--wrapper {
   max-width: 21rem;
   width: 100%;
-  margin: auto; }
+  margin: 40px auto; }
   @media (min-width: 768px) {
     .pagination--wrapper {
-      max-width: 20.83333vw; } }
+      max-width: 20.83333vw;
+      margin: auto; } }
 
 .pagination .pagination-box {
   display: flex;
   width: 100%;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
   .pagination .pagination-box--btn {
     width: 2.875rem;
     height: 1.6875rem;
@@ -882,7 +880,7 @@ Files inside this folder can contain specific element styles and layout.
   .full-width-section--content .arrow {
     width: 2.8125rem;
     height: 2.8125rem;
-    margin-left: 1.4375rem; }
+    margin-left: 1.125rem; }
     @media (min-width: 768px) {
       .full-width-section--content .arrow {
         margin-right: 3.125vw;
@@ -898,6 +896,8 @@ Files inside this folder can contain specific element styles and layout.
   .full-width-section--content.mobile {
     display: flex;
     flex: 1; }
+    .full-width-section--content.mobile .content-mobile {
+      flex: 1; }
     @media (min-width: 768px) {
       .full-width-section--content.mobile {
         display: none; } }
@@ -998,6 +998,15 @@ Files inside this folder can contain specific element styles and layout.
         .explore-blog--wrapper.blog-wrapper .explore-blog--box:nth-child(2) {
           margin-left: 3.64583vw;
           margin-right: 3.64583vw; } }
+    @media (max-width: 767px) {
+      .explore-blog--wrapper.blog-wrapper .explore-blog--box {
+        width: 21.9375rem; }
+      .explore-blog--wrapper.blog-wrapper .explore-blog--content__category {
+        font-size: 1.25rem;
+        line-height: 1.875rem; }
+      .explore-blog--wrapper.blog-wrapper .explore-blog--content__title {
+        font-size: 1.75rem;
+        line-height: 1.875rem; } }
   .explore-blog--box {
     position: relative;
     width: 19.5rem;
@@ -1170,15 +1179,22 @@ Files inside this folder can contain specific element styles and layout.
       right: 1.5625vw; } }
   .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination {
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%);
+    bottom: 0; }
     .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination .swiper-pagination-bullet {
-      background: var(--color-gray-light);
-      margin-left: 10px;
-      margin-right: 10px;
-      width: 15px;
-      height: 15px; }
+      background: var(--color-gray-light); }
+      @media (min-width: 768px) {
+        .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination .swiper-pagination-bullet {
+          margin-left: 0.52083vw;
+          margin-right: 0.52083vw;
+          width: 0.625vw;
+          height: 0.625vw; } }
     .featured-articles--wrapper .swiper-button--wrapper .custom-swiper-pagination .swiper-pagination-bullet-active {
       background: var(--color-black); }
+  .featured-articles--wrapper .swiper-button--wrapper .swiper-button-next, .featured-articles--wrapper .swiper-button--wrapper .swiper-button-prev {
+    width: 10px; }
+    .featured-articles--wrapper .swiper-button--wrapper .swiper-button-next img, .featured-articles--wrapper .swiper-button--wrapper .swiper-button-prev img {
+      width: 100%; }
   .featured-articles--wrapper .swiper-button--wrapper-inner {
     margin: auto;
     position: relative; }
@@ -1292,9 +1308,9 @@ Files inside this folder can contain specific element styles and layout.
         transform: translateX(-50%);
         top: -33px; }
   .featured-articles-mobile--wrapper .swiper-slide--image {
-    width: 14.625rem;
+    width: 18.3125rem;
     height: 19.1875rem;
-    margin: 0 auto 25px; }
+    margin: 0 auto 15px; }
     .featured-articles-mobile--wrapper .swiper-slide--image img {
       -o-object-fit: cover;
          object-fit: cover;

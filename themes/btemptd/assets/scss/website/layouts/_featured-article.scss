@@ -34,17 +34,32 @@
       .custom-swiper-pagination {
         left: 50%;
         transform: translateX(-50%);
+        bottom: 0;
 
         .swiper-pagination-bullet {
           background: var(--color-gray-light);
-          margin-left: 10px;
-          margin-right: 10px;
-          width: 15px;
-          height: 15px;
+
+          @include respond-above(sm) {
+            margin-left: get-vw(10px);
+            margin-right: get-vw(10px);
+            width: get-vw(12px);
+            height: get-vw(12px);
+          }
         }
 
         .swiper-pagination-bullet-active {
           background: var(--color-black);
+        }
+      }
+
+      .swiper-button-next, .swiper-button-prev {
+        width: 10px;
+
+        @include respond-above(sm) {
+
+        }
+        img {
+          width: 100%;
         }
       }
     }
@@ -235,9 +250,9 @@
       }
 
       &--image {
-        width: calcRem(234);
+        width: calcRem(293);
         height: calcRem(307);
-        margin: 0 auto 25px;
+        margin: 0 auto 15px;
 
         img {
           object-fit: cover;

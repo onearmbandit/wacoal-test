@@ -88,7 +88,7 @@ if(!empty($banner_link)) :?>
                 </div>
 
                 <div class="full-width-section--content mobile">
-                    <div class="">
+                    <div class="content-mobile">
                     <?php if($section['title'] && !empty($section['title'])) :?>
                         <div class="content-title">
                             <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
@@ -153,7 +153,7 @@ if(!empty($banner_link)) :?>
                        </a>
                     </div>
                 <?php endif;?>
-                    <div>
+                    <div class="content-mobile">
                         <?php  if($section['title'] && !empty($section['title'])) :?>
                         <div class="content-title">
                             <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
