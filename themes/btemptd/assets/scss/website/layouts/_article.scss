@@ -105,10 +105,11 @@
   }
 
   &--wrapper {
-    margin: auto;
+    margin: 30px auto 0;
 
     @include respond-above(sm) {
       width: get-vw(1620px);
+      margin: auto;
     }
   }
 
@@ -129,6 +130,10 @@
       width: 100%;
       position: relative;
 
+      @include respond-below(sm) {
+        margin-bottom: calcRem(50);
+      }
+
       @include respond-above(sm) {
         height: get-vw(517px);
         // align-items: flex-start;
@@ -148,6 +153,10 @@
         width: calcRem(198);
         right: 0;
 
+        @include respond-below(sm) {
+          margin-top: calcRem(20);
+        }
+
         @include respond-above(sm) {
           width: get-vw(1060px);
           min-height: get-vw(250px);
@@ -160,8 +169,8 @@
 
           @include respond-below(sm) {
             position: absolute;
-            right: 0;
-            top: 0;
+            right: 20px;
+            top: -45px;
             background: var(--color-primary);
             width: calcRem(79);
             height: calcRem(79);
@@ -197,6 +206,18 @@
         width: calcRem(154);
         height: calcRem(205);
 
+        @include respond-below(sm) {
+          z-index: -2;
+        }
+
+        img {
+
+          @include respond-below(sm) {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
         @include respond-above(sm) {
           width: get-vw(710px);
           height: 100%;
@@ -231,6 +252,10 @@
             @include NeutraText-DemiAlt;
             font-size: get-vw(26px);
             color: var(--color-text);
+
+            @include respond-below(sm) {
+              display: none;
+            }
           }
         }
       }
@@ -238,12 +263,20 @@
       &.even {
         justify-content: flex-start;
 
+        @include respond-below(sm) {
+          flex-direction: row-reverse;
+        }
+
           @include respond-above(sm) {
             margin-top: get-vw(-130px);
             margin-bottom: get-vw(70px);
           }
 
           .reason-box--content {
+
+            @include respond-below(sm) {
+              left: 0;
+            }
 
             @include respond-above(sm) {
               right: 0;
@@ -256,6 +289,9 @@
             position: relative;
 
             .tag-name {
+              @include respond-below(sm) {
+                display: none;
+              }
               position: absolute;
               left: 0;
               bottom: get-vw(-35px);

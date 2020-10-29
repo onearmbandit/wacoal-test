@@ -1410,10 +1410,11 @@ Files inside this folder can contain specific element styles and layout.
     padding: 0rem 1.125rem; } }
 
 .three-reason--wrapper {
-  margin: auto; }
+  margin: 30px auto 0; }
   @media (min-width: 768px) {
     .three-reason--wrapper {
-      width: 84.375vw; } }
+      width: 84.375vw;
+      margin: auto; } }
 
 .three-reason--title {
   text-align: center;
@@ -1429,6 +1430,9 @@ Files inside this folder can contain specific element styles and layout.
   display: flex;
   width: 100%;
   position: relative; }
+  @media (max-width: 767px) {
+    .three-reason .reason-box {
+      margin-bottom: 3.125rem; } }
   @media (min-width: 768px) {
     .three-reason .reason-box {
       height: 26.92708vw; }
@@ -1443,6 +1447,9 @@ Files inside this folder can contain specific element styles and layout.
     color: var(--color-text);
     width: 12.375rem;
     right: 0; }
+    @media (max-width: 767px) {
+      .three-reason .reason-box--content {
+        margin-top: 1.25rem; } }
     @media (min-width: 768px) {
       .three-reason .reason-box--content {
         width: 55.20833vw;
@@ -1454,8 +1461,8 @@ Files inside this folder can contain specific element styles and layout.
       @media (max-width: 767px) {
         .three-reason .reason-box--content__number {
           position: absolute;
-          right: 0;
-          top: 0;
+          right: 20px;
+          top: -45px;
           background: var(--color-primary);
           width: 4.9375rem;
           height: 4.9375rem;
@@ -1482,6 +1489,14 @@ Files inside this folder can contain specific element styles and layout.
   .three-reason .reason-box--image {
     width: 9.625rem;
     height: 12.8125rem; }
+    @media (max-width: 767px) {
+      .three-reason .reason-box--image {
+        z-index: -2; } }
+    @media (max-width: 767px) {
+      .three-reason .reason-box--image img {
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover; } }
     @media (min-width: 768px) {
       .three-reason .reason-box--image {
         width: 36.97917vw;
@@ -1506,12 +1521,21 @@ Files inside this folder can contain specific element styles and layout.
       font-family: 'NeutraText-DemiAlt';
       font-size: 1.35417vw;
       color: var(--color-text); }
+      @media (max-width: 767px) {
+        .three-reason .reason-box.odd .reason-box--image .tag-name {
+          display: none; } }
   .three-reason .reason-box.even {
     justify-content: flex-start; }
+    @media (max-width: 767px) {
+      .three-reason .reason-box.even {
+        flex-direction: row-reverse; } }
     @media (min-width: 768px) {
       .three-reason .reason-box.even {
         margin-top: -6.77083vw;
         margin-bottom: 3.64583vw; } }
+    @media (max-width: 767px) {
+      .three-reason .reason-box.even .reason-box--content {
+        left: 0; } }
     @media (min-width: 768px) {
       .three-reason .reason-box.even .reason-box--content {
         right: 0;
@@ -1526,6 +1550,9 @@ Files inside this folder can contain specific element styles and layout.
         font-family: 'NeutraText-DemiAlt';
         font-size: 1.35417vw;
         color: var(--color-text); }
+        @media (max-width: 767px) {
+          .three-reason .reason-box.even .reason-box--image .tag-name {
+            display: none; } }
 
 .wow-factor--wrapper {
   margin: auto;
