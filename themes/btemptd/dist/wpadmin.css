@@ -860,7 +860,9 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 1.09375vw;
         line-height: 1; } }
     .full-width-section--content .quote.quote-icon blockquote {
-      position: relative; }
+      position: relative;
+      display: flex;
+      align-items: center; }
       .full-width-section--content .quote.quote-icon blockquote::before, .full-width-section--content .quote.quote-icon blockquote::after {
         content: '';
         background-size: cover;

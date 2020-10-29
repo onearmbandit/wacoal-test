@@ -130,6 +130,8 @@
 
         blockquote {
           position: relative;
+          display: flex;
+          align-items: center;
 
           &::before, &::after {
             content: '';
