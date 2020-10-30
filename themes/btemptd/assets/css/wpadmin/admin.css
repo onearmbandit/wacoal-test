@@ -1,55 +1,114 @@
 /* Question Answer block Css */
-.article-questions.even-sequence .article-questions--image {
-  width: 30%;
-}
-
-
-/* Quote block Css */
-.product-quote .product-quote--image{
-  width: 30%;
-}
-.product-quote .product-quote--content{
-  font-size: 1.4em;
-}
-
-/*Data with image block CSS*/
-.article-questions--wrapper .article-questions--image {
-  width: 30%;
-  margin-left: 1em;
-}
-.article-questions--wrapper .article-questions--content {
-  min-width: 70%;
-  max-width: 70%;
-  line-height: 1em;
-}
-
-/*Product gallery wrapper block CSS*/
-.product-gallery:before {
+.three-reason--wrapper {
   width: 100%;
 }
-.product-gallery .product-gallery--box {
-  padding: 0 10px;
+
+.section.wow-factor {
+  width: 100%;
 }
 
-/*Text only list format block CSS*/
-.list-text-format .list-box.list-box-one .list-box--content,
-.list-text-format .list-box.list-box-two .list-box--content,
-.list-text-format .list-box.list-box-three .list-box--content {
-  flex: unset;
+.wow-factor--wrapper.top {
+  width: 100%;
 }
 
-/*Text image list format block CSS*/
-.list-format .list--image {
-  width: 30%;
+.wow-factor--left.box-shadow-right {
+  width: 100%;
+  margin: 0;
+  padding: 10px;
 }
 
-/*Video block CSS*/
-.video-full-width,
-.video-full-width .video-caption {
-  width:100%;
+.wow-factor--wrapper.bottom {
+  width: 100%;
 }
 
-/*Video Image and Video block CSS*/
-.video-image--wrapper {
-  width:100%;
+.wow-factor--left .cta-button,
+.wow-factor--right .cta-button {
+  height: 50px;
+}
+
+section.wow-factor p {
+  font-size: 14px;
+}
+
+/*text image list block CSS*/
+.image-content .image-content--wrapper {
+  width: 100%;
+}
+
+.image-content .even,
+.image-content .odd {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.image-content .image-content--image {
+  width: 100%;
+  height: 200px;
+}
+
+.image-content .image-content--content.box-shadow-right {
+  width: 100%;
+}
+
+.image-content .image-content--content__head {
+  font-size: 20px;
+}
+
+.wow-factor--banner {
+  height: 300px;
+}
+
+/*Quotes List block CSS*/
+section.image-content.image-content-gif {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+section.image-content.image-content-gif a {
+  width: 100%;
+}
+
+.image-content.image-content-gif .image-content--image {
+  width: 100%;
+  height: 350px;
+}
+
+.image-content.image-content-gif .image-content--content {
+  width: 100%;
+  top: 35px;
+}
+
+.image-content.image-content-gif .image-content--content .content-inner {
+  top: 40%;
+}
+
+.image-content.image-content-gif .image-content--content .quote-left {
+  top: -30px;
+}
+
+.image-content.image-content-gif .image-content--content .quote-right {
+  top: 55%;
+}
+
+/* .image-content.image-content-gif .odd,
+.image-content.image-content-gif .even {
+  padding-bottom: 15%;
+} */
+
+.image-content.image-content-gif .shop-now-button {
+  margin-bottom: 10%;
+  width: 50%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.image-content.image-content-gif .image-content--content__title {
+  margin-top: 35%;
+}
+
+/*para CSS*/
+
+section.article--para {
+  margin: 10%;
 }
