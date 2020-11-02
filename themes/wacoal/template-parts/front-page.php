@@ -132,14 +132,24 @@
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
 
-    <?php if($static_section['image'] && !empty($static_section['image'])) : ?>
+    <?php if($static_section['image'] && !empty($static_section['image'])) :
+        if(!empty($static_section['image_link'])) :?>
+                <a href="<?php echo esc_url($static_section['image_link']);?>"
+                   target="_blank";>
+        <?php endif;
+        ?>
         <div class="wacoal-101--image">
             <img class="lazyload"
                 data-src="<?php echo  esc_url($static_section['image']); ?>"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt="Wacoal 101" />
         </div>
-    <?php endif;?>
+        <?php
+        if(!empty($static_section['image_link'])) :?>
+        </a>
+            <?php
+        endif;
+    endif;?>
 
        <div class="wacoal-101--content">
 
