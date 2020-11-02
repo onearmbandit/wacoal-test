@@ -27,9 +27,15 @@ if ($block_image_id && !empty($block_image_id)) {
 
                 <div class="article-questions--image">
                     <figure>
-                        <img class="lazyload" data-src="<?php echo esc_url($block_image_url); ?>"
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                        alt="<?php echo wp_kses_post($block_image_alt); ?>" />
+                    <?php if(!empty($block_image_link)) :?>
+                        <a href="<?php echo esc_url($block_image_link);?>" target="_blank";>
+                    <?php endif;?>
+                            <img class="lazyload" data-src="<?php echo esc_url($block_image_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo wp_kses_post($block_image_alt); ?>" />
+                        <?php if(!empty($block_image_link)) :?>
+                        </a>
+                        <?php endif;?>
                         <figcaption><?php echo wp_kses_post($image_caption); ?></figcaption>
                     </figure>
                 </div>

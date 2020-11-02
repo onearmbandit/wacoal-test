@@ -117,6 +117,22 @@ acf_add_local_field_group(
             'append' => '',
             'maxlength' => '',
         ),
+        array(
+            'key' => 'field_5fa00494ab52f',
+            'label' => 'Image Link',
+            'name' => 'image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
     ),
     'location' => array(
         array(
@@ -137,3 +153,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
