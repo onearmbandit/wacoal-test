@@ -34,7 +34,9 @@
     ?>
 
     <div class="blog-tile--para">
-        <?php echo wp_kses_post($post_tagline); ?>
+        <a href="<?php echo esc_url(get_permalink());?>">
+            <?php echo wp_kses_post($post_tagline); ?>
+        </a>
     </div>
     <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
 </article>

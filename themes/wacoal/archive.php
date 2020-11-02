@@ -115,7 +115,11 @@ if ($template == 'wacoal') {
                         </h4>
                     </a>
 
-                    <p class="featured-box--content__para"><?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 100)); ?></p>
+                    <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
+                        <p class="featured-box--content__para">
+                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 100)); ?>
+                        </p>
+                    </a>
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
                 </div>
                 <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
