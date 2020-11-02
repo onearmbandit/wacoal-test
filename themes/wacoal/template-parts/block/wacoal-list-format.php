@@ -17,6 +17,7 @@ if ($block_lists && !empty($block_lists)) {
     <div class="list-format--wrapper">
     <?php foreach ($block_lists as $key => $list) {
         $list_image_url = $list['image'];
+        $list_image_link = $list['image_link'];
         $list_heading = $list['list_heading'];
         $list_subheading_1 = $list['list_subheading_1'];
         $list_subheading_2 = $list['list_subheading_2'];
@@ -29,8 +30,14 @@ if ($block_lists && !empty($block_lists)) {
             if ($list_image_url && !empty($list_image_url)) {
                 ?>
             <div class="list--image list--image__desktop">
-                <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                <?php if(!empty($list_image_link)) :?>
+                <a href="<?php echo esc_url($list_image_link);?>" target="_blank";>
+                <?php endif;?>
+                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                <?php if(!empty($list_image_link)) :?>
+                </a>
+                <?php endif;?>
             </div>
                 <?php
             } ?>
@@ -63,8 +70,14 @@ if ($block_lists && !empty($block_lists)) {
                 if ($list_image_url && !empty($list_image_url)) {
                     ?>
                 <div class="list--image list--image__mobile">
-                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                    <?php if(!empty($list_image_link)) :?>
+                    <a href="<?php echo esc_url($list_image_link);?>">
+                    <?php endif;?>
+                        <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                    <?php if(!empty($list_image_link)) :?>
+                    </a>
+                    <?php endif;?>
                 </div>
                     <?php
                 }
@@ -88,8 +101,14 @@ if ($block_lists && !empty($block_lists)) {
             if ($list_image_url && !empty($list_image_url)) {
                 ?>
             <div class="list--image list--image__desktop">
-                <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                <?php if(!empty($list_image_link)) :?>
+                <a href="<?php echo esc_url($list_image_link);?>" target="_blank";>
+                <?php endif;?>
+                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
+                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                <?php if(!empty($list_image_link)) :?>
+                </a>
+                <?php endif;?>
             </div>
                 <?php
             } ?>
@@ -123,8 +142,14 @@ if ($block_lists && !empty($block_lists)) {
                 if ($list_image_url && !empty($list_image_url)) {
                     ?>
                 <div class="list--image list--image__mobile">
+                    <?php if(!empty($list_image_link)) :?>
+                <a href="<?php echo esc_url($list_image_link);?>">
+                    <?php endif;?>
                     <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                    <?php if(!empty($list_image_link)) :?>
+                </a>
+                    <?php endif;?>
                 </div>
                     <?php
                 }

@@ -67,6 +67,22 @@ acf_add_local_field_group(
                     'mime_types' => '',
                 ),
                 array(
+                    'key' => 'field_5fa0084a5b8df',
+                    'label' => 'Image Link',
+                    'name' => 'image_link',
+                    'type' => 'url',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                ),
+                array(
                     'key' => 'field_5f748499bd0d2',
                     'label' => 'List Heading',
                     'name' => 'list_heading',
@@ -178,4 +194,5 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+
 
