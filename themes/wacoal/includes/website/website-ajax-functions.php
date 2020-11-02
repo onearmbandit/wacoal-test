@@ -9,15 +9,16 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Wacoal
  */
+
+add_action('wp_ajax_nopriv_wacoal_ajax_pagination', 'Wacoal_Ajax_pagination');
+add_action('wp_ajax_wacoal_ajax_pagination', 'Wacoal_Ajax_pagination');
+
 /**
  * Function for ajax pagination
  *
  * @return string Return the posts html.
  */
-add_action( 'wp_ajax_nopriv_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
-add_action( 'wp_ajax_wacoal_ajax_pagination', 'wacoal_ajax_pagination' );
-
-function wacoal_ajax_pagination() {
+function Wacoal_Ajax_pagination() {
     // Check for nonce security
 
     if(isset($_POST['nonce']) && !empty($_POST['nonce'])){

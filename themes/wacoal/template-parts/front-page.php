@@ -14,8 +14,9 @@
 
 <!-- Top Banner Section Start -->
 <?php if(!empty($top_banner_link)) :?>
-<a href="<?php echo esc_url($top_banner_link);?>" <?php if($top_banner_newtab == true) : echo "target='_blank'";
-endif;?>>
+<a href="<?php echo esc_url($top_banner_link);?>"
+    <?php if($top_banner_newtab == true) : echo "target='_blank'";
+    endif;?>>
 <?php endif;?>
 
 <section class="banner-with-image desktop-banner"
@@ -73,24 +74,30 @@ endif;?>>
                 <div class="swiper-slide evergreen-article">
                     <div class="evergreen-article--content">
 
-                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="evergreen-article--content__subtitle">
+                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"
+                           class="evergreen-article--content__subtitle">
                             <?php echo esc_attr($categories->name);?>
                         </a>
 
-                        <h3 class="evergreen-article--content__title">
-                            <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 78));?>
-                        </h3>
+                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
+                            <h3 class="evergreen-article--content__title">
+                                <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 78));?>
+                            </h3>
+                        </a>
 
                         <div class="evergreen-article--content__para">
-                            <?php echo wp_kses_post(Wacoal_Limit_text($slider_blog->tag_line, 160));?>
+                            <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
+                                <?php echo wp_kses_post(Wacoal_Limit_text($slider_blog->tag_line, 160));?>
+                            </a>
                         </div>
-
                     </div>
 
                     <div class="evergreen-article--image">
-                        <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                        alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
+                            <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
                     </div>
 
                     <div class="evergreen-article--button">
@@ -138,7 +145,8 @@ endif;?>>
 
        <?php if($static_section['title'] && !empty($static_section['title'])) : ?>
             <a href="<?php echo esc_url($static_section['title_link']);?>"
-            <?php if($static_section['link_open_in_new_tab'] == true) : echo "target='_blank'"; endif;?>>
+            <?php if($static_section['link_open_in_new_tab'] == true) : echo "target='_blank'";
+            endif;?>>
                 <div class="wacoal-101--content__title">
                     <?php echo esc_attr($static_section['title']);?>
                 </div>
@@ -178,19 +186,25 @@ endif;?>>
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="featured-box--content__subtitle">
                                 <?php echo esc_attr($categories->name);?>
                             </a>
-                            <h4 class="featured-box--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text($featured_blog->post_title, 30));?>
-                            </h4>
+                            <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
+                                <h4 class="featured-box--content__title">
+                                    <?php echo esc_attr(Wacoal_Limit_text($featured_blog->post_title, 30));?>
+                                </h4>
+                            </a>
                             <div class="featured-box--content__para">
-                                <?php echo wp_kses_post(Wacoal_Limit_text($featured_blog->tag_line, 160));?>
+                                <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
+                                    <?php echo wp_kses_post(Wacoal_Limit_text($featured_blog->tag_line, 160));?>
+                                </a>
                             </div>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
                                 class="btn primary big">learn more</a>
                         </div>
-                        <div class="featured-box--image">
-                            <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                        </div>
+                        <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
+                            <div class="featured-box--image">
+                                <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                            </div>
+                        </a>
                     </article>
                 </div>
             <?php } ?>
@@ -228,20 +242,27 @@ endif;?>>
             $cat_ID = $categories->term_id;
             ?>
             <article class="blog-tile">
-                <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                </div>
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                    <div class="blog-tile--image">
+                        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+                </a>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
                     <?php }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo esc_attr(get_the_title($blog->ID));?>
+                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                        <?php echo esc_attr(get_the_title($blog->ID));?>
+                    </a>
                 </h5>
                 <div class="blog-tile--para">
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <?php echo  wp_kses_post($post_tagline);?>
+                    </a>
                 </div>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
                     class="btn primary">Learn More</a>
