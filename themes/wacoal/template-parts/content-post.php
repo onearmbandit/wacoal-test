@@ -13,8 +13,14 @@
 ?>
 
 <!-- Banner section -->
-<section class="article-details-banner" style="background-image:url(<?php  echo esc_url($article_banner['url']);?>);">
-</section>
+<?php if(!empty($article_banner_link)) :?>
+    <a href="<?php echo esc_url($article_banner_link);?>" target="_blank";>
+<?php endif;?>
+    <section class="article-details-banner" style="background-image:url(<?php  echo esc_url($article_banner['url']);?>);">
+    </section>
+<?php if(!empty($article_banner_link)) :?>
+    </a>
+<?php endif;?>
 
 <!-- Title Category Short Description section -->
 <section class="article-header">
@@ -42,7 +48,7 @@
 </section>
 
 <!-- More From Blog -->
-<?php if(!empty($recent_posts)): ?>
+<?php if(!empty($recent_posts)) : ?>
     <section class="more-blog">
         <div class="more-blog--title">
                 <?php echo esc_html('MORE FROM THE BLOG');?>

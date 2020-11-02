@@ -13,6 +13,7 @@
 wacoal_page_entry_top('');
 
 $article_banner = get_field('banner_image');
+$article_banner_link = get_field('banner_image_link');
 $post_title     = get_the_title($post->ID);
 $post_excerpt   = get_the_excerpt($post->ID);
 $tag_line       = get_field('tag_line');

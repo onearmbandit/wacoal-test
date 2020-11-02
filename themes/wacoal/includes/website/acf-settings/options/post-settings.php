@@ -1,6 +1,6 @@
 <?php
 /**
- * Singlepost custom field settings
+ * Singlepost custom field post settings
  * php version 7.4
  *
  * @category Wacoal
@@ -17,7 +17,7 @@ acf_add_local_field_group(
     'fields' => array(
         array(
             'key' => 'field_5f6dd5ca8e91e',
-            'label' => 'Tag line',
+            'label' => 'Tag Line',
             'name' => 'tag_line',
             'type' => 'wysiwyg',
             'instructions' => '',
@@ -36,7 +36,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f6dd5658e91d',
-            'label' => 'banner Image',
+            'label' => 'Banner Image',
             'name' => 'banner_image',
             'type' => 'image',
             'instructions' => '',
@@ -57,6 +57,22 @@ acf_add_local_field_group(
             'max_height' => '',
             'max_size' => '',
             'mime_types' => '',
+        ),
+        array(
+            'key' => 'field_5f9fc5cfddac6',
+            'label' => 'Banner Image Link',
+            'name' => 'banner_image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
         ),
     ),
     'location' => array(

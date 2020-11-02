@@ -25,6 +25,7 @@ function Wacoal_Data_Image_Block_Render_callback( $block )
     $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
     $block_image_alt    = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
     $block_image_url    = Wacoal_Get_image($block_image_array);
+    $block_image_link  = $block_fields['image_link'];
     $caption            = $block_fields['image_caption'];
     $separator          = $block_fields['enable_separator'];
 
