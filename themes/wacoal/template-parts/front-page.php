@@ -153,15 +153,17 @@
 
        <div class="wacoal-101--content">
 
-       <?php if($static_section['title'] && !empty($static_section['title'])) : ?>
+       <?php if($static_section['title_link'] && !empty($static_section['title_link'])) : ?>
             <a href="<?php echo esc_url($static_section['title_link']);?>"
             <?php if($static_section['link_open_in_new_tab'] == true) : echo "target='_blank'";
             endif;?>>
+       <?php endif;?>
                 <div class="wacoal-101--content__title">
                     <?php echo esc_attr($static_section['title']);?>
                 </div>
+                <?php if($static_section['title_link']) :?>
             </a>
-       <?php endif; ?>
+                <?php endif; ?>
 
             <?php foreach ($static_section['links'] as $key => $page_obj) { ?>
                 <div class="wacoal-101--list">
