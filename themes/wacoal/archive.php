@@ -85,15 +85,25 @@ if ($template == 'wacoal') {
                 ?>
             <article class="featured-box">
                 <div class="featured-box--content">
-                    <p class="featured-box--content__subtitle"><?php echo esc_attr($cat_name); ?></p>
-                    <h4 class="featured-box--content__title"><?php echo esc_attr(Wacoal_Limit_text($featured_post_title, 32)); ?></h4>
-                    <p class="featured-box--content__para"><?php echo wp_kses_post(Wacoal_Limit_text($post_tagline, 100)); ?></p>
+                    <p class="featured-box--content__subtitle">
+                        <?php echo esc_attr($cat_name); ?>
+                    </p>
+
+                    <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
+                        <h4 class="featured-box--content__title">
+                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 32)); ?>
+                        </h4>
+                    </a>
+
+                    <p class="featured-box--content__para"><?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 100)); ?></p>
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
                 </div>
-                <div class="featured-box--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($featured_image); ?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Featured Article" />
-                </div>
+                <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
+                    <div class="featured-box--image">
+                        <img class="lazyload" data-src="<?php echo esc_url($featured_image); ?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Featured Article" />
+                    </div>
+                </a>
             </article>
                 <?php
             }
@@ -148,18 +158,24 @@ if ($template == 'wacoal') {
                 $cat_url = get_term_link($cat_ID);
                 ?>
                 <article class="blog-tile">
-                    <div class="blog-tile--image">
-                        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                    </div>
+                    <a href="<?php echo esc_url(get_permalink($blog));?>">
+                        <div class="blog-tile--image">
+                            <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </div>
+                    </a>
                     <div class="blog-tile--category">
                         <?php if (! empty($categories) ) {?>
                            <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
                         <?php }?>
                     </div>
-                    <h5 class="blog-tile--heading">
-                        <?php echo esc_attr(get_the_title($blog));?>
-                    </h5>
+
+                    <a href="<?php echo esc_url(get_permalink($blog));?>">
+                        <h5 class="blog-tile--heading">
+                            <?php echo esc_attr(get_the_title($blog));?>
+                        </h5>
+                    </a>
+
                     <div class="blog-tile--para">
                     <?php echo  wp_kses_post($post_tagline);?>
                     </div>

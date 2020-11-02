@@ -81,13 +81,13 @@
 
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text($slider_blog->post_title, 78));?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->post_title), 78));?>
                             </h3>
                         </a>
 
                         <div class="evergreen-article--content__para">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text($slider_blog->tag_line, 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->tag_line), 160));?>
                             </a>
                         </div>
                     </div>
@@ -188,12 +188,12 @@
                             </a>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
                                 <h4 class="featured-box--content__title">
-                                    <?php echo esc_attr(Wacoal_Limit_text($featured_blog->post_title, 30));?>
+                                    <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog->post_title), 30));?>
                                 </h4>
                             </a>
                             <div class="featured-box--content__para">
                                 <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
-                                    <?php echo wp_kses_post(Wacoal_Limit_text($featured_blog->tag_line, 160));?>
+                                    <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog->tag_line), 160));?>
                                 </a>
                             </div>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
