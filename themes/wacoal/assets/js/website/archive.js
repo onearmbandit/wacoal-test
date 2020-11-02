@@ -42,7 +42,7 @@
         url: wacoal_js_var.ajaxurl,
         type: 'post',
         data: {
-          action: 'Wacoal_Ajax_pagination',
+          action: 'wacoal_ajax_pagination',
           query_vars: wacoal_js_var.query_vars,
           page: page,
           nonce:wacoal_js_var.nonce,
@@ -74,7 +74,7 @@
         url: wacoal_js_var.ajaxurl,
         type: 'post',
         data: {
-          action: 'Wacoal_Ajax_pagination',
+          action: 'wacoal_ajax_pagination',
           query_vars: wacoal_js_var.query_vars,
           page: page,
           nonce:wacoal_js_var.nonce,
