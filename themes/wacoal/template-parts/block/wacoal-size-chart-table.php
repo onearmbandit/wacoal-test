@@ -19,17 +19,23 @@
             $chart_image_array  = wp_get_attachment_image_src($chart_image_id, 'full');
             $chart_image_alt    = Wacoal_Get_Image_alt($chart_image_id, 'Block Image');
             $chart_image_url    = Wacoal_Get_image($chart_image_array);
+            $chart_image_link = $chart['image_link'];
             ?>
         <!-- <div class="full-width-container--image"> -->
         <div class="full-width--chart">
             <figure>
                 <?php if ($chart_image_id && !empty($chart_image_id)) {
+                    if(!empty($chart_image_link)) :?>
+                        <a href="<?php echo esc_url($chart_image_link);?>" target="_blank";>
+                    <?php endif;
                     ?>
                 <img class="lazyload" data-src="<?php echo esc_url($chart_image_url); ?>"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 alt="<?php echo wp_kses_post($chart_image_alt); ?>"
                     style="max-width:100%"/>
-                    <?php
+                    <?php if(!empty($chart_image_link)) :?>
+                        </a>
+                    <?php endif;
                 } ?>
             </figure>
         </div>
