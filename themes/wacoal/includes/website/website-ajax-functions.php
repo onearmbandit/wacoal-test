@@ -117,20 +117,28 @@ function wacoal_load_more()
             $cat_ID = $categories->term_id;
             ?>
             <article class="blog-tile">
-                <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                </div>
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                    <div class="blog-tile--image">
+                        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+                </a>
                 <div class="blog-tile--category">
                 <?php if (! empty($categories) ) {?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
                 <?php }?>
                 </div>
+
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                 <h5 class="blog-tile--heading">
                 <?php echo esc_attr(get_the_title($blog->ID));?>
                 </h5>
+                </a>
+
                 <div class="blog-tile--para">
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                 <?php echo  wp_kses_post($post_tagline);?>
+                </a>
                 </div>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
                     class="btn primary">Learn More</a>
