@@ -278,7 +278,7 @@ acf_add_local_field_group(
                 ),
                 array(
                     'key' => 'field_5f8d44418c10a',
-                    'label' => 'Title Link Open In New Tab',
+                    'label' => 'Link Open In New Tab',
                     'name' => 'link_open_in_new_tab',
                     'type' => 'true_false',
                     'instructions' => '',
@@ -402,4 +402,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-

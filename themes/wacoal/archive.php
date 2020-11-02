@@ -39,7 +39,8 @@ if ($template == 'wacoal') {
                 <?php
                 if(!empty($static_section['image_link'])) :?>
                     <a href="<?php echo esc_url($static_section['image_link']);?>"
-                       target="_blank";>
+                    <?php if($static_section['title_link_open_in_new_tab'] == true) : echo "target='_blank'";
+                    endif;?>>
                 <?php endif;?>
                 <img class="lazyload" data-src="<?php echo  esc_url($static_section['image']['url']); ?>"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wacoal 101" />

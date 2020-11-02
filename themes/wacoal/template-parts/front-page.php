@@ -135,7 +135,8 @@
     <?php if($static_section['image'] && !empty($static_section['image'])) :
         if(!empty($static_section['image_link'])) :?>
                 <a href="<?php echo esc_url($static_section['image_link']);?>"
-                   target="_blank";>
+                <?php if($static_section['link_open_in_new_tab'] == true) : echo "target='_blank'";
+                endif;?>>
         <?php endif;
         ?>
         <div class="wacoal-101--image">
