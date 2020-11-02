@@ -40,6 +40,22 @@ acf_add_local_field_group(
             'mime_types' => '',
         ),
         array(
+            'key' => 'field_5f9fd5b63775c',
+            'label' => 'Image Link',
+            'name' => 'image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
             'key' => 'field_5f74806cd886a',
             'label' => 'Quote Text',
             'name' => 'quote_text',

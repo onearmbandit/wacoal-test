@@ -56,6 +56,7 @@ function Wacoal_Quotes_Block_Render_callback( $block )
     $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
     $quotes_image_alt   = Wacoal_Get_Image_alt($quotes_image_id, 'Quote Image');
     $quotes_image_url   = Wacoal_Get_image($quotes_image_array);
+    $quotes_image_link  = get_field('image_link');
     $quote_text  = get_field('quote_text');
 
     $shortcode_template = 'template-parts/block/wacoal-quotes.php';
@@ -268,6 +269,7 @@ function Wacoal_Image_Render_callback( $block )
     $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
     $block_image_alt    = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
     $block_image_url    = Wacoal_Get_image($block_image_array);
+    $block_image_link   = get_field('image_link');
     $caption            = get_field('image_caption');
 
     $shortcode_template = 'template-parts/block/wacoal-image.php';

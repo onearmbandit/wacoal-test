@@ -65,6 +65,22 @@ acf_add_local_field_group(
             'media_upload' => 1,
             'delay' => 0,
         ),
+        array(
+            'key' => 'field_5f9fda5e1c9f4',
+            'label' => 'Image Link',
+            'name' => 'image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
     ),
     'location' => array(
         array(
