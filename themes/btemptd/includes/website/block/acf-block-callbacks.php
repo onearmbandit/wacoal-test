@@ -131,3 +131,25 @@ function Btemptd_Para_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for four image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Four_Img_Format_Render_callback( $block )
+{
+    $shortcode_template   = '/template-parts/block/btemptd-four-image-block.php';
+    if (! empty($para_type) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Four Image Block:</u></h4>
+            <span style="color:red">Empty Btemptd Four Image Block</span>
+            <?php
+        }
+    }
+}

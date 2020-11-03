@@ -63,6 +63,17 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'paragraph', 'content' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'              => 'btemptd-four-image-format',
+            'title'             => __('Btemptd Four Image Block Format'),
+            'description'       => __('A custom Four Image format block.'),
+            'render_callback'   => 'Btemptd_Four_Img_Format_Render_callback',
+            'category'          => 'btemptd',
+            'icon'              => 'id-alt',
+            'keywords'          => array( 'image', 'content' ),
+            )
+        );
 
 
     }
