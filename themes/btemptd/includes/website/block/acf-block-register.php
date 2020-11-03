@@ -74,6 +74,17 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'image', 'content' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'              => 'btemptd-button-format',
+            'title'             => __('Btemptd Button Block Format'),
+            'description'       => __('A custom Button format block.'),
+            'render_callback'   => 'Btemptd_Button_Format_Render_callback',
+            'category'          => 'btemptd',
+            'icon'              => 'id-alt',
+            'keywords'          => array( 'button', 'content' ),
+            )
+        );
 
 
     }

@@ -45,6 +45,7 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
 function Btemptd_Img_List_Format_Render_callback( $block )
 {
 
+    $review_format = get_field('select_review_format');
     $cta_1_text  = get_field('review_link_1');
     $cta_1_link  = get_field('review_link_1_url');
     $cta_2_text  = get_field('review_link_2');
@@ -149,6 +150,31 @@ function Btemptd_Four_Img_Format_Render_callback( $block )
             ?>
             <h4><u>Btemptd Four Image Block:</u></h4>
             <span style="color:red">Empty Btemptd Four Image Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for button block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Button_Format_Render_callback( $block ) {
+    $button_fields = get_field('add_button');
+    $button_label  = $button_fields['button_label'];
+    $button_url  = $button_fields['button_url'];
+    $shortcode_template   = '/template-parts/block/btemptd-button-block.php';
+
+    if (! empty($button_fields) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Button Block:</u></h4>
+            <span style="color:red">Empty Btemptd Button Block</span>
             <?php
         }
     }

@@ -14,13 +14,19 @@
 
 <section class="article-header">
     <div class="article-header--wrapper">
-    <?php if(!empty($article_banner_link)) :?>
+
+    <?php
+    if(!empty($article_banner)) :
+        if(!empty($article_banner_link)) :?>
         <a href="<?php echo esc_url($article_banner_link);?>" target="_blank";>
-    <?php endif;?>
+        <?php endif;?>
         <div class="article-header--banner" style="background-image:url(<?php  echo esc_url($article_banner_url);?>);"></div>
         <?php if(!empty($article_banner_link)) :?>
         </a>
-        <?php endif;?>
+            <?php
+        endif;
+    endif;
+    ?>
 
         <div class="article-header--category">
             <a href="<?php echo esc_url($primary_category_url); ?>"
