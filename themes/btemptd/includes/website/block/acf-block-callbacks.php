@@ -168,7 +168,7 @@ function Btemptd_Button_Format_Render_callback( $block ) {
     $button_url  = $button_fields['button_url'];
     $shortcode_template   = '/template-parts/block/btemptd-button-block.php';
 
-    if (! empty($button_fields) ) {
+    if (! empty($button_label) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
