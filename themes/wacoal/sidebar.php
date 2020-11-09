@@ -1,17 +1,20 @@
 <?php
 /**
- * The sidebar containing the main widget area
+ * The sidebar file
+ * php version 7.4
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package wacoal
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
+if (! is_active_sidebar('sidebar-1') ) {
+    return;
 }
 ?>
 
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+    <?php dynamic_sidebar('sidebar-1'); ?>
 </aside><!-- #secondary -->
