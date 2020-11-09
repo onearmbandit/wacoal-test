@@ -60,7 +60,8 @@ if(!empty($banner_link)) :?>
                 if($section['image'] && !empty($section['image'])) :
                     if($section['link'] && !empty($section['link'])) :
                         ?>
-                    <a href="<?php echo esc_url($section['link']);?>" target="_blank">
+                    <a href="<?php echo esc_url($section['link']);?>"
+                       target="_blank">
                     <?php endif; ?>
                 <div class="full-width-section--image box-shadow-right">
                     <img class="img-fluid"
@@ -123,18 +124,20 @@ if(!empty($banner_link)) :?>
         <?php else:?>
             <?php
                 $image_attributes = wp_get_attachment_image_src($section['image']);
-                $image_url            =Btemptd_Get_image($image_attributes);
+                $image_url        = Btemptd_Get_image($image_attributes);
             ?>
             <div class="full-width-section--wrapper even">
             <?php
             if($section['image'] && !empty($section['image'])) :
                 if($section['link'] && !empty($section['link'])) :
                     ?>
-                    <a href="<?php echo esc_url($section['link']);?>" target="_blank">
+                    <a href="<?php echo esc_url($section['link']);?>"
+                       target="_blank">
                 <?php endif;
                 ?>
                 <div class="full-width-section--image box-shadow-left">
-                    <img class="img-fluid" src="<?php echo  esc_url($image_url); ?>" />
+                    <img class="img-fluid"
+                         src="<?php echo  esc_url($image_url); ?>" />
                 </div>
                 <?php  if($section['link'] && !empty($section['link'])) : ?>
                </a>
@@ -146,7 +149,7 @@ if(!empty($banner_link)) :?>
                     <div class="arrow">
                        <a href="<?php echo esc_url($section['link']);?>"
                           target="_blank">
-                          <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
+                          <img src="<?php echo esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
                         </a>
                     </div>
                     <?php endif;
@@ -193,7 +196,6 @@ if(!empty($banner_link)) :?>
 </section>
 <?php endif;?>
 
-<!-- featured article -->
 <?php if(!empty($featured_posts)) :?>
 <section class="featured-articles desktop">
     <div class="featured-articles--wrapper box-shadow-right">
@@ -238,7 +240,6 @@ if(!empty($banner_link)) :?>
                     </div>
                 </div>
                 <?php endforeach;?>
-
             </div>
 
             <div class="swiper-button--wrapper">

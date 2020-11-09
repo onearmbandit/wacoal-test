@@ -30,26 +30,30 @@ function Wacoal_Ajax_pagination()
     }
 
     if (isset($_POST['query_vars'])) {
-        $query_vars = json_decode(stripslashes($_POST['query_vars']), true);
 
-        $get_cat_ID=get_term_by('slug', $query_vars['category_name'], 'category');
-        $cat_name         = $get_cat_ID->name;
+        $query_vars = json_decode(stripslashes($_POST['query_vars']), true);
+        $get_cat_ID = get_term_by('slug', $query_vars['category_name'], 'category');
+        $cat_name   = $get_cat_ID->name;
+
         $featured_posts = get_posts(
             array(
             'numberposts' => 2,
-            'cat' => $get_cat_ID->term_id,
-            'offset' => 0,
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'post_status'=>'publish'
+            'cat'         => $get_cat_ID->term_id,
+            'offset'      => 0,
+            'orderby'     => 'post_date',
+            'order'       => 'DESC',
+            'post_status' => 'publish'
             )
         );
+
         foreach ($featured_posts as $featured_post) {
-            $posts_to_exclude[]    = $featured_post->ID;
+            $posts_to_exclude[] = $featured_post->ID;
         }
-        $query_vars['paged'] = (!empty(sanitize_text_field($_POST['page'])))? sanitize_text_field($_POST['page']) : 1;
+
+        $query_vars['paged']        = (!empty(sanitize_text_field($_POST['page'])))? sanitize_text_field($_POST['page']) : 1;
         $query_vars['post__not_in'] = $posts_to_exclude;
     }
+
     $posts = new WP_Query($query_vars);
 
 
@@ -73,13 +77,15 @@ function Wacoal_Ajax_pagination()
     die();
 }
 
+
+add_action('wp_ajax_nopriv_wacoal_load_more', 'wacoal_load_more');
+add_action('wp_ajax_wacoal_load_more', 'wacoal_load_more');
+
 /**
  * Function for load more
  *
  * @return string Return the posts html.
  */
-add_action('wp_ajax_nopriv_wacoal_load_more', 'wacoal_load_more');
-add_action('wp_ajax_wacoal_load_more', 'wacoal_load_more');
 function wacoal_load_more()
 {
     if (isset($_POST['nonce']) && !empty($_POST['nonce'])) {
@@ -91,12 +97,12 @@ function wacoal_load_more()
 
     $recent_posts = Wacoal_Query_posts(
         array(
-            'post_type' => array('post'),
+            'post_type'      => array('post'),
             'posts_per_page' => 3,
-            'offset' => $_POST['offset'],
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'post_status'=>'publish'
+            'offset'         => $_POST['offset'],
+            'orderby'        => 'post_date',
+            'order'          => 'DESC',
+            'post_status'    => 'publish'
         )
     );
 
@@ -108,14 +114,16 @@ function wacoal_load_more()
 
         <div class="more-blog--wrapper">
         <?php
+
         foreach ($recent_posts as $key => $blog) {
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
+            $thumbnail_id  = get_post_thumbnail_id($blog->ID);
             $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-            $categories = Wacoal_Get_Primary_category($blog->ID);
-            $post_tagline = get_field('tag_line', $blog->ID);
-            $cat_ID = $categories->term_id;
+            $categories    = Wacoal_Get_Primary_category($blog->ID);
+            $post_tagline  = get_field('tag_line', $blog->ID);
+            $cat_ID        = $categories->term_id;
             ?>
+
             <article class="blog-tile">
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <div class="blog-tile--image">
@@ -130,22 +138,22 @@ function wacoal_load_more()
                 </div>
 
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                <h5 class="blog-tile--heading">
-                <?php echo esc_attr(get_the_title($blog->ID));?>
-                </h5>
+                    <h5 class="blog-tile--heading">
+                        <?php echo esc_attr(get_the_title($blog->ID));?>
+                    </h5>
                 </a>
 
                 <div class="blog-tile--para">
-                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                <?php echo  wp_kses_post($post_tagline);?>
-                </a>
+                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                        <?php echo  wp_kses_post($post_tagline);?>
+                    </a>
                 </div>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
                     class="btn primary">Learn More</a>
             </article>
         <?php } ?>
 
-        </div>
+            </div>
         </section>
         <?php
         $output = ob_get_contents();

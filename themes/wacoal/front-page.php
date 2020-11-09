@@ -54,7 +54,6 @@ $featured_blogs_posts = Wacoal_Query_posts(
         'post_type' => array(
             'post',
         ),
-
     )
 );
 
@@ -72,7 +71,6 @@ $static_section = get_field('static_section', 'options');
 $recent_posts = Wacoal_Query_posts(
     array(
         'post_type' => array('post'),
-
         'posts_per_page' => 3,
         'offset' => 0,
         'orderby' => 'post_date',
@@ -80,7 +78,6 @@ $recent_posts = Wacoal_Query_posts(
         'post_status'=>'publish'
     )
 );
-//$related_blogs = get_field('more_from_blog', 'options');
 
 require locate_template('template-parts/front-page.php');
 

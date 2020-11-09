@@ -12,29 +12,27 @@
 
 wacoal_page_entry_top('');
 
-$article_banner = get_field('banner_image');
-$article_banner_link = get_field('banner_image_link');
-$post_title     = get_the_title($post->ID);
-$post_excerpt   = get_the_excerpt($post->ID);
-$tag_line       = get_field('tag_line');
-
+$article_banner       = get_field('banner_image');
+$article_banner_link  = get_field('banner_image_link');
+$post_title           = get_the_title($post->ID);
+$post_excerpt         = get_the_excerpt($post->ID);
+$tag_line             = get_field('tag_line');
 $primary_category     = Wacoal_Get_Primary_category($post->ID);
 $primary_category_url = get_term_link($primary_category->term_id);
 
 $recent_posts = Wacoal_Query_posts(
     array(
-        'post_type' => array('post'),
-        'post__not_in' => array($post->ID),
+        'post_type'      => array('post'),
+        'post__not_in'   => array($post->ID),
         'posts_per_page' => 3,
-        'offset' => 0,
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'post_status'=>'publish'
+        'offset'         => 0,
+        'orderby'        => 'post_date',
+        'order'          => 'DESC',
+        'post_status'    =>'publish'
     )
 );
 
 ?>
-
         <?php
         while ( have_posts() ) :
             the_post();
