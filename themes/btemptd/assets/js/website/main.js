@@ -28,7 +28,6 @@
           $(".see-more-button").hide();
         }
 
-
       }
     });
   });

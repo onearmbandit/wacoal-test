@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+
 require('../../scss/website/btemptd-swiper.scss');
 
 (function ($) {
@@ -19,7 +20,6 @@ require('../../scss/website/btemptd-swiper.scss');
 
   let featuredArticlesMo = new Swiper('.featured-articles-slider-mo', {
     slidesPerView: 1,
-    // centeredSlides: true,
     loop: true,
     pagination: {
       el: '.swiper-pagination',
@@ -30,6 +30,5 @@ require('../../scss/website/btemptd-swiper.scss');
       prevEl: '.swiper-button-prev',
     }
   });
-
 
 })(jQuery);
