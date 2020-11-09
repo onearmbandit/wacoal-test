@@ -181,30 +181,6 @@ function Wacoal_Text_Only_List_Format_Render_callback($block)
 }
 
 /**
- * Callback function for text image header list block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function Wacoal_Myth_List_Format_Render_callback($block)
-{
-    $block_lists = get_field('list');
-    $shortcode_template = '/template-parts/block/wacoal-myth-list-format.php';
-
-    if (!empty($block_lists)) {
-        include locate_template($shortcode_template);
-    } else {
-        if (is_admin()) {
-            ?>
-            <h4><u>Wacoal Lists:</u></h4>
-            <span style="color:red">Empty Wacoal Myth Lists Block</span>
-            <?php
-        }
-    }
-}
-
-/**
  * Callback function for product gallery block
  *
  * @param $block Block.
