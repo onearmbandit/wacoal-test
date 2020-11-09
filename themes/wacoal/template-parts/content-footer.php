@@ -11,8 +11,8 @@
  */
 
 $copyright_value = get_field('copyright_text', 'options');
-$social_share = get_field('social_share', 'options');
-$oembeded = get_field('instagram_feeds', 'options');
+$social_share    = get_field('social_share', 'options');
+$oembeded        = get_field('instagram_feeds', 'options');
 ?>
 <footer class="footer-section">
     <div class="footer-wrapper">
@@ -22,6 +22,7 @@ $oembeded = get_field('instagram_feeds', 'options');
             <?php dynamic_sidebar('footer-2');?>
             <?php dynamic_sidebar('footer-3');?>
             <?php dynamic_sidebar('footer-4');?>
+
         </div>
         <div class="footer-wrapper--right">
             <div class="footer-images">
@@ -37,7 +38,8 @@ $oembeded = get_field('instagram_feeds', 'options');
                 <?php foreach($social_share as $key => $value){ ?>
                    <a href="<?php echo esc_url($value['link']['url']);?>" class="footer-social--icon"
                       target="_blank">
-                    <img class="lazyload" data-src="<?php echo esc_url($value['icon']['url']);?>"
+                    <img class="lazyload"
+                         data-src="<?php echo esc_url($value['icon']['url']);?>"
                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                          alt="<?php echo esc_attr($value['icon']['alt']);?>" />
                     </a>

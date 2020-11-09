@@ -13,13 +13,13 @@
 Wacoal_Page_Entry_top('');
 $recent_posts = Wacoal_Query_posts(
     array(
-        'post_type' => array('post'),
-        'post__not_in' => array($post->ID),
+        'post_type'      => array('post'),
+        'post__not_in'   => array($post->ID),
         'posts_per_page' => 3,
-        'offset' => 0,
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'post_status'=>'publish'
+        'offset'         => 0,
+        'orderby'        => 'post_date',
+        'order'          => 'DESC',
+        'post_status'    => 'publish'
     )
 );
 $description=get_field('description', 'options');
@@ -45,19 +45,21 @@ $description=get_field('description', 'options');
             if (empty($thumbnail)) {
                 $thumbnail = esc_url(THEMEURI).'/assets/images/blog-img-1.png';
             }
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
+            $thumbnail_id  = get_post_thumbnail_id($blog->ID);
             $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-            $categories = get_the_terms($blog->ID, 'category');
-            $post_tagline = get_field('tag_line', $blog->ID);
-            $cat_ID = $categories[0]->term_id;
-            $cat_url = get_term_link($cat_ID);
+            $categories    = get_the_terms($blog->ID, 'category');
+            $post_tagline  = get_field('tag_line', $blog->ID);
+            $cat_ID        = $categories[0]->term_id;
+            $cat_url       = get_term_link($cat_ID);
 
             ?>
             <article class="blog-tile">
                 <div class="blog-tile--image">
-                    <img class="lazyload" data-src="<?php echo  esc_url($thumbnail); ?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo  esc_attr($alt); ?>" />
+                    <img class="lazyload"
+                         data-src="<?php echo  esc_url($thumbnail); ?>"
+                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                         alt="<?php echo  esc_attr($alt); ?>" />
                 </div>
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) { ?>
@@ -73,8 +75,6 @@ $description=get_field('description', 'options');
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">Learn More</a>
             </article>
         <?php } ?>
-
-
 
     </div>
 </section>

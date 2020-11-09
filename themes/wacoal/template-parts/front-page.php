@@ -20,7 +20,7 @@
 <?php endif;?>
 
 <section class="banner-with-image desktop-banner"
-    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
 
     <?php if($top_banner_title && !empty($top_banner_title)) :?>
         <h1 class="banner-with-image--heading">
@@ -37,7 +37,7 @@
 </section>
 
 <section class="banner-with-image mobile-banner"
-    style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_mobile_banner_image_url));?>);">
+         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_mobile_banner_image_url));?>);">
 
     <?php if($top_banner_title && !empty($top_banner_title)) :?>
         <h1 class="banner-with-image--heading">
@@ -110,12 +110,16 @@
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
+            <img class="lazyload"
+                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
+            <img class="lazyload"
+                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="Slider Arrow" />
         </div>
   </div>
 </section>
@@ -228,12 +232,16 @@
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
         <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
+            <img class="lazyload"
+                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="Slider Arrow" />
         </div>
         <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload" data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Slider Arrow" />
+            <img class="lazyload"
+                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="Slider Arrow" />
         </div>
     </div>
 </section>
@@ -248,12 +256,12 @@
     </div>
     <div class="more-blog--wrapper">
         <?php foreach ($recent_posts as $key => $blog) {
-            $thumbnail_id = get_post_thumbnail_id($blog->ID);
+            $thumbnail_id  = get_post_thumbnail_id($blog->ID);
             $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-            $categories = Wacoal_Get_Primary_category($blog->ID);
-            $post_tagline = get_field('tag_line', $blog->ID);
-            $cat_ID = $categories->term_id;
+            $categories    = Wacoal_Get_Primary_category($blog->ID);
+            $post_tagline  = get_field('tag_line', $blog->ID);
+            $cat_ID        = $categories->term_id;
             ?>
             <article class="blog-tile">
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">

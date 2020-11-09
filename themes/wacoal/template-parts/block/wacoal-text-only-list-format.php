@@ -20,9 +20,9 @@ if ($block_lists && !empty($block_lists)) {
     $row_index = get_row_index();
 
     foreach ($block_lists as $list) {
-        $list_align_type = $list['list_align_type'];
-        $list_header = $list['list_header'];
-        $list_subhead = $list['list_subhead'];
+        $list_align_type  = $list['list_align_type'];
+        $list_header      = $list['list_header'];
+        $list_subhead     = $list['list_subhead'];
         $list_description = $list['list_description'];
 
         if ($list_align_type == 'center_aligned') {

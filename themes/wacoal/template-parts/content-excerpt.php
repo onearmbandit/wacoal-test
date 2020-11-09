@@ -22,15 +22,17 @@
 
     <a href="<?php echo esc_url(get_permalink());?>">
         <div class="blog-tile--image">
-            <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+            <img class="lazyload"
+                 data-src="<?php echo esc_url($thumbnail_url);?>"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="<?php echo esc_attr($thumbnail_alt);?>" />
         </div>
     </a>
     <div class="blog-tile--category">
-    <?php echo esc_attr($cat_name); ?>
+        <?php echo esc_attr($cat_name); ?>
     </div>
     <?php
-    the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
+        the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
     ?>
 
     <div class="blog-tile--para">
@@ -38,6 +40,8 @@
             <?php echo wp_kses_post($post_tagline); ?>
         </a>
     </div>
-    <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">Learn More</a>
+    <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">
+        Learn More
+    </a>
 </article>
 
