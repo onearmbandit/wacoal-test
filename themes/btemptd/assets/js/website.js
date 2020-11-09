@@ -10,8 +10,6 @@ import 'lazysizes';
 window.lazySizesConfig = window.lazySizesConfig || {};
 window.lazySizesConfig.loadMode = 1;
 
-
-
 (function ($) {
   $(".mobile-nav").click(function () {
     $(".header-navigation-mobile").toggleClass("mobile-nav-open");

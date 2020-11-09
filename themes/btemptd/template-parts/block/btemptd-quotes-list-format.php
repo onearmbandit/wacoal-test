@@ -16,13 +16,15 @@
     <div class="image-content--wrapper">
         <?php
         foreach ($list_data as $key => $list) {
-            $list_image_id = $list['image'];
+
+            $list_image_id    = $list['image'];
             $list_image_array = wp_get_attachment_image_src($list_image_id, 'full');
-            $list_image_alt = Btemptd_Get_Image_alt($list_image_id, 'List Image');
-            $list_image_url = Btemptd_Get_Image($list_image_array);
+            $list_image_alt   = Btemptd_Get_Image_alt($list_image_id, 'List Image');
+            $list_image_url   = Btemptd_Get_Image($list_image_array);
             $list_quotes_text = $list['quotes_text'];
-            $list_name = $list['name'];
-            $add_button = $list['add_button'];
+            $list_name        = $list['name'];
+            $add_button       = $list['add_button'];
+
             if ($add_button == true) {
                 $button_label = $list['button_text'];
                 $button_url = $list['button_url'];

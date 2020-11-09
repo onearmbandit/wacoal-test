@@ -9,12 +9,12 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Btemptd
  */
+
 /**
  * Function for ajax pagination
  *
  * @return string Return the posts html.
  */
-
 function Btemptd_Ajax_pagination()
 {
     // Check for nonce security
@@ -38,9 +38,11 @@ function Btemptd_Ajax_pagination()
         foreach( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post;
         }
+
         foreach( $slider_posts as $slider_post ) {
             array_push($posts_to_exclude, $slider_post);
         }
+
         $query_vars['paged'] = (!empty(sanitize_text_field($_POST['page'])))? sanitize_text_field($_POST['page']) : 1;
         $query_vars['post__not_in'] = $posts_to_exclude;
 
@@ -75,7 +77,6 @@ add_action('wp_ajax_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
  *
  * @return string Return the posts html.
  */
-
 function Btemptd_Load_more()
 {
 
@@ -88,13 +89,13 @@ function Btemptd_Load_more()
 
     $recent_posts = Btemptd_Query_posts(
         array(
-            'post_type' => array('post'),
-            'post__not_in' => array($_POST['post_id']),
-            'posts_per_page' => 3,
-            'offset' => $_POST['offset'],
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'post_status'=>'publish',
+            'post_type'        => array('post'),
+            'post__not_in'     => array($_POST['post_id']),
+            'posts_per_page'   => 3,
+            'offset'           => $_POST['offset'],
+            'orderby'          => 'post_date',
+            'order'            => 'DESC',
+            'post_status'      => 'publish',
             'category__not_in' => $_POST['cat_id'],
         )
     );
