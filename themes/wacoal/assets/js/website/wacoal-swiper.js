@@ -1,4 +1,5 @@
 import Swiper from 'swiper';
+
 require('../../scss/website/wacoal-swiper.scss');
 
 (function ($) {
