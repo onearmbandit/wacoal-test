@@ -12,6 +12,12 @@
 
 /**
  * Frontend Website common functions
+ *
+ * @category Wacoal
+ * @package  Wacoal
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Wacoal
  */
 class Wacoal_Post
 {
@@ -55,7 +61,8 @@ class Wacoal_Post
     /**
      * Magic post data function
      *
-     * @param  string $field name of property called on object.
+     * @param string $field name of property called on object.
+     *
      * @return mixed
      */
     public function __get( $field )
