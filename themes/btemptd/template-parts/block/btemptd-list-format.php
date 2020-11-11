@@ -17,13 +17,13 @@
 
     <?php
     foreach ($block_lists as $key => $review) {
-        $review_image_id = $review['image'];
+        $review_image_id    = $review['image'];
         $review_image_array = wp_get_attachment_image_src($review_image_id, 'full');
-        $review_image_alt = Btemptd_Get_Image_alt($review_image_id, 'Review Image');
-        $review_image_url = Btemptd_Get_Image($review_image_array);
-        $review_name  = $review['name'];
-        $review_text  = $review['description'];
-        $review_link  = $review['review_link'];
+        $review_image_alt   = Btemptd_Get_Image_alt($review_image_id, 'Review Image');
+        $review_image_url   = Btemptd_Get_Image($review_image_array);
+        $review_name        = $review['name'];
+        $review_text        = $review['description'];
+        $review_link        = $review['review_link'];
 
         if ($key % 2 == 0) {
             ?>

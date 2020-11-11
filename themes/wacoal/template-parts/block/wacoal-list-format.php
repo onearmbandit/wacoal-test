@@ -16,12 +16,12 @@ if ($block_lists && !empty($block_lists)) {
 <section class="list-format">
     <div class="list-format--wrapper">
     <?php foreach ($block_lists as $key => $list) {
-        $list_image_url = $list['image'];
-        $list_image_link = $list['image_link'];
-        $list_heading = $list['list_heading'];
+        $list_image_url    = $list['image'];
+        $list_image_link   = $list['image_link'];
+        $list_heading      = $list['list_heading'];
         $list_subheading_1 = $list['list_subheading_1'];
         $list_subheading_2 = $list['list_subheading_2'];
-        $list_desc = $list['description'];
+        $list_desc         = $list['description'];
 
         if ($key % 2 == 0) {
             ?>
@@ -31,10 +31,12 @@ if ($block_lists && !empty($block_lists)) {
                 ?>
             <div class="list--image list--image__desktop">
                 <?php if(!empty($list_image_link)) :?>
-                <a href="<?php echo esc_url($list_image_link);?>" target="_blank";>
+                    <a href="<?php echo esc_url($list_image_link);?>" target="_blank";>
                 <?php endif;?>
-                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                    <img class="lazyload"
+                         data-src="<?php echo  esc_url($list_image_url) ?>"
+                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                         alt="List Image" />
                 <?php if(!empty($list_image_link)) :?>
                 </a>
                 <?php endif;?>
@@ -73,8 +75,10 @@ if ($block_lists && !empty($block_lists)) {
                     <?php if(!empty($list_image_link)) :?>
                     <a href="<?php echo esc_url($list_image_link);?>">
                     <?php endif;?>
-                        <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                        <img class="lazyload"
+                             data-src="<?php echo  esc_url($list_image_url) ?>"
+                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                             alt="List Image" />
                     <?php if(!empty($list_image_link)) :?>
                     </a>
                     <?php endif;?>
@@ -104,15 +108,17 @@ if ($block_lists && !empty($block_lists)) {
                 <?php if(!empty($list_image_link)) :?>
                 <a href="<?php echo esc_url($list_image_link);?>" target="_blank";>
                 <?php endif;?>
-                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                    <img class="lazyload"
+                         data-src="<?php echo  esc_url($list_image_url) ?>"
+                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                         alt="List Image" />
                 <?php if(!empty($list_image_link)) :?>
                 </a>
                 <?php endif;?>
             </div>
                 <?php
             } ?>
-                        <div class="list--content">
+                <div class="list--content">
                 <?php
                 if ($list_heading && !empty($list_heading)) {
                     ?>
@@ -138,15 +144,16 @@ if ($block_lists && !empty($block_lists)) {
                     <?php
                 }
 
-
                 if ($list_image_url && !empty($list_image_url)) {
                     ?>
                 <div class="list--image list--image__mobile">
                     <?php if(!empty($list_image_link)) :?>
                 <a href="<?php echo esc_url($list_image_link);?>">
                     <?php endif;?>
-                    <img class="lazyload" data-src="<?php echo  esc_url($list_image_url) ?>"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="List Image" />
+                    <img class="lazyload"
+                         data-src="<?php echo  esc_url($list_image_url) ?>"
+                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                         alt="List Image" />
                     <?php if(!empty($list_image_link)) :?>
                 </a>
                     <?php endif;?>

@@ -181,30 +181,6 @@ function Wacoal_Text_Only_List_Format_Render_callback($block)
 }
 
 /**
- * Callback function for text image header list block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function Wacoal_Myth_List_Format_Render_callback($block)
-{
-    $block_lists = get_field('list');
-    $shortcode_template = '/template-parts/block/wacoal-myth-list-format.php';
-
-    if (!empty($block_lists)) {
-        include locate_template($shortcode_template);
-    } else {
-        if (is_admin()) {
-            ?>
-            <h4><u>Wacoal Lists:</u></h4>
-            <span style="color:red">Empty Wacoal Myth Lists Block</span>
-            <?php
-        }
-    }
-}
-
-/**
  * Callback function for product gallery block
  *
  * @param $block Block.
@@ -272,7 +248,6 @@ function Wacoal_Image_Render_callback( $block )
     $block_image_url    = Wacoal_Get_image($block_image_array);
     $block_image_link   = get_field('image_link');
     $caption            = get_field('image_caption');
-
     $shortcode_template = 'template-parts/block/wacoal-image.php';
 
     if (! empty($block_image_id) ) {
@@ -296,8 +271,7 @@ function Wacoal_Image_Render_callback( $block )
  */
 function Wacoal_Size_Chart_Table_Block_Render_callback( $block )
 {
-    $chart_images     = get_field('size_chart');
-
+    $chart_images       = get_field('size_chart');
     $shortcode_template = 'template-parts/block/wacoal-size-chart-table.php';
 
     if (! empty($chart_images) ) {
@@ -323,7 +297,8 @@ function Wacoal_Video_Block_Render_callback( $block )
 {
 
     $video_fields_option = get_field('video');
-    $video_caption = get_field('video_caption');
+    $video_caption       = get_field('video_caption');
+    $shortcode_template  = '/template-parts/block/wacoal-video.php';
 
     if ($video_fields_option == 'embed_video') {
         $video_field = get_field('embed_video');
@@ -332,7 +307,6 @@ function Wacoal_Video_Block_Render_callback( $block )
     } elseif ($video_fields_option == 'external_url') {
         $video_field = get_field('insert_external_video_url');
     }
-    $shortcode_template  = '/template-parts/block/wacoal-video.php';
 
     if (! empty($video_fields_option) ) {
         include locate_template($shortcode_template);
@@ -356,15 +330,15 @@ function Wacoal_Video_Block_Render_callback( $block )
 function Wacoal_Video_Image_Block_Render_callback( $block )
 {
     $video_fields_option = get_field('video');
-    $block_image_id = get_field('add_image');
-    $video_caption = get_field('video_caption');
+    $block_image_id      = get_field('add_image');
+    $video_caption       = get_field('video_caption');
 
     if ($block_image_id && !empty($block_image_id)) {
         $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
-        $block_image_url = Wacoal_Get_image($block_image_array);
-        $block_image_link = get_field('image_link');
-        $image_caption = get_field('image_caption');
+        $block_image_alt   = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Wacoal_Get_image($block_image_array);
+        $block_image_link  = get_field('image_link');
+        $image_caption     = get_field('image_caption');
     }
 
     if ($video_fields_option == 'embed_video') {
@@ -374,6 +348,7 @@ function Wacoal_Video_Image_Block_Render_callback( $block )
     } elseif ($video_fields_option == 'external_url') {
         $video_field = get_field('insert_external_video_url');
     }
+
     $shortcode_template  = '/template-parts/block/wacoal-video-image.php';
 
     if (! empty($video_fields_option) ) {

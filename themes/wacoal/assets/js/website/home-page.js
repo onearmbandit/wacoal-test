@@ -22,7 +22,6 @@
           $('.more').parent('div').addClass('disable');
         }
 
-
       }
     });
   });

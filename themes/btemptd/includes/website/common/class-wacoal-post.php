@@ -12,6 +12,12 @@
 
 /**
  * Frontend Website common functions
+ *
+ * @category Btemptd
+ * @package  Btemptd
+ * @author   Cemtrexlabs <hello@cemtrexlabs.com>
+ * @license  https://cemtrexlabs.com 1.0
+ * @link     Btemptd
  */
 class btemptd_Post
 {
@@ -26,7 +32,7 @@ class btemptd_Post
     {
         $this->btemptd_post      = $btemptd_post;
         $this->btemptd_post_meta = $btemptd_post_meta;
-        $this->data           = array();
+        $this->data              = array();
     }
 
     /**

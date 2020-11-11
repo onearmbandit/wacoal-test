@@ -23,8 +23,7 @@
                 <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
             </video>
         <?php
-    }
-    elseif ($video_fields_option == 'external_url') { ?>
+    } elseif ($video_fields_option == 'external_url') { ?>
             <video controls>
                 <source src="<?php echo esc_url($video_field)?>" type="video/mp4">
             </video>

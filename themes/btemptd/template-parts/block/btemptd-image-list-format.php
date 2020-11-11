@@ -16,13 +16,13 @@ if ($list_type == 'simple_data') :
     <div class="image-content--wrapper">
     <?php
     foreach ($list_block_data as $key => $list) {
-        $list_image_id = $list['image'];
+        $list_image_id    = $list['image'];
         $list_image_array = wp_get_attachment_image_src($list_image_id, 'full');
-        $list_image_alt = Btemptd_Get_Image_alt($list_image_id, 'List Block Image');
-        $list_image_url = Btemptd_Get_Image($list_image_array);
-        $list_title = $list['title'];
-        $list_desc = $list['description'];
-        $list_block_link = $list['block_link'];
+        $list_image_alt   = Btemptd_Get_Image_alt($list_image_id, 'List Block Image');
+        $list_image_url   = Btemptd_Get_Image($list_image_array);
+        $list_title       = $list['title'];
+        $list_desc        = $list['description'];
+        $list_block_link  = $list['block_link'];
 
         if ($key % 2 == 0) {
             ?>

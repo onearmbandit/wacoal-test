@@ -32,11 +32,13 @@ if ($product_fields && !empty($product_fields)) {
             <?php
             if ($product_image_id && !empty($product_image_id)) {
                 ?>
-                <a href = "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
+                <a href= "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
                endif;?>>
             <div class="product-gallery--box__image">
-                <img class="lazyload" data-src="<?php echo  esc_url($product_image_url); ?>"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo wp_kses_post($product_image_alt); ?>" />
+                <img class="lazyload"
+                     data-src="<?php echo  esc_url($product_image_url); ?>"
+                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                     alt="<?php echo wp_kses_post($product_image_alt); ?>" />
             </div>
                 </a>
                 <?php
@@ -44,7 +46,7 @@ if ($product_fields && !empty($product_fields)) {
             if ($product_name && !empty($product_name)) {
                 ?>
 
-            <a href = "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
+            <a href= "<?php echo esc_url($product_link);?>" <?php if($new_tab == true) : ?> target="_blank" <?php
            endif;?>>
             <div class="product-gallery--box__title">
                 <?php echo wp_kses_post($product_name);?>

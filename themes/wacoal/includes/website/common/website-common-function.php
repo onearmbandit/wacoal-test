@@ -332,13 +332,13 @@ function Wacoal_Widgets_init()
 {
     register_sidebar(
         array(
-        'name' => esc_html__('Sidebar', 'wacoal'),
-        'id' => 'sidebar-1',
-        'description' => esc_html__('Add widgets here.', 'wacoal'),
+        'name'          => esc_html__('Sidebar', 'wacoal'),
+        'id'            => 'sidebar-1',
+        'description'   => esc_html__('Add widgets here.', 'wacoal'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
         )
     );
     register_sidebar(
@@ -446,9 +446,10 @@ function Wacoal_Get_Post_details( int $wacoal_post_id )
 function Wacoal_Post_date( $wacoal_post_id )
 {
 
-    $post_date = get_the_date('F j, Y g:i a', $wacoal_post_id);
-    $date = new DateTime($post_date);
+    $post_date        = get_the_date('F j, Y g:i a', $wacoal_post_id);
+    $date             = new DateTime($post_date);
     $wacoal_post_date = $date->format('F j, Y g:i a');
+
     return $wacoal_post_date;
 }
 
@@ -663,17 +664,20 @@ function Wacoal_Exclude_Posts_From_Specific_category( $query )
         $featured_posts = get_posts(
             array(
             'numberposts' => 2,
-            'cat' => $get_cat_ID->term_id,
-            'offset' => 0,
-            'orderby' => 'post_date',
-            'order' => 'DESC',
-            'post_status'=>'publish'
+            'cat'         => $get_cat_ID->term_id,
+            'offset'      => 0,
+            'orderby'     => 'post_date',
+            'order'       => 'DESC',
+            'post_status' =>'publish'
             )
         );
+
         foreach ( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post->ID;
         }
+
         $query->set('post__not_in', $posts_to_exclude);
+
     }
 
 }
@@ -704,21 +708,19 @@ function Wacoal_Block_categories( $categories, $post )
         return $categories;
     }
     $temp = array(
-        'slug' => 'wacoal',
+        'slug'  => 'wacoal',
         'title' => __('Wacoal category', 'wacoal'),
         'icon'  => 'wordpress',
     );
-    $newCategories = array();
-    $newCategories[0] = $temp;
 
+    $newCategories    = array();
+    $newCategories[0] = $temp;
 
     foreach ($categories as $category) {
         $newCategories[] = $category;
     }
 
-
     return $newCategories;
-
 
 }
 add_filter('block_categories', 'Wacoal_Block_categories', 10, 2);

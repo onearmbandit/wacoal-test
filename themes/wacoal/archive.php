@@ -18,7 +18,6 @@ $cat_name         = $current_cat_data->name;
 <div id="primary" class="content-area1111">
     <main id="main" class="site-main">
 
-<!-- Banner with background color -->
 <section class="banner-with-background">
     <h1 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h1>
     <div class="banner-with-background--subtitle">
@@ -32,7 +31,6 @@ $recent_posts= get_field('more_from_blog', 'category_'.$current_cat_id);
 $template= get_field('template', 'category_'.$current_cat_id);
 if ($template == 'wacoal') {
     $static_section= get_field('static_section', 'category_'.$current_cat_id);?>
-    <!-- Wacoal 101 -->
     <section class="wacoal-101">
         <div class="wacoal-101--wrapper">
             <div class="wacoal-101--image">
@@ -42,8 +40,10 @@ if ($template == 'wacoal') {
                     <?php if($static_section['title_link_open_in_new_tab'] == true) : echo "target='_blank'";
                     endif;?>>
                 <?php endif;?>
-                <img class="lazyload" data-src="<?php echo  esc_url($static_section['image']['url']); ?>"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wacoal 101" />
+                <img class="lazyload"
+                     data-src="<?php echo esc_url($static_section['image']['url']); ?>"
+                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                     alt="Wacoal 101" />
                 <?php
                 if(!empty($static_section['image_link'])) :?>
                     </a>
@@ -51,12 +51,12 @@ if ($template == 'wacoal') {
             </div>
             <div class="wacoal-101--content">
             <?php if($static_section['title_link'] && !empty($static_section['title_link'])) : ?>
-            <a href="<?php echo esc_url($static_section['title_link']);?>"
-                <?php if($static_section['title_link_open_in_new_tab'] == true) : echo "target='_blank'";
-                endif;?>>
+                <a href="<?php echo esc_url($static_section['title_link']);?>"
+                    <?php if($static_section['title_link_open_in_new_tab'] == true) : echo "target='_blank'";
+                    endif;?>>
             <?php endif;?>
                 <div class="wacoal-101--content__title">
-                <?php echo esc_attr($static_section['title']);?>
+                    <?php echo esc_attr($static_section['title']);?>
                 </div>
                 <?php if($static_section['title_link']) : ?>
                 </a>
@@ -80,20 +80,20 @@ if ($template == 'wacoal') {
     $featured_posts = get_posts(
         array(
         'numberposts' => 2,
-        'cat' => $current_cat_id,
-        'offset' => 0,
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'post_status'=>'publish'
+        'cat'         => $current_cat_id,
+        'offset'      => 0,
+        'orderby'     => 'post_date',
+        'order'       => 'DESC',
+        'post_status' =>'publish'
         )
     );
-    $posts_per_page=get_option('posts_per_page');
-    $category = get_category($current_cat_id);
-    $count = $category->category_count;
-    $page_num= $count/$posts_per_page;
-    $posts_to_exclude=array();
+    $posts_per_page   = get_option('posts_per_page');
+    $category         = get_category($current_cat_id);
+    $count            = $category->category_count;
+    $page_num         = $count/$posts_per_page;
+    $posts_to_exclude = array();
     ?>
-    <!-- Featured Articles -->
+
     <section class="featured-article">
         <div class="featured-article--wrapper">
             <?php
@@ -136,8 +136,8 @@ if ($template == 'wacoal') {
         </div>
     </section>
 
-    <!-- -->
     <section class="spacer-120"></section>
+
     <div id="post-listing">
     <?php if (have_posts()) { ?>
 
@@ -162,7 +162,6 @@ if ($template == 'wacoal') {
             <?php Wacoal_Paging_nav();?>
     </div>
 <?php }?>
-<!-- More From Blog -->
 
 <section class="spacer-120"></section>
 <?php if(!empty($recent_posts['posts'])) :?>
@@ -174,19 +173,21 @@ if ($template == 'wacoal') {
             <?php foreach ($recent_posts['posts'] as  $blog) { ?>
                 <?php
 
-                $thumbnail_id = get_post_thumbnail_id($blog);
+                $thumbnail_id  = get_post_thumbnail_id($blog);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-                $categories = get_the_terms($blog, 'category');
-                $post_tagline = get_field('tag_line', $blog);
-                $cat_ID = $categories[0]->term_id;
-                $cat_url = get_term_link($cat_ID);
+                $categories    = get_the_terms($blog, 'category');
+                $post_tagline  = get_field('tag_line', $blog);
+                $cat_ID        = $categories[0]->term_id;
+                $cat_url       = get_term_link($cat_ID);
                 ?>
                 <article class="blog-tile">
                     <a href="<?php echo esc_url(get_permalink($blog));?>">
                         <div class="blog-tile--image">
-                            <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                            <img class="lazyload"
+                                 data-src="<?php echo esc_url($thumbnail_url);?>"
+                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                 alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </div>
                     </a>
                     <div class="blog-tile--category">
@@ -206,7 +207,9 @@ if ($template == 'wacoal') {
                             <?php echo  wp_kses_post($post_tagline);?>
                         </a>
                     </div>
-                    <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">Learn More</a>
+                    <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">
+                        Learn More
+                    </a>
                 </article>
             <?php } ?>
         </div>
@@ -214,8 +217,8 @@ if ($template == 'wacoal') {
 <?php endif;?>
 
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+</div>
 
 <?php
 Wacoal_Page_Entry_bottom();

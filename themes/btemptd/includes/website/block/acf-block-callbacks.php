@@ -19,9 +19,8 @@
  */
 function Btemptd_Text_Img_List_Format_Render_callback( $block )
 {
-    $block_lists       =  get_field('reviews');
-
-    $shortcode_template   = '/template-parts/block/btemptd-list-format.php';
+    $block_lists        =  get_field('reviews');
+    $shortcode_template = '/template-parts/block/btemptd-list-format.php';
 
     if (! empty($block_lists) ) {
         include locate_template($shortcode_template);
@@ -45,15 +44,15 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
 function Btemptd_Img_List_Format_Render_callback( $block )
 {
 
-    $review_format = get_field('select_review_format');
-    $cta_1_text  = get_field('review_link_1');
-    $cta_1_link  = get_field('review_link_1_url');
-    $cta_2_text  = get_field('review_link_2');
-    $cta_2_link  = get_field('review_link_2_url');
-    $block_image_id = get_field('image');
+    $review_format     = get_field('select_review_format');
+    $cta_1_text        = get_field('review_link_1');
+    $cta_1_link        = get_field('review_link_1_url');
+    $cta_2_text        = get_field('review_link_2');
+    $cta_2_link        = get_field('review_link_2_url');
+    $block_image_id    = get_field('image');
     $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-    $block_image_alt = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
-    $block_image_url = Btemptd_Get_Image($block_image_array);
+    $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+    $block_image_url   = Btemptd_Get_Image($block_image_array);
 
     $shortcode_template   = '/template-parts/block/btemptd-image-format.php';
 
@@ -81,21 +80,29 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
     $list_type  = get_field('list_type');
 
     if ($list_type == 'simple_data') {
-        $shortcode_template   = '/template-parts/block/btemptd-image-list-format.php';
-        $list_data = get_field('content_with_title');
-        $list_block_data  = $list_data['list_image_data'];
-        $add_button = $list_data['add_button'];
+
+        $shortcode_template = '/template-parts/block/btemptd-image-list-format.php';
+        $list_data          = get_field('content_with_title');
+        $list_block_data    = $list_data['list_image_data'];
+        $add_button         = $list_data['add_button'];
+
         if ($add_button == true) {
+
             $button_label = $list_data['button_label'];
-            $button_url = $list_data['button_url'];
+            $button_url   = $list_data['button_url'];
+
         }
     } elseif ($list_type == 'quotes_data') {
-        $shortcode_template   = '/template-parts/block/btemptd-quotes-list-format.php';
-        $list_data = get_field('content_with_quotes');
+
+        $shortcode_template = '/template-parts/block/btemptd-quotes-list-format.php';
+        $list_data          = get_field('content_with_quotes');
+
     }
 
     if (! empty($list_type) ) {
+
         include locate_template($shortcode_template);
+
     } else {
         if (is_admin() ) {
             ?>
@@ -116,8 +123,8 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
 function Btemptd_Para_Format_Render_callback( $block )
 {
     $block_fields = get_field('group');
-    $para_type =  $block_fields['select_type'];
-    $content = $block_fields['content'];
+    $para_type    =  $block_fields['select_type'];
+    $content      = $block_fields['content'];
 
     $shortcode_template   = '/template-parts/block/btemptd-para-block.php';
 
@@ -162,10 +169,12 @@ function Btemptd_Four_Img_Format_Render_callback( $block )
  *
  * @return void
  */
-function Btemptd_Button_Format_Render_callback( $block ) {
+function Btemptd_Button_Format_Render_callback( $block )
+{
     $button_fields = get_field('add_button');
     $button_label  = $button_fields['button_label'];
-    $button_url  = $button_fields['button_url'];
+    $button_url    = $button_fields['button_url'];
+
     $shortcode_template   = '/template-parts/block/btemptd-button-block.php';
 
     if (! empty($button_label) ) {

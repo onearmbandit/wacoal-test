@@ -26,7 +26,7 @@ endif;
     <div class="explore-blog--bg ">
     <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
-            $thumbnail_id = get_post_thumbnail_id($recent_post->ID);
+            $thumbnail_id  = get_post_thumbnail_id($recent_post->ID);
             $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
             $categories    = Btemptd_Get_Primary_category($recent_post->ID);
