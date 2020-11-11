@@ -23,8 +23,8 @@
 
     @include respond-above(sm) {
       max-width: get-vw(870px);
-      font-size: get-vw(191px);
-      line-height: get-vw(182px);
+      font-size: get-vw(180px);
+      line-height: get-vw(174px);
     }
   }
 

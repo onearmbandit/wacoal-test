@@ -32,7 +32,7 @@ require('../../scss/website/wacoal-swiper.scss');
 
     breakpoints: {
       768: {
-        slidesPerView: 1.7,
+        slidesPerView: 1.75,
         spaceBetween: 70
       }
     }

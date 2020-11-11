@@ -29,12 +29,18 @@
 
   &--content {
     background: var(--color-article-bg);
-    padding: calcRem(31, 28);
+    padding: calcRem(0, 28);
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond-below(sm) {
+      padding: calcRem(31, 28);
+    }
 
     @include respond-above(sm) {
-      padding-top: get-vw(67px);
-      padding-left: get-vw(84px);
+      padding-left: get-vw(185px);
       padding-bottom: inherit;
       padding-right: inherit;
     }
@@ -44,7 +50,7 @@
       margin-bottom: calcRem(29);
 
       @include respond-above(sm) {
-        font-size: get-vw(33px);
+        font-size: get-vw(27px);
         margin-bottom: get-vw(62px);
       }
     }

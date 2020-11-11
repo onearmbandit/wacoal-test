@@ -91,7 +91,7 @@
     }
 
     @include respond-above(sm) {
-      font-size: get-vw(64px);
+      font-size: get-vw(52px);
       margin-bottom: get-vw(80px);
       max-width: get-vw(774px);
     }
@@ -151,9 +151,9 @@
       margin-top: calcRem(13);
 
       @include respond-above(sm) {
-        font-size: get-vw(28px);
-        line-height: get-vw(32px);
-        margin-bottom: get-vw(7px);
+        font-size: get-vw(25px);
+        line-height: get-vw(22px);
+        margin-bottom: get-vw(18px);
         margin-top: get-vw(18px);
       }
     }
@@ -169,7 +169,7 @@
       margin-top: calcRem(5);
 
       @include respond-above(sm) {
-        font-size: get-vw(20px);
+        font-size: get-vw(22px);
         line-height: get-vw(26px);
         margin-top: get-vw(7px);
       }
@@ -188,7 +188,7 @@
       margin-top: calcRem(30);
 
       @include respond-above(sm) {
-        margin-top: get-vw(22px);
+        margin-top: get-vw(49px);
       }
     }
   }

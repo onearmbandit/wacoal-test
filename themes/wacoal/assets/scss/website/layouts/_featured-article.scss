@@ -46,8 +46,8 @@
         display: block;
 
         @include respond-above(sm) {
-          font-size: get-vw(33px);
-          line-height: get-vw(33px);
+          font-size: get-vw(27px);
+          line-height: get-vw(23px);
           margin-bottom: get-vw(18px);
         }
       }
@@ -59,8 +59,8 @@
         margin-top: calcRem(8);
 
         @include respond-above(sm) {
-          font-size: get-vw(27px);
-          line-height: get-vw(33px);
+          font-size: get-vw(24px);
+          line-height: get-vw(30px);
           margin-top: get-vw(20px);
         }
 
