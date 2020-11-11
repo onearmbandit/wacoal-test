@@ -12,7 +12,7 @@
 
 Btemptd_Page_Entry_top('');
 ?>
-
+<!--
 <header class="header-section">
     <a href="#">
         <img class="header-section--logo" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/bt-logo.png" alt="btempt'd logo">
@@ -41,7 +41,7 @@ Btemptd_Page_Entry_top('');
                 <a href="#" class="header-navigation--link">BRA’DROBE</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 
 <!-- Banner with background color -->
 <section class="banner-with-background">
@@ -380,7 +380,7 @@ Btemptd_Page_Entry_top('');
 
 
 <!-- featured article -->
-<section class="featured-articles">
+<!-- <section class="featured-articles">
     <div class="featured-articles--wrapper">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
@@ -551,6 +551,24 @@ Btemptd_Page_Entry_top('');
                         <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
                     </div>
             </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- Four Image BLock -->
+<section class="four-image">
+    <div class="four-image--wrapper">
+        <div class="four-image--wrapper__box">
+            <img src="https://s7d5.scene7.com/is/image/WacoalAmerica/BT_ALWAYSMELISS_560X560?scl=1" />
+        </div>
+        <div class="four-image--wrapper__box">
+            <img src="https://s7d5.scene7.com/is/image/WacoalAmerica/BT_COMFORTINTENDED_SIDE_560X560?scl=1" />
+        </div>
+        <div class="four-image--wrapper__box">
+            <img src="https://s7d5.scene7.com/is/image/WacoalAmerica/BT_ALWAYSMELISS_560X560?scl=1" />
+        </div>
+        <div class="four-image--wrapper__box">
+            <img src="https://s7d5.scene7.com/is/image/WacoalAmerica/BT_COMFORTINTENDED_SIDE_560X560?scl=1" />
         </div>
     </div>
 </section>

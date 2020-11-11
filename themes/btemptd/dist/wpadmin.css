@@ -1969,6 +1969,31 @@ Files inside this folder can contain specific element styles and layout.
     font-family: 'NeutraText-BoldAlt';
     text-decoration: underline; }
 
+.four-image--wrapper {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 20rem; }
+  @media (min-width: 768px) {
+    .four-image--wrapper {
+      width: 52.08333vw;
+      margin-bottom: 6.25vw;
+      margin-top: 6.25vw;
+      flex-wrap: wrap;
+      flex-direction: row; } }
+  .four-image--wrapper__box {
+    margin: 10px 0;
+    width: 100%; }
+    @media (min-width: 768px) {
+      .four-image--wrapper__box {
+        width: 23.95833vw;
+        margin-top: 1.04167vw;
+        margin-right: 1.04167vw;
+        margin-bottom: 1.04167vw;
+        margin-left: 1.04167vw; } }
+    .four-image--wrapper__box img {
+      max-width: 100%; }
+
 /* Question Answer block Css */
 .three-reason--wrapper {
   width: 100%; }

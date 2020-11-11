@@ -842,3 +842,39 @@
     text-decoration: underline;
   }
 }
+
+
+.four-image {
+
+  &--wrapper {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: calcRem(320px);
+
+    @include respond-above(sm) {
+      width: get-vw(1000px);
+      margin-bottom: get-vw(120px);
+      margin-top: get-vw(120px);
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    &__box {
+      margin: 10px 0;
+      width: 100%;
+
+      @include respond-above(sm) {
+        width: get-vw(460px);
+        margin-top: get-vw(20px);
+        margin-right: get-vw(20px);
+        margin-bottom: get-vw(20px);
+        margin-left: get-vw(20px);
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
