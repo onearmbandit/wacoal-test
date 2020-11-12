@@ -77,7 +77,7 @@ if($list_data && !empty($list_data)) :
                         <?php if ($cust_name && !empty($cust_name)) :
                             ?>
                         <div class="image-content--content__tag">
-                            -<?php echo wp_kses_post($cust_name); ?>
+                            <?php echo wp_kses_post($cust_name); ?>
                         </div>
                         <?php endif;
                         if ($show_rating == true) :?>
