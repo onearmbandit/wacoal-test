@@ -97,6 +97,11 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
         $shortcode_template = '/template-parts/block/btemptd-quotes-list-format.php';
         $list_data          = get_field('content_with_quotes');
 
+    } elseif ($list_type == 'review_data') {
+
+        $shortcode_template = '/template-parts/block/btemptd-review-list-format.php';
+        $list_data          = get_field('content_with_customer_review');
+
     }
 
     if (! empty($list_type) ) {
