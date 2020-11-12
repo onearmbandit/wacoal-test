@@ -149,8 +149,10 @@ function Btemptd_Para_Format_Render_callback( $block )
  */
 function Btemptd_Four_Img_Format_Render_callback( $block )
 {
+    $block_images    = get_field('four_images');
+
     $shortcode_template   = '/template-parts/block/btemptd-four-image-block.php';
-    if (! empty($para_type) ) {
+    if (! empty($block_images) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
