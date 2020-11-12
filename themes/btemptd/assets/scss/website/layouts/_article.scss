@@ -563,6 +563,17 @@
       }
     }
 
+    &__headtwo {
+      @include NeutraText-BoldItalicAlt;
+      font-size: calcRem(30);
+      margin-bottom: calcRem(18);
+
+      @include respond-above(sm) {
+        font-size: get-vw(36px);
+        margin-bottom: get-vw(36px);
+      }
+    }
+
     &__para {
       @include NeutraText-BookAlt;
       font-size: calcRem(14);
@@ -580,6 +591,26 @@
       a {
         @include NeutraText-BoldAlt;
         text-decoration: underline;
+      }
+    }
+
+    &__star {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 36px;
+
+      @include respond-above(sm) {
+        margin-top: get-vw(36px);
+        margin-bottom: get-vw(36px);
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+
+        &:not(:first-child) {
+          margin-left: 10px;
+        }
       }
     }
   }
@@ -854,8 +885,8 @@
 
     @include respond-above(sm) {
       width: get-vw(1000px);
-      margin-bottom: get-vw(120px);
-      margin-top: get-vw(120px);
+      margin-bottom: get-vw(80px);
+      margin-top: get-vw(80px);
       flex-wrap: wrap;
       flex-direction: row;
     }

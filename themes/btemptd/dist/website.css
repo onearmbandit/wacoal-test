@@ -1764,6 +1764,14 @@ Files inside this folder can contain specific element styles and layout.
       .image-content--content__head {
         font-size: 4.0625vw;
         margin-bottom: 1.875vw; } }
+  .image-content--content__headtwo {
+    font-family: 'NeutraText-BoldItalicAlt';
+    font-size: 1.875rem;
+    margin-bottom: 1.125rem; }
+    @media (min-width: 768px) {
+      .image-content--content__headtwo {
+        font-size: 1.875vw;
+        margin-bottom: 1.875vw; } }
   .image-content--content__para {
     font-family: 'NeutraText-BookAlt';
     font-size: 0.875rem;
@@ -1777,6 +1785,19 @@ Files inside this folder can contain specific element styles and layout.
     .image-content--content__para a {
       font-family: 'NeutraText-BoldAlt';
       text-decoration: underline; }
+  .image-content--content__star {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 36px; }
+    @media (min-width: 768px) {
+      .image-content--content__star {
+        margin-top: 1.875vw;
+        margin-bottom: 1.875vw; } }
+    .image-content--content__star img {
+      width: 30px;
+      height: 30px; }
+      .image-content--content__star img:not(:first-child) {
+        margin-left: 10px; }
 
 .image-content .odd {
   display: flex;
@@ -1977,8 +1998,8 @@ Files inside this folder can contain specific element styles and layout.
   @media (min-width: 768px) {
     .four-image--wrapper {
       width: 52.08333vw;
-      margin-bottom: 6.25vw;
-      margin-top: 6.25vw;
+      margin-bottom: 4.16667vw;
+      margin-top: 4.16667vw;
       flex-wrap: wrap;
       flex-direction: row; } }
   .four-image--wrapper__box {

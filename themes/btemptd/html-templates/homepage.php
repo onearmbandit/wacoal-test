@@ -44,24 +44,24 @@ Btemptd_Page_Entry_top('');
     </nav> -->
 
 <!-- Banner with background color -->
-<section class="banner-with-background">
+<!-- <section class="banner-with-background">
     <h1 class="banner-with-background--heading">category</h1>
     <p class="banner-with-background--subtitle">
         Category description blurb<br>
         Blurb Describing<br>
         LOREM IPSUM
     </p>
-</section>
+</section> -->
 
 <!-- Banner with image -->
-<section class="banner-with-image">
+<!-- <section class="banner-with-image">
     <div class="banner-with-image--content">
         <h1 class="banner-with-image--heading">B.TEMPT’D BLOG</h1>
         <p class="banner-with-image--subtitle">The B.TEMPT’D BLOG</p>
     </div>
     <div class="banner-with-image--image" style="background-image: url('<?php echo  esc_url(THEMEURI); ?>/assets/images/slider-image.png');">
     </div>
-</section>
+</section> -->
 
 
 <!-- full width section -->
@@ -119,7 +119,7 @@ Btemptd_Page_Entry_top('');
 </section>
 
 <!-- size chart section -->
-<!-- <section class="size-chart">
+<section class="size-chart">
     <div class="size-chart--wrapper">
         <div class="size-chart--left box-shadow-right">
             <div class="size-chart--image">
@@ -149,7 +149,7 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
 
 <!-- Explore the Blog -->
@@ -244,7 +244,7 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 <!-- Explore the Blog -->
-<!-- <section class="explore-blog blog-multiple">
+<section class="explore-blog blog-multiple">
     <div class="explore-blog--bg">
     <div class="explore-blog--wrapper">
         <div class="explore-blog--box">
@@ -376,11 +376,12 @@ Btemptd_Page_Entry_top('');
         </div>
     </div>
     </div>
-</section> -->
+</section>
 
 
 <!-- featured article -->
-<!-- <section class="featured-articles">
+
+<section class="featured-articles">
     <div class="featured-articles--wrapper">
         <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
@@ -501,6 +502,7 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 
+
 <section class="image-content image-content-gif">
     <div class="image-content--wrapper">
         <div class="odd">
@@ -508,22 +510,13 @@ Btemptd_Page_Entry_top('');
                 <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
             </div>
             <div class="image-content--content">
-                    <div class="quote-left">
-                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
-                    </div>
                     <div class="content-inner">
                         <div class="image-content--content__title">
-                        It’s so soft and comfortable I almost forget I’m wearing it!
-                        </div>
-                        <div class="image-content--content__tag">
-                            –@ericaluoo
+                            @chicdisheveled slips her crop top on first thing in the morning…
                         </div>
                         <div class="shop-button">
-                            <a class="see-more-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                            <a class="shop-now-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
                         </div>
-                    </div>
-                    <div class="quote-right">
-                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
                     </div>
             </div>
         </div>
@@ -544,7 +537,7 @@ Btemptd_Page_Entry_top('');
                             –@ericaluoo
                         </div>
                         <div class="shop-button">
-                            <a class="see-more-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                            <a class="shop-now-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
                         </div>
                     </div>
                     <div class="quote-right">
@@ -553,7 +546,72 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section> -->
+</section>
+
+<section class="image-content image-content-gif">
+    <div class="image-content--wrapper">
+        <div class="odd">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content">
+                    <div class="content-inner">
+                        <div class="image-content--content__headtwo">
+                            Future Foundation Underwire T-Shirt Bra
+                        </div>
+                        <div class="image-content--content__title">
+                            @chicdisheveled slips her crop top on first thing in the morning…
+                        </div>
+                        <div class="image-content--content__para">
+                            chicdisheveled slips her crop top on first thing in the morning…
+                        </div>
+                        <div class="image-content--content__star">
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                        </div>
+                        <div class="shop-button">
+                            <a class="shop-now-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="even">
+            <div class="image-content--image">
+                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/featured-article-img-2.png" alt="Article Image" />
+            </div>
+            <div class="image-content--content">
+                    <div class="quote-left">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-left.svg" alt="Image" />
+                    </div>
+                    <div class="content-inner">
+                        <div class="image-content--content__title">
+                            When a bra-less kinda girl finally finds her bra-match…SO GOOD.
+                        </div>
+                        <div class="image-content--content__tag">
+                            –@ericaluoo
+                        </div>
+                        <div class="shop-button">
+                            <a class="shop-now-button">Shop Now <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                        </div>
+                        <div class="image-content--content__star">
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                        </div>
+                    </div>
+                    <div class="quote-right">
+                        <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-right.svg" alt="Image" />
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- Four Image BLock -->
 <section class="four-image">
