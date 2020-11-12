@@ -205,7 +205,7 @@
                             </a>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
                                 <h4 class="featured-box--content__title">
-                                    <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog->post_title), 30));?>
+                                    <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog->post_title), 105));?>
                                 </h4>
                             </a>
                             <div class="featured-box--content__para">
