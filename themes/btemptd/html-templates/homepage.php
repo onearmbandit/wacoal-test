@@ -631,5 +631,9 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 
+<section class="shop-button--wrapper">
+    <a class="shop-now-button" href="https://btemptd.wacoal-america.com/collections/future-foundation-collection" target="_blank">
+        SHOP NOW    <img class="cta-button" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/blog-down-arrow.svg"></a>
+</section>
 <?php
 Btemptd_Page_Entry_bottom();
