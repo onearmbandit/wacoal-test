@@ -564,6 +564,14 @@
       }
     }
 
+    &__tag {
+      margin-bottom: caclRem(16);
+
+      @include respond-above(sm) {
+        margin-bottom: get-vw(24px);
+      }
+    }
+
     &__headtwo {
       @include NeutraText-BoldItalicAlt;
       font-size: calcRem(30);
@@ -579,10 +587,12 @@
       @include NeutraText-BookAlt;
       font-size: calcRem(14);
       line-height: calcRem(16);
+      margin-bottom: caclRem(16);
 
       @include respond-above(sm) {
         font-size: get-vw(20px);
         line-height: get-vw(24px);
+        margin-bottom: get-vw(24px);
       }
 
       strong {
@@ -773,7 +783,7 @@
     padding: calcRem(20, 40, 13);
     position: relative;
     text-decoration: none !important;
-
+    margin-top: calcRem(20);
 
     @include respond-above(sm) {
       font-size: get-vw(32px);

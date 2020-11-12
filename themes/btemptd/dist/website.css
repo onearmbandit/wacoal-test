@@ -1763,6 +1763,11 @@ Files inside this folder can contain specific element styles and layout.
       .image-content--content__head {
         font-size: 4.0625vw;
         margin-bottom: 1.875vw; } }
+  .image-content--content__tag {
+    margin-bottom: caclRem(16); }
+    @media (min-width: 768px) {
+      .image-content--content__tag {
+        margin-bottom: 1.25vw; } }
   .image-content--content__headtwo {
     font-family: 'NeutraText-BoldItalicAlt';
     font-size: 1.875rem;
@@ -1774,11 +1779,13 @@ Files inside this folder can contain specific element styles and layout.
   .image-content--content__para {
     font-family: 'NeutraText-BookAlt';
     font-size: 0.875rem;
-    line-height: 1rem; }
+    line-height: 1rem;
+    margin-bottom: caclRem(16); }
     @media (min-width: 768px) {
       .image-content--content__para {
         font-size: 1.04167vw;
-        line-height: 1.25vw; } }
+        line-height: 1.25vw;
+        margin-bottom: 1.25vw; } }
     .image-content--content__para strong {
       font-family: 'NeutraText-BoldAlt'; }
     .image-content--content__para a {
@@ -1912,7 +1919,8 @@ Files inside this folder can contain specific element styles and layout.
   display: inline-block;
   padding: 1.25rem 2.5rem 0.8125rem;
   position: relative;
-  text-decoration: none !important; }
+  text-decoration: none !important;
+  margin-top: 1.25rem; }
   @media (min-width: 768px) {
     .image-content .shop-now-button {
       font-size: 1.66667vw;
