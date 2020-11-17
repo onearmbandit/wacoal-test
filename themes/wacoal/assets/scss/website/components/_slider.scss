@@ -222,7 +222,7 @@
     }
 
     &__subtitle {
-      font-size: calcRem(22);
+      font-size: calcRem(18);
       line-height: 1;
       margin-bottom: calcRem(10);
       display: block;
@@ -250,6 +250,7 @@
       line-height: calcRem(19);
       text-transform: uppercase;
       margin-top: calcRem(6);
+      @include ProximaNova-Light;
 
       @include respond-above(sm) {
         font-size: get-vw(24px);
@@ -263,8 +264,7 @@
       }
 
       a {
-        @include ProximaNova-Bold;
-        text-decoration: underline;
+        @include ProximaNova-Light;
       }
     }
   }

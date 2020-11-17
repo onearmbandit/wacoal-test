@@ -30,6 +30,7 @@
 
   &--subtitle {
     font-size: calcRem(18);
+    @include ProximaNova-Light;
 
     @include respond-above(sm) {
       font-size: calcRem(11);
@@ -44,7 +45,7 @@
     }
 
     @include respond-above(xl) {
-      font-size: calcRem(32);
+      font-size: calcRem(25);
     }
   }
 

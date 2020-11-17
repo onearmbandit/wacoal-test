@@ -33,8 +33,8 @@ $logo = get_field( 'header_logo', 'options' );
 
 <nav class="header-navigation">
     <div class="header-navigation-mobile">
-        <div class="mobile-nav">Blogs
-            <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/mobile-nav-arrow.svg"
+        <div class="mobile-nav">
+            <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/hamburger.svg"
                  alt="Mobile Navigation" />
         </div>
     </div>

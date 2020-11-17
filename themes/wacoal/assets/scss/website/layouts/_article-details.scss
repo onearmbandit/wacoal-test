@@ -464,7 +464,7 @@
       position: absolute;
       width: calcRem(22);
       height: calcRem(22);
-      background-size: cover;
+      background-size: contain;
 
       @include respond-above(sm) {
         width: get-vw(86px);

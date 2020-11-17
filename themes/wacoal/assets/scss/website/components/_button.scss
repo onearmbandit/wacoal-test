@@ -55,7 +55,7 @@
       padding: calcRem(14, 42, 13);
 
       @include respond-above(sm) {
-        font-size: get-vw(25px);
+        font-size: get-vw(34px);
         padding-top: get-vw(24px);
         padding-right: get-vw(60px);
         padding-bottom: get-vw(22px);

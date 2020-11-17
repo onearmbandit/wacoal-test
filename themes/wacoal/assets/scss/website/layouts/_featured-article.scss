@@ -39,7 +39,6 @@
       }
 
       &__subtitle {
-        @include ProximaNova-Light;
         font-size: calcRem(19);
         line-height: calcRem(19);
         margin-bottom: calcRem(8);
@@ -57,6 +56,7 @@
         line-height: calcRem(18);
         text-transform: uppercase;
         margin-top: calcRem(8);
+        @include ProximaNova-Light;
 
         @include respond-above(sm) {
           font-size: get-vw(24px);
@@ -69,8 +69,7 @@
         }
 
         a {
-          @include ProximaNova-Bold;
-          text-decoration: underline;
+          @include ProximaNova-Light;
         }
       }
 

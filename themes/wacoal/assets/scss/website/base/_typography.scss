@@ -33,7 +33,7 @@ h3 {
 
 h4 {
   font-size: calcRem(29);
-  line-height: calcRem(44);
+  line-height: 1;
 
   @include respond-above(sm) {
     font-size: get-vw(46px);
