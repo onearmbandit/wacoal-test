@@ -1,6 +1,7 @@
 .explore-blog {
   position: relative;
   margin-bottom: calcRem(70);
+  margin-top: calcRem(70px);
 
   @include respond-above(sm) {
     // margin-bottom: get-vw(80px);

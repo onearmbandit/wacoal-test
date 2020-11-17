@@ -26,7 +26,7 @@ $logo_image_url = Btemptd_Get_Image($logo_image_array);
 </header>
 <nav class="header-navigation">
     <div class="header-navigation-mobile">
-        <div class="mobile-nav">Blogs <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/mobile-nav-arrow.svg" alt="Mobile Navigation" /></div>
+        <div class="mobile-nav"><img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/hamburger.svg" alt="Mobile Navigation" /></div>
     </div>
     <?php $args=array(
         'theme_location' => 'primary',

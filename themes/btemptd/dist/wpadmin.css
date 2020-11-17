@@ -307,8 +307,6 @@ Files inside this folder can contain specific element styles and layout.
     .header-navigation-mobile {
       display: none;
       visibility: hidden; } }
-  .header-navigation-mobile img {
-    margin-left: 0.625rem; }
 
 @media (max-width: 767px) {
   .header-navigation-mobile + .header-navigation--ul {
@@ -957,7 +955,8 @@ Files inside this folder can contain specific element styles and layout.
 
 .explore-blog {
   position: relative;
-  margin-bottom: 4.375rem; }
+  margin-bottom: 4.375rem;
+  margin-top: 4.375rem; }
   @media (min-width: 768px) {
     .explore-blog {
       margin-top: 5.72917vw;
@@ -1378,7 +1377,7 @@ Files inside this folder can contain specific element styles and layout.
       .article-header--category {
         font-size: 1.71875vw;
         line-height: 1.875vw;
-        margin-bottom: 3.75vw; } }
+        margin-bottom: 2.29167vw; } }
   .article-header--title {
     font-family: 'NeutraText-BookAlt';
     text-transform: uppercase;
@@ -1389,7 +1388,7 @@ Files inside this folder can contain specific element styles and layout.
       .article-header--title {
         font-size: 4.89583vw;
         line-height: 4.6875vw;
-        margin-bottom: 0; } }
+        margin-bottom: 0.625vw; } }
     .article-header--title strong {
       font-family: 'NeutraText-BoldAlt'; }
     .article-header--title a {
@@ -1448,7 +1447,7 @@ Files inside this folder can contain specific element styles and layout.
   margin: 30px auto 0; }
   @media (min-width: 768px) {
     .three-reason--wrapper {
-      width: 84.375vw;
+      width: 66.66667vw;
       margin: auto; } }
 
 .three-reason--title {
@@ -1475,7 +1474,7 @@ Files inside this folder can contain specific element styles and layout.
       margin-bottom: 3.125rem; } }
   @media (min-width: 768px) {
     .three-reason .reason-box {
-      height: 26.92708vw; }
+      height: 21.25vw; }
       .three-reason .reason-box:last-child {
         margin-bottom: 4.16667vw; } }
   .three-reason .reason-box--content {
@@ -1492,8 +1491,8 @@ Files inside this folder can contain specific element styles and layout.
         margin-top: 1.25rem; } }
     @media (min-width: 768px) {
       .three-reason .reason-box--content {
-        width: 55.20833vw;
-        min-height: 13.02083vw;
+        width: 43.38542vw;
+        min-height: 10.3125vw;
         padding-left: 2.60417vw;
         padding-right: 4.16667vw; } }
     .three-reason .reason-box--content__number {
@@ -1513,8 +1512,8 @@ Files inside this folder can contain specific element styles and layout.
           justify-content: center; } }
       @media (min-width: 768px) {
         .three-reason .reason-box--content__number {
-          font-size: 9.73958vw;
-          line-height: 4.63542vw; } }
+          font-size: 6.92708vw;
+          line-height: 3.28125vw; } }
     .three-reason .reason-box--content__para {
       font-family: 'NeutraText-BookAlt';
       padding: 2.1875rem 1.75rem;
@@ -1522,9 +1521,10 @@ Files inside this folder can contain specific element styles and layout.
       line-height: 1rem; }
       @media (min-width: 768px) {
         .three-reason .reason-box--content__para {
-          font-size: 1.51042vw;
-          line-height: 1.82292vw;
-          margin-left: 2.5vw;
+          font-size: 1.09375vw;
+          line-height: 1.30208vw;
+          letter-spacing: 0.01458vw;
+          margin-left: 3.4375vw;
           padding: 0; } }
       .three-reason .reason-box--content__para strong {
         font-family: 'NeutraText-BoldAlt'; }
@@ -1544,7 +1544,7 @@ Files inside this folder can contain specific element styles and layout.
            object-fit: cover; } }
     @media (min-width: 768px) {
       .three-reason .reason-box--image {
-        width: 36.97917vw;
+        width: 29.16667vw;
         height: 100%;
         z-index: -2;
         position: relative; } }
@@ -1564,8 +1564,9 @@ Files inside this folder can contain specific element styles and layout.
       transform: rotate(-90deg);
       transform-origin: left;
       font-family: 'NeutraText-DemiAlt';
-      font-size: 1.35417vw;
-      color: var(--color-text); }
+      font-size: 1.04167vw;
+      color: var(--color-text);
+      letter-spacing: 0.3px; }
       @media (max-width: 767px) {
         .three-reason .reason-box.odd .reason-box--image .tag-name {
           transform: rotate(0deg);
@@ -1579,7 +1580,7 @@ Files inside this folder can contain specific element styles and layout.
         flex-direction: row-reverse; } }
     @media (min-width: 768px) {
       .three-reason .reason-box.even {
-        margin-top: -6.77083vw;
+        margin-top: -3.64583vw;
         margin-bottom: 3.64583vw; } }
     @media (max-width: 767px) {
       .three-reason .reason-box.even .reason-box--content {
@@ -1596,7 +1597,7 @@ Files inside this folder can contain specific element styles and layout.
         left: 0;
         bottom: -1.82292vw;
         font-family: 'NeutraText-DemiAlt';
-        font-size: 1.35417vw;
+        font-size: 1.04167vw;
         color: var(--color-text); }
         @media (max-width: 767px) {
           .three-reason .reason-box.even .reason-box--image .tag-name {
@@ -1639,9 +1640,9 @@ Files inside this folder can contain specific element styles and layout.
   line-height: 1.75rem; }
   @media (min-width: 768px) {
     .wow-factor--left {
-      width: 34.89583vw;
-      font-size: 1.66667vw;
-      line-height: 2.86458vw;
+      width: 29.47917vw;
+      font-size: 1.35417vw;
+      line-height: 2.34375vw;
       padding-top: 5.10417vw;
       padding-right: 3.75vw;
       padding-bottom: 2.76042vw;
@@ -1656,8 +1657,8 @@ Files inside this folder can contain specific element styles and layout.
     height: 2.8125rem; }
     @media (min-width: 768px) {
       .wow-factor--left .cta-button {
-        width: 6.61458vw;
-        height: 6.61458vw;
+        width: 5.625vw;
+        height: 5.625vw;
         top: -2.08333vw;
         left: 50%;
         transform: translateX(-50%); } }
@@ -1679,9 +1680,9 @@ Files inside this folder can contain specific element styles and layout.
   width: 16.625rem; }
   @media (min-width: 768px) {
     .wow-factor--right {
-      width: 35.52083vw;
-      font-size: 2.29167vw;
-      line-height: 3.75vw;
+      width: 30vw;
+      font-size: 1.875vw;
+      line-height: 3.07292vw;
       padding-top: 5.10417vw;
       padding-right: 3.75vw;
       padding-bottom: 2.76042vw;
@@ -1698,8 +1699,8 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .wow-factor--right .cta-button {
         top: -2.08333vw;
-        width: 6.61458vw;
-        height: 6.61458vw; } }
+        width: 5.625vw;
+        height: 5.625vw; } }
   .wow-factor--right strong {
     font-family: 'NeutraText-BoldAlt'; }
   .wow-factor--right a {
@@ -1775,17 +1776,17 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .image-content--content__headtwo {
         font-size: 1.875vw;
-        margin-bottom: 1.875vw; } }
+        margin-bottom: 1.25vw; } }
   .image-content--content__para {
     font-family: 'NeutraText-BookAlt';
     font-size: 0.875rem;
     line-height: 1rem;
-    margin-bottom: caclRem(16); }
+    margin-bottom: 1rem; }
     @media (min-width: 768px) {
       .image-content--content__para {
         font-size: 1.04167vw;
         line-height: 1.25vw;
-        margin-bottom: 1.25vw; } }
+        margin-bottom: 0.9375vw; } }
     .image-content--content__para strong {
       font-family: 'NeutraText-BoldAlt'; }
     .image-content--content__para a {
@@ -1864,11 +1865,11 @@ Files inside this folder can contain specific element styles and layout.
       .image-content.image-content-gif .image-content--content__tag {
         font-size: 1.09375vw;
         line-height: 1.77083vw;
-        margin-bottom: 3.4375vw; } }
+        margin-bottom: 1.875vw; } }
   @media (min-width: 768px) {
     .image-content.image-content-gif .image-content--content .content-inner {
       position: absolute;
-      width: 20.3125vw;
+      width: 80%;
       left: 50%;
       top: 50%;
       transform: translateX(-50%) translateY(-50%); } }
@@ -1947,7 +1948,8 @@ Files inside this folder can contain specific element styles and layout.
   font-size: 1rem;
   line-height: 1.25rem;
   max-width: 90%;
-  margin: 20px auto; }
+  margin: 20px auto;
+  text-align: center; }
   @media (min-width: 768px) {
     .article--para {
       width: 66.66667vw;
@@ -2026,7 +2028,8 @@ Files inside this folder can contain specific element styles and layout.
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 3.75rem; }
   @media (min-width: 768px) {
     .shop-button--wrapper {
       margin-top: 2.08333vw; } }

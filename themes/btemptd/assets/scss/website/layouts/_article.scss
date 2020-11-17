@@ -35,7 +35,7 @@
     @include respond-above(sm) {
       font-size: get-vw(33px);
       line-height: get-vw(36px);
-      margin-bottom: get-vw(72px);
+      margin-bottom: get-vw(44px);
     }
   }
 
@@ -49,7 +49,7 @@
     @include respond-above(sm) {
       font-size: get-vw(94px);
       line-height: get-vw(90px);
-      margin-bottom: 0;
+      margin-bottom: get-vw(12px);
     }
 
     strong {
@@ -135,7 +135,7 @@
     margin: 30px auto 0;
 
     @include respond-above(sm) {
-      width: get-vw(1620px);
+      width: get-vw(1280px);
       margin: auto;
     }
   }
@@ -171,7 +171,7 @@
       }
 
       @include respond-above(sm) {
-        height: get-vw(517px);
+        height: get-vw(408px);
         // align-items: flex-start;
 
         &:last-child {
@@ -194,8 +194,8 @@
         }
 
         @include respond-above(sm) {
-          width: get-vw(1060px);
-          min-height: get-vw(250px);
+          width: get-vw(833px);
+          min-height: get-vw(198px);
           padding-left: get-vw(50px);
           padding-right: get-vw(80px);
         }
@@ -218,8 +218,8 @@
           }
 
           @include respond-above(sm) {
-            font-size: get-vw(187px);
-            line-height: get-vw(89px);
+            font-size: get-vw(133px);
+            line-height: get-vw(63px);
           }
         }
 
@@ -230,9 +230,10 @@
           line-height: calcRem(16);
 
           @include respond-above(sm) {
-            font-size: get-vw(29px);
-            line-height: get-vw(35px);
-            margin-left: get-vw(48px);
+            font-size: get-vw(21px);
+            line-height: get-vw(25px);
+            letter-spacing: get-vw(0.28px);
+            margin-left: get-vw(66px);
             padding: 0;
           }
 
@@ -264,7 +265,7 @@
         }
 
         @include respond-above(sm) {
-          width: get-vw(710px);
+          width: get-vw(560px);
           height: 100%;
           z-index: -2;
           position: relative;
@@ -295,8 +296,9 @@
             transform: rotate(-90deg);
             transform-origin: left;
             @include NeutraText-DemiAlt;
-            font-size: get-vw(26px);
+            font-size: get-vw(20px);
             color: var(--color-text);
+            letter-spacing: 0.3px;
 
             @include respond-below(sm) {
               transform: rotate(0deg);
@@ -316,7 +318,7 @@
         }
 
           @include respond-above(sm) {
-            margin-top: get-vw(-130px);
+            margin-top: get-vw(-70px);
             margin-bottom: get-vw(70px);
           }
 
@@ -347,7 +349,7 @@
               left: 0;
               bottom: get-vw(-35px);
               @include NeutraText-DemiAlt;
-              font-size: get-vw(26px);
+              font-size: get-vw(20px);
               color: var(--color-text);
             }
           }
@@ -402,9 +404,9 @@
 
 
     @include respond-above(sm) {
-      width: get-vw(670px);
-      font-size: get-vw(32px);
-      line-height: get-vw(55px);
+      width: get-vw(566px);
+      font-size: get-vw(26px);
+      line-height: get-vw(45px);
       padding-top: get-vw(98px);
       padding-right: get-vw(72px);
       padding-bottom: get-vw(53px);
@@ -421,8 +423,8 @@
       height: calcRem(45);
 
       @include respond-above(sm) {
-        width: get-vw(127px);
-        height: get-vw(127px);
+        width: get-vw(108px);
+        height: get-vw(108px);
         top: get-vw(-40px);
         left: 50%;
         transform: translateX(-50%);
@@ -451,9 +453,9 @@
     width: calcRem(266);
 
     @include respond-above(sm) {
-      width: get-vw(682px);
-      font-size: get-vw(44px);
-      line-height: get-vw(72px);
+      width: get-vw(576px);
+      font-size: get-vw(36px);
+      line-height: get-vw(59px);
       padding-top: get-vw(98px);
       padding-right: get-vw(72px);
       padding-bottom: get-vw(53px);
@@ -472,8 +474,8 @@
 
       @include respond-above(sm) {
         top: get-vw(-40px);
-        width: get-vw(127px);
-        height: get-vw(127px);
+        width: get-vw(108px);
+        height: get-vw(108px);
       }
     }
 
@@ -579,7 +581,7 @@
 
       @include respond-above(sm) {
         font-size: get-vw(36px);
-        margin-bottom: get-vw(36px);
+        margin-bottom: get-vw(24px);
       }
     }
 
@@ -587,12 +589,12 @@
       @include NeutraText-BookAlt;
       font-size: calcRem(14);
       line-height: calcRem(16);
-      margin-bottom: caclRem(16);
+      margin-bottom: calcRem(16);
 
       @include respond-above(sm) {
         font-size: get-vw(20px);
         line-height: get-vw(24px);
-        margin-bottom: get-vw(24px);
+        margin-bottom: get-vw(18px);
       }
 
       strong {
@@ -707,7 +709,7 @@
         @include respond-above(sm) {
           font-size: get-vw(21px);
           line-height: get-vw(34px);
-          margin-bottom: get-vw(66px);
+          margin-bottom: get-vw(36px);
         }
       }
 
@@ -715,7 +717,8 @@
 
         @include respond-above(sm) {
           position: absolute;
-          width: get-vw(390px);
+          // width: get-vw(390px);
+          width: 80%;
           left: 50%;
           top: 50%;
           transform: translateX(-50%) translateY(-50%);
@@ -818,6 +821,7 @@
     line-height: calcRem(20);
     max-width: 90%;
     margin: 20px auto;
+    text-align: center;
 
   @include respond-above(sm) {
     width: get-vw(1280px);
@@ -927,6 +931,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: calcRem(60px);
 
   @include respond-above(sm) {
     margin-top: get-vw(40px);
