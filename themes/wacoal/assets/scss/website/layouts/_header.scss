@@ -138,3 +138,23 @@
   padding-bottom: calcRem(20);
 }
 
+.header-navigation-mobile {
+
+  .open-state {
+    display: block;
+  }
+
+  .close-state {
+    display: none;
+  }
+
+  &.mobile-nav-open {
+    .open-state {
+      display: none;
+    }
+
+    .close-state {
+      display: block;
+    }
+  }
+}

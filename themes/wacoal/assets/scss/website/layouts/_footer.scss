@@ -27,9 +27,11 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    max-width: calcRem(272);
 
     @include respond-above(sm) {
       flex-direction: row;
+      max-width: initial;
     }
   }
 
@@ -76,7 +78,12 @@
     font-size: calcRem(13);
     color: var(--color-white);
     margin-bottom: calcRem(20);
-    // background: url('../../images/footer-arrow.svg');
+
+    @include respond-below(sm) {
+      background: url('../../images/footer-arrow.svg') no-repeat;
+      background-position: 100% 50%;
+      background-size: 6px;
+    }
 
     @include respond-above(sm) {
       font-size: calcRem(9);
@@ -162,7 +169,11 @@
     display: block;
   }
 }
-
+.footer-links.open .footer-links--title {
+  background: url('../../images/down-arrow.svg') no-repeat;
+  background-position: 100% 50%;
+    background-size: 11px;
+}
 .footer-links.open .footer-links--title + div {
   display: block;
   margin-bottom: 40px;

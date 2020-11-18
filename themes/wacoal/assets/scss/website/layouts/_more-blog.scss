@@ -126,7 +126,7 @@
 
     @include respond-above(sm) {
       padding: 0;
-      max-width: get-vw(493.67px);
+      max-width: get-vw(379px);
     }
 
     &--image {
@@ -145,7 +145,7 @@
 
     &--category {
       @include ProximaNova-Light;
-      font-size: calcRem(19);
+      font-size: calcRem(15);
       line-height: calcRem(22);
       margin-bottom: calcRem(2);
       margin-top: calcRem(13);
@@ -163,6 +163,7 @@
     }
 
     &--para {
+      display: none;
       @include ProximaNova-Light;
       font-size: calcRem(14);
       line-height: calcRem(18);
