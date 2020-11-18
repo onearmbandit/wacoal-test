@@ -112,13 +112,13 @@ if ($template == 'wacoal') {
 
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                         <h4 class="featured-box--content__title">
-                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 32)); ?>
+                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 110)); ?>
                         </h4>
                     </a>
 
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                         <p class="featured-box--content__para">
-                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 100)); ?>
+                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 145)); ?>
                         </p>
                     </a>
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
