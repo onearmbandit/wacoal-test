@@ -76,6 +76,7 @@
     font-size: calcRem(13);
     color: var(--color-white);
     margin-bottom: calcRem(20);
+    // background: url('../../images/footer-arrow.svg');
 
     @include respond-above(sm) {
       font-size: calcRem(9);

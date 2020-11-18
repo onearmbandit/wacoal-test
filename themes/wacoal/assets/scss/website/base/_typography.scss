@@ -42,12 +42,12 @@ h4 {
 }
 
 h5 {
-  font-size: calcRem(29);
+  font-size: calcRem(27);
   line-height: 1;
   @include BentonModDisp-Bold;
 
   @include respond-above(sm) {
-    font-size: get-vw(30px);
-    line-height: get-vw(33px);
+    font-size: get-vw(27px);
+    line-height: get-vw(27px);
   }
 }

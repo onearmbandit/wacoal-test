@@ -44,7 +44,7 @@
     flex-direction: column;
 
     @include respond-above(sm) {
-      width: get-vw(1675px);
+      width: get-vw(1330px);
       flex-direction: row;
     }
   }
@@ -131,10 +131,10 @@
 
     &--image {
       width: 100%;
-      height: calcRem(212);
+      height: calcRem(249);
 
       @include respond-above(sm) {
-        height: get-vw(318px);
+        height: get-vw(346px);
       }
       img {
         width: 100%;

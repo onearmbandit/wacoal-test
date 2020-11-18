@@ -33,16 +33,22 @@
       flex: 1;
 
       @include respond-above(sm) {
-        padding-top: get-vw(105px);
+        // padding-top: get-vw(105px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
         padding-right: get-vw(80px);
         padding-left: get-vw(93px);
       }
 
       &__subtitle {
+        // @include ProximaNova-Light;
         font-size: calcRem(19);
         line-height: calcRem(19);
         margin-bottom: calcRem(8);
         display: block;
+        text-transform: uppercase;
 
         @include respond-above(sm) {
           font-size: get-vw(27px);
