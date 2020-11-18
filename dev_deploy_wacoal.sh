@@ -1,4 +1,4 @@
-yarn wacoal-build
+yarn build
 
 zip -r wacoal.zip themes/wacoal/
 
