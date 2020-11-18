@@ -230,7 +230,9 @@ if(!empty($banner_link)) :?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__para">
-                            <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                            <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
+                                <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                            </a>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -294,7 +296,9 @@ if(!empty($banner_link)) :?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__para">
-                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                        <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
+                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                        </a>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
@@ -363,7 +367,9 @@ if(!empty($banner_link)) :?>
                     <div class="swiper-slide--content">
 
                         <div class="swiper-slide--content__para">
+                        <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
                             <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                        </a>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
@@ -433,7 +439,9 @@ if(!empty($banner_link)) :?>
 
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__para">
-                        <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                        <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
+                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                        </a>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
