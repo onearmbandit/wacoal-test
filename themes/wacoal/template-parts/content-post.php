@@ -68,12 +68,14 @@
 
                 ?>
                 <article class="blog-tile">
-                    <div class="blog-tile--image">
-                        <img class="lazyload"
-                             data-src="<?php echo  esc_url($thumbnail); ?>"
-                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                             alt="<?php echo  esc_attr($alt); ?>" />
-                    </div>
+                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                        <div class="blog-tile--image">
+                            <img class="lazyload"
+                                data-src="<?php echo  esc_url($thumbnail); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo  esc_attr($alt); ?>" />
+                        </div>
+                    </a>
                     <div class="blog-tile--category">
                         <?php if (! empty($categories) ) { ?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" >
@@ -81,11 +83,15 @@
                         </a>
                         <?php }?>
                     </div>
-                    <h5 class="blog-tile--heading">
-                        <?php echo esc_attr($blog->post_title);?>
-                    </h5>
+                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                        <h5 class="blog-tile--heading">
+                            <?php echo esc_attr($blog->post_title);?>
+                        </h5>
+                    </a>
                     <div class="blog-tile--para">
-                    <?php echo  wp_kses_post($post_tagline);?>
+                        <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                            <?php echo  wp_kses_post($post_tagline);?>
+                        </a>
                     </div>
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>" class="btn primary">
                         Learn More
