@@ -48,7 +48,6 @@
         line-height: calcRem(19);
         margin-bottom: calcRem(8);
         display: block;
-        text-transform: capitalize;
 
         @include respond-above(sm) {
           font-size: get-vw(27px);
