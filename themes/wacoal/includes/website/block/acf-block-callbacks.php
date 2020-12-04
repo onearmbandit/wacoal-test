@@ -382,3 +382,107 @@ function Wacoal_Horizontal_Block_Render_callback( $block )
         <?php
     }
 }
+
+/**
+ * Callback function for center paragraph block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Center_Para_Block_Render_callback( $block )
+{
+
+    $shortcode_template = '/template-parts/block/wacoal-center-para.php';
+    $para_content       = get_field('add_text');
+
+    if (! empty($para_content) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Center Paragraph:</u></h4>
+            <span style="color:red">Empty Wacoal paragraph Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for reminder block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Reminder_Block_Render_callback( $block )
+{
+
+    $shortcode_template = '/template-parts/block/wacoal-reminder.php';
+    $reminder_symbol_id = get_field('add_reminder_symbol');
+    $reminder_content   = get_field('add_text');
+    if ($reminder_symbol_id && !empty($reminder_symbol_id)) {
+        $reminder_image_array = wp_get_attachment_image_src($reminder_symbol_id, 'full');
+        $reminder_image_alt   = Wacoal_Get_Image_alt($reminder_symbol_id, 'Reminder block Image');
+        $reminder_image_url   = Wacoal_Get_image($reminder_image_array);
+    }
+
+    if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Reminder:</u></h4>
+            <span style="color:red">Empty Wacoal reminder Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for tip block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Tip_Block_Render_callback( $block )
+{
+
+    $shortcode_template = '/template-parts/block/wacoal-tip.php';
+
+    if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Reminder:</u></h4>
+            <span style="color:red">Empty Wacoal reminder Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for product list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Product_List_Block_Render_callback( $block )
+{
+
+    $shortcode_template = '/template-parts/block/wacoal-product-list.php';
+
+    if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Reminder:</u></h4>
+            <span style="color:red">Empty Wacoal reminder Block</span>
+            <?php
+        }
+    }
+}

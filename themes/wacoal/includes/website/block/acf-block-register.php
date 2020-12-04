@@ -78,7 +78,7 @@ function Wacoal_Acf_init()
             'description'     => __('A custom List format block.'),
             'render_callback' => 'Wacoal_Text_Img_List_Format_Render_callback',
             'category'        => 'wacoal',
-            'icon'            => 'id-alt',
+            'icon'            => 'list-view',
             'keywords'        => array( 'list-format' ),
             )
         );
@@ -168,6 +168,50 @@ function Wacoal_Acf_init()
             'category'        => 'wacoal',
             'icon'            => 'minus',
             'keywords'        => array( 'line' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-para-block',
+            'title'           => __('Wacoal Center Paragraph Block'),
+            'description'     => __('A custom paragraph block.'),
+            'render_callback' => 'Wacoal_Center_Para_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'id-alt',
+            'keywords'        => array( 'line' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-reminder-block',
+            'title'           => __('Wacoal Reminder Block'),
+            'description'     => __('A custom reminder block.'),
+            'render_callback' => 'Wacoal_Reminder_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'id-alt',
+            'keywords'        => array( 'line' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-tip-block',
+            'title'           => __('Wacoal Tip Block'),
+            'description'     => __('A custom tip block.'),
+            'render_callback' => 'Wacoal_Tip_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'id-alt',
+            'keywords'        => array( 'line' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-product-list-with-shop-button-block',
+            'title'           => __('Wacoal Product List Block'),
+            'description'     => __('A custom Product List block.'),
+            'render_callback' => 'Wacoal_Product_List_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'list-view',
+            'keywords'        => array( 'list-format' ),
             )
         );
     }
