@@ -626,5 +626,23 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
         </div>
     </div>
 </section>
+
+
+<section class="seasonless-style">
+    <div class="seasonless-style--wrapper">
+        <div class="box">
+            <div class="box--left">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/bt-img.png" alt="" />
+            </div>
+            <div class="box--right">
+                <div class="title">Suit Yourself</div>
+                <div class="para">
+                    This b.charming Bodysuit is pure romance. Featuring on-trend eyelet-inspired lace, we love how a bodysuit can add an element of sexy surprise under any look—especially once it’s sweater weather. It’s sleek and clings to the body, making it a great choice as a first layer.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <?php
 Wacoal_Page_Entry_bottom();
