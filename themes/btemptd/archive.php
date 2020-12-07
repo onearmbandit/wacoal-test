@@ -416,21 +416,22 @@ if ($template == 'simple') :
     <div id="post-listing">
 
     <?php
-
     if (have_posts()) {
+        $i = 0;
         if ($wp_query->post_count >= 3) {
             ?>
-
         <div class="category-posts">
-            <?php $i = 0; ?>
             <?php while (have_posts()) : the_post();
-                if ($i % 3 == 0 || $i == 0) {
-                    echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
+                if ($i % 3 == 0) {
+                    echo '<section class="explore-blog">
+                            <div class="explore-blog--bg">
+                                <div class="explore-blog--wrapper blog-wrapper">';
                 }
                 include locate_template('template-parts/content-excerpt.php');
-
-                if ($i % 3 == 2 || $i == 2) {
-                    echo '</div></div></section>';
+                if ($i % 3 == 2 || $wp_query->post_count == ($i+1)) {
+                    echo '</div>
+                        </div>
+                    </section>';
                 }
                 $i++;
             endwhile; ?>
@@ -448,10 +449,10 @@ if ($template == 'simple') :
              echo '</div></div></section>'; ?>
         </div>
 
-        <?php        }
-    }?>
-
-            <?php Btemptd_Paging_nav();?>
+        <?php }
+    }
+    Btemptd_Paging_nav();
+    ?>
     </div>
 <?php endif; ?>
 <?php
