@@ -713,10 +713,12 @@
       span {
         @include BentonModDisp-Bold;
         color: rgba(235, 222, 213, 0.45);
-        left: 50%;
-        transform: translateX(-50%);
+        // left: 50%;
+        // transform: translateX(-50%);
         line-height: 1;
         font-size: calcRem(169);
+        width: 100%;
+        display: block;
 
         @include respond-above(sm) {
           font-size: get-vw(541px);
