@@ -126,7 +126,7 @@
         }
 
         &__title {
-
+          text-transform: uppercase;
           @include respond-above(sm) {
             font-size: get-vw(38px);
             line-height: get-vw(36px);
@@ -222,6 +222,7 @@
           font-size: calcRem(20);
           line-height: calcRem(19);
           margin-bottom: calcRem(25);
+          text-transform: uppercase;
         }
 
         &__para {
