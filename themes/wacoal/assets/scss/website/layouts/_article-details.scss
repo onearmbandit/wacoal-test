@@ -709,6 +709,7 @@
 
     &--number {
       position: relative;
+      width: 100%;
 
       span {
         @include BentonModDisp-Bold;
