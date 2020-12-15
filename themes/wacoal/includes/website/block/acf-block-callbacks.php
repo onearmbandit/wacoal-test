@@ -418,14 +418,15 @@ function Wacoal_Center_Para_Block_Render_callback( $block )
 function Wacoal_Reminder_Block_Render_callback( $block )
 {
 
-    $shortcode_template = '/template-parts/block/wacoal-reminder.php';
     $reminder_symbol_id = get_field('add_reminder_symbol');
-    $reminder_content   = get_field('add_text');
+    $reminder_content   = get_field('add_reminder_text');
     if ($reminder_symbol_id && !empty($reminder_symbol_id)) {
         $reminder_image_array = wp_get_attachment_image_src($reminder_symbol_id, 'full');
         $reminder_image_alt   = Wacoal_Get_Image_alt($reminder_symbol_id, 'Reminder block Image');
         $reminder_image_url   = Wacoal_Get_image($reminder_image_array);
     }
+
+    $shortcode_template = '/template-parts/block/wacoal-reminder.php';
 
     if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
         include locate_template($shortcode_template);
@@ -474,8 +475,6 @@ function Wacoal_Product_List_Block_Render_callback( $block )
 {
 
     $block_fields = get_field('product_list');
-
-    error_log('$block_fields'.print_r($block_fields,1));
 
     $shortcode_template = '/template-parts/block/wacoal-product-list.php';
 
