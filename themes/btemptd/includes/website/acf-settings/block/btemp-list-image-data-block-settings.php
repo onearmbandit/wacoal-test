@@ -33,7 +33,7 @@ acf_add_local_field_group(
                 'simple_data' => 'Content with Title',
                 'quotes_data' => 'Content with Quotes',
                 'review_data' => 'Content with Customer Review',
-                'bordered_data: Content with Bordered text and image' => 'bordered_data: Content with Bordered text and image',
+                'bordered_data' => 'Content with Bordered text and image',
             ),
             'default_value' => false,
             'allow_null' => 0,
