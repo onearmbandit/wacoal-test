@@ -52,16 +52,39 @@ function Wacoal_Data_Image_Block_Render_callback( $block )
  */
 function Wacoal_Quotes_Block_Render_callback( $block )
 {
-    $quotes_image_id    = get_field('image');
-    $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
-    $quotes_image_alt   = Wacoal_Get_Image_alt($quotes_image_id, 'Quote Image');
-    $quotes_image_url   = Wacoal_Get_image($quotes_image_array);
-    $quotes_image_link  = get_field('image_link');
-    $quote_text  = get_field('quote_text');
+    $quotes_type  = get_field('select_quotes_type');
 
-    $shortcode_template = 'template-parts/block/wacoal-quotes.php';
+    if ($quotes_type == 'quotes_with_progress_bar') {
 
-    if (! empty($quote_text) ) {
+        $quotes_progress_bar_data = get_field('quotes_with_progress_bar');
+        $quotes_block_title = $quotes_progress_bar_data['quotes_block_title'];
+        $quotes_para_content = $quotes_progress_bar_data['quotes_block_paragraph_content'];
+        $quotes_text_1 = $quotes_progress_bar_data['quotes_text_1'];
+        $person_name_1 = $quotes_progress_bar_data['quote_1_person_name'];
+        $progress_bar = $quotes_progress_bar_data['progress_bar'];
+        $quotes_text_2 = $quotes_progress_bar_data['quotes_text_2'];
+        $person_name_2 = $quotes_progress_bar_data['quote_2_person_name'];
+
+        $shortcode_template = 'template-parts/block/wacoal-progress-bar-quotes.php';
+
+    } elseif ($quotes_type == 'quotes_with_text') {
+
+    } else {
+        $quotes_image_id    = get_field('image');
+        $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
+        $quotes_image_alt   = Wacoal_Get_Image_alt($quotes_image_id, 'Quote Image');
+        $quotes_image_url   = Wacoal_Get_image($quotes_image_array);
+        $quotes_image_link  = get_field('image_link');
+        $quote_text         = get_field('quote_text');
+
+        $shortcode_template = 'template-parts/block/wacoal-quotes.php';
+
+    }
+
+    // error_log('$quotes_progress_bar_data---->'.print_r($quotes_progress_bar_data, 1));
+
+
+    if (! empty($quotes_type) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
@@ -447,18 +470,20 @@ function Wacoal_Reminder_Block_Render_callback( $block )
  *
  * @return void
  */
-function Wacoal_Tip_Block_Render_callback( $block )
+function Wacoal_Note_Block_Render_callback( $block )
 {
+
+    $tip_text = get_field('add_text');
 
     $shortcode_template = '/template-parts/block/wacoal-tip.php';
 
-    if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
+    if ($tip_text && ! empty($tip_text) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Reminder:</u></h4>
-            <span style="color:red">Empty Wacoal reminder Block</span>
+            <h4><u>Wacoal Note:</u></h4>
+            <span style="color:red">Empty Wacoal Note Block</span>
             <?php
         }
     }

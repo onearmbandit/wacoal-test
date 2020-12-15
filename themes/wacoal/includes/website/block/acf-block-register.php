@@ -197,7 +197,7 @@ function Wacoal_Acf_init()
             'name'            => 'wacoal-tip-block',
             'title'           => __('Wacoal Tip Block'),
             'description'     => __('A custom tip block.'),
-            'render_callback' => 'Wacoal_Tip_Block_Render_callback',
+            'render_callback' => 'Wacoal_Note_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'id-alt',
             'keywords'        => array( 'line' ),
