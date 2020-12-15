@@ -473,15 +473,19 @@ function Wacoal_Tip_Block_Render_callback( $block )
 function Wacoal_Product_List_Block_Render_callback( $block )
 {
 
+    $block_fields = get_field('product_list');
+
+    error_log('$block_fields'.print_r($block_fields,1));
+
     $shortcode_template = '/template-parts/block/wacoal-product-list.php';
 
-    if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
+    if ($block_fields && ! empty($block_fields)) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Reminder:</u></h4>
-            <span style="color:red">Empty Wacoal reminder Block</span>
+            <h4><u>Wacoal Product List:</u></h4>
+            <span style="color:red">Empty Wacoal Product List Block</span>
             <?php
         }
     }

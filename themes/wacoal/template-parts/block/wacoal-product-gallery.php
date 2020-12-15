@@ -1,6 +1,6 @@
 <?php
 /**
- * Wacoal products list block
+ * Wacoal products gallery block
  * php version 7.4
  *
  * @category Wacoal

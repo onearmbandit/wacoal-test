@@ -12,15 +12,18 @@
 
 ?>
 
-<?php if(!empty($article_banner_link)) :?>
+<?php
+if(!empty($article_banner)) :
+    if(!empty($article_banner_link)) :?>
     <a href="<?php echo esc_url($article_banner_link);?>" target="_blank";>
-<?php endif;?>
+    <?php endif;?>
     <section class="article-details-banner"
              style="background-image:url(<?php  echo esc_url($article_banner['url']);?>);">
     </section>
-<?php if(!empty($article_banner_link)) :?>
+    <?php if(!empty($article_banner_link)) :?>
     </a>
-<?php endif;?>
+    <?php endif;
+endif; ?>
 
 <section class="article-header">
     <div class="article-header--wrapper">
