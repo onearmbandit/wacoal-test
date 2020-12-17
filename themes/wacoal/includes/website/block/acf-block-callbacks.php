@@ -69,6 +69,14 @@ function Wacoal_Quotes_Block_Render_callback( $block )
 
     } elseif ($quotes_type == 'quotes_with_text') {
 
+        $quotes_with_text_data = get_field('quotes_with_text');
+        $quotes_block_title = $quotes_with_text_data['quotes_block_title'];
+        $quotes_para_content = $quotes_with_text_data['quotes_block_content'];
+        $quotes_text = $quotes_with_text_data['quotes_text'];
+        $person_name = $quotes_with_text_data['person_name'];
+
+        $shortcode_template = 'template-parts/block/wacoal-quotes-with-text.php';
+
     } else {
         $quotes_image_id    = get_field('image');
         $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');
@@ -80,9 +88,6 @@ function Wacoal_Quotes_Block_Render_callback( $block )
         $shortcode_template = 'template-parts/block/wacoal-quotes.php';
 
     }
-
-    // error_log('$quotes_progress_bar_data---->'.print_r($quotes_progress_bar_data, 1));
-
 
     if (! empty($quotes_type) ) {
         include locate_template($shortcode_template);
