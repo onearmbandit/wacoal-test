@@ -102,6 +102,11 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
         $shortcode_template = '/template-parts/block/btemptd-review-list-format.php';
         $list_data          = get_field('content_with_customer_review');
 
+    } elseif ($list_type == 'bordered_data') {
+
+        $shortcode_template = '/template-parts/block/btemptd-bordered-list-format.php';
+        $list_data          = get_field('content_with_bordered_text_and_image');
+
     }
 
     if (! empty($list_type) ) {
