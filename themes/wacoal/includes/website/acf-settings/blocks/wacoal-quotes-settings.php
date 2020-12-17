@@ -386,7 +386,7 @@ acf_add_local_field_group(
                 array(
                     'key' => 'field_5fd87447592f7',
                     'label' => 'Quote 2 Person Name',
-                    'name' => 'quote_1_person_name',
+                    'name' => 'quote_2_person_name',
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
