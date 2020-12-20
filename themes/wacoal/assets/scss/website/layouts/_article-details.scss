@@ -1196,6 +1196,10 @@
 
 .fixes-list {
 
+  @include respond-above(sm) {
+    margin-top: 6px;
+  }
+
   &--wrapper {
     margin: auto;
 
@@ -1322,9 +1326,14 @@
       }
 
       .btn {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        @include ProximaNova-Bold;
 
         @include respond-above(sm) {
           margin-top: get-vw(34px);
+          font-size: get-vw(29px);
+          letter-spacing: 0.14px;
         }
       }
 
@@ -1646,6 +1655,10 @@
 
     li {
       list-style-image: url('../../images/checkmark.svg');
+
+      &::marker {
+
+      }
 
       @include respond-above(sm) {
         margin-bottom: get-vw(20px);
