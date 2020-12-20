@@ -841,6 +841,26 @@
     @include NeutraText-BoldAlt;
     text-decoration: underline;
   }
+
+  ul {
+    margin: 0 auto;
+    @include BentonModDisp-Regular;
+
+    @include respond-above(sm) {
+      width: get-vw(878px);
+    }
+
+    li {
+      list-style-image: url('../../images/checkmark.svg');
+
+      @include respond-above(sm) {
+        margin-bottom: get-vw(20px);
+        font-size: get-vw(21px);
+        line-height: get-vw(34px);
+      }
+    }
+
+  }
 }
 
 .article--para-half {

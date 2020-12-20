@@ -12,7 +12,7 @@
 
 if ($block_fields && !empty($block_fields)) :
     ?>
-<section class="spacer-120"></section>
+
 <section class="fixes-list">
     <div class="fixes-list--wrapper">
     <?php
@@ -142,7 +142,6 @@ if ($block_fields && !empty($block_fields)) :
 
     </div>
 </section>
-<section class="spacer-120"></section>
     <?php
 endif;
 ?>
