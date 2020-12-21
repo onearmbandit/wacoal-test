@@ -1440,6 +1440,7 @@
 
     .title {
       @include BentonModDisp-Regular;
+      text-transform: uppercase;
 
       @include respond-above(sm) {
         font-size: get-vw(47px);
