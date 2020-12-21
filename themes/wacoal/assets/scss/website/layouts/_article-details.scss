@@ -1388,8 +1388,13 @@
         @include ProximaNova-Bold;
       }
 
+      strong {
+        @include ProximaNova-Bold;
+      }
+
       a {
         @include ProximaNova-Bold;
+        text-decoration: underline;
       }
     }
 
