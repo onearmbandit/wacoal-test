@@ -1407,13 +1407,22 @@
         letter-spacing: 0.4px;
       }
 
-      span {
+      span, strong {
         @include ProximaNova-Bold;
       }
 
       a {
         @include ProximaNova-Bold;
+        text-decoration: underline;
       }
+    }
+  }
+
+  &--center {
+
+    @include respond-above(sm) {
+      margin-top: get-vw(114px);
+      margin-bottom: get-vw(90px);
     }
   }
 }
