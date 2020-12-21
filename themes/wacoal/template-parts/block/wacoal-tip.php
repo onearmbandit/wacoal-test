@@ -12,7 +12,7 @@
 
 ?>
 
-<section class="spacer-120"></section>
+
 
 <?php if($tip_text && !empty($tip_text)) : ?>
 <section class="reminder-note">

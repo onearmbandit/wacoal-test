@@ -1257,9 +1257,9 @@
       line-height: get-vw(63px);
       margin-bottom: get-vw(100px);
       padding-top: get-vw(22px);
-      padding-left: get-vw(90px);
+      // padding-left: get-vw(90px);
       letter-spacing: 0.27px;
-      width: get-vw(608px);
+      width: get-vw(635px);
       text-align: center;
     }
 
@@ -1272,7 +1272,7 @@
       z-index: -1;
 
       @include respond-above(sm) {
-        width: get-vw(608px);
+        width: get-vw(635px);
         height: get-vw(45px);
       }
     }
