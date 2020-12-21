@@ -1198,6 +1198,7 @@
 
   @include respond-above(sm) {
     margin-top: 6px;
+    padding-bottom: get-vw(200px);
   }
 
   &--wrapper {
@@ -1219,7 +1220,8 @@
     &.odd {
 
       .fixes-list--boxtitle {
-        justify-content: flex-end;
+        // justify-content: flex-end;
+        float: right;
 
         &:before {
           left: inherit;
@@ -1247,7 +1249,7 @@
     @include BentonModDisp-Bold;
     position: relative;
     width: 100%;
-    display: flex;
+    // display: flex;
     text-transform: uppercase;
 
     @include respond-above(sm) {
@@ -1257,6 +1259,8 @@
       padding-top: get-vw(22px);
       padding-left: get-vw(90px);
       letter-spacing: 0.27px;
+      width: get-vw(608px);
+      text-align: center;
     }
 
     &:before {
@@ -1278,6 +1282,7 @@
     background: var(--color-feat-article-bg);
     display: flex;
     position: relative;
+    width: 100%;
 
     @include respond-above(sm) {
       height: get-vw(356px);
