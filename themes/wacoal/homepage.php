@@ -552,7 +552,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
         </div>
 
         <div class="content">
-        ✓ Reminder: Have you gotten your breast cancer screening yet? Stay on top of your breast health with this essential checklist. Don’t wait, get started today!
+        ✓ <strong>Reminder:</strong> Have you gotten your breast cancer screening yet? Stay on top of your breast health with this essential checklist. Don’t wait, get started today!
         </div>
     </div>
 </section>
@@ -628,7 +628,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 </section>
 
 
-<section class="seasonless-style">
+<!-- <section class="seasonless-style">
     <div class="seasonless-style--wrapper">
         <div class="box">
             <div class="box--left">
@@ -642,7 +642,7 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <?php
 Wacoal_Page_Entry_bottom();
