@@ -1520,7 +1520,7 @@
         padding-top: 0;
       }
 
-      a {
+      a, strong {
         @include ProximaNova-Bold;
         text-decoration: underline;
       }
@@ -1594,75 +1594,6 @@
   }
 }
 
-
-//// bt style
-.seasonless-style {
-
-  &--wrapper {
-    margin: auto;
-
-    @include respond-above(sm) {
-      width: get-vw(1280px);
-    }
-  }
-
-  .box {
-    display: flex;
-    align-items: center;
-
-    @include respond-above(sm) {
-      height: get-vw(580px);
-    }
-
-    &--left {
-      position: relative;
-
-      @include respond-above(sm) {
-        width: get-vw(560px);
-        height: get-vw(560px);
-        padding-left: get-vw(18px);
-      }
-
-      &:before {
-        content:'';
-        position: absolute;
-        background: #6D4F6D;
-        left: 0;
-        top: get-vw(22px);
-        z-index: -1;
-
-        @include respond-above(sm) {
-          width: get-vw(553px);
-          height: get-vw(553px);
-        }
-      }
-    }
-
-    &--right {
-
-      @include respond-above(sm) {
-        width: get-vw(608px);
-        margin-left: get-vw(72px);
-      }
-
-      .title {
-
-        @include respond-above(sm) {
-          font-size: get-vw(78px);
-        }
-      }
-
-      .para {
-
-        @include respond-above(sm) {
-          font-size: get-vw(20px);
-          line-height: get-vw(24px);
-          letter-spacing: 0.3px;
-        }
-      }
-    }
-  }
-}
 
 .article--para {
   ul {
