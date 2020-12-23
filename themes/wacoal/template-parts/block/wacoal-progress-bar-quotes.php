@@ -18,17 +18,17 @@
     <div class="donation--wrapper">
         <div class="donation--wrapper-left">
 
-        <?php if($quotes_block_title && !empty($quotes_block_title)) : ?>
+        <?php if($first_para_title && !empty($first_para_title)) : ?>
             <div class="title">
-                <?php echo wp_kses_post($quotes_block_title); ?>
+            <?php echo wp_kses_post($first_para_title); ?>
             </div>
-        <?php endif; ?>
+        <?php endif;?>
 
-        <?php if($quotes_para_content && !empty($quotes_para_content)) : ?>
+        <?php if($first_para_content && !empty($first_para_content)) : ?>
             <div class="para">
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_para_content)); ?>
+            <?php echo wp_kses_post(Wacoal_Remove_P_tag($first_para_content)); ?>
             </div>
-        <?php endif; ?>
+        <?php endif;?>
 
         <?php if($progress_bar && !empty($progress_bar)) :?>
             <ul class="timeline">
@@ -46,25 +46,36 @@
             </ul>
         <?php endif; ?>
 
+        <?php if($second_para_title && !empty($second_para_title)) : ?>
+            <div class="title">
+            <?php echo wp_kses_post($second_para_title); ?>
+            </div>
+        <?php endif;?>
+
+        <?php if($second_para_content && !empty($second_para_content)) : ?>
+            <div class="para">
+            <?php echo wp_kses_post(Wacoal_Remove_P_tag($second_para_content)); ?>
+            </div>
+        <?php endif;?>
+
         </div>
         <div class="donation--wrapper-right">
-        <?php if($quotes_text_1 && !empty($quotes_text_1)) :?>
-            <div class="quote">
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text_1)); ?></br>
-            <?php if($person_name_1 && !empty($person_name_1)) :?>
-                <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($person_name_1)); ?></span>
-            <?php endif; ?>
-            </div>
-        <?php endif; ?>
 
-        <?php if($quotes_text_2 && !empty($quotes_text_2)) :?>
+        <?php foreach ($quotes_data as $key => $quotes) {
+            $quotes_text = $quotes['quotes_text'];
+            $quotes_person = $quotes['quotes_person_name'];
+            ?>
+
+            <?php if($quotes_text && !empty($quotes_text)) :?>
             <div class="quote">
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text_2)); ?></br>
-            <?php if($person_name_2 && !empty($person_name_2)) :?>
-                <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($person_name_2)); ?></span>
-            <?php endif; ?>
+                <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text)); ?></br>
+                <?php if($quotes_person && !empty($quotes_person)) :?>
+                <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_person)); ?></span>
+                <?php endif; ?>
             </div>
-        <?php endif; ?>
+            <?php endif; ?>
+
+        <?php }?>
 
         </div>
     </div>

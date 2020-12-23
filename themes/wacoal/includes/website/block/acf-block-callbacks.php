@@ -57,25 +57,15 @@ function Wacoal_Quotes_Block_Render_callback( $block )
     if ($quotes_type == 'quotes_with_progress_bar') {
 
         $quotes_progress_bar_data = get_field('quotes_with_progress_bar');
-        $quotes_block_title = $quotes_progress_bar_data['quotes_block_title'];
-        $quotes_para_content = $quotes_progress_bar_data['quotes_block_paragraph_content'];
-        $quotes_text_1 = $quotes_progress_bar_data['quotes_text_1'];
-        $person_name_1 = $quotes_progress_bar_data['quote_1_person_name'];
+
+        $first_para_title = $quotes_progress_bar_data['first_paragraph_title'];
+        $first_para_content = $quotes_progress_bar_data['first_paragraph_content'];
+        $second_para_title = $quotes_progress_bar_data['second_paragraph_title'];
+        $second_para_content = $quotes_progress_bar_data['second_paragraph_content'];
         $progress_bar = $quotes_progress_bar_data['progress_bar'];
-        $quotes_text_2 = $quotes_progress_bar_data['quotes_text_2'];
-        $person_name_2 = $quotes_progress_bar_data['quote_2_person_name'];
+        $quotes_data = $quotes_progress_bar_data['quotes_data'];
 
         $shortcode_template = 'template-parts/block/wacoal-progress-bar-quotes.php';
-
-    } elseif ($quotes_type == 'quotes_with_text') {
-
-        $quotes_with_text_data = get_field('quotes_with_text');
-        $quotes_block_title = $quotes_with_text_data['quotes_block_title'];
-        $quotes_para_content = $quotes_with_text_data['quotes_block_content'];
-        $quotes_text = $quotes_with_text_data['quotes_text'];
-        $person_name = $quotes_with_text_data['person_name'];
-
-        $shortcode_template = 'template-parts/block/wacoal-quotes-with-text.php';
 
     } else {
         $quotes_image_id    = get_field('image');
@@ -446,17 +436,18 @@ function Wacoal_Bullet_Content_Block_Render_callback( $block )
 function Wacoal_Reminder_Block_Render_callback( $block )
 {
 
-    $reminder_symbol_id = get_field('add_reminder_symbol');
-    $reminder_content   = get_field('add_reminder_text');
+    $reminder_symbol_id         = get_field('add_reminder_symbol');
+    $reminder_content_desktop   = get_field('add_reminder_text');
+    $reminder_content_mobile    = get_field('reminder_text_for_mobile');
     if ($reminder_symbol_id && !empty($reminder_symbol_id)) {
-        $reminder_image_array = wp_get_attachment_image_src($reminder_symbol_id, 'full');
-        $reminder_image_alt   = Wacoal_Get_Image_alt($reminder_symbol_id, 'Reminder block Image');
-        $reminder_image_url   = Wacoal_Get_image($reminder_image_array);
+        $reminder_image_array   = wp_get_attachment_image_src($reminder_symbol_id, 'full');
+        $reminder_image_alt     = Wacoal_Get_Image_alt($reminder_symbol_id, 'Reminder block Image');
+        $reminder_image_url     = Wacoal_Get_image($reminder_image_array);
     }
 
     $shortcode_template = '/template-parts/block/wacoal-reminder.php';
 
-    if (! empty($reminder_symbol_id) || !empty($reminder_content) ) {
+    if (! empty($reminder_symbol_id) || !empty($reminder_content) || !empty($reminder_content_mobile) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
