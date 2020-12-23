@@ -12,7 +12,6 @@
 
 ?>
 
-<section class="spacer-120"></section>
 <section class="reminder-note">
     <div class="reminder-note--wrapper">
 

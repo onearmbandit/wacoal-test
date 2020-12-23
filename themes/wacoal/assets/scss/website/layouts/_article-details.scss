@@ -1196,6 +1196,11 @@
 
 .fixes-list {
 
+  @include respond-above(sm) {
+    margin-top: 6px;
+    padding-bottom: get-vw(200px);
+  }
+
   &--wrapper {
     margin: auto;
 
@@ -1215,7 +1220,8 @@
     &.odd {
 
       .fixes-list--boxtitle {
-        justify-content: flex-end;
+        // justify-content: flex-end;
+        float: right;
 
         &:before {
           left: inherit;
@@ -1224,10 +1230,13 @@
       }
 
       .verticle-text {
-        right: -28%;
-        left: inherit;
-        bottom: 100%;
-        transform: rotate(90deg) translateX(0%);
+
+        @include respond-above(sm) {
+          right: -28%;
+          left: inherit;
+          bottom: 100%;
+          transform: rotate(90deg) translateX(0%);
+        }
       }
 
       .list-content {
@@ -1243,7 +1252,6 @@
     @include BentonModDisp-Bold;
     position: relative;
     width: 100%;
-    display: flex;
     text-transform: uppercase;
 
     @include respond-above(sm) {
@@ -1251,8 +1259,9 @@
       line-height: get-vw(63px);
       margin-bottom: get-vw(100px);
       padding-top: get-vw(22px);
-      padding-left: get-vw(90px);
       letter-spacing: 0.27px;
+      width: get-vw(635px);
+      text-align: center;
     }
 
     &:before {
@@ -1264,7 +1273,7 @@
       z-index: -1;
 
       @include respond-above(sm) {
-        width: get-vw(608px);
+        width: get-vw(635px);
         height: get-vw(45px);
       }
     }
@@ -1274,6 +1283,7 @@
     background: var(--color-feat-article-bg);
     display: flex;
     position: relative;
+    width: 100%;
 
     @include respond-above(sm) {
       height: get-vw(356px);
@@ -1281,17 +1291,16 @@
     }
 
     .verticle-text {
-      transform-origin: 0 0;
-      transform: rotate(270deg) translateX(-60%);
-      position: absolute;
-      // left: 0;
       @include ProximaNova-Sbold;
-      bottom: 50%;
 
       @include respond-above(sm) {
         left: get-vw(40px);
         font-size: get-vw(18px);
         letter-spacing: 0.33px;
+        transform-origin: 0 0;
+        transform: rotate(270deg) translateX(-60%);
+        position: absolute;
+        bottom: 50%;
       }
     }
 
@@ -1322,9 +1331,14 @@
       }
 
       .btn {
+        background-color: var(--color-black);
+        color: var(--color-white);
+        @include ProximaNova-Bold;
 
         @include respond-above(sm) {
           margin-top: get-vw(34px);
+          font-size: get-vw(29px);
+          letter-spacing: 0.14px;
         }
       }
 
@@ -1341,6 +1355,11 @@
     margin: auto;
     align-items: center;
 
+    @include respond-below(sm) {
+      margin: 0 36px;
+      padding: 68px 40px;
+    }
+
     @include respond-above(sm) {
       width: get-vw(825px);
       min-height: get-vw(140px);
@@ -1351,6 +1370,14 @@
     }
 
     .image {
+
+      @include respond-below(sm) {
+        position: absolute;
+        width: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.2;
+      }
 
       @include respond-above(sm) {
         width: get-vw(80px);
@@ -1374,8 +1401,13 @@
         @include ProximaNova-Bold;
       }
 
+      strong {
+        @include ProximaNova-Bold;
+      }
+
       a {
         @include ProximaNova-Bold;
+        text-decoration: underline;
       }
     }
 
@@ -1388,13 +1420,22 @@
         letter-spacing: 0.4px;
       }
 
-      span {
+      span, strong {
         @include ProximaNova-Bold;
       }
 
       a {
         @include ProximaNova-Bold;
+        text-decoration: underline;
       }
+    }
+  }
+
+  &--center {
+
+    @include respond-above(sm) {
+      margin-top: get-vw(114px);
+      margin-bottom: get-vw(90px);
     }
   }
 }
@@ -1406,12 +1447,22 @@
     margin: auto;
     display: flex;
 
+    @include respond-below(sm) {
+      padding: 0 28px;
+      flex-direction: column;
+    }
+
     @include respond-above(sm) {
       width: get-vw(1120px);
     }
 
     .title {
       @include BentonModDisp-Regular;
+      text-transform: uppercase;
+      font-size: 32px;
+      letter-spacing: 0.48px;
+      line-height: 1;
+      margin-bottom: 14px;
 
       @include respond-above(sm) {
         font-size: get-vw(47px);
@@ -1422,6 +1473,9 @@
 
     .para {
       @include BentonModDisp-Regular;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.24px;
 
       @include respond-above(sm) {
         font-size: get-vw(20px);
@@ -1440,6 +1494,10 @@
     .timeline {
       padding: 0;
       position: relative;
+
+      @include respond-below(sm) {
+        margin: 40px 0 48px;
+      }
 
       @include respond-above(sm) {
         width: get-vw(435px);
@@ -1477,9 +1535,14 @@
     }
     .timeline-text {
       margin: 0;
+      padding: 0 0 48px 28px;
+      font-size: 15px;
+      line-height: 26px;
+      letter-spacing: 0.4px;
 
       @include respond-above(sm) {
-        padding: 0 40px 40px;
+        // padding: 0 40px 40px;
+        font-size: get-vw(16px);
         padding-left: get-vw(40px);
         padding-bottom: get-vw(40px);
         padding-right: get-vw(40px);
@@ -1491,7 +1554,7 @@
         padding-top: 0;
       }
 
-      a {
+      a, strong {
         @include ProximaNova-Bold;
         text-decoration: underline;
       }
@@ -1507,6 +1570,10 @@
 
   &--wrapper-right {
 
+    @include respond-below(sm) {
+      margin-top: 48px;
+    }
+
     @include respond-above(sm) {
       width: get-vw(360px);
       margin-left: get-vw(86px);
@@ -1516,6 +1583,9 @@
       @include BentonModDisp-RegularItalic;
       position: relative;
       text-align: center;
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 38px;
 
       @include respond-above(sm) {
         font-size: get-vw(18px);
@@ -1535,6 +1605,11 @@
         width: 100%;
         background-repeat: no-repeat;
 
+        @include respond-below(sm) {
+          background-size: 44px;
+          height: 44px;
+        }
+
         @include respond-above(sm) {
           background-size: get-vw(55px);
           height: get-vw(70px);
@@ -1544,6 +1619,10 @@
         background-image: url("../../images/quote-icon-left.svg");
         background-position: left center;
 
+        @include respond-below(sm) {
+          margin-bottom: 20px;
+        }
+
         @include respond-above(sm) {
           margin-bottom: get-vw(20px);
         }
@@ -1552,6 +1631,10 @@
       &:after {
         background-image: url("../../images/quote-icon-right.svg");
         background-position: right center;
+
+        @include respond-below(sm) {
+          margin-top: 20px;
+        }
 
         @include respond-above(sm) {
           margin-top: get-vw(20px);
@@ -1566,71 +1649,28 @@
 }
 
 
-//// bt style
-.seasonless-style {
-
-  &--wrapper {
-    margin: auto;
-
-    @include respond-above(sm) {
-      width: get-vw(1280px);
-    }
-  }
-
-  .box {
-    display: flex;
-    align-items: center;
+.article--para {
+  ul {
+    margin: 0 auto;
+    @include BentonModDisp-Regular;
 
     @include respond-above(sm) {
-      height: get-vw(580px);
+      width: get-vw(878px);
     }
 
-    &--left {
-      position: relative;
+    li {
+      list-style-image: url('../../images/checkmark.svg');
+
+      &::marker {
+
+      }
 
       @include respond-above(sm) {
-        width: get-vw(560px);
-        height: get-vw(560px);
-        padding-left: get-vw(18px);
-      }
-
-      &:before {
-        content:'';
-        position: absolute;
-        background: #6D4F6D;
-        left: 0;
-        top: get-vw(22px);
-        z-index: -1;
-
-        @include respond-above(sm) {
-          width: get-vw(553px);
-          height: get-vw(553px);
-        }
+        margin-bottom: get-vw(20px);
+        font-size: get-vw(30px);
+        line-height: get-vw(40px);
       }
     }
 
-    &--right {
-
-      @include respond-above(sm) {
-        width: get-vw(608px);
-        margin-left: get-vw(72px);
-      }
-
-      .title {
-
-        @include respond-above(sm) {
-          font-size: get-vw(78px);
-        }
-      }
-
-      .para {
-
-        @include respond-above(sm) {
-          font-size: get-vw(20px);
-          line-height: get-vw(24px);
-          letter-spacing: 0.3px;
-        }
-      }
-    }
   }
 }

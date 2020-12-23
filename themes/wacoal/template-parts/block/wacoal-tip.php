@@ -12,10 +12,10 @@
 
 ?>
 
-<section class="spacer-120"></section>
+
 
 <?php if($tip_text && !empty($tip_text)) : ?>
-<section class="reminder-note">
+<section class="reminder-note  reminder-note--center">
     <div class="reminder-note--wrapper">
         <div class="content-small">
         <?php echo wp_kses_post(Wacoal_Remove_P_tag($tip_text)); ?>
