@@ -519,3 +519,30 @@ function Wacoal_Product_List_Block_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for sibgle product block
+ *
+ * @param $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Single_Product_Block_Render_callback( $block )
+{
+
+    $product_fields       = get_field('product');
+    $new_tab              = get_field('open_in_new_tab');
+    $shortcode_template   = '/template-parts/block/wacoal-single-product.php';
+
+    if (! empty($product_fields) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Single Product</u></h4>
+            <span style="color:red">Empty Wacoal Product Block</span>
+            <?php
+        }
+    }
+
+}
