@@ -173,7 +173,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-para-block',
-            'title'           => __('Wacoal Center Paragraph Block'),
+            'title'           => __('Wacoal Center Bullet Paragraph Block'),
             'description'     => __('A custom paragraph block.'),
             'render_callback' => 'Wacoal_Center_Para_Block_Render_callback',
             'category'        => 'wacoal',

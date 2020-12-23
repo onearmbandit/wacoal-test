@@ -58,3 +58,8 @@
 .wacoal-seperator {
   margin-bottom: 0;
 }
+
+.fixes-list--box.odd,
+.fixes-list--box.even {
+  width: 80%;
+}
