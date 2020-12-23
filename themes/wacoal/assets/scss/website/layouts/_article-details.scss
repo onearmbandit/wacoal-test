@@ -1254,6 +1254,11 @@
     width: 100%;
     text-transform: uppercase;
 
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 0.14px;
+    padding-top: 10px;
+
     @include respond-above(sm) {
       font-size: get-vw(53px);
       line-height: get-vw(63px);
@@ -1267,7 +1272,7 @@
     &:before {
       content: '';
       position: absolute;
-      background: var(--color-feat-article-bg);
+      background: #EBDED5;
       top: 0;
       left: 0;
       z-index: -1;
@@ -1316,6 +1321,19 @@
     .list-image {
       @include respond-below(sm) {
         padding: 0 35px;
+        display: flex;
+        position: relative;
+
+        &::after {
+          content: '';
+          height: 50%;
+          bottom: 0;
+          width: 100%;
+          background: var(--color-feat-article-bg);
+          position: absolute;
+          left: 0;
+          z-index: -1;
+        }
       }
 
       @include respond-above(sm) {
@@ -1354,6 +1372,71 @@
         }
       }
 
+    }
+  }
+  &.desktop-ui {
+    display: none;
+
+    @include respond-above(sm) {
+      display: block;
+    }
+  }
+  &.mobile-ui {
+    display: flex;
+
+    @include respond-above(sm) {
+      display: none;
+    }
+    .fixes-list--box {
+
+      &:not(:first-child) {
+        margin-top: 60px;
+      }
+    }
+
+    .fixes-list--boxcontent {
+      background: transparent;
+    }
+
+    .fixes-list--boxtitle {
+      width: calc(100% - 36px);
+      margin: 0 auto 14px;
+      text-align: center;
+    }
+
+    .verticle-text {
+      padding: 14px 36px 23px;
+      text-align: center;
+      background: var(--color-feat-article-bg);
+      position: relative;
+
+      &:after {
+        content:'';
+        height: 1px;
+        background: var(--color-black);
+        width: calc(100% - 72px);
+        left: 36px;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    .list-content {
+      padding: 20px 36px 50px;
+      background: var(--color-feat-article-bg);
+      position: relative;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0.49px;
+
+      .btn {
+        position: absolute;
+        padding: 12px 24px;
+        font-size: 12px;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }
