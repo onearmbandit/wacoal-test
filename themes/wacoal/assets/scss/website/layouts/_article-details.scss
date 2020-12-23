@@ -1368,7 +1368,7 @@
     align-items: center;
 
     @include respond-below(sm) {
-      margin: 0 36px;
+      margin: 33px 36px 0;
       padding: 68px 40px;
     }
 
@@ -1444,7 +1444,6 @@
   }
 
   &--center {
-
     margin-bottom: 48px;
 
     @include respond-above(sm) {
@@ -1502,6 +1501,10 @@
       a {
         @include BentonModDisp-Bold;
         text-decoration: underline;
+      }
+
+      strong {
+        @include BentonModDisp-Bold;
       }
     }
 
@@ -1681,8 +1684,8 @@
       &:before {
         content:'';
         background: url('../../images/checkmark.svg');
-        width: get-vw(16px);
-        height: get-vw(16px);
+        width: get-vw(20px);
+        height: get-vw(20px);
         background-size: cover;
         margin-right: get-vw(10px);
         display: inline-block;
