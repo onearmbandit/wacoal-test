@@ -405,14 +405,16 @@
 
   &.wacoal-101 {
 
+    margin-bottom: 100px;
+
+    @include respond-above(sm) {
+      margin-bottom: get-vw(136px);
+    }
+
     .product-gallery--wrapper {
       justify-content: center;
       margin-top: 0;
       padding-top: 0;
-    }
-
-    @include respond-above(sm) {
-      margin-bottom: get-vw(136px);
     }
 
     &:before {
@@ -1772,10 +1774,14 @@
 
 
 .article--para {
+  @include BentonModDisp-Regular;
 
   @include respond-above(sm) {
+    margin: 0 auto;
     margin-bottom: get-vw(65px);
+    max-width: get-vw(903px);
   }
+
   ul {
     margin: 0 auto;
     @include BentonModDisp-Regular;
