@@ -214,6 +214,17 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'list-format' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'            => 'wacoal-single-product',
+            'title'           => __('Wacoal Single Product'),
+            'description'     => __('A custom single product block.'),
+            'render_callback' => 'Wacoal_Single_Product_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'format-gallery',
+            'keywords'        => array( 'product', 'gallery' ),
+            )
+        );
     }
 }
 
