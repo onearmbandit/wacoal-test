@@ -24,7 +24,13 @@
 
     <?php if($reminder_content && !empty($reminder_content)) :?>
         <div class="content">
-        <?php echo wp_kses_post($reminder_content); ?>
+        <?php echo wp_kses_post(Wacoal_Remove_P_tag($reminder_content)); ?>
+        </div>
+    <?php endif;?>
+
+    <?php if($reminder_content_mobile && !empty($reminder_content_mobile)) :?>
+        <div class="content2">
+        <?php echo wp_kses_post($reminder_content_mobile); ?>
         </div>
     <?php endif;?>
 
