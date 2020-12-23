@@ -1664,6 +1664,10 @@
 
 
 .article--para {
+
+  @include respond-above(sm) {
+    margin-bottom: get-vw(65px);
+  }
   ul {
     margin: 0 auto;
     @include BentonModDisp-Regular;
@@ -1673,14 +1677,15 @@
     }
 
     li {
-      // list-style-image: url('../../images/checkmark.svg');
 
       &:before {
         content:'';
         background: url('../../images/checkmark.svg');
-        width: 20px;
-        height: 20px;
+        width: get-vw(16px);
+        height: get-vw(16px);
         background-size: cover;
+        margin-right: get-vw(10px);
+        display: inline-block;
       }
 
       @include respond-above(sm) {
