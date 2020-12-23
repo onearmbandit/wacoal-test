@@ -402,6 +402,24 @@
       }
     }
   }
+
+  &.wacoal-101 {
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+
+    @include respond-above(sm) {
+      margin-bottom: get-vw(136px);
+    }
+
+    &:before {
+      display: none;
+    }
+
+    .product-gallery--box {
+      margin: 0;
+    }
+  }
 }
 
 //

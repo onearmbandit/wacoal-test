@@ -14,7 +14,7 @@ if ($product_fields && !empty($product_fields)) {
     ?>
 
 <!-- Product Gallery -->
-<section class="product-gallery">
+<section class="product-gallery wacoal-101">
     <div class="product-gallery--wrapper">
         <?php
         foreach ($product_fields as $product) {
