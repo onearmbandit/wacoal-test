@@ -404,9 +404,12 @@
   }
 
   &.wacoal-101 {
-    justify-content: center;
-    margin-top: 0;
-    padding-top: 0;
+
+    .product-gallery--wrapper {
+      justify-content: center;
+      margin-top: 0;
+      padding-top: 0;
+    }
 
     @include respond-above(sm) {
       margin-bottom: get-vw(136px);
@@ -1338,7 +1341,7 @@
 
     .list-image {
       @include respond-below(sm) {
-        padding: 0 35px;
+        padding: 0 20px;
         display: flex;
         position: relative;
 
@@ -1401,6 +1404,7 @@
   }
   &.mobile-ui {
     display: flex;
+    margin-bottom: 94px;
 
     @include respond-above(sm) {
       display: none;
@@ -1417,7 +1421,7 @@
     }
 
     .fixes-list--boxtitle {
-      width: calc(100% - 36px);
+      // width: calc(100% - 36px);
       margin: 0 auto 14px;
       text-align: center;
     }
