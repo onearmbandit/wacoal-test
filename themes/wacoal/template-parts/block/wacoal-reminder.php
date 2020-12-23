@@ -25,7 +25,7 @@
 
     <?php if($reminder_content && !empty($reminder_content)) :?>
         <div class="content">
-        <?php echo wp_kses_post(Wacoal_Remove_P_tag($reminder_content)); ?>
+        <?php echo wp_kses_post($reminder_content); ?>
         </div>
     <?php endif;?>
 
