@@ -411,6 +411,10 @@
       margin-bottom: get-vw(136px);
     }
 
+    .product-gallery--box__image {
+      border: 0.25px solid #707070;
+    }
+
     .product-gallery--wrapper {
       justify-content: center;
       margin-top: 0;
@@ -1343,7 +1347,7 @@
 
     .list-image {
       @include respond-below(sm) {
-        padding: 0 20px;
+        padding: 0 51px;
         display: flex;
         position: relative;
 
@@ -1407,6 +1411,8 @@
   &.mobile-ui {
     display: flex;
     margin-bottom: 94px;
+    margin-left: -36px;
+    margin-right: -36px;
 
     @include respond-above(sm) {
       display: none;
@@ -1423,13 +1429,13 @@
     }
 
     .fixes-list--boxtitle {
-      // width: calc(100% - 36px);
+      width: calc(100% - 72px);
       margin: 0 auto 14px;
       text-align: center;
     }
 
     .verticle-text {
-      padding: 14px 36px 23px;
+      padding: 14px 51px 23px;
       text-align: center;
       background: var(--color-feat-article-bg);
       position: relative;
@@ -1438,15 +1444,15 @@
         content:'';
         height: 1px;
         background: var(--color-black);
-        width: calc(100% - 72px);
-        left: 36px;
+        width: calc(100% - 110px);
+        left: 51px;
         position: absolute;
         bottom: 0;
       }
     }
 
     .list-content {
-      padding: 20px 36px 50px;
+      padding: 20px 51px 50px;
       background: var(--color-feat-article-bg);
       position: relative;
       font-size: 14px;
@@ -1780,6 +1786,8 @@
     margin: 0 auto;
     margin-bottom: get-vw(65px);
     max-width: get-vw(903px);
+    font-size: get-vw(30px);
+    line-height: get-vw(48px);
   }
 
   ul {
