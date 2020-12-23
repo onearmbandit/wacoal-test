@@ -1676,6 +1676,7 @@
       // list-style-image: url('../../images/checkmark.svg');
 
       &:before {
+        content:'';
         background: url('../../images/checkmark.svg');
         width: 20px;
         height: 20px;
