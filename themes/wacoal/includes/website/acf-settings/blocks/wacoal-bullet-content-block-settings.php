@@ -1,6 +1,6 @@
 <?php
 /**
- * Wacoal paragraph block acf settings
+ * Wacoal bullet content block acf settings
  * php version 7.4
  *
  * @category Wacoal
@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5fc9f9285fc06',
-    'title' => 'Wacoal Paragraph Block Settings',
+    'title' => 'Wacoal Bullet Content Block Settings',
     'fields' => array(
         array(
             'key' => 'field_5fc9f946f1740',
@@ -40,7 +40,7 @@ acf_add_local_field_group(
             array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/wacoal-para-block',
+                'value' => 'acf/wacoal-bullet-content-block',
             ),
         ),
     ),
@@ -54,3 +54,4 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
+

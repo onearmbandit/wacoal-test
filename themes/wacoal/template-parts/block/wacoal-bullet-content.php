@@ -13,10 +13,10 @@
 ?>
 
 <?php
-if($content_text && !empty($content_text)) :
+if($para_content && !empty($para_content)) :
     ?>
 <section class="article--para">
-    <?php echo wp_kses_post($content_text);?>
+    <?php echo wp_kses_post($para_content);?>
 </section>
     <?php
 endif;

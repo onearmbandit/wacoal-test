@@ -172,10 +172,10 @@ function Wacoal_Acf_init()
         );
         acf_register_block(
             array(
-            'name'            => 'wacoal-para-block',
-            'title'           => __('Wacoal Center Bullet Paragraph Block'),
+            'name'            => 'wacoal-bullet-content-block',
+            'title'           => __('Wacoal Bullet Paragraph Block'),
             'description'     => __('A custom paragraph block.'),
-            'render_callback' => 'Wacoal_Center_Para_Block_Render_callback',
+            'render_callback' => 'Wacoal_Bullet_Content_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'id-alt',
             'keywords'        => array( 'line' ),
@@ -223,6 +223,18 @@ function Wacoal_Acf_init()
             'category'        => 'wacoal',
             'icon'            => 'format-gallery',
             'keywords'        => array( 'product', 'gallery' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-center-paragraph',
+            'title'           => __('Wacoal Center Paragraph'),
+            'description'     => __('A custom center paragraph block.'),
+            'render_callback' => 'Wacoal_Center_Para_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'title', 'description' ),
             )
         );
     }

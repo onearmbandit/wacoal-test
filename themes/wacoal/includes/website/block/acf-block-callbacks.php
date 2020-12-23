@@ -418,10 +418,10 @@ function Wacoal_Horizontal_Block_Render_callback( $block )
  *
  * @return void
  */
-function Wacoal_Center_Para_Block_Render_callback( $block )
+function Wacoal_Bullet_Content_Block_Render_callback( $block )
 {
 
-    $shortcode_template = '/template-parts/block/wacoal-center-para.php';
+    $shortcode_template = '/template-parts/block/wacoal-bullet-content.php';
     $para_content       = get_field('add_text');
 
     if (! empty($para_content) ) {
@@ -429,8 +429,8 @@ function Wacoal_Center_Para_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Center Paragraph:</u></h4>
-            <span style="color:red">Empty Wacoal paragraph Block</span>
+            <h4><u>Wacoal Bullet Point Content:</u></h4>
+            <span style="color:red">Empty Wacoal Bullet Point Content Block</span>
             <?php
         }
     }
@@ -545,4 +545,29 @@ function Wacoal_Single_Product_Block_Render_callback( $block )
         }
     }
 
+}
+
+/**
+ * Callback function for center paragraph block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Center_Para_Render_callback( $block )
+{
+    $content_text  = get_field('content');
+
+    $shortcode_template  = '/template-parts/block/wacoal-center-para.php';
+
+    if (! empty($content_text) && $content_text ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Center Paragraph</u></h4>
+            <span style="color:red">Empty Center Paragraph Block</span>
+            <?php
+        }
+    }
 }
