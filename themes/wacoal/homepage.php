@@ -451,7 +451,78 @@ and will change the height gap respective to screen size as for Mobile 44px, iPa
 <!-- -->
 <section class="spacer-120"></section>
 
-<section class="fixes-list">
+<section class="fixes-list mobile-ui">
+    <div class="fixes-list--wrapper">
+        <div class="fixes-list--box">
+            <div class="fixes-list--boxtitle">
+                ULTIMATE LIFT™
+            </div>
+            <div class="fixes-list--boxcontent">
+                <div class="list-image">
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/fixes-list.png" alt="5 Fixes" />
+                </div>
+
+                <div class="verticle-text">
+                    Elevated Allure Underwire Bra
+                </div>
+                <div class="list-content">
+                    <div>
+                        Designed to lift the bustline up to one inch and give you a significant, gravity-defying boost.
+                    </div>
+
+                    <a href="#" class="btn primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixes-list--box">
+            <div class="fixes-list--boxtitle">
+                ULTIMATE LIFT™
+            </div>
+            <div class="fixes-list--boxcontent">
+                <div class="list-image">
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/fixes-list.png" alt="5 Fixes" />
+                </div>
+
+                <div class="verticle-text">
+                    Elevated Allure Underwire Bra
+                </div>
+                <div class="list-content">
+                    <div>
+                        Designed to lift the bustline up to one inch and give you a significant, gravity-defying boost.
+                    </div>
+
+                    <a href="#" class="btn primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixes-list--box">
+            <div class="fixes-list--boxtitle">
+                ULTIMATE LIFT™
+            </div>
+            <div class="fixes-list--boxcontent">
+                <div class="list-image">
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/fixes-list.png" alt="5 Fixes" />
+                </div>
+
+                <div class="verticle-text">
+                    Elevated Allure Underwire Bra
+                </div>
+                <div class="list-content">
+                    <div>
+                        Designed to lift the bustline up to one inch and give you a significant, gravity-defying boost.
+                    </div>
+
+                    <a href="#" class="btn primary">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="fixes-list desktop-ui">
     <div class="fixes-list--wrapper">
         <div class="fixes-list--box even">
             <div class="fixes-list--boxtitle">
