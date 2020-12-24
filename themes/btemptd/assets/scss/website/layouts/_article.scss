@@ -847,7 +847,7 @@
   @include NeutraText-BookAlt;
     font-size: calcRem(16);
     line-height: calcRem(20);
-    max-width: 90%;
+    max-width: 80%;
     margin: 20px auto;
 
   @include respond-above(sm) {
@@ -983,7 +983,7 @@
 
 //// bt style
 .seasonless-style {
-  padding-top: 40px;
+  padding-top: 20px;
 
   @include respond-above(sm) {
     padding-top: get-vw(50px);
@@ -1094,6 +1094,7 @@
         @include NeutraText-Book;
         font-size: 15px;
         line-height: 19px;
+        width: 90%;
 
         @include respond-above(sm) {
           font-size: get-vw(20px);
