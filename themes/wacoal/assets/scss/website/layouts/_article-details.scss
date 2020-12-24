@@ -1507,7 +1507,7 @@
     align-items: center;
 
     @include respond-below(sm) {
-      margin: 33px 36px 0;
+      margin: 33px 15px 0;
       padding: 68px 40px;
     }
 
@@ -1560,6 +1560,18 @@
         @include ProximaNova-Bold;
         text-decoration: underline;
       }
+
+      &.desktop-ui {
+
+      }
+
+      &.mobile-ui {
+        display: block;
+
+        @include respond-above(sm) {
+          display: none;
+        }
+      }
     }
 
     .content-small {
@@ -1600,7 +1612,7 @@
     display: flex;
 
     @include respond-below(sm) {
-      padding: 0 28px;
+      padding: 0 15px;
       flex-direction: column;
     }
 
