@@ -22,7 +22,7 @@
         </div>
     <?php endif; ?>
 
-    <?php if($reminder_content && !empty($reminder_content)) :?>
+    <!-- <?php if($reminder_content && !empty($reminder_content)) :?>
         <div class="content desktop-ui">
         <?php echo wp_kses_post(Wacoal_Remove_P_tag($reminder_content)); ?>
         </div>
@@ -32,7 +32,13 @@
         <div class="content mobile-ui">
         <?php echo wp_kses_post($reminder_content_mobile); ?>
         </div>
-    <?php endif;?>
+    <?php endif;?> -->
 
+    <div class="content desktop-ui">
+        Desktop Div
+    </div>
+    <div class="content mobile-ui">
+        Mobile Div
+    </div>
     </div>
 </section>
