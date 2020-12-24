@@ -1043,12 +1043,16 @@
       .title {
         position: relative;
         @include NeutraText-DemiAlt;
+        text-align: center;
 
         &::before {
           content:'';
           position: absolute;
           width: 100%;
           background: var(--color-primary);
+          left: 0;
+          z-index: -1;
+          bottom: 0;
 
           @include respond-above(sm) {
             height: get-vw(31px);
@@ -1070,6 +1074,7 @@
           line-height: get-vw(24px);
           letter-spacing: 0.3px;
           width: get-vw(446px);
+          margin-top: get-vw(35px);
         }
 
         a {
@@ -1086,16 +1091,18 @@
     &.odd {
       .box--right {
 
-        @include respond-above(sm) {
-          margin-left: inherit;
-          margin-right: get-vw(73px);
-        }
-
       }
     }
 
     &.even {
       flex-direction: row-reverse;
+
+      .box--right {
+        @include respond-above(sm) {
+          margin-left: inherit;
+          margin-right: get-vw(73px);
+        }
+      }
     }
   }
 }
