@@ -983,6 +983,7 @@
 
 //// bt style
 .seasonless-style {
+  padding-top: 40px;
 
   @include respond-above(sm) {
     padding-top: get-vw(50px);
@@ -1120,7 +1121,10 @@
     }
 
     &.even {
-      flex-direction: row-reverse;
+
+      @include respond-above(sm) {
+        flex-direction: row-reverse;
+      }
 
       .box--right {
         @include respond-above(sm) {
