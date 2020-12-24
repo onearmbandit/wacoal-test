@@ -1037,28 +1037,61 @@
 
       @include respond-above(sm) {
         width: get-vw(608px);
-        margin-left: get-vw(72px);
+        margin-left: get-vw(73px);
       }
 
       .title {
+        position: relative;
+        @include NeutraText-DemiAlt;
+
+        &::before {
+          content:'';
+          position: absolute;
+          width: 100%;
+          background: var(--color-primary);
+
+          @include respond-above(sm) {
+            height: get-vw(31px);
+          }
+        }
 
         @include respond-above(sm) {
           font-size: get-vw(78px);
         }
+
       }
 
       .para {
+        margin: 0 auto;
+        @include NeutraText-Book;
 
         @include respond-above(sm) {
           font-size: get-vw(20px);
           line-height: get-vw(24px);
           letter-spacing: 0.3px;
+          width: get-vw(446px);
+        }
+
+        a {
+          @include NeutraText-DemiAlt;
+          text-decoration: underline;
+        }
+
+        strong {
+          @include NeutraText-DemiAlt;
         }
       }
     }
 
     &.odd {
+      .box--right {
 
+        @include respond-above(sm) {
+          margin-left: inherit;
+          margin-right: get-vw(73px);
+        }
+
+      }
     }
 
     &.even {
