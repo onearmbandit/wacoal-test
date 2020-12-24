@@ -439,6 +439,7 @@ function Wacoal_Reminder_Block_Render_callback( $block )
     $reminder_symbol_id         = get_field('add_reminder_symbol');
     $reminder_content_desktop   = get_field('add_reminder_text');
     $reminder_content_mobile    = get_field('reminder_text_for_mobile');
+
     if ($reminder_symbol_id && !empty($reminder_symbol_id)) {
         $reminder_image_array   = wp_get_attachment_image_src($reminder_symbol_id, 'full');
         $reminder_image_alt     = Wacoal_Get_Image_alt($reminder_symbol_id, 'Reminder block Image');
