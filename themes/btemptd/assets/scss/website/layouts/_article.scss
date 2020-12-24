@@ -1000,6 +1000,11 @@
     display: flex;
     align-items: center;
 
+    @include respond-below(sm) {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
     @include respond-above(sm) {
       height: get-vw(580px);
       margin-bottom: get-vw(60px);
@@ -1007,6 +1012,7 @@
 
     &--left {
       position: relative;
+      padding-left: 10px;
 
       @include respond-above(sm) {
         padding-left: get-vw(18px);
@@ -1017,7 +1023,7 @@
         position: absolute;
         background: #6D4F6D;
         left: 0;
-        top: get-vw(22px);
+        top: 12px;
         z-index: -1;
         width: 290px;
         height: 290px;
@@ -1025,6 +1031,7 @@
         @include respond-above(sm) {
           width: get-vw(553px);
           height: get-vw(553px);
+          top: get-vw(22px);
         }
       }
 
@@ -1041,6 +1048,11 @@
     }
 
     &--right {
+
+      @include respond-below(sm) {
+        padding: 0 35px;
+        margin-top: 20px;
+      }
 
       @include respond-above(sm) {
         width: get-vw(608px);
@@ -1077,7 +1089,7 @@
       }
 
       .para {
-        margin: 0 auto;
+        margin: 15px auto 0;
         @include NeutraText-Book;
         font-size: 15px;
         line-height: 19px;
