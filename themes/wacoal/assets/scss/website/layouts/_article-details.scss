@@ -447,6 +447,13 @@
       }
 
     }
+
+    .product-gallery--box__size {
+      @include respond-below(sm) {
+        font-size: 22px;
+        line-height: 37px;
+      }
+    }
   }
 }
 
@@ -1792,6 +1799,10 @@
 
       span {
         font-size: 13px;
+
+        @include respond-above(sm) {
+          font-size: get-vw(13px);
+        }
       }
     }
   }
