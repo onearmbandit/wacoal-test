@@ -407,8 +407,16 @@
 
     margin-bottom: 100px;
 
+    &:before {
+      display: none;
+    }
+
     @include respond-above(sm) {
       margin-bottom: get-vw(136px);
+    }
+
+    .product-gallery--box {
+      margin: 0;
     }
 
     .product-gallery--box__image {
@@ -421,12 +429,15 @@
       padding-top: 0;
     }
 
-    &:before {
-      display: none;
-    }
+    .product-gallery--box__title {
 
-    .product-gallery--box {
-      margin: 0;
+      @include respond-below(sm) {
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0.55px;
+        margin-top: 24px;
+      }
+
     }
   }
 }
@@ -1787,6 +1798,7 @@
   @include respond-below(sm) {
     padding: 0 20px;
     margin-bottom: 30px;
+    letter-spacing: 0.49px;
   }
 
   @include respond-above(sm) {
@@ -1795,6 +1807,7 @@
     max-width: get-vw(903px);
     font-size: get-vw(30px);
     line-height: get-vw(48px);
+    letter-spacing: 0.6px;
   }
 
   ul {
@@ -1810,11 +1823,17 @@
       &:before {
         content:'';
         background: url('../../images/checkmark.svg');
-        width: get-vw(20px);
-        height: get-vw(20px);
+        width: 12px;
+        height: 12px;
         background-size: cover;
-        margin-right: get-vw(10px);
+        margin-right: 4px;
         display: inline-block;
+
+        @include respond-above(sm) {
+          width: get-vw(20px);
+          height: get-vw(20px);
+          margin-right: get-vw(10px);
+        }
       }
 
       @include respond-above(sm) {
