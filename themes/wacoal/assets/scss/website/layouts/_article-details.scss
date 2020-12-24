@@ -1562,7 +1562,11 @@
       }
 
       &.desktop-ui {
+        display: none;
 
+        @include respond-above(sm) {
+          display: block;
+        }
       }
 
       &.mobile-ui {
