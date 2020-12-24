@@ -1823,7 +1823,7 @@
   @include respond-above(sm) {
     margin: 0 auto;
     margin-bottom: get-vw(65px);
-    max-width: get-vw(903px);
+    max-width: get-vw(980px);
     font-size: get-vw(30px);
     line-height: get-vw(48px);
     letter-spacing: 0.6px;
@@ -1832,12 +1832,14 @@
   ul {
     margin: 0 auto;
     @include BentonModDisp-Regular;
+    width: 85%;
 
     @include respond-above(sm) {
       width: get-vw(878px);
     }
 
     li {
+      margin-bottom: 20px;
 
       &:before {
         content:'';
