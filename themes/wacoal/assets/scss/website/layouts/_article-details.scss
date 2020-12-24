@@ -1781,6 +1781,13 @@
 
 .article--para {
   @include BentonModDisp-Regular;
+  font-size: 14px;
+  line-height: 22px;
+
+  @include respond-below(sm) {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
 
   @include respond-above(sm) {
     margin: 0 auto;
