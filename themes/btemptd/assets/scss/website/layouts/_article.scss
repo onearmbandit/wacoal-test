@@ -191,6 +191,7 @@
 
         @include respond-below(sm) {
           margin-top: calcRem(20);
+          position: relative;
         }
 
         @include respond-above(sm) {
@@ -307,7 +308,7 @@
               transform: rotate(0deg);
               font-size: calcRem(11);
               bottom: -15px;
-              left: 0px;
+              left: 10px;
             }
           }
         }
@@ -344,7 +345,7 @@
             .tag-name {
               @include respond-below(sm) {
                 font-size: calcRem(11);
-                right: 0;
+                // right: 0;
                 left: inherit;
                 bottom: -15px;
               }
