@@ -85,7 +85,7 @@ $current_args = array(
     'post_status'=>'publish'
 );
 $output_the_query = new WP_Query($current_args);
-$counts= $output_the_query->found_posts;
+$counts= $output_the_query->post_count;
 
 
 ?>
