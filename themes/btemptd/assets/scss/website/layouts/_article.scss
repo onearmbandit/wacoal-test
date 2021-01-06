@@ -226,7 +226,7 @@
 
         &__para {
           @include NeutraText-BookAlt;
-          padding: calcRem(35, 28);
+          padding: calcRem(50, 25, 25);
           font-size: calcRem(14);
           line-height: calcRem(16);
 
