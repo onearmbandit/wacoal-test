@@ -104,9 +104,7 @@ require THEMEPATH . '/includes/website/website-functions.php';
 /**
  * Enable gutenberg
  */
-if (function_exists('wpcom_vip_load_gutenberg') ) {
-    wpcom_vip_load_gutenberg(true);
-}
+add_filter('use_block_editor_for_post', '__return_true');
 
 /**
  * Admin Enqueue ACF scripts.
