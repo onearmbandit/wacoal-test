@@ -75,18 +75,18 @@
         'post_status'=>'publish'
     )
 );
-$args = array(
-
+$current_args = array(
     'post_type' => 'post',
-    'category__not_in' => $current_cat_id,
+    'post__not_in' => array(get_the_ID()),
     'posts_per_page' => -1,
     'offset' => 0,
     'orderby' => 'post_date',
     'order' => 'DESC',
     'post_status'=>'publish'
-  );
-$the_query = new WP_Query($args);
-$counts= $the_query->found_posts;
+);
+$output_the_query = new WP_Query($current_args);
+$counts= $output_the_query->found_posts;
+
 
 ?>
 <input type="hidden" id="hidden_post" name="hidden_post" value="<?php echo get_the_ID();?>">
