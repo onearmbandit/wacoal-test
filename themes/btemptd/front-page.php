@@ -32,7 +32,8 @@ $recent_posts = Btemptd_Query_posts(
         'post_status'=>'publish'
     )
 );
-$counts = wp_count_posts('post');
+$total_posts = wp_count_posts('post');
+$counts= $total_posts->publish;
 
 require locate_template('template-parts/front-page.php');
 

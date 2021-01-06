@@ -468,8 +468,18 @@ $recent_posts = Btemptd_Query_posts(
         'post_status'=>'publish'
     )
 );
+$args = array(
 
-$counts = wp_count_posts('post');
+    'post_type' => 'post',
+    'category__not_in' => $current_cat_id,
+    'posts_per_page' => -1,
+    'offset' => 0,
+    'orderby' => 'post_date',
+    'order' => 'DESC',
+    'post_status'=>'publish'
+  );
+$the_query = new WP_Query($args);
+$counts= $the_query->found_posts;
 
 if(!empty($recent_posts)) :
     include locate_template('template-parts/explore-page.php');
