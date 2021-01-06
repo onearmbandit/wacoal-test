@@ -481,9 +481,6 @@ $current_args = array(
 $output_the_query = new WP_Query($current_args);
 $counts= $output_the_query->post_count;
 
-var_dump('$output_the_query-->');
-var_dump($output_the_query);
-
 if(!empty($recent_posts)) :
     include locate_template('template-parts/explore-page.php');
 
