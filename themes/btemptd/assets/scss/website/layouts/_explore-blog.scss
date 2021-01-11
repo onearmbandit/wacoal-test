@@ -262,8 +262,8 @@
       transform: translateX(-50%);
       cursor: pointer;
       outline: none;
-      font-size: calcRem(19);
-      padding: calcRem(22, 54);
+      font-size: calcRem(17);
+      padding: calcRem(22, 50);
 
       @include respond-above(sm) {
         font-size: get-vw(32px);
