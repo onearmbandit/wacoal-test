@@ -19,7 +19,7 @@ endif;
 ?>
 <input type="hidden" name="cat" id="cat_id" value="<?php echo esc_attr($current_cat_id);?>">
 <input type="hidden" name="offset" id="offset" value="0">
-<input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts->publish);?>">
+<input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts);?>">
 <section class="explore-blog explore-see-more">
     <div class="explore-blog--title">EXPLORE THE BLOG</div>
 
@@ -64,7 +64,7 @@ endif;
     </div>
     </div>
 </section>
-<?php if($counts->publish > 3) :?>
+<?php if($counts > 3) :?>
         <div class="see-more--wrapper">
             <button class="see-more-button">See More <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></button>
         </div>

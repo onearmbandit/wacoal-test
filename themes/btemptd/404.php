@@ -33,7 +33,11 @@ $description=get_field('short_description', 'options');
         'post_status'=>'publish'
     )
 );
-$counts = wp_count_posts( 'post' );?>
+$total_posts = wp_count_posts('post');
+$counts= $total_posts->publish;
+
+?>
+
 <?php if(!empty($recent_posts)):?>
     <?php require locate_template('template-parts/explore-page.php');?>
 <?php endif;?>

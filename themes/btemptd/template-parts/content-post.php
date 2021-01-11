@@ -75,20 +75,20 @@
         'post_status'=>'publish'
     )
 );
-$args = array(
-
-    'post_type' => array('post'),
+$current_args = array(
+    'post_type' => 'post',
     'post__not_in' => array(get_the_ID()),
     'posts_per_page' => -1,
     'offset' => 0,
     'orderby' => 'post_date',
     'order' => 'DESC',
     'post_status'=>'publish'
-  );
-$the_query = new WP_Query($args);
-$arr['publish']=$the_query->found_posts;
-$counts= array();
-$counts= (object)$arr;?>
+);
+$output_the_query = new WP_Query($current_args);
+$counts= $output_the_query->post_count;
+
+
+?>
 <input type="hidden" id="hidden_post" name="hidden_post" value="<?php echo get_the_ID();?>">
 <?php if(!empty($recent_posts)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
