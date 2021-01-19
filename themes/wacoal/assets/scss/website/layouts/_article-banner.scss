@@ -4,8 +4,10 @@
   background-size: cover;
   height: calcRem(229);
   background-position: center;
+  margin: auto;
 
   @include respond-above(sm) {
-    height: get-vw(804px);
+    height: get-vw(492px);
+    width: get-vw(1170px);
   }
 }

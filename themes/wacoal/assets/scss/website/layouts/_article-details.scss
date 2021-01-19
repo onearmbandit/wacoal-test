@@ -2,7 +2,7 @@
   padding-top: calcRem(16);
 
   @include respond-above(sm) {
-    padding-top: get-vw(45px);
+    padding-top: get-vw(30px);
   }
 
   &--wrapper {
