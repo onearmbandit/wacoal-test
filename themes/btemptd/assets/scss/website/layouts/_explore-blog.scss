@@ -20,10 +20,6 @@
     height: calcRem(593);
     bottom: calcRem(-34);
 
-    @include respond-below(sm) {
-      height: 90%;
-    }
-
     @include respond-above(sm) {
       height: get-vw(549px);
       bottom: get-vw(-82px);
@@ -111,7 +107,7 @@
         margin-top: calcRem(24);
       }
       &:nth-child(3) {
-        margin-top: calcRem(24);
+        display: none;
       }
     }
   }
@@ -262,8 +258,8 @@
       transform: translateX(-50%);
       cursor: pointer;
       outline: none;
-      font-size: calcRem(17);
-      padding: calcRem(22, 50);
+      font-size: calcRem(19);
+      padding: calcRem(22, 54);
 
       @include respond-above(sm) {
         font-size: get-vw(32px);
