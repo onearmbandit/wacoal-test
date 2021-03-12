@@ -43,3 +43,13 @@ $logo_image_url = Btemptd_Get_Image($logo_image_array);
     );
                                                 wp_nav_menu($args); ?>
 </nav>
+                    <div class="search-icon"></div>
+                    <form class="es-form js-search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get">
+                        <input id="search-results-form-q"
+                            name="s"
+                            class="search-input js-search-input"
+                            value="<?php echo get_search_query(); ?>"
+                            placeholder="Search"
+                            type="search">
+                    </form>
+                </div>

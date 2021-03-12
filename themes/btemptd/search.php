@@ -18,9 +18,6 @@ $post_count  = 0;
 $search_data = ! empty($_SERVER) ? $_SERVER : array();
 
 $requested_url = ! empty($search_data['REQUEST_URI']) ? esc_attr($search_data['REQUEST_URI']) : '';
-
-error_log('$res_found---->'.print_r($res_found, 1));
-
 $posts_search = [];
 
 if (have_posts() ) {
@@ -41,14 +38,9 @@ if (have_posts() ) {
         $temp['thumbnail'] = get_post_thumbnail_id();
         $temp['thumbnail_url'] = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
         $temp['img_alt'] = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-        // $temp['rubric']         = get_field( 'rubric', $postid );
-        // $temp['social_title']   = get_field( 'social_title', $postid );
-        // $temp['featured_image'] = get_field( 'promo_image', $postid );
 
         array_push($posts_search, $temp);
     endwhile;
 }
 
-error_log('$posts_search---->'.print_r($posts_search, 1));
-
-// require locate_template('template-parts/content-search.php');
+require locate_template('template-parts/content-search.php');
