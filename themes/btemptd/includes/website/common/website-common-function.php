@@ -514,27 +514,11 @@ function Btemp_Exclude_Posts_From_Specific_category( $query )
 
 
 /**
- * Function to change the serach size.
- *
- * @param array $queryVars query
- *
- * @return html Return the pagination html.
- */
-function Btemp_Change_Search_size($queryVars)
-{
-    if (isset($_REQUEST['s']) ) { // Make sure it is a search page
-        $queryVars['posts_per_page'] = 8; // Change 10 to the number of posts you would like to show
-    }
-    return $queryVars; // Return our modified query variables
-}
-add_filter('request', 'Btemp_Change_Search_size'); // Hook our custom function onto the request filter
-
-/**
  * Function for  pagination
  *
  * @return html Return the pagination html.
  */
-function Btemp_Paging_nav()
+function Btemptd_Search_Paging_nav()
 {
 
     if (is_singular() ) {
@@ -573,21 +557,21 @@ function Btemp_Paging_nav()
         $links[] = $paged + 1;
     }
 
-    echo '<section class="pagination"><div class="pagination--wrapper"><div class="pagination-box">' . "\n";
+    echo '<section class="search-pagination"><div class="search-pagination--wrapper"><div class="search-pagination-box">' . "\n";
 
     /**
      * Previous Post Link
     */
     // if ( get_previous_posts_link() )
-    printf('<div class="pagination-box--btn prev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
-    echo '<ul class="pagination-box--numbers">';
+    printf('<div class="search-pagination-box--btn sprev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-left-arrow.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
+    echo '<ul class="search-pagination-box--numbers">';
     /**
      * Link to first page, plus ellipses if necessary
     */
     if (! in_array(1, $links) ) {
         $class = 1 == $paged ? ' class="active"' : '';
 
-        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
+        printf('<li class="search-nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1'); // phpcs:ignore
 
         if (! in_array(2, $links) ) {
             echo '<li>…</li>';
@@ -600,7 +584,7 @@ function Btemp_Paging_nav()
     sort($links);
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
-        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), esc_attr($link));
+        printf('<li class="search-nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), esc_attr($link)); // phpcs:ignore
     }
 
     /**
@@ -608,20 +592,35 @@ function Btemp_Paging_nav()
     */
     if (! in_array($max, $links) ) {
         if (! in_array($max - 1, $links) ) {
-            echo '<li class="nav-links">…</li>' . "\n";
+            echo '<li class="search-nav-links">…</li>' . "\n";
         }
 
         $class = $paged == $max ? ' class="active"' : '';
-        printf('<li class="nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max));
+        printf('<li class="search-nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max)); // phpcs:ignore
     }
     echo '</ul>';
-
     /**
      * Next Post Link
     */
     if (get_next_posts_link() ) {
-        printf('<div class="pagination-box--btn next"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a></div>' . "\n", esc_url(get_next_posts_page_link()));
+        printf('<div class="search-pagination-box--btn snext"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-right-arrow.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
     }
 
     echo '</div></div></section>' . "\n";
 }
+
+/**
+ * Function to change the serach size.
+ *
+ * @param array $queryVars query
+ *
+ * @return html Return the pagination html.
+ */
+function Btemp_Change_Search_size($queryVars)
+{
+    if (isset($_REQUEST['s']) ) { // Make sure it is a search page
+        $queryVars['posts_per_page'] = 8; // Change 10 to the number of posts you would like to show
+    }
+    return $queryVars; // Return our modified query variables
+}
+add_filter('request', 'Btemp_Change_Search_size'); // Hook our custom function onto the request filter

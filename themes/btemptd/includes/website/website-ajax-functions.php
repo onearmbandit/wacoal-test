@@ -73,6 +73,87 @@ add_action('wp_ajax_nopriv_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
 add_action('wp_ajax_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
 
 /**
+ * Function for ajax pagination
+ *
+ * @return string Return the posts html.
+ */
+function Btemptd_Search_Ajax_pagination()
+{
+    // Check for nonce securityss
+
+    if (isset($_POST['nonce']) && !empty($_POST['nonce'])) {
+        $nonce = $_POST['nonce'];
+    }
+    if (! wp_verify_nonce($nonce, 'ajax-nonce') ) {
+        die('Busted!');
+    }
+
+    if (isset($_POST['query_vars'])) {
+        $query_vars = json_decode(stripslashes($_POST['query_vars']), true);
+
+        $res_found   = $wp_query->found_posts;
+        $search_word = get_search_query();
+        $post_count  = 0;
+        $search_data = ! empty($_SERVER) ? $_SERVER : array();
+
+        $requested_url = ! empty($search_data['REQUEST_URI']) ? esc_attr($search_data['REQUEST_URI']) : '';
+
+        $posts_search = [];
+
+        if (have_posts() ) {
+            while ( have_posts() ) :
+                the_post();
+                $post_count++;
+                $postid                 = get_the_ID();
+                $primary_category     = Btemptd_Get_Primary_category($postid);
+                $thumbnail_id  = get_post_thumbnail_id();
+                $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
+                $temp['postid']         = $postid;
+                $temp['cat_name']       = $primary_category->name;
+                $temp['cat_url']        = get_term_link($primary_category->term_id);
+                $temp['title']          = get_the_title($postid);
+                $temp['tagline']        = get_field('tagline');
+                $temp['thumbnail'] = get_post_thumbnail_id();
+                $temp['thumbnail_url'] = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $temp['img_alt'] = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+
+                array_push($posts_search, $temp);
+            endwhile;
+        }
+
+        $query_vars['paged'] = (!empty(sanitize_text_field($_POST['page'])))? sanitize_text_field($_POST['page']) : 1;
+
+
+    }
+    $posts = new WP_Query($query_vars);
+
+    if (! $posts->have_posts() ) {
+        get_template_part('content', 'none');
+    } else {
+        $i=0;
+        while ( $posts->have_posts() ) {
+            $posts->the_post();
+            if ($i%3 == 0 || $i==0) {
+                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
+            }
+            include locate_template('template-parts/content-excerpt.php');
+            if ($i%3 == 2 || $i == 2) {
+                echo '</div></div></section>';
+            }
+            $i++;
+        }
+    }
+
+
+    die();
+}
+add_action('wp_ajax_nopriv_btemptd_search_ajax_pagination', 'Btemptd_Search_Ajax_pagination');
+add_action('wp_ajax_btemptd_search_ajax_pagination', 'Btemptd_Search_Ajax_pagination');
+
+
+/**
  * Function for load more
  *
  * @return string Return the posts html.

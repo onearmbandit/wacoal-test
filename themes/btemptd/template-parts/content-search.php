@@ -11,11 +11,9 @@
  */
 
 $new_count = ceil(count($posts_search) / 8);
-
 ?>
 
-<section id="primary" class="search-page top__spacing--home">
-    <main id="main" class="search-page__content">
+<section class="featured-articles">
 
 <?php if (! empty($posts_search) && count($posts_search) >= 1 ) {
 
@@ -34,21 +32,21 @@ $new_count = ceil(count($posts_search) / 8);
 
             ?>
 
-    <div class="explore-blog--box box-shadow-right">
-    <div class="explore-blog--image">
+    <div class="">
+    <div class="image" style="height:100px; width:100px; margin:10px;">
         <a href="<?php echo esc_url(get_permalink());?>">
-            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($img_alt); ?>"/>
+            <img style="height:100px; width:100px; margin:10px;" class="" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($img_alt); ?>"/>
         </a>
     </div>
 
-    <div class="explore-blog--content blog-pagination">
-        <div class="blog-pagination-content">
-        <div class="explore-blog--content__category">
+    <div class="">
+        <div class="content">
+        <div class="category">
             <a href="<?php echo esc_url_raw($cat_url);?>">
                 <?php echo esc_attr($cat_name);?>
             </a>
         </div>
-        <div class="explore-blog--content__title">
+        <div class="title">
             <a href="<?php echo esc_url(get_permalink($postid));?>">
                 <?php echo esc_attr($title);?>
             </a>
@@ -59,7 +57,8 @@ $new_count = ceil(count($posts_search) / 8);
         <?php endforeach; ?>
     <?php }
 }?>
-<?php Btemp_Paging_nav(); ?>
-    </main>
-</section>
 
+<?php Btemptd_Search_Paging_nav();  ?>
+<?php if(!empty($recent_posts)) :?>
+    <?php include locate_template('template-parts/explore-page.php');?>
+<?php endif; ?>

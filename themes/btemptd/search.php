@@ -10,6 +10,8 @@
  * @link     Wacoal
  */
 
+Btemptd_Page_Entry_top('');
+
 global $wp_query;
 
 $res_found   = $wp_query->found_posts;
@@ -43,4 +45,19 @@ if (have_posts() ) {
     endwhile;
 }
 
+$recent_posts = Btemptd_Query_posts(
+    array(
+        'post_type' => array('post'),
+        'posts_per_page' => 3,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    )
+);
+$total_posts = wp_count_posts('post');
+$counts= $total_posts->publish;
+
 require locate_template('template-parts/content-search.php');
+
+Btemptd_Page_Entry_bottom();
