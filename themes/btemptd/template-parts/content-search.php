@@ -23,15 +23,15 @@ $new_count = ceil(count($posts_search) / 8);
         $current_recent_posts = array_slice($posts_search, 0, 8);
         $posts_search         = array_slice($posts_search, 8);
 
-        foreach ( $current_recent_posts as $index => $posts ) :
-            $postid = $posts['postid'];
-            $cat_name = $posts['cat_name'];
-            $cat_url = $posts['cat_url'];
-            $title = $posts['title'];
-            $tagline = $posts['tagline'];
-            $thumbnail = $posts['thumbnail'];
-            $thumbnail_url = $posts['thumbnail_url'];
-            $img_alt = $posts['img_alt'];
+        foreach ( $current_recent_posts as $index => $search_posts ) :
+            $postid = $search_posts['postid'];
+            $cat_name = $search_posts['cat_name'];
+            $cat_url = $search_posts['cat_url'];
+            $post_title = $search_posts['title'];
+            $tagline = $search_posts['tagline'];
+            $thumbnail = $search_posts['thumbnail'];
+            $thumbnail_url = $search_posts['thumbnail_url'];
+            $img_alt = $search_posts['img_alt'];
 
             ?>
 
@@ -50,7 +50,7 @@ $new_count = ceil(count($posts_search) / 8);
             </div>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
-                    <?php echo esc_attr($title);?>
+                    <?php echo esc_attr($post_title);?>
                 </a>
             </div>
 
