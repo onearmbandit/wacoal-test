@@ -6,13 +6,13 @@
     display: flex;
   }
 
+  @include respond-below(lg) {
+    right: 60px;
+  }
+
   @include respond-below(sm) {
     position: relative;
     right: inherit;
-  }
-
-  @include respond-below(lg) {
-    right: 60px;
   }
 
   .search-input {
@@ -55,17 +55,17 @@
   max-width: 990px;
   margin: 52px auto 0;
 
-  @include respond-below(sm) {
-    padding: 0 36px;
-    margin: 26px auto 0;
-  }
-
   @include respond-below(lg) {
     max-width: 720px;
   }
 
   @include respond-below(md) {
     max-width: 608px;
+  }
+
+  @include respond-below(sm) {
+    padding: 0 36px;
+    margin: 26px auto 0;
   }
 }
 
@@ -108,14 +108,14 @@
     margin-bottom: 24px;
     text-transform: uppercase;
 
-    @include respond-below(sm) {
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
     @include respond-below(lg) {
       font-size: 14px;
       margin-bottom: 16px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 13px;
+      margin-bottom: 15px;
     }
   }
 
@@ -125,16 +125,16 @@
     line-height: 28px;
     margin-bottom: 24px;
 
-    @include respond-below(sm) {
-      font-size: 21px;
-      line-height: 23px;
-      margin-bottom: 13px;
-    }
-
     @include respond-below(lg) {
       font-size: 24px;
       line-height: 26px;
       margin-bottom: 12px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 21px;
+      line-height: 23px;
+      margin-bottom: 13px;
     }
   }
 
@@ -143,14 +143,14 @@
     font-size: 20px;
     line-height: 24px;
 
-    @include respond-below(sm) {
-      font-size: 16px;
-      line-height: 18px;
-    }
-
     @include respond-below(lg) {
       font-size: 18px;
       line-height: 22px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 16px;
+      line-height: 18px;
     }
   }
 }

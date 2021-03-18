@@ -2195,13 +2195,13 @@ Files inside this folder can contain specific element styles and layout.
   right: 140px; }
   .header-search--inner {
     display: flex; }
+  @media (max-width: 1279px) {
+    .header-search {
+      right: 60px; } }
   @media (max-width: 767px) {
     .header-search {
       position: relative;
       right: inherit; } }
-  @media (max-width: 1279px) {
-    .header-search {
-      right: 60px; } }
   .header-search .search-input {
     background: transparent;
     border: none;
@@ -2238,16 +2238,16 @@ Files inside this folder can contain specific element styles and layout.
 .search-container {
   max-width: 990px;
   margin: 52px auto 0; }
-  @media (max-width: 767px) {
-    .search-container {
-      padding: 0 36px;
-      margin: 26px auto 0; } }
   @media (max-width: 1279px) {
     .search-container {
       max-width: 720px; } }
   @media (max-width: 1023px) {
     .search-container {
       max-width: 608px; } }
+  @media (max-width: 767px) {
+    .search-container {
+      padding: 0 36px;
+      margin: 26px auto 0; } }
 
 .search-outer {
   display: flex;
@@ -2282,41 +2282,41 @@ Files inside this folder can contain specific element styles and layout.
     font-size: 15px;
     margin-bottom: 24px;
     text-transform: uppercase; }
-    @media (max-width: 767px) {
-      .search-content .category {
-        font-size: 13px;
-        margin-bottom: 15px; } }
     @media (max-width: 1279px) {
       .search-content .category {
         font-size: 14px;
         margin-bottom: 16px; } }
+    @media (max-width: 767px) {
+      .search-content .category {
+        font-size: 13px;
+        margin-bottom: 15px; } }
   .search-content .title {
     font-family: 'NeutraText-DemiAlt';
     font-size: 26px;
     line-height: 28px;
     margin-bottom: 24px; }
-    @media (max-width: 767px) {
-      .search-content .title {
-        font-size: 21px;
-        line-height: 23px;
-        margin-bottom: 13px; } }
     @media (max-width: 1279px) {
       .search-content .title {
         font-size: 24px;
         line-height: 26px;
         margin-bottom: 12px; } }
+    @media (max-width: 767px) {
+      .search-content .title {
+        font-size: 21px;
+        line-height: 23px;
+        margin-bottom: 13px; } }
   .search-content .para {
     font-family: 'NeutraText-BookAlt';
     font-size: 20px;
     line-height: 24px; }
-    @media (max-width: 767px) {
-      .search-content .para {
-        font-size: 16px;
-        line-height: 18px; } }
     @media (max-width: 1279px) {
       .search-content .para {
         font-size: 18px;
         line-height: 22px; } }
+    @media (max-width: 767px) {
+      .search-content .para {
+        font-size: 16px;
+        line-height: 18px; } }
 
 .search-pagination {
   margin-top: 140px; }
