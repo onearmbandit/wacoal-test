@@ -12,8 +12,10 @@
 
 $new_count = ceil(count($posts_search) / 8);
 ?>
-
-<section class="featured-articles">
+<div class="search-count">
+    <p>12 results for “search term”</p>
+</div>
+<section class="search-container">
 
 <?php if (! empty($posts_search) && count($posts_search) >= 1 ) {
 
@@ -32,33 +34,39 @@ $new_count = ceil(count($posts_search) / 8);
 
             ?>
 
-    <div class="">
-    <div class="image" style="height:100px; width:100px; margin:10px;">
-        <a href="<?php echo esc_url(get_permalink());?>">
-            <img style="height:100px; width:100px; margin:10px;" class="" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($img_alt); ?>"/>
-        </a>
-    </div>
+    <div class="search-outer">
+        <div class="search-image">
+            <a href="<?php echo esc_url(get_permalink());?>">
+                <!-- <img style="height:100px; width:100px; margin:10px;" class="" src="<?php //echo esc_url($thumbnail_url); ?>" alt="<?php //echo esc_url($img_alt); ?>"/> -->
+                <img src="<?php echo esc_url(THEMEURI); ?>/assets/images/img-1.png" />
+            </a>
+        </div>
 
-    <div class="">
-        <div class="content">
-        <div class="category">
-            <a href="<?php echo esc_url_raw($cat_url);?>">
-                <?php echo esc_attr($cat_name);?>
-            </a>
-        </div>
-        <div class="title">
-            <a href="<?php echo esc_url(get_permalink($postid));?>">
-                <?php echo esc_attr($title);?>
-            </a>
-        </div>
+        <div class="search-content">
+
+            <div class="category">
+                <a href="<?php echo esc_url_raw($cat_url);?>">
+                    <?php echo esc_attr($cat_name);?>
+                </a>
+            </div>
+            <div class="title">
+                <a href="<?php echo esc_url(get_permalink($postid));?>">
+                    <?php echo esc_attr($title);?>
+                </a>
+            </div>
+
+            <div class="para">
+                We Made Our List, Feel Free to Check It Twice. Do You Have The 5 Bras That Will Make Your Holiday Stylish, Cozy & Nice?
+            </div>
+
         </div>
     </div>
-</div>
         <?php endforeach; ?>
     <?php }
 }?>
 
 <?php Btemptd_Search_Paging_nav();  ?>
+</section>
 <?php if(!empty($recent_posts)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif; ?>

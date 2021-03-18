@@ -1252,11 +1252,13 @@ Files inside this folder can contain specific element styles and layout.
         font-size: 1.25vw;
         line-height: 1.19792vw;
         margin-bottom: 1.92708vw; } }
-    @media (min-width: 768px) {
-      .featured-articles .swiper-wrapper .swiper-slide--content__title {
-        font-size: 1.97917vw;
-        line-height: 1.875vw;
-        margin-bottom: 0.67708vw; } }
+    .featured-articles .swiper-wrapper .swiper-slide--content__title {
+      text-transform: uppercase; }
+      @media (min-width: 768px) {
+        .featured-articles .swiper-wrapper .swiper-slide--content__title {
+          font-size: 1.97917vw;
+          line-height: 1.875vw;
+          margin-bottom: 0.67708vw; } }
     @media (min-width: 768px) {
       .featured-articles .swiper-wrapper .swiper-slide--content__para {
         font-size: 1.04167vw;
@@ -1306,7 +1308,8 @@ Files inside this folder can contain specific element styles and layout.
     .featured-articles-mobile--wrapper .swiper-slide--content__title {
       font-size: 1.25rem;
       line-height: 1.1875rem;
-      margin-bottom: 1.5625rem; }
+      margin-bottom: 1.5625rem;
+      text-transform: uppercase; }
     .featured-articles-mobile--wrapper .swiper-slide--content__para {
       font-size: 1.25rem;
       line-height: 1.375rem; }
@@ -1500,7 +1503,8 @@ Files inside this folder can contain specific element styles and layout.
     right: 0; }
     @media (max-width: 767px) {
       .three-reason .reason-box--content {
-        margin-top: 1.25rem; } }
+        margin-top: 1.25rem;
+        position: relative; } }
     @media (min-width: 768px) {
       .three-reason .reason-box--content {
         width: 43.38542vw;
@@ -1528,7 +1532,7 @@ Files inside this folder can contain specific element styles and layout.
           line-height: 3.28125vw; } }
     .three-reason .reason-box--content__para {
       font-family: 'NeutraText-BookAlt';
-      padding: 2.1875rem 1.75rem;
+      padding: 3.125rem 1.5625rem 1.5625rem;
       font-size: 0.875rem;
       line-height: 1rem; }
       @media (min-width: 768px) {
@@ -1537,7 +1541,10 @@ Files inside this folder can contain specific element styles and layout.
           line-height: 1.30208vw;
           letter-spacing: 0.01458vw;
           margin-left: 3.4375vw;
-          padding: 0; } }
+          padding-top: 1.04167vw;
+          padding-bottom: 1.04167vw;
+          padding-left: 0;
+          padding-right: 0; } }
       .three-reason .reason-box--content__para strong {
         font-family: 'NeutraText-BoldAlt'; }
       .three-reason .reason-box--content__para a {
@@ -1584,7 +1591,7 @@ Files inside this folder can contain specific element styles and layout.
           transform: rotate(0deg);
           font-size: 0.6875rem;
           bottom: -15px;
-          left: 0px; } }
+          left: 10px; } }
   .three-reason .reason-box.even {
     justify-content: flex-start; }
     @media (max-width: 767px) {
@@ -1614,7 +1621,6 @@ Files inside this folder can contain specific element styles and layout.
         @media (max-width: 767px) {
           .three-reason .reason-box.even .reason-box--image .tag-name {
             font-size: 0.6875rem;
-            right: 0;
             left: inherit;
             bottom: -15px; } }
 
@@ -1978,7 +1984,7 @@ Files inside this folder can contain specific element styles and layout.
   font-family: 'NeutraText-BookAlt';
   font-size: 1rem;
   line-height: 1.25rem;
-  max-width: 90%;
+  max-width: 80%;
   margin: 20px auto; }
   @media (min-width: 768px) {
     .article--para-half {
@@ -2077,6 +2083,159 @@ Files inside this folder can contain specific element styles and layout.
           width: 2.70833vw;
           height: 2.70833vw;
           top: -1.66667vw; } }
+
+.seasonless-style {
+  padding-top: 20px; }
+  @media (min-width: 768px) {
+    .seasonless-style {
+      padding-top: 2.60417vw; } }
+  .seasonless-style--wrapper {
+    margin: auto; }
+    @media (min-width: 768px) {
+      .seasonless-style--wrapper {
+        width: 66.66667vw; } }
+  .seasonless-style .box {
+    display: flex;
+    align-items: center; }
+    @media (max-width: 767px) {
+      .seasonless-style .box {
+        flex-direction: column;
+        margin-bottom: 40px; } }
+    @media (min-width: 768px) {
+      .seasonless-style .box {
+        height: 30.20833vw;
+        margin-bottom: 3.125vw; } }
+    .seasonless-style .box--left {
+      position: relative;
+      padding-left: 10px; }
+      @media (min-width: 768px) {
+        .seasonless-style .box--left {
+          padding-left: 0.9375vw; } }
+      .seasonless-style .box--left:before {
+        content: '';
+        position: absolute;
+        background: #6D4F6D;
+        left: 0;
+        top: 12px;
+        z-index: -1;
+        width: 290px;
+        height: 290px; }
+        @media (min-width: 768px) {
+          .seasonless-style .box--left:before {
+            width: 28.80208vw;
+            height: 28.80208vw;
+            top: 1.14583vw; } }
+      .seasonless-style .box--left img {
+        width: 294px;
+        height: 294px;
+        -o-object-fit: cover;
+           object-fit: cover; }
+        @media (min-width: 768px) {
+          .seasonless-style .box--left img {
+            width: 29.16667vw;
+            height: 29.16667vw; } }
+    @media (max-width: 767px) {
+      .seasonless-style .box--right {
+        padding: 0 35px;
+        margin-top: 20px; } }
+    @media (min-width: 768px) {
+      .seasonless-style .box--right {
+        width: 31.66667vw;
+        margin-left: 3.80208vw; } }
+    .seasonless-style .box--right .title {
+      position: relative;
+      font-family: 'NeutraText-DemiAlt';
+      text-align: left;
+      font-size: 38px;
+      padding-left: 15px; }
+      .seasonless-style .box--right .title::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        background: var(--color-primary);
+        left: 0;
+        z-index: -1;
+        bottom: 0;
+        height: 15px; }
+        @media (min-width: 768px) {
+          .seasonless-style .box--right .title::before {
+            height: 1.61458vw; } }
+      @media (min-width: 768px) {
+        .seasonless-style .box--right .title {
+          font-size: 4.0625vw;
+          text-align: center; } }
+    .seasonless-style .box--right .para {
+      margin: 15px auto 0;
+      font-family: 'NeutraText-Book';
+      font-size: 15px;
+      line-height: 19px;
+      width: 90%; }
+      @media (min-width: 768px) {
+        .seasonless-style .box--right .para {
+          font-size: 1.04167vw;
+          line-height: 1.25vw;
+          letter-spacing: 0.3px;
+          width: 23.22917vw;
+          margin-top: 1.82292vw; } }
+      .seasonless-style .box--right .para a {
+        font-family: 'NeutraText-DemiAlt';
+        text-decoration: underline; }
+      .seasonless-style .box--right .para strong {
+        font-family: 'NeutraText-DemiAlt'; }
+    @media (min-width: 768px) {
+      .seasonless-style .box.even {
+        flex-direction: row-reverse; } }
+    @media (min-width: 768px) {
+      .seasonless-style .box.even .box--right {
+        margin-left: inherit;
+        margin-right: 3.80208vw; } }
+
+.search-count {
+  background: var(--color-primary);
+  height: 152px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'NeutraText-DemiAlt';
+  font-size: 25px;
+  color: var(--color-secondary); }
+
+.search-container {
+  max-width: 990px;
+  margin: 52px auto 0; }
+
+.search-outer {
+  display: flex;
+  margin-bottom: 52px; }
+
+.search-image {
+  width: 235px;
+  height: 166px;
+  margin-right: 33px; }
+  .search-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.search-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1; }
+  .search-content .category {
+    font-family: 'NeutraText-BookAlt';
+    font-size: 15px;
+    margin-bottom: 24px;
+    text-transform: uppercase; }
+  .search-content .title {
+    font-family: 'NeutraText-DemiAlt';
+    font-size: 26px;
+    margin-bottom: 24px; }
+  .search-content .para {
+    font-family: 'NeutraText-BookAlt';
+    font-size: 20px;
+    line-height: 24px; }
 
 @font-face {
   font-family: 'swiper-icons';
