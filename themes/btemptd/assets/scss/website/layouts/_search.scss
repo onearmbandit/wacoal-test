@@ -1,3 +1,41 @@
+.header-search {
+  position: absolute;
+  right: 140px;
+
+  &--inner {
+    display: flex;
+  }
+
+  @include respond-below(sm) {
+    position: relative;
+    right: inherit;
+  }
+
+  @include respond-below(lg) {
+    right: 60px;
+  }
+
+  .search-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-black);
+    height: 26px;
+    @include NeutraText-DemiAlt;
+    font-size: 14px;
+    outline: none;
+  }
+
+  .search-btn {
+    background: url("../../images/search-icon.svg") no-repeat;
+    // background-size: 20px;
+    appearance: none;
+    width: 24px;
+    height: 26px;
+    border: none;
+    padding: 0;
+    border-bottom: 1px solid var(--color-black);
+  }
+}
 .search-count {
   background: var(--color-primary);
   height: 152px;
@@ -7,21 +45,50 @@
   @include NeutraText-DemiAlt;
   font-size: 25px;
   color: var(--color-secondary);
+
+  @include respond-below(sm) {
+    font-size: 19px;
+    height: 92px;
+  }
 }
 .search-container {
   max-width: 990px;
   margin: 52px auto 0;
+
+  @include respond-below(sm) {
+    padding: 0 36px;
+    margin: 26px auto 0;
+  }
+
+  @include respond-below(lg) {
+    max-width: 720px;
+  }
+
+  @include respond-below(md) {
+    max-width: 608px;
+  }
 }
 
 .search-outer {
   display: flex;
   margin-bottom: 52px;
+
+  @include respond-below(sm) {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
 }
 
 .search-image {
   width: 235px;
   height: 166px;
   margin-right: 33px;
+
+  @include respond-below(sm) {
+    width: 215px;
+    height: 152px;
+    margin: 0 0 13px;
+  }
 
   img {
     width: 100%;
@@ -40,23 +107,60 @@
     font-size: 15px;
     margin-bottom: 24px;
     text-transform: uppercase;
+
+    @include respond-below(sm) {
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    @include respond-below(lg) {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
   }
 
   .title {
     @include NeutraText-DemiAlt;
     font-size: 26px;
+    line-height: 28px;
     margin-bottom: 24px;
+
+    @include respond-below(sm) {
+      font-size: 21px;
+      line-height: 23px;
+      margin-bottom: 13px;
+    }
+
+    @include respond-below(lg) {
+      font-size: 24px;
+      line-height: 26px;
+      margin-bottom: 12px;
+    }
   }
 
   .para {
     @include NeutraText-BookAlt;
     font-size: 20px;
     line-height: 24px;
+
+    @include respond-below(sm) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+
+    @include respond-below(lg) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 }
 
 .search-pagination {
   margin-top: 140px;
+
+  @include respond-below(sm) {
+    margin-top: 65px;
+  }
   &--wrapper {
     display: flex;
     justify-content: center;
