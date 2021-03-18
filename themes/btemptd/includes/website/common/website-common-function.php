@@ -557,14 +557,14 @@ function Btemptd_Search_Paging_nav()
         $links[] = $paged + 1;
     }
 
-    echo '<section class="search-pagination"><div class="search-pagination--wrapper"><div class="search-pagination-box">' . "\n";
+    echo '<section class="search-pagination"><div class="search-pagination--wrapper">' . "\n";
 
     /**
      * Previous Post Link
     */
     // if ( get_previous_posts_link() )
     printf('<div class="search-pagination-box--btn sprev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-left-arrow.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
-    echo '<ul class="search-pagination-box--numbers">';
+    echo '<ul class="search-pagination--numbers">';
     /**
      * Link to first page, plus ellipses if necessary
     */
@@ -606,7 +606,7 @@ function Btemptd_Search_Paging_nav()
         printf('<div class="search-pagination-box--btn snext"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-right-arrow.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
     }
 
-    echo '</div></div></section>' . "\n";
+    echo '</div></section>' . "\n";
 }
 
 /**
