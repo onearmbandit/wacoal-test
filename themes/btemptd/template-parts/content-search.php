@@ -13,7 +13,7 @@
 $new_count = ceil(count($posts_search) / 8);
 ?>
 <div class="search-count">
-    <p>12 results for “search term”</p>
+    <p><?php echo esc_attr($res_found);?> results for “<?php echo wp_kses_post($search_word);?>”</p>
 </div>
 <section class="search-container">
 
@@ -28,6 +28,7 @@ $new_count = ceil(count($posts_search) / 8);
             $cat_name = $posts['cat_name'];
             $cat_url = $posts['cat_url'];
             $title = $posts['title'];
+            $tagline = $posts['tagline'];
             $thumbnail = $posts['thumbnail'];
             $thumbnail_url = $posts['thumbnail_url'];
             $img_alt = $posts['img_alt'];
@@ -36,14 +37,12 @@ $new_count = ceil(count($posts_search) / 8);
 
     <div class="search-outer">
         <div class="search-image">
-            <a href="<?php echo esc_url(get_permalink());?>">
-                <!-- <img style="height:100px; width:100px; margin:10px;" class="" src="<?php //echo esc_url($thumbnail_url); ?>" alt="<?php //echo esc_url($img_alt); ?>"/> -->
-                <img src="<?php echo esc_url(THEMEURI); ?>/assets/images/img-1.png" />
+            <a href="<?php echo esc_url(get_permalink($postid));?>">
+                <img src="<?php echo esc_url($thumbnail_url); ?>" />
             </a>
         </div>
 
         <div class="search-content">
-
             <div class="category">
                 <a href="<?php echo esc_url_raw($cat_url);?>">
                     <?php echo esc_attr($cat_name);?>
@@ -56,7 +55,7 @@ $new_count = ceil(count($posts_search) / 8);
             </div>
 
             <div class="para">
-                We Made Our List, Feel Free to Check It Twice. Do You Have The 5 Bras That Will Make Your Holiday Stylish, Cozy & Nice?
+                <?php echo wp_kses_post(Btemptd_Remove_ptag($tagline));?>
             </div>
 
         </div>
