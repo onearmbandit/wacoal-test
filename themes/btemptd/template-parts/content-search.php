@@ -11,6 +11,20 @@
  */
 
 $new_count = ceil(count($posts_search) / 8);
+
+$recent_posts = Btemptd_Query_posts(
+    array(
+        'post_type' => array('post'),
+        'posts_per_page' => 3,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    )
+);
+$total_posts = wp_count_posts('post');
+$counts= $total_posts->publish;
+
 ?>
 <div class="search-count">
     <p><?php echo esc_attr($res_found);?> results for “<?php echo wp_kses_post($search_word);?>”</p>
@@ -55,7 +69,9 @@ $new_count = ceil(count($posts_search) / 8);
             </div>
 
             <div class="para">
-                <?php echo wp_kses_post(Btemptd_Remove_ptag($tagline));?>
+                <a href="<?php echo esc_url(get_permalink($postid));?>">
+                    <?php echo wp_kses_post(Btemptd_Remove_ptag($tagline));?>
+                </a>
             </div>
 
         </div>

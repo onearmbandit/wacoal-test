@@ -32,4 +32,14 @@
     });
   });
 
+  $(document).ready(function () {
+
+    $('.js-search-form').submit(function () {
+      if ($(this).find('.js-search-input').val() == '') {
+        return false;
+      }
+    });
+
+  });
+
 })(jQuery);

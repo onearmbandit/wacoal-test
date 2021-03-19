@@ -16,13 +16,14 @@ global $wp_query;
 
 $res_found   = $wp_query->found_posts;
 $search_word = get_search_query();
+
 $post_count  = 0;
 $search_data = ! empty($_SERVER) ? $_SERVER : array();
 
 $requested_url = ! empty($search_data['REQUEST_URI']) ? esc_attr($search_data['REQUEST_URI']) : '';
 $posts_search = [];
 
-if (have_posts() ) {
+if (have_posts()) {
     while ( have_posts() ) :
         the_post();
         $post_count++;
@@ -43,21 +44,11 @@ if (have_posts() ) {
 
         array_push($posts_search, $temp);
     endwhile;
-}
-
-$recent_posts = Btemptd_Query_posts(
-    array(
-        'post_type' => array('post'),
-        'posts_per_page' => 3,
-        'offset' => 0,
-        'orderby' => 'post_date',
-        'order' => 'DESC',
-        'post_status'=>'publish'
-    )
-);
-$total_posts = wp_count_posts('post');
-$counts= $total_posts->publish;
 
 require locate_template('template-parts/content-search.php');
+
+} if($res_found == 0) {
+    require locate_template('template-parts/content-none.php');
+}
 
 Btemptd_Page_Entry_bottom();
