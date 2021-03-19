@@ -29,6 +29,22 @@ $logo = get_field( 'header_logo', 'options' );
        target="_blank">
         <?php echo esc_html(get_field('mob_header_button_text', 'options'));?>
     </a>
+
+    <div class="header-search">
+        <!-- <div class="search-icon"></div> -->
+        <form class="es-form js-search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get">
+            <div class="header-search--inner">
+                <input id="search-results-form-q"
+                    name="s"
+                    class="search-input js-search-input"
+                    value="<?php echo get_search_query(); ?>"
+                    placeholder="Search"
+                    type="search">
+                <button class="search-btn"></button>
+            </div>
+        </form>
+    </div>
+
 </header>
 
 <nav class="header-navigation">
