@@ -38,9 +38,9 @@ if (have_posts()) {
         $temp['cat_url']        = get_term_link($primary_category->term_id);
         $temp['title']          = get_the_title($postid);
         $temp['tagline']        = get_field('tagline', $postid);
-        $temp['thumbnail'] = get_post_thumbnail_id();
-        $temp['thumbnail_url'] = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-        $temp['img_alt'] = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+        $temp['thumbnail'] = $thumbnail_id;
+        $temp['thumbnail_url'] = $thumbnail_url;
+        $temp['img_alt'] = $thumbnail_alt;
 
         array_push($posts_search, $temp);
     endwhile;
