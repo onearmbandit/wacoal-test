@@ -22,10 +22,12 @@ $recent_posts = Btemptd_Query_posts(
 );
 $total_posts = wp_count_posts('post');
 $counts= $total_posts->publish;
- ?>
+?>
 
 <div class="search-count">
+    <div class="search-container">
     <p><?php echo esc_attr($res_found);?> results for “<?php echo wp_kses_post($search_word);?>”</p>
+    </div>
 </div>
 <div class="para">
 <h4>No posts were found.</h4>

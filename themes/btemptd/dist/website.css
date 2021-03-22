@@ -2210,6 +2210,10 @@ Files inside this folder can contain specific element styles and layout.
     font-family: 'NeutraText-DemiAlt';
     font-size: 14px;
     outline: none; }
+    .header-search .search-input::-webkit-search-cancel-button {
+      cursor: pointer;
+      background: var(--color-black);
+      color: var(--color-black); }
   .header-search .search-btn {
     background: url(beaf89ba1f1daedc5d871d3f8f523b32.svg) no-repeat;
     -webkit-appearance: none;
@@ -2219,7 +2223,9 @@ Files inside this folder can contain specific element styles and layout.
     height: 26px;
     border: none;
     padding: 0;
-    border-bottom: 1px solid var(--color-black); }
+    border-bottom: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-left: -2px; }
 
 .search-count {
   background: var(--color-primary);
@@ -2234,6 +2240,8 @@ Files inside this folder can contain specific element styles and layout.
     .search-count {
       font-size: 19px;
       height: 92px; } }
+  .search-count .search-container {
+    margin: 0 auto; }
 
 .search-container {
   max-width: 990px;

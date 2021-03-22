@@ -23,6 +23,13 @@
     @include NeutraText-DemiAlt;
     font-size: 14px;
     outline: none;
+
+    &::-webkit-search-cancel-button {
+      cursor: pointer;
+      // -webkit-appearance: none;
+      background: var(--color-black);
+      color: var(--color-black);
+    }
   }
 
   .search-btn {
@@ -34,6 +41,8 @@
     border: none;
     padding: 0;
     border-bottom: 1px solid var(--color-black);
+    cursor: pointer;
+    margin-left: -2px;
   }
 }
 .search-count {
@@ -49,6 +58,10 @@
   @include respond-below(sm) {
     font-size: 19px;
     height: 92px;
+  }
+
+  .search-container {
+    margin: 0 auto;
   }
 }
 .search-container {
