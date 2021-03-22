@@ -215,3 +215,61 @@
     }
   }
 }
+
+.no-search {
+  .search-container {
+    margin: 93px auto 0;
+    text-align: center;
+
+    @include respond-above(sm) {
+      margin: 140px auto 0;
+      padding-bottom: 72px;
+    }
+
+    @include respond-above(md) {
+      margin: 128px auto 0;
+      padding-bottom: 72px;
+    }
+
+    @include respond-above(lg) {
+      margin: 160px auto 0;
+      padding-bottom: 68px;
+    }
+
+    @include respond-above(xl) {
+      margin: 180px auto 0;
+      padding-bottom: 70px;
+    }
+
+    h4 {
+      font-size: 25px;
+      margin-bottom: 25px;
+      @include NeutraText-DemiAlt;
+
+      @include respond-below(sm) {
+        font-size: 21px;
+        margin-bottom: 23px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 23px;
+      @include NeutraText-Book;
+
+      a {
+        @include NeutraText-DemiAlt;
+        text-decoration: underline;
+      }
+
+      @include respond-below(sm) {
+        max-width: 85%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+// .no-search + .explore-blog {
+//   margin-top: 0;
+// }
