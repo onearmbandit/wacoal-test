@@ -80,7 +80,7 @@
     margin-bottom: calcRem(20);
 
     @include respond-below(sm) {
-      background: url('../../images/footer-arrow.svg') no-repeat;
+      background: url("../../images/footer-arrow.svg") no-repeat;
       background-position: 100% 50%;
       background-size: 6px;
     }
@@ -104,17 +104,15 @@
       font-size: calcRem(20);
       margin-bottom: calcRem(37.7);
     }
-
   }
 
   &--ul {
-
     &__list {
       text-transform: uppercase;
       letter-spacing: calcRem(1);
       display: flex;
 
-      &:not(:last-child){
+      &:not(:last-child) {
         margin-bottom: calcRem(9);
 
         @include respond-above(sm) {
@@ -132,7 +130,6 @@
         @include respond-above(xl) {
           margin-bottom: calcRem(25.7);
         }
-
       }
     }
 
@@ -140,7 +137,6 @@
       color: var(--color-white);
       @include ProximaNova-Sbold;
       font-size: calcRem(10);
-
 
       @include respond-above(sm) {
         font-size: calcRem(6);
@@ -158,7 +154,6 @@
         font-size: calcRem(14);
       }
     }
-
   }
 }
 
@@ -170,9 +165,9 @@
   }
 }
 .footer-links.open .footer-links--title {
-  background: url('../../images/down-arrow.svg') no-repeat;
+  background: url("../../images/down-arrow.svg") no-repeat;
   background-position: 100% 50%;
-    background-size: 11px;
+  background-size: 11px;
 }
 .footer-links.open .footer-links--title + div {
   display: block;
@@ -252,5 +247,4 @@
       max-width: 100%;
     }
   }
-
 }
