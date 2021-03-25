@@ -39,16 +39,17 @@
     position: absolute;
     background: transparent;
     top: 0;
+    width: 70px;
   }
 
   &--ul {
     display: flex;
     justify-content: center;
-    padding: calcRem(9, 0);
+    padding: calcRem(14, 0);
 
-    @include respond-above(md) {
-      padding: calcRem(14, 0);
-    }
+    // @include respond-above(md) {
+    //   padding: calcRem(14, 0);
+    // }
 
     // @include respond-above(lg) {
     //   padding: calcRem(20, 0);
@@ -60,7 +61,7 @@
   }
 
   &--list {
-    margin: calcRem(0, 23);
+    margin: 0 36px;
 
     @include respond-below(sm) {
       height: 33px;
@@ -84,7 +85,7 @@
   &--link {
     color: var(--color-black);
     @include ProximaNova-Sbold;
-    font-size: calcRem(12);
+    font-size: 12px;
     position: relative;
 
     @include respond-below(sm) {
@@ -94,13 +95,17 @@
         background: url("../../images/nav-arrow.svg") no-repeat center;
         width: 4px;
         height: 8px;
-        left: 140px;
+        left: 110px;
         top: 4px;
       }
     }
 
+    @include respond-above(sm) {
+      font-size: 14px;
+    }
+
     @include respond-above(md) {
-      font-size: calcRem(14);
+      font-size: 15px;
     }
   }
 }
@@ -208,6 +213,8 @@
       position: absolute;
       right: 18px;
       top: 25px;
+      width: 23px;
+      height: 23px;
     }
   }
 }

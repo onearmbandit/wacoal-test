@@ -44,9 +44,7 @@
 
     &::-webkit-search-cancel-button {
       cursor: pointer;
-      // -webkit-appearance: none;
-      background: var(--color-black);
-      color: var(--color-black);
+      -webkit-appearance: none;
     }
   }
 
@@ -280,7 +278,7 @@
       // @include NeutraText-Book;
 
       a {
-        // @include NeutraText-DemiAlt;
+        @include ProximaNova-Bold;
         text-decoration: underline;
       }
 

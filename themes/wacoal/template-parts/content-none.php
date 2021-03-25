@@ -32,7 +32,7 @@ $counts= $total_posts->publish;
 <div class="no-search">
     <div class="search-container">
         <h4>No posts were found.</h4>
-        Please try a different search term or <a href="<?php echo esc_url(home_url());?>"> go back to the homepage.</a>
+       <p>Please try a different search term or <a href="<?php echo esc_url(home_url());?>"> go back to the homepage.</a></p>
     </div>
 </div>
 
