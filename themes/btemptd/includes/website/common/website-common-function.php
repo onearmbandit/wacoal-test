@@ -511,6 +511,22 @@ function Btemp_Exclude_Posts_From_Specific_category( $query )
 }
   add_action('pre_get_posts', 'Btemp_Exclude_Posts_From_Specific_category');
 
+/**
+ * Function to remove pages from search result
+ *
+ * @param array $query wp_query array
+ *
+ * @return array $query wp_query array
+ */
+function Btemp_Search_filter($query)
+{
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'Btemp_Search_filter');
+
 
 /**
  * Function for  pagination
