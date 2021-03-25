@@ -11,13 +11,13 @@
 
     $(this).addClass('active');
     $.ajax({
-      url: btemptd_js_var.ajaxurl,
+      url: wacoal_js_var.ajaxurl,
       type: 'post',
       data: {
-        action: 'btemptd_search_ajax_pagination',
-        query_vars: btemptd_js_var.query_vars,
+        action: 'wacoal_search_ajax_pagination',
+        query_vars: wacoal_js_var.query_vars,
         page: page,
-        nonce:btemptd_js_var.nonce,
+        nonce:wacoal_js_var.nonce,
       },
       success: function (html) {
         $('#post-listing').find('div.category-posts').html('');
@@ -38,13 +38,13 @@
       $('.search-nav-links a').removeClass('active');
       next.addClass("active");
       $.ajax({
-        url: btemptd_js_var.ajaxurl,
+        url: wacoal_js_var.ajaxurl,
         type: 'post',
         data: {
-          action: 'btemptd_search_ajax_pagination',
-          query_vars: btemptd_js_var.query_vars,
+          action: 'wacoal_search_ajax_pagination',
+          query_vars: wacoal_js_var.query_vars,
           page: page,
-          nonce:btemptd_js_var.nonce,
+          nonce:wacoal_js_var.nonce,
         },
         success: function (html) {
           $('#post-listing').find('div.category-posts').html('');
@@ -70,13 +70,13 @@
     if (page >= 1) {
       $(this).addClass('active');
       $.ajax({
-        url: btemptd_js_var.ajaxurl,
+        url: wacoal_js_var.ajaxurl,
         type: 'post',
         data: {
-          action: 'btemptd_search_ajax_pagination',
-          query_vars: btemptd_js_var.query_vars,
+          action: 'wacoal_search_ajax_pagination',
+          query_vars: wacoal_js_var.query_vars,
           page: page,
-          nonce:btemptd_js_var.nonce,
+          nonce:wacoal_js_var.nonce,
         },
         success: function (html) {
           $('#post-listing').find('div.category-posts').html('');
