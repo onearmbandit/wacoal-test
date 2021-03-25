@@ -1,12 +1,15 @@
 .footer-section {
   background: var(--color-black);
   width: var(--width-100);
-  padding-top: calcRem(30);
-  padding-bottom: calcRem(22);
+  padding-top: 30px;
+  padding-bottom: 22px;
 
   @include respond-above(sm) {
-    padding-top: get-vw(90px);
-    padding-bottom: get-vw(71px);
+    padding: 45px 0;
+  }
+
+  @include respond-above(md) {
+    padding: 64px 0 50px;
   }
 }
 
@@ -18,8 +21,17 @@
   flex-direction: column;
 
   @include respond-above(sm) {
-    width: get-vw(1630px);
+    width: 600px;
+    flex-direction: column;
+  }
+
+  @include respond-above(md) {
+    width: 928px;
     flex-direction: row;
+  }
+
+  @include respond-above(lg) {
+    width: 1220px;
   }
 
   &--left {
@@ -33,15 +45,28 @@
       flex-direction: row;
       max-width: initial;
     }
+
+    @include respond-between(sm, md) {
+      width: 100%;
+    }
   }
 
   &--right {
     flex: 1;
-    max-width: calcRem(272);
 
-    @include respond-above(sm) {
-      max-width: get-vw(510px);
-      margin-left: get-vw(128px);
+    @include respond-between(sm, md) {
+      width: 100%;
+      max-width: 280px;
+      margin-top: 26px;
+    }
+
+    @include respond-above(md) {
+      max-width: 284px;
+      margin-left: 50px;
+    }
+    @include respond-above(lg) {
+      margin-left: 96px;
+      max-width: 380px;
     }
   }
 
@@ -75,90 +100,46 @@
 .footer-links {
   &--title {
     @include BentonModDisp-Bold;
-    font-size: calcRem(13);
+    font-size: 13px;
     color: var(--color-white);
-    margin-bottom: calcRem(20);
+    margin-bottom: 20px;
 
     @include respond-below(sm) {
-      background: url('../../images/footer-arrow.svg') no-repeat;
+      background: url("../../images/footer-arrow.svg") no-repeat;
       background-position: 100% 50%;
       background-size: 6px;
     }
 
-    @include respond-above(sm) {
-      font-size: calcRem(9);
-      margin-bottom: calcRem(13.8);
-    }
-
-    @include respond-above(md) {
-      font-size: calcRem(12.5);
-      margin-bottom: calcRem(20);
-    }
-
     @include respond-above(lg) {
-      font-size: calcRem(14);
-      margin-bottom: calcRem(24.8);
+      font-size: 15px;
+      margin-bottom: 28px;
     }
-
-    @include respond-above(xl) {
-      font-size: calcRem(20);
-      margin-bottom: calcRem(37.7);
-    }
-
   }
 
   &--ul {
-
     &__list {
       text-transform: uppercase;
       letter-spacing: calcRem(1);
       display: flex;
 
-      &:not(:last-child){
-        margin-bottom: calcRem(9);
-
-        @include respond-above(sm) {
-          margin-bottom: calcRem(9);
-        }
-
-        @include respond-above(md) {
-          margin-bottom: calcRem(13.8);
-        }
+      &:not(:last-child) {
+        margin-bottom: 16.5px;
 
         @include respond-above(lg) {
-          margin-bottom: calcRem(16.5);
+          margin-bottom: 19px;
         }
-
-        @include respond-above(xl) {
-          margin-bottom: calcRem(25.7);
-        }
-
       }
     }
 
     &__link {
       color: var(--color-white);
       @include ProximaNova-Sbold;
-      font-size: calcRem(10);
-
-
-      @include respond-above(sm) {
-        font-size: calcRem(6);
-      }
-
-      @include respond-above(md) {
-        font-size: calcRem(8);
-      }
+      font-size: 10px;
 
       @include respond-above(lg) {
-        font-size: calcRem(10);
-      }
-
-      @include respond-above(xl) {
-        font-size: calcRem(14);
+        font-size: 11px;
       }
     }
-
   }
 }
 
@@ -170,9 +151,9 @@
   }
 }
 .footer-links.open .footer-links--title {
-  background: url('../../images/down-arrow.svg') no-repeat;
+  background: url("../../images/down-arrow.svg") no-repeat;
   background-position: 100% 50%;
-    background-size: 11px;
+  background-size: 11px;
 }
 .footer-links.open .footer-links--title + div {
   display: block;
@@ -182,25 +163,15 @@
 .footer-images {
   display: flex;
   justify-content: space-between;
-
-  &--img {
-    width: calcRem(64);
-    height: calcRem(64);
-
-    @include respond-above(sm) {
-      width: get-vw(120px);
-      height: get-vw(120px);
-    }
-  }
 }
 
 .footer-social {
   display: flex;
-  margin-top: calcRem(20);
+  margin-top: 15px;
 
-  @include respond-above(sm) {
-    margin-top: get-vw(84px);
-  }
+  // @include respond-above(sm) {
+  //   margin-top: get-vw(84px);
+  // }
 
   &--icon {
     width: calcRem(16);
@@ -208,24 +179,14 @@
     display: flex;
     align-items: center;
 
-    @include respond-above(sm) {
-      width: calcRem(15);
-      height: calcRem(15);
-    }
-
     @include respond-above(md) {
       width: calcRem(18);
       height: calcRem(18);
     }
 
     @include respond-above(lg) {
-      width: calcRem(24);
-      height: calcRem(24);
-    }
-
-    @include respond-above(xl) {
-      width: calcRem(36);
-      height: calcRem(36);
+      width: calcRem(27);
+      height: calcRem(27);
     }
 
     &:not(:first-child) {
@@ -252,5 +213,4 @@
       max-width: 100%;
     }
   }
-
 }

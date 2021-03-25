@@ -1,28 +1,46 @@
 .header-search {
   position: absolute;
-  right: 140px;
+  right: 243px;
 
   &--inner {
     display: flex;
   }
 
   @include respond-below(lg) {
-    right: 60px;
+    right: 43px;
+  }
+
+  @include respond-below(md) {
+    right: 28px;
   }
 
   @include respond-below(sm) {
     position: relative;
     right: inherit;
+    width: calc(100% - 32px);
+    margin: 30px auto 0;
   }
 
   .search-input {
     background: transparent;
     border: none;
-    border-bottom: 1px solid var(--color-black);
-    height: 26px;
+    border-bottom: 1px solid var(--search-border);
+    border-top: 1px solid var(--search-border);
+    border-left: 1px solid var(--search-border);
+    height: 30px;
     // @include NeutraText-DemiAlt;
     font-size: 14px;
     outline: none;
+    padding-left: 12px;
+    width: 196px;
+
+    @include respond-below(md) {
+      width: 166px;
+    }
+
+    @include respond-below(sm) {
+      width: calc(100% - 36px);
+    }
 
     &::-webkit-search-cancel-button {
       cursor: pointer;
@@ -33,16 +51,19 @@
   }
 
   .search-btn {
-    // background: url("../../images/search-icon.svg") no-repeat;
-    // background-size: 20px;
+    background: url("../../images/search-icon.svg") no-repeat center;
+    background-size: 20px;
     appearance: none;
-    width: 24px;
-    height: 26px;
+    width: 36px;
+    height: 30px;
     border: none;
     padding: 0;
-    border-bottom: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--search-border);
+    border-top: 1px solid var(--search-border);
+    border-right: 1px solid var(--search-border);
     cursor: pointer;
     margin-left: -2px;
+    outline: none;
   }
 }
 .search-count {
@@ -85,11 +106,10 @@
 
 .search-outer {
   display: flex;
-  margin-bottom: 52px;
+  margin-bottom: 30px;
 
   @include respond-below(sm) {
     flex-direction: column;
-    margin-bottom: 30px;
   }
 }
 
@@ -99,9 +119,9 @@
   margin-right: 30px;
 
   @include respond-below(sm) {
-    width: 215px;
+    width: 164px;
     height: 152px;
-    margin: 0 0 13px;
+    margin: 0 0 11px;
   }
 
   img {
@@ -136,6 +156,7 @@
     font-size: 34px;
     line-height: 37px;
     margin-bottom: 10.8px;
+    text-transform: uppercase;
 
     @include respond-below(lg) {
       font-size: 28px;
@@ -160,7 +181,7 @@
     }
 
     @include respond-below(sm) {
-      font-size: 13 px;
+      font-size: 13px;
       line-height: 18px;
     }
   }
@@ -169,9 +190,6 @@
 .search-pagination {
   margin: 98px 0;
 
-  @include respond-below(sm) {
-    margin-top: 65px;
-  }
   &--wrapper {
     display: flex;
     justify-content: center;
@@ -182,13 +200,13 @@
     display: flex;
 
     .search-nav-links {
-      // @include NeutraText-BookAlt;
-      font-size: 19px;
+      @include ProximaNova-Light;
+      font-size: 20px;
       width: 30px;
       text-align: center;
 
       a {
-        color: var(--color-gray-light);
+        color: var(--color-light-gray);
 
         &.active {
           color: var(--color-black);
@@ -226,37 +244,33 @@
 
 .no-search {
   .search-container {
-    margin: 93px auto 0;
+    margin: 104px auto 129px;
     text-align: center;
 
     @include respond-above(sm) {
-      margin: 140px auto 0;
-      padding-bottom: 72px;
+      margin: 107px auto 168px;
     }
 
     @include respond-above(md) {
-      margin: 128px auto 0;
-      padding-bottom: 72px;
+      margin: 107px auto 136px;
     }
 
     @include respond-above(lg) {
-      margin: 160px auto 0;
-      padding-bottom: 68px;
+      margin: 106px auto 170px;
     }
 
     @include respond-above(xl) {
-      margin: 180px auto 0;
-      padding-bottom: 70px;
+      margin: 126px auto 204px;
     }
 
     h4 {
       font-size: 25px;
-      margin-bottom: 25px;
-      // @include NeutraText-DemiAlt;
+      margin-bottom: 20px;
+      @include ProximaNova-Bold;
 
       @include respond-below(sm) {
         font-size: 21px;
-        margin-bottom: 23px;
+        margin-bottom: 21px;
       }
     }
 
