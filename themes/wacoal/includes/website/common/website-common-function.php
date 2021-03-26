@@ -801,7 +801,7 @@ function Wacoal_Search_Paging_nav()
         $links[] = $paged + 1;
     }
 
-    echo '<section class="search-pagination"><div class="search-pagination--wrapper">' . "\n";
+    echo '<div class="search-pagination--wrapper">' . "\n";
 
     /**
      * Previous Post Link
@@ -849,7 +849,7 @@ function Wacoal_Search_Paging_nav()
         printf('<div class="search-pagination-box--btn snext"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
     }
 
-    echo '</div></section>' . "\n";
+    echo '</div>' . "\n";
 }
 
  /**

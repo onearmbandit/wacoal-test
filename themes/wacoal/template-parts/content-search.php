@@ -82,7 +82,9 @@ $counts= $total_posts->publish;
     <?php }
 }?>
 
-<?php Wacoal_Search_Paging_nav();  ?>
+<section class="search-pagination">
+    <?php Wacoal_Search_Paging_nav();  ?>
+</section>
 </section>
 
 <?php $counts= wp_count_posts();?>
