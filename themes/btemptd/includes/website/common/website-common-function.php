@@ -577,7 +577,9 @@ function Btemptd_Search_Paging_nav()
     /**
      * Previous Post Link
     */
-    printf('<div class="search-pagination-box--btn sprev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-left-arrow.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
+    if($paged != 1) {
+        printf('<div class="search-pagination-box--btn sprev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-left-arrow.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
+    }
     echo '<ul class="search-pagination--numbers">';
     /**
      * Link to first page, plus ellipses if necessary
