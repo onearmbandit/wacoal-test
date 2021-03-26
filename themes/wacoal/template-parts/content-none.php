@@ -26,7 +26,7 @@ $counts= $total_posts->publish;
 
 <div class="search-count">
     <div class="search-container">
-        <p><?php echo esc_attr($res_found);?> results for “<?php echo wp_kses_post($search_word);?>”</p>
+        <p><?php echo esc_attr($res_found);?> RESULTS FOR “<?php echo wp_kses_post($search_word);?>”</p>
     </div>
 </div>
 <div class="no-search">
