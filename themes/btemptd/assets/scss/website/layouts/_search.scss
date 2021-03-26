@@ -28,7 +28,7 @@
 
     &::-webkit-search-cancel-button {
       cursor: pointer;
-      // -webkit-appearance: none;
+      -webkit-appearance: none;
       background: var(--color-black);
       color: var(--color-black);
     }
@@ -179,6 +179,10 @@
 
   @include respond-below(sm) {
     margin-top: 65px;
+  }
+
+  @include respond-between(sm, md) {
+    margin-top: 94px;
   }
   &--wrapper {
     display: flex;

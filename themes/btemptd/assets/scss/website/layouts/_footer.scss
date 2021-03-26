@@ -7,6 +7,14 @@
   @include respond-above(sm) {
     padding: 56px 0;
   }
+
+  @include respond-above(lg) {
+    padding: 106px 0 70px;
+  }
+
+  @include respond-above(xl) {
+    padding: 49px 0 67px;
+  }
 }
 
 .footer-section {
@@ -96,7 +104,7 @@
       width: inherit;
     }
 
-    @include respond-above(md) {
+    @include respond-above(lg) {
       font-size: 12px;
     }
 
@@ -137,6 +145,10 @@
     @include respond-above(sm) {
       border-bottom: none;
       margin-bottom: 0;
+    }
+
+    @include respond-above(lg) {
+      font-size: 14px;
     }
 
     @include respond-below(sm) {
@@ -209,14 +221,14 @@
   flex-direction: column;
   margin: 9px 0 38px;
 
-  @include respond-above(sm) {
-    margin-bottom: get-vw(74px);
+  @include respond-between(sm, lg) {
+    margin-bottom: 46px;
     margin-top: 0;
   }
 
   .title {
     @include NeutraText-BoldAlt;
-    font-size: calcRem(15);
+    font-size: 14px;
     margin-bottom: calcRem(20);
     text-transform: uppercase;
 
@@ -228,7 +240,7 @@
 
   .sub-title {
     @include NeutraText-BookAlt;
-    font-size: calcRem(15);
+    font-size: calcRem(14);
     margin-bottom: calcRem(15);
 
     @include respond-above(sm) {
@@ -239,15 +251,19 @@
 
   .input-button-wrapper {
     position: relative;
+
+    @include respond-below(sm) {
+      width: 270px;
+    }
   }
 
   input {
     border: 1px solid #cbcbcb;
     background: var(--color-white);
-    @include NeutraText-DemiAlt;
-    height: calcRem(52);
+    @include NeutraText-BookAlt;
+    height: 55px;
     width: 100%;
-    font-size: calcRem(10);
+    font-size: 10px;
     padding-left: calcRem(13);
 
     @include respond-above(sm) {
@@ -263,7 +279,7 @@
     border: none;
     @include NeutraText-Bold;
     color: var(--color-black);
-    height: calcRem(52);
+    height: 55px;
     font-size: calcRem(10);
     cursor: pointer;
     position: absolute;
@@ -308,15 +324,10 @@
   }
 
   &--icon {
-    width: 31px;
-    height: 31px;
+    width: 31.87px;
+    height: 31.87px;
     display: flex;
     align-items: center;
-
-    @include respond-above(sm) {
-      width: get-vw(36px);
-      height: get-vw(36px);
-    }
 
     &:not(:first-child) {
       margin-left: calcRem(13);
