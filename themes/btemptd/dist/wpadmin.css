@@ -253,7 +253,8 @@ Files inside this folder can contain specific element styles and layout.
       .header-section--logo {
         max-width: 175px; } }
   .header-section a {
-    display: flex; }
+    display: flex;
+    align-items: center; }
 
 .header-navigation {
   background: var(--color-tile-bg);
@@ -263,7 +264,8 @@ Files inside this folder can contain specific element styles and layout.
       position: absolute;
       top: 0;
       background: transparent;
-      width: 60px; } }
+      width: 60px;
+      z-index: 2; } }
   .header-navigation--ul {
     display: flex;
     padding: 0.625rem 0rem; }
@@ -2288,10 +2290,12 @@ Files inside this folder can contain specific element styles and layout.
   margin: 52px auto 0; }
   @media (max-width: 1279px) {
     .search-container {
-      max-width: 720px; } }
+      max-width: 720px;
+      margin: 45px auto 0; } }
   @media (max-width: 1023px) {
     .search-container {
-      max-width: 608px; } }
+      max-width: 608px;
+      margin: 40px auto 0; } }
   @media (max-width: 767px) {
     .search-container {
       padding: 0 36px;
@@ -2300,6 +2304,9 @@ Files inside this folder can contain specific element styles and layout.
 .search-outer {
   display: flex;
   margin-bottom: 52px; }
+  @media (max-width: 1023px) {
+    .search-outer {
+      margin-bottom: 57px; } }
   @media (max-width: 767px) {
     .search-outer {
       flex-direction: column;

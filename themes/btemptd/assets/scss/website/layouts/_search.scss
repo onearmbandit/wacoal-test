@@ -76,10 +76,12 @@
 
   @include respond-below(lg) {
     max-width: 720px;
+    margin: 45px auto 0;
   }
 
   @include respond-below(md) {
     max-width: 608px;
+    margin: 40px auto 0;
   }
 
   @include respond-below(sm) {
@@ -91,6 +93,10 @@
 .search-outer {
   display: flex;
   margin-bottom: 52px;
+
+  @include respond-below(md) {
+    margin-bottom: 57px;
+  }
 
   @include respond-below(sm) {
     flex-direction: column;
