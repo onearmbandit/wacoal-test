@@ -2374,7 +2374,9 @@ Files inside this folder can contain specific element styles and layout.
         line-height: 18px; } }
 
 .search-pagination {
-  margin-top: 140px; }
+  margin-top: 90px;
+  display: inline-block;
+  width: 100%; }
   @media (max-width: 767px) {
     .search-pagination {
       margin-top: 65px; } }
