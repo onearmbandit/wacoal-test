@@ -186,7 +186,9 @@
 }
 
 .search-pagination {
-  margin: 98px 0;
+  margin: 85px 0;
+  display: inline-block;
+  width: 100%;
 
   &--wrapper {
     display: flex;

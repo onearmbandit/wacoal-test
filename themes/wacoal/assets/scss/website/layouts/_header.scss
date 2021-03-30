@@ -62,6 +62,14 @@
       }
     }
 
+    @include respond-above(sm) {
+      &:first-child {
+        a {
+          @include ProximaNova-Bold;
+        }
+      }
+    }
+
     @include respond-above(md) {
       margin: calcRem(0, 27);
     }
