@@ -69,6 +69,12 @@
     @include respond-above(sm) {
       margin-left: 25px;
       margin-right: 25px;
+
+      &:first-child {
+        a {
+          @include NeutraText-Bold;
+        }
+      }
     }
 
     @include respond-above(md) {

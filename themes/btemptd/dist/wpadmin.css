@@ -282,7 +282,9 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .header-navigation--list {
         margin-left: 25px;
-        margin-right: 25px; } }
+        margin-right: 25px; }
+        .header-navigation--list:first-child a {
+          font-family: 'NeutraText-Bold'; } }
     @media (min-width: 1024px) {
       .header-navigation--list {
         margin-left: 55px;
@@ -2348,22 +2350,20 @@ Files inside this folder can contain specific element styles and layout.
   .search-content .title {
     font-family: 'NeutraText-DemiAlt';
     font-size: 26px;
-    line-height: 28px;
-    margin-bottom: 24px; }
+    line-height: 28px; }
     @media (max-width: 1279px) {
       .search-content .title {
         font-size: 24px;
-        line-height: 26px;
-        margin-bottom: 12px; } }
+        line-height: 26px; } }
     @media (max-width: 767px) {
       .search-content .title {
         font-size: 21px;
-        line-height: 23px;
-        margin-bottom: 13px; } }
+        line-height: 23px; } }
   .search-content .para {
     font-family: 'NeutraText-BookAlt';
     font-size: 20px;
-    line-height: 24px; }
+    line-height: 24px;
+    margin-top: 12px; }
     @media (max-width: 1279px) {
       .search-content .para {
         font-size: 18px;
