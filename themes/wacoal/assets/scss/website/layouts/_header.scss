@@ -52,6 +52,12 @@
   &--list {
     margin: 0 36px;
 
+    &:first-child {
+      a {
+        @include ProximaNova-Bold;
+      }
+    }
+
     @include respond-below(sm) {
       height: 33px;
       display: flex;
@@ -59,14 +65,6 @@
 
       &:not(:last-child) {
         margin-bottom: 13px;
-      }
-    }
-
-    @include respond-above(sm) {
-      &:first-child {
-        a {
-          @include ProximaNova-Bold;
-        }
       }
     }
 
