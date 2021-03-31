@@ -90,8 +90,11 @@ $counts= $total_posts->publish;
     <?php }
 }?>
 
+<section class="search-pagination">
 <?php Btemptd_Search_Paging_nav();  ?>
 </section>
+</section>
+
 <?php if(!empty($recent_posts)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif; ?>
