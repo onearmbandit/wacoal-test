@@ -185,13 +185,16 @@
   margin-top: 90px;
   display: inline-block;
   width: 100%;
+  margin-bottom: 30px;
 
   @include respond-below(sm) {
-    margin-top: 65px;
+    margin-top: 25px;
+    margin-bottom: 0;
   }
 
-  @include respond-between(sm, md) {
-    margin-top: 94px;
+  @include respond-between(sm, lg) {
+    margin-top: 50px;
+    // margin-bottom: 30px;
   }
   &--wrapper {
     display: flex;

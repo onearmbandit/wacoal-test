@@ -275,6 +275,8 @@ Files inside this folder can contain specific element styles and layout.
         justify-content: center; } }
   .header-navigation--list {
     margin: 0rem 0.875rem; }
+    .header-navigation--list:first-child a {
+      font-family: 'NeutraText-Bold'; }
     @media (max-width: 767px) {
       .header-navigation--list {
         border-bottom: 1px solid var(--color-black);
@@ -282,9 +284,7 @@ Files inside this folder can contain specific element styles and layout.
     @media (min-width: 768px) {
       .header-navigation--list {
         margin-left: 25px;
-        margin-right: 25px; }
-        .header-navigation--list:first-child a {
-          font-family: 'NeutraText-Bold'; } }
+        margin-right: 25px; } }
     @media (min-width: 1024px) {
       .header-navigation--list {
         margin-left: 55px;
@@ -2376,13 +2376,15 @@ Files inside this folder can contain specific element styles and layout.
 .search-pagination {
   margin-top: 90px;
   display: inline-block;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 30px; }
   @media (max-width: 767px) {
     .search-pagination {
-      margin-top: 65px; } }
-  @media (min-width: 768px) and (max-width: 1023px) {
+      margin-top: 25px;
+      margin-bottom: 0; } }
+  @media (min-width: 768px) and (max-width: 1279px) {
     .search-pagination {
-      margin-top: 94px; } }
+      margin-top: 50px; } }
   .search-pagination--wrapper {
     display: flex;
     justify-content: center;
