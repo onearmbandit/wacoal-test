@@ -27,27 +27,27 @@ if (have_posts()) {
     while ( have_posts() ) :
         the_post();
         $post_count++;
-        $postid                 = get_the_ID();
-        $primary_category     = Btemptd_Get_Primary_category($postid);
-        $thumbnail_id  = get_post_thumbnail_id();
-        $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-        $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+        $postid           = get_the_ID();
+        $primary_category = Btemptd_Get_Primary_category($postid);
+        $thumbnail_id     = get_post_thumbnail_id();
+        $thumbnail_url    = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+        $thumbnail_alt    = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
 
-        $temp['postid']         = $postid;
-        $temp['cat_name']       = $primary_category->name;
-        $temp['cat_url']        = get_term_link($primary_category->term_id);
-        $temp['title']          = get_the_title($postid);
-        $temp['tagline']        = get_field('tagline', $postid);
-        $temp['thumbnail'] = $thumbnail_id;
+        $temp['postid']        = $postid;
+        $temp['cat_name']      = $primary_category->name;
+        $temp['cat_url']       = get_term_link($primary_category->term_id);
+        $temp['title']         = get_the_title($postid);
+        $temp['tagline']       = get_field('tagline', $postid);
+        $temp['thumbnail']     = $thumbnail_id;
         $temp['thumbnail_url'] = $thumbnail_url;
-        $temp['img_alt'] = $thumbnail_alt;
+        $temp['img_alt']       = $thumbnail_alt;
 
         array_push($posts_search, $temp);
     endwhile;
 
 require locate_template('template-parts/content-search.php');
 
-} if($res_found == 0) {
+} if ($res_found == 0) {
     require locate_template('template-parts/content-none.php');
 }
 

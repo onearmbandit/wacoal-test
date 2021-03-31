@@ -40,14 +40,14 @@ $counts= $total_posts->publish;
         $posts_search         = array_slice($posts_search, 8);
 
         foreach ( $current_recent_posts as $index => $search_posts ) :
-            $postid = $search_posts['postid'];
-            $cat_name = $search_posts['cat_name'];
-            $cat_url = $search_posts['cat_url'];
-            $post_title = $search_posts['title'];
-            $tagline = $search_posts['tagline'];
-            $thumbnail = $search_posts['thumbnail'];
+            $postid        = $search_posts['postid'];
+            $cat_name      = $search_posts['cat_name'];
+            $cat_url       = $search_posts['cat_url'];
+            $post_title    = $search_posts['title'];
+            $tagline       = $search_posts['tagline'];
+            $thumbnail     = $search_posts['thumbnail'];
             $thumbnail_url = $search_posts['thumbnail_url'];
-            $img_alt = $search_posts['img_alt'];
+            $img_alt       = $search_posts['img_alt'];
 
             ?>
 
@@ -59,22 +59,30 @@ $counts= $total_posts->publish;
         </div>
 
         <div class="search-content">
+
+            <?php if($cat_name && !empty($cat_name)) :?>
             <div class="category">
                 <a href="<?php echo esc_url_raw($cat_url);?>">
                     <?php echo esc_attr($cat_name);?>
                 </a>
             </div>
+            <?php endif;?>
+
+            <?php if($post_title && !empty($post_title)) :?>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
                     <?php echo esc_attr($post_title);?>
                 </a>
             </div>
+            <?php endif;?>
 
+            <?php if($tagline && !empty($tagline)) :?>
             <div class="para">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
                     <?php echo wp_kses_post(Btemptd_Remove_ptag($tagline));?>
                 </a>
             </div>
+            <?php endif;?>
 
         </div>
     </div>
