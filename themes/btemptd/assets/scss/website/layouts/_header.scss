@@ -73,13 +73,13 @@
     }
 
     @include respond-above(sm) {
-      margin-left: 25px;
-      margin-right: 25px;
+      margin-left: 28px;
+      margin-right: 28px;
     }
 
     @include respond-above(md) {
-      margin-left: 55px;
-      margin-right: 55px;
+      margin-left: 60px;
+      margin-right: 60px;
     }
   }
 
@@ -88,9 +88,11 @@
     @include NeutraText-DemiAlt;
     font-size: 15px;
     text-transform: uppercase;
+    letter-spacing: 0.15px;
 
     @include respond-below(sm) {
       font-size: 12px;
+      letter-spacing: 0.4px;
     }
   }
 }

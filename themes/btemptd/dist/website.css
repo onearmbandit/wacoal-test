@@ -283,20 +283,22 @@ Files inside this folder can contain specific element styles and layout.
         padding: 25px 0 15px; } }
     @media (min-width: 768px) {
       .header-navigation--list {
-        margin-left: 25px;
-        margin-right: 25px; } }
+        margin-left: 28px;
+        margin-right: 28px; } }
     @media (min-width: 1024px) {
       .header-navigation--list {
-        margin-left: 55px;
-        margin-right: 55px; } }
+        margin-left: 60px;
+        margin-right: 60px; } }
   .header-navigation--link {
     color: var(--color-black);
     font-family: 'NeutraText-DemiAlt';
     font-size: 15px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    letter-spacing: 0.15px; }
     @media (max-width: 767px) {
       .header-navigation--link {
-        font-size: 12px; } }
+        font-size: 12px;
+        letter-spacing: 0.4px; } }
 
 .shop-btemptd-btn {
   position: absolute;
@@ -2247,7 +2249,7 @@ Files inside this folder can contain specific element styles and layout.
     border: none;
     border-bottom: 1px solid var(--color-black);
     height: 26px;
-    font-family: 'NeutraText-DemiAlt';
+    font-family: 'NeutraText-Book';
     font-size: 14px;
     outline: none; }
     .header-search .search-input::-webkit-search-cancel-button {
@@ -2338,7 +2340,7 @@ Files inside this folder can contain specific element styles and layout.
     font-family: 'NeutraText-BookAlt';
     font-size: 15px;
     margin-bottom: 24px;
-    text-transform: uppercase; }
+    letter-spacing: 0.5px; }
     @media (max-width: 1279px) {
       .search-content .category {
         font-size: 14px;
@@ -2363,7 +2365,8 @@ Files inside this folder can contain specific element styles and layout.
     font-family: 'NeutraText-BookAlt';
     font-size: 20px;
     line-height: 24px;
-    margin-top: 12px; }
+    margin-top: 12px;
+    letter-spacing: 0.35px; }
     @media (max-width: 1279px) {
       .search-content .para {
         font-size: 18px;
@@ -2371,7 +2374,8 @@ Files inside this folder can contain specific element styles and layout.
     @media (max-width: 767px) {
       .search-content .para {
         font-size: 16px;
-        line-height: 18px; } }
+        line-height: 18px;
+        letter-spacing: 0.15px; } }
 
 .search-pagination {
   margin-top: 90px;
