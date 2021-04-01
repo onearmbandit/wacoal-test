@@ -80,6 +80,7 @@
     @include ProximaNova-Reg;
     font-size: 8px;
     margin-top: 22px;
+    letter-spacing: 0.6px;
 
     @include respond-above(sm) {
       font-size: 8px;
@@ -113,6 +114,7 @@
     font-size: 13px;
     color: var(--color-white);
     margin-bottom: 20px;
+    letter-spacing: 0.6px;
 
     @include respond-below(sm) {
       background: url("../../images/footer-arrow.svg") no-repeat;
@@ -145,6 +147,7 @@
       color: var(--color-white);
       @include ProximaNova-Sbold;
       font-size: 10px;
+      letter-spacing: 0.6px;
 
       @include respond-above(lg) {
         font-size: 11px;
