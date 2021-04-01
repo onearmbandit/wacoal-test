@@ -2378,7 +2378,7 @@ Files inside this folder can contain specific element styles and layout.
         letter-spacing: 0.15px; } }
 
 .search-pagination {
-  margin-top: 90px;
+  margin-top: 88px;
   display: inline-block;
   width: 100%;
   margin-bottom: 30px; }
@@ -2386,9 +2386,9 @@ Files inside this folder can contain specific element styles and layout.
     .search-pagination {
       margin-top: 25px;
       margin-bottom: 0; } }
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
     .search-pagination {
-      margin-top: 50px; } }
+      margin-top: 42px; } }
   .search-pagination--wrapper {
     display: flex;
     justify-content: center;
