@@ -5,7 +5,7 @@ require('../scss/website/index.scss');
 require('../js/website/main.js');
 require('../js/website/wacoal-swiper.js');
 
-if($('body').hasClass('home')){
+if($('body').hasClass('home') || $('body').hasClass('search')){
   require('../js/website/home-page.js');
 }
 
@@ -27,5 +27,15 @@ window.lazySizesConfig.loadMode = 1;
       $(this).parent().toggleClass('open');
     });
   }
+
+  $(document).ready(function () {
+
+    $('.js-search-form').submit(function () {
+      if ($(this).find('.js-search-input').val() == '') {
+        return false;
+      }
+    });
+
+  });
 
 })(jQuery);

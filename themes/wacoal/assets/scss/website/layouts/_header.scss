@@ -1,67 +1,113 @@
 .header-section {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  height: calcRem(72);
+  height: 130px;
+
+  @include respond-below(sm) {
+    padding-top: 23px;
+  }
 
   @include respond-above(sm) {
-    height: get-vw(306px);
+    height: 96px;
+    justify-content: center;
+  }
+
+  @include respond-above(md) {
+    height: 118px;
   }
 
   &--logo {
-    max-width: calcRem(152);
+    max-width: 162px;
     width: 100%;
 
     @include respond-above(sm) {
-      max-width: get-vw(456px);
+      max-width: 180px;
+    }
+
+    @include respond-above(md) {
+      max-width: 242px;
     }
   }
 }
-
 
 .header-navigation {
   background: var(--color-nav-bg);
   width: var(--width-100);
 
-  &--ul{
+  @include respond-below(sm) {
+    position: absolute;
+    background: transparent;
+    top: 0;
+    width: 70px;
+  }
+
+  &--ul {
     display: flex;
     justify-content: center;
-    padding: calcRem(9, 0);
+    padding: calcRem(11, 0);
 
-    @include respond-above(md) {
-      padding: calcRem(14, 0);
+    @include respond-below(sm) {
+      justify-content: flex-start;
     }
-
-    // @include respond-above(lg) {
-    //   padding: calcRem(20, 0);
-    // }
-
-    // @include respond-above(xl) {
-    //   padding: calcRem(32, 0);
-    // }
   }
 
   &--list {
-    margin: calcRem(0, 23);
+    margin: 0 23px;
 
-    @include respond-above(md) {
-      margin: calcRem(0, 27);
+    &:first-child {
+      a {
+        @include ProximaNova-Bold;
+      }
     }
 
-    @include respond-above(xl) {
-      margin: calcRem(0, 45);
+    @include respond-below(sm) {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      margin: 0 44px;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    @include respond-above(md) {
+      margin: 0 41px;
+    }
+
+    @include respond-above(lg) {
+      margin: 0 49px;
     }
   }
 
   &--link {
     color: var(--color-black);
     @include ProximaNova-Sbold;
-    font-size: calcRem(12);
+    font-size: 14px;
+    position: relative;
+    letter-spacing: 0.5px;
 
-    @include respond-above(md) {
-      font-size: calcRem(14);
+    @include respond-below(sm) {
+      &:after {
+        content: "";
+        position: absolute;
+        background: url("../../images/nav-arrow.svg") no-repeat center;
+        width: 5px;
+        height: 9px;
+        left: 140px;
+        top: 4px;
+      }
     }
+
+    @include respond-above(sm) {
+      font-size: 14px;
+      letter-spacing: 0.8px;
+    }
+
+    // @include respond-above(md) {
+    //   font-size: 15px;
+    // }
   }
 }
 
@@ -86,13 +132,14 @@
   &.shop-wacoal-btn-desktop {
     display: none;
 
-    @include respond-above(sm) {
-      display: block;
-    }
+    // @include respond-above(sm) {
+    //   display: block;
+    // }
   }
 
   &.shop-wacoal-btn-mobile {
-    display: block;
+    // display: block;
+    display: none;
 
     @include respond-above(sm) {
       display: none;
@@ -100,14 +147,13 @@
   }
 }
 
-
 .header-navigation-mobile {
-  background: var(--color-nav-bg);
+  // background: var(--color-nav-bg);
   width: var(--width-100);
-  height: calcRem(60);
+  height: 70px;
   display: flex;
   align-items: center;
-  padding-left: calcRem(26);
+  padding-left: 20px;
   font-size: calcRem(15);
 
   @include respond-above(sm) {
@@ -118,28 +164,42 @@
   // img {
   //   margin-left: calcRem(10);
   // }
+
+  &.mobile-nav-open {
+    background: var(--color-white);
+    border: 1px solid #000;
+    width: 299px;
+    border-bottom: 0;
+    position: relative;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.16);
+  }
 }
 
 .header-navigation-mobile + .header-navigation--ul {
-
   @include respond-below(sm) {
     flex-direction: column;
     padding: 0;
     height: 0;
     visibility: hidden;
     overflow: hidden;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.16);
+    position: relative;
+    margin-top: -2px;
   }
 }
-.header-navigation-mobile.mobile-nav-open + .header-navigation--ul{
-  height: calcRem(90);
+.header-navigation-mobile.mobile-nav-open + .header-navigation--ul {
+  height: 318px;
   visibility: visible;
   overflow: visible;
   padding-bottom: calcRem(20);
+  background: var(--color-white);
+  border: 1px solid #000;
+  width: 299px;
+  border-top: 0;
 }
 
 .header-navigation-mobile {
-
   .open-state {
     display: block;
   }
@@ -155,6 +215,11 @@
 
     .close-state {
       display: block;
+      position: absolute;
+      right: 18px;
+      top: 25px;
+      width: 30px;
+      height: 30px;
     }
   }
 }

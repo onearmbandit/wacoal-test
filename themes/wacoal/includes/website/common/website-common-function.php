@@ -684,6 +684,22 @@ function Wacoal_Exclude_Posts_From_Specific_category( $query )
 add_action('pre_get_posts', 'Wacoal_Exclude_Posts_From_Specific_category');
 
 /**
+ * Function to remove pages from search result
+ *
+ * @param array $query wp_query array
+ *
+ * @return array $query wp_query array
+ */
+function Wacoal_Search_filter($query)
+{
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'Wacoal_Search_filter');
+
+/**
  * Function to enable the taxonomies on pages
  *
  * @return void
@@ -740,3 +756,114 @@ function Wacoal_Limit_text($text, $limit)
     }
     return $text;
 }
+
+/**
+ * Function for  pagination
+ *
+ * @return html Return the pagination html.
+ */
+function Wacoal_Search_Paging_nav()
+{
+
+    if (is_singular() ) {
+        return;
+    }
+
+    global $wp_query;
+
+    /**
+     * Stop execution if there's only 1 page
+    */
+    if ($wp_query->max_num_pages <= 1 ) {
+        return;
+    }
+
+    $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+    $max   = intval($wp_query->max_num_pages);
+
+    /**
+     * Add current page to the array
+    */
+    if ($paged >= 1 ) {
+        $links[] = $paged;
+    }
+
+    /**
+     * Add the pages around the current page to the array
+    */
+    if ($paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
+
+    if (( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
+
+    echo '<div class="search-pagination--wrapper">' . "\n";
+
+    /**
+     * Previous Post Link
+    */
+    printf('<div class="search-pagination-box--btn sprev"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-prev-icon.svg"></a></div>' . "\n", esc_url(get_previous_posts_page_link()));
+    echo '<ul class="search-pagination--numbers">';
+    /**
+     * Link to first page, plus ellipses if necessary
+    */
+    if (! in_array(1, $links) ) {
+        $class = 1 == $paged ? ' class="active"' : '';
+
+        printf('<li class="search-nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1'); // phpcs:ignore
+
+        if (! in_array(2, $links) ) {
+            echo '<li>…</li>';
+        }
+    }
+
+    /**
+     * Link to current page, plus 2 pages in either direction if necessary
+    */
+    sort($links);
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : '';
+        printf('<li class="search-nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), esc_attr($link)); // phpcs:ignore
+    }
+
+    /**
+     * Link to last page, plus ellipses if necessary
+    */
+    if (! in_array($max, $links) ) {
+        if (! in_array($max - 1, $links) ) {
+            echo '<li class="search-nav-links">…</li>' . "\n";
+        }
+
+        $class = $paged == $max ? ' class="active"' : '';
+        printf('<li class="search-nav-links"><a %s href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), esc_attr($max)); // phpcs:ignore
+    }
+    echo '</ul>';
+    /**
+     * Next Post Link
+    */
+    if (get_next_posts_link() ) {
+        printf('<div class="search-pagination-box--btn snext"><a href="%s"><img class="lazyload" data-src="'.esc_url(THEMEURI).'/assets/images/pagination-next-icon.svg"></a></div>' . "\n", esc_url(get_next_posts_page_link()));
+    }
+
+    echo '</div>' . "\n";
+}
+
+ /**
+  * Function to change the serach size.
+  *
+  * @param array $queryVars query
+  *
+  * @return html Return the pagination html.
+  */
+function Wacoal_Change_Search_size($queryVars)
+{
+    if (isset($_REQUEST['s']) ) { // Make sure it is a search page
+        $queryVars['posts_per_page'] = 8; // Change 10 to the number of posts you would like to show
+    }
+    return $queryVars; // Return our modified query variables
+}
+ add_filter('request', 'Wacoal_Change_Search_size'); // Hook our custom function onto the request filter

@@ -1,6 +1,6 @@
 <?php
 /**
- * Search template file
+ * Search page
  * php version 7.4
  *
  * @category Wacoal
@@ -11,47 +11,44 @@
  */
 
 Wacoal_Page_Entry_top('');
-?>
 
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main">
+global $wp_query;
 
-        <?php if (have_posts() ) : ?>
+$res_found   = $wp_query->found_posts;
+$search_word = get_search_query();
 
-            <header class="page-header">
-                <h1 class="page-title">
-            <?php
-            /* translators: %s: search query. */
-            printf(esc_html__('Search Results for: %s', 'wacoal'), '<span>' . get_search_query() . '</span>');
-            ?>
-                </h1>
-            </header><!-- .page-header -->
+$post_count  = 0;
+$search_data = ! empty($_SERVER) ? $_SERVER : array();
 
-            <?php
-            /* Start the Loop */
-            while ( have_posts() ) :
-                the_post();
+$requested_url = ! empty($search_data['REQUEST_URI']) ? esc_attr($search_data['REQUEST_URI']) : '';
+$posts_search = [];
 
-                /**
-                 * Run the loop for the search to output the results.
-                 * If you want to overload this in a child theme then include a file
-                 * called content-search.php and that will be used instead.
-                 */
-                get_template_part('template-parts/content', 'search');
+if (have_posts()) {
+    while ( have_posts() ) :
+        the_post();
+        $post_count++;
+        $postid                 = get_the_ID();
+        $primary_category     = Wacoal_Get_Primary_category($postid);
+        $thumbnail_id  = get_post_thumbnail_id();
+        $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+        $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
 
-            endwhile;
+        $temp['postid']         = $postid;
+        $temp['cat_name']       = $primary_category->name;
+        $temp['cat_url']        = get_term_link($primary_category->term_id);
+        $temp['title']          = get_the_title($postid);
+        $temp['tagline']        = get_field('tag_line', $postid);
+        $temp['thumbnail'] = $thumbnail_id;
+        $temp['thumbnail_url'] = $thumbnail_url;
+        $temp['img_alt'] = $thumbnail_alt;
 
-            the_posts_navigation();
+        array_push($posts_search, $temp);
+    endwhile;
 
-        else :
+require locate_template('template-parts/content-search.php');
 
-            get_template_part('template-parts/content', 'none');
+} if($res_found == 0) {
+    require locate_template('template-parts/content-none.php');
+}
 
-        endif;
-        ?>
-
-        </main><!-- #main -->
-    </section><!-- #primary -->
-
-<?php
 Wacoal_Page_Entry_bottom();

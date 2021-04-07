@@ -10,7 +10,8 @@
  * @link     Wacoal
  */
 
-$logo = get_field( 'header_logo', 'options' );
+$logo = get_field('header_logo', 'options');
+$header_button_link = get_field('header_button_link_', 'options');
 ?>
 
 <header class="header-section">
@@ -19,16 +20,35 @@ $logo = get_field( 'header_logo', 'options' );
              src="<?php echo esc_url($logo);?>"
              alt="Wacoal logo"/>
     </a>
+
+    <?php if (!empty($header_button_link)) { ?>
     <a class="shop-wacoal-btn shop-wacoal-btn-desktop"
-       href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>"
+       href="<?php echo esc_url($header_button_link);?>"
        target="_blank">
         <?php echo esc_html(get_field('header_button_text', 'options'));?>
     </a>
     <a class="shop-wacoal-btn shop-wacoal-btn-mobile"
-       href="<?php echo esc_url(get_field('header_button_link_', 'options'));?>"
+       href="<?php echo esc_url($header_button_link);?>"
        target="_blank">
         <?php echo esc_html(get_field('mob_header_button_text', 'options'));?>
     </a>
+    <?php } ?>
+
+    <div class="header-search">
+        <!-- <div class="search-icon"></div> -->
+        <form class="es-form js-search-form" action="<?php echo esc_url(home_url('/')); ?>" method="get">
+            <div class="header-search--inner">
+                <input id="search-results-form-q"
+                    name="s"
+                    class="search-input js-search-input"
+                    value="<?php echo get_search_query(); ?>"
+                    placeholder="Search"
+                    type="search">
+                <button class="search-btn"></button>
+            </div>
+        </form>
+    </div>
+
 </header>
 
 <nav class="header-navigation">
@@ -48,5 +68,5 @@ $logo = get_field( 'header_logo', 'options' );
         'items_wrap'     => '<ul id="%1$s" class="header-navigation--ul">%3$s</ul>',
 
     );
-    wp_nav_menu($args); ?>
+                                          wp_nav_menu($args); ?>
 </nav>
