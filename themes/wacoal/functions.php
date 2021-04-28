@@ -116,7 +116,16 @@ require THEMEPATH . '/includes/website/website-functions.php';
 /**
  * Enable gutenberg
  */
-add_filter('use_block_editor_for_post', '__return_true');
+function maybe_load_gutenberg_for_post_type( $can_edit, $post )
+{
+    $enable_for_post_types = [ 'page', 'post' ];
+    if (in_array($post->post_type, $enable_for_post_types, true) ) {
+            return true;
+    }
+    return false;
+}
+add_filter('use_block_editor_for_post', 'maybe_load_gutenberg_for_post_type', 15, 2);
+
 
 /**
  * Website ajax functions include
