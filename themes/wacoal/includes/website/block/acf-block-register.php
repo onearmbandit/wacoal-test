@@ -237,6 +237,101 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'title', 'description' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-button-format',
+            'title'           => __('Wacoal Button Block Format'),
+            'description'     => __('A custom Button format block.'),
+            'render_callback' => 'Wacoal_Button_Format_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'button', 'content' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-text-image-format',
+            'title'           => __('Wacoal Text + Image Block'),
+            'description'     => __('A custom text image list format block.'),
+            'render_callback' => 'Wacoal_List_Text_Image_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'list', 'content' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-statement-image-format',
+            'title'           => __('Wacoal Statement + Image Block'),
+            'description'     => __('A custom text image list format block.'),
+            'render_callback' => 'Wacoal_List_Statement_Image_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'list', 'content' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-banner-image-format',
+            'title'           => __('Wacoal Banner Image Block'),
+            'description'     => __('A custom banner image format block.'),
+            'render_callback' => 'Wacoal_Banner_Image_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'image', 'content' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-number-list-format',
+            'title'           => __('Wacoal Number List Block'),
+            'description'     => __('A custom number list format block.'),
+            'render_callback' => 'Wacoal_Number_List_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'image', 'content' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-customer-review-format',
+            'title'           => __('Wacoal Customer Review Block'),
+            'description'     => __('A custom customer review format block.'),
+            'render_callback' => 'Wacoal_Customer_Review_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'image', 'content' ),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-conclusion-summary-description',
+            'title'           => __('Wacoal Conclusion Summary Description Block'),
+            'description'     => __('A custom conclusion summary description format block.'),
+            'render_callback' => 'Wacoal_Conclusion_Summary_Description_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array('content'),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-image-bullets-list',
+            'title'           => __('Wacoal Title Image Bullets List Block'),
+            'description'     => __('A custom title image bullets list block format block.'),
+            'render_callback' => 'Wacoal_Title_Image_Bullets_List_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array('list', 'content'),
+            )
+        );
     }
 }
 
