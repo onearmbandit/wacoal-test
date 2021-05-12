@@ -297,3 +297,40 @@
     <button class="more btn secondary">See More</button>
 </div>
 <?php endif;?>
+
+
+<!-- -->
+<!-- New Blocks -->
+
+<!-- Banner Image - Large -->
+<section class="internal-banner">
+    <div class="banner-wrapper big-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+    </div>
+</section>
+
+<!-- Banner Image - Medium -->
+<section class="internal-banner">
+    <div class="banner-wrapper medium-banner" style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+
+    </div>
+</section>
+
+<!-- Banner Image - Small -->
+<section class="internal-banner">
+    <div class="banner-wrapper small-banner" style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+
+    </div>
+</section>
+
+<!-- Image Medium -->
+<section class="image-medium">
+    <div class="image-medium--wrapper">
+        <div class="image-medium--image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+        </div>
+        <div class="image-medium--content">
+        “Historically, underwear implies function first—while the word lingerie evokes more of an aesthetic purpose. The idea that intimates have to be one or the other is something our design team challenges every time we sit around the table to create—there really is no reason that women can’t have both!”
+        </div>
+    </div>
+</section>

@@ -1,0 +1,78 @@
+.internal-banner {
+  padding: 80px 0;
+
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
+
+  .banner-wrapper {
+    max-width: 1092px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+
+    @include respond-below(lg) {
+      max-width: 776px;
+    }
+
+    @include respond-below(md) {
+      max-width: 635px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 335px;
+    }
+
+    &.big-banner {
+      height: 442px;
+
+      @include respond-below(lg) {
+        height: 315px;
+      }
+
+      @include respond-below(md) {
+        height: 258px;
+      }
+
+      @include respond-below(sm) {
+        height: 137px;
+      }
+    }
+
+    &.medium-banner {
+      height: 324px;
+
+      @include respond-below(lg) {
+        height: 231px;
+      }
+
+      @include respond-below(md) {
+        height: 189px;
+      }
+
+      @include respond-below(sm) {
+        height: 100px;
+      }
+    }
+
+    &.small-banner {
+      height: 190px;
+
+      @include respond-below(lg) {
+        height: 135px;
+      }
+
+      @include respond-below(md) {
+        height: 111px;
+      }
+
+      @include respond-below(sm) {
+        height: 59px;
+      }
+    }
+  }
+}
