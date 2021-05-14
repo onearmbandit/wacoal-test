@@ -12,6 +12,18 @@
   &--wrapper {
     max-width: 885px;
     margin: 0 auto;
+
+    @include respond-below(lg){
+      max-width: 740px;
+    }
+
+    @include respond-below(md){
+      max-width: 636px;
+    }
+
+    @include respond-below(sm){
+      max-width: 355px;
+    }
   }
 
   &--image {
@@ -19,10 +31,42 @@
     height: 600px;
     background-size: cover;
     background-position: center;
+
+    @include respond-below(lg){
+      height: 502px;
+    }
+
+    @include respond-below(md){
+      height: 432px;
+    }
+
+    @include respond-below(sm){
+      height: 241px;
+    }
   }
 
   &--content {
     max-width: 782px;
     margin: 40px auto 0;
+    @include ProximaNova-Reg;
+    font-size: 18px;
+    line-height: 26px;
+
+    @include respond-below(lg){
+      max-width: 694px;
+      margin: 30px auto 0;
+      font-size: 16px;
+      line-height: 23px;
+    }
+
+    @include respond-below(md){
+      max-width: 635px;
+      margin: 20px auto 0;
+    }
+
+    @include respond-below(sm){
+      max-width: 303px;
+      margin: 15px auto 0;
+    }
   }
 }

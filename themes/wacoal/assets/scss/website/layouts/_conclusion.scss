@@ -1,0 +1,47 @@
+.conclusion {
+  padding: 20px 0;
+
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
+
+  &--wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+
+    font-size: 19px;
+    line-height: 34px;
+    letter-spacing: 0.28px;
+
+    @include respond-below(lg){
+      max-width: 708px;
+      font-size: 16px;
+      line-height: 29px;
+      letter-spacing: 0.24px;
+    }
+
+    @include respond-below(md){
+      max-width: 636px;
+    }
+
+    @include respond-below(xs){
+      max-width: 303px;
+    }
+  }
+
+  &--top-para {
+    @include ProximaNova-Bold;
+    margin-bottom: 45px;
+  }
+
+  &--bottom-para {
+    a {
+      @include ProximaNova-Bold;
+    }
+  }
+}
