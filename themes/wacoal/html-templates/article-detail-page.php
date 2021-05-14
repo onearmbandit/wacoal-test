@@ -15,10 +15,10 @@ Wacoal_Page_Entry_top('');
 
 <!-- PLease DO NOT modify this file, we have all HTML components here -->
 
-<section class="article-details-banner">
-</section>
+<!-- <section class="article-details-banner">
+</section> -->
 
-<section class="article-header">
+<!-- <section class="article-header">
     <div class="article-header--wrapper">
         <p class="article-header--wrapper__category">solutions</p>
         <h2 class="article-header--wrapper__heading">HEADLINE COPY – Lorem ipsum dolor sit amet, consectetur</h2>
@@ -27,9 +27,9 @@ Wacoal_Page_Entry_top('');
 
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="article-questions odd-sequence">
+<!-- <section class="article-questions odd-sequence">
     <div class="article-questions--wrapper">
         <div class="article-questions--content">
         Body Copy Left Aligned – Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -61,9 +61,9 @@ Wacoal_Page_Entry_top('');
 
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="article-questions">
+<!-- <section class="article-questions">
     <div class="article-questions--wrapper">
         <div class="article-questions--content single-column">
             <div class="article-questions--que">
@@ -82,9 +82,9 @@ Wacoal_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="article-questions even-sequence">
+<!-- <section class="article-questions even-sequence">
     <div class="article-questions--wrapper">
         <div class="article-questions--content">
             <div class="article-questions--que">
@@ -125,9 +125,9 @@ Wacoal_Page_Entry_top('');
 
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="article-questions">
+<!-- <section class="article-questions">
     <div class="article-questions--wrapper">
         <div class="article-questions--content single-column">
             <div class="article-questions--que">
@@ -146,10 +146,10 @@ Wacoal_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Article Details Slider -->
-<section class="full-width-slider--wrapper">
+<!-- <section class="full-width-slider--wrapper">
     <div class="swiper-container article-details-slider">
         <div class="swiper-wrapper">
         <div class="swiper-slide">
@@ -175,10 +175,10 @@ Wacoal_Page_Entry_top('');
             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg" alt="Slider Arrow" />
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Product Gallery -->
-<section class="product-gallery">
+<!-- <section class="product-gallery">
     <div class="product-gallery--wrapper">
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
@@ -228,10 +228,10 @@ Wacoal_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Product Quotes -->
-<section class="product-quote">
+<!-- <section class="product-quote">
     <div class="product-quote--wrapper">
         <div class="product-quote--image">
             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/quote-image.png" alt="Quote Image" />
@@ -243,10 +243,10 @@ Wacoal_Page_Entry_top('');
             elit, sed do
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- List Format -->
-<section class="list-format">
+<!-- <section class="list-format">
     <div class="list-format--wrapper">
         <div class="list list-odd-order">
             <div class="list--image">
@@ -375,10 +375,10 @@ Wacoal_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Subhead Two -->
-<section class="subhead-two">
+<!-- <section class="subhead-two">
     <div class="subhead-two--wrapper">
         <div class="subhead-two--wrapper__title">Subhead 2 - Lorem ipsum dolor sit amen, consectetur adipiscing elit</div>
         <div class="subhead-two--wrapper__para">
@@ -387,10 +387,10 @@ Wacoal_Page_Entry_top('');
         Scelerisque mauris pellentesque pulvinar pellentesque habitant.
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- List text format -->
-<section class="list-text-format">
+<!-- <section class="list-text-format">
     <div class="list-text-format--wrapper">
         <div class="list-box list-box-one">
             <div class="list-box--number">
@@ -493,6 +493,166 @@ Wacoal_Page_Entry_top('');
             </div>
         </div>
 
+    </div>
+</section> -->
+
+<!-- -->
+<!-- New Blocks -->
+
+<!-- Banner Image - Large -->
+<section class="internal-banner">
+    <div class="banner-wrapper big-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+    </div>
+</section>
+
+<!-- Banner Image - Medium -->
+<section class="internal-banner">
+    <div class="banner-wrapper medium-banner" style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+
+    </div>
+</section>
+
+<!-- Banner Image - Small -->
+<section class="internal-banner">
+    <div class="banner-wrapper small-banner" style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+
+    </div>
+</section>
+
+<!-- Image Medium -->
+<section class="image-medium">
+    <div class="image-medium--wrapper">
+        <div class="image-medium--image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+        </div>
+        <div class="image-medium--content">
+        “Historically, underwear implies function first—while the word lingerie evokes more of an aesthetic purpose. The idea that intimates have to be one or the other is something our design team challenges every time we sit around the table to create—there really is no reason that women can’t have both!”
+        </div>
+    </div>
+</section>
+
+<!-- List: Number + Title + Subhead + Copy -->
+<section class="number-title">
+    <div class="number-title--wrapper">
+
+    </div>
+</section>
+
+<!-- List - Text + Image LEFT and Text + Image RIGHT -->
+<section class="list-text-image">
+    <div class="list-text-image--wrapper">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="list-text-image--content">
+                <h2 class="title">For Smoothing</h2>
+                <div class="sub-title">
+                    Body Base® Shorty Panty
+                </div>
+                <div class="content">
+                    A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.
+                </div>
+            </div>
+        </div>
+        <div class="image-name">Body Base® Shorty Panty</div>
+    </div>
+    <div class="list-text-image--wrapper">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="list-text-image--content">
+                <h2 class="title">For Smoothing</h2>
+                <div class="sub-title">
+                    Body Base® Shorty Panty
+                </div>
+                <div class="content">
+                    A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.
+                </div>
+            </div>
+        </div>
+        <div class="image-name">Body Base® Shorty Panty</div>
+    </div>
+</section>
+
+<!-- Customer Review -->
+<section class="customer-review">
+    <div class="customer-review--wrapper">
+        <div class="image-wrapper left">
+            <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="image-caption">
+                Body Base® Shorty Panty
+            </div>
+        </div>
+
+        <div class="review-content">
+            <div class="rating-stars">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+            </div>
+            <div class="rating-content">
+                The best new bra I’ve bought in years!! I absolutely love this bra! The wider band on the sides provides the best smoothing effect and the fit is perfect! The fabric and fit make it the most comfortable bra I’ve had in a long time! I am so happy with this bra I can’t wait to order more!
+            </div>
+            <div class="customer-name">
+                – CUSTOMER REVIEW
+            </div>
+        </div>
+
+        <div class="image-wrapper right">
+            <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="image-caption">
+                Body Base® Shorty Panty
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Conclusion Summary Description -->
+<section class="conclusion">
+    <div class="conclusion--wrapper">
+        <div class="conclusion--top-para">
+        Don’t forget. Our Fit Experts are always here to help you find the perfect bra size. Make an appointment for a bra consultation today, or try our bra size calculator to discover your correct bra measurements using our easy step-by-step guide.
+        </div>
+
+        <div class="conclusion--bottom-para">
+        Are you wearing the right bra size? Check out our online <a href="#">Bra Fit Calculator</a> for easy DIY bra measurements. Remember, the perfect sport bra is one that fits your shape!
+        </div>
+    </div>
+</section>
+
+<!-- List - Title + Body + Image + Bullets -->
+<section class="title-body-image">
+    <div class="image--wrapper mobile" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);"></div>
+    <div class="wrapper">
+        <div class="title-wrapper">
+            <div class="title">Sport Contour Underwire Bra</div>
+            <div class="sub-title">
+            Fashion meets function. Cups made with breathable spacer fabric provide the opacity of a padded bra without the weight. Cushioned convertible straps coupled with sporty, airy mesh accents set the stage for this bounce-minimizing bra. Plus, the outside underwire is wrapped in soft fabric, so it sits comfortably against your skin. No muss, no fuss. Consider it your perfect workout partner.
+            </div>
+        </div>
+
+        <div class="image-bullets">
+            <div class="image--wrapper" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="bullets--wrapper">
+                <ul>
+                    <li>Medium Impact</li>
+                    <li>Close-set straps prevent slipping</li>
+                    <li>Adjustable design converts to crisscross style</li>
+                    <li>Simplex fabric frame at top and side of cups helps minimize bounce</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
 <?php
