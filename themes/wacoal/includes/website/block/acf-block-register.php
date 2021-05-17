@@ -327,7 +327,7 @@ function Wacoal_Acf_init()
             'name'            => 'wacoal-conclusion-summary-description',
             'title'           => __('Wacoal Conclusion Summary Description Block'),
             'description'     => __('A custom conclusion summary description format block.'),
-            'render_callback' => 'Wacoal_Conclusion_Summary_Description_Render_callback',
+            'render_callback' => 'Wacoal_Conclusion_Summary_Desc_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
             'keywords'        => array('content'),

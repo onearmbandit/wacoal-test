@@ -690,3 +690,28 @@ function Wacoal_Customer_Review_Render_callback( $block )
     }
 }
 
+/**
+ * Callback function for List image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Conclusion_Summary_Desc_Render_callback( $block )
+{
+    $bold_content = get_field('bold_content');
+    $content = get_field('content');
+
+    $shortcode_template  = '/template-parts/block/wacoal-conclusion-summary.php';
+
+    if ($bold_content || $content) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Conclusion Summary Desc</u></h4>
+            <span style="color:red">Empty Conclusion Summary Desc Block</span>
+            <?php
+        }
+    }
+}
