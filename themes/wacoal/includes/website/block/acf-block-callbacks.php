@@ -621,3 +621,30 @@ function Wacoal_Medium_Img_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for List image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_List_Text_Image_Render_callback( $block )
+{
+    $block_lists    = get_field('text_image_list');
+
+    // error_log('$block_lists'.print_r($block_lists,1));
+
+    $shortcode_template  = '/template-parts/block/wacoal-text+image.php';
+
+    if (! empty($block_lists) && $block_lists ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Text + Image List</u></h4>
+            <span style="color:red">Empty Text + Image Block</span>
+            <?php
+        }
+    }
+}
