@@ -633,8 +633,6 @@ function Wacoal_List_Text_Image_Render_callback( $block )
 {
     $block_lists    = get_field('text_image_list');
 
-    // error_log('$block_lists'.print_r($block_lists,1));
-
     $shortcode_template  = '/template-parts/block/wacoal-text+image.php';
 
     if (! empty($block_lists) && $block_lists ) {
@@ -648,3 +646,47 @@ function Wacoal_List_Text_Image_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for customer review block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Customer_Review_Render_callback( $block )
+{
+    $review_text        = get_field('review_text');
+    $reviewer_name      = get_field('reviewer_name');
+    $star_rating_number = get_field('star_rating_number');
+    $left_image_id      = get_field('left_image');
+    $right_image_id     = get_field('right_image');
+    $left_image_caption = get_field('left_image_caption');
+    $right_image_caption = get_field('right_image_caption');
+
+    if (!empty($left_image_id) && $left_image_id) {
+        $left_image_array = wp_get_attachment_image_src($left_image_id, 'full');
+        $left_image_alt = Wacoal_Get_Image_alt($left_image_id, 'Block Image');
+        $left_image_url = Wacoal_Get_image($left_image_array);
+    }
+
+    if (!empty($right_image_id) && $right_image_id) {
+        $right_image_array = wp_get_attachment_image_src($right_image_id, 'full');
+        $right_image_alt = Wacoal_Get_Image_alt($right_image_id, 'Block Image');
+        $right_image_url = Wacoal_Get_image($right_image_array);
+    }
+
+    $shortcode_template  = '/template-parts/block/wacoal-customer-review.php';
+
+    if ($review_text || $reviewer_name || $star_rating_number || $left_image_id || $right_image_id) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Customer Review</u></h4>
+            <span style="color:red">Empty Customer Review Block</span>
+            <?php
+        }
+    }
+}
+
