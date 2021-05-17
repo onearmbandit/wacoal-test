@@ -237,6 +237,19 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'title', 'description' ),
             )
         );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-medium-image-format',
+            'title'           => __('Wacoal Mediam Image Block Format'),
+            'description'     => __('A custom Image format block.'),
+            'render_callback' => 'Wacoal_Medium_Img_Format_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'button', 'content' ),
+            )
+        );
+
         acf_register_block(
             array(
             'name'            => 'wacoal-button-format',
@@ -314,7 +327,7 @@ function Wacoal_Acf_init()
             'name'            => 'wacoal-conclusion-summary-description',
             'title'           => __('Wacoal Conclusion Summary Description Block'),
             'description'     => __('A custom conclusion summary description format block.'),
-            'render_callback' => 'Wacoal_Conclusion_Summary_Description_Render_callback',
+            'render_callback' => 'Wacoal_Conclusion_Summary_Desc_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
             'keywords'        => array('content'),
@@ -325,8 +338,8 @@ function Wacoal_Acf_init()
             array(
             'name'            => 'wacoal-image-bullets-list',
             'title'           => __('Wacoal Title Image Bullets List Block'),
-            'description'     => __('A custom title image bullets list block format block.'),
-            'render_callback' => 'Wacoal_Title_Image_Bullets_List_Block_Render_callback',
+            'description'     => __('A custom title image bullets list format block.'),
+            'render_callback' => 'Wacoal_Title_Img_Bullets_List_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
             'keywords'        => array('list', 'content'),
