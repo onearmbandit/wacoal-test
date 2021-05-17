@@ -802,3 +802,31 @@ function Wacoal_List_Statement_Image_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for button block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Button_Format_Render_callback( $block )
+{
+    $button_fields = get_field('add_button');
+    $button_label  = $button_fields['button_label'];
+    $button_url    = $button_fields['button_url'];
+    $new_tab       = $button_fields['open_link_in_new_tab'];
+
+    $shortcode_template  = '/template-parts/block/wacoal-btn-block.php';
+
+    if ($button_fields && !empty($button_fields)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Button Block</u></h4>
+            <span style="color:red">Empty Button Block</span>
+            <?php
+        }
+    }
+}
