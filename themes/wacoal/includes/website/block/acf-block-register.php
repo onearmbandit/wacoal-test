@@ -237,6 +237,19 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'title', 'description' ),
             )
         );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-medium-image-format',
+            'title'           => __('Wacoal Mediam Image Block Format'),
+            'description'     => __('A custom Image format block.'),
+            'render_callback' => 'Wacoal_Medium_Img_Format_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array( 'button', 'content' ),
+            )
+        );
+
         acf_register_block(
             array(
             'name'            => 'wacoal-button-format',
