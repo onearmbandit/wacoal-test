@@ -749,3 +749,31 @@ function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for List image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Number_Title_Render_callback( $block )
+{
+    $add_number  = get_field('add_number');
+    $title       = get_field('title');
+    $subtitle    = get_field('subtitle');
+    $description = get_field('description');
+
+    $shortcode_template  = '/template-parts/block/wacoal-number-title.php';
+
+    if ($add_number || $title || $subtitle || $description) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Number Title Block</u></h4>
+            <span style="color:red">Empty Number Title Block</span>
+            <?php
+        }
+    }
+}
