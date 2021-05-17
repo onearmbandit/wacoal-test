@@ -105,9 +105,9 @@ if ($block_lists && !empty($block_lists)) {
             </div>
             <?php endif;?>
     </div>
-        <?php } ?>
+        <?php }
+    }?>
 </section>
             <?php
-    }
 }
 ?>

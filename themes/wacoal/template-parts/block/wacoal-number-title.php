@@ -33,7 +33,7 @@
         <?php endif;?>
 
         <?php if($subtitle && !empty($subtitle)) :?>
-            <div class="sub-head"><?php Wacoal_Remove_P_tag(wp_kses_post($subtitle));?></div>
+            <div class="sub-head"><?php echo Wacoal_Remove_P_tag(wp_kses_post($subtitle));?></div>
         <?php endif;?>
 
         </div>
