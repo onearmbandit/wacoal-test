@@ -338,8 +338,8 @@ function Wacoal_Acf_init()
             array(
             'name'            => 'wacoal-image-bullets-list',
             'title'           => __('Wacoal Title Image Bullets List Block'),
-            'description'     => __('A custom title image bullets list block format block.'),
-            'render_callback' => 'Wacoal_Title_Image_Bullets_List_Block_Render_callback',
+            'description'     => __('A custom title image bullets list format block.'),
+            'render_callback' => 'Wacoal_Title_Img_Bullets_List_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
             'keywords'        => array('list', 'content'),

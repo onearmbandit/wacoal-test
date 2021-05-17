@@ -715,3 +715,37 @@ function Wacoal_Conclusion_Summary_Desc_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for bullet list image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
+{
+    $title = get_field('title');
+    $description = get_field('description');
+    $bullet_points = get_field('bullet_points');
+    $block_image_id = get_field('image');
+
+    if (! empty($block_image_id) && $block_image_id ) {
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Wacoal_Get_image($block_image_array);
+    }
+
+    $shortcode_template  = '/template-parts/block/wacoal-bullet-list.php';
+
+    if ($title || $description || $bullet_points || $block_image_id) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Image Title Bullet List</u></h4>
+            <span style="color:red">Empty Image Title Bullet List Block</span>
+            <?php
+        }
+    }
+}
