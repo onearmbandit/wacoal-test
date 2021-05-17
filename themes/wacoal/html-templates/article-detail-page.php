@@ -508,14 +508,14 @@ Wacoal_Page_Entry_top('');
 
 <!-- Banner Image - Medium -->
 <section class="internal-banner">
-    <div class="banner-wrapper medium-banner" style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+    <div class="banner-wrapper medium-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
 
     </div>
 </section>
 
 <!-- Banner Image - Small -->
 <section class="internal-banner">
-    <div class="banner-wrapper small-banner" style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
+    <div class="banner-wrapper small-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
 
     </div>
 </section>
@@ -532,12 +532,6 @@ Wacoal_Page_Entry_top('');
     </div>
 </section>
 
-<!-- List: Number + Title + Subhead + Copy -->
-<section class="number-title">
-    <div class="number-title--wrapper">
-
-    </div>
-</section>
 
 <!-- List - Text + Image LEFT and Text + Image RIGHT -->
 <section class="list-text-image">
@@ -655,5 +649,68 @@ Wacoal_Page_Entry_top('');
         </div>
     </div>
 </section>
+
+<!-- List: Number + Title + Subhead + Copy -->
+<section class="number-title">
+    <div class="number-title--wrapper">
+        <div class="number desktop">
+            3.
+        </div>
+
+        <div class="title js-bg-text">
+            <div class="number mobile">
+                3.
+            </div>
+            <span>The Wire Free Push Up T-Shirt Bra</span>
+            <div class="sub-head">How Perfect Wire Free Bra</div>
+        </div>
+
+        <div class="content">
+        Tackle those holiday wish lists in the comfort of a perfect stay-at-home bra, featuring stretch foam cups, a no-wire design, and a so-soft finish. You won’t want to take it off!
+        </div>
+    </div>
+</section>
+
+<!-- List - Title + Statement + Body + Image RIGHT/LEFT -->
+<section class="list-statment-image">
+    <div class="list-statment-image--wrapper">
+        <div class="list-statment-image--inner">
+            <div class="list-statment-image--content">
+                <h3 class="title">myth</h3>
+                <h2 class="title-sub">One perfect sport bra exists.</h2>
+                <div class="content">
+                    A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.
+                </div>
+            </div>
+
+            <div class="list-statment-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+        </div>
+    </div>
+    <div class="list-statment-image--wrapper">
+        <div class="list-statment-image--inner">
+            <div class="list-statment-image--content">
+                <h3 class="title">myth</h3>
+                <h2 class="title-sub">One perfect sport bra exists.</h2>
+                <div class="content">
+                    A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.
+                </div>
+            </div>
+
+            <div class="list-statment-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Button -->
+<section class="link-button">
+    <div class="link-button--wrapper">
+        <a href="#" class="btn primary dark">Shop Now</a>
+    </div>
+</section>
+
 <?php
 Wacoal_Page_Entry_bottom();

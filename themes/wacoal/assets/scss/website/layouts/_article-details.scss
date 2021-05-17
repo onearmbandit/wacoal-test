@@ -739,25 +739,46 @@
 
 //
 .list-text-format {
-  margin-bottom: calcRem(44);
+  // margin-bottom: calcRem(44);
 
-  @include respond-above(sm) {
-    margin-bottom: get-vw(140px);
+  // @include respond-above(sm) {
+  //   margin-bottom: get-vw(140px);
+  // }
+  padding: 80px 0;
+
+  @include respond-below(lg) {
+    padding: 50px 0;
+  }
+
+  @include respond-below(md) {
+    padding: 25px 0;
   }
 
   &--wrapper {
     width: var(--width-100);
     margin: auto;
 
-    @include respond-above(sm) {
-      max-width: get-vw(1492px);
+    @include respond-above(md) {
+      max-width: 904px;
+    }
+
+    @include respond-above(lg) {
+      max-width: 1195px;
     }
   }
 
   .list-box {
 
     &:not(:last-child) {
-      margin-bottom: get-vw(80px);
+      margin-bottom: 160px;
+
+      @include respond-below(lg) {
+        margin-bottom: 100px;
+      }
+
+      @include respond-below(md) {
+        margin-bottom: 50px;
+      }
     }
 
     &--number {
@@ -767,15 +788,25 @@
       span {
         @include BentonModDisp-Bold;
         color: rgba(235, 222, 213, 0.45);
-        // left: 50%;
-        // transform: translateX(-50%);
         line-height: 1;
-        font-size: calcRem(169);
+        font-size: 420px;
+        letter-spacing: 2.1px;
         width: 100%;
         display: block;
 
-        @include respond-above(sm) {
-          font-size: get-vw(541px);
+        @include respond-below(lg) {
+          font-size: 315px;
+          letter-spacing: 1.57px;
+        }
+
+        @include respond-below(md) {
+          font-size: 236px;
+          letter-spacing: 1.18px;
+        }
+
+        @include respond-below(sm) {
+          font-size: 169px;
+          letter-spacing: 1.18px;
         }
       }
 
@@ -785,6 +816,25 @@
         left: 50%;
         transform: translateX(-50%) translateY(-50%);
         text-transform: uppercase;
+        font-size: 112px;
+        letter-spacing: 0.56px;
+        line-height: 78px;
+        @include BentonModDisp-Regular;
+
+        @include respond-below(lg) {
+          font-size: 83px;
+          letter-spacing: 0.41px;
+        }
+
+        @include respond-below(md) {
+          font-size: 62px;
+          letter-spacing: 0.31px;
+        }
+
+        @include respond-below(sm) {
+          font-size: 36px;
+          letter-spacing: 0.18px;
+        }
       }
     }
 
@@ -808,14 +858,34 @@
     &--heading {
       @include BentonModDisp-BoldItalic;
       border-bottom: 1px solid var(--color-black);
-      font-size: calcRem(18);
-      line-height: calcRem(23);
-      padding-bottom: calcRem(11.4);
+      font-size: 38px;
+      line-height: 40px;
+      letter-spacing: 0.76px;
+      padding-bottom: 35px;
+      padding-right: 50px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(56px);
-        line-height: get-vw(51px);
-        padding-bottom: get-vw(40px);
+      @include respond-below(lg) {
+        font-size: 26px;
+        line-height: 28px;
+        letter-spacing: 0.52px;
+        padding-bottom: 35px;
+        padding-right: 40px;
+      }
+
+      @include respond-below(md) {
+        font-size: 19px;
+        line-height: 20px;
+        letter-spacing: 0.38px;
+        padding-bottom: 20px;
+        padding-right: 30px;
+      }
+
+      @include respond-below(sm) {
+        font-size: 18px;
+        line-height: 23px;
+        letter-spacing: 0.36px;
+        padding-bottom: 15px;
+        padding-right: 15px;
       }
 
       span {
@@ -825,13 +895,16 @@
 
     &--para {
       @include BentonModDisp-Regular;
-      font-size: calcRem(14);
-      line-height: calcRem(18);
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.27px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(30px);
-        line-height: get-vw(40px);
+      @include respond-below(lg) {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.24px;
       }
+
 
       strong {
         @include BentonModDisp-Bold;
@@ -855,135 +928,72 @@
 
       .list-box--number {
         text-align: center;
+        width: 420px;
+        border-right: 1px solid var(--color-black);
 
-        @include respond-above(sm) {
-          width: get-vw(475px);
-          border-right: 1px solid var(--color-black);
+        @include respond-below(lg) {
+          width: 335px;
+        }
+
+        @include respond-below(md) {
+          width: 252px;
+        }
+
+        @include respond-below(sm) {
+          border: none;
         }
       }
 
       .list-box--content {
         width: 100%;
         text-align: center;
+        margin-left: 50px;
 
         @include respond-above(sm) {
           flex: 1;
-          margin-left: get-vw(64px);
           text-align: left;
         }
 
-        .list-box--heading {
-          padding-left: get-vw(40px);
-          margin-bottom: calcRem(16);
+        @include respond-below(lg) {
+          margin-left: 40px;
+        }
 
-          @include respond-above(sm) {
-            margin-bottom: get-vw(46px);
+        @include respond-below(md) {
+          margin-left: 30px;
+        }
+
+        @include respond-below(sm) {
+          margin-left: 0;
+        }
+
+        .list-box--heading {
+          padding-left: 50px;
+          margin-bottom: 35px;
+
+          @include respond-below(lg) {
+            padding-left: 40px;
+          }
+
+          @include respond-below(md) {
+            padding-left: 30px;
+            margin-bottom: 20px;
           }
         }
 
         .list-box--para {
-          padding-left: get-vw(40px);
+          padding: 0 50px;
+
+          @include respond-below(lg) {
+            padding: 0 40px;
+          }
+
+          @include respond-below(md) {
+            padding: 0 30px;
+          }
         }
       }
     }
 
-    &.list-box-two {
-
-      .list-box--heading {
-        padding-left: get-vw(40px);
-        margin-bottom: calcRem(16);
-        display: flex;
-        justify-content: flex-end;
-
-        @include respond-above(sm) {
-          margin-bottom: get-vw(46px);
-        }
-
-        span {
-          max-width: calcRem(285);
-
-          @include respond-above(sm) {
-            max-width: get-vw(844px);
-          }
-        }
-      }
-
-      .list-box-even--wrapper {
-        display: flex;
-        align-items: center;
-      }
-
-      .list-box--number {
-        text-align: center;
-        width: calcRem(200);
-        margin-left: auto;
-
-        @include respond-above(sm) {
-          width: get-vw(475px);
-          border-left: 1px solid var(--color-black);
-        }
-
-        span {
-
-          @include respond-above(sm) {
-            line-height: get-vw(400px);
-          }
-        }
-      }
-
-      .list-box--content {
-        flex: 1;
-        margin-right: get-vw(64px);
-      }
-    }
-
-    &.list-box-three {
-
-      .list-box--heading {
-        padding-left: get-vw(40px);
-        margin-bottom: calcRem(16);
-
-        @include respond-above(sm) {
-          margin-bottom: get-vw(46px);
-        }
-
-        span {
-          max-width: calcRem(285);
-
-          @include respond-above(sm) {
-            max-width: get-vw(844px);
-          }
-        }
-      }
-
-      .list-box-even--wrapper {
-        display: flex;
-        align-items: center;
-      }
-
-      .list-box--number {
-        text-align: center;
-        width: calcRem(200);
-
-        @include respond-above(sm) {
-          width: get-vw(475px);
-          border-right: 1px solid var(--color-black);
-          margin-left: inherit;
-        }
-
-        span {
-
-          @include respond-above(sm) {
-            line-height: get-vw(400px);
-          }
-        }
-      }
-
-      .list-box--content {
-        flex: 1;
-        margin-left: get-vw(64px);
-      }
-    }
 
     &.myth-box {
       .list-box--number {
@@ -1011,7 +1021,7 @@
 
         .list-box--content {
           margin-left: inherit;
-          margin-right: get-vw(64px);
+          margin-right: 50px;
         }
       }
     }
@@ -1032,7 +1042,7 @@
   margin: 0 auto 28px;
 
   @include respond-above(sm) {
-    width: get-vw(1720px);
+    max-width: 1440px;
     // margin-bottom: get-vw(146px);
     margin-bottom: get-vw(112px);
   }
@@ -1050,20 +1060,27 @@
   }
 
   .video-caption {
-    width: calc(100% - 46px);
-    margin: auto;
-    font-size: calcRem(9);
-    line-height: calcRem(13);
+    max-width: 916px;
+    margin: 24px auto 0;
+    font-size: 14px;
+    line-height: 18px;
     @include ProximaNova-Light;
     color: var(--color-black);
     text-align: center;
-    margin-top: calcRem(12);
+    letter-spacing: 0.21px;
 
-    @include respond-above(sm) {
-      width: get-vw(1286px);
-      font-size: get-vw(29px);
-      line-height: get-vw(38px);
-      margin-top: get-vw(39px);
+    @include respond-below(lg) {
+      margin: 17px auto 0;
+      max-width: 740px;
+    }
+
+    @include respond-below(md) {
+      max-width: 710px;
+    }
+
+    @include respond-below(sm) {
+      margin: 10px auto 0;
+      max-width: 302px;
     }
 
     strong {
@@ -1610,47 +1627,74 @@
 
 
 .donation {
+  padding: 80px 0;
+
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
 
   &--wrapper {
     margin: auto;
     display: flex;
+    max-width: 1122px;
 
+    @include respond-below(lg) {
+      max-width: 890px;
+    }
+
+    @include respond-below(md) {
+      max-width: 708px;
+    }
     @include respond-below(sm) {
       padding: 0 15px;
       flex-direction: column;
     }
 
-    @include respond-above(sm) {
-      width: get-vw(1120px);
-    }
 
     .title {
       @include BentonModDisp-Regular;
       text-transform: uppercase;
-      font-size: 32px;
-      letter-spacing: 0.48px;
+      font-size: 47px;
+      letter-spacing: 0.7px;
       line-height: 1;
-      margin-bottom: 14px;
+      margin-bottom: 28px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(47px);
-        letter-spacing: get-vw(0.7px);
-        margin-bottom: get-vw(28px);
+      @include respond-below(lg) {
+        font-size: 36px;
+        letter-spacing: 0.18px;
+        margin-bottom: 20px;
       }
+
+      @include respond-below(md) {
+        font-size: 28px;
+        letter-spacing: 0.14px;
+        margin-bottom: 20px;
+      }
+
     }
 
     .para {
       @include BentonModDisp-Regular;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 0.24px;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.5px;
+      max-width: 578px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(20px);
-        line-height: get-vw(32px);
-        letter-spacing: get-vw(0.5px);
-        margin-bottom: get-vw(80px);
-        width: get-vw(577px);
+      &:not(:last-child) {
+        margin-bottom: 80px;
+
+        @include respond-below(lg) {
+          margin-bottom: 45px;
+        }
+      }
+
+      @include respond-below(lg) {
+        font-size: 17px;
+        line-height: 24px;
       }
 
       a {
@@ -1666,15 +1710,17 @@
     .timeline {
       padding: 0;
       position: relative;
+      width: 435px;
+      margin-bottom: 80px;
 
       @include respond-below(sm) {
         margin: 40px 0 48px;
       }
 
-      @include respond-above(sm) {
-        width: get-vw(435px);
-        margin-bottom: get-vw(80px);
-      }
+      // @include respond-above(sm) {
+      //   width: get-vw(435px);
+      //   margin-bottom: get-vw(80px);
+      // }
     }
     .timeline-item {
       list-style: none;
@@ -1707,19 +1753,15 @@
     }
     .timeline-text {
       margin: 0;
-      padding: 0 0 48px 28px;
-      font-size: 15px;
+      padding: 0 0 46px 30px;
+      font-size: 16px;
       line-height: 26px;
       letter-spacing: 0.4px;
 
-      @include respond-above(sm) {
-        // padding: 0 40px 40px;
-        font-size: get-vw(16px);
-        padding-left: get-vw(40px);
-        padding-bottom: get-vw(40px);
-        padding-right: get-vw(40px);
-        line-height: get-vw(26px);
-        letter-spacing: get-vw(0.4px);
+      @include respond-below(lg) {
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.38px;
       }
 
       &.first-para {
@@ -1734,22 +1776,25 @@
   }
 
   &--wrapper-left {
-
-    @include respond-above(sm) {
-      width: get-vw(680px);
-    }
+    flex: 1;
+    // @include respond-above(sm) {
+    //   width: get-vw(680px);
+    // }
   }
 
   &--wrapper-right {
+    width: 362px;
+    margin-left: 86px;
 
-    @include respond-below(sm) {
-      margin-top: 48px;
+    @include respond-below(lg) {
+      width: 354px;
+      margin-left: 35px;
     }
 
-    @include respond-above(sm) {
-      width: get-vw(360px);
-      margin-left: get-vw(86px);
-    }
+    // @include respond-below(sm) {
+    //   margin-top: 48px;
+    // }
+
 
     .quote {
       @include BentonModDisp-RegularItalic;
@@ -1757,18 +1802,11 @@
       text-align: center;
       font-size: 18px;
       line-height: 27px;
-      margin-bottom: 38px;
-
-      @include respond-above(sm) {
-        font-size: get-vw(18px);
-        line-height: get-vw(27px);
-        letter-spacing: get-vw(0.72px);
-        width: get-vw(300px);
 
         &:not(:last-child) {
-          margin-bottom: get-vw(76px);
+          margin-bottom: 48px;
         }
-      }
+
 
       &:before, &:after {
         content: '';
@@ -1777,48 +1815,46 @@
         width: 100%;
         background-repeat: no-repeat;
 
+        background-size: 55px;
+        height: 54px;
+
         @include respond-below(sm) {
           background-size: 44px;
           height: 44px;
-        }
-
-        @include respond-above(sm) {
-          background-size: get-vw(55px);
-          height: get-vw(70px);
         }
       }
       &:before {
         background-image: url("../../images/quote-icon-left.svg");
         background-position: left center;
-
-        @include respond-below(sm) {
-          margin-bottom: 20px;
-        }
-
-        @include respond-above(sm) {
-          margin-bottom: get-vw(20px);
-        }
+        margin-bottom: 20px;
       }
 
       &:after {
         background-image: url("../../images/quote-icon-right.svg");
         background-position: right center;
+        margin-top: 20px;
+      }
 
-        @include respond-below(sm) {
-          margin-top: 20px;
-        }
-
-        @include respond-above(sm) {
-          margin-top: get-vw(20px);
-        }
+      .quote-wrapper {
+        max-width: 90%;
+        margin: auto;
       }
 
       span {
         font-size: 13px;
+        @include ProximaNova-Light;
+        color: var(--color-black);
+        letter-spacing: 0.2px;
+        line-height: 34px;
+      }
+    }
 
-        @include respond-above(sm) {
-          font-size: get-vw(13px);
-        }
+    .quote-image {
+      &:not(:last-child) {
+        margin-bottom: 48px;
+      }
+      img {
+        width: 100%;
       }
     }
   }

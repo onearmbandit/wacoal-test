@@ -12,7 +12,7 @@
 
 ?>
 
-<section class="spacer-120"></section>
+<!-- <section class="spacer-120"></section> -->
 
 <section class="donation">
     <div class="donation--wrapper">
@@ -68,15 +68,20 @@
 
             <?php if($quotes_text && !empty($quotes_text)) :?>
             <div class="quote">
-                <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text)); ?></br>
-                <?php if($quotes_person && !empty($quotes_person)) :?>
-                <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_person)); ?></span>
+                <div class="quote-wrapper">
+                    <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text)); ?></br>
+                    <?php if($quotes_person && !empty($quotes_person)) :?>
+                    <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_person)); ?></span>
+                </div>
                 <?php endif; ?>
             </div>
             <?php endif; ?>
-
         <?php }?>
-
+        <div class="quote-image">
+                <div class="quote-wrapper">
+                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" />
+                </div>
+            </div>
         </div>
     </div>
 </section>

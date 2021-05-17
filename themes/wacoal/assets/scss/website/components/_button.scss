@@ -15,27 +15,33 @@
       border-color: var(--color-black);
       background-color: transparent;
       color: var(--color-black);
-      font-size:calcRem(17);
-      @include BentonModDisp-Bold;
+      font-size: 14px;
+      @include ProximaNova-Bold;
       text-transform:   uppercase;
-      padding: calcRem(9, 20, 7);
+      padding: 15px 36px 14px;
+      letter-spacing: 1.4px;
+      line-height: 18px;
 
-      @include respond-above(sm) {
-          font-size: get-vw(25px);
-          padding-top: get-vw(14.5px);
-          padding-right: get-vw(28px);
-          padding-bottom: get-vw(12.5px);
-          padding-left: get-vw(28px);
-      }
+      // @include respond-above(sm) {
+      //     font-size: 25px;
+      //     padding: 14.5px 28px 12.5px;
+      // }
 
-      &.big {
+      // &.big {
 
-        @include respond-above(sm) {
-          font-size: get-vw(29px);
-          padding-top: get-vw(18px);
-          padding-right: get-vw(30.5px);
-          padding-bottom: get-vw(15px);
-          padding-left: get-vw(30.5px);
+      //   @include respond-above(sm) {
+      //     font-size: 29px;
+      //     padding: 18px 30.5px 15px;
+      //   }
+      // }
+
+      &.dark {
+        background-color: var(--color-black);
+        color: var(--color-white);
+
+        &:hover {
+          background: var(--color-white);
+          color: var(--color-black);
         }
       }
 
@@ -49,17 +55,14 @@
       border-color: var(--color-nav-bg);
       background-color: var(--color-nav-bg);
       color: var(--color-black);
-      font-size: calcRem(16);
+      font-size: 16px;
       @include ProximaNova-Bold;
       text-transform:   uppercase;
-      padding: calcRem(14, 42, 13);
+      padding: 14px 42px 13px;
 
       @include respond-above(sm) {
-        font-size: get-vw(34px);
-        padding-top: get-vw(24px);
-        padding-right: get-vw(60px);
-        padding-bottom: get-vw(22px);
-        padding-left: get-vw(60px);
+        font-size: 34px;
+        padding: 24px 60px 22px;
       }
   }
 

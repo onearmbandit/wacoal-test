@@ -87,6 +87,11 @@
                                 <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->tag_line), 160));?>
                             </a>
                         </div>
+
+                        <div class="evergreen-article--button">
+                            <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
+                            class="btn primary big">learn more</a>
+                        </div>
                     </div>
 
                     <div class="evergreen-article--image">
@@ -97,10 +102,6 @@
                         </a>
                     </div>
 
-                    <div class="evergreen-article--button">
-                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
-                        class="btn primary big">learn more</a>
-                    </div>
                 </div>
 
             <?php } ?>

@@ -1,0 +1,166 @@
+.list-statment-image {
+
+  &--wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 0;
+
+    @include respond-below(lg){
+      padding: 50px 0;
+      max-width: 966px;
+    }
+
+    @include respond-below(md){
+      padding: 25px 0;
+      max-width: 738px;
+    }
+
+    @include respond-below(xs){
+      padding: 25px 0;
+      max-width: 100%;
+    }
+
+    &:nth-child(even) {
+
+      .list-statment-image--inner {
+        flex-direction: row-reverse;
+
+        @include respond-below(xs){
+          flex-direction: column-reverse;
+        }
+      }
+
+      .list-statment-image--content {
+        margin-right: inherit;
+        margin-left: 135px;
+
+        @include respond-below(lg){
+          margin-right: inherit;
+          margin-left: 57px;
+        }
+
+        @include respond-below(md){
+          margin-right: inherit;
+          margin-left: 22px;
+        }
+
+        @include respond-below(xs){
+          margin-right: inherit;
+          margin-left: inherit;
+        }
+      }
+
+    }
+  }
+
+  &--inner {
+    display: flex;
+    align-items: center;
+
+    @include respond-below(xs){
+      flex-direction: column-reverse;
+    }
+  }
+
+  &--img {
+    width: 720px;
+    height: 720px;
+    background-size: cover;
+
+    @include respond-below(lg){
+      width: 512px;
+      height: 512px;
+    }
+
+    @include respond-below(md){
+      width: 384px;
+      height: 384px;
+    }
+
+    @include respond-below(md){
+      max-width: 375px;
+      max-height: 375px;
+    }
+  }
+
+  &--content {
+    flex: 1;
+    margin-right: 135px;
+
+    @include respond-below(lg){
+      margin-right: 57px;
+    }
+
+    @include respond-below(md){
+      margin-right: 22px;
+    }
+
+    @include respond-below(xs){
+      margin-right: inherit;
+      width: 314px;
+      margin: 20px auto 0;
+    }
+
+    .title {
+      @include ProximaNova-Bold;
+      font-size: 44px;
+      line-height: 52px;
+      text-transform: uppercase;
+      text-decoration: underline;
+      margin-bottom: 10px;
+
+      @include respond-below(lg){
+        font-size: 40px;
+        line-height: 47px;
+      }
+
+      @include respond-below(md){
+        font-size: 32px;
+        line-height: 38px;
+      }
+
+      @include respond-below(xs){
+        font-size: 28px;
+        line-height: 33px;
+      }
+    }
+
+    .title-sub {
+      @include ProximaNova-Bold;
+      font-size: 46px;
+      line-height: 56px;
+      margin-bottom: 12px;
+
+      @include respond-below(lg){
+        font-size: 42px;
+        line-height: 51px;
+      }
+
+      @include respond-below(md){
+        font-size: 33px;
+        line-height: 40px;
+      }
+
+      @include respond-below(xs){
+        font-size: 29px;
+        line-height: 35px;
+      }
+    }
+
+    .content {
+      @include ProximaNova-Reg;
+      font-size: 18px;
+      line-height: 26px;
+
+      @include respond-below(lg){
+        font-size: 16px;
+        line-height: 23px;
+      }
+
+      @include respond-below(xs){
+        font-size: 15px;
+        line-height: 24px;
+      }
+    }
+  }
+}

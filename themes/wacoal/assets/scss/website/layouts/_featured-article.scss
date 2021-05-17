@@ -115,14 +115,14 @@
 }
 
 
-.page-wrapper {
+// .page-wrapper {
 
-  &--content {
-    width: calc(100% - 36px);
-    margin: auto;
+//   &--content {
+//     width: calc(100% - 36px);
+//     margin: auto;
 
-    @include respond-above(sm) {
-      width: get-vw(1720px);
-    }
-  }
-}
+//     @include respond-above(sm) {
+//       width: get-vw(1720px);
+//     }
+//   }
+// }
