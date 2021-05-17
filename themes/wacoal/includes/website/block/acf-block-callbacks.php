@@ -563,3 +563,34 @@ function Wacoal_Center_Para_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Banner_Image_Render_callback( $block )
+{
+    $img_type  = get_field('select_type');
+
+    error_log('$img_type'.$img_type);
+    $shortcode_template  = '/template-parts/block/wacoal-banner-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id       = get_field('image');
+        error_log('$img_id'.$img_id);
+        $block_image_array  = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt    = Wacoal_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url    = Wacoal_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Banner Image</u></h4>
+            <span style="color:red">Empty Banner Image Block</span>
+            <?php
+        }
+    }
+}
