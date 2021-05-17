@@ -574,6 +574,8 @@ function Wacoal_Center_Para_Render_callback( $block )
 function Wacoal_Banner_Image_Render_callback( $block )
 {
     $img_type  = get_field('select_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
 
     $shortcode_template  = '/template-parts/block/wacoal-banner-img.php';
 
