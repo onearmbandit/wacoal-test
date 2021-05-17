@@ -751,7 +751,7 @@ function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
 }
 
 /**
- * Callback function for List image block
+ * Callback function for Number Title block
  *
  * @param [type] $block Block.
  *
@@ -773,6 +773,31 @@ function Wacoal_Number_Title_Render_callback( $block )
             ?>
             <h4><u>Wacoal Number Title Block</u></h4>
             <span style="color:red">Empty Number Title Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for Number Title block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_List_Statement_Image_Render_callback( $block )
+{
+    $block_lists = get_field('statement_list_image');
+
+    $shortcode_template  = '/template-parts/block/wacoal-statement-img-list.php';
+
+    if ($block_lists && !empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Statement Image List Block</u></h4>
+            <span style="color:red">Empty Statement Image List Block</span>
             <?php
         }
     }
