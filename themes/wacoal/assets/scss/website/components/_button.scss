@@ -40,7 +40,8 @@
         color: var(--color-white);
 
         &:hover {
-          background: var(--color-white);
+          // background: var(--color-white);
+          background: transparent;
           color: var(--color-black);
         }
       }
