@@ -92,9 +92,9 @@
             <?php endif;?>
 
         </div>
-        <?php } ?>
+        <?php }
+    }?>
     </div>
-    <?php } ?>
 </section>
 <?php } ?>
 
