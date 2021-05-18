@@ -805,5 +805,134 @@ Wacoal_Page_Entry_top('');
     </div>
 </section>
 
+<!-- list text + image + tip -->
+<!-- desktop structure -->
+<section class="text-image-tip desktop">
+
+    <div class="text-image-tip--wrapper">
+        <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+        </div>
+
+        <div class="content">
+            <h1 class="head">
+                LIFT LOREM
+            </h1>
+            <div class="sub-head">
+                Do your bras provide all the support you need? Lorem ipsum se dolor
+            </div>
+            <ul class="list">
+                <li>Pose sideways in the mirror and look at your bustline.</li>
+                <li>If the most projected part of your breast aligns to the midpoint of your bent elbow & shoulder, you’re good to go.</li>
+                <li>The most comfortable bra is one that lifts your breasts up and away from your body.</li>
+            </ul>
+            <div class="tip">
+                <div class="title">
+                    tip #4
+                </div>
+                <div class="tip-content">
+                    The most comfortable bra is one that lifts your breasts up and away from your body.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-image-tip--wrapper">
+        <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+        </div>
+
+        <div class="content">
+            <h1 class="head">
+                LIFT LOREM
+            </h1>
+            <div class="sub-head">
+                Do your bras provide all the support you need? Lorem ipsum se dolor
+            </div>
+            <ul class="list">
+                <li>Pose sideways in the mirror and look at your bustline.</li>
+                <li>If the most projected part of your breast aligns to the midpoint of your bent elbow & shoulder, you’re good to go.</li>
+                <li>The most comfortable bra is one that lifts your breasts up and away from your body.</li>
+            </ul>
+            <div class="tip">
+                <div class="title">
+                    tip #4
+                </div>
+                <div class="tip-content">
+                Bra straps should stay on your shoulders without falling or pressing. Remember, most of the support comes from the band, so the straps don’t need to be too tight.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+</section>
+
+<!-- list text + image + tip -->
+<!-- mobile structure -->
+<section class="text-image-tip mobile">
+
+    <div class="text-image-tip--wrapper">
+
+        <div class="content">
+            <h1 class="head">
+                LIFT LOREM
+            </h1>
+            <div class="sub-head">
+                Do your bras provide all the support you need? Lorem ipsum se dolor
+            </div>
+        </div>
+        <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+        </div>
+
+        <div class="content">
+            <ul class="list">
+                <li>Pose sideways in the mirror and look at your bustline.</li>
+                <li>If the most projected part of your breast aligns to the midpoint of your bent elbow & shoulder, you’re good to go.</li>
+                <li>The most comfortable bra is one that lifts your breasts up and away from your body.</li>
+            </ul>
+            <div class="tip">
+                <div class="title">
+                    tip #4
+                </div>
+                <div class="tip-content">
+                    The most comfortable bra is one that lifts your breasts up and away from your body.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-image-tip--wrapper">
+        <div class="content">
+            <h1 class="head">
+                LIFT LOREM
+            </h1>
+            <div class="sub-head">
+                Do your bras provide all the support you need? Lorem ipsum se dolor
+            </div>
+        </div>
+        <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+        </div>
+
+        <div class="content">
+            <ul class="list">
+                <li>Pose sideways in the mirror and look at your bustline.</li>
+                <li>If the most projected part of your breast aligns to the midpoint of your bent elbow & shoulder, you’re good to go.</li>
+                <li>The most comfortable bra is one that lifts your breasts up and away from your body.</li>
+            </ul>
+            <div class="tip">
+                <div class="title">
+                    tip #4
+                </div>
+                <div class="tip-content">
+                Bra straps should stay on your shoulders without falling or pressing. Remember, most of the support comes from the band, so the straps don’t need to be too tight.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+</section>
+
 <?php
 Wacoal_Page_Entry_bottom();

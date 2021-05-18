@@ -2320,6 +2320,10 @@
     @include respond-below(md){
       max-width: 700px;
     }
+
+    @include respond-below(sm){
+      max-width: 350px;
+    }
   }
 
   &--inner {
@@ -2332,9 +2336,9 @@
       padding: 50px 0;
     }
 
-  // @include respond-below(md){
-  //   padding: 25px 0;
-  // }
+    @include respond-below(md){
+      padding: 25px 0;
+    }
 
   // @include respond-below(sm){
   //   padding: 25px 36px;
@@ -2361,6 +2365,11 @@
             left: -12px;
             top: 12px;
           }
+
+          @include respond-below(sm){
+            left: -6px;
+            top: 6px;
+          }
         }
       }
       .content {
@@ -2369,6 +2378,14 @@
 
         @include respond-below(lg){
           left: 39.5%
+        }
+
+        @include respond-below(md){
+          left: 35.5%;
+        }
+
+        @include respond-below(sm){
+          left: 50%;
         }
       }
 
@@ -2409,6 +2426,11 @@
       height: 384px;
     }
 
+    @include respond-below(sm){
+      width: 240px;
+      height: 240px;
+    }
+
     &:after {
       content: '';
       position: absolute;
@@ -2423,6 +2445,11 @@
       @include respond-below(lg){
         right: -12px;
         top: -12px;
+      }
+
+      @include respond-below(sm){
+        right: -6px;
+        top: -6px;
       }
     }
   }
@@ -2456,6 +2483,21 @@
       top: 34%;
     }
 
+    @include respond-below(md){
+      right: 35.5%;
+    }
+
+    @include respond-below(sm) {
+      width: 150px;
+      height: auto;
+      top: 40%;
+      right: 50%;
+
+      a {
+        display: none;
+      }
+    }
+
     h2 {
       @include BentonModDisp-Bold;
       font-size: 44px;
@@ -2467,6 +2509,232 @@
       @include respond-below(md) {
         font-size: 41px;
         line-height: 49px;
+      }
+
+      @include respond-below(sm) {
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.84px;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.text-image-tip {
+  &.desktop {
+    display: block;
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    display: none;
+
+    @include respond-below(sm) {
+      display: block;
+    }
+  }
+
+  &--wrapper {
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+
+    @include respond-below(lg){
+      padding: 50px 0;
+      max-width: 835px;
+    }
+
+    @include respond-below(md){
+      padding: 25px 0;
+    }
+
+    @include respond-below(sm){
+        flex-direction: column;
+        padding: 25px 36px;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      @include respond-below(sm){
+        flex-direction: column;
+      }
+
+      .content {
+        margin-left: inherit;
+        margin-right: 59px;
+
+        @include respond-below(lg) {
+          margin-right: 33px;
+        }
+
+        @include respond-below(md) {
+          padding-left: 30px;
+        }
+
+        @include respond-below(sm) {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .image {
+    background-size: cover;
+    background-position: center;
+    width: 410px;
+    height: 521px;
+
+    @include respond-below(lg) {
+      width: 350px;
+      height: 444px;
+    }
+
+    @include respond-below(sm) {
+      width: 244px;
+      height: 310px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    margin-left: 59px;
+
+    @include respond-below(lg) {
+      margin-left: 33px;
+    }
+
+    @include respond-below(md) {
+      padding-right: 30px;
+    }
+
+    @include respond-below(sm) {
+      padding: 0;
+      margin: 0;
+    }
+
+    .head {
+      @include BentonModDisp-Regular;
+      font-size: 64px;
+      line-height: 60px;
+      letter-spacing: 4.8px;
+
+      @include respond-below(lg) {
+        font-size: 45px;
+        line-height: 42px;
+        letter-spacing: 3.38px;
+      }
+
+      @include respond-below(md) {
+        font-size: 40px;
+        line-height: 37px;
+        letter-spacing: 3px;
+      }
+    }
+
+    .sub-head {
+      @include ProximaNova-Thin;
+      font-size: 29px;
+      line-height: 35px;
+      letter-spacing: 0.43px;
+      margin-bottom: 40px;
+
+      @include respond-below(lg) {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.3px;
+        margin-bottom: 35px;
+      }
+
+      @include respond-below(md) {
+        font-size: 17px;
+        line-height: 20px;
+        margin-bottom: 25px;
+      }
+
+      @include respond-below(sm) {
+        margin-bottom: 20px;
+      }
+    }
+
+    .list {
+      list-style-type: disc;
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: 0.27px;
+      margin-left: 67px;
+      margin-bottom: 40px;
+
+      @include respond-below(lg) {
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.23px;
+        margin-bottom: 35px;
+      }
+
+      @include respond-below(md) {
+        margin-bottom: 30px;
+      }
+
+      @include respond-below(sm) {
+        margin: 17px;
+      }
+
+      li {
+        margin-bottom: 20px;
+
+        @include respond-below(md) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+
+    .tip {
+      display: flex;
+      text-transform: uppercase;
+
+      @include respond-below(sm) {
+        display: block;
+        padding-top: 15px;
+      }
+
+      .title {
+        @include BentonModDisp-Bold;
+        font-size: 24px;
+        line-height: 22px;
+        letter-spacing: 1.8px;
+
+        @include respond-below(lg) {
+          font-size: 17px;
+          line-height: 16px;
+          letter-spacing: 1.27px;
+        }
+      }
+
+      .tip-content {
+        @include ProximaNova-Thin;
+        font-size: 16px;
+        line-height: 27px;
+        letter-spacing: 1.2px;
+        flex: 1;
+        margin-left: 10px;
+
+        @include respond-below(lg) {
+          font-size: 14px;
+          line-height: 24px;
+          letter-spacing: 1px;
+        }
+
+        @include respond-below(sm) {
+          margin: 0;
+        }
       }
     }
   }
