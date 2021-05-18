@@ -850,11 +850,12 @@ function Wacoal_Button_Format_Render_callback( $block )
  */
 function Wacoal_Body_Intro_Paragraph_Block_Render_callback( $block )
 {
-    $para_content = get_field('add_content');
+    $para_content   = get_field('add_content');
+    $bullet_content = get_field('bullet_content');
 
     $shortcode_template  = '/template-parts/block/wacoal-body-intro-block.php';
 
-    if ($para_content && !empty($para_content)) {
+    if ($para_content && $bullet_content) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
@@ -926,8 +927,6 @@ function Wacoal_Bordered_Image_List_Block_Render_callback( $block )
 function Wacoal_Tip_List_Block_Render_callback( $block )
 {
     $block_lists = get_field('list_data');
-
-    error_log('$block_lists'.print_R($block_lists,1));
 
     $shortcode_template  = '/template-parts/block/wacoal-tip-list.php';
 

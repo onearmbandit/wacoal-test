@@ -11,17 +11,17 @@
  */
 ?>
 
-<section class="subhead-two">
-    <div class="subhead-two--wrapper">
+<section class="subhead-description">
+    <div class="subhead-description--wrapper">
         <?php
         if ($subhead_text && !empty($subhead_text)) {
             ?>
-        <div class="subhead-two--wrapper__title"><?php echo wp_kses_post($subhead_text);?></div>
+        <div class="subhead"><?php echo wp_kses_post($subhead_text);?></div>
             <?php
         }
         if ($desc_text && !empty($desc_text)) {
             ?>
-        <div class="subhead-two--wrapper__para">
+        <div class="description">
             <?php echo wp_kses_post($desc_text);?>
         </div>
             <?php

@@ -11,17 +11,15 @@
  */
 ?>
 
-<?php if($para_content && !empty($para_content)) :?>
 <section class="body-intro">
     <div class="body-intro--wrapper">
+    <?php if($para_content && !empty($para_content)) :?>
         <div class="para">
             <?php echo Wacoal_Remove_P_tag(wp_kses_post($para_content));?>
         </div>
-        <!-- <ul class="list">
-            <li>Does your body temperature run hot even when it’s cold outside? Perhaps a bra in a cooling fabric is for you.</li>
-            <li>Is smoothing for a streamlined silhouette a prerequisite? We have options.</li>
-            <li>Do you want your shirts to have a better fit? A minimizer might be your new best friend</li>
-        </ul> -->
+    <?php endif;?>
+    <?php if($bullet_content && !empty($bullet_content)) :
+        echo Wacoal_Remove_P_tag(wp_kses_post($bullet_content));
+    endif;?>
     </div>
 </section>
-<?php endif;?>
