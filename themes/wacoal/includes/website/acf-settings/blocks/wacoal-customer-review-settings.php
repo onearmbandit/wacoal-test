@@ -99,6 +99,55 @@ acf_add_local_field_group(
             'mime_types' => '',
         ),
         array(
+            'key' => 'field_60a35755e2a40',
+            'label' => 'Left Image Link',
+            'name' => 'left_image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60a23462dfba8',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
+            'key' => 'field_60a35773e2a41',
+            'label' => 'Open in new Tab',
+            'name' => 'left_open_in_new_tab',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60a35755e2a40',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 0,
+            'ui' => 0,
+            'ui_on_text' => '',
+            'ui_off_text' => '',
+        ),
+        array(
             'key' => 'field_60a23479dfba9',
             'label' => 'Left Image Caption',
             'name' => 'left_image_caption',
@@ -159,6 +208,55 @@ acf_add_local_field_group(
             'toolbar' => 'full',
             'media_upload' => 1,
             'delay' => 0,
+        ),
+        array(
+            'key' => 'field_60a357b4e2a42',
+            'label' => 'Right Image Link',
+            'name' => 'right_image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60a234aadfbaa',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
+            'key' => 'field_60a357d2e2a43',
+            'label' => 'Open in New Tab',
+            'name' => 'right_open_in_new_tab',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60a357b4e2a42',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 0,
+            'ui' => 0,
+            'ui_on_text' => '',
+            'ui_off_text' => '',
         ),
     ),
     'location' => array(

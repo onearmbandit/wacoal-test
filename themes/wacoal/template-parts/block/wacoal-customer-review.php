@@ -14,10 +14,17 @@
 <section class="customer-review">
     <div class="customer-review--wrapper">
         <div class="image-wrapper left">
-        <?php if($left_image_id && !empty($left_image_id)) :?>
+        <?php if($left_image_id && !empty($left_image_id)) :
+            if(!empty($left_image_link)) :?>
+        <a href="<?php echo esc_url($left_image_link);?>" <?php if($left_new_tab == true) : echo "target='_blank'";
+       endif;?>>
+            <?php endif;?>
             <div class="image" style="background-image:url(<?php echo  esc_url($left_image_url); ?>">
             </div>
-        <?php endif;?>
+            <?php if(!empty($left_image_link)) :?>
+        </a>
+            <?php endif;
+        endif;?>
 
         <?php if($left_image_caption && !empty($left_image_caption)) :?>
             <div class="image-caption">
@@ -49,10 +56,17 @@
         </div>
 
         <div class="image-wrapper right">
-        <?php if($right_image_id && !empty($right_image_id)) :?>
+        <?php if($right_image_id && !empty($right_image_id)) :
+            if(!empty($right_image_link)) :?>
+        <a href="<?php echo esc_url($right_image_link);?>" <?php if($right_new_tab == true) : echo "target='_blank'";
+       endif;?>>
+            <?php endif;?>
             <div class="image" style="background-image:url(<?php echo  esc_url($right_image_url); ?>">
             </div>
-        <?php endif;?>
+            <?php if(!empty($right_image_link)) :?>
+        </a>
+            <?php endif;
+        endif;?>
 
         <?php if($right_image_caption && !empty($right_image_caption)) :?>
             <div class="image-caption">

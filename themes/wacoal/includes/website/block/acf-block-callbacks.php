@@ -660,12 +660,16 @@ function Wacoal_List_Text_Image_Render_callback( $block )
  */
 function Wacoal_Customer_Review_Render_callback( $block )
 {
-    $review_text        = get_field('review_text');
-    $reviewer_name      = get_field('reviewer_name');
-    $star_rating_number = get_field('star_rating_number');
-    $left_image_id      = get_field('left_image');
-    $right_image_id     = get_field('right_image');
-    $left_image_caption = get_field('left_image_caption');
+    $review_text         = get_field('review_text');
+    $reviewer_name       = get_field('reviewer_name');
+    $star_rating_number  = get_field('star_rating_number');
+    $left_image_id       = get_field('left_image');
+    $left_image_link     = get_field('left_image_link');
+    $left_new_tab        = get_field('left_open_in_new_tab');
+    $right_image_id      = get_field('right_image');
+    $right_image_link    = get_field('right_image_link');
+    $right_new_tab       = get_field('right_open_in_new_tab');
+    $left_image_caption  = get_field('left_image_caption');
     $right_image_caption = get_field('right_image_caption');
 
     if (!empty($left_image_id) && $left_image_id) {
