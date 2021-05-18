@@ -345,6 +345,18 @@ function Wacoal_Acf_init()
             'keywords'        => array('list', 'content'),
             )
         );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-body-para',
+            'title'           => __('Wacoal Body Intro Paragraph Block'),
+            'description'     => __('A custom Body Intro Paragraph Block'),
+            'render_callback' => 'Wacoal_Body_Intro_Paragraph_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array('list', 'content'),
+            )
+        );
     }
 }
 

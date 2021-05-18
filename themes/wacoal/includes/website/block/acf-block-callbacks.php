@@ -840,3 +840,28 @@ function Wacoal_Button_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for body intro block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Body_Intro_Paragraph_Block_Render_callback( $block )
+{
+    $para_content = get_field('add_content');
+
+    $shortcode_template  = '/template-parts/block/wacoal-body-intro-block.php';
+
+    if ($para_content && !empty($para_content)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Body Intro Para Block</u></h4>
+            <span style="color:red">Empty Body Intro Para Block</span>
+            <?php
+        }
+    }
+}
