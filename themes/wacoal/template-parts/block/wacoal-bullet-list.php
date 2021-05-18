@@ -33,16 +33,23 @@
         </div>
 
         <div class="image-bullets">
-            <?php if($block_image_id && !empty($block_image_id)) :?>
+            <?php if($block_image_id && !empty($block_image_id)) :
+                if(!empty($img_link)) :?>
+                <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+               endif;?>>
+                <?php endif;?>
                 <div class="image--wrapper" style="background-image:url(<?php echo  esc_url($block_image_url); ?>">
-            <?php endif; ?>
-        </div>
+                </div>
+                <?php if(!empty($img_link)) :?>
+        </a>
+                <?php endif;
+            endif; ?>
 
-        <?php if($bullet_points && !empty($bullet_points)) :?>
-            <div class="bullets--wrapper">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($bullet_points));?>
-            </div>
-        <?php endif;?>
+            <?php if($bullet_points && !empty($bullet_points)) :?>
+                <div class="bullets--wrapper">
+                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($bullet_points));?>
+                </div>
+            <?php endif;?>
         </div>
     </div>
 </section>

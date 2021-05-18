@@ -733,10 +733,12 @@ function Wacoal_Conclusion_Summary_Desc_Render_callback( $block )
  */
 function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
 {
-    $title = get_field('title');
-    $description = get_field('description');
-    $bullet_points = get_field('bullet_points');
+    $title          = get_field('title');
+    $description    = get_field('description');
+    $bullet_points  = get_field('bullet_points');
     $block_image_id = get_field('image');
+    $img_link       = get_field('image_link');
+    $new_tab        = get_field('open_in_new_tab');
 
     if (! empty($block_image_id) && $block_image_id ) {
         $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
