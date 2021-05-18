@@ -606,6 +606,8 @@ function Wacoal_Medium_Img_Format_Render_callback( $block )
 {
     $block_image_id = get_field('image');
     $block_desc     = get_field('description');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
 
     $shortcode_template  = '/template-parts/block/wacoal-medium-img.php';
 
