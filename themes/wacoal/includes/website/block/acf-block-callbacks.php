@@ -915,3 +915,30 @@ function Wacoal_Bordered_Image_List_Block_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for tip list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Tip_List_Block_Render_callback( $block )
+{
+    $block_lists = get_field('list_data');
+
+    error_log('$block_lists'.print_R($block_lists,1));
+
+    $shortcode_template  = '/template-parts/block/wacoal-tip-list.php';
+
+    if ($block_lists && !empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Tip List Block</u></h4>
+            <span style="color:red">Empty Tip List Block</span>
+            <?php
+        }
+    }
+}
