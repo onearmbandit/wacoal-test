@@ -840,3 +840,53 @@ function Wacoal_Button_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for body intro block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Body_Intro_Paragraph_Block_Render_callback( $block )
+{
+    $para_content = get_field('add_content');
+
+    $shortcode_template  = '/template-parts/block/wacoal-body-intro-block.php';
+
+    if ($para_content && !empty($para_content)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Body Intro Para Block</u></h4>
+            <span style="color:red">Empty Body Intro Para Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for benton text_image list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Benton_Text_Image_List_Block_Render_callback( $block )
+{
+    $block_lists = get_field('list_data');
+
+    $shortcode_template  = '/template-parts/block/wacoal-benton-text+image-list.php';
+
+    if ($block_lists && !empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal benton text List Block</u></h4>
+            <span style="color:red">Empty benton text List Block</span>
+            <?php
+        }
+    }
+}

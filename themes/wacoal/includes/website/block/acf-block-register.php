@@ -345,6 +345,30 @@ function Wacoal_Acf_init()
             'keywords'        => array('list', 'content'),
             )
         );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-body-para',
+            'title'           => __('Wacoal Body Intro Paragraph Block'),
+            'description'     => __('A custom Body Intro Paragraph Block'),
+            'render_callback' => 'Wacoal_Body_Intro_Paragraph_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array('list', 'content'),
+            )
+        );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-benton-text_image-list',
+            'title'           => __('Wacoal Benton Text + Image List Block'),
+            'description'     => __('A custom Benton Text + Image List Block'),
+            'render_callback' => 'Wacoal_Benton_Text_Image_List_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array('list', 'content'),
+            )
+        );
     }
 }
 
