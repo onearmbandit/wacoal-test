@@ -17,6 +17,8 @@ if ($block_lists && !empty($block_lists)) {
 <section class="list-text-image">
     <?php foreach ($block_lists as $key => $list) {
         $block_image_id     = $list['image'];
+        $img_link           = $list['image_link'];
+        $new_tab            = $list['open_in_new_tab'];
         $list_image_caption = $list['image_caption'];
         $list_title         = $list['title'];
         $list_subtitle      = $list['subtitle'];
@@ -33,10 +35,17 @@ if ($block_lists && !empty($block_lists)) {
     <div class="list-text-image--wrapper">
         <div class="list-text-image--inner">
 
-            <?php if ($block_image_id && !empty($block_image_id)) :?>
+            <?php if ($block_image_id && !empty($block_image_id)) :
+                if(!empty($img_link)) :?>
+                    <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+                   endif;?>>
+                <?php endif;?>
             <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($block_image_url); ?>">
             </div>
-            <?php endif; ?>
+                <?php if(!empty($img_link)) :?>
+                </a>
+                <?php endif;
+            endif; ?>
 
 
             <div class="list-text-image--content">
@@ -72,10 +81,17 @@ if ($block_lists && !empty($block_lists)) {
         } elseif ($key % 2 == 1) {?>
     <div class="list-text-image--wrapper">
         <div class="list-text-image--inner">
-            <?php if ($block_image_id && !empty($block_image_id)) :?>
+            <?php if ($block_image_id && !empty($block_image_id)) :
+                if(!empty($img_link)) :?>
+            <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+           endif;?>>
+                <?php endif;?>
             <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($block_image_url); ?>">
             </div>
-            <?php endif;?>
+                <?php if(!empty($img_link)) :?>
+            </a>
+                <?php endif;
+            endif;?>
 
             <div class="list-text-image--content">
 
