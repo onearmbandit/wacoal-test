@@ -369,6 +369,18 @@ function Wacoal_Acf_init()
             'keywords'        => array('list', 'content'),
             )
         );
+
+        acf_register_block(
+            array(
+            'name'            => 'wacoal-bordered-image-list',
+            'title'           => __('Wacoal Bordered Image List Block'),
+            'description'     => __('A custom Bordered Image List Block'),
+            'render_callback' => 'Wacoal_Bordered_Image_List_Block_Render_callback',
+            'category'        => 'wacoal',
+            'icon'            => 'archive',
+            'keywords'        => array('list', 'content'),
+            )
+        );
     }
 }
 

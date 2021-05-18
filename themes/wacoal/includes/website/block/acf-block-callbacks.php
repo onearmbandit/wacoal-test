@@ -890,3 +890,28 @@ function Wacoal_Benton_Text_Image_List_Block_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for bordered image list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Bordered_Image_List_Block_Render_callback( $block )
+{
+    $block_lists = get_field('list_data');
+
+    $shortcode_template  = '/template-parts/block/wacoal-bordered-image-list.php';
+
+    if ($block_lists && !empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Bordered Image List Block</u></h4>
+            <span style="color:red">Empty Bordered Image List Block</span>
+            <?php
+        }
+    }
+}
