@@ -2101,3 +2101,71 @@
     }
   }
 }
+
+
+.body-intro {
+  padding: 15px 0;
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
+
+  @include respond-below(sm){
+    padding: 25px 36px;
+  }
+
+  &--wrapper {
+    max-width: 820px;
+    margin: auto;
+    @include ProximaNova-Light;
+    font-size: 18px;
+    line-height: 26px;
+
+    @include respond-below(lg) {
+      font-size: 17px;
+    }
+
+    @include respond-below(md) {
+      max-width: 636px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+
+  .para {
+    margin-bottom: 25px;
+
+    @include respond-below(md) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .list {
+    list-style-type: disc;
+    max-width: 585px;
+    margin: auto;
+
+    @include respond-below(md) {
+      max-width: 520px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+      padding: 0 30px;
+    }
+
+    li {
+      margin-bottom: 25px;
+
+      @include respond-below(md) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

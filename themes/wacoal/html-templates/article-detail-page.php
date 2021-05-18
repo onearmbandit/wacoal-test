@@ -724,5 +724,21 @@ Wacoal_Page_Entry_top('');
     </div>
 </section>
 
+<!-- Body Intro Paragraph -->
+<section class="body-intro">
+    <div class="body-intro--wrapper">
+        <div class="para">
+            Designing high-quality bras is only part of our mission. We believe in serving the whole woman, inside and out. That’s why we’ve spent the last two decades partnering with Susan G. Komen® to support breast cancer research and encouraging women everywhere to prioritize their breast health. Because nothing is more important than your health.
+        </div>
+        <ul class="list">
+            <li>Does your body temperature run hot even when it’s cold outside? Perhaps a bra in a cooling fabric is for you.</li>
+            <li>Is smoothing for a streamlined silhouette a prerequisite? We have options.</li>
+            <li>Do you want your shirts to have a better fit? A minimizer might be your new best friend</li>
+        </ul>
+    </div>
+</section>
+
+
+
 <?php
 Wacoal_Page_Entry_bottom();
