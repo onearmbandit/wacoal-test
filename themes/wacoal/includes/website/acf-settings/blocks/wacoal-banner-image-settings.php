@@ -66,6 +66,48 @@ acf_add_local_field_group(
             'max_size' => '',
             'mime_types' => '',
         ),
+        array(
+            'key' => 'field_60a29b340fbf6',
+            'label' => 'Image Link',
+            'name' => 'image_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
+            'key' => 'field_60a29b440fbf7',
+            'label' => 'Open in New Tab',
+            'name' => 'open_in_new_tab',
+            'type' => 'true_false',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60a29b340fbf6',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'message' => '',
+            'default_value' => 0,
+            'ui' => 0,
+            'ui_on_text' => '',
+            'ui_off_text' => '',
+        ),
     ),
     'location' => array(
         array(

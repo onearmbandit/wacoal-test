@@ -78,6 +78,55 @@ acf_add_local_field_group(
                     'delay' => 0,
                 ),
                 array(
+                    'key' => 'field_60a350c29cb4f',
+                    'label' => 'Image link',
+                    'name' => 'image_link',
+                    'type' => 'url',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_6087db5dc8bb2',
+                                'operator' => '!=empty',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                ),
+                array(
+                    'key' => 'field_60a350eab13f8',
+                    'label' => 'Open in New Tab',
+                    'name' => 'open_in_new_tab',
+                    'type' => 'true_false',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_60a350c29cb4f',
+                                'operator' => '!=empty',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                ),
+                array(
                     'key' => 'field_6087def6c8bb4',
                     'label' => 'Title',
                     'name' => 'title',

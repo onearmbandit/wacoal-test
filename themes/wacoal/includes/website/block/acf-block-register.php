@@ -301,9 +301,9 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-number-list-format',
-            'title'           => __('Wacoal Number List Block'),
-            'description'     => __('A custom number list format block.'),
-            'render_callback' => 'Wacoal_Number_List_Render_callback',
+            'title'           => __('Wacoal Number Title Block'),
+            'description'     => __('A custom number title format block.'),
+            'render_callback' => 'Wacoal_Number_Title_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
             'keywords'        => array( 'image', 'content' ),

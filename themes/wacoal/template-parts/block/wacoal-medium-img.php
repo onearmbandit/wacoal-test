@@ -14,8 +14,15 @@
 <?php if($block_image_id && !empty($block_image_id)) :?>
 <section class="image-medium">
     <div class="image-medium--wrapper">
-        <div class="image-medium--image" style="background-image:url(<?php echo  esc_url($block_image_url); ?>">
-        </div>
+    <?php if(!empty($img_link)) :?>
+        <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+       endif;?>>
+    <?php endif;?>
+            <div class="image-medium--image" style="background-image:url(<?php echo  esc_url($block_image_url); ?>">
+            </div>
+        <?php if(!empty($img_link)) :?>
+        </a>
+        <?php endif;?>
 
         <?php if($block_desc && !empty($block_desc)) :?>
         <div class="image-medium--content">

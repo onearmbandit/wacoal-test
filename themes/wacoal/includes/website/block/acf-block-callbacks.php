@@ -574,6 +574,8 @@ function Wacoal_Center_Para_Render_callback( $block )
 function Wacoal_Banner_Image_Render_callback( $block )
 {
     $img_type  = get_field('select_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
 
     $shortcode_template  = '/template-parts/block/wacoal-banner-img.php';
 
@@ -604,6 +606,8 @@ function Wacoal_Medium_Img_Format_Render_callback( $block )
 {
     $block_image_id = get_field('image');
     $block_desc     = get_field('description');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
 
     $shortcode_template  = '/template-parts/block/wacoal-medium-img.php';
 
@@ -656,12 +660,16 @@ function Wacoal_List_Text_Image_Render_callback( $block )
  */
 function Wacoal_Customer_Review_Render_callback( $block )
 {
-    $review_text        = get_field('review_text');
-    $reviewer_name      = get_field('reviewer_name');
-    $star_rating_number = get_field('star_rating_number');
-    $left_image_id      = get_field('left_image');
-    $right_image_id     = get_field('right_image');
-    $left_image_caption = get_field('left_image_caption');
+    $review_text         = get_field('review_text');
+    $reviewer_name       = get_field('reviewer_name');
+    $star_rating_number  = get_field('star_rating_number');
+    $left_image_id       = get_field('left_image');
+    $left_image_link     = get_field('left_image_link');
+    $left_new_tab        = get_field('left_open_in_new_tab');
+    $right_image_id      = get_field('right_image');
+    $right_image_link    = get_field('right_image_link');
+    $right_new_tab       = get_field('right_open_in_new_tab');
+    $left_image_caption  = get_field('left_image_caption');
     $right_image_caption = get_field('right_image_caption');
 
     if (!empty($left_image_id) && $left_image_id) {
@@ -725,10 +733,12 @@ function Wacoal_Conclusion_Summary_Desc_Render_callback( $block )
  */
 function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
 {
-    $title = get_field('title');
-    $description = get_field('description');
-    $bullet_points = get_field('bullet_points');
+    $title          = get_field('title');
+    $description    = get_field('description');
+    $bullet_points  = get_field('bullet_points');
     $block_image_id = get_field('image');
+    $img_link       = get_field('image_link');
+    $new_tab        = get_field('open_in_new_tab');
 
     if (! empty($block_image_id) && $block_image_id ) {
         $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
@@ -745,6 +755,87 @@ function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
             ?>
             <h4><u>Wacoal Image Title Bullet List</u></h4>
             <span style="color:red">Empty Image Title Bullet List Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for Number Title block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Number_Title_Render_callback( $block )
+{
+    $add_number  = get_field('add_number');
+    $title       = get_field('title');
+    $subtitle    = get_field('subtitle');
+    $description = get_field('description');
+
+    $shortcode_template  = '/template-parts/block/wacoal-number-title.php';
+
+    if ($add_number || $title || $subtitle || $description) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Number Title Block</u></h4>
+            <span style="color:red">Empty Number Title Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for Number Title block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_List_Statement_Image_Render_callback( $block )
+{
+    $block_lists = get_field('statement_list_image');
+
+    $shortcode_template  = '/template-parts/block/wacoal-statement-img-list.php';
+
+    if ($block_lists && !empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Statement Image List Block</u></h4>
+            <span style="color:red">Empty Statement Image List Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for button block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Wacoal_Button_Format_Render_callback( $block )
+{
+    $button_fields = get_field('add_button');
+    $button_label  = $button_fields['button_label'];
+    $button_url    = $button_fields['button_url'];
+    $new_tab       = $button_fields['open_link_in_new_tab'];
+
+    $shortcode_template  = '/template-parts/block/wacoal-btn-block.php';
+
+    if ($button_fields && !empty($button_fields)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Wacoal Button Block</u></h4>
+            <span style="color:red">Empty Button Block</span>
             <?php
         }
     }
