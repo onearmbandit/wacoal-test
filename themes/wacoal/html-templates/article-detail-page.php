@@ -712,5 +712,17 @@ Wacoal_Page_Entry_top('');
     </div>
 </section>
 
+<!-- subhead description -->
+<section class="subhead-description">
+    <div class="subhead-description--wrapper">
+        <div class="subhead">
+            Is there a difference between lingerie and underwear?
+        </div>
+        <div class="description">
+        Miryha Fantegrossi, Wacoal Head of Design, is asked to weigh in on the topic of lingerie vs. underwear frequently, and her answer inspires the evolution of Wacoal’s bra and panty collections, season after season.
+        </div>
+    </div>
+</section>
+
 <?php
 Wacoal_Page_Entry_bottom();
