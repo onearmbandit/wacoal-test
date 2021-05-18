@@ -739,6 +739,45 @@ Wacoal_Page_Entry_top('');
 </section>
 
 
+<!-- Benton text image block -->
+<section class="benton-text-block">
+    <div class="benton-text-block--wrapper">
+        <div class="benton-text-block--inner">
+            <div class="image-wrapper">
+                <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+                </div>
+                <div class="image-caption">
+                    Image caption — Lorem Ipsum Sed Dolor Amet
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                Feeling cool and comfortable—regardless of how hot and humid the conditions may be—is such an important factor in how you show up for your day, right? The desire for a bra that provides support for all sizes and can combat the heat is something Wacoal Fit Experts hear often from our customers, and as such, developing a collection to suit this need became a top priority for our design team.<br /><br />
+                After more than two years of research, development and rigorous testing, the Wacoal cooling collection has arrived, and the initial reviews are in. <br /><br />
+                Spoiler Alert: Customers are raving! Our Keep Your Cool assortment includes a breathable, cooling underwire bra, three essential cooling panties, a smoothing tank and a trio of shapewear staples. And to share just what makes these products such an innovative solution for women of all shapes and sizes, let us introduce Miryha Fantegrossi, Wacoal Head of Design and a renowned industry expert in all things intimates. You may have seen her sharing fit tips, product demos and other insider info on the Wacoal Instagram. With the launch of our Wacoal blog, Miryha and the Wacoal design team will be able to provide even more access to the behind-the-scenes process that goes into creating the solution- oriented products Wacoal is known for.
+            </div>
+        </div>
+
+        <div class="benton-text-block--inner">
+            <div class="image-wrapper">
+                <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+                </div>
+                <div class="image-caption">
+                    Image caption — Lorem Ipsum Sed Dolor Amet
+                </div>
+            </div>
+
+            <div class="content-wrapper">
+                Feeling cool and comfortable—regardless of how hot and humid the conditions may be—is such an important factor in how you show up for your day, right? The desire for a bra that provides support for all sizes and can combat the heat is something Wacoal Fit Experts hear often from our customers, and as such, developing a collection to suit this need became a top priority for our design team.<br /><br />
+                After more than two years of research, development and rigorous testing, the Wacoal cooling collection has arrived, and the initial reviews are in. <br /><br />
+                Spoiler Alert: Customers are raving! Our Keep Your Cool assortment includes a breathable, cooling underwire bra, three essential cooling panties, a smoothing tank and a trio of shapewear staples. And to share just what makes these products such an innovative solution for women of all shapes and sizes, let us introduce Miryha Fantegrossi, Wacoal Head of Design and a renowned industry expert in all things intimates. You may have seen her sharing fit tips, product demos and other insider info on the Wacoal Instagram. With the launch of our Wacoal blog, Miryha and the Wacoal design team will be able to provide even more access to the behind-the-scenes process that goes into creating the solution- oriented products Wacoal is known for.
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <?php
 Wacoal_Page_Entry_bottom();
