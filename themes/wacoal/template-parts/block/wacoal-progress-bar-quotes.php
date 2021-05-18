@@ -62,26 +62,49 @@
         <div class="donation--wrapper-right">
 
         <?php foreach ($quotes_data as $key => $quotes) {
-            $quotes_text = $quotes['quotes_text'];
-            $quotes_person = $quotes['quotes_person_name'];
+            $quotes_type = $quotes['select_quotes_data_type'];
+            if ($quotes_type == 'quotes_text') {
+                $quotes_text = $quotes['quotes_text'];
+                $quotes_person = $quotes['quotes_person_name'];
+            }
+            if ($quotes_type == 'quotes_image') {
+                $image_id = $quotes['quotes_image'];
+                $img_link = $quotes['image_link'];
+                $new_tab = $quotes['open_link_in_new_tab'];
+
+                if (! empty($image_id) && $image_id ) {
+                    $image_array = wp_get_attachment_image_src($image_id, 'full');
+                    $image_alt   = Wacoal_Get_Image_alt($image_id, 'Block Image');
+                    $image_url   = Wacoal_Get_image($image_array);
+                }
+            }
             ?>
 
-            <?php if($quotes_text && !empty($quotes_text)) :?>
+            <?php if($quotes_type == 'quotes_text' && !empty($quotes_text)) :?>
             <div class="quote">
                 <div class="quote-wrapper">
                     <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text)); ?></br>
                     <?php if($quotes_person && !empty($quotes_person)) :?>
                     <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_person)); ?></span>
                 </div>
-                <?php endif; ?>
+                    <?php endif; ?>
             </div>
             <?php endif; ?>
-        <?php }?>
-        <div class="quote-image">
+            <?php if($quotes_type == 'quotes_image' && !empty($image_id)) :?>
+                <?php if(!empty($img_link)) :?>
+                    <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+                   endif;?>>
+                <?php endif;?>
+            <div class="quote-image">
                 <div class="quote-wrapper">
-                    <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png" />
+                    <img src="<?php echo  esc_url($image_url); ?>" />
                 </div>
             </div>
+                <?php if(!empty($img_link)) :?>
+                </a>
+                <?php endif;?>
+            <?php endif; ?>
+        <?php }?>
         </div>
     </div>
 </section>

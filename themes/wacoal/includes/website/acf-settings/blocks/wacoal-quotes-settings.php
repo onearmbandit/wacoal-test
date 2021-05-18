@@ -282,13 +282,46 @@ acf_add_local_field_group(
                     'button_label' => '',
                     'sub_fields' => array(
                         array(
+                            'key' => 'field_60a39d508fe0c',
+                            'label' => 'Select Quotes Data Type',
+                            'name' => 'select_quotes_data_type',
+                            'type' => 'select',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => 0,
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'choices' => array(
+                                'quotes_text' => 'Quotes Text',
+                                'quotes_image' => 'Quotes Image',
+                            ),
+                            'default_value' => 'quotes_text',
+                            'allow_null' => 0,
+                            'multiple' => 0,
+                            'ui' => 0,
+                            'return_format' => 'value',
+                            'ajax' => 0,
+                            'placeholder' => '',
+                        ),
+                        array(
                             'key' => 'field_5fe367977ca2c',
                             'label' => 'Quotes Text',
                             'name' => 'quotes_text',
                             'type' => 'wysiwyg',
                             'instructions' => '',
                             'required' => 0,
-                            'conditional_logic' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_60a39d508fe0c',
+                                        'operator' => '==',
+                                        'value' => 'quotes_text',
+                                    ),
+                                ),
+                            ),
                             'wrapper' => array(
                                 'width' => '',
                                 'class' => '',
@@ -307,7 +340,15 @@ acf_add_local_field_group(
                             'type' => 'text',
                             'instructions' => '',
                             'required' => 0,
-                            'conditional_logic' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_60a39d508fe0c',
+                                        'operator' => '==',
+                                        'value' => 'quotes_text',
+                                    ),
+                                ),
+                            ),
                             'wrapper' => array(
                                 'width' => '',
                                 'class' => '',
@@ -318,6 +359,89 @@ acf_add_local_field_group(
                             'prepend' => '',
                             'append' => '',
                             'maxlength' => '',
+                        ),
+                        array(
+                            'key' => 'field_60a39df28fe0d',
+                            'label' => 'Quotes Image',
+                            'name' => 'quotes_image',
+                            'type' => 'image',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_60a39d508fe0c',
+                                        'operator' => '==',
+                                        'value' => 'quotes_image',
+                                    ),
+                                ),
+                            ),
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'return_format' => 'id',
+                            'preview_size' => 'medium',
+                            'library' => 'all',
+                            'min_width' => '',
+                            'min_height' => '',
+                            'min_size' => '',
+                            'max_width' => '',
+                            'max_height' => '',
+                            'max_size' => '',
+                            'mime_types' => '',
+                        ),
+                        array(
+                            'key' => 'field_60a39e148fe0e',
+                            'label' => 'Image Link',
+                            'name' => 'image_link',
+                            'type' => 'url',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_60a39d508fe0c',
+                                        'operator' => '==',
+                                        'value' => 'quotes_image',
+                                    ),
+                                ),
+                            ),
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                        ),
+                        array(
+                            'key' => 'field_60a39e368fe0f',
+                            'label' => 'Open Link in New Tab',
+                            'name' => 'open_link_in_new_tab',
+                            'type' => 'true_false',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_60a39d508fe0c',
+                                        'operator' => '==',
+                                        'value' => 'quotes_image',
+                                    ),
+                                ),
+                            ),
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'message' => '',
+                            'default_value' => 0,
+                            'ui' => 0,
+                            'ui_on_text' => '',
+                            'ui_off_text' => '',
                         ),
                     ),
                 ),
