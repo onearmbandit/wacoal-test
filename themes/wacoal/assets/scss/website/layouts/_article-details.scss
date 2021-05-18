@@ -2306,3 +2306,168 @@
     }
   }
 }
+
+.block-bordered-image {
+
+  &--wrapper {
+    max-width: 1230px;
+    margin: auto;
+
+    @include respond-below(lg){
+      max-width: 890px;
+    }
+
+    @include respond-below(md){
+      max-width: 700px;
+    }
+  }
+
+  &--inner {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding: 80px 0;
+
+    @include respond-below(lg){
+      padding: 50px 0;
+    }
+
+  // @include respond-below(md){
+  //   padding: 25px 0;
+  // }
+
+  // @include respond-below(sm){
+  //   padding: 25px 36px;
+  //   flex-direction: column;
+  // }
+
+    &:nth-child(even) {
+      justify-content: flex-start;
+      .image {
+        margin-right: inherit;
+        margin-left: 16px;
+        margin-top: 0;
+
+        @include respond-below(lg){
+          margin-left: 12px;
+        }
+
+        &:after {
+          right: inherit;
+          left: -16px;
+          top: 16px;
+
+          @include respond-below(lg){
+            left: -12px;
+            top: 12px;
+          }
+        }
+      }
+      .content {
+        left: 44.5%;
+        right: inherit;
+
+        @include respond-below(lg){
+          left: 39.5%
+        }
+      }
+
+      .image-caption  {
+        text-align: left;
+        margin-left: 16px;
+        margin-top: 27px;
+
+        @include respond-below(lg){
+          margin-top: 16px;
+        }
+      }
+
+    }
+  }
+
+  .image-wrapper {
+
+  }
+  .image {
+    background-size: cover;
+    background-position: center;
+    width: 688px;
+    height: 688px;
+    position: relative;
+    margin-right: 16px;
+    margin-top: 16px;
+
+    @include respond-below(lg){
+      width: 489px;
+      height: 489px;
+      margin-right: 12px;
+      margin-top: 12px;
+    }
+
+    @include respond-below(md){
+      width: 384px;
+      height: 384px;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      right: -16px;
+      top: -16px;
+      background: var(--color-white);
+      border: 1px solid var(--color-black);
+
+      @include respond-below(lg){
+        right: -12px;
+        top: -12px;
+      }
+    }
+  }
+
+  .image-caption {
+    margin-top: 16px;
+    margin-right: 16px;
+    font-size: 14px;
+    color: var(--color-gray);
+    text-align: right;
+
+    @include respond-below(lg){
+      margin-top: 8px;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 40%;
+    right: 44.5%;
+    width: 300px;
+    text-align: center;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include respond-below(lg){
+      right: 39.5%;
+      top: 34%;
+    }
+
+    h2 {
+      @include BentonModDisp-Bold;
+      font-size: 44px;
+      line-height: 52px;
+      letter-spacing: 1.54px;
+      margin-bottom: 35px;
+      text-transform: uppercase;
+
+      @include respond-below(md) {
+        font-size: 41px;
+        line-height: 49px;
+      }
+    }
+  }
+}

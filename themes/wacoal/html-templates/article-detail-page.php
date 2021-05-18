@@ -778,6 +778,32 @@ Wacoal_Page_Entry_top('');
     </div>
 </section>
 
+<!-- block bordered image -->
+<section class="block-bordered-image">
+    <div class="block-bordered-image--wrapper">
+        <div class="block-bordered-image--inner">
+            <div class="image-wrapper">
+                <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);"></div>
+                <div class="image-caption">Awareness Underwire Bra</div>
+            </div>
+            <div class="content">
+                <h2>sport BRAS</h2>
+                <a href="#" class="btn primary dark">shop now</a>
+            </div>
+        </div>
+
+        <div class="block-bordered-image--inner">
+            <div class="image-wrapper">
+                <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);"></div>
+                <div class="image-caption">Awareness Underwire Bra</div>
+            </div>
+            <div class="content">
+                <h2>UNDERWIRE BRAS</h2>
+                <a href="#" class="btn primary dark">shop now</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php
 Wacoal_Page_Entry_bottom();
