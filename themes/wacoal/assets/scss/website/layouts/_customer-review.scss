@@ -52,9 +52,14 @@
     }
 
     .image-caption {
-      margin-top: 20px;
+      margin: 20px 0;
       color: var(--color-gray);
       letter-spacing: 0.77px;
+      font-size: 14px;
+
+      @include respond-below(lg) {
+        margin: 13px 0 27px;
+      }
     }
 
     &.left {
@@ -115,6 +120,12 @@
       line-height: 27px;
       letter-spacing: 0.23px;
       text-transform: uppercase;
+
+      @include respond-below(lg) {
+        font-size: 12px;
+        letter-spacing: 0.18px;
+        line-height: 28px;
+      }
     }
   }
 }

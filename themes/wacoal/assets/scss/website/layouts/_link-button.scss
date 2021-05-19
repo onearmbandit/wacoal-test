@@ -6,8 +6,8 @@
     display: flex;
     justify-content: center;
 
-    @include respond-below(lg){
-      padding: 50px 0;
+    @include respond-below(md){
+      padding: 15px 0;
       max-width: 966px;
     }
   }

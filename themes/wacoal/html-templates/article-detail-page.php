@@ -630,7 +630,7 @@ Wacoal_Page_Entry_top('');
         <div class="title-wrapper">
             <div class="title">Sport Contour Underwire Bra</div>
             <div class="sub-title">
-            Fashion meets function. Cups made with breathable spacer fabric provide the opacity of a padded bra without the weight. Cushioned convertible straps coupled with sporty, airy mesh accents set the stage for this bounce-minimizing bra. Plus, the outside underwire is wrapped in soft fabric, so it sits comfortably against your skin. No muss, no fuss. Consider it your perfect workout partner.
+            <a href="#">Fashion</a> meets function. Cups made with breathable spacer fabric provide the opacity of a padded bra without the weight. Cushioned convertible straps coupled with sporty, airy mesh <strong>accents set the</strong> stage for this bounce-minimizing bra. Plus, the outside underwire is wrapped in soft fabric, so it sits comfortably against your skin. No muss, no fuss. Consider it your perfect workout partner.
             </div>
         </div>
 

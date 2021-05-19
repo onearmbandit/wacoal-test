@@ -124,5 +124,9 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.77px;
+
+    @include respond-below(md) {
+      margin: 8px 0;
+    }
   }
 }

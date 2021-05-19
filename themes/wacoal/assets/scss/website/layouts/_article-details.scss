@@ -104,13 +104,14 @@
     line-height: calcRem(18);
 
     &.single-column {
-      width: var(--width-100);
+      // width: var(--width-100);
       margin: auto;
-      max-width: calcRem(300);
+      // max-width: calcRem(300);
+      max-width: 786px;
 
-      @include respond-above(sm) {
-        max-width: get-vw(1280px);
-      }
+      // @include respond-above(sm) {
+      //   max-width: get-vw(1280px);
+      // }
     }
 
     @include respond-above(sm) {

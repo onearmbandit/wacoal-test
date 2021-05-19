@@ -1,18 +1,19 @@
 .list-statment-image {
 
   &--wrapper {
-    max-width: 1200px;
+    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     padding: 80px 0;
 
     @include respond-below(lg){
       padding: 50px 0;
-      max-width: 966px;
+      // max-width: 966px;
     }
 
     @include respond-below(md){
       padding: 25px 0;
-      max-width: 738px;
+      // max-width: 738px;
     }
 
     @include respond-below(xs){
@@ -30,25 +31,25 @@
         }
       }
 
-      .list-statment-image--content {
-        margin-right: inherit;
-        margin-left: 135px;
+      // .list-statment-image--content {
+      //   margin-right: inherit;
+      //   margin-left: 135px;
 
-        @include respond-below(lg){
-          margin-right: inherit;
-          margin-left: 57px;
-        }
+      //   @include respond-below(lg){
+      //     margin-right: inherit;
+      //     margin-left: 57px;
+      //   }
 
-        @include respond-below(md){
-          margin-right: inherit;
-          margin-left: 22px;
-        }
+      //   @include respond-below(md){
+      //     margin-right: inherit;
+      //     margin-left: 22px;
+      //   }
 
-        @include respond-below(xs){
-          margin-right: inherit;
-          margin-left: inherit;
-        }
-      }
+      //   @include respond-below(xs){
+      //     margin-right: inherit;
+      //     margin-left: inherit;
+      //   }
+      // }
 
     }
   }
@@ -85,19 +86,23 @@
 
   &--content {
     flex: 1;
-    margin-right: 135px;
+    padding: 0 135px;
 
     @include respond-below(lg){
-      margin-right: 57px;
+      padding: 0 58px;
     }
 
     @include respond-below(md){
-      margin-right: 22px;
+      padding: 0 25px;
+    }
+
+    @include respond-below(sm){
+      padding: 0 36px;
     }
 
     @include respond-below(xs){
       margin-right: inherit;
-      width: 314px;
+      // width: 314px;
       margin: 20px auto 0;
     }
 
