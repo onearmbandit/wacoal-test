@@ -19,9 +19,9 @@
             class="article-header--wrapper__category">
             <?php echo esc_attr($primary_category->name); ?>
         </a>
-        <h2 class="article-header--wrapper__heading">
+        <h1 class="article-header--wrapper__heading">
             <?php echo esc_attr(the_title()); ?>
-        </h2>
+        </h1>
     </div>
 </section>
 
