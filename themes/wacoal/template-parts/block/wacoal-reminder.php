@@ -29,9 +29,9 @@
     <?php endif; ?>
 
     <?php if($reminder_content_mobile && !empty($reminder_content_mobile)) :?>
-    <div class="content mobile-ui">
+    <!-- <div class="content mobile-ui">
         <?php echo wp_kses_post($reminder_content_mobile); ?>
-    </div>
+    </div> -->
     <?php endif; ?>
 
     </div>

@@ -1335,33 +1335,39 @@
 
 //
 .full-width--image {
-  max-width: 100%;
+  max-width: 1440px;
   margin: auto;
   text-align: center;
-  margin-bottom: calcRem(59);
+  padding: 80px 0;
+  width: 100%;
 
-  @include respond-above(sm) {
-    max-width: get-vw(1218px);
-    margin-bottom: get-vw(140px);
+  @include respond-below(lg){
+    padding: 50px 0;
   }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
+  // margin-bottom: calcRem(59);
+
+  // @include respond-above(sm) {
+  //   max-width: get-vw(1218px);
+  //   margin-bottom: get-vw(140px);
+  // }
 
   img {
     max-width: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   figcaption {
-    font-size: calcRem(14);
-    line-height: calcRem(16);
+    font-size: 14px;
+    line-height: 16px;
     @include ProximaNova-Light;
     color: var(--color-gray);
     text-align: center;
-    margin-top: calcRem(19);
-
-    @include respond-above(sm) {
-      font-size: get-vw(22px);
-      line-height: get-vw(29px);
-      margin-top: get-vw(36px);
-    }
+    margin-top: 19px;
 
     strong {
       @include ProximaNova-Bold;
@@ -1692,41 +1698,55 @@
 
 
 .reminder-note {
+  padding: 80px 0;
+
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
 
   &--wrapper {
     background: #FDF0F7;
     display: flex;
     margin: auto;
     align-items: center;
+    max-width: 825px;
+    padding: 13px 80px 10px 66px;
+
+    @include respond-below(md) {
+      max-width: 708px;
+      padding: 11px 76px 9px 57px;
+    }
 
     @include respond-below(sm) {
-      margin: 33px 15px 0;
-      padding: 68px 40px;
+      // margin: 33px 15px 0;
+      padding: 30px 36px 30px 25px;
     }
 
-    @include respond-above(sm) {
-      width: get-vw(825px);
-      min-height: get-vw(140px);
-      padding-top: get-vw(24px);
-      padding-bottom: get-vw(24px);
-      padding-left: get-vw(40px);
-      padding-right: get-vw(40px);
-    }
 
     .image {
+      width: 65px;
+      margin-right: 43px;
+
+      @include respond-below(md) {
+        width: 55px;
+      }
 
       @include respond-below(sm) {
-        position: absolute;
-        width: 150px;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0.2;
+        width: 45px;
+        margin-right: 18px;
       }
 
-      @include respond-above(sm) {
-        width: get-vw(80px);
-        margin-right: get-vw(16px);
-      }
+      // @include respond-below(sm) {
+      //   position: absolute;
+      //   width: 150px;
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      //   opacity: 0.2;
+      // }
 
       img {
         width: 100%;
@@ -1734,11 +1754,20 @@
     }
 
     .content {
+      flex: 1;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.45px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(21px);
-        line-height: get-vw(32px);
-        letter-spacing: 0.53px;
+      @include respond-below(md) {
+        font-size: 15px;
+        line-height: 23px;
+        letter-spacing: 0.38px;
+      }
+
+      @include respond-below(sm) {
+        line-height: 24px;
+        letter-spacing: 0;
       }
 
       span {
@@ -1753,31 +1782,19 @@
         @include ProximaNova-Bold;
         text-decoration: underline;
       }
-
-      &.desktop-ui {
-        display: none;
-
-        @include respond-above(sm) {
-          display: block;
-        }
-      }
-
-      &.mobile-ui {
-        display: block;
-
-        @include respond-above(sm) {
-          display: none;
-        }
-      }
     }
 
     .content-small {
       text-align: center;
       width: 100%;
-      @include respond-above(sm) {
-        font-size: get-vw(16px);
-        line-height: get-vw(26px);
-        letter-spacing: 0.4px;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.45px;
+
+      @include respond-below(md) {
+        font-size: 15px;
+        line-height: 22px;
+        letter-spacing: 0.38px;
       }
 
       span, strong {
@@ -1792,11 +1809,26 @@
   }
 
   &--center {
-    margin-bottom: 48px;
 
-    @include respond-above(sm) {
-      margin-top: get-vw(114px);
-      margin-bottom: get-vw(90px);
+    .reminder-note--wrapper {
+      background: var(--color-feat-article-bg);
+      min-height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+
+      @include respond-below(md) {
+        max-width: 636px;
+        min-height: 84px;
+        padding: 20px;
+      }
+
+      @include respond-below(sm) {
+        max-width: 100%;
+        min-height: inherit;
+        padding: 26px 36px;
+      }
     }
   }
 }
@@ -2059,36 +2091,53 @@
 
 
 .article--para {
-  @include BentonModDisp-Regular;
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 26px;
+  max-width: 980px;
+  margin: 0 auto;
+
+  @include respond-below(lg) {
+    font-size: 17px;
+    line-height: 23px;
+  }
+
+  @include respond-below(md) {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 36px;
+  }
 
   @include respond-below(sm) {
-    padding: 0 20px;
-    margin-bottom: 30px;
-    letter-spacing: 0.49px;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0 36px;
   }
 
-  @include respond-above(sm) {
-    margin: 0 auto;
-    margin-bottom: get-vw(65px);
-    max-width: get-vw(980px);
-    font-size: get-vw(30px);
-    line-height: get-vw(48px);
-    letter-spacing: 0.6px;
-  }
+
 
   ul {
     margin: 0 auto;
-    @include BentonModDisp-Regular;
-    width: 85%;
+    max-width: 654px;
+    padding: 30px 0;
 
-    @include respond-above(sm) {
-      width: get-vw(878px);
+    @include respond-below(md) {
+      max-width: 520px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 245px;
     }
 
     li {
-      margin-bottom: 20px;
+      margin-bottom: 32px;
+
+      @include respond-below(lg) {
+        margin-bottom: 30px;
+      }
+
+      @include respond-below(md) {
+        margin-bottom: 20px;
+      }
 
       &:before {
         content:'';
@@ -2104,12 +2153,6 @@
           height: get-vw(20px);
           margin-right: get-vw(10px);
         }
-      }
-
-      @include respond-above(sm) {
-        margin-bottom: get-vw(20px);
-        font-size: get-vw(30px);
-        line-height: get-vw(40px);
       }
     }
 
