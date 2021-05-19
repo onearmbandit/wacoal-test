@@ -241,7 +241,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-medium-image-format',
-            'title'           => __('Wacoal Mediam Image Block Format'),
+            'title'           => __('Wacoal Medium Image Block Format'),
             'description'     => __('A custom Image format block.'),
             'render_callback' => 'Wacoal_Medium_Img_Format_Render_callback',
             'category'        => 'wacoal',

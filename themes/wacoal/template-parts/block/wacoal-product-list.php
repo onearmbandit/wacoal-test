@@ -40,11 +40,11 @@ if ($block_fields && !empty($block_fields)) :
 
             <div class="fixes-list--boxcontent">
 
-            <?php if ($prod_name && !empty($prod_name)) : ?>
+            <!-- <?php if ($prod_name && !empty($prod_name)) : ?>
                 <div class="verticle-text">
                     <?php echo wp_kses_post($prod_name); ?>
                 </div>
-            <?php endif; ?>
+            <?php endif; ?> -->
 
             <?php if ($prod_image_id && !empty($prod_image_id)) : ?>
                 <div class="list-image">
@@ -56,6 +56,12 @@ if ($block_fields && !empty($block_fields)) :
                          data-src="<?php echo  esc_url($prod_image_url); ?>"
                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                          alt="<?php echo wp_kses_post($prod_image_alt); ?>" />
+
+                         <?php if ($prod_name && !empty($prod_name)) : ?>
+                            <div class="verticle-text">
+                                <?php echo wp_kses_post($prod_name); ?>
+                            </div>
+                        <?php endif; ?>
                 </div>
                 <?php if($button_link && !empty($button_link)) :?>
                     </a>
@@ -65,14 +71,14 @@ if ($block_fields && !empty($block_fields)) :
                 <div class="list-content">
 
                 <?php if ($prod_desc && !empty($prod_desc)) : ?>
-                    <div>
+                    <div class="para">
                         <?php echo wp_kses_post(Wacoal_Remove_P_tag($prod_desc)); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php if ($button_label && !empty($button_label)) :?>
                     <a href="<?php echo esc_url($button_link); ?>"
-                       class="btn primary"
+                       class="btn primary dark"
                        target="_blank">
                         <?php echo wp_kses_post($button_label); ?>
                     </a>
@@ -94,23 +100,17 @@ if ($block_fields && !empty($block_fields)) :
 
             <div class="fixes-list--boxcontent">
 
-                <?php if ($prod_name && !empty($prod_name)) : ?>
-                <div class="verticle-text">
-                    <?php echo wp_kses_post($prod_name); ?>
-                </div>
-                <?php endif; ?>
-
                 <div class="list-content">
 
                 <?php if ($prod_desc && !empty($prod_desc)) : ?>
-                    <div>
+                    <div class="para">
                         <?php echo wp_kses_post(Wacoal_Remove_P_tag($prod_desc)); ?>
                     </div>
                 <?php endif; ?>
 
                 <?php if ($button_label && !empty($button_label)) :?>
                     <a href="<?php echo esc_url($button_link); ?>"
-                       class="btn primary"
+                       class="btn primary dark"
                        target="_blank">
                         <?php echo wp_kses_post($button_label); ?>
                     </a>
@@ -128,7 +128,13 @@ if ($block_fields && !empty($block_fields)) :
                          data-src="<?php echo  esc_url($prod_image_url); ?>"
                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                          alt="<?php echo wp_kses_post($prod_image_alt); ?>" />
-                </div>
+
+                         <?php if ($prod_name && !empty($prod_name)) : ?>
+                        <div class="verticle-text">
+                            <?php echo wp_kses_post($prod_name); ?>
+                        </div>
+                        <?php endif; ?>
+                        </div>
                     <?php if($button_link && !empty($button_link)) :?>
                     </a>
                     <?php endif;
@@ -194,7 +200,7 @@ if ($block_fields && !empty($block_fields)) :
 
                 <?php if ($button_label && !empty($button_label)) :?>
                     <a href="<?php echo esc_url($button_link); ?>"
-                       class="btn primary">
+                       class="btn primary dark">
                         <?php echo wp_kses_post($button_label); ?>
                     </a>
                 <?php endif; ?>
