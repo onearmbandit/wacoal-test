@@ -38,6 +38,10 @@
       max-width: 635px;
     }
 
+    @include respond-below(sm) {
+      margin: 0 auto 21px;
+    }
+
     .title {
       @include ProximaNova-Bold;
       margin-bottom: 28px;
@@ -111,6 +115,10 @@
 
       @include respond-below(md){
         margin-left: 19px;
+      }
+
+      @include respond-below(sm){
+        margin: 0 10px;
       }
 
       ul {

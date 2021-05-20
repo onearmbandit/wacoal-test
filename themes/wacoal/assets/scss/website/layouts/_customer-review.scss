@@ -58,7 +58,17 @@
       font-size: 14px;
 
       @include respond-below(lg) {
-        margin: 13px 0 27px;
+        margin: 13px 0 0;
+      }
+
+      @include respond-below(md) {
+        margin: 8px 0 0;
+        letter-spacing: 0.66px;
+        font-size: 12px;
+      }
+
+      @include respond-below(sm) {
+        margin: 10px 0;
       }
     }
 
@@ -100,6 +110,13 @@
 
     .rating-stars {
 
+      img {
+        width: 23px;
+
+        @include respond-below(lg) {
+          width: 16px;
+        }
+      }
     }
 
     .rating-content {

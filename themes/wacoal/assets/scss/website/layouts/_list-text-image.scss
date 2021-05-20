@@ -120,6 +120,7 @@
 
       a {
         text-decoration: underline;
+        @include ProximaNova-Bold;
       }
     }
   }

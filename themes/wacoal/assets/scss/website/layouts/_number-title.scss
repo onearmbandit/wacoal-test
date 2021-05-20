@@ -19,7 +19,7 @@
     }
 
     @include respond-below(md) {
-      max-width: 660px;
+      max-width: 670px;
     }
 
     @include respond-below(xs) {
@@ -88,7 +88,8 @@
         font-size: 18px;
         line-height: 33px;
         letter-spacing: 0.63px;
-        margin-top: 10px;
+        margin-top: 18px;
+        text-transform: uppercase;
 
         @include respond-below(lg){
           font-size: 12px;

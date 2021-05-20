@@ -93,7 +93,7 @@
         letter-spacing: 1.53px;
       }
 
-      @include respond-below(md) {
+      @include respond-below(sm) {
         font-size: 15px;
         line-height: 19px;
         letter-spacing: 1.2px;
@@ -218,6 +218,10 @@
 
     @include respond-below(sm) {
       margin:0 auto 50px;
+    }
+
+    figure {
+      height: 100%;
     }
 
     img {
@@ -947,6 +951,10 @@
     width: var(--width-100);
     margin: auto;
 
+    @include respond-above(sm) {
+      max-width: 684px;
+    }
+
     @include respond-above(md) {
       max-width: 904px;
     }
@@ -1097,6 +1105,12 @@
         letter-spacing: 0.24px;
       }
 
+      @include respond-below(sm) {
+        font-size: 15px;
+        line-height: 24px;
+        letter-spacing: 0.53px;
+      }
+
 
       strong {
         @include BentonModDisp-Bold;
@@ -1119,6 +1133,7 @@
 
       @include respond-below(sm) {
         padding: 0 36px;
+        text-align: left;
       }
 
 
@@ -1185,6 +1200,10 @@
 
           @include respond-below(md) {
             padding: 0 30px;
+          }
+
+          @include respond-below(sm) {
+            padding: 0;
           }
         }
       }
@@ -1383,6 +1402,7 @@
     color: var(--color-black);
     text-align: center;
     letter-spacing: 0.21px;
+    text-transform: uppercase;
 
     @include respond-below(lg) {
       margin: 17px auto;
@@ -1390,7 +1410,7 @@
     }
 
     @include respond-below(md) {
-      max-width: 710px;
+      max-width: 620px;
     }
 
     @include respond-below(sm) {
@@ -1484,6 +1504,7 @@
       font-size: 14px;
       line-height: 18px;
       letter-spacing: 0.21px;
+      text-transform: uppercase;
 
       @include respond-below(lg) {
         margin: 15px 0;
@@ -1540,6 +1561,7 @@
       letter-spacing: 0.21px;
       @include ProximaNova-Light;
       margin-top: 20px;
+      text-transform: uppercase;
 
       @include respond-below(lg) {
         margin: 15px 0;
@@ -1582,29 +1604,36 @@
   text-align: center;
   padding: 80px 0;
   width: 100%;
-  height: 743px;
+  // height: 743px;
 
   @include respond-below(lg){
     padding: 50px 0;
-    height: 529px;
   }
 
   @include respond-below(md){
     padding: 25px 0;
-    height: 397px;
   }
 
-  @include respond-below(sm){
-    height: 194px;
-  }
   figure {
     height: 100%;
   }
   img {
     max-width: 100%;
     width: 100%;
-    height: 100%;
+    height: 743px;
     object-fit: cover;
+
+    @include respond-below(lg){
+      height: 529px;
+    }
+
+    @include respond-below(md){
+      height: 397px;
+    }
+
+    @include respond-below(sm){
+      height: 194px;
+    }
   }
 
   figcaption {
@@ -2109,6 +2138,7 @@
     }
 
 
+
     .title {
       @include BentonModDisp-Regular;
       text-transform: uppercase;
@@ -2143,6 +2173,12 @@
         line-height: 24px;
       }
 
+      @include respond-below(md) {
+        font-size: 16px;
+        line-height: 23px;
+        letter-spacing: 0;
+      }
+
       @include respond-below(sm) {
         font-size: 16px;
         line-height: 24px;
@@ -2154,6 +2190,14 @@
 
         @include respond-below(lg) {
           margin-bottom: 45px;
+        }
+
+        @include respond-below(md) {
+          margin-bottom: 60px;
+        }
+
+        @include respond-below(sm) {
+          margin-bottom: 40px;
         }
       }
 
@@ -2278,9 +2322,13 @@
         line-height: 23px;
       }
 
-        &:not(:last-child) {
-          margin-bottom: 48px;
+      &:not(:last-child) {
+        margin-bottom: 48px;
+
+        @include respond-below(sm) {
+          margin-bottom: 40px;
         }
+      }
 
 
       &:before, &:after {
@@ -2292,10 +2340,11 @@
 
         background-size: 55px;
         height: 54px;
+        opacity: 0.5;
 
-        @include respond-below(sm) {
-          background-size: 44px;
-          height: 44px;
+        @include respond-below(lg) {
+          background-size: 33px;
+          height: 33px;
         }
       }
       &:before {
@@ -2321,6 +2370,11 @@
         color: var(--color-black);
         letter-spacing: 0.2px;
         line-height: 34px;
+
+        @include respond-below(md) {
+          font-size: 11px;
+          letter-spacing: 0.17px;
+        }
       }
     }
 
@@ -2333,6 +2387,11 @@
         max-width: 300px;
         height: 327px;
         margin: 0 auto;
+
+        @include respond-below(md) {
+          max-width: 240px;
+          height: 261px;
+        }
       }
       img {
         width: 100%;
@@ -2527,6 +2586,7 @@
 
     a {
       text-decoration: underline;
+      @include ProximaNova-Bold;
     }
   }
 
@@ -2635,7 +2695,7 @@
 
       .image-caption {
         max-width: 190px;
-        margin: 17px auto 0;
+        margin: 17px auto;
         text-align: center;
         color: var(--color-gray);
         @include ProximaNova-Light;
@@ -2644,14 +2704,18 @@
         letter-spacing: 0.21px;
 
         @include respond-below(lg) {
-          margin: 8px auto 0;
+          margin: 8px auto;
+        }
+
+        @include respond-below(md) {
+          margin: 6px auto;
         }
 
         @include respond-below(sm) {
           font-size: 12px;
           line-height: 14px;
           letter-spacing: 0.18px;
-          margin-bottom: 30px;
+          margin: 5px auto 30px;
         }
       }
     }
@@ -2685,6 +2749,7 @@
 
       a {
         text-decoration: underline;
+        @include BentonModDisp-Bold;
       }
     }
 
@@ -2868,9 +2933,15 @@
     font-size: 14px;
     color: var(--color-gray);
     text-align: right;
+    letter-spacing: 0.55px;
 
     @include respond-below(lg){
       margin-top: 8px;
+    }
+
+    @include respond-below(sm){
+      margin-top: 5px;
+      font-size: 10px;
     }
   }
 
@@ -3151,11 +3222,13 @@
         letter-spacing: 1.2px;
         flex: 1;
         margin-left: 10px;
+        margin-top: -4px;
 
         @include respond-below(lg) {
           font-size: 14px;
           line-height: 24px;
           letter-spacing: 1px;
+          margin-left: 8px;
         }
 
         @include respond-below(sm) {
