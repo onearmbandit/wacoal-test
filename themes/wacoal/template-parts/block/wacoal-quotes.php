@@ -35,7 +35,9 @@
         if ($quote_text && !empty($quote_text)) {
             ?>
         <div class="product-quote--content">
-            <?php echo wp_kses_post($quote_text)?>
+            <div class="content">
+                <?php echo wp_kses_post($quote_text)?>
+            </div>
         </div>
             <?php
         }

@@ -556,81 +556,169 @@
 
 //
 .product-quote {
-  padding-top: calcRem(58);
-  padding-bottom: calcRem(55);
+  padding: 80px 0;
 
-  @include respond-above(sm) {
-    padding-top: get-vw(163px);
-    padding-bottom: get-vw(163px);
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
   }
 
   &--wrapper {
-    max-width: calcRem(320);
     margin: auto;
     display: flex;
     align-items: center;
+    max-width: 1250px;
 
-    @include respond-above(sm) {
-      max-width: get-vw(1280px);
+    @include respond-below(lg) {
+      max-width: 876px;
+    }
+
+    @include respond-below(md) {
+      max-width: 708px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 335px;
     }
   }
 
   &--image {
-    max-width: get-vw(594px);
-    margin-right: get-vw(191px);
+    width: 593px;
+    height: 650px;
+
+    @include respond-below(lg) {
+      width: 422px;
+      height: 462px;
+    }
+
+    @include respond-below(md) {
+      width: 342px;
+      height: 375px;
+    }
+
+    @include respond-below(sm) {
+      width: 161px;
+      height: 177px;
+    }
 
     img {
-      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 
   &--content {
-    flex: 1;
+    // flex: 1;
     @include BentonModDisp-RegularItalic;
-    font-size: calcRem(12);
-    line-height: calcRem(16);
     text-align: center;
     position: relative;
+    font-size: 41px;
+    line-height: 55px;
+    letter-spacing: 1.64px;
+    flex: 1;
+    margin-left: 81px;
+    color: #707070;
 
-    @include respond-above(sm) {
-      font-size: calcRem(19);
-      line-height: calcRem(25);
+    @include respond-below(lg) {
+      margin-left: 58px;
+      font-size: 29px;
+      line-height: 39px;
+      letter-spacing: 1.16px;
     }
-    @include respond-above(md) {
-      font-size: calcRem(26);
-      line-height: calcRem(35);
+
+    @include respond-below(md) {
+      margin-left: 47px;
+      font-size: 23px;
+      line-height: 31px;
+      letter-spacing: 0.92px;
     }
-    @include respond-above(lg) {
-      font-size: calcRem(33);
-      line-height: calcRem(44);
+
+    @include respond-below(sm) {
+      margin-left: 22px;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.56px;
     }
-    @include respond-above(xl) {
-      font-size: calcRem(53);
-      line-height: calcRem(71);
+
+    .content {
+      max-width: 408px;
+      margin:  auto;
+
+      @include respond-below(lg) {
+        width: 288px;
+      }
+
+      @include respond-below(md) {
+        width: 224px;
+      }
+
+      @include respond-below(sm) {
+        width: 106px;
+      }
     }
 
     &:before, &:after {
       content: '';
       position: absolute;
-      width: calcRem(22);
-      height: calcRem(22);
+      width: 90px;
+      height: 86px;
       background-size: contain;
+      background-repeat: no-repeat;
 
-      @include respond-above(sm) {
-        width: get-vw(86px);
-        height: get-vw(86px);
+      @include respond-below(lg) {
+        width: 64px;
+        height: 61px;
+      }
+
+      @include respond-below(md) {
+        width: 52px;
+        height: 49px;
+      }
+
+      @include respond-below(sm) {
+        width: 24px;
+        height: 23px;
       }
     }
     &:before {
-      top: get-vw(-120px);
-      left: get-vw(-40px);
+      top: -140px;
+      left: 0;
       background-image: url("../../images/quote-left.svg");
+
+      @include respond-below(lg) {
+        top: -104px;
+      }
+
+      @include respond-below(md) {
+        top: -90px;
+      }
+
+      @include respond-below(sm) {
+        top: -36px;
+      }
     }
 
+
     &:after {
-      bottom: get-vw(-120px);
+      bottom: -120px;
       right: 0;
       background-image: url("../../images/quote-right.svg");
+
+      @include respond-below(lg) {
+        bottom: -104px;
+      }
+
+      @include respond-below(md) {
+        bottom: -90px;
+      }
+
+      @include respond-below(sm) {
+        bottom: -36px;
+      }
     }
 
     strong {
@@ -650,6 +738,10 @@
 
   @include respond-above(sm) {
     padding-bottom: get-vw(160px);
+  }
+
+  @include respond-below(sm) {
+    padding: 0 36px;
   }
 
   &--wrapper {
@@ -921,16 +1013,19 @@
         @include respond-below(lg) {
           font-size: 83px;
           letter-spacing: 0.41px;
+          line-height: 89px;
         }
 
         @include respond-below(md) {
           font-size: 62px;
           letter-spacing: 0.31px;
+          line-height: 68px;
         }
 
         @include respond-below(sm) {
           font-size: 36px;
           letter-spacing: 0.18px;
+          line-height: 42px;
         }
       }
     }
@@ -1022,6 +1117,10 @@
         flex-direction: row;
       }
 
+      @include respond-below(sm) {
+        padding: 0 36px;
+      }
+
 
       .list-box--number {
         text-align: center;
@@ -1092,7 +1191,9 @@
     }
 
     &.list-box-two {
-
+      @include respond-below(sm) {
+        padding: 0 36px;
+      }
       .list-box--heading {
         padding-left: get-vw(40px);
         margin-bottom: calcRem(16);
@@ -1142,7 +1243,9 @@
     }
 
     &.list-box-three {
-
+      @include respond-below(sm) {
+        padding: 0 36px;
+      }
       .list-box--heading {
         padding-left: get-vw(40px);
         margin-bottom: calcRem(16);

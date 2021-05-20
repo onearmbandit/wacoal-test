@@ -22,25 +22,11 @@
       letter-spacing: 1.4px;
       line-height: 18px;
 
-      // @include respond-above(sm) {
-      //     font-size: 25px;
-      //     padding: 14.5px 28px 12.5px;
-      // }
-
-      // &.big {
-
-      //   @include respond-above(sm) {
-      //     font-size: 29px;
-      //     padding: 18px 30.5px 15px;
-      //   }
-      // }
-
       &.dark {
         background-color: var(--color-black);
         color: var(--color-white);
 
         &:hover {
-          // background: var(--color-white);
           background: transparent;
           color: var(--color-black);
         }
@@ -56,15 +42,12 @@
       border-color: var(--color-nav-bg);
       background-color: var(--color-nav-bg);
       color: var(--color-black);
-      font-size: 16px;
+      font-size: 14px;
       @include ProximaNova-Bold;
       text-transform:   uppercase;
-      padding: 14px 42px 13px;
-
-      @include respond-above(sm) {
-        font-size: 34px;
-        padding: 24px 60px 22px;
-      }
+      padding: 12px 33px;
+      letter-spacing: 1.4px;
+      line-height: 18px;
   }
 
 }

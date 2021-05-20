@@ -20,6 +20,7 @@
     text-transform: uppercase;
     font-size: calcRem(73);
     line-height: calcRem(70);
+    @include BentonModDisp-Regular;
 
     @include respond-above(sm) {
       max-width: get-vw(870px);

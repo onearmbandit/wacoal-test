@@ -6,14 +6,22 @@
   //   margin-bottom: get-vw(134.3px);
   // }
 
-  padding: 80px 0;
+  padding: 80px 0 99px;
+
+  @include respond-below(xl) {
+    padding: 50px 0 88px;
+  }
 
   @include respond-below(lg) {
-    padding: 50px 0;
+    padding: 50px 0 62px;
   }
 
   @include respond-below(md) {
-    padding: 25px 0;
+    padding: 25px 0 52px;
+  }
+
+  @include respond-below(sm) {
+    padding: 25px 0 0;
   }
 
   &::before {
@@ -21,17 +29,30 @@
     position: absolute;
     background: var(--color-nav-bg);
     width: 100%;
-    height: 199px;
+    height: 296px;
     z-index: -1;
-    top: 160px;
+    top: 190px;
+
+    @include respond-below(xl) {
+      height: 247px;
+      top: 160px;
+    }
+
+    @include respond-below(lg) {
+      height: 199px;
+      top: 135px;
+    }
+
+    @include respond-below(md) {
+      height: 174px;
+      top: 90px;
+    }
+
+    @include respond-below(sm) {
+      display: none;
+    }
   }
 
-  // @include respond-above(sm) {
-  //   &::before {
-  //     height: get-vw(210px);
-  //     top: get-vw(110px);
-  //   }
-  // }
 
   &.more-blog-multirow {
     &::before {
@@ -46,15 +67,27 @@
   &--wrapper {
     position: relative;
     z-index: 1;
-    // width: calc(var(--width-100) - 46px);
     width: 100%;
     margin: auto;
     display: flex;
-    flex-direction: column;
+    max-width: 1328px;
+    padding-top: 37px;
 
-    @include respond-above(sm) {
-      width: get-vw(1330px);
-      flex-direction: row;
+    @include respond-below(xl) {
+      max-width: 1034px;
+    }
+
+    @include respond-below(lg) {
+      max-width: 808px;
+    }
+
+    @include respond-below(md) {
+      max-width: 628px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+      flex-direction: column;
     }
   }
 
@@ -65,45 +98,79 @@
     text-align: center;
     text-transform: uppercase;
     margin: auto;
-    margin-bottom: calcRem(25);
+    margin-bottom: 60px;
     @include ProximaNova-Light;
     font-size: 42px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     max-width: 516px;
 
     @include respond-below(lg) {
-      font-size: get-vw(52px);
-      margin-bottom: get-vw(80px);
-      max-width: get-vw(774px);
+      font-size: 36px;
+      line-height: 44px;
+      max-width: 442px;
+      margin-bottom: 40px;
     }
+
+    @include respond-below(md) {
+      font-size: 32px;
+      line-height: 44px;
+      max-width: 442px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 20px;
+      line-height: 21px;
+      max-width: 246px;
+      letter-spacing: 1px;
+      margin-bottom: 13px;
+    }
+
 
     &:before,
     &:after {
       content: "";
       position: absolute;
-      width: 33px;
+      width: 103px;
       height: 1px;
       background: var(--color-gray);
       top: 50%;
 
-      @include respond-above(sm) {
-        width: get-vw(159px);
+      @include respond-below(sm) {
+        width: 33px;
       }
     }
 
     &:before {
-      left: 13px;
+      left: -200px;
 
-      @include respond-above(sm) {
-        left: get-vw(-269px);
+      @include respond-below(lg) {
+        left: -130px;
+      }
+
+      @include respond-below(md) {
+        left: -100px;
+      }
+
+      @include respond-below(sm) {
+        left: -40px;
       }
     }
 
     &:after {
-      right: 13px;
+      right: -200px;
 
-      @include respond-above(sm) {
-        right: get-vw(-269px);
+      @include respond-below(lg) {
+        right: -130px;
+      }
+
+      @include respond-below(md) {
+        right: -100px;
+      }
+
+      @include respond-below(sm) {
+        right: -40px;
       }
     }
 
@@ -111,43 +178,80 @@
 
   .blog-tile {
     flex: 1;
-    padding: calcRem(0, 23);
-    max-width: 100%;
     text-align: center;
+    max-width: 378px;
 
-    // &:not(:last-child) {
-    //   margin-bottom: calcRem(30);
+    @include respond-below(xl) {
+      max-width: 306px;
+    }
 
-    //   @include respond-above(sm) {
-    //     margin-bottom: 0;
-    //   }
-    // }
+    @include respond-below(lg) {
+      max-width: 236px;
+    }
 
-    &:nth-child(2) {
-      @include respond-above(sm) {
-        margin-left: get-vw(97px);
-        margin-right: get-vw(97px);
+    @include respond-below(md) {
+      max-width: 200px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+      position: relative;
+      margin-bottom: 57px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background: var(--color-nav-bg);
+        width: 100%;
+        height: 160px;
+        z-index: -1;
+        left: 0;
+        top: -22px;
       }
     }
 
-    // &:not(:first-child) {
-    //   @include respond-below(sm) {
-    //     display: none;
-    //   }
-    // }
+    &:nth-child(2) {
+      margin: 0 97px;
 
-    @include respond-above(sm) {
-      padding: 0;
-      max-width: get-vw(379px);
+      @include respond-below(xl) {
+        margin: 0 57px;
+      }
+
+      @include respond-below(lg) {
+        margin: 0 50px;
+      }
+
+      @include respond-below(md) {
+        margin: 0 14px;
+      }
+
+      @include respond-below(sm) {
+        margin: 0 0 57px;
+      }
     }
 
     &--image {
       width: 100%;
-      height: calcRem(249);
+      height: 346px;
 
-      @include respond-above(sm) {
-        height: get-vw(346px);
+      @include respond-below(xl) {
+        height: 280px;
       }
+
+      @include respond-below(lg) {
+        height: 216px;
+      }
+
+      @include respond-below(md) {
+        height: 183px;
+      }
+
+      @include respond-below(md) {
+        width: 200px;
+        height: 183px;
+        margin: auto;
+      }
+
       img {
         width: 100%;
         height: 100%;
@@ -157,21 +261,71 @@
 
     &--category {
       @include ProximaNova-Light;
-      font-size: calcRem(15);
-      line-height: calcRem(22);
-      margin-bottom: calcRem(2);
-      margin-top: calcRem(13);
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 0.15px;
+      margin: 16px 0 10px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(25px);
-        line-height: get-vw(22px);
-        margin-bottom: get-vw(18px);
-        margin-top: get-vw(18px);
+      @include respond-below(xl) {
+        font-size: 18px;
+        line-height: 19px;
+        letter-spacing: 0.15px;
+        margin: 12px 0 10px;
+      }
+
+      @include respond-below(lg) {
+        margin: 12px 0 12px;
+      }
+
+      @include respond-below(md) {
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.15px;
+        margin: 12px 0 12px;
+      }
+
+      @include respond-below(sm) {
+        max-width: 235px;
+        margin: 8px auto;
       }
     }
 
     &--heading {
       text-transform: uppercase;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: 0.25px;
+      margin-bottom: 11px;
+      min-height: 85px;
+      display: flex;
+      align-items: center;
+
+      @include respond-below(xl) {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 11px;
+        min-height: 78px;
+      }
+
+      @include respond-below(lg) {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 15px;
+        min-height: 66px;
+      }
+
+      @include respond-below(md) {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 12px;
+        min-height: 76px;
+      }
+
+      @include respond-below(sm) {
+        max-width: 235px;
+        margin: 0 auto 12px;
+        min-height: auto;
+      }
     }
 
     &--para {
@@ -196,13 +350,6 @@
       }
     }
 
-    .btn {
-      margin-top: calcRem(30);
-
-      @include respond-above(sm) {
-        margin-top: get-vw(49px);
-      }
-    }
   }
 }
 
