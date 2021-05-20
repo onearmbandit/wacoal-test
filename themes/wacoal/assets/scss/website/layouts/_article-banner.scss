@@ -2,8 +2,13 @@
   background-size: cover;
   background-position: center;
   margin: auto;
-  max-width: 886px;
-  height: 372px;
+  max-width: 1170px;
+  height: 492px;
+
+  @include respond-below(xl) {
+    max-width: 886px;
+    height: 372px;
+  }
 
   @include respond-below(lg) {
     width: 667px;
