@@ -114,12 +114,16 @@
       height: 1px;
       margin: auto;
       background: var(--color-black);
-      max-width: calcRem(168.57);
-      margin-bottom: 10px;
+      max-width: 422px;
+      margin-bottom: 15px;
 
-      @include respond-above(sm) {
-        max-width: get-vw(422px);
-        margin-bottom: 15px;
+      @include respond-below(md) {
+        max-width: 292px;
+      }
+
+      @include respond-below(sm) {
+        max-width: 168px;
+        margin-bottom: 10px;
       }
     }
   }
@@ -239,6 +243,14 @@
       text-align: center;
       margin: 17px auto 0;
       max-width: 190px;
+
+      @include respond-below(lg) {
+        margin: 8px auto;
+      }
+
+      @include respond-below(sm) {
+        margin: 10px auto;
+      }
     }
   }
 
@@ -1019,15 +1031,15 @@
         @include BentonModDisp-Regular;
 
         @include respond-below(lg) {
-          font-size: 83px;
+          font-size: 56px;
           letter-spacing: 0.41px;
-          line-height: 89px;
+          line-height: 1px;
         }
 
         @include respond-below(md) {
-          font-size: 62px;
+          font-size: 42px;
           letter-spacing: 0.31px;
-          line-height: 68px;
+          line-height: 1;
         }
 
         @include respond-below(sm) {
@@ -1828,7 +1840,7 @@
         max-width: 235px;
       }
 
-      @include respond-below(lg) {
+      @include respond-below(md) {
         margin: 11px auto 10px;
         max-width: 176px;
       }
@@ -2448,7 +2460,8 @@
     padding: 30px 0;
 
     @include respond-below(md) {
-      max-width: 520px;
+      max-width: 545px;
+      padding: 25px 0;
     }
 
     @include respond-below(sm) {
@@ -2466,7 +2479,11 @@
         }
 
         @include respond-below(md) {
-          margin-bottom: 20px;
+          margin-bottom: 35px;
+        }
+
+        @include respond-below(sm) {
+          margin-bottom: 25px;
         }
 
       }
