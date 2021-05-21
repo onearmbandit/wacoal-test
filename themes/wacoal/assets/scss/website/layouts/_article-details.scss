@@ -366,7 +366,7 @@
   a {
     @include BentonModDisp-Bold;
     text-decoration: underline;
-    display: flex;
+    // display: flex;
   }
 }
 
@@ -1189,6 +1189,11 @@
             padding-left: 30px;
             margin-bottom: 20px;
           }
+
+          @include respond-below(sm) {
+            padding: 11px;
+            margin-bottom: 16px;
+          }
         }
 
         .list-box--para {
@@ -1515,7 +1520,7 @@
       }
 
       @include respond-below(sm) {
-        margin: 12px 0 0;
+        margin: 10px 0;
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0.3px;
@@ -1707,7 +1712,7 @@
     }
 
     @include respond-below(md){
-      padding: 25px 0 100px;
+      padding: 25px 0 120px;
     }
 
     @include respond-below(sm){
@@ -1773,7 +1778,7 @@
       line-height: 31px;
       letter-spacing: 0.15px;
       padding: 10px 15px 0;
-      margin-bottom: 60px;
+      margin-bottom: 70px;
     }
 
   }
@@ -1819,8 +1824,13 @@
       max-width: 272px;
 
       @include respond-below(lg) {
-        margin: 14px auto 0;
+        margin: 14px auto;
         max-width: 235px;
+      }
+
+      @include respond-below(lg) {
+        margin: 11px auto 10px;
+        max-width: 176px;
       }
 
       @include respond-below(sm) {
@@ -2406,23 +2416,27 @@
 .article--para {
   font-size: 18px;
   line-height: 26px;
+  letter-spacing: 0.45px;
   max-width: 980px;
   margin: 0 auto;
 
   @include respond-below(lg) {
     font-size: 17px;
     line-height: 23px;
+    letter-spacing: 0.42px;
   }
 
   @include respond-below(md) {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.38px;
     padding: 0 36px;
   }
 
   @include respond-below(sm) {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
+    letter-spacing: 0;
     padding: 0 36px;
   }
 
@@ -2531,6 +2545,12 @@
     line-height: 30px;
     letter-spacing: 0.3px;
 
+    @include respond-below(lg) {
+      font-size: 19px;
+      line-height: 30px;
+      letter-spacing: 0.28px;
+    }
+
     @include respond-below(md) {
       font-size: 17px;
       line-height: 28px;
@@ -2595,6 +2615,10 @@
 
     @include respond-below(md) {
       margin-bottom: 20px;
+    }
+
+    @include respond-below(sm) {
+      margin-bottom: 25px;
     }
   }
 
