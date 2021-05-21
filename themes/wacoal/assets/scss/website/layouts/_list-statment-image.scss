@@ -31,26 +31,6 @@
         }
       }
 
-      // .list-statment-image--content {
-      //   margin-right: inherit;
-      //   margin-left: 135px;
-
-      //   @include respond-below(lg){
-      //     margin-right: inherit;
-      //     margin-left: 57px;
-      //   }
-
-      //   @include respond-below(md){
-      //     margin-right: inherit;
-      //     margin-left: 22px;
-      //   }
-
-      //   @include respond-below(xs){
-      //     margin-right: inherit;
-      //     margin-left: inherit;
-      //   }
-      // }
-
     }
   }
 
@@ -78,9 +58,9 @@
       height: 384px;
     }
 
-    @include respond-below(md){
-      max-width: 375px;
-      max-height: 375px;
+    @include respond-below(sm){
+      width: 375px;
+      height: 375px;
     }
   }
 
