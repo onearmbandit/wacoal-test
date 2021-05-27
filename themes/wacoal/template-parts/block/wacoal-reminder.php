@@ -28,9 +28,5 @@
     </div>
     <?php endif; ?>
 
-    <?php if($reminder_content_mobile && !empty($reminder_content_mobile)) :
-        echo wp_kses_post($reminder_content_mobile);
-    endif; ?>
-
     </div>
 </section>
