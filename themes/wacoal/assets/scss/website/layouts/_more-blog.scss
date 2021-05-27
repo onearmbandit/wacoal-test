@@ -283,7 +283,7 @@
       line-height: 28px;
       letter-spacing: 0.6px;
       margin-bottom: 12px;
-      min-height: 80px;
+      min-height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -292,21 +292,21 @@
         font-size: 22px;
         line-height: 26px;
         letter-spacing: 0.55px;
-        min-height: 74px;
+        min-height: 94px;
       }
 
       @include respond-below(lg) {
         font-size: 18px;
         line-height: 22px;
         letter-spacing: 0.45px;
-        min-height: 62px;
+        min-height: 82px;
       }
 
       @include respond-below(md) {
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.4px;
-        min-height: 76px;
+        min-height: 96px;
       }
 
       @include respond-below(sm) {
@@ -336,6 +336,11 @@
       a {
         @include ProximaNova-Light;
       }
+    }
+
+    .btn {
+      @include ProximaNova-Reg;
+      border: 1px solid var(--color-black);
     }
 
   }

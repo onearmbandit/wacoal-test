@@ -3066,8 +3066,10 @@
     @include respond-below(sm) {
       width: 150px;
       height: auto;
-      top: 40%;
+      // top: 40%;
       right: 50%;
+      height: calc(100% - 120px);
+      top: 25px;
 
       a {
         display: none;
