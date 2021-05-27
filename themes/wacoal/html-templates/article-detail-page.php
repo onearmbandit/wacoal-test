@@ -661,7 +661,7 @@ Wacoal_Page_Entry_top('');
             <div class="number mobile">
                 3.
             </div>
-            <h2>The Wire Free Push Up T-Shirt Bra</h2>
+            <span>The Wire Free Push Up T-Shirt Bra</span>
             <div class="sub-head">How Perfect Wire Free Bra</div>
         </div>
 
