@@ -58,6 +58,7 @@
 
       @include respond-below(xs){
         margin-bottom: 10px;
+        max-width: 70%;
       }
     }
 

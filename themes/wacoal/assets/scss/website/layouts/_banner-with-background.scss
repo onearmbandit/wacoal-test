@@ -12,6 +12,14 @@
 
   &--heading {
     text-transform: uppercase;
+    font-size: calcRem(54);
+    line-height: calcRem(49);
+    @include BentonModDisp-Regular;
+
+    @include respond-above(sm) {
+      font-size: get-vw(165px);
+      line-height: 1;
+    }
   }
 
   &--subtitle {

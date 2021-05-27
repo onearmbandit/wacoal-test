@@ -68,5 +68,14 @@
       max-width: 303px;
       margin: 15px auto 0;
     }
+
+    strong {
+      @include ProximaNova-Bold;
+    }
+
+    a {
+      @include ProximaNova-Bold;
+      text-decoration: underline;
+    }
   }
 }

@@ -60,23 +60,28 @@
     .custom-swiper-pagination {
       bottom: inherit;
       position: relative;
-      margin-top: calcRem(16);
+      margin: 38px 0;
 
-      @include respond-above(sm) {
-        margin-top: get-vw(42px);
+      @include respond-below(lg) {
+        margin: 28px 0;
+      }
+
+      @include respond-below(md) {
+        margin: 20px 0;
+      }
+
+      @include respond-below(sm) {
+        margin: 14px 0;
       }
 
       .swiper-pagination-bullet {
-        width: calcRem(10);
-        height: calcRem(10);
+        width: 13px;
+        height: 13px;
 
-        @include respond-above(sm) {
-          width: get-vw(15px);
-          height: get-vw(15px);
-          margin-left: get-vw(5px);
-          margin-right: get-vw(5px);
+        @include respond-below(lg) {
+          width: 9px;
+          height: 9px;
         }
-
 
         &-active {
           background: var(--color-black);
@@ -87,19 +92,28 @@
 
   .swiper-buttun-background {
     background: var(--swiper-button-background);
-    width: calcRem(49);
-    height: calcRem(59);
+    width: 89px;
+    height: 117px;
 
-    @include respond-above(sm) {
-      width: get-vw(80px);
-      height: get-vw(104px);
+    @include respond-below(lg) {
+      width: 64px;
+      height: 83px;
+    }
+
+    @include respond-below(md) {
+      width: 48px;
+      height: 63px;
     }
 
     img {
-      width: calcRem(13);
+      width: 33px;
 
-      @include respond-above(sm) {
-        width: get-vw(26px);
+      @include respond-below(lg) {
+        width: 23px;
+      }
+
+      @include respond-below(md) {
+        width: 17px;
       }
     }
 

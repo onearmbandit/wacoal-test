@@ -1421,7 +1421,7 @@
     font-size: 14px;
     line-height: 18px;
     @include ProximaNova-Light;
-    color: var(--color-gray);
+    color: var(--light-gray);
     text-align: center;
     letter-spacing: 0.21px;
     text-transform: uppercase;
@@ -1522,7 +1522,7 @@
 
     .video-caption {
       @include ProximaNova-Light;
-      color: var(--color-black);
+      color: var(--light-gray);
       text-align: center;
       margin: 20px 0;
       font-size: 14px;
@@ -1587,6 +1587,7 @@
       @include ProximaNova-Light;
       margin-top: 20px;
       text-transform: uppercase;
+      color: var(--light-gray);
 
       @include respond-below(lg) {
         margin: 15px 0;
@@ -1848,6 +1849,7 @@
       letter-spacing: 0.65px;
       margin: 17px auto 0;
       max-width: 272px;
+      text-transform: uppercase;
 
       @include respond-below(lg) {
         margin: 14px auto;
@@ -2268,7 +2270,7 @@
     }
     .timeline-item {
       list-style: none;
-      border-left: 0.5px solid #8D8D8D;
+      border-left: 0.5px solid var(--light-gray);
     }
     .timeline-item:last-child {
       border-left-color: transparent;
@@ -2348,6 +2350,7 @@
       text-align: center;
       font-size: 18px;
       line-height: 27px;
+      color: var(--light-gray);
 
       @include respond-below(lg) {
         font-size: 16px;
@@ -2404,7 +2407,7 @@
       span {
         font-size: 13px;
         @include ProximaNova-Light;
-        color: var(--color-black);
+        color: var(--light-gray);
         letter-spacing: 0.2px;
         line-height: 34px;
 
