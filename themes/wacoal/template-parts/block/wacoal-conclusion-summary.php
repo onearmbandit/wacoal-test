@@ -16,13 +16,13 @@
 
     <?php if($bold_content && !empty($bold_content)) :?>
         <div class="conclusion--top-para">
-            <?php echo Wacoal_Remove_P_tag(wp_kses_post($bold_content));?>
+            <?php echo wp_kses_post($bold_content);?>
         </div>
     <?php endif;?>
 
     <?php if($content && !empty($content)) :?>
         <div class="conclusion--bottom-para">
-            <?php echo Wacoal_Remove_P_tag(wp_kses_post($content));?>
+            <?php echo wp_kses_post($content);?>
         </div>
     <?php endif;?>
 

@@ -20,13 +20,13 @@
 
         <?php if($title && !empty($title)) :?>
             <div class="title">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($title));?>
+                <?php echo wp_kses_post($title);?>
             </div>
         <?php endif;?>
 
         <?php if($description && !empty($description)) :?>
             <div class="sub-title">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($description));?>
+                <?php echo wp_kses_post($description);?>
             </div>
         <?php endif;?>
 

@@ -44,7 +44,7 @@
                      alt="<?php echo wp_kses_post($caption); ?>" />
                 <figcaption><?php echo wp_kses_post($caption); ?></figcaption>
             </figure>
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($block_content));?>
+            <?php echo wp_kses_post($block_content);?>
         </div>
     </div>
 </section>

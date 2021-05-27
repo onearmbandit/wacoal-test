@@ -55,7 +55,7 @@
 
             <?php if($subtitle && !empty($subtitle)) :?>
             <div class="sub-head">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($subtitle));?>
+                <?php echo wp_kses_post($subtitle);?>
             </div>
             <?php endif;?>
 
@@ -66,13 +66,13 @@
             <div class="tip">
             <?php if($tip_title && !empty($tip_title)) :?>
                 <div class="title">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_title));?>
+                    <?php echo wp_kses_post($tip_title);?>
                 </div>
             <?php endif;?>
 
             <?php if($tip_content && !empty($tip_content)) :?>
                 <div class="tip-content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_content));?>
+                    <?php echo wp_kses_post($tip_content);?>
                 </div>
             <?php endif;?>
 
@@ -105,7 +105,7 @@
 
             <?php if($subtitle && !empty($subtitle)) :?>
             <div class="sub-head">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($subtitle));?>
+                <?php echo wp_kses_post($subtitle);?>
             </div>
             <?php endif;?>
 
@@ -117,13 +117,13 @@
 
             <?php if($tip_title && !empty($tip_title)) :?>
                 <div class="title">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_title));?>
+                    <?php echo wp_kses_post($tip_title);?>
                 </div>
             <?php endif;?>
 
             <?php if($tip_content && !empty($tip_content)) :?>
                 <div class="tip-content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_content));?>
+                    <?php echo wp_kses_post($tip_content);?>
                 </div>
             <?php endif;?>
 
@@ -192,13 +192,13 @@
 
             <?php if($tip_title && !empty($tip_title)) :?>
                 <div class="title">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_title));?>
+                    <?php echo wp_kses_post($tip_title);?>
                 </div>
             <?php endif;?>
 
             <?php if($tip_content && !empty($tip_content)) :?>
                 <div class="tip-content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_content));?>
+                    <?php echo wp_kses_post($tip_content);?>
                 </div>
             <?php endif;?>
 
@@ -243,13 +243,13 @@
             <div class="tip">
             <?php if($tip_title && !empty($tip_title)) :?>
                 <div class="title">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_title));?>
+                    <?php echo wp_kses_post($tip_title);?>
                 </div>
             <?php endif;?>
 
             <?php if($tip_content && !empty($tip_content)) :?>
                 <div class="tip-content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($tip_content));?>
+                    <?php echo wp_kses_post($tip_content);?>
                 </div>
             <?php endif;?>
             </div>
