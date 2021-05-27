@@ -42,7 +42,7 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_desc));?>
+                    <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
 
@@ -71,7 +71,7 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_desc));?>
+                    <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
 

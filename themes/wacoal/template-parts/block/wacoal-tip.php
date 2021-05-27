@@ -18,7 +18,7 @@
 <section class="reminder-note  reminder-note--center">
     <div class="reminder-note--wrapper">
         <div class="content-small">
-        <?php echo wp_kses_post(Wacoal_Remove_P_tag($tip_text)); ?>
+        <?php echo wp_kses_post($tip_text); ?>
         </div>
     </div>
 </section>

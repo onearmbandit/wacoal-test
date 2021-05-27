@@ -58,13 +58,13 @@ if ($block_lists && !empty($block_lists)) {
 
             <?php if ($list_subtitle && !empty($list_subtitle)) :?>
                 <div class="sub-title">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_subtitle)); ?>
+                    <?php echo wp_kses_post($list_subtitle); ?>
                 </div>
             <?php endif; ?>
 
             <?php if ($list_desc && !empty($list_desc)) :?>
                 <div class="content">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_desc)); ?>
+                <?php echo wp_kses_post($list_desc); ?>
                 </div>
             <?php endif; ?>
 
@@ -73,7 +73,7 @@ if ($block_lists && !empty($block_lists)) {
 
             <?php if ($list_image_caption && !empty($list_image_caption)) :?>
             <div class="image-name">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption)); ?>
+                <?php echo wp_kses_post($list_image_caption); ?>
             </div>
             <?php endif; ?>
     </div>
@@ -103,13 +103,13 @@ if ($block_lists && !empty($block_lists)) {
 
             <?php if ($list_subtitle && !empty($list_subtitle)) :?>
                 <div class="sub-title">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_subtitle));?>
+                    <?php echo wp_kses_post($list_subtitle);?>
                 </div>
             <?php endif;?>
 
             <?php if ($list_desc && !empty($list_desc)) :?>
                 <div class="content">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_desc));?>
+                    <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
 
@@ -117,7 +117,7 @@ if ($block_lists && !empty($block_lists)) {
         </div>
             <?php if ($list_image_caption && !empty($list_image_caption)) :?>
             <div class="image-name">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption));?>
+                <?php echo wp_kses_post($list_image_caption);?>
             </div>
             <?php endif;?>
     </div>

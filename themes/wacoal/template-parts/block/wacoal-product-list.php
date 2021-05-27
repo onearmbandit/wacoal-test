@@ -44,7 +44,7 @@ if ($block_fields && !empty($block_fields)) :
                 <div class="verticle-text">
                     <?php echo wp_kses_post($prod_name); ?>
                 </div>
-            <?php endif; ?> -->
+           <?php endif; ?> -->
 
             <?php if ($prod_image_id && !empty($prod_image_id)) : ?>
                 <div class="list-image">
@@ -61,7 +61,7 @@ if ($block_fields && !empty($block_fields)) :
                             <div class="verticle-text">
                                 <?php echo wp_kses_post($prod_name); ?>
                             </div>
-                        <?php endif; ?>
+                         <?php endif; ?>
                 </div>
                 <?php if($button_link && !empty($button_link)) :?>
                     </a>
@@ -72,7 +72,7 @@ if ($block_fields && !empty($block_fields)) :
 
                 <?php if ($prod_desc && !empty($prod_desc)) : ?>
                     <div class="para">
-                        <?php echo wp_kses_post(Wacoal_Remove_P_tag($prod_desc)); ?>
+                        <?php echo wp_kses_post($prod_desc); ?>
                     </div>
                 <?php endif; ?>
 
@@ -104,7 +104,7 @@ if ($block_fields && !empty($block_fields)) :
 
                 <?php if ($prod_desc && !empty($prod_desc)) : ?>
                     <div class="para">
-                        <?php echo wp_kses_post(Wacoal_Remove_P_tag($prod_desc)); ?>
+                        <?php echo wp_kses_post($prod_desc); ?>
                     </div>
                 <?php endif; ?>
 
@@ -131,9 +131,9 @@ if ($block_fields && !empty($block_fields)) :
 
                          <?php if ($prod_name && !empty($prod_name)) : ?>
                         <div class="verticle-text">
-                            <?php echo wp_kses_post($prod_name); ?>
+                                <?php echo wp_kses_post($prod_name); ?>
                         </div>
-                        <?php endif; ?>
+                         <?php endif; ?>
                         </div>
                     <?php if($button_link && !empty($button_link)) :?>
                     </a>
@@ -194,7 +194,7 @@ if ($block_fields && !empty($block_fields)) :
                 <div class="list-content">
                 <?php if ($prod_desc && !empty($prod_desc)) : ?>
                     <div>
-                        <?php echo wp_kses_post(Wacoal_Remove_P_tag($prod_desc)); ?>
+                        <?php echo wp_kses_post($prod_desc); ?>
                     </div>
                 <?php endif; ?>
 

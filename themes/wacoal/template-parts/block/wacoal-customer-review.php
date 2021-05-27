@@ -43,7 +43,7 @@
 
             <?php if($review_text && !empty($review_text)) :?>
             <div class="rating-content">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($review_text));?>
+                <?php echo wp_kses_post($review_text);?>
             </div>
             <?php endif;?>
 
@@ -70,7 +70,7 @@
 
         <?php if($right_image_caption && !empty($right_image_caption)) :?>
             <div class="image-caption">
-                <?php echo Wacoal_Remove_P_tag(wp_kses_post($right_image_caption));?>
+                <?php echo wp_kses_post($right_image_caption);?>
             </div>
         <?php endif;?>
         </div>

@@ -26,7 +26,7 @@
 
         <?php if($block_desc && !empty($block_desc)) :?>
         <div class="image-medium--content">
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($block_desc));?>
+            <?php echo wp_kses_post($block_desc);?>
         </div>
         <?php endif; ?>
 

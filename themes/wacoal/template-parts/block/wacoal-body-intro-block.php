@@ -15,7 +15,7 @@
     <div class="body-intro--wrapper">
     <?php if($para_content && !empty($para_content)) :?>
         <div class="para">
-            <?php echo Wacoal_Remove_P_tag(wp_kses_post($para_content));?>
+            <?php echo wp_kses_post($para_content);?>
         </div>
     <?php endif;?>
     <?php if($bullet_content && !empty($bullet_content)) :

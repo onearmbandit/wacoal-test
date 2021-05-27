@@ -26,7 +26,7 @@
 
         <?php if($first_para_content && !empty($first_para_content)) : ?>
             <div class="para">
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($first_para_content)); ?>
+            <?php echo wp_kses_post($first_para_content); ?>
             </div>
         <?php endif;?>
 
@@ -38,7 +38,7 @@
                     <?php if($progress_bar_text && !empty($progress_bar_text)) : ?>
                 <li class="timeline-item">
                     <div class="timeline-text first-para">
-                        <?php echo wp_kses_post(Wacoal_Remove_P_tag($progress_bar_text)); ?>
+                        <?php echo wp_kses_post($progress_bar_text); ?>
                     </div>
                 </li>
                     <?php endif;?>
@@ -54,7 +54,7 @@
 
         <?php if($second_para_content && !empty($second_para_content)) : ?>
             <div class="para">
-            <?php echo wp_kses_post(Wacoal_Remove_P_tag($second_para_content)); ?>
+            <?php echo wp_kses_post($second_para_content); ?>
             </div>
         <?php endif;?>
 
@@ -83,7 +83,7 @@
             <?php if($quotes_type == 'quotes_text' && !empty($quotes_text)) :?>
             <div class="quote">
                 <div class="quote-wrapper">
-                    <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_text)); ?></br>
+                    <?php echo wp_kses_post($quotes_text); ?></br>
                     <?php if($quotes_person && !empty($quotes_person)) :?>
                     <span>– <?php echo wp_kses_post(Wacoal_Remove_P_tag($quotes_person)); ?></span>
                 </div>

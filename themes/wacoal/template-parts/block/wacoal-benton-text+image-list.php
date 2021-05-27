@@ -47,7 +47,7 @@
 
             <?php if($list_image_caption && !empty($list_image_caption)) :?>
                 <div class="image-caption">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption));?>
+                    <?php echo wp_kses_post($list_image_caption);?>
                 </div>
             <?php endif;?>
 
@@ -55,7 +55,7 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content-wrapper">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_desc));?>
+                    <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
         </div>
@@ -79,7 +79,7 @@
 
             <?php if($list_image_caption && !empty($list_image_caption)) :?>
                 <div class="image-caption">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption));?>
+                    <?php echo wp_kses_post($list_image_caption);?>
                 </div>
             <?php endif;?>
 
@@ -87,7 +87,7 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content-wrapper">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_desc));?>
+                    <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
 
