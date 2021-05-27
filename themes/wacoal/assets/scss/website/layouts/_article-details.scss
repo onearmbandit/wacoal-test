@@ -1748,7 +1748,7 @@
 
     &.odd {
 
-      .fixes-list--boxtitle {
+      .fixes-list--boxtitle-wrapper {
         float: right;
       }
 
@@ -1779,22 +1779,39 @@
     }
   }
 
+  &--boxtitle-wrapper {
+    max-width: 603px;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include respond-below(lg) {
+      margin-bottom: 80px;
+      max-width: 522px;
+    }
+
+    @include respond-below(md) {
+      margin-bottom: 70px;
+      max-width: 392px;
+    }
+  }
+
   &--boxtitle {
     @include BentonModDisp-Bold;
     position: relative;
     // width: 100%;
     text-transform: uppercase;
     background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(235,222,213,0.5) 50%, rgba(235,222,213,0.5) 100%);
-    font-size: 50px;
+    font-size: 43px;
     line-height: 52px;
     letter-spacing: 0.25px;
     padding: 10px 40px 0;
     display: inline-block;
-    margin-bottom: 100px;
+
 
     @include respond-below(lg) {
-      margin-bottom: 80px;
-      font-size: 42px;
+      font-size: 39px;
       line-height: 43px;
       letter-spacing: 0.21px;
       padding: 10px 25px 0;
@@ -1805,7 +1822,6 @@
       line-height: 31px;
       letter-spacing: 0.15px;
       padding: 10px 15px 0;
-      margin-bottom: 70px;
     }
 
   }
@@ -1962,10 +1978,10 @@
     }
 
     .fixes-list--boxtitle {
-      width: calc(100% - 36px);
+      // width: calc(100% - 36px);
       margin: 0 auto 14px;
       text-align: center;
-      display: block;
+      display: table;
       font-size: 26px;
       line-height: 34px;
       letter-spacing: 0.13px;
@@ -2868,6 +2884,10 @@
     position: relative;
     padding: 80px 0;
 
+    .mobile-button {
+      display: none;
+    }
+
     @include respond-below(lg){
       padding: 50px 0;
     }
@@ -2876,10 +2896,20 @@
       padding: 25px 0;
     }
 
-  // @include respond-below(sm){
-  //   padding: 25px 36px;
-  //   flex-direction: column;
-  // }
+    @include respond-below(sm){
+    padding: 25px 0 76px;
+    margin-bottom: 25px;
+    // flex-direction: column;
+
+      .mobile-button {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+      }
+    }
+
 
     &:nth-child(even) {
       justify-content: flex-start;
@@ -3014,15 +3044,19 @@
     right: 44.5%;
     width: 300px;
     text-align: center;
-    height: 190px;
+    // height: 190px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
+    height: calc(100% - 160px);
+    top: 80px;
+
     @include respond-below(lg){
       right: 39.5%;
-      top: 34%;
+      height: calc(100% - 120px);
+      top: 50px;
     }
 
     @include respond-below(md){
@@ -3122,6 +3156,7 @@
         @include respond-below(sm) {
           padding: 0;
           margin: 0;
+          width: 100%;
         }
       }
     }

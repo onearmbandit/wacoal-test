@@ -62,6 +62,11 @@
       flex-direction: column;
       justify-content: center;
 
+      line-height: 1.4;
+      padding: 2px 0;
+      width: 400px;
+      margin: 20px auto;
+
       @include respond-below(lg){
         width: 300px;
         margin: 0 30px 0 13px;
@@ -70,14 +75,21 @@
         margin: 0 30px 0 0;
       }
 
-      span {
+
+
+
+      h2 {
         display: inline;
         @include BentonModDisp-Bold;
         font-size: 40px;
         letter-spacing: 0.2px;
         padding: 0 10px;
+        background: linear-gradient(180deg, transparent 65%, #EBDED5 0);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
 
-        background: linear-gradient(0deg, #EBDED5 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
 
         @include respond-below(lg){
           font-size: 28px;

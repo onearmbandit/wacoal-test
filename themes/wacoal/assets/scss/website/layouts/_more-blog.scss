@@ -80,6 +80,7 @@
     @include respond-below(sm) {
       max-width: 100%;
       flex-direction: column;
+      padding-top: 22px;
     }
   }
 
@@ -272,7 +273,7 @@
 
       @include respond-below(sm) {
         max-width: 235px;
-
+        margin: 8px auto;
       }
     }
 

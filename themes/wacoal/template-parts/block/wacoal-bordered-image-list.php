@@ -64,6 +64,17 @@
                 </a>
             <?php endif;?>
             </div>
+
+            <div class="mobile-button">
+            <?php if($btn_label && !empty($btn_label)) :?>
+                <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
+                <?php if($new_tab == true) : echo "target='_blank'";
+                endif;?>>
+                    <?php echo wp_kses_post($btn_label);?>
+                </a>
+            <?php endif;?>
+            </div>
+
         </div>
             <?php
         } elseif ($key % 2 == 1) {
@@ -102,6 +113,16 @@
                 </a>
             <?php endif;?>
 
+            </div>
+
+            <div class="mobile-button">
+            <?php if($btn_label && !empty($btn_label)) :?>
+                <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
+                <?php if($new_tab == true) : echo "target='_blank'";
+                endif;?>>
+                    <?php echo wp_kses_post($btn_label);?>
+                </a>
+            <?php endif;?>
             </div>
         </div>
         <?php }

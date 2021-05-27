@@ -661,7 +661,7 @@ Wacoal_Page_Entry_top('');
             <div class="number mobile">
                 3.
             </div>
-            <span>The Wire Free Push Up T-Shirt Bra</span>
+            <h2>The Wire Free Push Up T-Shirt Bra</h2>
             <div class="sub-head">How Perfect Wire Free Bra</div>
         </div>
 
@@ -790,6 +790,10 @@ Wacoal_Page_Entry_top('');
                 <h2>sport BRAS</h2>
                 <a href="#" class="btn primary dark">shop now</a>
             </div>
+
+            <div class="mobile-button">
+                <a href="#" class="btn primary dark">shop now</a>
+            </div>
         </div>
 
         <div class="block-bordered-image--inner">
@@ -799,6 +803,10 @@ Wacoal_Page_Entry_top('');
             </div>
             <div class="content">
                 <h2>UNDERWIRE BRAS</h2>
+                <a href="#" class="btn primary dark">shop now</a>
+            </div>
+
+            <div class="mobile-button">
                 <a href="#" class="btn primary dark">shop now</a>
             </div>
         </div>

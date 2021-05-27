@@ -33,8 +33,10 @@ if ($block_fields && !empty($block_fields)) :
         <div class="fixes-list--box even">
 
             <?php if ($prod_title && !empty($prod_title)) :?>
+            <div class="fixes-list--boxtitle-wrapper">
             <div class="fixes-list--boxtitle">
                 <?php echo wp_kses_post($prod_title); ?>
+            </div>
             </div>
             <?php endif; ?>
 
@@ -93,8 +95,10 @@ if ($block_fields && !empty($block_fields)) :
         <div class="fixes-list--box odd">
 
             <?php if ($prod_title && !empty($prod_title)) :?>
-            <div class="fixes-list--boxtitle">
-                <?php echo wp_kses_post($prod_title); ?>
+            <div class="fixes-list--boxtitle-wrapper">
+                <div class="fixes-list--boxtitle">
+                    <?php echo wp_kses_post($prod_title); ?>
+                </div>
             </div>
             <?php endif; ?>
 
