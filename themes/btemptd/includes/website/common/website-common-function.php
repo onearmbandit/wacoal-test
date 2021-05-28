@@ -640,20 +640,3 @@ function Btemp_Change_Search_size($queryVars)
     return $queryVars; // Return our modified query variables
 }
 add_filter('request', 'Btemp_Change_Search_size'); // Hook our custom function onto the request filter
-
-/**
- * Function to off the password autocomplete
- *
- * @return html Return the pagination html.
- */
-function Btemp_Login_form()
-{
-    echo '
-<script>
-    document.getElementById( "user_pass" ).autocomplete = "off";
-    document.getElementById( "user_login" ).autocomplete = "off";
-</script> ';
-
-}
-
-add_action('login_form', 'Btemp_Login_form');

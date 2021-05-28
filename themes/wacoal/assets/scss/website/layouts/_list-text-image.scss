@@ -1,4 +1,19 @@
 .list-text-image {
+  &.desktop {
+    display: block;
+
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+
+  &.mobile {
+    display: none;
+
+    @include respond-below(sm) {
+      display: block;
+    }
+  }
 
   &--wrapper {
     max-width: 1092px;
@@ -54,21 +69,6 @@
       }
     }
 
-    &.desktop {
-      display: block;
-
-      @include respond-below(sm) {
-        display: none;
-      }
-    }
-
-    &.mobile {
-      display: none;
-
-      @include respond-below(sm) {
-        display: block;
-      }
-    }
   }
 
   &--inner {

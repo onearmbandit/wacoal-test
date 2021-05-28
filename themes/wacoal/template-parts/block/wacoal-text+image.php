@@ -14,7 +14,7 @@
 <?php
 if ($block_lists && !empty($block_lists)) {
     ?>
-<section class="list-text-image">
+<section class="list-text-image desktop">
     <?php foreach ($block_lists as $key => $list) {
         $block_image_id     = $list['image'];
         $img_link           = $list['image_link'];
@@ -123,6 +123,69 @@ if ($block_lists && !empty($block_lists)) {
     </div>
         <?php }
     }?>
+</section>
+
+<section class="list-text-image mobile">
+    <?php foreach ($block_lists as $key => $mob_list) {
+        $mob_block_image_id     = $mob_list['image'];
+        $mob_img_link           = $mob_list['image_link'];
+        $mob_list_image_caption = $mob_list['image_caption'];
+        $mob_list_title         = $mob_list['title'];
+        $mob_list_subtitle      = $mob_list['subtitle'];
+        $mob_list_desc          = $mob_list['description'];
+
+        if ($mob_block_image_id && !empty($mob_block_image_id)) {
+            $mob_block_image_array = wp_get_attachment_image_src($mob_block_image_id, 'full');
+            $mob_block_image_alt   = Wacoal_Get_Image_alt($mob_block_image_id, 'Block Image');
+            $mob_block_image_url   = Wacoal_Get_image($mob_block_image_array);
+        }
+        ?>
+    <div class="list-text-image--wrapper mobile">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--content">
+
+            <?php if ($mob_list_title && !empty($mob_list_title)) :?>
+                <h2 class="title">
+                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($mob_list_title));?>
+                </h2>
+            <?php endif;?>
+
+            <?php if ($mob_list_subtitle && !empty($mob_list_subtitle)) :?>
+                <div class="sub-title">
+                    <?php echo wp_kses_post($mob_list_subtitle);?>
+                </div>
+            <?php endif;?>
+
+            </div>
+
+            <?php if ($mob_block_image_id && !empty($mob_block_image_id)) :
+                if(!empty($mob_img_link)) :?>
+            <a href="<?php echo esc_url($mob_img_link);?>" >
+                <?php endif;?>
+            <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($mob_block_image_url); ?>">
+            </div>
+                <?php if(!empty($mob_img_link)) :?>
+            </a>
+                <?php endif;
+            endif;?>
+
+            <?php if ($mob_list_image_caption && !empty($mob_list_image_caption)) :?>
+            <div class="image-name">
+                <?php echo wp_kses_post($mob_list_image_caption); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if ($mob_list_desc && !empty($mob_list_desc)) :?>
+                <div class="list-text-image--content">
+                    <div class="content">
+                        <?php echo wp_kses_post($mob_list_desc);?>
+                    </div>
+                </div>
+            <?php endif;?>
+
+        </div>
+    </div>
+    <?php }?>
 </section>
             <?php
 }
