@@ -151,6 +151,10 @@
 
   @include respond-below(sm){
     padding: 0;
+
+    &:first-child {
+      padding-top: 25px;
+    }
   }
 
   &--wrapper {
@@ -198,6 +202,12 @@
 
       @include respond-below(lg) {
         max-width: 696px;
+      }
+
+      .article-questions--ans {
+        @include respond-above(sm) {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -326,17 +336,17 @@
   }
 
   &--ans {
+    margin-bottom: 40px;
+    // @include respond-below(sm) {
+    //   margin-bottom: 40px;
+    // }
 
-    @include respond-below(sm) {
-      // margin-bottom: 40px;
-    }
+    // &:nth-child(n + 4){
 
-    &:nth-child(n + 4){
-
-      @include respond-below(sm) {
-        margin-bottom: calcRem(34);
-      }
-    }
+    //   @include respond-below(sm) {
+    //     margin-bottom: calcRem(34);
+    //   }
+    // }
   }
 
   .desktop-article--wrapper {
@@ -349,6 +359,7 @@
 
   .mobile-article--wrapper {
     display: flex;
+    margin-bottom: 40px;
 
     .article-questions--content {
 
