@@ -867,3 +867,5 @@ function Wacoal_Change_Search_size($queryVars)
     return $queryVars; // Return our modified query variables
 }
  add_filter('request', 'Wacoal_Change_Search_size'); // Hook our custom function onto the request filter
+
+
