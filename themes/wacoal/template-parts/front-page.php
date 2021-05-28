@@ -88,10 +88,7 @@
                             </a>
                         </div>
 
-                        <div class="evergreen-article--button">
-                            <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
-                            class="btn primary big">learn more</a>
-                        </div>
+
                     </div>
 
                     <div class="evergreen-article--image">
@@ -102,6 +99,10 @@
                         </a>
                     </div>
 
+                    <div class="evergreen-article--button">
+                            <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
+                            class="btn primary big">learn more</a>
+                        </div>
                 </div>
 
             <?php } ?>

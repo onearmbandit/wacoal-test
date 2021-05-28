@@ -189,7 +189,7 @@
     @include respond-below(sm) {
       max-width: 100%;
       position: relative;
-      margin-bottom: 60px;
+      margin-bottom: 55px;
 
       &:before {
         content: "";
@@ -219,7 +219,7 @@
       }
 
       @include respond-below(sm) {
-        margin: 0 0 57px;
+        margin: 0 0 55px;
       }
     }
 
@@ -347,18 +347,11 @@
 }
 
 .more-blog-multirow {
-  padding: 0 0 99px;
+  padding: 0 0 80px;
 
-  @include respond-below(xl) {
-    padding: 0 0 88px;
-  }
-
-  @include respond-below(lg) {
-    padding: 0 0 62px;
-  }
 
   @include respond-below(md) {
-    padding: 0 0 52px;
+    padding: 0 0 60px;
   }
 
   @include respond-below(sm) {
@@ -367,13 +360,15 @@
 
   @include respond-below(sm) {
     margin-bottom: 0;
+    margin-top: -20px;
     &::before {
       background: transparent;
     }
   }
   .blog-tile {
     @include respond-below(sm) {
-      margin-bottom: calcRem(40);
+      margin-bottom: 55px;
+
       &:not(:first-child) {
         display: block;
       }
@@ -460,6 +455,7 @@
 
   .more-blog {
     margin-bottom: calcRem(54);
+    padding: 0;
 
     @include respond-above(sm) {
       margin-bottom: get-vw(90px);
@@ -491,6 +487,10 @@
         }
       }
     }
+  }
+
+  .more-blog--wrapper {
+    padding: 0;
   }
 }
 
