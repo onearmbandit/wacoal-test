@@ -486,6 +486,10 @@
           display: block;
         }
       }
+
+      @include respond-below(sm) {
+        margin-bottom: 0;
+      }
     }
   }
 

@@ -141,9 +141,20 @@
       }
     }
     .swiper-buttun-background {
+      width: 3.0625rem;
+      height: 3.6875rem;
 
       @include respond-above(sm) {
-        // background: transparent;
+        width: 4.16667vw;
+        height: 5.41667vw;
+      }
+
+      img {
+        width: .8125rem;
+
+        @include respond-above(sm) {
+          width: 1.35417vw;
+        }
       }
     }
 
@@ -196,6 +207,7 @@
 
     top: 60%;
     transform: translateY(-60%);
+    right: 0;
 
     @include respond-above(sm) {
       right: get-vw(280px);
@@ -206,6 +218,7 @@
 
     top: 60%;
     transform: translateY(-60%);
+    left: 0;
     @include respond-above(sm) {
       left: get-vw(280px);
     }
