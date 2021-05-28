@@ -535,7 +535,7 @@ Wacoal_Page_Entry_top('');
 
 <!-- List - Text + Image LEFT and Text + Image RIGHT -->
 <section class="list-text-image">
-    <div class="list-text-image--wrapper">
+    <div class="list-text-image--wrapper desktop">
         <div class="list-text-image--inner">
             <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
 
@@ -552,7 +552,7 @@ Wacoal_Page_Entry_top('');
         </div>
         <div class="image-name">Body Base® Shorty Panty</div>
     </div>
-    <div class="list-text-image--wrapper">
+    <div class="list-text-image--wrapper desktop">
         <div class="list-text-image--inner">
             <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
 
@@ -569,6 +569,48 @@ Wacoal_Page_Entry_top('');
         </div>
         <div class="image-name">Body Base® Shorty Panty</div>
     </div>
+<!-- take code from here -->
+    <div class="list-text-image--wrapper mobile">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--content">
+                <h2 class="title">For Smoothing</h2>
+                <div class="sub-title">
+                    Body Base® Shorty Panty
+                </div>
+            </div>
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="image-name">Body Base® Shorty Panty</div>
+            <div class="list-text-image--content">
+                <div class="content">
+                    A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="list-text-image--wrapper mobile">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--content">
+                <h2 class="title">For Smoothing</h2>
+                <div class="sub-title">
+                    Body Base® Shorty Panty
+                </div>
+            </div>
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/full-width-slider-img-1.png);">
+
+            </div>
+            <div class="image-name">Body Base® Shorty Panty</div>
+            <div class="list-text-image--content">
+                <div class="content">
+                    A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- till here -->
 </section>
 
 <!-- Customer Review -->

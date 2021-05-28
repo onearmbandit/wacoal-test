@@ -32,7 +32,7 @@ if ($block_lists && !empty($block_lists)) {
 
         if ($key % 2 == 0) {
             ?>
-    <div class="list-text-image--wrapper">
+    <div class="list-text-image--wrapper desktop">
         <div class="list-text-image--inner">
 
             <?php if ($block_image_id && !empty($block_image_id)) :
@@ -79,7 +79,7 @@ if ($block_lists && !empty($block_lists)) {
     </div>
             <?php
         } elseif ($key % 2 == 1) {?>
-    <div class="list-text-image--wrapper">
+    <div class="list-text-image--wrapper desktop">
         <div class="list-text-image--inner">
             <?php if ($block_image_id && !empty($block_image_id)) :
                 if(!empty($img_link)) :?>

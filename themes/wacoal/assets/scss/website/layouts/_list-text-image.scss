@@ -19,6 +19,10 @@
 
       .list-text-image--inner {
         flex-direction: row-reverse;
+
+        @include respond-below(sm) {
+          flex-direction: column;
+        }
       }
 
       .list-text-image--content {
@@ -34,11 +38,35 @@
           margin-left: inherit;
           margin-right: 40px;
         }
+
+        @include respond-below(sm){
+          margin: 17px 0 0;
+        }
       }
 
       .image-name {
         margin-left: auto;
         text-align: right;
+
+        @include respond-below(sm){
+          text-align: left;
+        }
+      }
+    }
+
+    &.desktop {
+      display: block;
+
+      @include respond-below(sm) {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      display: none;
+
+      @include respond-below(sm) {
+        display: block;
       }
     }
   }
@@ -46,6 +74,10 @@
   &--inner {
     display: flex;
     align-items: center;
+
+    @include respond-below(sm) {
+      flex-direction: column;
+    }
   }
 
   &--img {
@@ -62,6 +94,12 @@
       width: 348px;
       height: 348px;
     }
+
+    @include respond-below(sm) {
+      width: 334px;
+      height: 334px;
+
+    }
   }
 
   &--content {
@@ -74,6 +112,13 @@
 
     @include respond-below(md){
       margin-left: 40px;
+    }
+
+    @include respond-below(sm){
+      margin-left: 0;
+      width: 100%;
+      padding: 0 36px;
+      margin-top: 17px;
     }
 
     .title {
@@ -102,6 +147,10 @@
         font-size: 21px;
         line-height: 29px;
       }
+
+      @include respond-below(sm){
+        margin-bottom: 15px;
+      }
     }
 
     .content {
@@ -112,6 +161,10 @@
       @include respond-below(lg){
         font-size: 16px;
         line-height: 23px;
+      }
+
+      @include respond-below(sm){
+        line-height: 25px;
       }
 
       strong {
@@ -136,6 +189,12 @@
 
     @include respond-below(md) {
       margin: 8px 0;
+    }
+
+    @include respond-below(sm) {
+      max-width: 334px;
+      width: 100%;
+      margin: 8px auto;
     }
   }
 }
