@@ -184,6 +184,39 @@ function Wacoal_Acf_init()
             'keywords'        => array('image' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-image+text+image-block',
+            'title'           => __('Btemptd text image block'),
+            'description'     => __('A custom Btemptd text image block.'),
+            'render_callback' => 'Btemptd_Img_Text_Img_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('image' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-image-text-subhead-list-block',
+            'title'           => __('Btemptd image text subhead list block'),
+            'description'     => __('A custom Btemptd list block.'),
+            'render_callback' => 'Btemptd_Img_Text_subhead_List_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('image' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-Numbered-list-block',
+            'title'           => __('Btemptd numbered list block'),
+            'description'     => __('A custom Btemptd list block.'),
+            'render_callback' => 'Btemptd_Numbered_List_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('image' ),
+            )
+        );
 
 
     }
