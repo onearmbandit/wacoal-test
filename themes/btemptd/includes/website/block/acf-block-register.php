@@ -118,6 +118,28 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'video' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-body-para',
+            'title'           => __('Btemptd Body Outro Paragraph Block'),
+            'description'     => __('A custom Body Outro Paragraph Block'),
+            'render_callback' => 'Btemptd_Body_Outro_Para_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'archive',
+            'keywords'        => array('list', 'content'),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-image',
+            'title'           => __('Btemptd Image'),
+            'description'     => __('A custom image block.'),
+            'render_callback' => 'Btemptd_Image_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'format-image',
+            'keywords'        => array( 'text', 'link', 'image' ),
+            )
+        );
 
 
     }
