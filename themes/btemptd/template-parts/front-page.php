@@ -472,6 +472,249 @@ if(!empty($banner_link)) :?>
 </section>
 <?php endif;?>
 
+<section class="list-text-image">
+    <div class="list-text-image--wrapper">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
+
+            </div>
+            <div class="image-name mobile">Body Base® Shorty Panty</div>
+            <div class="list-text-image--content">
+                <h2 class="title">the strapless:</h2>
+
+                <div class="content">
+                    <strong>Future Foundation Backless Strapless Bra</strong> is the innovation that every dress demands. Skinny straps, no straps, open back, low back- even the trickiest styles are simple to wear when you have this in your arsenal. And, there is something subtly sexy about the hook-and-eye closure sitting just above the small of the back. Added bonus? Power mesh and light boning shape and support!
+                </div>
+            </div>
+        </div>
+        <div class="image-name desktop">Body Base® Shorty Panty</div>
+    </div>
+    <div class="list-text-image--wrapper">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
+
+            </div>
+            <div class="image-name mobile">Body Base® Shorty Panty</div>
+            <div class="list-text-image--content">
+                <h2 class="title">The push up:</h2>
+
+                <div class="content">
+                    <strong>b. wow’d Push Up Bra</strong> takes a basic V-neck t-shirt and makes it anything but. This smooth finish style has a deep plunge and flirty animal print lining (sure, nobody sees it when it’s on your body, but you know it is there!) Wear it with a crisp, fitted button down and consider leaving one more button open than usual for a look that transforms a daytime staple into a nighttime stunner.
+                </div>
+            </div>
+        </div>
+        <div class="image-name desktop">Body Base® Shorty Panty</div>
+    </div>
+</section>
+
+
+<!-- Customer Review -->
+<section class="customer-review">
+    <div class="customer-review--wrapper">
+        <div class="image-wrapper left">
+            <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+            </div>
+            <div class="image-caption">
+                @alexiscastello
+            </div>
+        </div>
+
+        <div class="review-content">
+            <div class="rating-stars">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/rating-star.svg" alt="Rating Star"/>
+            </div>
+            <div class="rating-content">
+                The best new bra I’ve bought in years!! I absolutely love this bra! The wider band on the sides provides the best smoothing effect and the fit is perfect! The fabric and fit make it the most comfortable bra I’ve had in a long time! I am so happy with this bra I can’t wait to order more!
+            </div>
+            <div class="customer-name">
+                – CUSTOMER REVIEW
+            </div>
+        </div>
+
+        <div class="image-wrapper right">
+            <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+            </div>
+            <div class="image-caption">
+                @alexiscastello
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- full video -->
+<section class="video-full-width">
+    <div class="video-full-width--wrapper">
+    <iframe loading="lazy" title="【SOGO新竹店】WACOAL GoodFit神奇內著" width="640" height="360" src="https://www.youtube.com/embed/4QCxwSEuHYg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> </div>
+    <div class="video-caption">
+        <p>VIDEO CAPTION – Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus Lorem ipsum dolor sit amet, consecte Lorem ipsum dolor sit amet, consecte</p>
+    </div>
+</section>
+
+<!-- Body Outro Paragraph -->
+<section class="body-outro-para">
+    <div class="body-outro-para--wrapper">
+        <div class="content">
+            How many of these bras do you own, and which is first on your “must buy” wish list? Drop a note in the comments, we would love to hear from you!
+        </div>
+    </div>
+</section>
+
+<!-- full bleed image -->
+<section class="full-bleed-image">
+    <div class="full-bleed-image--wrapper" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+    </div>
+</section>
+
+<!-- inline banner image large -->
+<section class="internal-banner">
+    <div class="banner-wrapper big-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+    </div>
+</section>
+
+<!-- inline banner image medium -->
+<section class="internal-banner">
+    <div class="banner-wrapper medium-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+    </div>
+</section>
+
+<!-- inline banner image small -->
+<section class="internal-banner">
+    <div class="banner-wrapper small-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+    </div>
+</section>
+
+<section class="product-gallery">
+    <div class="product-gallery--wrapper">
+        <div class="product-gallery--box">
+            <div class="product-gallery--box__image">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png" alt="Product" />
+            </div>
+            <div class="product-gallery--box__title">
+                product name caption
+            </div>
+            <div class="product-gallery--box__size">
+                Sizing caption
+            </div>
+        </div>
+
+        <div class="product-gallery--box">
+            <div class="product-gallery--box__image">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png" alt="Product" />
+            </div>
+            <div class="product-gallery--box__title">
+                product name caption
+            </div>
+            <div class="product-gallery--box__size">
+                Sizing caption
+            </div>
+        </div>
+
+        <div class="product-gallery--box">
+            <div class="product-gallery--box__image">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png" alt="Product" />
+            </div>
+            <div class="product-gallery--box__title">
+                product name caption
+            </div>
+            <div class="product-gallery--box__size">
+                Sizing caption
+            </div>
+        </div>
+
+        <div class="product-gallery--box">
+            <div class="product-gallery--box__image">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png" alt="Product" />
+            </div>
+            <div class="product-gallery--box__title">
+                product name caption
+            </div>
+            <div class="product-gallery--box__size">
+                Sizing caption
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video image -->
+<section class="video-image--wrapper">
+    <div class="video-image--wrapper__left">
+        <iframe loading="lazy" title="【SOGO新竹店】WACOAL GoodFit神奇內著" width="640" height="360" src="https://www.youtube.com/embed/4QCxwSEuHYg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>        <div class="video-caption">
+        <p>VIDEO CAPTION – Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <div class="video-image--wrapper__right">
+        <figure>
+            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png" alt="Block Image">
+            <figcaption>Lorem ipsum dolor sit amet</figcaption>
+        </figure>
+    </div>
+</section>
+
+<!-- image body -->
+<section class="image-medium">
+    <div class="image-medium--wrapper">
+        <div class="image-medium--image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+        </div>
+
+        <div class="image-medium--content">
+            <p>“Historically, underwear implies function first—while the word lingerie evokes more of an aesthetic purpose. The idea that intimates have to be one or the other is something our design team challenges every time we sit around the table to create—there really is no reason that women can’t have both!”</p>
+        </div>
+    </div>
+</section>
+
+<!-- text hover box -->
+<section class="text-hover-box">
+    <div class="text-hover-box--wrapper">
+        <div class="container">
+            It is one of our all-time best sellers, and if it isn’t already in your bra wardrobe, here are 3 reasons why it should be:
+        </div>
+    </div>
+</section>
+<!-- "List - Image + Italics Title + Subhead + Body RIGHT
+List - Image + Italics Title + Subhead + Body LEFT" -->
+<section class="list-text-image">
+    <div class="list-text-image--wrapper">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
+
+            </div>
+            <div class="image-name mobile">Body Base® Shorty Panty</div>
+            <div class="list-text-image--content">
+                <h2 class="title">the strapless:</h2>
+
+                <div class="content">
+                    <strong>Future Foundation Backless Strapless Bra</strong> is the innovation that every dress demands. Skinny straps, no straps, open back, low back- even the trickiest styles are simple to wear when you have this in your arsenal. And, there is something subtly sexy about the hook-and-eye closure sitting just above the small of the back. Added bonus? Power mesh and light boning shape and support!
+                </div>
+            </div>
+        </div>
+        <div class="image-name desktop">Body Base® Shorty Panty</div>
+    </div>
+    <div class="list-text-image--wrapper">
+        <div class="list-text-image--inner">
+            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
+
+            </div>
+            <div class="image-name mobile">Body Base® Shorty Panty</div>
+            <div class="list-text-image--content">
+                <h2 class="title">The push up:</h2>
+
+                <div class="content">
+                    <strong>b. wow’d Push Up Bra</strong> takes a basic V-neck t-shirt and makes it anything but. This smooth finish style has a deep plunge and flirty animal print lining (sure, nobody sees it when it’s on your body, but you know it is there!) Wear it with a crisp, fitted button down and consider leaving one more button open than usual for a look that transforms a daytime staple into a nighttime stunner.
+                </div>
+            </div>
+        </div>
+        <div class="image-name desktop">Body Base® Shorty Panty</div>
+    </div>
+</section>
+
 <?php if(!empty($recent_posts)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif; ?>

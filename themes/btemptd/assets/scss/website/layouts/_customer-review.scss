@@ -1,0 +1,161 @@
+.customer-review {
+    padding: 80px 0;
+
+    @include respond-below(lg){
+      padding: 50px 0;
+    }
+
+    @include respond-below(md){
+      padding: 43px 0 25px;
+    }
+
+    @include respond-below(md){
+        padding: 25px 0;
+    }
+
+    &--wrapper {
+      display: flex;
+      align-items: center;
+      max-width: 1332px;
+      margin: 0 auto;
+
+      @include respond-below(lg){
+        max-width: 948px;
+      }
+
+      @include respond-below(md){
+        max-width: 728px;
+      }
+
+      @include respond-below(xs){
+        max-width: 268px;
+        flex-direction: column;
+      }
+    }
+
+    .image-wrapper {
+
+      .image {
+        background-size: cover;
+        width: 442px;
+        height: 442px;
+
+        @include respond-below(lg){
+          width: 315px;
+          height: 315px;
+        }
+
+        @include respond-below(md){
+          width: 236px;
+          height: 236px;
+        }
+
+        @include respond-below(sm){
+          width: 236px;
+          height: 236px;
+        }
+      }
+
+      .image-caption {
+        margin: 14px 0 0;
+        color: var(--color-gray);
+        letter-spacing: 0.77px;
+        font-size: 14px;
+        @include NeutraText-BookAlt;
+
+        @include respond-below(lg) {
+          margin: 10px 0 0;
+        }
+
+        @include respond-below(md) {
+          margin: 7px 0 0;
+        }
+
+        // @include respond-below(sm) {
+        //   margin: 10px 0;
+        // }
+      }
+
+      &.left {
+        .image-caption {
+
+        }
+      }
+
+      &.right {
+
+        .image-caption {
+          text-align: right;
+        }
+      }
+    }
+
+    .review-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 57px;
+
+      @include respond-below(lg){
+        padding: 0 40px;
+      }
+
+      @include respond-below(md){
+        padding: 0 30px;
+      }
+
+      @include respond-below(sm){
+        padding: 0;
+        margin: 35px 0;
+      }
+
+    .rating-stars {
+
+        img {
+          width: 22px;
+
+          @include respond-below(lg) {
+            width: 16px;
+          }
+
+          @include respond-below(md) {
+            width: 13px;
+          }
+        }
+      }
+
+      .rating-content {
+        margin: 28px 0 31px;
+        @include NeutraText-BookAlt;
+        font-size: 15px;
+        line-height: 27px;
+        letter-spacing: 0.23px;
+
+        @include respond-below(lg){
+          margin: 20px 0 25px;
+          line-height: 26px;
+        }
+
+        @include respond-below(md){
+            margin: 15px 0 20px;
+        }
+      }
+
+      .customer-name {
+        @include NeutraText-LightAlt;
+        font-size: 15px;
+        line-height: 27px;
+        letter-spacing: 0.23px;
+        text-transform: uppercase;
+
+        @include respond-below(lg) {
+          font-size: 12px;
+          letter-spacing: 0.18px;
+          line-height: 23px;
+        }
+      }
+    }
+  }

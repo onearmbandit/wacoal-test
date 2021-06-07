@@ -43,6 +43,10 @@ if($list_data && !empty($list_data)) :
                      <?php if ($list_img_link && !empty($list_img_link)) :?>
                 </a>
                      <?php endif; ?>
+
+                     <div class="image-caption">
+                        LACE KISS BRALETTE LOREM IPSUM SED DOLOR
+                     </div>
             </div>
                 <?php endif; ?>
             <div class="box--right">
@@ -78,6 +82,10 @@ if($list_data && !empty($list_data)) :
                 </a>
 
                     <?php endif; ?>
+
+                    <div class="image-caption">
+                        LACE KISS BRALETTE LOREM IPSUM SED DOLOR
+                     </div>
             </div>
                 <?php endif; ?>
             <div class="box--right">

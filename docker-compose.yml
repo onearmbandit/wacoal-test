@@ -21,6 +21,7 @@ services:
 
   mysql:
     image: mysql:5.7
+    platform: linux/amd64
     # command: --max_allowed_packet=32505856
     container_name: wacoal-mysql
     volumes:
