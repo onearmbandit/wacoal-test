@@ -140,6 +140,50 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'text', 'link', 'image' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'            => 'btemptd-product-gallery',
+            'title'           => __('Btemptd Product Gallery'),
+            'description'     => __('A custom product gallery block.'),
+            'render_callback' => 'Btemptd_Gallery_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'format-gallery',
+            'keywords'        => array( 'product-gallery', 'gallery' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-video-with-image',
+            'title'           => __('Btemptd Video and Image'),
+            'description'     => __('A custom video and image block.'),
+            'render_callback' => 'Btemptd_Video_Image_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'format-video',
+            'keywords'        => array( 'video' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-data-with-image',
+            'title'           => __('Btemptd data with image'),
+            'description'     => __('A custom Btemptd Image block.'),
+            'render_callback' => 'Btemptd_Data_Image_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('image' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-text-hover-box',
+            'title'           => __('Btemptd text hover box'),
+            'description'     => __('A custom Btemptd hover block.'),
+            'render_callback' => 'Btemptd_Text_Hover_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('image' ),
+            )
+        );
 
 
     }
