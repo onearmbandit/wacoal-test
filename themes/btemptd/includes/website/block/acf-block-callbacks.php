@@ -259,3 +259,86 @@ function Btemptd_Video_Block_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for body Outro block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Body_Outro_Para_Block_Render_callback( $block )
+{
+    $para_content   = get_field('paragraph_content');
+
+    $shortcode_template  = '/template-parts/block/btemptd-body-outro-block.php';
+
+    if ($para_content) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Body Outro Para Block</u></h4>
+            <span style="color:red">Empty Body Outro Para Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for text hover block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Text_Hover_Block_Render_callback( $block )
+{
+    $hover_box_content   = get_field('hover_box_content');
+
+    $shortcode_template  = '/template-parts/block/btemptd-text-hover-block.php';
+
+    if ($hover_box_content) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Text Hover Block</u></h4>
+            <span style="color:red">Empty Text Hover Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Image_Render_callback( $block )
+{
+    $img_type  = get_field('select_image_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
+
+    error_log('$img_type'.print_r($img_type,1));
+
+    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id    = get_field('image');
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Banner Image</u></h4>
+            <span style="color:red">Empty Banner Image Block</span>
+            <?php
+        }
+    }
+}

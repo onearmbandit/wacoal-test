@@ -126,7 +126,7 @@ Btemptd_Page_Entry_top('');
     </div>
 </section> -->
 
-<section class="list-text-image">
+<!-- <section class="list-text-image">
     <div class="list-text-image--wrapper">
         <div class="list-text-image--inner">
             <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
@@ -159,7 +159,7 @@ Btemptd_Page_Entry_top('');
         </div>
         <div class="image-name desktop">Body Base® Shorty Panty</div>
     </div>
-</section>
+</section> -->
 
 
 <!-- Customer Review -->
@@ -202,22 +202,22 @@ Btemptd_Page_Entry_top('');
 </section>
 
 <!-- full video -->
-<section class="video-full-width">
+<!-- <section class="video-full-width">
     <div class="video-full-width--wrapper">
     <iframe loading="lazy" title="【SOGO新竹店】WACOAL GoodFit神奇內著" width="640" height="360" src="https://www.youtube.com/embed/4QCxwSEuHYg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> </div>
     <div class="video-caption">
         <p>VIDEO CAPTION – Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices sagittis orci a scelerisque purus Lorem ipsum dolor sit amet, consecte Lorem ipsum dolor sit amet, consecte</p>
     </div>
-</section>
+</section> -->
 
 <!-- Body Outro Paragraph -->
-<section class="body-outro-para">
+<!-- <section class="body-outro-para">
     <div class="body-outro-para--wrapper">
         <div class="content">
             How many of these bras do you own, and which is first on your “must buy” wish list? Drop a note in the comments, we would love to hear from you!
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- full bleed image -->
 <section class="full-bleed-image">
@@ -325,13 +325,14 @@ Btemptd_Page_Entry_top('');
 </section>
 
 <!-- text hover box -->
-<section class="text-hover-box">
+<!-- <section class="text-hover-box">
     <div class="text-hover-box--wrapper">
         <div class="container">
             It is one of our all-time best sellers, and if it isn’t already in your bra wardrobe, here are 3 reasons why it should be:
         </div>
     </div>
-</section>
+</section> -->
+
 <!-- "List - Image + Italics Title + Subhead + Body RIGHT
 List - Image + Italics Title + Subhead + Body LEFT" -->
 <section class="list-text-image">

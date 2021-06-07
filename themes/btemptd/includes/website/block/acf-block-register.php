@@ -132,7 +132,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-image',
-            'title'           => __('Btemptd Image'),
+            'title'           => __('Btemptd Banner Image'),
             'description'     => __('A custom image block.'),
             'render_callback' => 'Btemptd_Image_Render_callback',
             'category'        => 'btemptd',
