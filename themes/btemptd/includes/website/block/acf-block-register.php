@@ -3,11 +3,11 @@
  * Common Gutenberg ACF Block register file.
  * php version 7.4
  *
- * @category Wacoal
- * @package  Wacoal
+ * @category Btemptd
+ * @package  Btemptd
  * @author   Cemtrexlabs <hello@cemtrexlabs.com>
  * @license  https://cemtrexlabs.com 1.0
- * @link     Wacoal
+ * @link     Btemptd
  */
 
  /**
@@ -19,7 +19,7 @@ function Wacoal_Acf_init()
 {
     if (function_exists('acf_register_block') ) {
 
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'              => 'btemptd-text-image-list-format',
             'title'             => __('Btemptd Review List Format'),
@@ -30,7 +30,7 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'              => 'btemptd-image-format',
             'title'             => __('Btemptd Text Image Format'),
@@ -41,7 +41,7 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'              => 'btemptd-list-image-format',
             'title'             => __('Btemptd List with Image Data Format'),
@@ -52,7 +52,7 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'list-format' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'              => 'btemptd-para-format',
             'title'             => __('Btemptd Paragraph Block Format'),
@@ -63,7 +63,7 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'paragraph', 'content' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'              => 'btemptd-four-image-format',
             'title'             => __('Btemptd Four Image Block Format'),
@@ -74,7 +74,7 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'image', 'content' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'              => 'btemptd-button-format',
             'title'             => __('Btemptd Button Block Format'),
@@ -85,10 +85,10 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'button', 'content' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
-            'name'              => 'btemptd-image+text-list-format',
-            'title'             => __('Btemptd Image+Text Block Format'),
+            'name'              => 'btemptd-image-text-list-format',
+            'title'             => __('Btemptd Image+Text List Block'),
             'description'       => __('A custom List format block.'),
             'render_callback'   => 'Btemptd_Image_Text_List_Format_Render_callback',
             'category'          => 'btemptd',
@@ -102,7 +102,7 @@ function Wacoal_Acf_init()
             'title'           => __('Btemptd Customer Review Block'),
             'description'     => __('A custom customer review format block.'),
             'render_callback' => 'Btemptd_Customer_Review_Render_callback',
-            'category'        => 'btemptd',
+            'category'          => 'btemptd',
             'icon'            => 'archive',
             'keywords'        => array( 'image', 'content' ),
             )
@@ -112,8 +112,8 @@ function Wacoal_Acf_init()
             'name'            => 'btemptd-video',
             'title'           => __('Btemptd Video'),
             'description'     => __('A custom video block.'),
-            'render_callback' => 'Btemptd',
-            'category'        => 'btempts',
+            'render_callback' => 'Btemptd_Video_Block_Render_callback',
+            'category'        => 'btemptd',
             'icon'            => 'format-video',
             'keywords'        => array( 'video' ),
             )
@@ -140,7 +140,7 @@ function Wacoal_Acf_init()
             'keywords'        => array( 'text', 'link', 'image' ),
             )
         );
-        acf_register_block_type(
+        acf_register_block(
             array(
             'name'            => 'btemptd-product-gallery',
             'title'           => __('Btemptd Product Gallery'),
@@ -186,7 +186,7 @@ function Wacoal_Acf_init()
         );
         acf_register_block(
             array(
-            'name'            => 'btemptd-image+text+image-block',
+            'name'            => 'btemptd-image-text-image-block',
             'title'           => __('Btemptd text image block'),
             'description'     => __('A custom Btemptd text image block.'),
             'render_callback' => 'Btemptd_Img_Text_Img_Block_Render_callback',
@@ -206,7 +206,7 @@ function Wacoal_Acf_init()
             'keywords'        => array('image' ),
             )
         );
-        acf_register_block(
+        acf_register_block_type(
             array(
             'name'            => 'btemptd-Numbered-list-block',
             'title'           => __('Btemptd numbered list block'),

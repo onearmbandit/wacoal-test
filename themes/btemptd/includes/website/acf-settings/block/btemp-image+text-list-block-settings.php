@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_60bdd4c9b4001',
-    'title' => 'Btemp Image+Text Block Settings',
+    'title' => 'Btemp Image+Text List Block Settings',
     'fields' => array(
         array(
             'key' => 'field_60bdd5136518a',
@@ -131,6 +131,32 @@ acf_add_local_field_group(
                     'default_value' => '',
                     'placeholder' => '',
                 ),
+                array(
+                    'key' => 'field_60be156411aea',
+                    'label' => 'Open Link in New Tab',
+                    'name' => 'open_link_in_new_tab',
+                    'type' => 'true_false',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_60bdd57c6518f',
+                                'operator' => '!=empty',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'message' => '',
+                    'default_value' => 0,
+                    'ui' => 0,
+                    'ui_on_text' => '',
+                    'ui_off_text' => '',
+                ),
             ),
         ),
     ),
@@ -139,7 +165,7 @@ acf_add_local_field_group(
             array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/btemptd-image+text-list-format',
+                'value' => 'acf/btemptd-image-text-list-format',
             ),
         ),
     ),

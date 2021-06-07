@@ -200,3 +200,28 @@ function Btemptd_Button_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for text+image list block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Image_Text_List_Format_Render_callback( $block )
+{
+    $block_lists = get_field('list_data');
+
+    $shortcode_template  = '/template-parts/block/btemptd-image-text-list.php';
+
+    if ($block_lists && !empty($block_lists)) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd List Block</u></h4>
+            <span style="color:red">Empty List Block</span>
+            <?php
+        }
+    }
+}
