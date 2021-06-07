@@ -85,6 +85,17 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'button', 'content' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'              => 'btemptd-image+text-list-format',
+            'title'             => __('Btemptd Image+Text Block Format'),
+            'description'       => __('A custom List format block.'),
+            'render_callback'   => 'Btemptd_Image_Text_List_Format_Render_callback',
+            'category'          => 'btemptd',
+            'icon'              => 'id-alt',
+            'keywords'          => array( 'list', 'content' ),
+            )
+        );
 
 
     }
