@@ -225,3 +225,37 @@ function Btemptd_Image_Text_List_Format_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for video block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Video_Block_Render_callback( $block )
+{
+
+    $video_fields_option = get_field('video_option');
+    $video_caption       = get_field('video_caption');
+    $shortcode_template  = '/template-parts/block/btemptd-video.php';
+
+    if ($video_fields_option == 'embed_video') {
+        $video_field = get_field('embed_video');
+    } elseif ($video_fields_option == 'video_file') {
+        $video_field = get_field('select_or_add_video');
+    } elseif ($video_fields_option == 'external_url') {
+        $video_field = get_field('insert_external_video_url');
+    }
+
+    if (! empty($video_fields_option) ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Video:</u></h4>
+            <span style="color:red">Empty Btemptd Video Block</span>
+            <?php
+        }
+    }
+}
