@@ -96,6 +96,28 @@ function Wacoal_Acf_init()
             'keywords'          => array( 'list', 'content' ),
             )
         );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-customer-review-format',
+            'title'           => __('Btemptd Customer Review Block'),
+            'description'     => __('A custom customer review format block.'),
+            'render_callback' => 'Btemptd_Customer_Review_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'archive',
+            'keywords'        => array( 'image', 'content' ),
+            )
+        );
+        acf_register_block(
+            array(
+            'name'            => 'btemptd-video',
+            'title'           => __('Btemptd Video'),
+            'description'     => __('A custom video block.'),
+            'render_callback' => 'Btemptd',
+            'category'        => 'btempts',
+            'icon'            => 'format-video',
+            'keywords'        => array( 'video' ),
+            )
+        );
 
 
     }
