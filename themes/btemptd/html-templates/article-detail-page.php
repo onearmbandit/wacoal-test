@@ -163,7 +163,7 @@ Btemptd_Page_Entry_top('');
 
 
 <!-- Customer Review -->
-<section class="customer-review">
+<!-- <section class="customer-review">
     <div class="customer-review--wrapper">
         <div class="image-wrapper left">
             <div class="image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
@@ -199,7 +199,7 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- full video -->
 <!-- <section class="video-full-width">
@@ -244,7 +244,7 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 
-<section class="product-gallery">
+<!-- <section class="product-gallery">
     <div class="product-gallery--wrapper">
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
@@ -294,10 +294,10 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Video image -->
-<section class="video-image--wrapper">
+<!-- <section class="video-image--wrapper">
     <div class="video-image--wrapper__left">
         <iframe loading="lazy" title="【SOGO新竹店】WACOAL GoodFit神奇內著" width="640" height="360" src="https://www.youtube.com/embed/4QCxwSEuHYg?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>        <div class="video-caption">
         <p>VIDEO CAPTION – Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -310,7 +310,7 @@ Btemptd_Page_Entry_top('');
             <figcaption>Lorem ipsum dolor sit amet</figcaption>
         </figure>
     </div>
-</section>
+</section> -->
 
 <!-- image body -->
 <section class="image-medium">

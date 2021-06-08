@@ -323,7 +323,211 @@ function Btemptd_Image_Render_callback( $block )
     $img_link  = get_field('image_link');
     $new_tab   = get_field('open_in_new_tab');
 
-    error_log('$img_type'.print_r($img_type,1));
+    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id    = get_field('image');
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Banner Image</u></h4>
+            <span style="color:red">Empty Banner Image Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Gallery_Block_Render_callback( $block )
+{
+    $fullGallery  = get_field('gallery');
+    $shortcode_template  = '/template-parts/block/btemptd-product-gallery.php';
+
+    if (! empty($fullGallery[0]['image']) && $fullGallery[0]['image'] ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Product Gallery</u></h4>
+            <span style="color:red">Empty Product Gallery Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Customer_Review_Render_callback( $block )
+{
+    $review_text  = get_field('review_text');
+    $shortcode_template  = '/template-parts/block/btemptd-customer-review.php';
+
+    if (! empty($review_text) && $review_text ) {
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Customer Review</u></h4>
+            <span style="color:red">Empty Customer Review Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Video_Image_Block_Render_callback( $block )
+{
+    $img_type  = get_field('select_image_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
+
+    $shortcode_template  = '/template-parts/block/btemptd-verticle-video-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id    = get_field('image');
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Video + Image</u></h4>
+            <span style="color:red">Empty Video + Image Block</span>
+            <?php
+        }
+    }
+}
+
+// ------------//////////////////
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Data_Image_Block_Render_callback( $block )
+{
+    $img_type  = get_field('select_image_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
+
+    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id    = get_field('image');
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Banner Image</u></h4>
+            <span style="color:red">Empty Banner Image Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Img_Text_Img_Block_Render_callback( $block )
+{
+    $img_type  = get_field('select_image_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
+
+    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id    = get_field('image');
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Banner Image</u></h4>
+            <span style="color:red">Empty Banner Image Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
+{
+    $img_type  = get_field('select_image_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
+
+    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+
+    if (! empty($img_type) && $img_type ) {
+        $block_image_id    = get_field('image');
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Banner Image</u></h4>
+            <span style="color:red">Empty Banner Image Block</span>
+            <?php
+        }
+    }
+}
+
+
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Numbered_List_Block_Render_callback( $block )
+{
+    $img_type  = get_field('select_image_type');
+    $img_link  = get_field('image_link');
+    $new_tab   = get_field('open_in_new_tab');
 
     $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
 

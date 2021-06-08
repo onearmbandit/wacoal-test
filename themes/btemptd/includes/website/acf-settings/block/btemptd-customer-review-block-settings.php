@@ -70,7 +70,7 @@ acf_add_local_field_group(
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
-            'min' => 0,
+            'min' => 1,
             'max' => 5,
             'step' => '',
         ),

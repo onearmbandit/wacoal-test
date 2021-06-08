@@ -200,7 +200,7 @@ function Wacoal_Acf_init()
             'name'            => 'btemptd-image-text-subhead-list-block',
             'title'           => __('Btemptd image text subhead list block'),
             'description'     => __('A custom Btemptd list block.'),
-            'render_callback' => 'Btemptd_Img_Text_subhead_List_Block_Render_callback',
+            'render_callback' => 'Btemptd_Img_Text_Subhead_List_Block_Render_callback',
             'category'        => 'btemptd',
             'icon'            => 'welcome-widgets-menus',
             'keywords'        => array('image' ),
