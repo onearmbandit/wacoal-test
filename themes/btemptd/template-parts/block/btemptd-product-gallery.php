@@ -16,7 +16,7 @@
 
         <?php foreach ($fullGallery as $key => $gallery) {
             $image_array = wp_get_attachment_image_src($gallery['image'], 'full');
-            $image_alt   = Btemptd_Get_Image_alt($image_array, 'Block Image');
+            $image_alt   = Btemptd_Get_Image_alt($gallery['image'], 'Block Image');
             $image_url   = Btemptd_Get_image($image_array);
 
             $size = $gallery['size'];

@@ -398,17 +398,12 @@ function Btemptd_Customer_Review_Render_callback( $block )
  */
 function Btemptd_Video_Image_Block_Render_callback( $block )
 {
-    $img_type  = get_field('select_image_type');
-    $img_link  = get_field('image_link');
-    $new_tab   = get_field('open_in_new_tab');
+    $video_option  = get_field('video_option');
+    $image  = get_field('image');
 
     $shortcode_template  = '/template-parts/block/btemptd-verticle-video-img.php';
 
-    if (! empty($img_type) && $img_type ) {
-        $block_image_id    = get_field('image');
-        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
-        $block_image_url   = Btemptd_Get_image($block_image_array);
+    if ($video_option !== 'select_option' && !empty($image)) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
