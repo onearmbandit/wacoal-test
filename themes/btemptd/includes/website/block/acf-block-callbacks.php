@@ -426,23 +426,18 @@ function Btemptd_Video_Image_Block_Render_callback( $block )
  */
 function Btemptd_Data_Image_Block_Render_callback( $block )
 {
-    $img_type  = get_field('select_image_type');
-    $img_link  = get_field('image_link');
-    $new_tab   = get_field('open_in_new_tab');
+    $image_id    = get_field('image');
+    $paragraph_content    = get_field('paragraph_content');
 
-    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+    if (! empty($image_id) && ! empty($paragraph_content) ) {
 
-    if (! empty($img_type) && $img_type ) {
-        $block_image_id    = get_field('image');
-        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
-        $block_image_url   = Btemptd_Get_image($block_image_array);
+        $shortcode_template  = '/template-parts/block/btemptd-data-image.php';
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Banner Image</u></h4>
-            <span style="color:red">Empty Banner Image Block</span>
+            <h4><u>Btemptd Data Image</u></h4>
+            <span style="color:red">Empty Data Image Block</span>
             <?php
         }
     }
