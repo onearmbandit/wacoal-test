@@ -372,7 +372,7 @@ List - Image + Italics Title + Subhead + Body LEFT" -->
 
 
 <!-- Explore the Blog -->
-<section class="explore-blog">
+<!-- <section class="explore-blog">
     <div class="explore-blog--title">Explore the blog</div>
 
     <div class="explore-blog--bg">
@@ -440,7 +440,7 @@ List - Image + Italics Title + Subhead + Body LEFT" -->
     </div>
 
 
-</section>
+</section> -->
 
 <?php
 Btemptd_Page_Entry_bottom();

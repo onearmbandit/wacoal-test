@@ -465,6 +465,31 @@ function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
     }
 }
 
+/**
+ * Callback function for banner image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Numbered_List_Block_Render_callback( $block )
+{
+    $list_data  = get_field('list_data');
+
+    if (! empty($list_data[0]['image']) ) {
+        $shortcode_template  = '/template-parts/block/btemptd-numbered-list.php';
+        include locate_template($shortcode_template);
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Btemptd Numbered List</u></h4>
+            <span style="color:red">Empty Numbered List Block</span>
+            <?php
+        }
+    }
+}
+
+
 // ------------//////////////////
 
 /**
@@ -481,38 +506,6 @@ function Btemptd_Img_Text_Img_Block_Render_callback( $block )
     $new_tab   = get_field('open_in_new_tab');
 
     $shortcode_template  = '/template-parts/block/btemptd-image-text-image.php';
-
-    if (! empty($img_type) && $img_type ) {
-        $block_image_id    = get_field('image');
-        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
-        $block_image_url   = Btemptd_Get_image($block_image_array);
-        include locate_template($shortcode_template);
-    } else {
-        if (is_admin() ) {
-            ?>
-            <h4><u>Btemptd Banner Image</u></h4>
-            <span style="color:red">Empty Banner Image Block</span>
-            <?php
-        }
-    }
-}
-
-
-/**
- * Callback function for banner image block
- *
- * @param [type] $block Block.
- *
- * @return void
- */
-function Btemptd_Numbered_List_Block_Render_callback( $block )
-{
-    $img_type  = get_field('select_image_type');
-    $img_link  = get_field('image_link');
-    $new_tab   = get_field('open_in_new_tab');
-
-    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
 
     if (! empty($img_type) && $img_type ) {
         $block_image_id    = get_field('image');
