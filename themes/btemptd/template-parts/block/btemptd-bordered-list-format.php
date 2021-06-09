@@ -17,14 +17,16 @@ if($list_data && !empty($list_data)) :
     <div class="seasonless-style--wrapper">
         <?php
         foreach ($list_data as $key => $list) {
-            $list_image_id = $list['image'];
+            $list_image_id    = $list['image'];
             $list_image_array = wp_get_attachment_image_src($list_image_id, 'full');
-            $list_image_alt = Btemptd_Get_Image_alt($list_image_id, 'List Image');
-            $list_image_url = Btemptd_Get_Image($list_image_array);
-            $list_img_link = $list['image_link'];
-            $list_title = $list['title'];
-            $list_desc = $list['description'];
-            $add_button = $list['add_button'];
+            $list_image_alt   = Btemptd_Get_Image_alt($list_image_id, 'List Image');
+            $list_image_url   = Btemptd_Get_Image($list_image_array);
+            $list_img_link    = $list['image_link'];
+            $list_img_caption = $list['image_caption'];
+            $list_title       = $list['title'];
+            $list_desc        = $list['description'];
+            $add_button       = $list['add_button'];
+
             if ($add_button == true) {
                 $button_label = $list['button_label'];
                 $button_url = $list['button_url'];
@@ -44,9 +46,11 @@ if($list_data && !empty($list_data)) :
                 </a>
                      <?php endif; ?>
 
+                    <?php if($list_img_caption && !empty($list_img_caption)) :?>
                      <div class="image-caption">
-                        LACE KISS BRALETTE LOREM IPSUM SED DOLOR
+                        <?php echo wp_kses_post($list_img_caption);?>
                      </div>
+                    <?php endif;?>
             </div>
                 <?php endif; ?>
             <div class="box--right">
@@ -83,9 +87,12 @@ if($list_data && !empty($list_data)) :
 
                     <?php endif; ?>
 
-                    <div class="image-caption">
-                        LACE KISS BRALETTE LOREM IPSUM SED DOLOR
+                    <?php if($list_img_caption && !empty($list_img_caption)) :?>
+                     <div class="image-caption">
+                        <?php echo wp_kses_post($list_img_caption);?>
                      </div>
+                    <?php endif;?>
+
             </div>
                 <?php endif; ?>
             <div class="box--right">

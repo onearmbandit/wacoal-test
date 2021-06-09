@@ -100,12 +100,19 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_60bdd919688d3',
-            'label' => 'left_image_caption',
+            'label' => 'Left Image Caption',
             'name' => 'left_image_caption',
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60bdd892688d0',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -147,7 +154,14 @@ acf_add_local_field_group(
             'type' => 'true_false',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60bdd8b0688d1',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -190,7 +204,14 @@ acf_add_local_field_group(
             'type' => 'text',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60bdd927688d4',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -232,7 +253,14 @@ acf_add_local_field_group(
             'type' => 'true_false',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60bdd955688d6',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',

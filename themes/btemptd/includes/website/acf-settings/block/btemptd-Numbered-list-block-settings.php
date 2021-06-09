@@ -263,9 +263,9 @@ acf_add_local_field_group(
     'location' => array(
         array(
             array(
-                'param' => 'post_type',
+                'param' => 'block',
                 'operator' => '==',
-                'value' => 'post',
+                'value' => 'acf/btemptd-numbered-list-block',
             ),
         ),
     ),

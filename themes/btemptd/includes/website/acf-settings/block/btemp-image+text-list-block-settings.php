@@ -103,7 +103,14 @@ acf_add_local_field_group(
                     'type' => 'text',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_60bdd52e6518b',
+                                'operator' => '!=empty',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
@@ -122,7 +129,14 @@ acf_add_local_field_group(
                     'type' => 'url',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_60bdd52e6518b',
+                                'operator' => '!=empty',
+                            ),
+                        ),
+                    ),
                     'wrapper' => array(
                         'width' => '',
                         'class' => '',
