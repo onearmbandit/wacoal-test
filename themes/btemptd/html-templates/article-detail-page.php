@@ -219,31 +219,6 @@ Btemptd_Page_Entry_top('');
     </div>
 </section> -->
 
-<!-- full bleed image -->
-<section class="full-bleed-image">
-    <div class="full-bleed-image--wrapper" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
-
-    </div>
-</section>
-
-<!-- inline banner image large -->
-<section class="internal-banner">
-    <div class="banner-wrapper big-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
-    </div>
-</section>
-
-<!-- inline banner image medium -->
-<section class="internal-banner">
-    <div class="banner-wrapper medium-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
-    </div>
-</section>
-
-<!-- inline banner image small -->
-<section class="internal-banner">
-    <div class="banner-wrapper small-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
-    </div>
-</section>
-
 <!-- <section class="product-gallery">
     <div class="product-gallery--wrapper">
         <div class="product-gallery--box">
@@ -313,7 +288,7 @@ Btemptd_Page_Entry_top('');
 </section> -->
 
 <!-- image body -->
-<section class="image-medium">
+<!-- <section class="image-medium">
     <div class="image-medium--wrapper">
         <div class="image-medium--image" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
         </div>
@@ -322,7 +297,7 @@ Btemptd_Page_Entry_top('');
             <p>“Historically, underwear implies function first—while the word lingerie evokes more of an aesthetic purpose. The idea that intimates have to be one or the other is something our design team challenges every time we sit around the table to create—there really is no reason that women can’t have both!”</p>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- text hover box -->
 <!-- <section class="text-hover-box">
@@ -333,9 +308,34 @@ Btemptd_Page_Entry_top('');
     </div>
 </section> -->
 
+<!-- full bleed image -->
+<section class="full-bleed-image">
+    <div class="full-bleed-image--wrapper" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+    </div>
+</section>
+
+<!-- inline banner image large -->
+<section class="internal-banner">
+    <div class="banner-wrapper big-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+    </div>
+</section>
+
+<!-- inline banner image medium -->
+<section class="internal-banner">
+    <div class="banner-wrapper medium-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+    </div>
+</section>
+
+<!-- inline banner image small -->
+<section class="internal-banner">
+    <div class="banner-wrapper small-banner" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+    </div>
+</section>
+
 <!-- "List - Image + Italics Title + Subhead + Body RIGHT
 List - Image + Italics Title + Subhead + Body LEFT" -->
-<section class="list-text-image">
+<!-- <section class="list-text-image">
     <div class="list-text-image--wrapper">
         <div class="list-text-image--inner">
             <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
@@ -368,7 +368,7 @@ List - Image + Italics Title + Subhead + Body LEFT" -->
         </div>
         <div class="image-name desktop">Body Base® Shorty Panty</div>
     </div>
-</section>
+</section> -->
 
 
 <!-- Explore the Blog -->

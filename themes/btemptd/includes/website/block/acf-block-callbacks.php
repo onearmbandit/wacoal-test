@@ -415,8 +415,6 @@ function Btemptd_Video_Image_Block_Render_callback( $block )
     }
 }
 
-// ------------//////////////////
-
 /**
  * Callback function for banner image block
  *
@@ -450,29 +448,24 @@ function Btemptd_Data_Image_Block_Render_callback( $block )
  *
  * @return void
  */
-function Btemptd_Img_Text_Img_Block_Render_callback( $block )
+function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
 {
-    $img_type  = get_field('select_image_type');
-    $img_link  = get_field('image_link');
-    $new_tab   = get_field('open_in_new_tab');
+    $list_data  = get_field('list_data');
 
-    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
-
-    if (! empty($img_type) && $img_type ) {
-        $block_image_id    = get_field('image');
-        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
-        $block_image_url   = Btemptd_Get_image($block_image_array);
+    if (! empty($list_data[0]['title']) ) {
+        $shortcode_template  = '/template-parts/block/btemptd-image-text-subhead-list.php';
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Banner Image</u></h4>
-            <span style="color:red">Empty Banner Image Block</span>
+            <h4><u>Btemptd Image Text Subhead List Image</u></h4>
+            <span style="color:red">Empty Image Text Subhead List Block</span>
             <?php
         }
     }
 }
+
+// ------------//////////////////
 
 /**
  * Callback function for banner image block
@@ -481,13 +474,13 @@ function Btemptd_Img_Text_Img_Block_Render_callback( $block )
  *
  * @return void
  */
-function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
+function Btemptd_Img_Text_Img_Block_Render_callback( $block )
 {
     $img_type  = get_field('select_image_type');
     $img_link  = get_field('image_link');
     $new_tab   = get_field('open_in_new_tab');
 
-    $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
+    $shortcode_template  = '/template-parts/block/btemptd-image-text-image.php';
 
     if (! empty($img_type) && $img_type ) {
         $block_image_id    = get_field('image');
