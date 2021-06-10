@@ -23,6 +23,7 @@
 
         $title  = $list['title'];
         $description  = $list['description'];
+        $order_value  = $list['order_value'];
         $button_label  = $list['button_label'];
         $button_url  = $list['button_url'];
         $tip_title  = $list['tip_title'];
@@ -43,7 +44,7 @@
         <div class="content">
             <div class="number-wrapper">
                 <div class="number-inner">
-                    1.
+                    <?php echo esc_attr($order_value); ?>
                 </div>
             </div>
             <div class="content-inner">
