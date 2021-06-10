@@ -195,24 +195,36 @@
   }
 
   &--wrapper {
-    margin: 30px auto 0;
+    max-width: 664px;
+    margin: 0 auto;
 
-    @include respond-above(sm) {
-      width: get-vw(1280px);
-      margin: auto;
+    @include respond-below(lg) {
+      max-width: 598px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 270px;
     }
   }
 
   &--title {
     text-align: center;
     @include NeutraText-DemiAlt;
-    margin-bottom: calcRem(16);
+    margin-bottom: 45px;
+    font-size: 20px;
+    line-height: 30px;
 
-    @include respond-above(sm) {
-      font-size: get-vw(32px);
-      line-height: get-vw(41px);
-      margin-bottom: get-vw(80px);
+    @include respond-below(lg) {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 24px;
     }
+
+    @include respond-below(sm) {
+      margin-bottom: 30px;
+    }
+
+
 
     strong {
       @include NeutraText-BoldAlt;
@@ -884,17 +896,22 @@
 
 .article--para {
   @include NeutraText-BookAlt;
-    font-size: calcRem(16);
-    line-height: calcRem(20);
-    max-width: 90%;
-    margin: 20px auto;
-    text-align: center;
+  max-width: 920px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.09px;
 
-  @include respond-above(sm) {
-    width: get-vw(1280px);
-    font-size: get-vw(21px);
-    line-height: get-vw(34px);
-    margin: 40px auto;
+  @include respond-below(lg) {
+    max-width: 812px;
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0.08px;
+  }
+
+  @include respond-below(md) {
+    max-width: 666px;
+    margin: 0 auto 25px;
   }
 
   strong {
@@ -909,16 +926,22 @@
 
 .article--para-half {
   @include NeutraText-BookAlt;
-    font-size: calcRem(16);
-    line-height: calcRem(20);
-    max-width: 80%;
-    margin: 20px auto;
+  max-width: 630px;
+  margin: 0 auto 60px;
+  font-size: 20px;
+  line-height: 30px;
 
-  @include respond-above(sm) {
-    width: get-vw(600px);
-    font-size: get-vw(21px);
-    line-height: get-vw(34px);
-    margin: 40px auto;
+  @include respond-below(lg) {
+    max-width: 542px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  @include respond-below(sm) {
+    max-width: 332px;
+    font-size: 17px;
+    line-height: 26px;
+    margin: 0 auto 40px;
   }
 
   strong {
