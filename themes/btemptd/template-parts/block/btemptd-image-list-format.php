@@ -20,6 +20,7 @@ if ($list_type == 'simple_data') :
         $list_image_array = wp_get_attachment_image_src($list_image_id, 'full');
         $list_image_alt   = Btemptd_Get_Image_alt($list_image_id, 'List Block Image');
         $list_image_url   = Btemptd_Get_Image($list_image_array);
+        $list_img_caption = $list['image_caption'];
         $list_title       = $list['title'];
         $list_desc        = $list['description'];
         $list_block_link  = $list['block_link'];
@@ -41,6 +42,11 @@ if ($list_type == 'simple_data') :
                     </a>
                 <?php endif;
             endif; ?>
+            <?php if($list_img_caption && !empty($list_img_caption)) :?>
+                     <div class="image-caption">
+                        <?php echo wp_kses_post($list_img_caption);?>
+                     </div>
+            <?php endif;?>
             <div class="image-content--content box-shadow-right">
                 <?php if ($list_title && !empty($list_title)) :?>
                 <div class="image-content--content__head">
@@ -72,6 +78,11 @@ if ($list_type == 'simple_data') :
                     </a>
                 <?php endif;
             endif; ?>
+            <?php if($list_img_caption && !empty($list_img_caption)) :?>
+                     <div class="image-caption">
+                        <?php echo wp_kses_post($list_img_caption);?>
+                     </div>
+            <?php endif;?>
             <div class="image-content--content box-shadow-right">
             <?php if ($list_title && !empty($list_title)) :?>
             <div class="image-content--content__head">
