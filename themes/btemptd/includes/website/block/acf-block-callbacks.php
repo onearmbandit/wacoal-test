@@ -489,9 +489,6 @@ function Btemptd_Numbered_List_Block_Render_callback( $block )
     }
 }
 
-
-// ------------//////////////////
-
 /**
  * Callback function for banner image block
  *
@@ -501,23 +498,18 @@ function Btemptd_Numbered_List_Block_Render_callback( $block )
  */
 function Btemptd_Img_Text_Img_Block_Render_callback( $block )
 {
-    $img_type  = get_field('select_image_type');
-    $img_link  = get_field('image_link');
-    $new_tab   = get_field('open_in_new_tab');
+    $title  = get_field('title');
+    $left_image_id  = get_field('left_image');
+    $right_image_id  = get_field('right_image');
 
-    $shortcode_template  = '/template-parts/block/btemptd-image-text-image.php';
-
-    if (! empty($img_type) && $img_type ) {
-        $block_image_id    = get_field('image');
-        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
-        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
-        $block_image_url   = Btemptd_Get_image($block_image_array);
+    if (! empty($title) && ! empty($left_image_id) && ! empty($left_image_id) ) {
+        $shortcode_template  = '/template-parts/block/btemptd-image-text-image.php';
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Banner Image</u></h4>
-            <span style="color:red">Empty Banner Image Block</span>
+            <h4><u>Btemptd Image Text Image</u></h4>
+            <span style="color:red">Empty Image Text Image Block</span>
             <?php
         }
     }
