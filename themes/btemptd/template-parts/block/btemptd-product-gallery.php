@@ -26,17 +26,27 @@
             ?>
         <div class="product-gallery--box">
             <div class="product-gallery--box__image">
-                <a href="<?php echo esc_url($link); ?>"
-                    target="<?php echo esc_attr($new_tab)?>">
+                <?php if (! empty($link)) { ?>
+                    <a href="<?php echo esc_url($link); ?>"
+                        target="<?php echo esc_attr($new_tab)?>">
+                        <img src="<?php echo esc_url($image_url); ?>"
+                            alt="<?php echo esc_attr($image_alt); ?>" />
+                    </a>
+                <?php } else { ?>
                     <img src="<?php echo esc_url($image_url); ?>"
-                        alt="<?php echo esc_attr($image_alt); ?>" />
-                </a>
+                            alt="<?php echo esc_attr($image_alt); ?>" />
+                <?php } ?>
             </div>
             <div class="product-gallery--box__title">
-                <a href="<?php echo esc_url($link); ?>"
-                    target="<?php echo esc_attr($new_tab)?>">
+                <?php if (! empty($link)) { ?>
+                    <a href="<?php echo esc_url($link); ?>"
+                        target="<?php echo esc_attr($new_tab)?>">
+                        <?php echo esc_attr($name); ?>
+                    </a>
+                <?php } else { ?>
                     <?php echo esc_attr($name); ?>
-                </a>
+                <?php } ?>
+
             </div>
             <div class="product-gallery--box__size">
                 <?php echo esc_attr($size); ?>

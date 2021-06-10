@@ -32,10 +32,16 @@
         ?>
     <div class="list-number-tip--wrapper">
         <div class="image-title">
-            <a href="<?php echo esc_url($image_link); ?>" target="<?php echo esc_attr($new_tab); ?>" >
+            <?php if (! empty($image_link)) { ?>
+                <a href="<?php echo esc_url($image_link); ?>" target="<?php echo esc_attr($new_tab); ?>" >
+                    <div class="image-block" style="background-image:url(<?php echo  esc_url($image_url); ?>);">
+                    </div>
+                </a>
+            <?php } else { ?>
                 <div class="image-block" style="background-image:url(<?php echo  esc_url($image_url); ?>);">
                 </div>
-            </a>
+            <?php } ?>
+
             <div class="image-name">
                 <?php echo esc_attr($image_caption); ?>
             </div>
