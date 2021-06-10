@@ -110,6 +110,32 @@ acf_add_local_field_group(
                             'mime_types' => '',
                         ),
                         array(
+                            'key' => 'field_60c1ae0497b3d',
+                            'label' => 'Image Caption',
+                            'name' => 'image_caption',
+                            'type' => 'text',
+                            'instructions' => '',
+                            'required' => 0,
+                            'conditional_logic' => array(
+                                array(
+                                    array(
+                                        'field' => 'field_5f929e0aa05af',
+                                        'operator' => '!=empty',
+                                    ),
+                                ),
+                            ),
+                            'wrapper' => array(
+                                'width' => '',
+                                'class' => '',
+                                'id' => '',
+                            ),
+                            'default_value' => '',
+                            'placeholder' => '',
+                            'prepend' => '',
+                            'append' => '',
+                            'maxlength' => '',
+                        ),
+                        array(
                             'key' => 'field_5f929e1ca05b0',
                             'label' => 'Title',
                             'name' => 'title',
