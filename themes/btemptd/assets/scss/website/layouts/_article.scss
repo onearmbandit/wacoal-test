@@ -1,55 +1,102 @@
 .article-header {
-  margin-bottom: calcRem(25);
+  margin-bottom: 60px;
 
-  @include respond-above(sm) {
-    margin-bottom: get-vw(79px);
+  @include respond-below(lg) {
+    margin-bottom: 50px;
+  }
+
+  @include respond-below(sm) {
+    margin-bottom: 30px;
   }
 
   &--wrapper {
     margin: auto;
     text-align: center;
+    max-width: 1213px;
 
-    @include respond-above(sm) {
-        width: get-vw(1470px);
-        margin-top: get-vw(30px);
+    @include respond-below(xl) {
+      max-width: 818px;
+    }
+
+    @include respond-below(lg) {
+      max-width: 597px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
     }
   }
+
 
   &--banner {
     width: 100%;
     background-size: cover;
     background-position: center;
-    height: calcRem(182);
+    height: 568px;
+    margin-bottom: 30px;
 
-    @include respond-above(sm) {
-      height: get-vw(678px);
-      margin-bottom: get-vw(37px);
+    @include respond-below(xl) {
+      height: 383px;
+    }
+
+    @include respond-below(lg) {
+      height: 280px;
+    }
+
+    @include respond-below(md) {
+      margin-bottom: 20px;
+    }
+
+    @include respond-below(sm) {
+      height: 182px;
     }
   }
 
   &--category {
     @include NeutraText-BookAlt;
-    margin-top: calcRem(16);
-    margin-bottom: calcRem(18);
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.99px;
+    margin-bottom: 20px;
+    text-align: center;
 
-    @include respond-above(sm) {
-      font-size: get-vw(33px);
-      line-height: get-vw(36px);
-      margin-bottom: get-vw(44px);
+    @include respond-below(lg) {
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.77px;
+    }
+
+    @include respond-below(sm) {
+      margin-bottom: 16px;
     }
   }
 
   &--title {
     @include NeutraText-BookAlt;
     text-transform: uppercase;
-    font-size: calcRem(36);
-    line-height: calcRem(34);
-    margin-bottom: 4px;
+    text-align: center;
+    font-size: 66px;
+    line-height: 68px;
+    max-width: 1006px;
+    margin: 0 auto 16px;
 
-    @include respond-above(sm) {
-      font-size: get-vw(94px);
-      line-height: get-vw(90px);
-      margin-bottom: get-vw(12px);
+    @include respond-below(lg) {
+      font-size: 54px;
+      line-height: 52px;
+      max-width: 824px;
+      margin: 0 auto 10px;
+    }
+
+    @include respond-below(md) {
+      font-size: 45px;
+      line-height: 43px;
+      max-width: 686px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 33px;
+      line-height: 34px;
+      max-width: 290px;
     }
 
     strong {
@@ -64,16 +111,32 @@
 
   &--para {
     @include NeutraText-LightAlt;
-    font-size: calcRem(22);
-    letter-spacing: 0.5px;
-    max-width: 90%;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 1.05px;
+    line-height: 38px;
     margin: auto;
+    max-width: 762px;
 
-    @include respond-above(sm) {
-      max-width: 100%;
-      font-size: get-vw(46px);
-      line-height: get-vw(47px);
-      letter-spacing: get-vw(1.61px);
+    @include respond-below(lg) {
+      max-width: 608px;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0.84px;
+    }
+
+    @include respond-below(md) {
+      max-width: 560px;
+      font-size: 22px;
+      line-height: 30px;
+      letter-spacing: 0.77px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 328px;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.45px;
     }
 
     strong {
@@ -1888,6 +1951,579 @@
           max-width: 342px;
           left: 8px;
           top: 8px;
+        }
+      }
+    }
+  }
+}
+
+//
+.italics-title {
+
+  &--wrapper {
+    max-width: 1222px;
+    margin: 0 auto;
+    display: flex;
+    padding: 80px 0;
+
+    @include respond-below(lg){
+      padding: 50px 0;
+      max-width: 956px;
+    }
+
+    @include respond-below(md){
+      padding: 25px 0;
+      max-width: 716px;
+    }
+
+    @include respond-below(sm) {
+      flex-direction: column-reverse;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .left-box {
+        padding: 0 89px 0 109px;
+
+        @include respond-below(lg) {
+          padding: 0 46px 0 60px;
+        }
+
+        @include respond-below(md) {
+          padding: 0 34px 0 45px;
+        }
+
+        @include respond-below(sm) {
+          padding: 0 28px;
+        }
+      }
+
+      @include respond-below(sm) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  .left-box {
+    display: flex;
+    align-items: center;
+    padding: 0 109px 0 89px;
+
+    @include respond-below(lg) {
+      padding: 0 60px 0 46px;
+    }
+
+    @include respond-below(md) {
+      padding: 0 45px 0 34px;
+    }
+
+    @include respond-below(sm) {
+      padding: 0 28px;
+    }
+
+
+    .title {
+      @include NeutraText-DemiItalicAlt;
+      font-size: 40px;
+      color: var(--color-text);
+      margin-bottom: 23px;
+      line-height: 1;
+
+      @include respond-below(lg) {
+        font-size: 38px;
+      }
+
+      @include respond-below(md) {
+        font-size: 28px;
+        margin-bottom: 12px;
+      }
+
+      @include respond-below(sm) {
+        margin-top: 36px;
+      }
+    }
+
+    .sub-title {
+      @include NeutraText-LightAlt;
+      font-size: 23px;
+      line-height: 35px;
+      margin-bottom: 48px;
+
+      @include respond-below(lg) {
+        font-size: 21px;
+        line-height: 32px;
+        margin-bottom: 51px;
+      }
+
+      @include respond-below(md) {
+        font-size: 15px;
+        line-height: 23px;
+        margin-bottom: 25px;
+      }
+    }
+
+    .content {
+      @include NeutraText-BookAlt;
+      font-size: 18px;
+      line-height: 29px;
+
+      @include respond-below(lg) {
+        font-size: 16px;
+        line-height: 26px;
+      }
+
+      @include respond-below(md) {
+        font-size: 15px;
+        line-height: 23px;
+      }
+    }
+  }
+
+  .right-box {
+
+    @include respond-below(sm) {
+      margin: 0 auto;
+    }
+
+    .image-wrapper {
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 560px;
+      height: 560px;
+
+      @include respond-below(lg) {
+        width: 438px;
+        height: 438px;
+      }
+
+      @include respond-below(md) {
+        width: 328px;
+        height: 328px;
+      }
+    }
+
+    .image-title {
+      @include NeutraText-BookAlt;
+      text-transform: uppercase;
+      color: var(--color-gray-lighter);
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.77px;
+      margin: 22px 0;
+
+      @include respond-below(lg) {
+        margin: 18px 0 13px;
+      }
+
+      @include respond-below(md) {
+        margin: 14px 0 6px;
+      }
+    }
+  }
+}
+
+//
+.button-block {
+  padding: 25px 0;
+
+  @include respond-below(md){
+    padding: 15px 0;
+  }
+
+  &--wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .block-btn {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    padding: 19px 37px 16px;
+    @include NeutraText-BoldAlt;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1.05px;
+  }
+}
+
+//
+.image-text-image {
+  padding: 80px 0;
+
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
+
+  &--wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+
+    @include respond-below(sm) {
+      flex-direction: column;
+    }
+  }
+
+  .image-title {
+    @include respond-below(sm) {
+      margin: 0 auto;
+    }
+    .image-bg {
+      background-size: cover;
+      background-position: center;
+      width: 457px;
+      height: 457px;
+
+      @include respond-below(lg) {
+        width: 300px;
+        height: 300px;
+      }
+
+      @include respond-below(md) {
+        width: 230px;
+        height: 230px;
+      }
+
+      @include respond-below(sm) {
+        width: 300px;
+        height: 300px;
+      }
+    }
+
+    .title {
+      @include NeutraText-BookAlt;
+      color: var(--color-gray-lighter);
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.77px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 22px 0;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    padding: 0 40px 56px;
+
+    @include respond-below(md) {
+      padding: 0 30px;
+    }
+
+    @include respond-below(sm) {
+      padding: 3px 30px 25px;
+    }
+
+    .title {
+      @include NeutraText-DemiAlt;
+      font-size: 50px;
+      line-height: 52px;
+      margin-bottom: 26px;
+
+      @include respond-below(lg) {
+        font-size: 40px;
+        line-height: 42px;
+      }
+
+      @include respond-below(md) {
+        font-size: 28px;
+        line-height: 30px;
+      }
+    }
+
+    .para {
+      @include NeutraText-BookAlt;
+      font-size: 16px;
+      line-height: 21px;
+
+      @include respond-below(md) {
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+}
+
+//
+.list-number-tip {
+
+  &--wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+
+  @include respond-below(lg){
+    padding: 50px 0;
+  }
+
+  @include respond-below(md){
+    padding: 25px 0;
+  }
+
+  @include respond-below(sm) {
+    flex-direction: column;
+  }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      @include respond-below(sm) {
+        flex-direction: column;
+      }
+
+      .content {
+        padding: 0 180px 0 140px;
+
+        @include respond-below(lg) {
+          padding: 0 120px 0 112px;
+        }
+
+        @include respond-below(md) {
+          padding: 0 70px 0 20px;
+        }
+
+        @include respond-below(sm) {
+          padding: 0 40px;
+        }
+
+        .number-wrapper {
+          left: inherit;
+          right: -40px;
+
+          @include respond-below(lg) {
+            right: -25px;
+          }
+
+          @include respond-below(sm) {
+            right: inherit;
+            left: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  .image-title {
+
+    .image-block {
+      width: 720px;
+      height: 720px;
+      background-size: cover;
+
+      @include respond-below(lg) {
+        width: 512px;
+        height: 512px;
+      }
+
+      @include respond-below(md) {
+        width: 384px;
+        height: 384px;
+      }
+    }
+
+    .image-name {
+      @include NeutraText-BookAlt;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.77px;
+    }
+  }
+
+  .content {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    padding: 0 140px 0 180px;
+
+    @include respond-below(lg) {
+      padding: 0 112px 0 120px;
+    }
+
+    @include respond-below(md) {
+      padding: 0 20px 0 70px;
+    }
+
+    @include respond-below(sm) {
+      padding: 0 40px;
+      margin-top: 20px;
+    }
+
+    .number-wrapper {
+      position: absolute;
+      left: -40px;
+
+      @include respond-below(lg) {
+        left: -25px;
+      }
+
+      @include respond-below(sm) {
+        left: 8px;
+      }
+
+      .number-inner {
+        position: relative;
+        background: #F8F3F0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include NeutraText-BoldAlt;
+        color: var(--color-text);
+        font-size: 87px;
+        line-height: 87px;
+        letter-spacing: 6.96px;
+        width: 128px;
+        height: 132px;
+
+        @include respond-below(lg) {
+          font-size: 61px;
+          line-height: 29px;
+          letter-spacing: 4.88px;
+          width: 92px;
+          height: 94px;
+        }
+
+        @include respond-below(md) {
+          font-size: 47px;
+          line-height: 23px;
+          letter-spacing: 3.76px;
+          width: 68px;
+          height: 70px;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          background: var(--color-primary);
+          width: 128px;
+          height: 132px;
+          top: 6px;
+          left: 6px;
+          z-index: -1;
+
+          @include respond-below(lg) {
+            width: 92px;
+            height: 94px;
+          }
+
+          @include respond-below(md) {
+            width: 68px;
+            height: 70px;
+          }
+        }
+      }
+    }
+
+    .title {
+      @include NeutraText-BoldAlt;
+      color: var(--color-text);
+      font-size: 33px;
+      line-height: 42px;
+      margin-bottom: 30px;
+
+      @include respond-below(lg) {
+        font-size: 28px;
+        line-height: 30px;
+        margin-bottom: 25px;
+      }
+
+      @include respond-below(md) {
+        font-size: 26px;
+        margin-bottom: 20px;
+      }
+
+      @include respond-below(sm) {
+        padding-left: 80px;
+        font-size: 22px;
+        line-height: 25px;
+      }
+    }
+
+    .para {
+      @include NeutraText-BookAlt;
+      color: var(--color-text);
+      font-size: 19px;
+      line-height: 29px;
+      letter-spacing: 0.28px;
+      margin-bottom: 30px;
+
+      @include respond-below(lg) {
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 25px;
+      }
+
+      @include respond-below(md) {
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .tip {
+      display: flex;
+      margin-top: 60px;
+      color: var(--color-text);
+
+      @include respond-below(lg) {
+        margin-top: 35px;
+        flex-direction: column;
+      }
+
+      @include respond-below(md) {
+        margin-top: 25px;
+      }
+
+      .tip-title {
+        @include NeutraText-BoldAlt;
+        text-transform: uppercase;
+        font-size: 30px;
+        letter-spacing: 0.45px;
+
+        @include respond-below(lg) {
+          font-size: 21px;
+          letter-spacing: 0.32px;
+          margin-bottom: 16px;
+        }
+
+        @include respond-below(md) {
+          font-size: 15px;
+          letter-spacing: 0.23px;
+          margin-bottom: 12px;
+        }
+      }
+
+      .tip-content {
+        @include NeutraText-BookItalicAlt;
+        font-size: 16px;
+        line-height: 29px;
+        letter-spacing: 0.24px;
+        flex: 1;
+        padding-left: 5px;
+
+        @include respond-below(lg) {
+          font-size: 15px;
+          line-height: 26px;
+          letter-spacing: 0.23px;
+          padding-left: 0;
+          margin-top: 16px;
+        }
+
+        @include respond-below(md) {
+          font-size: 14px;
+          line-height: 23px;
+          letter-spacing: 0.21px;
+          padding-left: 0;
+          margin-top: 0px;
         }
       }
     }

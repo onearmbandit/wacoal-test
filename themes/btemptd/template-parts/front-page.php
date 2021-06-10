@@ -678,40 +678,170 @@ if(!empty($banner_link)) :?>
         </div>
     </div>
 </section>
+
+
 <!-- "List - Image + Italics Title + Subhead + Body RIGHT
 List - Image + Italics Title + Subhead + Body LEFT" -->
-<section class="list-text-image">
-    <div class="list-text-image--wrapper">
-        <div class="list-text-image--inner">
-            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
+<section class="italics-title">
+    <div class="italics-title--wrapper">
+        <div class="left-box">
+            <div>
+            <h3 class="title">Featherlight Find:</h3>
 
+            <div class="sub-title">
+                b. bare hipster, thong, and cheeky
             </div>
-            <div class="image-name mobile">Body Base® Shorty Panty</div>
-            <div class="list-text-image--content">
-                <h2 class="title">the strapless:</h2>
 
-                <div class="content">
-                    <strong>Future Foundation Backless Strapless Bra</strong> is the innovation that every dress demands. Skinny straps, no straps, open back, low back- even the trickiest styles are simple to wear when you have this in your arsenal. And, there is something subtly sexy about the hook-and-eye closure sitting just above the small of the back. Added bonus? Power mesh and light boning shape and support!
-                </div>
+            <div class="content">
+                Lightweight, clean-cut, and smartly constructed, b. bare is a smarter option than actually, well, being bare! Check out the customer favorite “cheeky” style for a cute peek of cheek, the thong is a great moderate coverage option, and the hipster is always a hit.
+            </div>
             </div>
         </div>
-        <div class="image-name desktop">Body Base® Shorty Panty</div>
+
+        <div class="right-box">
+                <div class="image-wrapper" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+                </div>
+                <div class="image-title">
+                    lace kiss bralette
+                </div>
+        </div>
     </div>
-    <div class="list-text-image--wrapper">
-        <div class="list-text-image--inner">
-            <div class="list-text-image--img" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-1.png)">
+
+    <div class="italics-title--wrapper">
+        <div class="left-box">
+            <div>
+            <h3 class="title">No-Pinch Perfection:</h3>
+
+            <div class="sub-title">
+                Comfort Intended hipster and thong
+            </div>
+
+            <div class="content">
+                Stay-in-place panties without any elastic to potentially pinch around the waistline?! Yup, it’s a thing. The hipster and thong styles in this collection are so soft, stretchy, and seamless; you may forget you have them on at all!
+            </div>
+            </div>
+        </div>
+
+        <div class="right-box">
+                <div class="image-wrapper" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+                </div>
+                <div class="image-title">
+                    lace kiss bralette
+                </div>
+        </div>
+    </div>
+</section>
+
+<!-- button block -->
+<section class="button-block">
+    <div class="button-block--wrapper">
+            <a href="" class="block-btn">SHOP OUR BEST SELLERS HERE!</a>
+    </div>
+</section>
+
+<!-- image text image -->
+<section class="image-text-image">
+    <div class="image-text-image--wrapper">
+        <div class="image-title">
+            <div class="image-bg" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
 
             </div>
-            <div class="image-name mobile">Body Base® Shorty Panty</div>
-            <div class="list-text-image--content">
-                <h2 class="title">The push up:</h2>
+            <div class="title">
+                lace kiss bralette
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="title">One-Piece Power Play:</h2>
+            <div class="para">
+                Add texture and interest to basic ensembles with peek-worthy pop of lace. The Lace Kiss Bralette’s scalloped edges are a pretty detail under a deep V or a wide neck spring sweater. Lace Encounter is a bralette best bared with open-back blouses that show the crisscross skinny straps or style it under a button-down with buttons open just enough to glimpse the wide velvet band tipped with glam gold Lurex.
+            </div>
+        </div>
+        <div class="image-title">
+            <div class="image-bg" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
 
-                <div class="content">
-                    <strong>b. wow’d Push Up Bra</strong> takes a basic V-neck t-shirt and makes it anything but. This smooth finish style has a deep plunge and flirty animal print lining (sure, nobody sees it when it’s on your body, but you know it is there!) Wear it with a crisp, fitted button down and consider leaving one more button open than usual for a look that transforms a daytime staple into a nighttime stunner.
+            </div>
+            <div class="title">
+                lace kiss bralette
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- List - Numberd image + tip -->
+<section class="list-number-tip">
+    <div class="list-number-tip--wrapper">
+        <div class="image-title">
+            <div class="image-block" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+            </div>
+
+            <div class="image-name">
+                @alexiscastello
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="number-wrapper">
+                <div class="number-inner">
+                    1.
+                </div>
+            </div>
+            <div class="content-inner">
+                <h3 class="title">Leveled Up Loungewear for Staying Cool at Home:</h3>
+                <div class="para">
+                    Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
+                </div>
+                <a href="#" class="btn secondary">shop now</a>
+
+                <div class="tip">
+                    <div class="tip-title">
+                        tip #4
+                    </div>
+                    <div class="tip-content">
+                        Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="image-name desktop">Body Base® Shorty Panty</div>
+    </div>
+
+    <div class="list-number-tip--wrapper">
+        <div class="image-title">
+            <div class="image-block" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+            </div>
+
+            <div class="image-name">
+                @alexiscastello
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="number-wrapper">
+                <div class="number-inner">
+                    1.
+                </div>
+            </div>
+            <div class="content-inner">
+                <h3 class="title">Leveled Up Loungewear for Staying Cool at Home:</h3>
+                <div class="para">
+                    Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
+                </div>
+                <a href="#" class="btn secondary">shop now</a>
+
+                <div class="tip">
+                    <div class="tip-title">
+                        tip #4
+                    </div>
+                    <div class="tip-content">
+                        Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

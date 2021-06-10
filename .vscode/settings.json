@@ -20,5 +20,6 @@
     "php.suggest.basic": false,
     "phpcs.standard": "WordPress",
     "workbench.editor.enablePreview": false,
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "editor.tabSize": 1
 }

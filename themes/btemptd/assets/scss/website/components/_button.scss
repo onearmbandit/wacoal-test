@@ -37,25 +37,21 @@
           padding-left: get-vw(30.5px);
         }
       }
-      // @include respond-above(md) {
-      //   font-size: calcRem(16);
-      //   padding: calcRem(9, 16, 6);
-      // }
-
-      // @include respond-above(lg) {
-      //   font-size: calcRem(20);
-      //   padding: calcRem(10, 18, 7);
-      // }
-
-      // @include respond-above(xl) {
-      //   font-size: calcRem(30);
-      //   padding: calcRem(16, 27, 13);
-      // }
 
       &:hover {
 
       }
 
+  }
+
+  &.secondary {
+    border-color: var(--color-text);
+    @include NeutraText-BoldAlt;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1.05px;
+    padding: 19px 37px 16px;
   }
 
 }
