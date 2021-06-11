@@ -56,7 +56,7 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
         <?php echo $video ?>
 
         <div class="video-caption">
-            <p><?php echo wp_kses_post($video_caption); ?></p>
+            <?php echo wp_kses_post($video_caption); ?>
         </div>
     </div>
 
