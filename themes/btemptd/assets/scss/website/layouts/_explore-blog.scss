@@ -281,6 +281,9 @@
       @include NeutraText-DemiAlt;
       font-size: 24px;
       line-height: 27px;
+      display: flex;
+      align-items: center;
+      min-height: 76px;
 
       @include respond-below(xl) {
         font-size: 21px;
@@ -290,6 +293,7 @@
       @include respond-below(lg) {
         font-size: 18px;
         line-height: 21px;
+        min-height: 62px;
       }
     }
 

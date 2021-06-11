@@ -122,6 +122,10 @@
             font-size: 30px;
             line-height: 32px;
         }
+
+        @include respond-below(sm){
+          margin-bottom: 12px;
+        }
       }
 
       .content {

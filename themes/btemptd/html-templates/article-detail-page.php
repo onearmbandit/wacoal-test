@@ -816,5 +816,47 @@ List - Image + Italics Title + Subhead + Body LEFT" -->
     </div>
 </section>
 <!-- -->
+
+
+
+<section class="image-text-hover">
+    <div class="image-text-hover--wrapper">
+        <div class="image-wrapper">
+            <div class="image-bg" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);"></div>
+
+            <div class="image-caption">
+                LACE KISS bralette
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content">
+                <h2 class="title">Comfort</h2>
+                <div class="para">
+                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-text-hover--wrapper">
+        <div class="image-wrapper">
+            <div class="image-bg" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);"></div>
+
+            <div class="image-caption">
+                LACE KISS bralette
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content">
+                <h2 class="title">Comfort</h2>
+                <div class="para">
+                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <?php
 Btemptd_Page_Entry_bottom();
