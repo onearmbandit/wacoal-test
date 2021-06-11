@@ -142,6 +142,15 @@
         @include respond-below(md){
             margin: 15px 0 20px;
         }
+
+        strong {
+          @include NeutraText-BoldAlt;
+        }
+
+        a {
+          @include NeutraText-BoldAlt;
+          text-decoration: underline;
+        }
       }
 
       .customer-name {

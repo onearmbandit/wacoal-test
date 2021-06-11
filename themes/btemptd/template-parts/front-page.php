@@ -473,61 +473,76 @@ if(!empty($banner_link)) :?>
 <?php endif;?>
 
 
-<section class="image-quote-button">
-    <div class="image-quote-button--wrapper">
-        <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
 
+<section class="list-number-tip">
+    <div class="list-number-tip--wrapper">
+        <div class="image-title">
+            <div class="image-block" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
+
+            </div>
+
+            <div class="image-name">
+                @alexiscastello
+            </div>
         </div>
-        <div class="content-wrapper">
-            <div class="content-wrapper--inner">
-            <div class="quote-left">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt="Image">
-            </div>
 
+        <div class="content">
+            <div class="number-wrapper">
+                <div class="number-inner">
+                    1.
+                </div>
+            </div>
             <div class="content-inner">
-                <div class="content-inner--title">
-                    It’s so soft and comfortable I almost forget I’m wearing it!
+                <h3 class="title">Leveled Up Loungewear for Staying Cool at Home:</h3>
+                <div class="para">
+                    Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
                 </div>
-                <div class="content-inner--tag">
-                    –@ericaluoo
-                </div>
-                <div class="shop-button">
-                    <a class="shop-now-button" href="#" target="_blank">SHOP NOW</a>
-                </div>
-            </div>
+                <a href="#" class="btn secondary">shop now</a>
 
-            <div class="quote-right">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt="Image">
-            </div>
+                <div class="tip">
+                    <div class="tip-title">
+                        tip #4
+                    </div>
+                    <div class="tip-content">
+                        Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="image-quote-button--wrapper">
-        <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
+    <div class="list-number-tip--wrapper">
+        <div class="image-title">
+            <div class="image-block" style="background-image:url(<?php echo  esc_url(THEMEURI); ?>/assets/images/article-img-2.png);">
 
+            </div>
+
+            <div class="image-name">
+                @alexiscastello
+            </div>
         </div>
-        <div class="content-wrapper">
-            <div class="content-wrapper--inner">
-            <div class="quote-left">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt="Image">
-            </div>
 
+        <div class="content">
+            <div class="number-wrapper">
+                <div class="number-inner">
+                    1.
+                </div>
+            </div>
             <div class="content-inner">
-                <div class="content-inner--title">
-                    It’s so soft and comfortable I almost forget I’m wearing it!
+                <h3 class="title">Leveled Up Loungewear for Staying Cool at Home:</h3>
+                <div class="para">
+                    Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
                 </div>
-                <div class="content-inner--tag">
-                    –@ericaluoo
-                </div>
-                <div class="shop-button">
-                    <a class="shop-now-button" href="#" target="_blank">SHOP NOW</a>
-                </div>
-            </div>
+                <a href="#" class="btn secondary">shop now</a>
 
-            <div class="quote-right">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt="Image">
-            </div>
+                <div class="tip">
+                    <div class="tip-title">
+                        tip #4
+                    </div>
+                    <div class="tip-content">
+                        Our design team created graduated built-in push up pads for natural looking enhancement, delivering significant lift that appears effortlessly sexy.
+                    </div>
+                </div>
             </div>
         </div>
     </div>

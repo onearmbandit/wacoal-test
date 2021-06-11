@@ -86,9 +86,9 @@
   &--link {
     color: var(--color-black);
     @include NeutraText-DemiAlt;
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 0.15px;
+    letter-spacing: 0.21px;
 
     @include respond-below(sm) {
       font-size: 12px;

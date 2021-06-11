@@ -46,6 +46,7 @@
 
   &.secondary {
     border-color: var(--color-text);
+    color: var(--color-text);
     @include NeutraText-BoldAlt;
     text-transform: uppercase;
     font-size: 14px;

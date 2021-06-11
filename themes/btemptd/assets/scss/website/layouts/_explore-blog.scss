@@ -50,7 +50,14 @@
     @include respond-below(md) {
       margin-bottom: 23px;
       font-size: 25px;
+      letter-spacing: 0.63px;
       padding: 13px 0 9px;
+    }
+
+    @include respond-below(sm) {
+      margin-bottom: 30px;
+      font-size: 22px;
+      letter-spacing: 0.55px;
     }
   }
 
@@ -295,6 +302,10 @@
         line-height: 21px;
         min-height: 62px;
       }
+
+      @include respond-below(sm) {
+        min-height: auto;
+      }
     }
 
     &.blog-pagination {
@@ -352,12 +363,17 @@
     height: 90px;
   }
 
+  @include respond-below(lg) {
+    margin-bottom: 44px;
+  }
+
   @include respond-below(md) {
     height: 75px;
   }
 
   @include respond-below(sm) {
     height: 48px;
+    margin-bottom: 64px;
   }
 
   .see-more-button {
