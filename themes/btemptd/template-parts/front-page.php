@@ -472,69 +472,6 @@ if(!empty($banner_link)) :?>
 </section>
 <?php endif;?>
 
-
-<section class="image-quote-button">
-    <div class="image-quote-button--wrapper">
-        <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
-
-        </div>
-        <div class="content-wrapper">
-            <div class="content-wrapper--inner">
-            <div class="quote-left">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt="Image">
-            </div>
-
-            <div class="content-inner">
-                <div class="content-inner--title">
-                    It’s so soft and comfortable I almost forget I’m wearing it!
-                </div>
-                <div class="content-inner--tag">
-                    –@ericaluoo
-                </div>
-                <div class="shop-button">
-                    <a class="shop-now-button" href="#" target="_blank">SHOP NOW</a>
-                </div>
-            </div>
-
-            <div class="quote-right">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt="Image">
-            </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="image-quote-button--wrapper">
-        <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
-
-        </div>
-        <div class="content-wrapper">
-            <div class="content-wrapper--inner">
-            <div class="quote-left">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt="Image">
-            </div>
-
-            <div class="content-inner">
-                <div class="content-inner--title">
-                    It’s so soft and comfortable I almost forget I’m wearing it!
-                </div>
-                <div class="content-inner--tag">
-                    –@ericaluoo
-                </div>
-                <div class="shop-button">
-                    <a class="shop-now-button" href="#" target="_blank">SHOP NOW</a>
-                </div>
-            </div>
-
-            <div class="quote-right">
-                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt="Image">
-            </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
 <?php if(!empty($recent_posts)) :?>
     <?php include locate_template('template-parts/explore-page.php');?>
 <?php endif; ?>
