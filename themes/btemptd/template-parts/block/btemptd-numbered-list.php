@@ -23,6 +23,7 @@
 
         $title  = $list['title'];
         $description  = $list['description'];
+        $order_value  = $list['order_value'];
         $button_label  = $list['button_label'];
         $button_url  = $list['button_url'];
         $tip_title  = $list['tip_title'];
@@ -31,10 +32,16 @@
         ?>
     <div class="list-number-tip--wrapper">
         <div class="image-title">
-            <a href="<?php echo esc_url($image_link); ?>" target="<?php echo esc_attr($new_tab); ?>" >
+            <?php if (! empty($image_link)) { ?>
+                <a href="<?php echo esc_url($image_link); ?>" target="<?php echo esc_attr($new_tab); ?>" >
+                    <div class="image-block" style="background-image:url(<?php echo  esc_url($image_url); ?>);">
+                    </div>
+                </a>
+            <?php } else { ?>
                 <div class="image-block" style="background-image:url(<?php echo  esc_url($image_url); ?>);">
                 </div>
-            </a>
+            <?php } ?>
+
             <div class="image-name">
                 <?php echo esc_attr($image_caption); ?>
             </div>
@@ -43,7 +50,7 @@
         <div class="content">
             <div class="number-wrapper">
                 <div class="number-inner">
-                    1.
+                    <?php echo esc_attr($order_value); ?>
                 </div>
             </div>
             <div class="content-inner">

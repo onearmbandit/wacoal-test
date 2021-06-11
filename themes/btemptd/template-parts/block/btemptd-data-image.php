@@ -22,11 +22,17 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
 
 <section class="image-medium">
     <div class="image-medium--wrapper">
-        <a href="<?php echo esc_url($image_link); ?>" target="<?php echo esc_attr($new_tab); ?>">
+        <?php if (! empty($image_link)) { ?>
+            <a href="<?php echo esc_url($image_link); ?>" target="<?php echo esc_attr($new_tab); ?>">
+                <div class="image-medium--image"
+                    style="background-image:url(<?php echo  esc_url($image_url); ?>);">
+                </div>
+            </a>
+        <?php } else { ?>
             <div class="image-medium--image"
                 style="background-image:url(<?php echo  esc_url($image_url); ?>);">
             </div>
-        </a>
+        <?php } ?>
 
         <div class="image-medium--content">
             <p><?php echo wp_kses_post($paragraph_content); ?></p>

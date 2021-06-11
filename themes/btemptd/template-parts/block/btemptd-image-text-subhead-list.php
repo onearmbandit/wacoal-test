@@ -30,10 +30,16 @@
         ?>
         <div class="list-text-image--wrapper">
             <div class="list-text-image--inner">
-                <a href="<?php echo esc_url($image_link) ?>"
-                    target="<?php echo esc_attr($new_tab) ?>" >
-                    <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($image_url); ?>)"></div>
-                </a>
+
+                <?php if (! empty($image_link)) { ?>
+                    <a href="<?php echo esc_url($image_link) ?>"
+                        target="<?php echo esc_attr($new_tab) ?>" >
+                        <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($image_url); ?>)"></div>
+                    </a>
+                <?php } else { ?>
+                        <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($image_url); ?>)"></div>
+                <?php } ?>
+
                 <div class="image-name mobile">
                     <?php echo wp_kses_post($image_caption); ?>
                 </div>

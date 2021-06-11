@@ -62,11 +62,16 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
 
     <div class="video-image--wrapper__right">
         <figure>
+            <?php if (! empty($image_link)) { ?>
             <a href="<?php echo esc_url($image_link); ?>"
                 target="<?php echo esc_attr($new_tab); ?>">
                     <img src="<?php echo esc_url($image_url); ?>"
                         alt="<?php echo esc_attr($image_alt); ?>">
             </a>
+            <?php } else { ?>
+                <img src="<?php echo esc_url($image_url); ?>"
+                    alt="<?php echo esc_attr($image_alt); ?>">
+            <?php } ?>
             <figcaption><?php echo wp_kses_post($image_caption); ?></figcaption>
         </figure>
     </div>

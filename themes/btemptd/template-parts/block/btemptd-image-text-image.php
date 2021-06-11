@@ -30,10 +30,16 @@ $right_new_tab = get_field('right_open_in_new_tab') === true ? '_blank' : '_self
 <section class="image-text-image">
     <div class="image-text-image--wrapper">
         <div class="image-title">
-            <a href="<?php echo  esc_url($left_image_link); ?>" target="<?php echo  esc_attr($left_new_tab); ?>">
-                <div class="image-bg" style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
-                </div>
-            </a>
+            <?php if (! empty($left_image_link)) { ?>
+                <a href="<?php echo  esc_url($left_image_link); ?>" target="<?php echo  esc_attr($left_new_tab); ?>">
+                    <div class="image-bg" style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
+                    </div>
+                </a>
+            <?php } else { ?>
+                    <div class="image-bg" style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
+                    </div>
+            <?php } ?>
+
             <div class="title">
                 <?php echo esc_attr($left_image_caption) ?>
             </div>
@@ -45,10 +51,16 @@ $right_new_tab = get_field('right_open_in_new_tab') === true ? '_blank' : '_self
             </div>
         </div>
         <div class="image-title">
-            <a href="<?php echo  esc_url($right_image_link); ?>" target="<?php echo  esc_attr($right_new_tab); ?>">
-                <div class="image-bg" style="background-image:url(<?php echo  esc_url($right_image_url); ?>);">
-                </div>
-            </a>
+
+            <?php if (! empty($right_image_link)) { ?>
+                <a href="<?php echo  esc_url($right_image_link); ?>" target="<?php echo  esc_attr($right_new_tab); ?>">
+                    <div class="image-bg" style="background-image:url(<?php echo  esc_url($right_image_url); ?>);">
+                    </div>
+                </a>
+            <?php } else { ?>
+                    <div class="image-bg" style="background-image:url(<?php echo  esc_url($right_image_url); ?>);">
+                    </div>
+            <?php } ?>
             <div class="title">
                 <?php echo esc_attr($right_image_caption) ?>
             </div>
