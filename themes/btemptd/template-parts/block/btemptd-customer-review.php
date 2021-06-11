@@ -52,7 +52,7 @@ $right_open_in_new_tab = get_field('right_open_in_new_tab') === true ? '_blank' 
                         <?php echo esc_attr($left_image_caption)?>
                     </a>
                 <?php } else {
-                    echo esc_attr($left_image_caption)
+                    echo esc_attr($left_image_caption);
                 }?>
 
             </div>

@@ -35,7 +35,7 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
         <?php } ?>
 
         <div class="image-medium--content">
-            <p><?php echo wp_kses_post($paragraph_content); ?></p>
+            <?php echo wp_kses_post($paragraph_content); ?>
         </div>
     </div>
 </section>
