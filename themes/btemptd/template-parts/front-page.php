@@ -473,41 +473,61 @@ if(!empty($banner_link)) :?>
 <?php endif;?>
 
 
-<section class="image-text-hover">
-    <div class="image-text-hover--wrapper">
-        <div class="image-wrapper">
-            <div class="image-bg" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);"></div>
+<section class="image-quote-button">
+    <div class="image-quote-button--wrapper">
+        <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
 
-            <div class="image-caption">
-                LACE KISS bralette
-            </div>
         </div>
-
         <div class="content-wrapper">
-            <div class="content">
-                <h2 class="title">Comfort</h2>
-                <div class="para">
-                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
+            <div class="content-wrapper--inner">
+            <div class="quote-left">
+                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt="Image">
+            </div>
+
+            <div class="content-inner">
+                <div class="content-inner--title">
+                    It’s so soft and comfortable I almost forget I’m wearing it!
                 </div>
+                <div class="content-inner--tag">
+                    –@ericaluoo
+                </div>
+                <div class="shop-button">
+                    <a class="shop-now-button" href="#" target="_blank">SHOP NOW</a>
+                </div>
+            </div>
+
+            <div class="quote-right">
+                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt="Image">
+            </div>
             </div>
         </div>
     </div>
 
-    <div class="image-text-hover--wrapper">
-        <div class="image-wrapper">
-            <div class="image-bg" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);"></div>
+    <div class="image-quote-button--wrapper">
+        <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
 
-            <div class="image-caption">
-                LACE KISS bralette
-            </div>
         </div>
-
         <div class="content-wrapper">
-            <div class="content">
-                <h2 class="title">Comfort</h2>
-                <div class="para">
-                    With bodily changes happening fast and furiously, comfort is key. Her first bra should be soft, stretchy and perhaps wire-free, making her transition into wearing a bra feel a bit less overwhelming.
+            <div class="content-wrapper--inner">
+            <div class="quote-left">
+                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt="Image">
+            </div>
+
+            <div class="content-inner">
+                <div class="content-inner--title">
+                    It’s so soft and comfortable I almost forget I’m wearing it!
                 </div>
+                <div class="content-inner--tag">
+                    –@ericaluoo
+                </div>
+                <div class="shop-button">
+                    <a class="shop-now-button" href="#" target="_blank">SHOP NOW</a>
+                </div>
+            </div>
+
+            <div class="quote-right">
+                <img class="img-fluid" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt="Image">
+            </div>
             </div>
         </div>
     </div>
