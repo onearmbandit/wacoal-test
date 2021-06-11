@@ -899,9 +899,13 @@ List - Image + Italics Title + Subhead + Body LEFT" -->
     </div>
 </section> -->
 
+<<<<<<< HEAD
 
 
 <section class="image-quote-button">
+=======
+<!-- <section class="image-quote-button">
+>>>>>>> 2596b302e7b45ba8ee3af89794bca5f1fb9724b2
     <div class="image-quote-button--wrapper">
         <div class="image-wrapper" style="background-image: url(https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/uploads/sites/3/2020/11/BT_COMFORTINTENDED_SIDE_560X560.jpeg);">
 
