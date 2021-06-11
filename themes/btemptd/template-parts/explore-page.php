@@ -66,6 +66,7 @@ endif;
 </section>
 <?php if($counts > 3) :?>
         <div class="see-more--wrapper">
-            <button class="see-more-button">See More <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></button>
+            <button class="see-more-button">See More</button>
+            <!-- <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /> -->
         </div>
 <?php endif;?>

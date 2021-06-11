@@ -1,12 +1,7 @@
 .explore-blog {
   position: relative;
-  margin-bottom: calcRem(70);
-  margin-top: calcRem(70px);
-
-  @include respond-above(sm) {
-    margin-top: get-vw(110px);
-    margin-bottom: 0;
-  }
+  // margin-bottom: calcRem(70);
+  margin-top: 80px;
 
   &:after {
     content: "";
@@ -15,12 +10,27 @@
     width: 100%;
     left: 0;
     z-index: -2;
-    height: calcRem(593);
-    bottom: calcRem(-34);
+    height: 435px;
+    bottom: -118px;
 
-    @include respond-above(sm) {
-      height: get-vw(549px);
-      bottom: get-vw(-82px);
+    @include respond-below(xl) {
+      height: 374px;
+      bottom: -68px;
+    }
+
+    @include respond-below(lg) {
+      height: 310px;
+      bottom: -68px;
+    }
+
+    @include respond-below(md) {
+      height: 272px;
+      bottom: -51px;
+    }
+
+    @include respond-below(sm) {
+      height: 90%;
+      bottom: -27px;
     }
   }
 
@@ -28,28 +38,44 @@
     background: var(--color-tile-bg);
     @include NeutraText-DemiAlt;
     text-align: center;
-    font-size: calcRem(20);
-    padding: calcRem(19, 0, 15);
-    margin-bottom: calcRem(25);
+    font-size: 34px;
+    letter-spacing: 0.85px;
+    padding: 16px 0 11px;
+    margin-bottom: 72px;
 
-    @include respond-above(sm) {
-      font-size: get-vw(55px);
-      line-height: get-vw(65px);
-      padding-top: get-vw(19px);
-      padding-bottom: get-vw(10px);
-      margin-bottom: get-vw(56px);
+    @include respond-below(xl) {
+      margin-bottom: 41px;
+    }
+
+    @include respond-below(md) {
+      margin-bottom: 23px;
+      font-size: 25px;
+      padding: 13px 0 9px;
     }
   }
 
   &--wrapper {
     margin: auto;
     display: flex;
-    flex-direction: column;
+    max-width: 1280px;
+    justify-content: space-between;
 
-    @include respond-above(sm) {
-      width: get-vw(1620px);
-      // justify-content: space-between;
-      flex-direction: row;
+    @include respond-below(xl) {
+      max-width: 965px;
+    }
+
+    @include respond-below(lg) {
+      max-width: 742px;
+    }
+
+    @include respond-below(md) {
+      max-width: 626px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
     }
 
     &.blog-wrapper {
@@ -84,36 +110,65 @@
 
   &--box {
     position: relative;
-    width: calcRem(312);
+    width: 373px;
     display: flex;
     flex-direction: column;
 
-    @include respond-above(sm) {
-      width: get-vw(520px);
+    @include respond-below(xl) {
+      width: 281px;
+    }
 
-      &:nth-child(2) {
-        margin-left: get-vw(27px);
-        margin-right: get-vw(27px);
-      }
+    @include respond-below(lg) {
+      width: 236px;
+    }
+
+    @include respond-below(md) {
+      width: 200px;
     }
 
     @include respond-below(sm) {
-      margin: auto;
-      &:nth-child(2) {
-        margin-top: calcRem(24);
-      }
-      &:nth-child(3) {
-        display: none;
-      }
+      width: 304px;
+      margin-bottom: 32px;
     }
+
+    // @include respond-above(sm) {
+    //   width: get-vw(520px);
+
+    //   &:nth-child(2) {
+    //     margin-left: get-vw(27px);
+    //     margin-right: get-vw(27px);
+    //   }
+    // }
+
+    // @include respond-below(sm) {
+    //   margin: auto;
+    //   &:nth-child(2) {
+    //     margin-top: calcRem(24);
+    //   }
+    //   &:nth-child(3) {
+    //     display: none;
+    //   }
+    // }
   }
 
   &--image {
     display: flex;
-    height: calcRem(199);
+    height: 238px;
 
-    @include respond-above(sm) {
-      height: get-vw(331px);
+    @include respond-below(xl) {
+      height: 179px;
+    }
+
+    @include respond-below(lg) {
+      height: 151px;
+    }
+
+    @include respond-below(md) {
+      height: 127px;
+    }
+
+    @include respond-below(sm) {
+      height: 192px;
     }
 
     img {
@@ -126,57 +181,115 @@
     background: var(--color-secondary);
     position: relative;
     color: var(--color-white);
-    padding: calcRem(20, 26, 13);
+    padding: 34px 27px 20px;
     flex: 1;
 
-    @include respond-above(sm) {
-      padding-top: get-vw(41px);
-      padding-right: get-vw(37px);
-      padding-bottom: get-vw(34px);
-      padding-left: get-vw(37px);
+    @include respond-below(xl) {
+      padding: 27px 21px 18px;
+    }
+
+    @include respond-below(lg) {
+      padding: 25px 18px 18px;
+    }
+
+    @include respond-below(md) {
+      padding: 20px 14px 16px;
+    }
+
+    @include respond-below(sm) {
+      padding: 26px 23px 14px;
     }
 
     &__cta {
       position: absolute;
-      top: calcRem(-12);
+      top: -17px;
+      left: 26px;
 
-      @include respond-above(sm) {
-        left: get-vw(37px);
-        top: get-vw(-23px);
+      @include respond-below(xl) {
+        top: -13px;
+        left: 20px;
+      }
+
+      @include respond-below(lg) {
+        top: -11px;
+        left: 18px;
+      }
+
+      @include respond-below(md) {
+        top: -9px;
+        left: 14px;
+      }
+
+      @include respond-below(md) {
+        top: -14px;
+        left: 23px;
       }
 
       img {
-        width: calcRem(25);
-        height: calcRem(25);
+        width: 34px;
+        height: 34px;
 
-        @include respond-above(sm) {
-          width: get-vw(47px);
-          height: get-vw(47px);
+        @include respond-below(xl) {
+          width: 26px;
+          height: 26px;
+        }
+
+        @include respond-below(lg) {
+          width: 22px;
+          height: 22px;
+        }
+
+        @include respond-below(md) {
+          width: 18px;
+          height: 18px;
+        }
+
+        @include respond-below(sm) {
+          width: 28px;
+          height: 28px;
         }
       }
     }
 
     &__category {
       @include NeutraText-BookAlt;
-      letter-spacing: 1px;
-      margin-bottom: calcRem(8);
-      font-size: calcRem(18);
+      margin-bottom: 15px;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0.7px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(29px);
-        margin-bottom: get-vw(18px);
+      @include respond-below(xl) {
+        margin-bottom: 13px;
+        font-size: 15px;
+        line-height: 21px;
+        letter-spacing: 0.53px;
+      }
+
+      @include respond-below(md) {
+        margin-bottom: 12px;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 0.49px;
+      }
+
+      @include respond-below(sm) {
+        font-size: 15px;
       }
     }
 
     &__title {
       @include NeutraText-DemiAlt;
-      font-size: calcRem(20);
-      line-height: calcRem(20);
+      font-size: 24px;
+      line-height: 27px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(42px);
-        line-height: get-vw(45px);
-        min-height: get-vw(90px);
+      @include respond-below(xl) {
+        font-size: 21px;
+        line-height: 24px;
+      }
+
+      @include respond-below(lg) {
+        font-size: 18px;
+        line-height: 21px;
       }
     }
 
@@ -224,18 +337,23 @@
 
 .see-more--wrapper {
   width: 100%;
-  margin: 20px auto 40px;
+  // margin: 20px auto 40px;
   position: relative;
-  // display: none;
-  height: calcRem(57);
-  display: inline-block;
+  height: 140px;
+  margin-bottom: 80px;
+  display: block;
   text-align: center;
 
-  @include respond-above(sm) {
-    height: get-vw(100px);
-    margin: auto;
-    margin-bottom: get-vw(140px);
-    display: block;
+  @include respond-below(xl) {
+    height: 90px;
+  }
+
+  @include respond-below(md) {
+    height: 75px;
+  }
+
+  @include respond-below(sm) {
+    height: 48px;
   }
 
   .see-more-button {
@@ -249,32 +367,27 @@
     transform: translateX(-50%);
     cursor: pointer;
     outline: none;
-    font-size: calcRem(19);
-    padding: calcRem(22, 54);
+    font-size: 14px;
+    letter-spacing: 1.05px;
+    line-height: 17px;
+    padding: 17px 36.5px 14px;
+    bottom: 0;
 
-    @include respond-above(sm) {
-      font-size: get-vw(32px);
-      padding-top: get-vw(26px);
-      padding-right: get-vw(58px);
-      padding-bottom: get-vw(26px);
-      padding-left: get-vw(58px);
-      bottom: get-vw(-40px);
-    }
 
-    .cta-button {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calcRem(35);
-      height: calcRem(35);
-      top: calcRem(-25);
+    // .cta-button {
+    //   position: absolute;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: calcRem(35);
+    //   height: calcRem(35);
+    //   top: calcRem(-25);
 
-      @include respond-above(sm) {
-        width: get-vw(72px);
-        height: get-vw(72px);
-        bottom: get-vw(-56px);
-        top: inherit;
-      }
-    }
+    //   @include respond-above(sm) {
+    //     width: get-vw(72px);
+    //     height: get-vw(72px);
+    //     bottom: get-vw(-56px);
+    //     top: inherit;
+    //   }
+    // }
   }
 }
