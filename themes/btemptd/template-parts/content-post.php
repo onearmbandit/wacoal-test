@@ -47,7 +47,7 @@
     </div>
 </section>
 
-<section class="three-reason">
+<section class="three-reason para-content">
     <div class="three-reason--wrapper">
 
     <?php if($sub_headline && !empty($sub_headline)) :?>

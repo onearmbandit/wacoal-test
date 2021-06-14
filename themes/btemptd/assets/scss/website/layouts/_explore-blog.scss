@@ -1,7 +1,11 @@
 .explore-blog {
   position: relative;
   // margin-bottom: calcRem(70);
-  margin-top: 80px;
+  margin-top: 120px;
+
+  @include respond-below(md) {
+    margin-top: 80px;
+  }
 
   &:after {
     content: "";
@@ -11,7 +15,7 @@
     left: 0;
     z-index: -2;
     height: 435px;
-    bottom: -118px;
+    bottom: -68px;
 
     @include respond-below(xl) {
       height: 374px;
@@ -65,7 +69,6 @@
     margin: auto;
     display: flex;
     max-width: 1280px;
-    justify-content: space-between;
 
     @include respond-below(xl) {
       max-width: 965px;
@@ -136,6 +139,26 @@
     @include respond-below(sm) {
       width: 304px;
       margin-bottom: 32px;
+    }
+
+    &:nth-child(2) {
+      margin: 0 80px;
+
+      @include respond-below(xl) {
+        margin: 0 60px;
+      }
+
+      @include respond-below(lg) {
+        margin: 0 17px;
+      }
+
+      @include respond-below(md) {
+        margin: 0 13px;
+      }
+
+      @include respond-below(sm) {
+        margin: 0 0 32px;
+      }
     }
 
     // @include respond-above(sm) {
@@ -354,14 +377,10 @@
   width: 100%;
   // margin: 20px auto 40px;
   position: relative;
-  height: 140px;
+  height: 90px;
   margin-bottom: 80px;
   display: block;
   text-align: center;
-
-  @include respond-below(xl) {
-    height: 90px;
-  }
 
   @include respond-below(lg) {
     margin-bottom: 44px;

@@ -33,7 +33,6 @@
     background-size: cover;
     background-position: center;
     height: 568px;
-    margin-bottom: 30px;
 
     @include respond-below(xl) {
       height: 383px;
@@ -44,7 +43,7 @@
     }
 
     @include respond-below(md) {
-      margin-bottom: 20px;
+
     }
 
     @include respond-below(sm) {
@@ -59,6 +58,7 @@
     letter-spacing: 0.99px;
     margin-bottom: 20px;
     text-align: center;
+    margin-top: 30px;
 
     @include respond-below(lg) {
       font-size: 14px;
@@ -68,6 +68,7 @@
 
     @include respond-below(sm) {
       margin-bottom: 16px;
+      margin-top: 20px;
     }
   }
 
@@ -195,15 +196,12 @@
   }
 
   &--wrapper {
-    max-width: 664px;
-    margin: 0 auto;
+    margin: 30px auto 0;
+    padding-top: 30px;
 
-    @include respond-below(lg) {
-      max-width: 598px;
-    }
-
-    @include respond-below(sm) {
-      max-width: 270px;
+    @include respond-above(sm) {
+      max-width: 66.66667vw;
+      padding-top: 0;
     }
   }
 
@@ -433,6 +431,23 @@
             }
           }
       }
+  }
+
+  &.para-content {
+
+    .three-reason--wrapper {
+      max-width: 664px;
+      margin: 0 auto;
+      padding-top: 0;
+
+      @include respond-below(lg) {
+        max-width: 598px;
+      }
+
+      @include respond-below(sm) {
+        max-width: 270px;
+      }
+    }
   }
 }
 
@@ -1771,12 +1786,20 @@
     &::after {
       content:'';
       position: absolute;
-      height: 300px;
+      height: 660px;
       width: 1px;
       background: var(--color-black);
       right: 0;
       top: 50%;
       transform: translateY(-50%);
+
+      @include respond-below(lg) {
+        height: 520px;
+      }
+
+      @include respond-below(md) {
+        height: 390px;
+      }
 
       @include respond-below(sm) {
         height: 1px;
@@ -2462,7 +2485,7 @@
 
     @include respond-below(sm) {
       padding: 0 40px;
-      margin-top: 0;
+      margin-top: 15px;
     }
 
     .number-wrapper {
@@ -2475,7 +2498,7 @@
 
       @include respond-below(sm) {
         left: 8px;
-        top: -40px;
+        top: -55px;
       }
 
       .number-inner {
