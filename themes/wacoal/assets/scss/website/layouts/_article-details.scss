@@ -2755,7 +2755,7 @@
     }
 
     @include respond-below(md){
-      padding: 25px 0;
+      padding: 25px 0 50px;
     }
 
     @include respond-below(sm){
