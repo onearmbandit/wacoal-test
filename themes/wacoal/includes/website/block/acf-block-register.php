@@ -73,17 +73,6 @@ function Wacoal_Acf_init()
         );
         acf_register_block_type(
             array(
-            'name'            => 'wacoal-text-image-list-format',
-            'title'           => __('Wacoal Text Image List Format'),
-            'description'     => __('A custom List format block.'),
-            'render_callback' => 'Wacoal_Text_Img_List_Format_Render_callback',
-            'category'        => 'wacoal',
-            'icon'            => 'list-view',
-            'keywords'        => array( 'list-format' ),
-            )
-        );
-        acf_register_block_type(
-            array(
             'name'            => 'wacoal-text-only-list-format',
             'title'           => __('Wacoal Text Only List Format'),
             'description'     => __('A custom Text Only List format block.'),
@@ -393,6 +382,20 @@ function Wacoal_Acf_init()
             'keywords'        => array('list', 'content'),
             )
         );
+
+        // ---- Below blocks are remove from development as per client request
+
+        // acf_register_block_type(
+        //     array(
+        //     'name'            => 'wacoal-text-image-list-format',
+        //     'title'           => __('Wacoal Text Image List Format'),
+        //     'description'     => __('A custom List format block.'),
+        //     'render_callback' => 'Wacoal_Text_Img_List_Format_Render_callback',
+        //     'category'        => 'wacoal',
+        //     'icon'            => 'list-view',
+        //     'keywords'        => array( 'list-format' ),
+        //     )
+        // );
     }
 }
 
