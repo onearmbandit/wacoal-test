@@ -657,3 +657,22 @@ function Btemp_Login_form()
 }
 
 add_action('login_form', 'Btemp_Login_form');
+
+
+/**
+ * Btemptd Backend function.
+ *
+ * @param string $blockName block name.
+ *
+ * @return void.
+ */
+function Btemptd_WP_Backend_edit($blockName)
+{
+    ?>
+    <div class="" style="border:2px solid #000">
+        <h4 style="text-align:center">
+            <u> Edit <?php echo $blockName ?></u>
+        </h4>
+    </div>
+    <?php
+}
