@@ -854,7 +854,7 @@ function Wacoal_Body_Intro_Paragraph_Block_Render_callback( $block )
 
     $shortcode_template  = '/template-parts/block/wacoal-body-intro-block.php';
 
-    if ($para_content && $bullet_content) {
+    if ($para_content || $bullet_content) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {
