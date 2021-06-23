@@ -302,7 +302,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-customer-review-format',
-            'title'           => __('Wacoal Customer Review Block'),
+            'title'           => __('Customer Review'),
             'description'     => __('A custom customer review format block.'),
             'render_callback' => 'Wacoal_Customer_Review_Render_callback',
             'category'        => 'wacoal',

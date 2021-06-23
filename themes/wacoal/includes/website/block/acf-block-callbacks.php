@@ -690,7 +690,7 @@ function Wacoal_Customer_Review_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Customer Review</u></h4>
+            <h4><u>Customer Review</u></h4>
             <span style="color:red">Empty Customer Review Block</span>
             <?php
         }
