@@ -1800,7 +1800,7 @@
       }
 
       .fixes-list--boxcontent {
-        flex-direction: row-reverse;
+        // flex-direction: row-reverse;
         padding: 0 110px 0 180px;
 
         @include respond-below(lg) {
