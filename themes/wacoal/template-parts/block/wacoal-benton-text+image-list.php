@@ -16,6 +16,8 @@
 <section class="benton-text-block">
     <div class="benton-text-block--wrapper">
     <?php foreach ($block_lists as $key => $list) {
+        $list_position      = $list['image_position'];
+        $list_title         = $list['title'];
         $list_img_id        = $list['image'];
         $list_image_caption = $list['image_caption'];
         $img_link           = $list['image_link'];
@@ -28,9 +30,9 @@
             $list_image_url   = Wacoal_Get_image($list_image_array);
         }
 
-        if ($key % 2 == 0) {
+        if ($list_position == 'left') {
             ?>
-        <div class="benton-text-block--inner">
+        <div class="benton-text-block--inner img-left">
             <div class="image-wrapper">
 
             <?php if($list_img_id && !empty($list_img_id)) :
@@ -55,7 +57,9 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content-wrapper">
-                    <h1 class="title">LOOK GOOD FEEL GOOD WITH WACOAL</h1>
+                    <?php if($list_title && !empty($list_title)) :?>
+                        <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
+                    <?php endif;?>
                     <div>
                         <?php echo wp_kses_post($list_desc);?>
                     </div>
@@ -63,9 +67,9 @@
             <?php endif;?>
         </div>
             <?php
-        } elseif ($key % 2 == 1) {
+        } elseif ($list_position == 'right') {
             ?>
-        <div class="benton-text-block--inner">
+        <div class="benton-text-block--inner img-right">
             <div class="image-wrapper">
 
             <?php if($list_img_id && !empty($list_img_id)) :
@@ -90,7 +94,9 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content-wrapper">
-                    <h1 class="title">LOOK GOOD FEEL GOOD WITH WACOAL</h1>
+                    <?php if($list_title && !empty($list_title)) :?>
+                        <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
+                    <?php endif;?>
                     <div>
                         <?php echo wp_kses_post($list_desc);?>
                     </div>
