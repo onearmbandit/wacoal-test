@@ -217,8 +217,8 @@ function Wacoal_Gallery_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Products List:</u></h4>
-            <span style="color:red">Empty Wacoal Product List Block</span>
+            <h4><u>Product Gallery:</u></h4>
+            <span style="color:red">Empty Product Gallery</span>
             <?php
         }
     }
@@ -331,8 +331,8 @@ function Wacoal_Video_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Video:</u></h4>
-            <span style="color:red">Empty Wacoal Video Block</span>
+            <h4><u>Video - Horizontal:</u></h4>
+            <span style="color:red">Empty Video - Horizontal Block</span>
             <?php
         }
     }
@@ -452,8 +452,8 @@ function Wacoal_Reminder_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Reminder:</u></h4>
-            <span style="color:red">Empty Wacoal reminder Block</span>
+            <h4><u>Reminder:</u></h4>
+            <span style="color:red">Empty reminder Block</span>
             <?php
         }
     }
@@ -587,7 +587,7 @@ function Wacoal_Banner_Image_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Banner Image</u></h4>
+            <h4><u>Banner Image</u></h4>
             <span style="color:red">Empty Banner Image Block</span>
             <?php
         }
@@ -716,8 +716,8 @@ function Wacoal_Conclusion_Summary_Desc_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Conclusion Summary Desc</u></h4>
-            <span style="color:red">Empty Conclusion Summary Desc Block</span>
+            <h4><u>Conclusion Summary Description</u></h4>
+            <span style="color:red">Empty Conclusion Summary Description Block</span>
             <?php
         }
     }
@@ -780,8 +780,8 @@ function Wacoal_Number_Title_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Number Title Block</u></h4>
-            <span style="color:red">Empty Number Title Block</span>
+            <h4><u>List - Number + Title + Subhead + Copy</u></h4>
+            <span style="color:red">Empty List Block</span>
             <?php
         }
     }
@@ -833,7 +833,7 @@ function Wacoal_Button_Format_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Button Block</u></h4>
+            <h4><u>Button Block</u></h4>
             <span style="color:red">Empty Button Block</span>
             <?php
         }
