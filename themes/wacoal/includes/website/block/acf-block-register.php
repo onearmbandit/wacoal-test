@@ -63,8 +63,8 @@ function Wacoal_Acf_init()
         acf_register_block_type(
             array(
             'name'            => 'wacoal-image-carousel',
-            'title'           => __('Wacoal Image Carousel'),
-            'description'     => __('A custom image carousel block.'),
+            'title'           => __('Image Gallery - Full Bleed'),
+            'description'     => __('A custom Image Gallery block.'),
             'render_callback' => 'Wacoal_Image_Carousel_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'embed-photo',
@@ -73,20 +73,9 @@ function Wacoal_Acf_init()
         );
         acf_register_block_type(
             array(
-            'name'            => 'wacoal-text-image-list-format',
-            'title'           => __('Wacoal Text Image List Format'),
-            'description'     => __('A custom List format block.'),
-            'render_callback' => 'Wacoal_Text_Img_List_Format_Render_callback',
-            'category'        => 'wacoal',
-            'icon'            => 'list-view',
-            'keywords'        => array( 'list-format' ),
-            )
-        );
-        acf_register_block_type(
-            array(
             'name'            => 'wacoal-text-only-list-format',
-            'title'           => __('Wacoal Text Only List Format'),
-            'description'     => __('A custom Text Only List format block.'),
+            'title'           => __('List - Numbered Text Only (Left & Right)'),
+            'description'     => __('A custom Text Only List block.'),
             'render_callback' => 'Wacoal_Text_Only_List_Format_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'list-view',
@@ -96,7 +85,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-subhead-description',
-            'title'           => __('Wacoal Subhead Description'),
+            'title'           => __('Subhead Description'),
             'description'     => __('A custom subhead description block.'),
             'render_callback' => 'Wacoal_Subhead_Description_Render_callback',
             'category'        => 'wacoal',
@@ -107,7 +96,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-question-answer',
-            'title'           => __('Wacoal Question Answer'),
+            'title'           => __('Q&A'),
             'description'     => __('A custom question answer block.'),
             'render_callback' => 'Wacoal_Question_Answer_Render_callback',
             'category'        => 'wacoal',
@@ -118,7 +107,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-image',
-            'title'           => __('Wacoal Image'),
+            'title'           => __('Image - Full Bleed'),
             'description'     => __('A custom image block.'),
             'render_callback' => 'Wacoal_Image_Render_callback',
             'category'        => 'wacoal',
@@ -162,8 +151,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-horizontal-line',
-            'title'           => __('Wacoal Horizontal Line'),
-            'description'     => __('A custom horizontal block.'),
+            'title'           => __('Divider Line'),
+            'description'     => __('A custom divider line block.'),
             'render_callback' => 'Wacoal_Horizontal_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'minus',
@@ -173,8 +162,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-bullet-content-block',
-            'title'           => __('Wacoal Bullet Paragraph Block'),
-            'description'     => __('A custom paragraph block.'),
+            'title'           => __('Checklist'),
+            'description'     => __('A custom checklist block.'),
             'render_callback' => 'Wacoal_Bullet_Content_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'id-alt',
@@ -349,7 +338,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-body-para',
-            'title'           => __('Wacoal Body Intro Paragraph Block'),
+            'title'           => __('Body Intro Paragraph'),
             'description'     => __('A custom Body Intro Paragraph Block'),
             'render_callback' => 'Wacoal_Body_Intro_Paragraph_Block_Render_callback',
             'category'        => 'wacoal',
@@ -361,7 +350,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-benton-text_image-list',
-            'title'           => __('Wacoal Benton Text + Image List Block'),
+            'title'           => __('Benton Text + Image (Left & Right)'),
             'description'     => __('A custom Benton Text + Image List Block'),
             'render_callback' => 'Wacoal_Benton_Text_Image_List_Block_Render_callback',
             'category'        => 'wacoal',
@@ -393,6 +382,20 @@ function Wacoal_Acf_init()
             'keywords'        => array('list', 'content'),
             )
         );
+
+        // ---- Below blocks are remove from development as per client request
+
+        // acf_register_block_type(
+        //     array(
+        //     'name'            => 'wacoal-text-image-list-format',
+        //     'title'           => __('Wacoal Text Image List Format'),
+        //     'description'     => __('A custom List format block.'),
+        //     'render_callback' => 'Wacoal_Text_Img_List_Format_Render_callback',
+        //     'category'        => 'wacoal',
+        //     'icon'            => 'list-view',
+        //     'keywords'        => array( 'list-format' ),
+        //     )
+        // );
     }
 }
 
