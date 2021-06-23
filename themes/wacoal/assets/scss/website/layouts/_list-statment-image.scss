@@ -21,7 +21,7 @@
       max-width: 100%;
     }
 
-    &:nth-child(even) {
+    &.img-right {
 
       .list-statment-image--inner {
         flex-direction: row-reverse;
