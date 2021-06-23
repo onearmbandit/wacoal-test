@@ -24,6 +24,8 @@ if ($block_lists && !empty($block_lists)) {
         $list_title         = $list['title'];
         $list_subtitle      = $list['subtitle'];
         $list_desc          = $list['description'];
+        $btn_label          = $list['button_label'];
+        $btn_link           = $list['button_link'];
 
         if ($block_image_id && !empty($block_image_id)) {
             $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
@@ -68,9 +70,14 @@ if ($block_lists && !empty($block_lists)) {
                 <?php echo wp_kses_post($list_desc); ?>
                 </div>
             <?php endif; ?>
+
+            <?php if($btn_label && !empty($btn_label)) :?>
                 <div class="content-btn">
-                    <a href="#" class="btn primary dark">shop now</a>
+                    <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark" <?php if($new_tab == true) : echo "target='_blank'";
+                   endif;?>>
+                    <?php echo esc_attr($btn_label);?></a>
                 </div>
+            <?php endif;?>
             </div>
         </div>
 
@@ -115,9 +122,15 @@ if ($block_lists && !empty($block_lists)) {
                     <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
+
+            <?php if($btn_label && !empty($btn_label)) :?>
                 <div class="content-btn">
-                    <a href="#" class="btn primary dark">shop now</a>
+                    <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark" <?php if($new_tab == true) : echo "target='_blank'";
+                   endif;?>>
+                    <?php echo esc_attr($btn_label);?></a>
                 </div>
+            <?php endif;?>
+
             </div>
         </div>
             <?php if ($list_image_caption && !empty($list_image_caption)) :?>
@@ -138,6 +151,8 @@ if ($block_lists && !empty($block_lists)) {
         $mob_list_title         = $mob_list['title'];
         $mob_list_subtitle      = $mob_list['subtitle'];
         $mob_list_desc          = $mob_list['description'];
+        $mob_btn_label              = $mob_list['button_label'];
+        $mob_btn_link               = $mob_list['button_link'];
 
         if ($mob_block_image_id && !empty($mob_block_image_id)) {
             $mob_block_image_array = wp_get_attachment_image_src($mob_block_image_id, 'full');
@@ -180,15 +195,19 @@ if ($block_lists && !empty($block_lists)) {
             </div>
             <?php endif; ?>
 
-            <?php if ($mob_list_desc && !empty($mob_list_desc)) :?>
+            <?php if ($mob_list_desc || $mob_btn_label) :?>
                 <div class="list-text-image--content">
+                <?php if($mob_list_desc) :?>
                     <div class="content">
                         <?php echo wp_kses_post($mob_list_desc);?>
                     </div>
+                <?php endif;?>
 
+                    <?php if($mob_btn_label) :?>
                     <div class="content-btn">
-                        <a href="#" class="btn primary dark">shop now</a>
+                        <a href="<?php echo esc_url($mob_btn_link);?>" class="btn primary dark"><?php echo esc_attr($mob_btn_label);?></a>
                     </div>
+                    <?php endif;?>
                 </div>
             <?php endif;?>
 
