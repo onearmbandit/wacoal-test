@@ -41,7 +41,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-quotes',
-            'title'           => __('Wacoal Quotes'),
+            'title'           => __('Pull Quote, Timeline'),
             'description'     => __('A custom quotes block.'),
             'render_callback' => 'Wacoal_Quotes_Block_Render_callback',
             'category'        => 'wacoal',
@@ -52,7 +52,7 @@ function Wacoal_Acf_init()
         acf_register_block_type(
             array(
             'name'            => 'wacoal-product-gallery',
-            'title'           => __('Wacoal Product Gallery'),
+            'title'           => __('Product Gallery'),
             'description'     => __('A custom product gallery block.'),
             'render_callback' => 'Wacoal_Gallery_Block_Render_callback',
             'category'        => 'wacoal',
@@ -129,7 +129,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-video',
-            'title'           => __('Wacoal Video'),
+            'title'           => __('Video - Horizontal'),
             'description'     => __('A custom video block.'),
             'render_callback' => 'Wacoal_Video_Block_Render_callback',
             'category'        => 'wacoal',
@@ -140,8 +140,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-video-with-image',
-            'title'           => __('Wacoal Video and Image'),
-            'description'     => __('A custom video and image block.'),
+            'title'           => __('Video - Vertical'),
+            'description'     => __('A custom video block.'),
             'render_callback' => 'Wacoal_Video_Image_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'format-video',
@@ -173,7 +173,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-reminder-block',
-            'title'           => __('Wacoal Reminder Block'),
+            'title'           => __('Reminder'),
             'description'     => __('A custom reminder block.'),
             'render_callback' => 'Wacoal_Reminder_Block_Render_callback',
             'category'        => 'wacoal',
@@ -230,8 +230,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-medium-image-format',
-            'title'           => __('Wacoal Medium Image Block Format'),
-            'description'     => __('A custom Image format block.'),
+            'title'           => __('Image - Medium'),
+            'description'     => __('A custom Image - Medium block.'),
             'render_callback' => 'Wacoal_Medium_Img_Format_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
@@ -242,8 +242,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-button-format',
-            'title'           => __('Wacoal Button Block Format'),
-            'description'     => __('A custom Button format block.'),
+            'title'           => __('Button'),
+            'description'     => __('A custom Button block.'),
             'render_callback' => 'Wacoal_Button_Format_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
@@ -278,8 +278,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-banner-image-format',
-            'title'           => __('Wacoal Banner Image Block'),
-            'description'     => __('A custom banner image format block.'),
+            'title'           => __('Banner Image'),
+            'description'     => __('A custom banner image block.'),
             'render_callback' => 'Wacoal_Banner_Image_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
@@ -290,8 +290,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-number-list-format',
-            'title'           => __('Wacoal Number Title Block'),
-            'description'     => __('A custom number title format block.'),
+            'title'           => __('List - Number + Title + Subhead + Copy'),
+            'description'     => __('A custom List block.'),
             'render_callback' => 'Wacoal_Number_Title_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
@@ -314,8 +314,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-conclusion-summary-description',
-            'title'           => __('Wacoal Conclusion Summary Description Block'),
-            'description'     => __('A custom conclusion summary description format block.'),
+            'title'           => __('Conclusion Summary Description'),
+            'description'     => __('A custom conclusion summary description block.'),
             'render_callback' => 'Wacoal_Conclusion_Summary_Desc_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
@@ -362,7 +362,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-bordered-image-list',
-            'title'           => __('Wacoal Bordered Image List Block'),
+            'title'           => __('List - Benton Title + Button + Bordered Image (Left & Right)'),
             'description'     => __('A custom Bordered Image List Block'),
             'render_callback' => 'Wacoal_Bordered_Image_List_Block_Render_callback',
             'category'        => 'wacoal',

@@ -59,6 +59,32 @@ acf_add_local_field_group(
             'delay' => 0,
         ),
         array(
+            'key' => 'field_60d313fd379fc',
+            'label' => 'Image Caption',
+            'name' => 'image_caption',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60a214b9705d5',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
             'key' => 'field_60a34e60aec9c',
             'label' => 'Image Link',
             'name' => 'image_link',

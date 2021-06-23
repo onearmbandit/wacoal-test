@@ -31,6 +31,7 @@ acf_add_local_field_group(
             'choices' => array(
                 'quotes_with_image' => 'Quotes with image',
                 'quotes_with_progress_bar' => 'Quotes with progress bar',
+                'timeline' => 'Timeline',
             ),
             'default_value' => 'quotes_with_image',
             'allow_null' => 0,
@@ -122,6 +123,54 @@ acf_add_local_field_group(
             'toolbar' => 'content_toolbar',
             'media_upload' => 1,
             'delay' => 0,
+        ),
+        array(
+            'key' => 'field_60d31e74a4e86',
+            'label' => 'Timeline Progress Bar',
+            'name' => 'timeline_progress_bar',
+            'type' => 'repeater',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_5fca05d6b271b',
+                        'operator' => '==',
+                        'value' => 'timeline',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'collapsed' => '',
+            'min' => 0,
+            'max' => 0,
+            'layout' => 'block',
+            'button_label' => '',
+            'sub_fields' => array(
+                array(
+                    'key' => 'field_60d31e74a4e87',
+                    'label' => 'Progress Bar Text',
+                    'name' => 'progress_bar_text',
+                    'type' => 'wysiwyg',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => 'paragraph_content',
+                    ),
+                    'default_value' => '',
+                    'tabs' => 'all',
+                    'toolbar' => 'content_toolbar',
+                    'media_upload' => 1,
+                    'delay' => 0,
+                ),
+            ),
         ),
         array(
             'key' => 'field_5fca09651aab7',

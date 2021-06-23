@@ -16,6 +16,32 @@ acf_add_local_field_group(
     'title' => 'Wacoal Video with image Settings',
     'fields' => array(
         array(
+            'key' => 'field_60d3218c6bb31',
+            'label' => 'Select Video Type',
+            'name' => 'select_video_type',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                'video_with_image' => 'Video with Image',
+                'video_with_quotes' => 'Video with Quotes',
+                'only_video' => 'Only Video',
+            ),
+            'default_value' => 'video_with_image',
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 0,
+            'return_format' => 'value',
+            'ajax' => 0,
+            'placeholder' => '',
+        ),
+        array(
             'key' => 'field_5f7f0618e8e62',
             'label' => 'Video Option',
             'name' => 'video',
@@ -151,7 +177,15 @@ acf_add_local_field_group(
             'type' => 'image',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d3218c6bb31',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -178,6 +212,11 @@ acf_add_local_field_group(
             'conditional_logic' => array(
                 array(
                     array(
+                        'field' => 'field_60d3218c6bb31',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                    array(
                         'field' => 'field_5f7f08842a46e',
                         'operator' => '!=empty',
                     ),
@@ -201,7 +240,19 @@ acf_add_local_field_group(
             'type' => 'url',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d3218c6bb31',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                    array(
+                        'field' => 'field_5f7f08842a46e',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -209,6 +260,33 @@ acf_add_local_field_group(
             ),
             'default_value' => '',
             'placeholder' => '',
+        ),
+        array(
+            'key' => 'field_60d322396bb34',
+            'label' => 'Quotes Text',
+            'name' => 'quotes_text',
+            'type' => 'wysiwyg',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d3218c6bb31',
+                        'operator' => '==',
+                        'value' => 'video_with_quotes',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'tabs' => 'all',
+            'toolbar' => 'full',
+            'media_upload' => 1,
+            'delay' => 0,
         ),
     ),
     'location' => array(
