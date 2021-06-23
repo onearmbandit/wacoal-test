@@ -254,7 +254,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-text-image-format',
-            'title'           => __('Wacoal Text + Image Block'),
+            'title'           => __('List - Text + Image (Left & Right)'),
             'description'     => __('A custom text image list format block.'),
             'render_callback' => 'Wacoal_List_Text_Image_Render_callback',
             'category'        => 'wacoal',
@@ -266,8 +266,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-statement-image-format',
-            'title'           => __('Wacoal Statement + Image Block'),
-            'description'     => __('A custom text image list format block.'),
+            'title'           => __('List - Title + Statement + Body + Image (Left & Right)'),
+            'description'     => __('A custom list format block.'),
             'render_callback' => 'Wacoal_List_Statement_Image_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',

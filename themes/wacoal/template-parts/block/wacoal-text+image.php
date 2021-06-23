@@ -16,6 +16,7 @@ if ($block_lists && !empty($block_lists)) {
     ?>
 <section class="list-text-image desktop">
     <?php foreach ($block_lists as $key => $list) {
+        $list_position      = $list['image_position'];
         $block_image_id     = $list['image'];
         $img_link           = $list['image_link'];
         $new_tab            = $list['open_in_new_tab'];
@@ -30,9 +31,9 @@ if ($block_lists && !empty($block_lists)) {
             $block_image_url   = Wacoal_Get_image($block_image_array);
         }
 
-        if ($key % 2 == 0) {
+        if ($list_position == 'left') {
             ?>
-    <div class="list-text-image--wrapper desktop">
+    <div class="list-text-image--wrapper img-left idesktop">
         <div class="list-text-image--inner">
 
             <?php if ($block_image_id && !empty($block_image_id)) :
@@ -80,8 +81,8 @@ if ($block_lists && !empty($block_lists)) {
             <?php endif; ?>
     </div>
             <?php
-        } elseif ($key % 2 == 1) {?>
-    <div class="list-text-image--wrapper desktop">
+        } elseif ($list_position == 'right') {?>
+    <div class="list-text-image--wrapper img-right desktop">
         <div class="list-text-image--inner">
             <?php if ($block_image_id && !empty($block_image_id)) :
                 if(!empty($img_link)) :?>
