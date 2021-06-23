@@ -35,6 +35,32 @@ acf_add_local_field_group(
             'button_label' => '',
             'sub_fields' => array(
                 array(
+                    'key' => 'field_60d3259a66845',
+                    'label' => 'Image Position',
+                    'name' => 'image_position',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'select' => 'Select',
+                        'left' => 'Image Left',
+                        'right' => 'Image Right',
+                    ),
+                    'default_value' => false,
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
+                    'placeholder' => '',
+                ),
+                array(
                     'key' => 'field_60a3af1afe918',
                     'label' => 'Title',
                     'name' => 'title',
