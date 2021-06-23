@@ -165,7 +165,7 @@ if ($block_lists && !empty($block_lists)) {
             <?php
         }
         if ($list_align_type == 'myth_block') {
-            $number_position = $list['number_position'];
+            $number_position = !empty($list['number_position']) ? $list['number_position'] : 'left';
             $class = '';
             if ('left' == $number_position) {
                 $class = 'number-left';

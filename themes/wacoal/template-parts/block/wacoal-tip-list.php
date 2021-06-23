@@ -14,7 +14,7 @@
 <?php if ($block_lists && !empty($block_lists)) { ?>
 <section class="text-image-tip desktop">
     <?php foreach ($block_lists as $key => $list) {
-            $image_position     = $list['image_position'];
+            $image_position     = !empty($list['image_position']) ? $list['image_position'] : 'left';
             $title              = $list['title'];
             $subtitle           = $list['subtitle'];
             $bullet_points      = $list['bullet_points'];
@@ -139,7 +139,7 @@
 <?php if ($block_lists && !empty($block_lists)) { ?>
 <section class="text-image-tip mobile">
     <?php foreach ($block_lists as $key => $list) {
-            $image_position     = $list['image_position'];
+            $image_position     = !empty($list['image_position']) ? $list['image_position'] : 'left';
             $title              = $list['title'];
             $subtitle           = $list['subtitle'];
             $bullet_points      = $list['bullet_points'];
