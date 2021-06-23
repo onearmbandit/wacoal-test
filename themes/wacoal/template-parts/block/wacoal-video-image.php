@@ -12,6 +12,7 @@
 ?>
 
 <section class="video-image--wrapper">
+    <?php if($video_type != 'only_video') :?>
     <div class="video-image--wrapper__left">
         <?php
         if ($video_fields_option == 'embed_video') {
@@ -36,7 +37,6 @@
         </div>
     </div>
 
-    <?php if($video_type != 'only_video') :?>
     <div class="video-image--wrapper__right">
         <?php if($video_type == 'video_with_image') :?>
         <figure>
@@ -61,6 +61,32 @@
             </div>
         </div>
         <?php endif;?>
+    </div>
+    <?php endif;?>
+
+    <?php if($video_type == 'only_video') :?>
+        <div class="video-image--wrapper__left only-video">
+        <?php
+        if ($video_fields_option == 'embed_video') {
+            echo $video_field; // phpcs:ignore
+        } elseif ($video_fields_option == 'video_file') {
+            $video_url = wp_get_attachment_url($video_field);
+            ?>
+    <video controls>
+        <source src="<?php echo esc_url($video_url)?>" type="video/mp4">
+    </video>
+            <?php
+        } elseif ($video_fields_option == 'external_url') {
+            ?>
+        <video controls>
+        <source src="<?php echo esc_url($video_field)?>" type="video/mp4">
+        </video>
+            <?php
+        }
+        ?>
+        <div class="video-caption">
+        <?php echo wp_kses_post($video_caption);?>
+        </div>
     </div>
     <?php endif;?>
 
