@@ -276,7 +276,7 @@
 
   }
 
-  &.even-sequence {
+  &.img-left {
 
     .article-questions--wrapper {
       flex-direction: column-reverse;
@@ -1699,6 +1699,15 @@
     text-align: center;
     margin-top: 19px;
 
+    @include respond-below(md) {
+      margin-top: 10px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 90%;
+      margin: 10px auto 0;
+    }
+
     strong {
       @include ProximaNova-Bold;
     }
@@ -2921,6 +2930,17 @@
         line-height: 52px;
         letter-spacing: 0.69px;
         margin-bottom: 36px;
+
+        @include respond-below(lg) {
+          font-size: 36px;
+          line-height: 42px;
+        }
+
+        @include respond-below(md) {
+          font-size: 26px;
+          line-height: 32px;
+        }
+
       }
     }
 

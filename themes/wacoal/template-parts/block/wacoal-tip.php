@@ -12,13 +12,13 @@
 
 ?>
 
-
-
 <?php if($tip_text && !empty($tip_text)) : ?>
 <section class="reminder-note  reminder-note--center">
     <div class="reminder-note--wrapper">
         <div class="content-small">
-            <div class="title">Tip:</div>
+            <?php if ($tip_title && !empty($tip_title)) { ?>
+                <div class="title"><?php echo wp_kses_post($tip_title); ?></div>
+            <?php } ?>
             <div><?php echo wp_kses_post($tip_text); ?></div>
         </div>
     </div>
