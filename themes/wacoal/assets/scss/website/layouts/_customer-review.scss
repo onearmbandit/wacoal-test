@@ -134,6 +134,15 @@
       @include respond-below(lg){
         margin: 20px 0;
       }
+
+      strong {
+        @include ProximaNova-Bold;
+      }
+
+      a {
+        @include ProximaNova-Bold;
+        text-decoration: underline
+      }
     }
 
     .customer-name {

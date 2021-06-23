@@ -136,6 +136,15 @@
         padding-top: 20px;
         margin-top: 20px;
       }
+
+      strong {
+        @include ProximaNova-Bold;
+      }
+
+      a {
+        @include ProximaNova-Bold;
+        text-decoration: underline;
+      }
     }
   }
 }

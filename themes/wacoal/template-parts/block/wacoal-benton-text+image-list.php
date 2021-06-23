@@ -55,7 +55,10 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content-wrapper">
-                    <?php echo wp_kses_post($list_desc);?>
+                    <h1 class="title">LOOK GOOD FEEL GOOD WITH WACOAL</h1>
+                    <div>
+                        <?php echo wp_kses_post($list_desc);?>
+                    </div>
                 </div>
             <?php endif;?>
         </div>
@@ -87,7 +90,10 @@
 
             <?php if($list_desc && !empty($list_desc)) :?>
                 <div class="content-wrapper">
-                    <?php echo wp_kses_post($list_desc);?>
+                    <h1 class="title">LOOK GOOD FEEL GOOD WITH WACOAL</h1>
+                    <div>
+                        <?php echo wp_kses_post($list_desc);?>
+                    </div>
                 </div>
             <?php endif;?>
 
