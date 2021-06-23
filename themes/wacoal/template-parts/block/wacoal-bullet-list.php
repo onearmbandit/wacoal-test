@@ -49,6 +49,10 @@
             <?php if($bullet_points && !empty($bullet_points)) :?>
                 <div class="bullets--wrapper">
                     <?php echo Wacoal_Remove_P_tag(wp_kses_post($bullet_points));?>
+
+                    <div class="button-wrapper">
+                        <a href="#" class="btn primary dark">Shop now</a>
+                    </div>
                 </div>
             <?php endif;?>
         </div>
