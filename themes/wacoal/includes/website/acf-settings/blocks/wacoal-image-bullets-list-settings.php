@@ -97,6 +97,32 @@ acf_add_local_field_group(
             'mime_types' => '',
         ),
         array(
+            'key' => 'field_60d32af76baec',
+            'label' => 'Image Caption',
+            'name' => 'image_caption',
+            'type' => 'wysiwyg',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_6088131da2a50',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'tabs' => 'all',
+            'toolbar' => 'full',
+            'media_upload' => 1,
+            'delay' => 0,
+        ),
+        array(
             'key' => 'field_60a35a4d123d2',
             'label' => 'Image Link',
             'name' => 'image_link',
@@ -107,6 +133,48 @@ acf_add_local_field_group(
                 array(
                     array(
                         'field' => 'field_6088131da2a50',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
+            'key' => 'field_60d32ad56baea',
+            'label' => 'Button Label',
+            'name' => 'button_label',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_60d32ae36baeb',
+            'label' => 'Button Link',
+            'name' => 'button_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d32ad56baea',
                         'operator' => '!=empty',
                     ),
                 ),
