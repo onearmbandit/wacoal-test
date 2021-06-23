@@ -18,7 +18,8 @@
 <section class="reminder-note  reminder-note--center">
     <div class="reminder-note--wrapper">
         <div class="content-small">
-        <?php echo wp_kses_post($tip_text); ?>
+            <div class="title">Tip:</div>
+            <div><?php echo wp_kses_post($tip_text); ?></div>
         </div>
     </div>
 </section>
