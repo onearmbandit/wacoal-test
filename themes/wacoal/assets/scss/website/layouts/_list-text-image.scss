@@ -98,7 +98,7 @@
     @include respond-below(sm) {
       width: 334px;
       height: 334px;
-
+      margin-top: 15px;
     }
   }
 
@@ -136,7 +136,7 @@
       @include ProximaNova-Bold;
       font-size: 18px;
       line-height: 26px;
-      margin-bottom: 25px;
+
 
       @include respond-below(lg){
         font-size: 25px;
@@ -149,7 +149,7 @@
       }
 
       @include respond-below(sm){
-        margin-bottom: 15px;
+
       }
     }
 
@@ -157,6 +157,7 @@
       @include ProximaNova-Reg;
       font-size: 18px;
       line-height: 26px;
+      margin-top: 25px;
 
       @include respond-below(lg){
         font-size: 16px;
@@ -165,6 +166,7 @@
 
       @include respond-below(sm){
         line-height: 25px;
+        margin-top: 15px;
       }
 
       strong {

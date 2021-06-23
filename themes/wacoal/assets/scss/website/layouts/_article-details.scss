@@ -139,14 +139,17 @@
   //   margin-bottom: get-vw(106px);
   // }
 
-  padding: 40px 0;
+  // padding: 40px 0;
+  padding: 0 0 80px;
 
   @include respond-below(lg){
-    padding: 25px 0;
+    // padding: 25px 0;
+    padding: 0 0 50px;
   }
 
   @include respond-below(md){
-    padding: 25px 0;
+    // padding: 25px 0;
+    padding: 0 0 50px;
   }
 
   @include respond-below(sm){
@@ -214,25 +217,25 @@
 
   &--image {
     max-width: 532px;
-    height: 718px;
+    // height: 718px;
     width: var(--width-100);
     margin-left: 85px;
     margin-right: inherit;
 
     @include respond-below(lg) {
       width: 378px;
-      height: 511px;
+      // height: 511px;
       margin-left: 60px;
     }
 
     @include respond-below(md) {
       width: 243px;
-      height: 328px;
+      // height: 328px;
       margin-left: 70px;
     }
 
     @include respond-below(sm) {
-      margin:0 auto 50px;
+      margin: 0 auto 50px;
     }
 
     figure {
@@ -241,7 +244,7 @@
 
     img {
       max-width: 100%;
-      height: 100%;
+      // height: 100%;
       object-fit: cover;
     }
 
@@ -285,25 +288,25 @@
 
     .article-questions--image {
       max-width: 532px;
-      height: 718px;
+      // height: 718px;
       width: var(--width-100);
       margin-right: 85px;
       margin-left: inherit;
 
       @include respond-below(lg) {
         width: 378px;
-        height: 511px;
+        // height: 511px;
         margin-right: 60px;
       }
 
       @include respond-below(md) {
         width: 243px;
-        height: 328px;
+        // height: 328px;
         margin-right: 70px;
       }
 
       @include respond-below(sm) {
-        margin:0 auto 70px;
+        margin:0 auto 50px;
       }
     }
   }
@@ -603,37 +606,46 @@
     display: flex;
     align-items: center;
     max-width: 1250px;
+    justify-content: center;
+    min-height: 650px;
 
     @include respond-below(lg) {
       max-width: 876px;
+      min-height: 462px;
     }
 
     @include respond-below(md) {
       max-width: 708px;
+      min-height: 375px;
     }
 
     @include respond-below(sm) {
       max-width: 335px;
+      min-height: 177px;
     }
   }
 
   &--image {
     width: 593px;
     height: 650px;
+    margin-right: 81px;
 
     @include respond-below(lg) {
       width: 422px;
       height: 462px;
+      margin-right: 58px;
     }
 
     @include respond-below(md) {
       width: 342px;
       height: 375px;
+      margin-right: 47px;
     }
 
     @include respond-below(sm) {
       width: 161px;
       height: 177px;
+      margin-right: 22px;
     }
 
     img {
@@ -652,28 +664,28 @@
     line-height: 55px;
     letter-spacing: 1.64px;
     flex: 1;
-    margin-left: 81px;
     color: #707070;
+    max-width: 553px;
 
     @include respond-below(lg) {
-      margin-left: 58px;
       font-size: 29px;
       line-height: 39px;
       letter-spacing: 1.16px;
+      max-width: 396px;
     }
 
     @include respond-below(md) {
-      margin-left: 47px;
       font-size: 23px;
       line-height: 31px;
       letter-spacing: 0.92px;
+      max-width: 319px;
     }
 
     @include respond-below(sm) {
-      margin-left: 22px;
       font-size: 14px;
       line-height: 18px;
       letter-spacing: 0.56px;
+      max-width: 160px;
     }
 
     .content {
@@ -2677,29 +2689,31 @@
   }
 
   .para {
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
 
-    @include respond-below(md) {
-      margin-bottom: 20px;
-    }
+    // @include respond-below(md) {
+    //   margin-bottom: 20px;
+    // }
 
-    @include respond-below(sm) {
-      margin-bottom: 25px;
-    }
+    // @include respond-below(sm) {
+    //   margin-bottom: 25px;
+    // }
   }
 
   ul {
     list-style-type: disc;
     max-width: 585px;
-    margin: auto;
+    margin: 25px auto 0;
 
     @include respond-below(md) {
       max-width: 520px;
+      margin: 20px auto 0;
     }
 
     @include respond-below(sm) {
       max-width: 100%;
       padding: 0 30px;
+      margin: 25px auto 0;
     }
 
     li {
@@ -2741,11 +2755,11 @@
     }
 
     @include respond-below(md){
-      padding: 25px 0;
+      padding: 25px 0 50px;
     }
 
     @include respond-below(sm){
-      padding: 25px 36px;
+      padding: 25px 36px 50px;
       flex-direction: column;
     }
 
