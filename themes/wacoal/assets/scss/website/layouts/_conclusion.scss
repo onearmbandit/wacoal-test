@@ -44,8 +44,13 @@
   }
 
   &--bottom-para {
+    strong {
+      @include ProximaNova-Bold;
+    }
+
     a {
       @include ProximaNova-Bold;
+      text-decoration: underline;
     }
   }
 }
