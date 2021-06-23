@@ -67,6 +67,10 @@ function Wacoal_Quotes_Block_Render_callback( $block )
 
         $shortcode_template = 'template-parts/block/wacoal-progress-bar-quotes.php';
 
+    } elseif ($quotes_type == 'timeline') {
+        $timeline_progress_bar = get_field('timeline_progress_bar');
+        $shortcode_template = 'template-parts/block/wacoal-timeline-progress-bar.php';
+
     } else {
         $quotes_image_id    = get_field('image');
         $quotes_image_array = wp_get_attachment_image_src($quotes_image_id, 'full');

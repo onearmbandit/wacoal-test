@@ -33,7 +33,7 @@ acf_add_local_field_group(
                 'quotes_with_progress_bar' => 'Quotes with progress bar',
                 'timeline' => 'Timeline',
             ),
-            'default_value' => 'quotes_with_image',
+            'default_value' => false,
             'allow_null' => 0,
             'multiple' => 0,
             'ui' => 0,
