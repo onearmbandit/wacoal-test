@@ -16,7 +16,7 @@
 <section class="benton-text-block">
     <div class="benton-text-block--wrapper">
     <?php foreach ($block_lists as $key => $list) {
-        $list_position      = $list['image_position'];
+        $list_position      = !empty($list['image_position']) ? $list['image_position'] : 'left';
         $list_title         = $list['title'];
         $list_img_id        = $list['image'];
         $list_image_caption = $list['image_caption'];

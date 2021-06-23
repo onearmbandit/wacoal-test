@@ -16,7 +16,7 @@
 <section class="list-statment-image">
 
     <?php foreach ($block_lists as $key => $list) {
-        $list_img_position   = $list['image_position'];
+        $list_img_position   = !empty($list['image_position']) ? $list['image_position'] : 'left';
         $list_img_id         = $list['image'];
         $list_title          = $list['title'];
         $list_statement_word = $list['statement_word'];

@@ -17,7 +17,7 @@ if ($block_fields && !empty($block_fields)) :
     <div class="fixes-list--wrapper">
     <?php
     foreach ($block_fields as $key => $list) {
-        $prod_image_position = $list['image_position'];
+        $prod_image_position = !empty($list['image_position']) ? $list['image_position'] : 'left';
         $prod_title = $list['title'];
         $prod_image_id = $list['product_image'];
         $prod_image_array = wp_get_attachment_image_src($prod_image_id, 'full');
@@ -158,7 +158,7 @@ if ($block_fields && !empty($block_fields)) :
     <div class="fixes-list--wrapper">
     <?php
     foreach ($block_fields as $key => $list) {
-        $prod_image_position = $list['image_position'];
+        $prod_image_position = !empty($list['image_position']) ? $list['image_position'] : 'left';;
         $prod_title = $list['title'];
         $prod_image_id = $list['product_image'];
         $prod_image_array = wp_get_attachment_image_src($prod_image_id, 'full');

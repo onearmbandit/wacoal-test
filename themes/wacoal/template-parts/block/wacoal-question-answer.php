@@ -11,7 +11,7 @@
  */
 
 if ($block_image_id && !empty($block_image_id)) {
-    $image_position = get_field('image_position');
+    $image_position = !empty(get_field('image_position')) ? get_field('image_position') : 'left';
     $class = '';
     if ($image_position == 'left') {
         $class = 'img-left';
