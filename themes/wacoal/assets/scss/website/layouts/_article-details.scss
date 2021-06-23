@@ -2564,7 +2564,12 @@
 
   }
 
+  strong {
+    @include ProximaNova-Bold;
+  }
+
   a {
+    @include ProximaNova-Bold;
     text-decoration: underline;
   }
 }
@@ -2600,13 +2605,11 @@
     font-size: 25px;
     line-height: 32px;
     letter-spacing: 0.25px;
-    margin-bottom: 45px;
 
     @include respond-below(md) {
       font-size: 21px;
       line-height: 30px;
       letter-spacing: 0.21px;
-      margin-bottom: 30px;
     }
 
     @include respond-below(sm) {
@@ -2615,6 +2618,14 @@
       letter-spacing: 0.18px;
     }
 
+    strong {
+      @include BentonModDisp-Bold;
+    }
+
+    a {
+      @include BentonModDisp-Bold;
+      text-decoration: underline
+    }
   }
 
   .description {
@@ -2622,6 +2633,7 @@
     font-size: 20px;
     line-height: 30px;
     letter-spacing: 0.3px;
+    margin-top: 45px;
 
     @include respond-below(lg) {
       font-size: 19px;
@@ -2633,6 +2645,7 @@
       font-size: 17px;
       line-height: 28px;
       letter-spacing: 0.26px;
+      margin-top: 30px;
     }
 
     @include respond-below(sm) {
@@ -2640,6 +2653,10 @@
       line-height: 27px;
       letter-spacing: 0.24px;
     }
+  }
+
+  a {
+    text-decoration: underline;
   }
 }
 
