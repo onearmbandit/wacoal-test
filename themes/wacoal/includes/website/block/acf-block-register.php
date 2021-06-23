@@ -41,7 +41,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-quotes',
-            'title'           => __('Wacoal Quotes'),
+            'title'           => __('Pull Quote, Timeline'),
             'description'     => __('A custom quotes block.'),
             'render_callback' => 'Wacoal_Quotes_Block_Render_callback',
             'category'        => 'wacoal',
