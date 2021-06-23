@@ -2921,6 +2921,17 @@
         line-height: 52px;
         letter-spacing: 0.69px;
         margin-bottom: 36px;
+
+        @include respond-below(lg) {
+          font-size: 36px;
+          line-height: 42px;
+        }
+
+        @include respond-below(md) {
+          font-size: 26px;
+          line-height: 32px;
+        }
+
       }
     }
 
