@@ -165,8 +165,15 @@ if ($block_lists && !empty($block_lists)) {
             <?php
         }
         if ($list_align_type == 'myth_block') {
+            $number_position = $list['number_position'];
+            $class = '';
+            if ('left' == $number_position) {
+                $class = 'number-left';
+            } elseif ('right' == $number_position) {
+                $class = 'number-right';
+            }
             ?>
-            <div class="list-box list-box-one myth-box">
+            <div class="list-box list-box-one myth-box <?php echo esc_attr($class); ?>">
 
             <?php
             if ($list_header && !empty($list_header)) {
