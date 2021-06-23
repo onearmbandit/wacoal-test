@@ -230,8 +230,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-medium-image-format',
-            'title'           => __('Wacoal Medium Image Block Format'),
-            'description'     => __('A custom Image format block.'),
+            'title'           => __('Image - Medium'),
+            'description'     => __('A custom Image - Medium block.'),
             'render_callback' => 'Wacoal_Medium_Img_Format_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',
@@ -362,7 +362,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-bordered-image-list',
-            'title'           => __('Wacoal Bordered Image List Block'),
+            'title'           => __('List - Benton Title + Button + Bordered Image (Left & Right)'),
             'description'     => __('A custom Bordered Image List Block'),
             'render_callback' => 'Wacoal_Bordered_Image_List_Block_Render_callback',
             'category'        => 'wacoal',

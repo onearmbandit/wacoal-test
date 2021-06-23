@@ -618,8 +618,8 @@ function Wacoal_Medium_Img_Format_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Medium Image</u></h4>
-            <span style="color:red">Empty Medium Image Block</span>
+            <h4><u>Image - Medium</u></h4>
+            <span style="color:red">Empty Image - Medium Block</span>
             <?php
         }
     }
@@ -909,7 +909,7 @@ function Wacoal_Bordered_Image_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Bordered Image List Block</u></h4>
+            <h4><u>List - Benton Title + Button + Bordered Image (Left & Right)</u></h4>
             <span style="color:red">Empty Bordered Image List Block</span>
             <?php
         }
