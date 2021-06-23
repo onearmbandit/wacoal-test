@@ -67,7 +67,9 @@ if ($block_lists && !empty($block_lists)) {
                 <?php echo wp_kses_post($list_desc); ?>
                 </div>
             <?php endif; ?>
-
+                <div class="content-btn">
+                    <a href="#" class="btn primary dark">shop now</a>
+                </div>
             </div>
         </div>
 
@@ -112,7 +114,9 @@ if ($block_lists && !empty($block_lists)) {
                     <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
-
+                <div class="content-btn">
+                    <a href="#" class="btn primary dark">shop now</a>
+                </div>
             </div>
         </div>
             <?php if ($list_image_caption && !empty($list_image_caption)) :?>
@@ -179,6 +183,10 @@ if ($block_lists && !empty($block_lists)) {
                 <div class="list-text-image--content">
                     <div class="content">
                         <?php echo wp_kses_post($mob_list_desc);?>
+                    </div>
+
+                    <div class="content-btn">
+                        <a href="#" class="btn primary dark">shop now</a>
                     </div>
                 </div>
             <?php endif;?>

@@ -178,6 +178,14 @@
         @include ProximaNova-Bold;
       }
     }
+
+    .content-btn {
+      margin-top: 45px;
+
+      @include respond-below(md) {
+        margin-top: 25px;
+      }
+    }
   }
 
   .image-name {
