@@ -258,6 +258,48 @@ acf_add_local_field_group(
             'ui_on_text' => '',
             'ui_off_text' => '',
         ),
+        array(
+            'key' => 'field_60d3293ad8ecb',
+            'label' => 'Button Label',
+            'name' => 'button_label',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
+            'key' => 'field_60d32945d8ecc',
+            'label' => 'Button Link',
+            'name' => 'button_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d3293ad8ecb',
+                        'operator' => '!=empty',
+                    ),
+                ),
+            ),
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
     ),
     'location' => array(
         array(

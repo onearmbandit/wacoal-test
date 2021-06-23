@@ -15,6 +15,7 @@
 <section class="block-bordered-image">
     <div class="block-bordered-image--wrapper">
     <?php foreach ($block_lists as $key => $list) {
+        $image_position     = !empty($list['image_position']) ? $list['image_position'] : 'left';
         $title              = $list['title'];
         $list_img_id        = $list['image'];
         $list_image_caption = $list['image_caption'];
@@ -29,19 +30,67 @@
             $list_image_url   = Wacoal_Get_image($list_image_array);
         }
 
-        if ($key % 2 == 0) {
+        if ($image_position == 'left') {
             ?>
-        <div class="block-bordered-image--inner">
-            <div class="image-wrapper">
+            <div class="block-bordered-image--inner img-left">
+                <div class="image-wrapper">
+                    <?php if($list_img_id && !empty($list_img_id)) :?>
+                        <?php if(!empty($img_link)) :?>
+                            <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+                           endif;?>>
+                        <?php endif;?>
+                        <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>"></div>
+                    <?php endif;?>
+                    <?php if(!empty($img_link)) :?>
+                        </a>
+                    <?php endif;?>
+
+                    <?php if($list_image_caption && !empty($list_image_caption)) :?>
+                        <div class="image-caption">
+                            <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption));?>
+                        </div>
+                    <?php endif;?>
+                </div>
+                <div class="content">
+
+                <?php if($title && !empty($title)) :?>
+                    <h2><?php echo wp_kses_post($title);?></h2>
+                <?php endif;?>
+
+                <?php if($btn_label && !empty($btn_label)) :?>
+                    <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
+                    <?php if($new_tab == true) : echo "target='_blank'";
+                    endif;?>>
+                        <?php echo wp_kses_post($btn_label);?>
+                    </a>
+                <?php endif;?>
+                </div>
+
+                <div class="mobile-button">
+                <?php if($btn_label && !empty($btn_label)) :?>
+                    <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
+                    <?php if($new_tab == true) : echo "target='_blank'";
+                    endif;?>>
+                        <?php echo wp_kses_post($btn_label);?>
+                    </a>
+                <?php endif;?>
+                </div>
+
+            </div>
+            <?php
+        } elseif ($image_position == 'right') {
+            ?>
+            <div class="block-bordered-image--inner img-right">
+                <div class="image-wrapper">
                 <?php if($list_img_id && !empty($list_img_id)) :?>
                     <?php if(!empty($img_link)) :?>
                         <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
                        endif;?>>
                     <?php endif;?>
                     <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>"></div>
-                <?php endif;?>
-                <?php if(!empty($img_link)) :?>
-                    </a>
+                    <?php if(!empty($img_link)) :?>
+                        </a>
+                    <?php endif;?>
                 <?php endif;?>
 
                 <?php if($list_image_caption && !empty($list_image_caption)) :?>
@@ -49,82 +98,33 @@
                         <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption));?>
                     </div>
                 <?php endif;?>
-            </div>
-            <div class="content">
 
-            <?php if($title && !empty($title)) :?>
-                <h2><?php echo wp_kses_post($title);?></h2>
-            <?php endif;?>
-
-            <?php if($btn_label && !empty($btn_label)) :?>
-                <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
-                <?php if($new_tab == true) : echo "target='_blank'";
-                endif;?>>
-                    <?php echo wp_kses_post($btn_label);?>
-                </a>
-            <?php endif;?>
-            </div>
-
-            <div class="mobile-button">
-            <?php if($btn_label && !empty($btn_label)) :?>
-                <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
-                <?php if($new_tab == true) : echo "target='_blank'";
-                endif;?>>
-                    <?php echo wp_kses_post($btn_label);?>
-                </a>
-            <?php endif;?>
-            </div>
-
-        </div>
-            <?php
-        } elseif ($key % 2 == 1) {
-            ?>
-
-        <div class="block-bordered-image--inner">
-            <div class="image-wrapper">
-            <?php if($list_img_id && !empty($list_img_id)) :?>
-                <?php if(!empty($img_link)) :?>
-                    <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
-                   endif;?>>
+                </div>
+                <div class="content">
+                <?php if($title && !empty($title)) :?>
+                    <h2><?php echo wp_kses_post($title);?></h2>
                 <?php endif;?>
-                <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>"></div>
-                <?php if(!empty($img_link)) :?>
+
+                <?php if($btn_label && !empty($btn_label)) :?>
+                    <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
+                    <?php if($new_tab == true) : echo "target='_blank'";
+                    endif;?>>
+                        <?php echo wp_kses_post($btn_label);?>
                     </a>
                 <?php endif;?>
-            <?php endif;?>
 
-            <?php if($list_image_caption && !empty($list_image_caption)) :?>
-                <div class="image-caption">
-                    <?php echo Wacoal_Remove_P_tag(wp_kses_post($list_image_caption));?>
                 </div>
-            <?php endif;?>
 
+                <div class="mobile-button">
+                <?php if($btn_label && !empty($btn_label)) :?>
+                    <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
+                    <?php if($new_tab == true) : echo "target='_blank'";
+                    endif;?>>
+                        <?php echo wp_kses_post($btn_label);?>
+                    </a>
+                <?php endif;?>
+                </div>
             </div>
-            <div class="content">
-            <?php if($title && !empty($title)) :?>
-                <h2><?php echo wp_kses_post($title);?></h2>
-            <?php endif;?>
-
-            <?php if($btn_label && !empty($btn_label)) :?>
-                <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
-                <?php if($new_tab == true) : echo "target='_blank'";
-                endif;?>>
-                    <?php echo wp_kses_post($btn_label);?>
-                </a>
-            <?php endif;?>
-
-            </div>
-
-            <div class="mobile-button">
-            <?php if($btn_label && !empty($btn_label)) :?>
-                <a href="<?php echo esc_url($btn_link);?>" class="btn primary dark"
-                <?php if($new_tab == true) : echo "target='_blank'";
-                endif;?>>
-                    <?php echo wp_kses_post($btn_label);?>
-                </a>
-            <?php endif;?>
-            </div>
-        </div>
         <?php }
     }?>
     </div>

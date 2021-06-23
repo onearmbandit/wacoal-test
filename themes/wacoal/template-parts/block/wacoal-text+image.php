@@ -16,7 +16,7 @@ if ($block_lists && !empty($block_lists)) {
     ?>
 <section class="list-text-image desktop">
     <?php foreach ($block_lists as $key => $list) {
-        $list_position      = $list['image_position'];
+        $list_position      = !empty($list['image_position']) ? $list['image_position'] : 'left';
         $block_image_id     = $list['image'];
         $img_link           = $list['image_link'];
         $new_tab            = $list['open_in_new_tab'];

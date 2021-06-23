@@ -302,7 +302,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-customer-review-format',
-            'title'           => __('Wacoal Customer Review Block'),
+            'title'           => __('Customer Review'),
             'description'     => __('A custom customer review format block.'),
             'render_callback' => 'Wacoal_Customer_Review_Render_callback',
             'category'        => 'wacoal',
@@ -326,8 +326,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-image-bullets-list',
-            'title'           => __('Wacoal Title Image Bullets List Block'),
-            'description'     => __('A custom title image bullets list format block.'),
+            'title'           => __('List - Title + Body + Image + Bullets'),
+            'description'     => __('A custom list block.'),
             'render_callback' => 'Wacoal_Title_Img_Bullets_List_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'archive',

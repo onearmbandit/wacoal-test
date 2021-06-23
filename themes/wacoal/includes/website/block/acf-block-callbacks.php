@@ -690,7 +690,7 @@ function Wacoal_Customer_Review_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Customer Review</u></h4>
+            <h4><u>Customer Review</u></h4>
             <span style="color:red">Empty Customer Review Block</span>
             <?php
         }
@@ -752,8 +752,8 @@ function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Image Title Bullet List</u></h4>
-            <span style="color:red">Empty Image Title Bullet List Block</span>
+            <h4><u>List - Title + Body + Image + Bullets</u></h4>
+            <span style="color:red">Empty List Block</span>
             <?php
         }
     }
