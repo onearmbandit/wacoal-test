@@ -2923,7 +2923,7 @@
       }
     }
 
-    &:nth-child(even) {
+    &.img-right {
       flex-direction: row-reverse;
 
       @include respond-below(sm) {
