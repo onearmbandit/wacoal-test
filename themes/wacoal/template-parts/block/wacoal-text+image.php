@@ -33,7 +33,7 @@ if ($block_lists && !empty($block_lists)) {
 
         if ($list_position == 'left') {
             ?>
-    <div class="list-text-image--wrapper img-left idesktop">
+    <div class="list-text-image--wrapper img-left desktop">
         <div class="list-text-image--inner">
 
             <?php if ($block_image_id && !empty($block_image_id)) :
