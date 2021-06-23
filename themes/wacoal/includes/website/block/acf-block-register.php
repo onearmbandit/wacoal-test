@@ -140,8 +140,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-video-with-image',
-            'title'           => __('Wacoal Video and Image'),
-            'description'     => __('A custom video and image block.'),
+            'title'           => __('Video - Vertical'),
+            'description'     => __('A custom video block.'),
             'render_callback' => 'Wacoal_Video_Image_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'format-video',

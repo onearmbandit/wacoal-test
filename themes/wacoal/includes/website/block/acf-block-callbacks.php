@@ -374,8 +374,8 @@ function Wacoal_Video_Image_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Video:</u></h4>
-            <span style="color:red">Empty Wacoal Video Image Block</span>
+            <h4><u>Video - Vertical:</u></h4>
+            <span style="color:red">Empty Video - Vertical Block</span>
             <?php
         }
     }
