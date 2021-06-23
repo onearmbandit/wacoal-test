@@ -1650,6 +1650,10 @@
     }
 
   }
+
+  .product-quote--wrapper {
+    min-height: auto;
+  }
 }
 
 //
@@ -1698,6 +1702,15 @@
     color: var(--color-gray);
     text-align: center;
     margin-top: 19px;
+
+    @include respond-below(md) {
+      margin-top: 10px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 90%;
+      margin: 10px auto 0;
+    }
 
     strong {
       @include ProximaNova-Bold;
