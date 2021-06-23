@@ -470,6 +470,7 @@ function Wacoal_Note_Block_Render_callback( $block )
 {
 
     $tip_text = get_field('add_text');
+    $tip_title = get_field('tip_title');
 
     $shortcode_template = '/template-parts/block/wacoal-tip.php';
 
