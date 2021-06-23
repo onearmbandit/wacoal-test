@@ -17,6 +17,7 @@ if ($block_fields && !empty($block_fields)) :
     <div class="fixes-list--wrapper">
     <?php
     foreach ($block_fields as $key => $list) {
+        $prod_image_position = $list['image_position'];
         $prod_title = $list['title'];
         $prod_image_id = $list['product_image'];
         $prod_image_array = wp_get_attachment_image_src($prod_image_id, 'full');
@@ -28,9 +29,9 @@ if ($block_fields && !empty($block_fields)) :
         $button_label = $list['button_label'];
         $button_link = $list['button_link'];
 
-        if ($key % 2 == 0) {
+        if ($prod_image_position == 'left') {
             ?>
-        <div class="fixes-list--box even">
+        <div class="fixes-list--box img-left">
 
             <?php if ($prod_title && !empty($prod_title)) :?>
             <div class="fixes-list--boxtitle-wrapper">
@@ -90,9 +91,9 @@ if ($block_fields && !empty($block_fields)) :
             </div>
         </div>
             <?php
-        } elseif ($key % 2 == 1) { ?>
+        } elseif ($prod_image_position == 'right') { ?>
 
-        <div class="fixes-list--box odd">
+        <div class="fixes-list--box img-right">
 
             <?php if ($prod_title && !empty($prod_title)) :?>
             <div class="fixes-list--boxtitle-wrapper">
@@ -157,6 +158,7 @@ if ($block_fields && !empty($block_fields)) :
     <div class="fixes-list--wrapper">
     <?php
     foreach ($block_fields as $key => $list) {
+        $prod_image_position = $list['image_position'];
         $prod_title = $list['title'];
         $prod_image_id = $list['product_image'];
         $prod_image_array = wp_get_attachment_image_src($prod_image_id, 'full');
@@ -179,7 +181,6 @@ if ($block_fields && !empty($block_fields)) :
             <div class="fixes-list--boxcontent">
 
                 <div class="list-image">
-
                     <?php if($button_link && !empty($button_link)) :?>
                     <a href="<?php echo esc_url($button_link);?>" target='_blank'>
                     <?php endif;?>
@@ -190,29 +191,27 @@ if ($block_fields && !empty($block_fields)) :
                 </div>
 
                 <?php if ($prod_name && !empty($prod_name)) : ?>
-                <div class="verticle-text">
-                    <?php echo wp_kses_post($prod_name); ?>
-                </div>
-                <?php endif; ?>
-
-                <div class="list-content">
-                <?php if ($prod_desc && !empty($prod_desc)) : ?>
-                    <div>
-                        <?php echo wp_kses_post($prod_desc); ?>
+                    <div class="verticle-text">
+                        <?php echo wp_kses_post($prod_name); ?>
                     </div>
                 <?php endif; ?>
 
-                <?php if ($button_label && !empty($button_label)) :?>
-                    <a href="<?php echo esc_url($button_link); ?>"
-                       class="btn primary dark">
-                        <?php echo wp_kses_post($button_label); ?>
-                    </a>
-                <?php endif; ?>
+                <div class="list-content">
+                    <?php if ($prod_desc && !empty($prod_desc)) : ?>
+                        <div>
+                            <?php echo wp_kses_post($prod_desc); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($button_label && !empty($button_label)) :?>
+                        <a href="<?php echo esc_url($button_link); ?>"
+                        class="btn primary dark">
+                            <?php echo wp_kses_post($button_label); ?>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-
-            <?php
+        <?php
     }
     ?>
 
