@@ -934,7 +934,7 @@ function Wacoal_Tip_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Tip List Block</u></h4>
+            <h4><u>List - Text + Image + Tip (Left & Right)</u></h4>
             <span style="color:red">Empty Tip List Block</span>
             <?php
         }
