@@ -14,7 +14,7 @@
 
 <section class="donation">
     <div class="donation--wrapper">
-        <div class="donation--wrapper-left">
+        <div class="donation--wrapper-left only-timeline">
 
         <?php if($timeline_progress_bar && !empty($timeline_progress_bar)) :?>
             <ul class="timeline">

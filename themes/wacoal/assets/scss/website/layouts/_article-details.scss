@@ -311,6 +311,14 @@
     }
   }
 
+  &.img-right {
+    .article-questions--wrapper {
+      @include respond-below(sm) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
   &--que {
     margin-bottom: calcRem(22);
     display: inline-block;
@@ -1483,6 +1491,7 @@
   max-width: 1216px;
   margin: 0 auto;
   align-items: center;
+  justify-content: center;
 
   @include respond-below(lg){
     padding: 50px 0;
@@ -1500,46 +1509,27 @@
 
 
   &__left {
-    width: 608px;
-    padding-right: 96px;
+    width: 512px;
+    margin-right: 96px;
     margin-bottom: 0;
     position: relative;
 
     @include respond-below(lg) {
-      width: 432px;
-      padding-right: 68px;
+      width: 364px;
+      margin-right: 68px;
     }
 
     @include respond-below(md) {
-      width: 354px;
-      padding-right: 56px;
+      width: 298px;
+      margin-right: 56px;
     }
 
     @include respond-below(sm) {
       width: 100%;
       padding-right: 0;
       padding: 0 36px 35px;
-      margin-bottom: 35px;
-    }
-
-    &::after {
-      content:'';
-      position: absolute;
-      height: 300px;
-      width: 1px;
-      background: var(--color-black);
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-
-      @include respond-below(sm) {
-        height: 1px;
-        width: 174px;
-        bottom: 0;
-        left: 50%;
-        top: inherit;
-        transform: translate(-50%);
-      }
+      // margin-bottom: 35px;
+      margin-right: 0;
     }
 
 
@@ -1584,23 +1574,44 @@
   }
 
   &__right {
-    width: 512px;
-    margin-left: 96px;
+    width: 608px;
+    padding-left: 96px;
+    position: relative;
 
     @include respond-below(lg) {
-      width: 364px;
-      margin-left: 68px;
+      width: 432px;
+      padding-left: 68px;
     }
 
     @include respond-below(md) {
-      width: 298px;
-      margin-left: 56px;
+      width: 354px;
+      padding-left: 56px;
     }
 
     @include respond-below(sm) {
       width: 100%;
-      padding: 0 36px;
+      padding: 40px 36px 0;
       margin-left: 0;
+    }
+
+    &::after {
+      content:'';
+      position: absolute;
+      height: 300px;
+      width: 1px;
+      background: var(--color-black);
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include respond-below(sm) {
+        height: 1px;
+        width: 174px;
+        top: 0;
+        left: 50%;
+        // top: inherit;
+        transform: translate(-50%);
+      }
     }
 
     figcaption {
@@ -2419,6 +2430,11 @@
     // @include respond-above(sm) {
     //   width: get-vw(680px);
     // }
+
+    &.only-timeline {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &--wrapper-right {
