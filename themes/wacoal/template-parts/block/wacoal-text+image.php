@@ -38,17 +38,24 @@ if ($block_lists && !empty($block_lists)) {
     <div class="list-text-image--wrapper img-left desktop">
         <div class="list-text-image--inner">
 
-            <?php if ($block_image_id && !empty($block_image_id)) :
-                if(!empty($img_link)) :?>
-                    <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
-                   endif;?>>
-                <?php endif;?>
-            <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($block_image_url); ?>">
-            </div>
-                <?php if(!empty($img_link)) :?>
-                </a>
-                <?php endif;
-            endif; ?>
+            <?php
+            if ($block_image_id && !empty($block_image_id)) {
+                $img_url = $block_image_url;
+                $img_class = '';
+            } else {
+                $img_url = '';
+                $img_class = 'no-bg-img';
+            }
+            if(!empty($img_link)) :?>
+                <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+               endif;?>>
+            <?php endif;?>
+                <div class="list-text-image--img <?php echo esc_attr($img_class); ?>"
+                    style="background-image:url(<?php echo esc_url($img_url); ?>">
+                </div>
+            <?php if(!empty($img_link)) :?>
+            </a>
+            <?php endif; ?>
 
 
             <div class="list-text-image--content">
@@ -91,17 +98,24 @@ if ($block_lists && !empty($block_lists)) {
         } elseif ($list_position == 'right') {?>
     <div class="list-text-image--wrapper img-right desktop">
         <div class="list-text-image--inner">
-            <?php if ($block_image_id && !empty($block_image_id)) :
-                if(!empty($img_link)) :?>
-            <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
-           endif;?>>
-                <?php endif;?>
-            <div class="list-text-image--img" style="background-image:url(<?php echo esc_url($block_image_url); ?>">
-            </div>
+            <?php
+            if ($block_image_id && !empty($block_image_id)) {
+                $img_url = $block_image_url;
+                $img_class = '';
+            } else {
+                $img_url = '';
+                $img_class = 'no-bg-img';
+            }
+            if(!empty($img_link)) :?>
+                <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+               endif;?>>
+            <?php endif;?>
+                <div class="list-text-image--img <?php echo esc_url($img_link);?>"
+                    style="background-image:url(<?php echo esc_url($img_url); ?>">
+                </div>
                 <?php if(!empty($img_link)) :?>
-            </a>
-                <?php endif;
-            endif;?>
+                </a>
+                <?php endif; ?>
 
             <div class="list-text-image--content">
 
