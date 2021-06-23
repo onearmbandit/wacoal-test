@@ -96,7 +96,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-subhead-description',
-            'title'           => __('Wacoal Subhead Description'),
+            'title'           => __('Subhead Description'),
             'description'     => __('A custom subhead description block.'),
             'render_callback' => 'Wacoal_Subhead_Description_Render_callback',
             'category'        => 'wacoal',
@@ -162,8 +162,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-horizontal-line',
-            'title'           => __('Wacoal Horizontal Line'),
-            'description'     => __('A custom horizontal block.'),
+            'title'           => __('Divider Line'),
+            'description'     => __('A custom divider line block.'),
             'render_callback' => 'Wacoal_Horizontal_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'minus',
@@ -173,8 +173,8 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-bullet-content-block',
-            'title'           => __('Wacoal Bullet Paragraph Block'),
-            'description'     => __('A custom paragraph block.'),
+            'title'           => __('Checklist'),
+            'description'     => __('A custom checklist block.'),
             'render_callback' => 'Wacoal_Bullet_Content_Block_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'id-alt',
@@ -349,7 +349,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-body-para',
-            'title'           => __('Wacoal Body Intro Paragraph Block'),
+            'title'           => __('Body Intro Paragraph'),
             'description'     => __('A custom Body Intro Paragraph Block'),
             'render_callback' => 'Wacoal_Body_Intro_Paragraph_Block_Render_callback',
             'category'        => 'wacoal',
@@ -361,7 +361,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-benton-text_image-list',
-            'title'           => __('Wacoal Benton Text + Image List Block'),
+            'title'           => __('Benton Text + Image (Left & Right)'),
             'description'     => __('A custom Benton Text + Image List Block'),
             'render_callback' => 'Wacoal_Benton_Text_Image_List_Block_Render_callback',
             'category'        => 'wacoal',

@@ -884,8 +884,8 @@ function Wacoal_Benton_Text_Image_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal benton text List Block</u></h4>
-            <span style="color:red">Empty benton text List Block</span>
+            <h4><u>Benton Text + Image (Left & Right)</u></h4>
+            <span style="color:red">Empty Benton Text + Image (Left & Right) Block</span>
             <?php
         }
     }
