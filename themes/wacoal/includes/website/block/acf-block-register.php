@@ -374,7 +374,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-tip-list',
-            'title'           => __('Wacoal Tip List Block'),
+            'title'           => __('List - Text + Image + Tip (Left & Right)'),
             'description'     => __('A custom Tip List Block'),
             'render_callback' => 'Wacoal_Tip_List_Block_Render_callback',
             'category'        => 'wacoal',
