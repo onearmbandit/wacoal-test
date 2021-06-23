@@ -36,11 +36,13 @@
         </div>
     </div>
 
+    <?php if($video_type != 'only_video') :?>
     <div class="video-image--wrapper__right">
+        <?php if($video_type == 'video_with_image') :?>
         <figure>
-        <?php if(!empty($block_image_link)) :?>
+            <?php if(!empty($block_image_link)) :?>
             <a href="<?php echo esc_url($block_image_link);?>" target="_blank";>
-        <?php endif;?>
+            <?php endif;?>
                 <img class="lazyload"
                         data-src="<?php echo esc_url($block_image_url); ?>"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -50,15 +52,16 @@
             <?php endif;?>
             <figcaption><?php echo wp_kses_post($image_caption); ?></figcaption>
         </figure>
-
-        <!-- <div class="product-quote--wrapper">
+        <?php endif;?>
+        <?php if($video_type == 'video_with_quotes') :
+            $quote_text = get_field('quotes_text');?>
+        <div class="product-quote--wrapper">
             <div class="product-quote--content">
-                Pull Quote – Lorem
-                ipsum dolor sit amet,
-                consectetur adipiscing
-                elit, sed do
+            <?php echo wp_kses_post($quote_text); ?>
             </div>
-        </div> -->
+        </div>
+        <?php endif;?>
     </div>
+    <?php endif;?>
 
 </section>
