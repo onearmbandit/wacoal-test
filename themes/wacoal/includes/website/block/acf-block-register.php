@@ -195,7 +195,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-product-list-with-shop-button-block',
-            'title'           => __('Wacoal Product List Block'),
+            'title'           => __('List - Image + Title + Button (Left & Right)'),
             'description'     => __('A custom Product List block.'),
             'render_callback' => 'Wacoal_Product_List_Block_Render_callback',
             'category'        => 'wacoal',
