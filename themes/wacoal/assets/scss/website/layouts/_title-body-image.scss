@@ -145,6 +145,38 @@
     }
   }
 
+  .image-caption {
+    @include ProximaNova-Reg;
+    font-size: 14px;
+    color: #959595;
+    margin: 22px 0;
+
+    @include respond-below(lg) {
+      margin: 11px 0;
+    }
+
+    @include respond-below(md) {
+      margin: 8px 0;
+    }
+
+    &.desktop {
+      display: block;
+
+      @include respond-below(sm) {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      display: none;
+
+      @include respond-below(sm) {
+        display: block;
+        width: 335px;
+        margin: 8px auto;
+      }
+    }
+  }
   .image--wrapper {
     &.mobile {
       display: none;
