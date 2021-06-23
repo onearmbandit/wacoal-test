@@ -15,7 +15,7 @@
     <?php if($block_image_id && !empty($block_image_id)) :?>
         <div class="image--wrapper mobile" style="background-image:url(<?php echo  esc_url($block_image_url); ?>"></div>
         <div class="image-caption mobile">
-            <?php echo esc_attr($image_caption); ?>
+            <?php echo wp_kses_post($image_caption); ?>
         </div>
     <?php endif; ?>
     <div class="wrapper">
@@ -63,7 +63,7 @@
             <?php endif;?>
         </div>
         <div class="image-caption desktop">
-            <?php echo esc_attr($image_caption); ?>
+            <?php echo wp_kses_post($image_caption); ?>
         </div>
     </div>
 </section>

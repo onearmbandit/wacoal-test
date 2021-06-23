@@ -24,7 +24,7 @@
         </a>
         <?php endif;?>
         <div class="image-caption">
-            <?php echo esc_attr($image_caption); ?>
+            <?php echo wp_kses_post($image_caption); ?>
         </div>
         <?php if($block_desc && !empty($block_desc)) :?>
         <div class="image-medium--content">
