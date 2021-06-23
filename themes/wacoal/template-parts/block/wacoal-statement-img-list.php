@@ -16,6 +16,7 @@
 <section class="list-statment-image">
 
     <?php foreach ($block_lists as $key => $list) {
+        $list_img_position   = $list['image_position'];
         $list_img_id         = $list['image'];
         $list_title          = $list['title'];
         $list_statement_word = $list['statement_word'];
@@ -27,9 +28,9 @@
             $list_image_url   = Wacoal_Get_image($list_image_array);
         }
 
-        if ($key % 2 == 0) {
+        if ($list_img_position == 'left') {
             ?>
-    <div class="list-statment-image--wrapper">
+    <div class="list-statment-image--wrapper img-left">
         <div class="list-statment-image--inner">
             <div class="list-statment-image--content">
             <?php if($list_statement_word && !empty($list_statement_word)) :?>
@@ -55,9 +56,9 @@
         </div>
     </div>
             <?php
-        } elseif ($key % 2 == 1) {
+        } elseif ($list_img_position == 'right') {
             ?>
-    <div class="list-statment-image--wrapper">
+    <div class="list-statment-image--wrapper img-right">
         <div class="list-statment-image--inner">
             <div class="list-statment-image--content">
 
