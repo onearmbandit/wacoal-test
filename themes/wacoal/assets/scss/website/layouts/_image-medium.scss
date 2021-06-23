@@ -45,6 +45,22 @@
     }
   }
 
+  .image-caption {
+    color: #959595;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.77px;
+    margin: 20px 0;
+
+    @include respond-below(md) {
+      margin: 12px 0;
+    }
+
+    @include respond-below(sm) {
+      margin: 8px 0;
+    }
+  }
+
   &--content {
     max-width: 782px;
     margin: 40px auto 0;

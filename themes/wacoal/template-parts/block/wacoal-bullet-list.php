@@ -14,6 +14,7 @@
 <section class="title-body-image">
     <?php if($block_image_id && !empty($block_image_id)) :?>
         <div class="image--wrapper mobile" style="background-image:url(<?php echo  esc_url($block_image_url); ?>"></div>
+        <div class="image-caption mobile">Body Base® Shorty Panty</div>
     <?php endif; ?>
     <div class="wrapper">
         <div class="title-wrapper">
@@ -41,7 +42,7 @@
                 <div class="image--wrapper" style="background-image:url(<?php echo  esc_url($block_image_url); ?>">
                 </div>
                 <?php if(!empty($img_link)) :?>
-        </a>
+                </a>
                 <?php endif;
             endif; ?>
 
@@ -51,5 +52,6 @@
                 </div>
             <?php endif;?>
         </div>
+        <div class="image-caption desktop">Body Base® Shorty Panty</div>
     </div>
 </section>

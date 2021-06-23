@@ -23,7 +23,9 @@
         <?php if(!empty($img_link)) :?>
         </a>
         <?php endif;?>
-
+        <div class="image-caption">
+            Body Base® Shorty Panty
+        </div>
         <?php if($block_desc && !empty($block_desc)) :?>
         <div class="image-medium--content">
             <?php echo wp_kses_post($block_desc);?>
