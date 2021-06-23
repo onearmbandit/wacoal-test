@@ -2430,6 +2430,11 @@
     // @include respond-above(sm) {
     //   width: get-vw(680px);
     // }
+
+    &.only-timeline {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &--wrapper-right {
