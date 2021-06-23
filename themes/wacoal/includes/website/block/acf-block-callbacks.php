@@ -643,8 +643,8 @@ function Wacoal_List_Text_Image_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Text + Image List</u></h4>
-            <span style="color:red">Empty Text + Image Block</span>
+            <h4><u>List - Text + Image (Left & Right)</u></h4>
+            <span style="color:red">Empty List Block</span>
             <?php
         }
     }
