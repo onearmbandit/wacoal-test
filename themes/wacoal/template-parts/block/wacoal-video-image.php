@@ -50,6 +50,15 @@
             <?php endif;?>
             <figcaption><?php echo wp_kses_post($image_caption); ?></figcaption>
         </figure>
+
+        <!-- <div class="product-quote--wrapper">
+            <div class="product-quote--content">
+                Pull Quote – Lorem
+                ipsum dolor sit amet,
+                consectetur adipiscing
+                elit, sed do
+            </div>
+        </div> -->
     </div>
 
 </section>
