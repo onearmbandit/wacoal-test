@@ -53,6 +53,10 @@
             </div>
             <?php endif;?>
 
+            <div class="button-wrapper">
+                <a href="#" class="btn primary dark">Shop Now</a>
+            </div>
+
         </div>
 
         <div class="image-wrapper right">
