@@ -504,8 +504,8 @@ function Wacoal_Product_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Product List:</u></h4>
-            <span style="color:red">Empty Wacoal Product List Block</span>
+            <h4><u>List - Image + Title + Button (Left & Right):</u></h4>
+            <span style="color:red">Empty List Block</span>
             <?php
         }
     }

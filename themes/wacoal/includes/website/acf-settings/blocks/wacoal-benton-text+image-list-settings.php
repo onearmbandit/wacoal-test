@@ -52,7 +52,7 @@ acf_add_local_field_group(
                         'left' => 'Image Left',
                         'right' => 'Image Right',
                     ),
-                    'default_value' => false,
+                    'default_value' => 'left',
                     'allow_null' => 0,
                     'multiple' => 0,
                     'ui' => 0,
