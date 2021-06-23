@@ -141,7 +141,7 @@ function Wacoal_Question_Answer_Render_callback( $block )
         if (is_admin() ) {
             ?>
             <h4><u>Question & Answer:</u></h4>
-            <span style="color:red">Empty Wacoal Q&A Block</span>
+            <span style="color:red">Empty Q&A Block</span>
             <?php
         }
     }
@@ -191,8 +191,8 @@ function Wacoal_Text_Only_List_Format_Render_callback($block)
     } else {
         if (is_admin()) {
             ?>
-            <h4><u>Wacoal Lists:</u></h4>
-            <span style="color:red">Empty Wacoal Text Only Lists Block</span>
+            <h4><u>List - Numbered Text Only (Left & Right)</u></h4>
+            <span style="color:red">Empty List - Numbered Text Only Block</span>
             <?php
         }
     }
@@ -273,8 +273,8 @@ function Wacoal_Image_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Image:</u></h4>
-            <span style="color:red">Empty Wacoal Image Block</span>
+            <h4><u>Image - Full Bleed:</u></h4>
+            <span style="color:red">Empty Image - Full Bleed Block</span>
             <?php
         }
     }

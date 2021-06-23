@@ -62,6 +62,40 @@ acf_add_local_field_group(
                     'placeholder' => '',
                 ),
                 array(
+                    'key' => 'field_60d2f9aa32e65',
+                    'label' => 'Number Position',
+                    'name' => 'number_position',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field' => 'field_5f7ab06e1c7bc',
+                                'operator' => '==',
+                                'value' => 'myth_block',
+                            ),
+                        ),
+                    ),
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'select' => 'Select',
+                        'left' => 'Numbered Text Only Left',
+                        'right' => 'Numbered Text Only Right',
+                    ),
+                    'default_value' => false,
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
+                    'placeholder' => '',
+                ),
+                array(
                     'key' => 'field_5f7ab4c6b7ffa',
                     'label' => 'List Header',
                     'name' => 'list_header',
@@ -140,4 +174,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-

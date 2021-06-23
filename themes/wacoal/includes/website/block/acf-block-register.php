@@ -63,8 +63,8 @@ function Wacoal_Acf_init()
         acf_register_block_type(
             array(
             'name'            => 'wacoal-image-carousel',
-            'title'           => __('Wacoal Image Carousel'),
-            'description'     => __('A custom image carousel block.'),
+            'title'           => __('Image Gallery - Full Bleed'),
+            'description'     => __('A custom Image Gallery block.'),
             'render_callback' => 'Wacoal_Image_Carousel_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'embed-photo',
@@ -74,8 +74,8 @@ function Wacoal_Acf_init()
         acf_register_block_type(
             array(
             'name'            => 'wacoal-text-only-list-format',
-            'title'           => __('Wacoal Text Only List Format'),
-            'description'     => __('A custom Text Only List format block.'),
+            'title'           => __('List - Numbered Text Only (Left & Right)'),
+            'description'     => __('A custom Text Only List block.'),
             'render_callback' => 'Wacoal_Text_Only_List_Format_Render_callback',
             'category'        => 'wacoal',
             'icon'            => 'list-view',
@@ -96,7 +96,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-question-answer',
-            'title'           => __('Wacoal Question Answer'),
+            'title'           => __('Q&A'),
             'description'     => __('A custom question answer block.'),
             'render_callback' => 'Wacoal_Question_Answer_Render_callback',
             'category'        => 'wacoal',
@@ -107,7 +107,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-image',
-            'title'           => __('Wacoal Image'),
+            'title'           => __('Image - Full Bleed'),
             'description'     => __('A custom image block.'),
             'render_callback' => 'Wacoal_Image_Render_callback',
             'category'        => 'wacoal',
