@@ -478,8 +478,8 @@ function Wacoal_Note_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Wacoal Note:</u></h4>
-            <span style="color:red">Empty Wacoal Note Block</span>
+            <h4><u>Tip:</u></h4>
+            <span style="color:red">Empty Tip Block</span>
             <?php
         }
     }

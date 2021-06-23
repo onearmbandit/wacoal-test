@@ -16,6 +16,25 @@ acf_add_local_field_group(
     'title' => 'Wacoal Tip Block Settings',
     'fields' => array(
         array(
+            'key' => 'field_60d3268ee7c5c',
+            'label' => 'Tip Title',
+            'name' => 'tip_title',
+            'type' => 'text',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'prepend' => '',
+            'append' => '',
+            'maxlength' => '',
+        ),
+        array(
             'key' => 'field_5fca16b844f81',
             'label' => 'Add text',
             'name' => 'add_text',

@@ -184,7 +184,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'wacoal-tip-block',
-            'title'           => __('Wacoal Tip Block'),
+            'title'           => __('Tip'),
             'description'     => __('A custom tip block.'),
             'render_callback' => 'Wacoal_Note_Block_Render_callback',
             'category'        => 'wacoal',
