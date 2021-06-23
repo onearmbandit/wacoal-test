@@ -175,15 +175,12 @@ if ($block_lists && !empty($block_lists)) {
             ?>
             <div class="list-box list-box-one myth-box <?php echo esc_attr($class); ?>">
 
-            <?php
-            if ($list_header && !empty($list_header)) {
-                ?>
             <div class="list-box--number">
                 <span><?php echo esc_attr($row_index); ?></span>
-                <h2><?php echo wp_kses_post($list_header); ?></h2>
+                <?php if ($list_header && !empty($list_header)) { ?>
+                    <h2><?php echo wp_kses_post($list_header); ?></h2>
+                <?php } ?>
             </div>
-                <?php
-            } ?>
 
             <div class="list-box--content">
 

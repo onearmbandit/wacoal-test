@@ -351,6 +351,7 @@ function Wacoal_Video_Block_Render_callback( $block )
  */
 function Wacoal_Video_Image_Block_Render_callback( $block )
 {
+    $video_type          = !empty(get_field('select_video_type')) ? get_field('select_video_type') : 'video_with_image';
     $video_fields_option = get_field('video');
     $block_image_id      = get_field('add_image');
     $video_caption       = get_field('video_caption');
