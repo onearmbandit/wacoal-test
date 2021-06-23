@@ -1371,7 +1371,7 @@
 
     }
 
-    &.myth-box:nth-child(even) {
+    &.number-right {
 
       @include respond-above(sm) {
         flex-direction: row-reverse;
@@ -1769,13 +1769,14 @@
       padding: 25px 0 45px;
     }
 
-    &.odd {
+    &.img-right {
 
       .fixes-list--boxtitle-wrapper {
         float: right;
       }
 
       .fixes-list--boxcontent {
+        flex-direction: row-reverse;
         padding: 0 110px 0 180px;
 
         @include respond-below(lg) {
@@ -3227,7 +3228,7 @@
         padding: 25px 36px;
     }
 
-    &:nth-child(even) {
+    &.img-right {
       flex-direction: row-reverse;
 
       @include respond-below(sm){
