@@ -676,6 +676,8 @@ function Wacoal_Customer_Review_Render_callback( $block )
     $right_new_tab       = get_field('right_open_in_new_tab');
     $left_image_caption  = get_field('left_image_caption');
     $right_image_caption = get_field('right_image_caption');
+    $button_label        = get_field('button_label');
+    $button_link         = get_field('button_link');
 
     if (!empty($left_image_id) && $left_image_id) {
         $left_image_array = wp_get_attachment_image_src($left_image_id, 'full');
