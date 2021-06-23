@@ -11,18 +11,25 @@
  */
 
 if ($block_image_id && !empty($block_image_id)) {
+    $image_position = get_field('image_position');
+    $class = '';
+    if ($image_position == 'left') {
+        $class = 'img-left';
+    } elseif ($image_position == 'right') {
+        $class = 'img-right';
+    }
     ?>
-        <section class="article-questions even-sequence">
+        <section class="article-questions even-sequence <?php echo esc_attr($class); ?>">
             <div class="article-questions--wrapper">
                 <div class="article-questions--content">
-                <?php foreach ($block_qna as $qna ) {  ?>
-                        <div class="article-questions--que">
-                            <span>Q:</span> <?php echo wp_kses_post(Wacoal_Remove_P_tag($qna['question_text']));?>
-                        </div>
-                        <div class="article-questions--ans">
-                            <?php echo wp_kses_post($qna['answer_text']);?></p>
-                        </div>
-                <?php } ?>
+                    <?php foreach ($block_qna as $qna ) {  ?>
+                            <div class="article-questions--que">
+                                <span>Q:</span> <?php echo wp_kses_post(Wacoal_Remove_P_tag($qna['question_text']));?>
+                            </div>
+                            <div class="article-questions--ans">
+                                <?php echo wp_kses_post($qna['answer_text']);?></p>
+                            </div>
+                    <?php } ?>
                 </div>
 
                 <div class="article-questions--image">
