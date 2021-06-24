@@ -2201,6 +2201,15 @@
         font-size: 15px;
         line-height: 23px;
       }
+
+      strong {
+        @include NeutraText-BoldAlt;
+      }
+
+      a {
+        @include NeutraText-BoldAlt;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -2616,6 +2625,7 @@
         padding-left: 57px;
         font-size: 22px;
         line-height: 25px;
+        margin-bottom: 0;
       }
     }
 
@@ -2637,6 +2647,10 @@
         font-size: 15px;
         line-height: 20px;
         margin-bottom: 20px;
+      }
+
+      @include respond-below(sm) {
+        padding-top: 25px;
       }
 
       strong {
