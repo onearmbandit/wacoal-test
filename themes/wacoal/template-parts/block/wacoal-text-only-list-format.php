@@ -29,15 +29,12 @@ if ($block_lists && !empty($block_lists)) {
             ?>
         <div class="list-box list-box-one">
 
-            <?php
-            if ($list_header && !empty($list_header)) {
-                ?>
             <div class="list-box--number">
                 <span><?php echo esc_attr($row_index); ?></span>
-                <h2><?php echo wp_kses_post($list_header); ?></h2>
+                <?php if ($list_header && !empty($list_header)) { ?>
+                    <h2><?php echo wp_kses_post($list_header); ?></h2>
+                <?php } ?>
             </div>
-                <?php
-            } ?>
 
             <div class="list-box--content">
 
@@ -66,15 +63,13 @@ if ($block_lists && !empty($block_lists)) {
         if ($list_align_type == 'left_aligned') {
             ?>
         <div class="list-box list-box-two">
-             <?php
-                if ($list_header && !empty($list_header)) {
-                    ?>
-                <div class="list-box--number list-box--number__mobile">
+
+            <div class="list-box--number list-box--number__mobile">
                 <span><?php echo esc_attr($row_index); ?></span>
+                <?php if ($list_header && !empty($list_header)) { ?>
                     <h2><?php echo wp_kses_post($list_header); ?></h2>
-                </div>
-                    <?php
-                } ?>
+                <?php } ?>
+            </div>
             <?php
             if ($list_subhead && !empty($list_subhead)) {
                 ?>
@@ -100,16 +95,12 @@ if ($block_lists && !empty($block_lists)) {
 
                 </div>
 
-                <?php
-                if ($list_header && !empty($list_header)) {
-                    ?>
                 <div class="list-box--number list-box--number__desktop">
-                <span><?php echo esc_attr($row_index); ?></span>
-                    <h2><?php echo wp_kses_post($list_header); ?></h2>
+                    <span><?php echo esc_attr($row_index); ?></span>
+                    <?php if ($list_header && !empty($list_header)) { ?>
+                        <h2><?php echo wp_kses_post($list_header); ?></h2>
+                    <?php } ?>
                 </div>
-                    <?php
-                } ?>
-
             </div>
         </div>
             <?php
@@ -117,15 +108,12 @@ if ($block_lists && !empty($block_lists)) {
         if ($list_align_type == 'right_aligned') {
             ?>
             <div class="list-box list-box-three">
-            <?php
-            if ($list_header && !empty($list_header)) {
-                ?>
                 <div class="list-box--number list-box--number__mobile">
                 <span><?php echo esc_attr($row_index); ?></span>
+                <?php if ($list_header && !empty($list_header)) { ?>
                     <h2><?php echo wp_kses_post($list_header); ?></h2>
-                </div>
-                    <?php
-            } ?>
+                <?php } ?>
+            </div>
             <?php
             if ($list_subhead && !empty($list_subhead)) {
                 ?>
@@ -139,15 +127,12 @@ if ($block_lists && !empty($block_lists)) {
 
             <div class="list-box-even--wrapper">
 
-                <?php
-                if ($list_header && !empty($list_header)) {
-                    ?>
                 <div class="list-box--number list-box--number__desktop">
-                <span><?php echo esc_attr($row_index); ?></span>
-                    <h2><?php echo wp_kses_post($list_header); ?></h2>
+                    <span><?php echo esc_attr($row_index); ?></span>
+                    <?php if ($list_header && !empty($list_header)) { ?>
+                        <h2><?php echo wp_kses_post($list_header); ?></h2>
+                    <?php } ?>
                 </div>
-                    <?php
-                } ?>
 
                 <?php
                 if ($list_description && !empty($list_description)) {

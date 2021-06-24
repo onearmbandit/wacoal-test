@@ -110,7 +110,7 @@ if ($block_lists && !empty($block_lists)) {
                 <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
                endif;?>>
             <?php endif;?>
-                <div class="list-text-image--img <?php echo esc_url($img_link);?>"
+                <div class="list-text-image--img <?php echo esc_attr($img_class);?>"
                     style="background-image:url(<?php echo esc_url($img_url); ?>">
                 </div>
                 <?php if(!empty($img_link)) :?>
