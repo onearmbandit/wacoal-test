@@ -50,13 +50,13 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
 
 $video_section_class = '';
 if ($video_type == 'only_video') {
-    $video_section_class = 'only_video_section';
+    $video_section_class = 'only-video';
 }
 ?>
 
-<section class="video-image--wrapper <?php echo esc_attr($video_section_class); ?>">
+<section class="video-image--wrapper">
 
-    <div class="video-image--wrapper__left">
+    <div class="video-image--wrapper__left <?php echo esc_attr($video_section_class); ?>">
         <?php echo $video ?>
         <div class="video-caption">
             <?php echo wp_kses_post($video_caption); ?>
