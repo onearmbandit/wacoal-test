@@ -48,33 +48,39 @@
                     endif;?>
 
                     <?php if($list_image_caption && !empty($list_image_caption)) :?>
-                    <div class="image-name mobile">
-                        <?php echo wp_kses_post($list_image_caption);?>
-                    </div>
-                    <?php endif;?>
-
-                    <div class="list-text-image--content">
-
-                    <?php if($list_title && !empty($list_title)) :?>
-                        <h2 class="title">
-                            <?php echo wp_kses_post($list_title);?>
-                        </h2>
-                    <?php endif;?>
-
-                    <?php if($list_desc && !empty($list_desc)) :?>
-                        <div class="content">
-                            <?php echo wp_kses_post($list_desc);?>
+                        <div class="image-name mobile">
+                            <?php echo wp_kses_post($list_image_caption);?>
                         </div>
                     <?php endif;?>
 
+                    <div class="list-text-image--content">
+                        <?php if($list_title && !empty($list_title)) :?>
+                            <h2 class="title">
+                                <?php echo wp_kses_post($list_title);?>
+                            </h2>
+                        <?php endif;?>
+
+                        <?php if($list_desc && !empty($list_desc)) :?>
+                            <div class="content">
+                                <?php echo wp_kses_post($list_desc);?>
+                            </div>
+                        <?php endif;?>
+
+                        <?php if (!empty($button_label) && !empty($button_link)) { ?>
+                            <div class="button-block">
+                                <a href="<?php echo esc_url($button_link); ?>" class="block-btn" target="_blank">
+                                    <?php echo esc_attr($button_label); ?>
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
 
-                    <?php if($list_image_caption && !empty($list_image_caption)) :?>
-                    <div class="image-name desktop">
-                        <?php echo wp_kses_post($list_image_caption);?>
-                    </div>
-                    <?php endif;?>
+                <?php if($list_image_caption && !empty($list_image_caption)) :?>
+                <div class="image-name desktop">
+                    <?php echo wp_kses_post($list_image_caption);?>
+                </div>
+                <?php endif;?>
             </div>
         <?php } elseif ($list_image_position == 'right') {
             ?>
@@ -100,28 +106,33 @@
                     <?php endif;?>
 
                     <div class="list-text-image--content">
+                        <?php if($list_title && !empty($list_title)) :?>
+                            <h2 class="title">
+                                <?php echo wp_kses_post($list_title);?>
+                            </h2>
+                        <?php endif;?>
 
-                    <?php if($list_title && !empty($list_title)) :?>
-                        <h2 class="title">
-                            <?php echo wp_kses_post($list_title);?>
-                        </h2>
-                    <?php endif;?>
+                        <?php if($list_desc && !empty($list_desc)) :?>
+                            <div class="content">
+                                <?php echo wp_kses_post($list_desc);?>
+                            </div>
+                        <?php endif;?>
 
-                    <?php if($list_desc && !empty($list_desc)) :?>
-                        <div class="content">
-                            <?php echo wp_kses_post($list_desc);?>
-                        </div>
-                    <?php endif;?>
-
+                        <?php if (!empty($button_label) && !empty($button_link)) { ?>
+                            <div class="button-block">
+                                <a href="<?php echo esc_url($button_link); ?>" class="block-btn" target="_blank">
+                                    <?php echo esc_attr($button_label); ?>
+                                </a>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
 
-                    <?php if($list_image_caption && !empty($list_image_caption)) :?>
-                    <div class="image-name desktop">
-                        <?php echo wp_kses_post($list_image_caption);?>
-                    </div>
-                    <?php endif;?>
-
+                <?php if($list_image_caption && !empty($list_image_caption)) :?>
+                <div class="image-name desktop">
+                    <?php echo wp_kses_post($list_image_caption);?>
+                </div>
+                <?php endif;?>
             </div>
         <?php }
     }?>

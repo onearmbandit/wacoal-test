@@ -35,7 +35,7 @@ if($list_data && !empty($list_data)) :
 
             if ($list_image_position == 'left') {
                 ?>
-                <div class="box odd img-left">
+                <div class="box img-left">
                     <?php if ($list_image_id && !empty($list_image_id)) : ?>
                         <div class="box--left">
 
@@ -69,7 +69,7 @@ if($list_data && !empty($list_data)) :
                     </div>
                 </div>
             <?php } elseif ($list_image_position == 'right') { ?>
-                <div class="box even img-right">
+                <div class="box img-right">
                     <?php if ($list_image_id && !empty($list_image_id)) : ?>
                         <div class="box--left">
                             <?php if ($list_img_link && !empty($list_img_link)) :?>
