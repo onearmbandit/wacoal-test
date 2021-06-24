@@ -98,10 +98,8 @@ function Btemptd_List_Image_Data_Format_Render_callback( $block )
         $add_button         = $list_data['add_button'];
 
         if ($add_button == true) {
-
             $button_label = $list_data['button_label'];
             $button_url   = $list_data['button_url'];
-
         }
     } elseif ($list_type == 'quotes_data') {
 

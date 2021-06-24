@@ -45,7 +45,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f929d87a05ad',
-            'label' => 'Content with Title',
+            'label' => 'List - Image + Text Hover Box (Left & Right)',
             'name' => 'content_with_title',
             'type' => 'group',
             'instructions' => '',
@@ -290,7 +290,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5f929f0ca05b5',
-            'label' => 'Content with Quotes',
+            'label' => 'Image + Quote + Caption + Button (Left & Right)',
             'name' => 'content_with_quotes',
             'type' => 'repeater',
             'instructions' => '',
@@ -745,7 +745,7 @@ acf_add_local_field_group(
         ),
         array(
             'key' => 'field_5fca213bdd366',
-            'label' => 'Content with Bordered Text and Image',
+            'label' => 'Image + Text Colorblock (Left & Right)',
             'name' => 'content_with_bordered_text_and_image',
             'type' => 'repeater',
             'instructions' => '',
