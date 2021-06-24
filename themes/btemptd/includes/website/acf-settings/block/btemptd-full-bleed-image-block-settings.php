@@ -1,6 +1,6 @@
 <?php
 /**
- * Btemptd image block acf settings
+ * Btemptd full bleed image block acf settings
  * php version 7.4
  *
  * @category Btemptd
@@ -12,38 +12,11 @@
 
 acf_add_local_field_group(
     array(
-    'key' => 'group_60bddf4bab22b',
-    'title' => 'Btemptd Image Settings',
+    'key' => 'group_60d46b5c34f74',
+    'title' => 'Image - Full Bleed Settings',
     'fields' => array(
         array(
-            'key' => 'field_60bddf568f0c9',
-            'label' => 'Select Image Type',
-            'name' => 'select_image_type',
-            'type' => 'select',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'choices' => array(
-                'select' => 'Select',
-                'large' => 'Large',
-                'medium' => 'Medium',
-                'small' => 'Small',
-            ),
-            'default_value' => false,
-            'allow_null' => 0,
-            'multiple' => 0,
-            'ui' => 0,
-            'return_format' => 'value',
-            'ajax' => 0,
-            'placeholder' => '',
-        ),
-        array(
-            'key' => 'field_60bddff98f0ca',
+            'key' => 'field_60d46b5c3c185',
             'label' => 'Image',
             'name' => 'image',
             'type' => 'image',
@@ -52,7 +25,7 @@ acf_add_local_field_group(
             'conditional_logic' => array(
                 array(
                     array(
-                        'field' => 'field_60bddf568f0c9',
+                        'field' => 'field_60d46b5c3c14c',
                         'operator' => '!=',
                         'value' => 'select',
                     ),
@@ -75,7 +48,26 @@ acf_add_local_field_group(
             'mime_types' => '',
         ),
         array(
-            'key' => 'field_60bde01f8f0cb',
+            'key' => 'field_60d46edb4294f',
+            'label' => 'Image Caption',
+            'name' => 'image_caption',
+            'type' => 'textarea',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+            'maxlength' => '',
+            'rows' => 3,
+            'new_lines' => '',
+        ),
+        array(
+            'key' => 'field_60d46b5c3c1bb',
             'label' => 'Image Link',
             'name' => 'image_link',
             'type' => 'url',
@@ -84,7 +76,7 @@ acf_add_local_field_group(
             'conditional_logic' => array(
                 array(
                     array(
-                        'field' => 'field_60bddff98f0ca',
+                        'field' => 'field_60d46b5c3c185',
                         'operator' => '!=empty',
                     ),
                 ),
@@ -98,7 +90,7 @@ acf_add_local_field_group(
             'placeholder' => '',
         ),
         array(
-            'key' => 'field_60bde03e8f0cc',
+            'key' => 'field_60d46b5c3c1f2',
             'label' => 'Open in New Tab',
             'name' => 'open_in_new_tab',
             'type' => 'true_false',
@@ -122,7 +114,7 @@ acf_add_local_field_group(
             array(
                 'param' => 'block',
                 'operator' => '==',
-                'value' => 'acf/btemptd-image',
+                'value' => 'acf/btemptd-full-bleed-image',
             ),
         ),
     ),

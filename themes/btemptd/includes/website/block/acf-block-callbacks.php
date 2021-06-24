@@ -399,6 +399,43 @@ function Btemptd_Image_Render_callback( $block )
 }
 
 /**
+ * Callback function for banner full bleed image block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Full_Blled_Image_Render_callback( $block )
+{
+    $block_image_id    = get_field('image');
+
+    if (! empty($block_image_id) ) {
+        $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');
+        $block_image_alt   = Btemptd_Get_Image_alt($block_image_id, 'Block Image');
+        $block_image_url   = Btemptd_Get_image($block_image_array);
+
+        $img_link       = get_field('image_link');
+        $image_caption  = get_field('image_caption');
+        $new_tab        = get_field('open_in_new_tab');
+
+        if (is_admin() ) {
+            Btemptd_WP_Backend_edit('Image - Full Bleed');
+        } else {
+            $shortcode_template  = '/template-parts/block/btemptd-banner-full-bleed-img.php';
+            include locate_template($shortcode_template);
+        }
+
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Image - Full Bleed</u></h4>
+            <span style="color:red">Empty Block</span>
+            <?php
+        }
+    }
+}
+
+/**
  * Callback function for banner image block
  *
  * @param [type] $block Block.

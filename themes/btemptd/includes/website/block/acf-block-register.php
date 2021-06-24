@@ -142,6 +142,17 @@ function Wacoal_Acf_init()
         );
         acf_register_block(
             array(
+            'name'            => 'btemptd-full-bleed-image',
+            'title'           => __('Image - Full Bleed'),
+            'description'     => __('A custom image block.'),
+            'render_callback' => 'Btemptd_Full_Blled_Image_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'format-image',
+            'keywords'        => array( 'text', 'link', 'image' ),
+            )
+        );
+        acf_register_block(
+            array(
             'name'            => 'btemptd-product-gallery',
             'title'           => __('Product Gallery'),
             'description'     => __('A custom product gallery block.'),
