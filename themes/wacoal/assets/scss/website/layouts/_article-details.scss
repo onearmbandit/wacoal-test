@@ -2963,11 +2963,13 @@
         @include respond-below(lg) {
           font-size: 36px;
           line-height: 42px;
+          margin-bottom: 26px;
         }
 
         @include respond-below(md) {
           font-size: 26px;
           line-height: 32px;
+          margin-bottom: 16px;
         }
 
       }
@@ -3052,7 +3054,7 @@
     }
 
 
-    &:nth-child(even) {
+    &.img-right {
       justify-content: flex-start;
       .image {
         margin-right: inherit;
