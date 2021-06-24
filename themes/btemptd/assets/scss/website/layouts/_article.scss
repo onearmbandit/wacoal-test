@@ -349,7 +349,7 @@
         }
       }
 
-      &.odd {
+      &.img-right {
 
         @include respond-above(sm) {
           justify-content: flex-end;
@@ -387,7 +387,7 @@
         }
       }
 
-      &.even {
+      &.img-left {
         justify-content: flex-start;
 
         @include respond-below(sm) {
@@ -2020,6 +2020,12 @@
     @include respond-below(lg) {
       margin: 16px 0 12px;
     }
+
+    @include respond-below(sm) {
+      max-width: 90%;
+      margin: 10px auto;
+    }
+  }
 }
 
 //
