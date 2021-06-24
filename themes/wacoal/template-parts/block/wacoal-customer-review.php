@@ -53,9 +53,13 @@
             </div>
             <?php endif;?>
 
-            <div class="button-wrapper">
-                <a href="#" class="btn primary dark">Shop Now</a>
-            </div>
+            <?php if (!empty($button_label) && !empty($button_link) ) { ?>
+                <div class="button-wrapper">
+                    <a href="<?php echo esc_url($button_link); ?>" class="btn primary dark" target="_blank">
+                        <?php echo esc_attr($button_label); ?>
+                    </a>
+                </div>
+            <?php } ?>
 
         </div>
 

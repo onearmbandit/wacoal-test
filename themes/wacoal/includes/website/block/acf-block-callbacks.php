@@ -613,6 +613,7 @@ function Wacoal_Medium_Img_Format_Render_callback( $block )
     $block_desc     = get_field('description');
     $img_link  = get_field('image_link');
     $new_tab   = get_field('open_in_new_tab');
+    $image_caption  = get_field('image_caption');
 
     $shortcode_template  = '/template-parts/block/wacoal-medium-img.php';
 
@@ -676,6 +677,8 @@ function Wacoal_Customer_Review_Render_callback( $block )
     $right_new_tab       = get_field('right_open_in_new_tab');
     $left_image_caption  = get_field('left_image_caption');
     $right_image_caption = get_field('right_image_caption');
+    $button_label        = get_field('button_label');
+    $button_link         = get_field('button_link');
 
     if (!empty($left_image_id) && $left_image_id) {
         $left_image_array = wp_get_attachment_image_src($left_image_id, 'full');
@@ -744,6 +747,10 @@ function Wacoal_Title_Img_Bullets_List_Block_Render_callback( $block )
     $block_image_id = get_field('image');
     $img_link       = get_field('image_link');
     $new_tab        = get_field('open_in_new_tab');
+
+    $button_label   = get_field('button_label');
+    $button_link    = get_field('button_link');
+    $image_caption  = get_field('image_caption');
 
     if (! empty($block_image_id) && $block_image_id ) {
         $block_image_array = wp_get_attachment_image_src($block_image_id, 'full');

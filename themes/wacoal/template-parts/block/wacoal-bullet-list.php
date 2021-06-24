@@ -14,7 +14,9 @@
 <section class="title-body-image">
     <?php if($block_image_id && !empty($block_image_id)) :?>
         <div class="image--wrapper mobile" style="background-image:url(<?php echo  esc_url($block_image_url); ?>"></div>
-        <div class="image-caption mobile">Body Base® Shorty Panty</div>
+        <div class="image-caption mobile">
+            <?php echo wp_kses_post($image_caption); ?>
+        </div>
     <?php endif; ?>
     <div class="wrapper">
         <div class="title-wrapper">
@@ -50,12 +52,18 @@
                 <div class="bullets--wrapper">
                     <?php echo Wacoal_Remove_P_tag(wp_kses_post($bullet_points));?>
 
+                    <?php if (!empty($button_label) && !empty($button_link)) {?>
                     <div class="button-wrapper">
-                        <a href="#" class="btn primary dark">Shop now</a>
+                        <a href="<?php echo esc_url($button_link); ?>" class="btn primary dark" target="_blank">
+                            <?php echo esc_attr($button_label); ?>
+                        </a>
                     </div>
+                    <?php } ?>
                 </div>
             <?php endif;?>
         </div>
-        <div class="image-caption desktop">Body Base® Shorty Panty</div>
+        <div class="image-caption desktop">
+            <?php echo wp_kses_post($image_caption); ?>
+        </div>
     </div>
 </section>
