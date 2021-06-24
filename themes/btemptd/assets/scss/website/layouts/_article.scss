@@ -2008,6 +2008,18 @@
       text-decoration: underline;
     }
   }
+
+  .image-caption {
+    @include NeutraText-BookAlt;
+    color: var(--color-gray-lighter);
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.77px;
+    margin: 22px 0;
+
+    @include respond-below(lg) {
+      margin: 16px 0 12px;
+    }
 }
 
 //
@@ -2104,7 +2116,7 @@
       flex-direction: column-reverse;
     }
 
-    &:nth-child(even) {
+    &.img-left {
       flex-direction: row-reverse;
 
       .left-box {
