@@ -33,8 +33,13 @@
         $sec_class = '';
         if ($image_position == 'left') {
             $sec_class = 'img-left';
-        } elseif ($image_position == 'left') {
+        } elseif ($image_position == 'right') {
             $sec_class = 'img-right';
+        }
+
+        $title_class = '';
+        if (empty($order_value)) {
+            $title_class = 'no-number-title';
         }
 
         ?>
@@ -65,7 +70,7 @@
                 <?php } ?>
 
                 <div class="content-inner">
-                    <h3 class="title"><?php echo wp_kses_post($title); ?></h3>
+                    <h3 class="title <?php echo esc_attr($title_class); ?>"><?php echo wp_kses_post($title); ?></h3>
                     <div class="para">
                         <?php echo wp_kses_post($description); ?>
                     </div>

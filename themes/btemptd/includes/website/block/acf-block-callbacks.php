@@ -535,7 +535,7 @@ function Btemptd_Data_Image_Block_Render_callback( $block )
     $image_id    = get_field('image');
     $paragraph_content    = get_field('paragraph_content');
 
-    if (! empty($image_id) && ! empty($paragraph_content) ) {
+    if (! empty($image_id) ) {
 
         if (is_admin() ) {
             Btemptd_WP_Backend_edit('Image + Body');
