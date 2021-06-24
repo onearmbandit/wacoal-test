@@ -75,7 +75,7 @@
 
             </div>
         <?php } elseif ($review_image_position == 'right') { ?>
-            <div class="reason-box even img-left">
+            <div class="reason-box even img-right">
                 <div class="reason-box--content box-shadow-right">
                     <div  class="reason-box--content__number">
                             <?php
