@@ -504,7 +504,7 @@ function Btemptd_Video_Image_Block_Render_callback( $block )
     $video_option  = get_field('video_option');
     $image  = get_field('image');
 
-    if ($video_option !== 'select_option' && !empty($image)) {
+    if ($video_option !== 'select_option') {
 
         if (is_admin() ) {
             Btemptd_WP_Backend_edit('Video - Vertical');
