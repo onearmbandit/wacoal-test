@@ -16,6 +16,31 @@ acf_add_local_field_group(
     'title' => 'Btemptd Video with Image Settings',
     'fields' => array(
         array(
+            'key' => 'field_60d478d7d7ff0',
+            'label' => 'Select Video Type',
+            'name' => 'select_video_type',
+            'type' => 'select',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'choices' => array(
+                'video_with_image' => 'Video with Image',
+                'only_video' => 'Only Video',
+            ),
+            'default_value' => 'video_with_image',
+            'allow_null' => 0,
+            'multiple' => 0,
+            'ui' => 0,
+            'return_format' => 'value',
+            'ajax' => 0,
+            'placeholder' => '',
+        ),
+        array(
             'key' => 'field_60bde3e60251c',
             'label' => 'Video Option',
             'name' => 'video_option',
@@ -151,7 +176,15 @@ acf_add_local_field_group(
             'type' => 'image',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d478d7d7ff0',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',
@@ -182,6 +215,13 @@ acf_add_local_field_group(
                         'operator' => '!=empty',
                     ),
                 ),
+                array(
+                    array(
+                        'field' => 'field_60d478d7d7ff0',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                ),
             ),
             'wrapper' => array(
                 'width' => '',
@@ -208,6 +248,13 @@ acf_add_local_field_group(
                         'operator' => '!=empty',
                     ),
                 ),
+                array(
+                    array(
+                        'field' => 'field_60d478d7d7ff0',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                ),
             ),
             'wrapper' => array(
                 'width' => '',
@@ -224,7 +271,15 @@ acf_add_local_field_group(
             'type' => 'true_false',
             'instructions' => '',
             'required' => 0,
-            'conditional_logic' => 0,
+            'conditional_logic' => array(
+                array(
+                    array(
+                        'field' => 'field_60d478d7d7ff0',
+                        'operator' => '==',
+                        'value' => 'video_with_image',
+                    ),
+                ),
+            ),
             'wrapper' => array(
                 'width' => '',
                 'class' => '',

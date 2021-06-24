@@ -500,6 +500,7 @@ function Btemptd_Customer_Review_Render_callback( $block )
  */
 function Btemptd_Video_Image_Block_Render_callback( $block )
 {
+    $video_type    = !empty(get_field('select_video_type')) ? get_field('select_video_type') : 'video_with_image';
     $video_option  = get_field('video_option');
     $image  = get_field('image');
 
