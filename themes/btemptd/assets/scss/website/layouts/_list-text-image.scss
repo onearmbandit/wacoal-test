@@ -84,14 +84,6 @@
         width: 352px;
         height: 352px;
       }
-
-      &.no-bg-img {
-        height: auto;
-
-        @include respond-above(sm) {
-          height: auto;
-        }
-      }
     }
 
     &--content {
