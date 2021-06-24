@@ -624,7 +624,7 @@ function Btemptd_Img_Text_Img_Block_Render_callback( $block )
     $left_image_id  = get_field('left_image');
     $right_image_id  = get_field('right_image');
 
-    if (! empty($title) && ! empty($left_image_id) && ! empty($left_image_id) ) {
+    if (! empty($title) || ! empty($left_image_id) || ! empty($right_image_id) ) {
         if (is_admin() ) {
             Btemptd_WP_Backend_edit('Image + Text + Image');
         } else {
