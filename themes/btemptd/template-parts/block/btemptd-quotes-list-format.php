@@ -53,13 +53,15 @@
                         <div class="content-inner--tag">
                             <?php echo esc_attr($list_name) ?>
                         </div>
-                        <div class="shop-button">
-                            <?php if ($add_button) {?>
-                            <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
-                                <?php echo esc_attr($button_label);?>
-                            </a>
-                            <?php } ?>
-                        </div>
+
+                        <?php if ($add_button && !empty($button_label) && !empty($button_url)) {?>
+                            <div class="shop-button">
+                                <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
+                                    <?php echo esc_attr($button_label);?>
+                                </a>
+                            </div>
+                        <?php } ?>
+
                     </div>
 
                     <div class="quote-right">

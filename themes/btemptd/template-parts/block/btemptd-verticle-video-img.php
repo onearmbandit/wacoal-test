@@ -47,9 +47,14 @@ $image_url   = Btemptd_Get_image($image_array);
 $image_caption  = get_field('image_caption');
 $image_link  = get_field('image_link');
 $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
+
+$video_section_class = '';
+if ($video_type == 'only_video') {
+    $video_section_class = 'only_video_section';
+}
 ?>
 
-<section class="video-image--wrapper">
+<section class="video-image--wrapper <?php echo esc_attr($video_section_class); ?>">
 
     <div class="video-image--wrapper__left">
         <?php echo $video ?>
@@ -58,7 +63,7 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
         </div>
     </div>
 
-    <?php if ($video_type == 'video_with_image') {?>
+    <?php if ($video_type == 'video_with_image') { ?>
         <div class="video-image--wrapper__right">
             <figure>
                 <?php if (! empty($image_link)) { ?>

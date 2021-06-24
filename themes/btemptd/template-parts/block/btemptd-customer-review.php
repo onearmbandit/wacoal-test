@@ -33,30 +33,33 @@ $right_open_in_new_tab = get_field('right_open_in_new_tab') === true ? '_blank' 
 
 <section class="customer-review">
     <div class="customer-review--wrapper">
-        <div class="image-wrapper left">
-            <?php if (! empty($left_image_link)) { ?>
-            <a href="<?php echo esc_url($left_image_link) ?>" target="<?php echo esc_attr($left_open_in_new_tab) ?>">
-                <div class="image"
-                    style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
-                </div>
-            </a>
-            <?php } else { ?>
-                <div class="image"
-                    style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
-                </div>
-            <?php } ?>
 
-            <div class="image-caption">
+        <?php if (!empty($left_image_url)) {?>
+            <div class="image-wrapper left">
                 <?php if (! empty($left_image_link)) { ?>
-                    <a href="<?php echo esc_url($left_image_link) ?>" target="<?php echo esc_attr($left_open_in_new_tab) ?>">
-                        <?php echo esc_attr($left_image_caption)?>
-                    </a>
-                <?php } else {
-                    echo esc_attr($left_image_caption);
-                }?>
+                <a href="<?php echo esc_url($left_image_link) ?>" target="<?php echo esc_attr($left_open_in_new_tab) ?>">
+                    <div class="image"
+                        style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
+                    </div>
+                </a>
+                <?php } else { ?>
+                    <div class="image"
+                        style="background-image:url(<?php echo  esc_url($left_image_url); ?>);">
+                    </div>
+                <?php } ?>
 
+                <div class="image-caption">
+                    <?php if (! empty($left_image_link)) { ?>
+                        <a href="<?php echo esc_url($left_image_link) ?>" target="<?php echo esc_attr($left_open_in_new_tab) ?>">
+                            <?php echo esc_attr($left_image_caption)?>
+                        </a>
+                    <?php } else {
+                        echo esc_attr($left_image_caption);
+                    }?>
+
+                </div>
             </div>
-        </div>
+        <?php } ?>
 
         <div class="review-content">
             <div class="rating-stars">
@@ -73,28 +76,31 @@ $right_open_in_new_tab = get_field('right_open_in_new_tab') === true ? '_blank' 
             </div>
         </div>
 
-        <div class="image-wrapper right">
-            <?php if (! empty($right_image_link)) { ?>
-                <a href="<?php echo esc_url($right_image_link) ?>" target="<?php echo esc_attr($right_open_in_new_tab) ?>">
+        <?php if (!empty($right_image_url)) {?>
+            <div class="image-wrapper right">
+                <?php if (! empty($right_image_link)) { ?>
+                    <a href="<?php echo esc_url($right_image_link) ?>" target="<?php echo esc_attr($right_open_in_new_tab) ?>">
+                        <div class="image"
+                            style="background-image:url(<?php echo  esc_url($right_image_url); ?>);">
+                        </div>
+                    </a>
+                <?php } else { ?>
                     <div class="image"
                         style="background-image:url(<?php echo  esc_url($right_image_url); ?>);">
                     </div>
-                </a>
-            <?php } else { ?>
-                <div class="image"
-                    style="background-image:url(<?php echo  esc_url($right_image_url); ?>);">
-                </div>
-            <?php } ?>
+                <?php } ?>
 
-            <div class="image-caption">
-                <?php if (! empty($right_image_link)) { ?>
-                    <a href="<?php echo esc_url($right_image_link) ?>" target="<?php echo esc_attr($right_open_in_new_tab) ?>">
-                        <?php echo esc_attr($right_image_caption)?>
-                    </a>
-                <?php } else {
-                        echo esc_attr($right_image_caption);
-                } ?>
+                <div class="image-caption">
+                    <?php if (! empty($right_image_link)) { ?>
+                        <a href="<?php echo esc_url($right_image_link) ?>" target="<?php echo esc_attr($right_open_in_new_tab) ?>">
+                            <?php echo esc_attr($right_image_caption)?>
+                        </a>
+                    <?php } else {
+                            echo esc_attr($right_image_caption);
+                    } ?>
+                </div>
             </div>
-        </div>
+        <?php } ?>
+
     </div>
 </section>

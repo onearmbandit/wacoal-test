@@ -565,7 +565,7 @@ function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
 {
     $list_data  = get_field('list_data');
 
-    if (! empty($list_data[0]['title']) ) {
+    if (! empty($list_data[0]['image']) ) {
         if (is_admin() ) {
             Btemptd_WP_Backend_edit('List - Image + Italics Title + Subhead + Body (Left & Right)');
         } else {

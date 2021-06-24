@@ -15,51 +15,59 @@
 <section class="italics-title">
 
     <?php foreach ($list_data as $key => $list) {
-            $title = $list['title'];
-            $subtitlte = $list['subtitlte'];
-            $description = $list['description'];
+        $image_position    = !empty($list['image_position']) ? $list['image_position'] : 'left';
+        $title = $list['title'];
+        $subtitlte = $list['subtitlte'];
+        $description = $list['description'];
 
-            $image_id = $list['image'];
-            $image_array = wp_get_attachment_image_src($image_id, 'full');
-            $image_url   = Btemptd_Get_image($image_array);
+        $image_id = $list['image'];
+        $image_array = wp_get_attachment_image_src($image_id, 'full');
+        $image_url   = Btemptd_Get_image($image_array);
 
-            $image_caption = $list['image_caption'];
-            $image_link = $list['image_link'];
-            $new_tab = $list['open_link_in_new_tab'] === true ? '_blank' : '_self';
+        $image_caption = $list['image_caption'];
+        $image_link = $list['image_link'];
+        $new_tab = $list['open_link_in_new_tab'] === true ? '_blank' : '_self';
+
+        $sec_class = '';
+        if ($image_position == 'left') {
+            $sec_class = 'img-left';
+        } elseif ($image_position == 'right') {
+            $sec_class = 'img-right';
+        }
         ?>
 
-    <div class="italics-title--wrapper">
-        <div class="left-box">
-            <div>
-                <h3 class="title">
-                    <?php echo esc_attr($title); ?>
-                </h3>
-                <div class="sub-title">
-                    <?php echo esc_attr($subtitlte); ?>
+            <div class="italics-title--wrapper <?php echo esc_attr($sec_class); ?>">
+                <div class="left-box">
+                    <div>
+                        <h3 class="title">
+                            <?php echo esc_attr($title); ?>
+                        </h3>
+                        <div class="sub-title">
+                            <?php echo esc_attr($subtitlte); ?>
+                        </div>
+
+                        <div class="content">
+                            <?php echo wp_kses_post($description); ?>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="content">
-                    <?php echo wp_kses_post($description); ?>
+                <div class="right-box">
+                    <?php if (! empty($image_link)) { ?>
+                    <a href="<?php echo esc_url($image_link) ?>"
+                            target="<?php echo esc_attr($new_tab) ?>" >
+                        <div class="image-wrapper" style="background-image:url(<?php echo esc_url($image_url); ?>);">
+                        </div>
+                    </a>
+                    <?php } else { ?>
+                        <div class="image-wrapper" style="background-image:url(<?php echo esc_url($image_url); ?>);">
+                        </div>
+                    <?php } ?>
+                    <div class="image-title">
+                        <?php echo wp_kses_post($image_caption); ?>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="right-box">
-            <?php if (! empty($image_link)) { ?>
-            <a href="<?php echo esc_url($image_link) ?>"
-                    target="<?php echo esc_attr($new_tab) ?>" >
-                <div class="image-wrapper" style="background-image:url(<?php echo esc_url($image_url); ?>);">
-                </div>
-            </a>
-            <?php } else { ?>
-                <div class="image-wrapper" style="background-image:url(<?php echo esc_url($image_url); ?>);">
-                </div>
-            <?php } ?>
-            <div class="image-title">
-                <?php echo wp_kses_post($image_caption); ?>
-            </div>
-        </div>
-    </div>
 
     <?php } ?>
 </section>
