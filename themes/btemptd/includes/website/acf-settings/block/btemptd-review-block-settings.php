@@ -13,7 +13,7 @@
 acf_add_local_field_group(
     array(
     'key' => 'group_5f896c57aedba',
-    'title' => 'Btemptd review settings',
+    'title' => 'List - Numbered Image + Text (Left & Right)',
     'fields' => array(
         array(
             'key' => 'field_5f896c6aefd8b',
@@ -127,6 +127,34 @@ acf_add_local_field_group(
                     ),
                     'default_value' => '',
                     'placeholder' => '',
+                    'maxlength' => '',
+                    'prepend' => '',
+                    'append' => '',
+                ),
+                array(
+                    'key' => 'field_60d4580d53f19',
+                    'label' => 'Image Position',
+                    'name' => 'image_position',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'left' => 'Image Left',
+                        'right' => 'Image Right',
+                    ),
+                    'default_value' => 'left',
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
+                    'placeholder' => '',
                 ),
             ),
         ),
@@ -150,5 +178,3 @@ acf_add_local_field_group(
     'description' => '',
     )
 );
-
-

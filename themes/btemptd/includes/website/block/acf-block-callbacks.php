@@ -24,7 +24,7 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
     if (! empty($block_lists) ) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Btemptd Reviews Lists Block');
+            Btemptd_WP_Backend_edit('List - Numbered Image + Text (Left & Right)');
         } else {
             $shortcode_template = '/template-parts/block/btemptd-list-format.php';
             include locate_template($shortcode_template);
@@ -33,8 +33,8 @@ function Btemptd_Text_Img_List_Format_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Reviews Lists:</u></h4>
-            <span style="color:red">Empty Btemptd Reviews Lists Block</span>
+            <h4><u>List - Numbered Image + Text (Left & Right)</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -154,7 +154,7 @@ function Btemptd_Para_Format_Render_callback( $block )
     if (! empty($para_type) ) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Btemptd Paragraph Block');
+            Btemptd_WP_Backend_edit('Subhead + Description, Body Intro Paragraph');
         } else {
             $shortcode_template   = '/template-parts/block/btemptd-para-block.php';
             include locate_template($shortcode_template);
@@ -163,8 +163,8 @@ function Btemptd_Para_Format_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Paragraph Block:</u></h4>
-            <span style="color:red">Empty Btemptd Paragraph Block</span>
+            <h4><u>Subhead + Description, Body Intro Paragraph:</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -216,7 +216,7 @@ function Btemptd_Button_Format_Render_callback( $block )
     if (! empty($button_label) ) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Btemptd Button Block');
+            Btemptd_WP_Backend_edit('Button');
         } else {
             $shortcode_template   = '/template-parts/block/btemptd-button-block.php';
             include locate_template($shortcode_template);
@@ -225,8 +225,8 @@ function Btemptd_Button_Format_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Button Block:</u></h4>
-            <span style="color:red">Empty Btemptd Button Block</span>
+            <h4><u>Button:</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -246,7 +246,7 @@ function Btemptd_Image_Text_List_Format_Render_callback( $block )
     if ($block_lists && !empty($block_lists)) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('List Block');
+            Btemptd_WP_Backend_edit('Image + Text (Left & Right)');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-image-text-list.php';
             include locate_template($shortcode_template);
@@ -255,8 +255,8 @@ function Btemptd_Image_Text_List_Format_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd List Block</u></h4>
-            <span style="color:red">Empty List Block</span>
+            <h4><u>Image + Text (Left & Right)</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -286,7 +286,7 @@ function Btemptd_Video_Block_Render_callback( $block )
     if (! empty($video_fields_option) ) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Btemptd Video Block');
+            Btemptd_WP_Backend_edit('Video 5120x2700');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-video.php';
             include locate_template($shortcode_template);
@@ -295,8 +295,8 @@ function Btemptd_Video_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Video:</u></h4>
-            <span style="color:red">Empty Btemptd Video Block</span>
+            <h4><u>Video 5120x2700:</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -316,7 +316,7 @@ function Btemptd_Body_Outro_Para_Block_Render_callback( $block )
     if ($para_content) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Body Outro Para Block');
+            Btemptd_WP_Backend_edit('Body Outro Paragraph');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-body-outro-block.php';
             include locate_template($shortcode_template);
@@ -325,8 +325,8 @@ function Btemptd_Body_Outro_Para_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Body Outro Para Block</u></h4>
-            <span style="color:red">Empty Body Outro Para Block</span>
+            <h4><u>Body Outro Paragraph</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -346,7 +346,7 @@ function Btemptd_Text_Hover_Block_Render_callback( $block )
     if ($hover_box_content) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Text Hover Block');
+            Btemptd_WP_Backend_edit('Text Hover Box');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-text-hover-block.php';
             include locate_template($shortcode_template);
@@ -355,8 +355,8 @@ function Btemptd_Text_Hover_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Text Hover Block</u></h4>
-            <span style="color:red">Empty Text Hover Block</span>
+            <h4><u>Text Hover Box</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -382,7 +382,7 @@ function Btemptd_Image_Render_callback( $block )
         $block_image_url   = Btemptd_Get_image($block_image_array);
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Banner Image Block');
+            Btemptd_WP_Backend_edit('Banner Image');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-banner-img.php';
             include locate_template($shortcode_template);
@@ -391,8 +391,8 @@ function Btemptd_Image_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Banner Image</u></h4>
-            <span style="color:red">Empty Banner Image Block</span>
+            <h4><u>Banner Image</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -411,7 +411,7 @@ function Btemptd_Gallery_Block_Render_callback( $block )
 
     if (! empty($fullGallery[0]['image']) && $fullGallery[0]['image'] ) {
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Product Gallery Block');
+            Btemptd_WP_Backend_edit('Product Gallery');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-product-gallery.php';
             include locate_template($shortcode_template);
@@ -420,8 +420,8 @@ function Btemptd_Gallery_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Product Gallery</u></h4>
-            <span style="color:red">Empty Product Gallery Block</span>
+            <h4><u>Product Gallery</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -440,7 +440,7 @@ function Btemptd_Customer_Review_Render_callback( $block )
 
     if (! empty($review_text) && $review_text ) {
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Customer Review Block');
+            Btemptd_WP_Backend_edit('Customer Review');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-customer-review.php';
             include locate_template($shortcode_template);
@@ -449,8 +449,8 @@ function Btemptd_Customer_Review_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Customer Review</u></h4>
-            <span style="color:red">Empty Customer Review Block</span>
+            <h4><u>Customer Review</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -471,7 +471,7 @@ function Btemptd_Video_Image_Block_Render_callback( $block )
     if ($video_option !== 'select_option' && !empty($image)) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Video + Image Block');
+            Btemptd_WP_Backend_edit('Video - Vertical');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-verticle-video-img.php';
             include locate_template($shortcode_template);
@@ -480,8 +480,8 @@ function Btemptd_Video_Image_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Video + Image</u></h4>
-            <span style="color:red">Empty Video + Image Block</span>
+            <h4><u>Video - Vertical</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -502,7 +502,7 @@ function Btemptd_Data_Image_Block_Render_callback( $block )
     if (! empty($image_id) && ! empty($paragraph_content) ) {
 
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Data Image Block');
+            Btemptd_WP_Backend_edit('Image + Body');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-data-image.php';
             include locate_template($shortcode_template);
@@ -511,8 +511,8 @@ function Btemptd_Data_Image_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Data Image</u></h4>
-            <span style="color:red">Empty Data Image Block</span>
+            <h4><u>Image + Body</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -531,7 +531,7 @@ function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
 
     if (! empty($list_data[0]['title']) ) {
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Image Text Subhead List Block');
+            Btemptd_WP_Backend_edit('List - Image + Italics Title + Subhead + Body (Left & Right)');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-image-text-subhead-list.php';
             include locate_template($shortcode_template);
@@ -540,8 +540,8 @@ function Btemptd_Img_Text_Subhead_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Image Text Subhead List Image</u></h4>
-            <span style="color:red">Empty Image Text Subhead List Block</span>
+            <h4><u>List - Image + Italics Title + Subhead + Body (Left & Right)</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -560,7 +560,7 @@ function Btemptd_Numbered_List_Block_Render_callback( $block )
 
     if (! empty($list_data[0]['image']) ) {
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Numbered List Block');
+            Btemptd_WP_Backend_edit('Numbered Image + Text (Left & Right)');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-numbered-list.php';
             include locate_template($shortcode_template);
@@ -568,8 +568,8 @@ function Btemptd_Numbered_List_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Numbered List</u></h4>
-            <span style="color:red">Empty Numbered List Block</span>
+            <h4><u>Numbered Image + Text (Left & Right)</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }
@@ -590,7 +590,7 @@ function Btemptd_Img_Text_Img_Block_Render_callback( $block )
 
     if (! empty($title) && ! empty($left_image_id) && ! empty($left_image_id) ) {
         if (is_admin() ) {
-            Btemptd_WP_Backend_edit('Image Text Image Block');
+            Btemptd_WP_Backend_edit('Image + Text + Image');
         } else {
             $shortcode_template  = '/template-parts/block/btemptd-image-text-image.php';
             include locate_template($shortcode_template);
@@ -598,8 +598,8 @@ function Btemptd_Img_Text_Img_Block_Render_callback( $block )
     } else {
         if (is_admin() ) {
             ?>
-            <h4><u>Btemptd Image Text Image</u></h4>
-            <span style="color:red">Empty Image Text Image Block</span>
+            <h4><u>Image + Text + Image</u></h4>
+            <span style="color:red">Empty Block</span>
             <?php
         }
     }

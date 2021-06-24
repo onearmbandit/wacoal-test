@@ -22,7 +22,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'              => 'btemptd-text-image-list-format',
-            'title'             => __('Btemptd Review List Format'),
+            'title'             => __('List - Numbered Image + Text (Left & Right)'),
             'description'       => __('A custom Review List format block.'),
             'render_callback'   => 'Btemptd_Text_Img_List_Format_Render_callback',
             'category'          => 'btemptd',
@@ -55,7 +55,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'              => 'btemptd-para-format',
-            'title'             => __('Btemptd Paragraph Block Format'),
+            'title'             => __('Subhead + Description, Body Intro Paragraph'),
             'description'       => __('A custom Paragraph format block.'),
             'render_callback'   => 'Btemptd_Para_Format_Render_callback',
             'category'          => 'btemptd',
@@ -77,7 +77,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'              => 'btemptd-button-format',
-            'title'             => __('Btemptd Button Block Format'),
+            'title'             => __('Button'),
             'description'       => __('A custom Button format block.'),
             'render_callback'   => 'Btemptd_Button_Format_Render_callback',
             'category'          => 'btemptd',
@@ -88,7 +88,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'              => 'btemptd-image-text-list-format',
-            'title'             => __('Btemptd Image+Text List Block'),
+            'title'             => __('Image + Text (Left & Right)'),
             'description'       => __('A custom List format block.'),
             'render_callback'   => 'Btemptd_Image_Text_List_Format_Render_callback',
             'category'          => 'btemptd',
@@ -99,7 +99,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-customer-review-format',
-            'title'           => __('Btemptd Customer Review Block'),
+            'title'           => __('Customer Review'),
             'description'     => __('A custom customer review format block.'),
             'render_callback' => 'Btemptd_Customer_Review_Render_callback',
             'category'          => 'btemptd',
@@ -110,7 +110,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-video',
-            'title'           => __('Btemptd Video'),
+            'title'           => __('Video 5120x2700'),
             'description'     => __('A custom video block.'),
             'render_callback' => 'Btemptd_Video_Block_Render_callback',
             'category'        => 'btemptd',
@@ -121,7 +121,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-body-para',
-            'title'           => __('Btemptd Body Outro Paragraph Block'),
+            'title'           => __('Body Outro Paragraph'),
             'description'     => __('A custom Body Outro Paragraph Block'),
             'render_callback' => 'Btemptd_Body_Outro_Para_Block_Render_callback',
             'category'        => 'btemptd',
@@ -132,7 +132,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-image',
-            'title'           => __('Btemptd Banner Image'),
+            'title'           => __('Banner Image'),
             'description'     => __('A custom image block.'),
             'render_callback' => 'Btemptd_Image_Render_callback',
             'category'        => 'btemptd',
@@ -143,7 +143,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-product-gallery',
-            'title'           => __('Btemptd Product Gallery'),
+            'title'           => __('Product Gallery'),
             'description'     => __('A custom product gallery block.'),
             'render_callback' => 'Btemptd_Gallery_Block_Render_callback',
             'category'        => 'btemptd',
@@ -154,7 +154,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-video-with-image',
-            'title'           => __('Btemptd Video and Image'),
+            'title'           => __('Video - Vertical'),
             'description'     => __('A custom video and image block.'),
             'render_callback' => 'Btemptd_Video_Image_Block_Render_callback',
             'category'        => 'btemptd',
@@ -165,7 +165,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-data-with-image',
-            'title'           => __('Btemptd data with image'),
+            'title'           => __('Image + Body'),
             'description'     => __('A custom Btemptd Image block.'),
             'render_callback' => 'Btemptd_Data_Image_Block_Render_callback',
             'category'        => 'btemptd',
@@ -176,7 +176,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-text-hover-box',
-            'title'           => __('Btemptd text hover box'),
+            'title'           => __('Text Hover Box'),
             'description'     => __('A custom Btemptd hover block.'),
             'render_callback' => 'Btemptd_Text_Hover_Block_Render_callback',
             'category'        => 'btemptd',
@@ -187,7 +187,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-image-text-image-block',
-            'title'           => __('Btemptd image text image block'),
+            'title'           => __('Image + Text + Image'),
             'description'     => __('A custom Btemptd text image block.'),
             'render_callback' => 'Btemptd_Img_Text_Img_Block_Render_callback',
             'category'        => 'btemptd',
@@ -198,7 +198,7 @@ function Wacoal_Acf_init()
         acf_register_block(
             array(
             'name'            => 'btemptd-image-text-subhead-list-block',
-            'title'           => __('Btemptd image text subhead list block'),
+            'title'           => __('List - Image + Italics Title + Subhead + Body (Left & Right)'),
             'description'     => __('A custom Btemptd list block.'),
             'render_callback' => 'Btemptd_Img_Text_Subhead_List_Block_Render_callback',
             'category'        => 'btemptd',
@@ -209,7 +209,7 @@ function Wacoal_Acf_init()
         acf_register_block_type(
             array(
             'name'            => 'btemptd-Numbered-list-block',
-            'title'           => __('Btemptd numbered list block'),
+            'title'           => __('Numbered Image + Text (Left & Right)'),
             'description'     => __('A custom Btemptd list block.'),
             'render_callback' => 'Btemptd_Numbered_List_Block_Render_callback',
             'category'        => 'btemptd',
