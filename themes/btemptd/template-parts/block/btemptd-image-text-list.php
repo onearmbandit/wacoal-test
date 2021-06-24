@@ -65,6 +65,10 @@
                 </div>
             <?php endif;?>
 
+                <div class="button-block">
+                    <a href="#" class="block-btn">Shop now</a>
+                </div>
+
             </div>
         </div>
 
@@ -111,6 +115,10 @@
                     <?php echo wp_kses_post($list_desc);?>
                 </div>
             <?php endif;?>
+
+                <div class="button-block">
+                    <a href="#" class="block-btn">Shop now</a>
+                </div>
 
             </div>
         </div>
