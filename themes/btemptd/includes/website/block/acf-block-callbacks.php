@@ -534,6 +534,7 @@ function Btemptd_Data_Image_Block_Render_callback( $block )
 {
     $image_id    = get_field('image');
     $paragraph_content    = get_field('paragraph_content');
+    $image_caption    = get_field('image_caption');
 
     if (! empty($image_id) ) {
 

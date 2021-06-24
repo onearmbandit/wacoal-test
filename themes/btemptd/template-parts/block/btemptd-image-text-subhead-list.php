@@ -39,16 +39,23 @@
             <div class="italics-title--wrapper <?php echo esc_attr($sec_class); ?>">
                 <div class="left-box">
                     <div>
-                        <h3 class="title">
-                            <?php echo esc_attr($title); ?>
-                        </h3>
-                        <div class="sub-title">
-                            <?php echo esc_attr($subtitlte); ?>
-                        </div>
+                        <?php if (!empty($title)) { ?>
+                            <h3 class="title">
+                                <?php echo esc_attr($title); ?>
+                            </h3>
+                        <?php } ?>
 
-                        <div class="content">
-                            <?php echo wp_kses_post($description); ?>
-                        </div>
+                        <?php if (!empty($subtitlte)) { ?>
+                            <div class="sub-title">
+                                <?php echo esc_attr($subtitlte); ?>
+                            </div>
+                        <?php } ?>
+
+                        <?php if (!empty($description)) { ?>
+                            <div class="content">
+                                <?php echo wp_kses_post($description); ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -63,9 +70,13 @@
                         <div class="image-wrapper" style="background-image:url(<?php echo esc_url($image_url); ?>);">
                         </div>
                     <?php } ?>
-                    <div class="image-title">
-                        <?php echo wp_kses_post($image_caption); ?>
-                    </div>
+
+                    <?php if (!empty($image_caption)) { ?>
+                        <div class="image-title">
+                            <?php echo wp_kses_post($image_caption); ?>
+                        </div>
+                    <?php } ?>
+
                 </div>
             </div>
 
