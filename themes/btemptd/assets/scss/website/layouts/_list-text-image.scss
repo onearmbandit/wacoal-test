@@ -15,7 +15,7 @@
         max-width: 666px;
       }
 
-      &:nth-child(even) {
+      &.img-right {
 
         .list-text-image--inner {
           flex-direction: row-reverse;

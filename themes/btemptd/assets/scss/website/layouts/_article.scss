@@ -2427,7 +2427,7 @@
     flex-direction: column;
   }
 
-    &:nth-child(even) {
+    &.img-right {
       flex-direction: row-reverse;
 
       @include respond-below(sm) {
@@ -2626,6 +2626,10 @@
         font-size: 22px;
         line-height: 25px;
         margin-bottom: 0;
+
+        &.no-number-title {
+          padding-left: 0;
+        }
       }
     }
 
