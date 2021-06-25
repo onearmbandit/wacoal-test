@@ -196,12 +196,21 @@
   }
 
   &--wrapper {
-    margin: 30px auto 0;
-    padding-top: 30px;
+    margin: 0 auto ;
+    // padding-top: 30px;
+    padding: 90px 0 80px;
+
+    @include respond-below(lg) {
+      padding: 60px 0 50px;
+    }
+
+    @include respond-below(md) {
+      padding: 35px 0 25px;
+    }
 
     @include respond-above(sm) {
       max-width: 66.66667vw;
-      padding-top: 0;
+      // padding-top: 0;
     }
   }
 
@@ -247,9 +256,9 @@
         height: get-vw(408px);
         // align-items: flex-start;
 
-        &:last-child {
-          margin-bottom: get-vw(80px);
-        }
+        // &:last-child {
+        //   margin-bottom: get-vw(80px);
+        // }
       }
 
       &--content {
