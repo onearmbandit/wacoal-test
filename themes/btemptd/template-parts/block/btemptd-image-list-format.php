@@ -56,17 +56,21 @@ if ($list_type == 'simple_data') :
                             <div class="para">
                                 <?php echo wp_kses_post($list_desc); ?>
                             </div>
-                            <div class="shop-button">
-                                <?php if ($add_button) {?>
-                                <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
-                                    <?php echo esc_attr($button_label);?>
-                                </a>
-                                <?php } ?>
-                            </div>
                         </div>
                     </div>
                 </div>
 
         <?php } ?>
     </section>
+
+    <?php if ($add_button && !empty($button_label) && !empty($button_url)) {?>
+        <section class="button-block">
+            <div class="button-block--wrapper">
+                <a href="<?php echo esc_url($button_url); ?>" target="_blank" class="block-btn">
+                    <?php echo esc_attr($button_label);?>
+                </a>
+            </div>
+        </section>
+    <?php } ?>
+
 <?php endif; ?>

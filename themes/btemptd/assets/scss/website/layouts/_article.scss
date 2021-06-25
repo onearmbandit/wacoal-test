@@ -2827,7 +2827,6 @@
   }
 
   .image-wrapper {
-    z-index: -1;
     width: 560px;
 
     @include respond-below(lg) {
@@ -2944,6 +2943,10 @@
         }
       }
     }
+  }
+
+  a {
+    display: block;
   }
 }
 
