@@ -88,12 +88,12 @@ if($list_data && !empty($list_data)) :
                         </div>
                             <?php
                         endif;
-                        if ($add_button == true) :?>
-                        <div class="shop-button">
-                            <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
-                                <?php echo esc_attr($button_label); ?>
-                                <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
-                        </div>
+                        if (($add_button == true) && !empty($button_label) && !empty($button_url)) :?>
+                            <div class="shop-button">
+                                <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
+                                    <?php echo esc_attr($button_label); ?>
+                                    <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                            </div>
                         <?php endif; ?>
                     </div>
             </div>
@@ -159,12 +159,12 @@ if($list_data && !empty($list_data)) :
                             </div>
                                 <?php
                         endif;?>
-                        <?php if ($add_button == true) :?>
-                        <div class="shop-button">
-                            <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
-                            <?php echo esc_attr($button_label); ?>
-                            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
-                        </div>
+                        <?php if ($add_button == true && !empty($button_label) && !empty($button_url)) :?>
+                            <div class="shop-button">
+                                <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
+                                <?php echo esc_attr($button_label); ?>
+                                <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                            </div>
                         <?php endif; ?>
             </div>
         </div>
