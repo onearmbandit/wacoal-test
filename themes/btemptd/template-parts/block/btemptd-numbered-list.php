@@ -76,7 +76,7 @@
                     </div>
 
                     <?php if (!empty($button_url) && !empty($button_label)) { ?>
-                        <a href="<?php echo esc_url($button_url); ?>" class="btn secondary" taget="_blank">
+                        <a href="<?php echo esc_url($button_url); ?>" class="btn secondary" target="_blank">
                             <?php echo esc_attr($button_label); ?>
                         </a>
                     <?php } ?>
