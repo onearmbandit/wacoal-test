@@ -121,51 +121,45 @@ if($list_data && !empty($list_data)) :
             </div>
                 <?php endif; ?>
             <div class="image-content--content">
-                    <div class="content-inner">
+                <div class="content-inner">
                     <?php if ($list_title && !empty($list_title)) :?>
                         <div class="image-content--content__headtwo">
                             <?php echo wp_kses_post($list_title); ?>
                         </div>
-                        <!-- <div class="image-content--content__title">
-                        <?php //echo wp_kses_post($list_title); ?>
-                        </div> -->
                     <?php endif; ?>
-                    <!-- <div class="image-content--content__title">
-                            @chicdisheveled slips her crop top on first thing in the morning…
-                        </div> -->
-                        <?php if ($list_desc && !empty($list_desc)) :?>
+                    <?php if ($list_desc && !empty($list_desc)) :?>
                         <div class="image-content--content__para">
                             <?php echo wp_kses_post(Btemptd_Remove_ptag($list_desc)); ?>
                         </div>
-                            <?php
-                        endif;
-                        if($cust_review && !empty($cust_review)) :
-                            ?>
-                            <div class="image-content--content__para">
-                                <?php echo wp_kses_post(Btemptd_Remove_ptag($cust_review)); ?>
-                            </div>
-                        <?php endif;?>
-                        <?php if ($cust_name && !empty($cust_name)) :
-                            ?>
-                        <div class="image-content--content__tag">
-                            <?php echo wp_kses_post($cust_name); ?>
+                        <?php
+                    endif;
+                    if($cust_review && !empty($cust_review)) :
+                        ?>
+                        <div class="image-content--content__para">
+                            <?php echo wp_kses_post(Btemptd_Remove_ptag($cust_review)); ?>
                         </div>
-                        <?php endif;
-                        if ($show_rating == true) :?>
-                            <div class="image-content--content__star">
-                                <?php for ($x = 0; $x < $star_rating; $x++) { ?>
-                                <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
-                                <?php } ?>
-                            </div>
-                                <?php
-                        endif;?>
-                        <?php if ($add_button == true && !empty($button_label) && !empty($button_url)) :?>
-                            <div class="shop-button">
-                                <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
-                                <?php echo esc_attr($button_label); ?>
-                                <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
-                            </div>
-                        <?php endif; ?>
+                    <?php endif;?>
+                    <?php if ($cust_name && !empty($cust_name)) :
+                        ?>
+                    <div class="image-content--content__tag">
+                        <?php echo wp_kses_post($cust_name); ?>
+                    </div>
+                    <?php endif;
+                    if ($show_rating == true) :?>
+                        <div class="image-content--content__star">
+                            <?php for ($x = 0; $x < $star_rating; $x++) { ?>
+                            <img class="img-fluid" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/star-icon.svg"/>
+                            <?php } ?>
+                        </div>
+                            <?php
+                    endif;?>
+                    <?php if ($add_button == true && !empty($button_label) && !empty($button_url)) :?>
+                        <div class="shop-button">
+                            <a class="shop-now-button" href="<?php echo esc_url($button_url); ?>" target="_blank">
+                            <?php echo esc_attr($button_label); ?>
+                            <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /></a>
+                        </div>
+                    <?php endif; ?>
             </div>
         </div>
     </div>
