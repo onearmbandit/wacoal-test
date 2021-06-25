@@ -47,17 +47,15 @@
     </div>
 </section>
 
-<section class="three-reason para-content">
-    <div class="three-reason--wrapper">
-
-    <?php if($sub_headline && !empty($sub_headline)) :?>
-        <div class="three-reason--title">
-           <?php echo wp_kses_post($sub_headline); ?>
+<?php if($sub_headline && !empty($sub_headline)) :?>
+    <section class="three-reason para-content">
+        <div class="three-reason--wrapper">
+            <div class="three-reason--title">
+            <?php echo wp_kses_post($sub_headline); ?>
+            </div>
         </div>
-    <?php endif; ?>
-
-    </div>
-</section>
+    </section>
+<?php endif; ?>
 
 <!-- WP gutenberg block content -->
 <section class="page-wrapper">
