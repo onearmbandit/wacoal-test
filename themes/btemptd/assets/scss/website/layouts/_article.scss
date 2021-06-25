@@ -447,7 +447,7 @@
     .three-reason--wrapper {
       max-width: 664px;
       margin: 0 auto;
-      padding-top: 0;
+      padding: 0;
 
       @include respond-below(lg) {
         max-width: 598px;
