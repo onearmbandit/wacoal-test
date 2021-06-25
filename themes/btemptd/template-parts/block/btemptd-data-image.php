@@ -34,7 +34,7 @@ $new_tab = get_field('open_link_in_new_tab') === true ? '_blank' : '_self';
             </div>
         <?php } ?>
 
-        <?php if (!empty($paragraph_content)) { ?>
+        <?php if (!empty($image_caption)) { ?>
             <div class="image-caption">
                 <?php echo wp_kses_post($image_caption); ?>
             </div>
