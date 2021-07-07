@@ -1,4 +1,0 @@
-data_sync:
-  domain_map:
-    www.wmagazine.com: wmagazine-preprod.go-vip.net
-    video.wmagazine.com: wmagazine-preprod.go-vip.net/video

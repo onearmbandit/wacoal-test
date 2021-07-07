@@ -1,0 +1,6 @@
+data_sync:
+  domain_map:
+    wp.wacoal-america.com: wp-wacoal-america-com-develop.go-vip.net
+    blog.wacoal-america.com: blog-dev.wacoal-america.com
+    btemptdblog.wacoal-america.com: btemptd-dev.wacoal-america.com
+    blog.wacoal.ca: blog-dev.wacoal.ca
