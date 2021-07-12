@@ -20,6 +20,7 @@ require('../../scss/website/btemptd-swiper.scss');
 
   let featuredArticlesMo = new Swiper('.featured-articles-slider-mo', {
     slidesPerView: 1,
+    spaceBetween: 30,
     loop: true,
     pagination: {
       el: '.swiper-pagination',

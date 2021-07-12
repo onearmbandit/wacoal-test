@@ -78,7 +78,7 @@ Btemptd_Page_Entry_top('');
                 Why does my bra ride up in the back?
             </div>
             <div class="arrow">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/arrow-right.svg" />
             </div>
         </div>
     </div>
@@ -89,7 +89,7 @@ Btemptd_Page_Entry_top('');
         </div>
         <div class="full-width-section--content">
             <div class="arrow">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/arrow-left.svg" />
             </div>
             <div class="content-title">
                 ask a fit expert

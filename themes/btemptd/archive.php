@@ -176,8 +176,8 @@ if ($template == 'simple') :
                             </a>
                         </div>
                         <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-big-right.svg" />
+                            <a class="btn primary" href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                Learn More
                             </a>
                         </div>
                     </div>
@@ -242,8 +242,8 @@ if ($template == 'simple') :
                             </a>
                         </div>
                         <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" />
+                            <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                Learn More
                             </a>
                         </div>
                     </div>
@@ -271,7 +271,7 @@ if ($template == 'simple') :
     <?php endif;?>
 
     <?php if(!empty($featured_posts)) :?>
-<section class="featured-articles-mobile">
+<section class="featured-articles-mobile-one">
     <div class="featured-articles-mobile--wrapper">
         <div class="swiper-container featured-articles-slider-mo">
             <div class="swiper-wrapper">
@@ -285,7 +285,15 @@ if ($template == 'simple') :
                     ?>
                 <div class="swiper-slide">
 
-                <div class="swiper-slide--content">
+                    <div class="swiper-slide--image">
+                        <a href="<?php echo esc_url(get_permalink($featured_post));?>">
+                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
+                    </div>
+
+                    <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
                                 <?php echo esc_attr($cat_name_obj->name);?>
@@ -296,27 +304,22 @@ if ($template == 'simple') :
                                 <?php echo esc_attr(get_the_title($featured_post));?>
                             </a>
                         </div>
-                    </div>
-                    <div class="swiper-slide--image">
-                        <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide--content">
-
                         <div class="swiper-slide--content__para">
                             <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
                                 <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" />
-                                Read more
+                            <a class="btn primary" href="<?php echo esc_url(get_permalink($featured_post));?>">
+                                Learn more
                             </a>
+                        </div>
+
+                        <div class="swiper-button-next button-transparent">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
+                        </div>
+                        <div class="swiper-button-prev button-transparent">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
                         </div>
                     </div>
                 </div>
@@ -324,18 +327,8 @@ if ($template == 'simple') :
 
             </div>
 
-            <div class="swiper-button--wrapper">
-                <div class="swiper-button--wrapper-inner">
             <div class="swiper-pagination custom-swiper-pagination"></div>
 
-            <div class="swiper-button-next button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
-            </div>
-            <div class="swiper-button-prev button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
-            </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -343,7 +336,7 @@ if ($template == 'simple') :
     <?php endif;?>
 
     <?php if(!empty($slider_posts)) :?>
-<section class="featured-articles-mobile">
+<section class="featured-articles-mobile-two">
     <div class="featured-articles-mobile--wrapper">
         <div class="swiper-container featured-articles-slider-mo">
             <div class="swiper-wrapper">
@@ -357,6 +350,22 @@ if ($template == 'simple') :
 
                         ?>
                 <div class="swiper-slide">
+                    <div class="swiper-slide--image">
+                        <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                            <img class="lazyload img-fluid"
+                                data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
+
+                        <div class="swiper-button-next button-transparent">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
+                        </div>
+                        <div class="swiper-button-prev button-transparent">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+                        </div>
+                    </div>
+
                     <div class="swiper-slide--content">
                         <div class="swiper-slide--content__category">
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
@@ -368,46 +377,21 @@ if ($template == 'simple') :
                                 <?php echo esc_attr(get_the_title($slider_post));?>
                             </a>
                         </div>
-                    </div>
-                    <div class="swiper-slide--image">
-                        <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                            <img class="lazyload img-fluid"
-                                data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide--content">
                         <div class="swiper-slide--content__para">
                             <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
                                 <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" />
-                                Read more
+                            <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                Learn more
                             </a>
                         </div>
                     </div>
                 </div>
                     <?php endforeach;?>
-
             </div>
-
-            <div class="swiper-button--wrapper">
-                <div class="swiper-button--wrapper-inner">
             <div class="swiper-pagination custom-swiper-pagination"></div>
-
-            <div class="swiper-button-next button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
-            </div>
-            <div class="swiper-button-prev button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
-            </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>

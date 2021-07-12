@@ -1,15 +1,23 @@
 .banner-with-image {
-  width: var(--width-100);
-  height: calcRem(307);
+  max-width: 1280px;
+  height: 350px;
   display: flex;
-  flex-direction: column;
   background: var(--color-primary);
-  margin-bottom: calcRem(20);
+  margin:0 auto 30px;
 
-  @include respond-above(sm) {
-    height: get-vw(483px);
-    flex-direction: row;
-    margin-bottom: get-vw(45px);
+  @include respond-below(lg) {
+    height: 275px;
+  }
+
+  @include respond-below(md) {
+    height: 206px;
+    margin: 0 auto 20px;
+  }
+
+  @include respond-below(sm) {
+    flex-direction: column;
+    height: auto;
+    margin: 0 auto 15px;
   }
 
   &--content {
@@ -17,49 +25,88 @@
     // align-items: center;
     flex-direction: column;
     justify-content: center;
-    padding: calcRem(22, 20);
+    padding-left: 55px;
+    flex: 1;
 
-    @include respond-above(sm) {
-      flex: 1;
-      // padding-top: get-vw(48px);
-      padding-left: get-vw(63px);
+    @include respond-below(lg) {
+      padding-left: 44px;
+    }
+
+    @include respond-below(md) {
+      padding-left: 33px;
+    }
+
+    @include respond-below(sm) {
+      padding: 20px;
     }
   }
 
   &--heading {
-    max-width: calcRem(251);
+    // max-width: calcRem(251);
     text-transform: uppercase;
-    font-size: calcRem(52);
-    line-height: calcRem(50);
+    font-size: 97px;
+    line-height: 92px;
 
-    @include respond-above(sm) {
-      max-width: get-vw(870px);
-      font-size: get-vw(191px);
-      line-height: get-vw(182px);
+    @include respond-below(lg) {
+      font-size: 77px;
+      line-height: 73px;
+    }
+
+    @include respond-below(md) {
+      font-size: 57px;
+      line-height: 54px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 52px;
+      line-height: 50px;
     }
   }
 
   &--subtitle {
-    font-size: calcRem(18);
+    font-size: 19px;
+    line-height: 18px;
     @include NeutraText-BookAlt;
     margin-left: calcRem(5);
-    margin-top: calcRem(7);
+    margin-top: 23px;
 
-    @include respond-above(sm) {
-      font-size: get-vw(32px);
-      margin-left: get-vw(15px);
+    @include respond-below(lg) {
+      font-size: 15px;
+      line-height: 13px;
+      margin-top: 16px;
+    }
+
+    @include respond-below(md) {
+      font-size: 13px;
+      line-height: 12px;
+      margin-top: 12px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 15px;
+      line-height: 14px;
+      margin-top: 7px;
     }
   }
 
   &--image {
+    max-width: 727px;
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    @include respond-above(sm) {
-      width: get-vw(900px);
+    @include respond-below(lg) {
+      max-width: 582px;
+    }
+
+    @include respond-below(md) {
+      max-width: 436px;
+    }
+
+    @include respond-below(sm) {
+      height: 182px;
     }
   }
 }
