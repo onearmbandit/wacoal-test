@@ -40,7 +40,7 @@ $categories    = Btemptd_Get_Primary_category(get_the_ID());
         </div>
         <div class="blog-pagination-cta">
             <a href="<?php echo esc_url(get_permalink());?>">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" />
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
             </a>
         </div>
     </div>

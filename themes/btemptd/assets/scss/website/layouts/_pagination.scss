@@ -71,11 +71,6 @@
 
 
 .category-posts {
-  margin-top: calcRem(23px);
-
-  // @include respond-above(sm) {
-  //   margin-top: 0;
-  // }
 
   .more-blog {
     margin-bottom: calcRem(36);
@@ -107,6 +102,105 @@
 
         @include respond-above(sm) {
           display: block;
+        }
+      }
+    }
+  }
+
+  .explore-blog {
+    max-width: 1112px;
+    margin: 0 auto 127px;
+
+    @include respond-below(lg) {
+      max-width: 1024px;
+    }
+
+    @include respond-below(md) {
+      max-width: 768px;
+      margin: 0 auto 80px;
+    }
+
+    &:after {
+      background: var(--color-tile-bg);
+      height: 305px;
+      bottom: -46px;
+
+      @include respond-below(md) {
+        height: 240px;
+        bottom: -30px;
+      }
+    }
+
+    &--wrapper {
+      max-width: 988px;
+
+      @include respond-below(lg) {
+        max-width: 927px;
+      }
+
+      @include respond-below(md) {
+        max-width: 696px;
+      }
+    }
+
+    &--box {
+      width: 299px;
+
+      @include respond-below(md) {
+        width: 212px;
+      }
+
+      &:nth-child(2) {
+        margin: 0 43px;
+
+        @include respond-below(lg) {
+          margin: 0 39px;
+        }
+
+        @include respond-below(md) {
+          margin: 0 30px;
+        }
+      }
+    }
+
+    &--image {
+      height: 190px;
+
+      @include respond-below(md) {
+        height: 134px;
+      }
+    }
+
+    &--content {
+      background: var(--color-heighlight-1);
+      color: var(--color-black);
+      padding: 16px 15px 20px 22px;
+
+      @include respond-below(md) {
+        padding: 12px 12px 12px 15px;
+      }
+
+      &.blog-pagination {
+        // align-items: flex-start;
+      }
+
+      &__category {
+        font-size: 14px;
+        letter-spacing: 0.49px;
+
+        @include respond-below(md) {
+          font-size: 12px;
+          margin-bottom: 8px;
+        }
+      }
+
+      &__title {
+        font-size: 19px;
+        line-height: 21px;
+
+        @include respond-below(md) {
+          font-size: 16px;
+          line-height: 18px;
         }
       }
     }

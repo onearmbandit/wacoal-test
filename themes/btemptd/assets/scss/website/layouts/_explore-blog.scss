@@ -88,34 +88,34 @@
       align-items: center;
     }
 
-    &.blog-wrapper {
-      @include respond-above(sm) {
-        width: get-vw(1700px);
+    // &.blog-wrapper {
+    //   @include respond-above(sm) {
+    //     width: get-vw(1700px);
 
-        .explore-blog--box {
-          &:nth-child(2) {
-            margin-left: get-vw(70px);
-            margin-right: get-vw(70px);
-          }
-        }
-      }
+    //     .explore-blog--box {
+    //       &:nth-child(2) {
+    //         margin-left: get-vw(70px);
+    //         margin-right: get-vw(70px);
+    //       }
+    //     }
+    //   }
 
-      @include respond-below(sm) {
-        .explore-blog--box {
-          width: calcRem(351);
-        }
+    //   @include respond-below(sm) {
+    //     .explore-blog--box {
+    //       width: calcRem(351);
+    //     }
 
-        .explore-blog--content__category {
-          font-size: calcRem(20);
-          line-height: calcRem(30);
-        }
+    //     .explore-blog--content__category {
+    //       font-size: calcRem(20);
+    //       line-height: calcRem(30);
+    //     }
 
-        .explore-blog--content__title {
-          font-size: calcRem(28);
-          line-height: calcRem(30);
-        }
-      }
-    }
+    //     .explore-blog--content__title {
+    //       font-size: calcRem(28);
+    //       line-height: calcRem(30);
+    //     }
+    //   }
+    // }
   }
 
   &--box {
@@ -334,20 +334,26 @@
     &.blog-pagination {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      // align-items: center;
 
       .blog-pagination-content {
         flex: 1;
+        margin-right: 22px;
+
+        @include respond-below(md) {
+          margin-right: 12px;
+        }
       }
       .blog-pagination-cta {
-        width: calcRem(45);
-        height: calcRem(45);
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 28px;
+        // height: 28px;
 
-        @include respond-above(sm) {
-          width: get-vw(46px);
-          height: get-vw(46px);
+        @include respond-below(md) {
+          width: 19px;
         }
-
         img {
           width: 100%;
         }
@@ -356,22 +362,7 @@
   }
 }
 
-.category-posts {
-  .explore-blog {
-    @include respond-above(sm) {
-      margin-bottom: get-vw(180px);
-    }
 
-    &:after {
-      background: var(--color-tile-bg);
-    }
-
-    &--content {
-      background: var(--color-heighlight-1);
-      color: var(--color-black);
-    }
-  }
-}
 
 .see-more--wrapper {
   width: 100%;
