@@ -130,7 +130,7 @@ if ($template == 'simple') :
 
 </section>
     <?php endif;?>
-<?php else:?>
+<?php endif;?>
     <?php
     $featured_posts= get_field('featured_posts', 'category_'.$current_cat_id);
     $slider_posts= get_field('slider_posts', 'category_'.$current_cat_id);
@@ -438,7 +438,6 @@ if ($template == 'simple') :
     Btemptd_Paging_nav();
     ?>
     </div>
-<?php endif; ?>
 <?php
 
 $recent_posts = Btemptd_Query_posts(
