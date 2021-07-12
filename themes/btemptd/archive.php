@@ -129,9 +129,7 @@ if ($template == 'simple') :
         <?php endforeach; ?>
 
 </section>
-    <?php endif;?>
-<?php else:?>
-    <?php
+    <?php endif;
     $featured_posts= get_field('featured_posts', 'category_'.$current_cat_id);
     $slider_posts= get_field('slider_posts', 'category_'.$current_cat_id);
     ?>
