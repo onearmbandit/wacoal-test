@@ -1,11 +1,17 @@
-.featured-article {
+.featured-article-block {
 
   &--wrapper {
-    width: calc(var(--width-100) - 46px);
-    margin: auto;
+    margin: 0 auto 100px;
+    max-width: 1134px;
 
-    @include respond-above(sm) {
-      width: get-vw(1514px);
+    @include respond-below(lg) {
+      max-width: 932px;
+      margin: 0 auto 120px;
+    }
+
+    @include respond-below(md) {
+      max-width: 700px;
+      margin: 0 auto 70px;
     }
   }
 
@@ -19,55 +25,103 @@
     }
 
     &:not(:last-child) {
+      margin-bottom: 80px;
 
-      margin-bottom: calcRem(22);
+      @include respond-below(lg) {
+        margin-bottom: 100px;
+      }
 
-      @include respond-above(sm) {
-        margin-bottom: get-vw(62px);
+      @include respond-below(md) {
+        margin-bottom: 50px;
       }
     }
 
     &--content {
       background: var(--color-feat-article-bg);
-      padding: calcRem(25, 32);
       flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
-      @include respond-above(sm) {
-        // padding-top: get-vw(105px);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding-right: get-vw(80px);
-        padding-left: get-vw(93px);
+      @include respond-below(sm) {
+        padding: 25px 32px;
       }
 
       &__subtitle {
-        // @include ProximaNova-Light;
-        font-size: calcRem(19);
-        line-height: calcRem(19);
-        margin-bottom: calcRem(8);
         display: block;
-        // text-transform: uppercase;
+        @include ProximaNova-Light;
+        text-align: center;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0.14px;
+        margin-bottom: 20px;
 
-        @include respond-above(sm) {
-          font-size: get-vw(27px);
-          line-height: get-vw(23px);
-          margin-bottom: get-vw(18px);
+        @include respond-below(lg) {
+          font-size: 14px;
+          line-height: 15px;
+        }
+
+        @include respond-below(md) {
+          font-size: 12px;
+          margin-bottom: 15px;
+        }
+
+        @include respond-below(sm) {
+          font-size: 13px;
+          margin-bottom: 20px;
+        }
+      }
+
+      &__title {
+        text-align: center;
+        @include BentonModDisp-Regular;
+        font-size: 36px;
+        line-height: 38px;
+        max-width: 490px;
+        margin-bottom: 10px;
+
+        @include respond-below(lg) {
+          max-width: 380px;
+          font-size: 28px;
+          line-height: 29px;
+        }
+
+        @include respond-below(md) {
+          max-width: 320px;
+          font-size: 23px;
+          line-height: 24px;
         }
       }
 
       &__para {
-        font-size: calcRem(16);
-        line-height: calcRem(18);
         text-transform: uppercase;
-        margin-top: calcRem(8);
         @include ProximaNova-Light;
+        text-align: center;
+        max-width: 362px;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 1.36px;
 
-        @include respond-above(sm) {
-          font-size: get-vw(24px);
-          line-height: get-vw(30px);
-          margin-top: get-vw(20px);
+        @include respond-below(lg) {
+          max-width: 278px;
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 1.04px;
+        }
+
+        @include respond-below(md) {
+          max-width: 260px;
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 0.96px;
+        }
+
+        @include respond-below(sm) {
+          max-width: 280px;
+          font-size: 13px;
+          line-height: 17px;
+          letter-spacing: 1.04px;
         }
 
         strong {
@@ -80,27 +134,45 @@
       }
 
       .btn {
-        margin-top: calcRem(25);
-        @include respond-above(sm) {
-          margin-top: get-vw(29px);
+        margin-top: 40px;
+
+        @include respond-below(lg) {
+          margin-top: 30px;
+        }
+
+        @include respond-below(md) {
+          margin-top: 20px;
+        }
+
+        @include respond-below(sm) {
+          margin-top: 25px;
         }
       }
     }
 
     &--image {
       width: var(--width-100);
-      height: calcRem(258);
       display: flex;
+      height: 465px;
+      width: 510px;
 
-      @include respond-above(sm) {
-        width: get-vw(653px);
-        min-height: get-vw(597px);
-        // height: auto;
+      @include respond-below(lg) {
+        width: 419px;
+        height: 383px;
+      }
+
+      @include respond-below(md) {
+        width: 315px;
+        height: 288px;
+      }
+
+      @include respond-below(sm) {
+        width: 100%;
+        height: 343px;
       }
 
       img {
         width: 100%;
-        // height: 100%;
         object-fit: cover;
       }
     }

@@ -1,52 +1,94 @@
 .banner-with-image {
-  width: var(--width-100);
-  background-image: url("../../images/landing-banner-mobile.png");
+  background-color:#FCE2FF;
   background-size: cover;
-  height: calcRem(442);
-  padding: calcRem(38, 0, 0, 11);
-  margin-bottom: calcRem(20);
   flex-direction: column;
+  max-width: 1920px;
+  margin: 0 auto 25px;
+  height: 486px;
+  padding: 51px 0 0 66px;
 
-  @include respond-above(sm) {
-    height: get-vw(482px);
-    background-image: url("../../images/landing-banner.png");
-    padding-top: get-vw(32px);
-    padding-left: get-vw(63px);
-    margin-bottom: get-vw(44px);
+  @include respond-below(xl) {
+    height: 363px;
+    padding: 28px 0 0 49px;
+  }
+
+  @include respond-below(lg) {
+    height: 260px;
+    padding: 19px 0 0 34px;
+    margin: 0 auto 17px;
+  }
+
+  @include respond-below(md) {
+    height: 194px;
+    padding: 14px 0 0 26px;
+    margin: 0 auto 15px;
+  }
+
+  @include respond-below(sm) {
+    background-image: url("../../images/landing-banner-mobile.png");
+    height: 295px;
+    padding: 38px 0 0 11px;
   }
 
   &--heading {
-    max-width: calcRem(251);
     text-transform: uppercase;
-    font-size: calcRem(73);
-    line-height: calcRem(70);
     @include BentonModDisp-Regular;
+    font-size: 180px;
+    line-height: 174px;
+    max-width: 810px;
 
-    @include respond-above(sm) {
-      max-width: get-vw(870px);
-      font-size: get-vw(180px);
-      line-height: get-vw(174px);
+    @include respond-below(xl) {
+      font-size: 137px;
+      line-height: 132px;
+      max-width: 630px
+    }
+
+    @include respond-below(lg) {
+      font-size: 99px;
+      line-height: 95px;
+      max-width: 450px
+    }
+
+    @include respond-below(md) {
+      font-size: 72px;
+      line-height: 69px;
+      max-width: 330px
+    }
+
+    @include respond-below(sm) {
+      font-size: 73px;
+      line-height: 70px;
+      max-width: 252px
     }
   }
 
   &--subtitle {
-    font-size: calcRem(18);
     @include ProximaNova-Light;
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: 0.63px;
+    max-width: 810px;
 
-    @include respond-above(sm) {
-      font-size: calcRem(11);
+    @include respond-below(xl) {
+      font-size: 19px;
+      line-height: 19px;
+      letter-spacing: 0.47px;
+      max-width: 630px
     }
 
-    @include respond-above(md) {
-      font-size: calcRem(15);
+    @include respond-below(lg) {
+      max-width: 450px;
     }
 
-    @include respond-above(lg) {
-      font-size: calcRem(22);
+    @include respond-below(md) {
+      max-width: 330px;
     }
 
-    @include respond-above(xl) {
-      font-size: calcRem(25);
+    @include respond-below(sm) {
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.45px;
+      max-width: 252px;
     }
   }
 

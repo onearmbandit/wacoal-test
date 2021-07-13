@@ -1,5 +1,5 @@
 .btn {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 0;
   transition: all 0.2s ease-in-out;
   display: inline-block;
@@ -16,9 +16,9 @@
       background-color: transparent;
       color: var(--color-black);
       font-size: 14px;
-      @include ProximaNova-Bold;
+      @include ProximaNova-Reg;
       text-transform:   uppercase;
-      padding: 12px 33px;
+      padding: 13px 33px;
       letter-spacing: 1.4px;
       line-height: 18px;
 
