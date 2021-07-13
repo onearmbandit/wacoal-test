@@ -59,7 +59,7 @@ if ($cat_post_counts >= 2) { ?>
                             <div class="explore-blog--wrapper blog-wrapper">';
         }
                 include locate_template('template-parts/content-excerpt.php');
-        if ($i % 2 == 1 || $cat_post_counts == ($i+1)) {
+        if ($i % 2 == 1) {
             echo '</div>
                         </div>
                     </section>';
