@@ -98,8 +98,8 @@ if ($template == 'wacoal') {
     $posts_to_exclude = array();
     ?>
 
-    <section class="featured-article">
-        <div class="featured-article--wrapper">
+    <section class="featured-article-block">
+        <div class="featured-article-block--wrapper">
             <?php
             foreach ( $featured_posts as $featured_post ) {
                 $featured_post_id      = $featured_post->ID;
