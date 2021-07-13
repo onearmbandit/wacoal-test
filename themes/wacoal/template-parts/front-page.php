@@ -57,7 +57,7 @@
 </a>
 <?php endif;?>
 
-<section class="evergreen-article--slider">
+<section class="evergreen-article--slider evergreen-article--desktop">
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
             <?php foreach ($slider_blog_slider as $key => $slider_blog) {
@@ -69,6 +69,14 @@
                 ?>
 
                 <div class="swiper-slide evergreen-article">
+                    <div class="evergreen-article--image">
+                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
+                            <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
+                    </div>
+
                     <div class="evergreen-article--content">
 
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"
@@ -88,9 +96,65 @@
                             </a>
                         </div>
 
-
+                        <div class="evergreen-article--button">
+                            <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
+                            class="btn primary big">learn more</a>
+                        </div>
                     </div>
+                </div>
 
+            <?php } ?>
+
+        </div>
+
+        <div class="swiper-pagination custom-swiper-pagination"></div>
+
+        <div class="swiper-button-next swiper-buttun-background">
+            <img class="lazyload"
+                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="Slider Arrow" />
+        </div>
+        <div class="swiper-button-prev swiper-buttun-background">
+            <img class="lazyload"
+                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                 alt="Slider Arrow" />
+        </div>
+  </div>
+</section>
+
+<section class="evergreen-article--slider evergreen-article--mobile">
+    <div class="swiper-container center-slide-slider">
+        <div class="swiper-wrapper">
+            <?php foreach ($slider_blog_slider as $key => $slider_blog) {
+                $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
+                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'slider-img');
+                $categories    = Wacoal_Get_Primary_category($slider_blog->ID);
+                $cat_ID        = $categories->term_id;
+                ?>
+
+                <div class="swiper-slide evergreen-article">
+                    <div class="evergreen-article--content">
+
+                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"
+                        class="evergreen-article--content__subtitle">
+                            <?php echo esc_attr($categories->name);?>
+                        </a>
+
+                        <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
+                            <h3 class="evergreen-article--content__title">
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->post_title), 78));?>
+                            </h3>
+                        </a>
+
+                        <div class="evergreen-article--content__para">
+                            <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->tag_line), 160));?>
+                            </a>
+                        </div>
+                    </div>
                     <div class="evergreen-article--image">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
@@ -99,10 +163,12 @@
                         </a>
                     </div>
 
-                    <div class="evergreen-article--button">
+                    <div class="evergreen-article--content article-button">
+                        <div class="evergreen-article--button">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
                             class="btn primary big">learn more</a>
                         </div>
+                    </div>
                 </div>
 
             <?php } ?>
@@ -130,7 +196,7 @@
 
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
-
+    <div class="wacoal-101--inner-wrapper">
     <?php if($static_section['image'] && !empty($static_section['image'])) :
         if(!empty($static_section['image_link'])) :?>
                 <a href="<?php echo esc_url($static_section['image_link']);?>"
@@ -152,7 +218,7 @@
     endif;?>
 
        <div class="wacoal-101--content">
-
+        <div class="content-wrapper">
        <?php if($static_section['title_link'] && !empty($static_section['title_link'])) : ?>
             <a href="<?php echo esc_url($static_section['title_link']);?>"
             <?php if($static_section['link_open_in_new_tab'] == true) : echo "target='_blank'";
@@ -182,12 +248,14 @@
                 </div>
             <?php } ?>
         </div>
+        </div>
+        </div>
     </div>
 </section>
 
 <?php endif; ?>
 
-<section class="spacer-120"></section>
+
 
 <section class="featured-article--slider">
     <div class="swiper-container featured-article">

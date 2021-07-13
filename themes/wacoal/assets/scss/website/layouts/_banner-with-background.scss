@@ -1,38 +1,55 @@
 .banner-with-background {
-  background: var(--color-hero-bg);
+  background: var(--color-feat-article-bg);
   text-align: center;
-  padding: calcRem(44, 0);
-  margin-bottom: calcRem(22);
+  width: 100%;
+  padding: 45px 0 0;
+  height: 270px;
+  margin-bottom: 25px;
 
-  @include respond-above(sm) {
-    padding-top: get-vw(89px);
-    padding-bottom: get-vw(89px);
-    margin-bottom: get-vw(81px);
+  @include respond-below(lg) {
+    height: 196px;
+    margin-bottom: 18px;
+    padding: 32px 0 0;
+  }
+
+  @include respond-below(sm) {
+    height: 184px;
+    margin-bottom: 25px;
+    padding: 45px 0 0;
   }
 
   &--heading {
     text-transform: uppercase;
-    font-size: calcRem(54);
-    line-height: calcRem(49);
     @include BentonModDisp-Regular;
+    font-size: 137px;
+    line-height: 132px;
 
-    @include respond-above(sm) {
-      font-size: get-vw(165px);
-      line-height: 1;
+    @include respond-below(lg) {
+      font-size: 97px;
+      line-height: 94px;
+    }
+
+    @include respond-below(sm) {
+      font-size: 54px;
+      line-height: 49px;
     }
   }
 
   &--subtitle {
-    font-size: calcRem(15);
-    line-height: calcRem(19);
-    margin-top: calcRem(8);
     text-transform: uppercase;
+    font-size: 19px;
+    line-height: 19px;
+    letter-spacing: 0.47px;
+    margin-top: 20px;
 
-    @include respond-above(sm) {
-      @include ProximaNova-Light;
-      margin-top: get-vw(20px);
-      font-size: get-vw(32px);
-      line-height: get-vw(42px);
+    @include respond-below(lg) {
+      font-size: 16px;
+      line-height: 13px;
+      margin-top: 15px;
+    }
+
+    @include respond-below(sm) {
+      margin-top: 20px;
     }
   }
 }

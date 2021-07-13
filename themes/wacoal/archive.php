@@ -33,6 +33,7 @@ if ($template == 'wacoal') {
     $static_section= get_field('static_section', 'category_'.$current_cat_id);?>
     <section class="wacoal-101">
         <div class="wacoal-101--wrapper">
+            <div class="wacoal-101--inner-wrapper">
             <div class="wacoal-101--image">
                 <?php
                 if(!empty($static_section['image_link'])) :?>
@@ -50,6 +51,7 @@ if ($template == 'wacoal') {
                 <?php endif;?>
             </div>
             <div class="wacoal-101--content">
+            <div class="content-wrapper">
             <?php if($static_section['title_link'] && !empty($static_section['title_link'])) : ?>
                 <a href="<?php echo esc_url($static_section['title_link']);?>"
                     <?php if($static_section['title_link_open_in_new_tab'] == true) : echo "target='_blank'";
@@ -74,6 +76,8 @@ if ($template == 'wacoal') {
                     </div>
                 <?php } ?>
             </div>
+                </div>
+        </div>
         </div>
     </section>
 <?php } else {
@@ -136,7 +140,7 @@ if ($template == 'wacoal') {
         </div>
     </section>
 
-    <section class="spacer-120"></section>
+
 
     <div id="post-listing">
     <?php if (have_posts()) { ?>
@@ -163,7 +167,7 @@ if ($template == 'wacoal') {
     </div>
 <?php }?>
 
-<section class="spacer-120"></section>
+
 <?php if(!empty($recent_posts['posts'])) :?>
     <section class="more-blog">
         <div class="more-blog--title">

@@ -1,23 +1,79 @@
 .wacoal-101 {
+  margin-bottom: 80px;
+
+  @include respond-below(lg) {
+    margin-bottom: 100px;
+  }
+
+  @include respond-below(md) {
+    margin-bottom: 50px;
+  }
 
   &--wrapper {
-    width: calc(var(--width-100) - 46px);
+    position: relative;
+    margin: auto;
+    max-width: 1254px;
+    padding-top: 20px;
+  }
+
+  &--inner-wrapper {
+    max-width: 1134px;
     margin: auto;
     display: flex;
-    flex-direction: column;
 
-    @include respond-above(sm) {
-      width: get-vw(1730px);
-      flex-direction: row;
+    @include respond-below(lg) {
+      max-width: 932px;
+    }
+
+    @include respond-below(md) {
+      max-width: 700px;
+    }
+
+    @include respond-below(sm) {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: var(--color-nav-bg);
+      opacity: 0.5;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 442px;
+      z-index: -1;
+
+      @include respond-below(lg) {
+        height: 358px;
+      }
+
+      @include respond-below(md) {
+        height: 279px;
+      }
+
+      @include respond-below(sm) {
+        height: 565px;
+      }
     }
   }
 
   &--image {
-    width: 100%;
     display: flex;
+    width: 568px;
 
-    @include respond-above(sm) {
-      width: get-vw(819px);
+    @include respond-below(lg) {
+      width: 466px;
+    }
+
+    @include respond-below(md) {
+      width: 350px;
+    }
+
+    @include respond-below(sm) {
+      width: 348px;
     }
 
     img {
@@ -29,29 +85,44 @@
 
   &--content {
     background: var(--color-article-bg);
-    padding: calcRem(0, 28);
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 
     @include respond-below(sm) {
-      padding: calcRem(31, 28);
+      width: 348px;
+      height: 290px;
+      flex: auto;
     }
 
-    @include respond-above(sm) {
-      padding-left: get-vw(185px);
-      padding-bottom: inherit;
-      padding-right: inherit;
+    .content-wrapper {
+      max-width: 300px;
+
+      @include respond-below(md) {
+        max-width: 210px;
+      }
     }
 
     &__title {
-      font-size: calcRem(19);
-      margin-bottom: calcRem(29);
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0.16px;
+      margin-bottom: 29px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(27px);
-        margin-bottom: get-vw(62px);
+      @include respond-below(lg) {
+        font-size: 14px;
+        line-height: 15px;
+        letter-spacing: 0.14px;
+        margin-bottom: 24px;
+      }
+
+      @include respond-below(md) {
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.12px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -62,25 +133,41 @@
     line-height: 1;
 
     &:not(:last-child){
-      margin-bottom: calcRem(32);
+      margin-bottom: 30px;
 
-      @include respond-above(sm) {
-        margin-bottom: get-vw(36px);
+      @include respond-below(lg) {
+        margin-bottom: 25px;
+      }
+
+      @include respond-below(md) {
+        margin-bottom: 22px;
       }
     }
 
     &__icon {
+      display: flex;
+      align-items: center;
 
+      img {
+        @include respond-below(lg) {
+          width: 75%;
+        }
+      }
     }
 
     &__content {
-      font-size: calcRem(29);
       @include BentonModDisp-Regular;
-      margin-left: calcRem(13px);
+      margin-left: 24px;
+      font-size: 35px;
 
-      @include respond-above(sm) {
-        font-size: get-vw(65px);
-        margin-left: get-vw(38.5px);
+      @include respond-below(lg) {
+        font-size: 28px;
+        margin-left: 20px;
+      }
+
+      @include respond-below(md) {
+        font-size: 23px;
+        margin-left: 16px;
       }
     }
   }

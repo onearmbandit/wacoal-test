@@ -31,12 +31,12 @@ require('../../scss/website/wacoal-swiper.scss');
       prevEl: '.swiper-button-prev',
     },
 
-    breakpoints: {
-      768: {
-        slidesPerView: 1.75,
-        spaceBetween: 70
-      }
-    }
+    // breakpoints: {
+    //   768: {
+    //     slidesPerView: 1.75,
+    //     spaceBetween: 70
+    //   }
+    // }
   });
 
   let featuredSwiper = new Swiper('.featured-article', {
