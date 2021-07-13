@@ -354,6 +354,11 @@
         @include respond-below(md) {
           width: 19px;
         }
+
+        @include respond-below(sm) {
+          width: 15px;
+          height: auto;
+        }
         img {
           width: 100%;
         }

@@ -404,7 +404,7 @@ if ($template == 'simple') :
         $i = 0;
         if ($wp_query->post_count >= 3) {
             ?>
-        <div class="category-posts">
+        <div class="category-posts category-posts-desktop">
             <?php while (have_posts()) : the_post();
                 if ($i % 3 == 0) {
                     echo '<section class="explore-blog">
@@ -424,7 +424,7 @@ if ($template == 'simple') :
 
             <?php
         } else { ?>
-        <div class="category-posts">
+        <div class="category-posts category-posts-desktop">
             <?php
             echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
             while (have_posts()) : the_post();
@@ -438,7 +438,185 @@ if ($template == 'simple') :
     Btemptd_Paging_nav();
     ?>
     </div>
+
+    <!-- category post mobile view -->
+    <div class="category-posts category-posts-mobile">
+        <section class="explore-blog">
+            <div class="explore-blog--bg">
+                <div class="explore-blog--wrapper blog-wrapper">
+                    <div class="explore-blog--box box-shadow-right">
+                        <div class="explore-blog--image">
+                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
+                            </a>
+                        </div>
+
+                        <div class="explore-blog--content blog-pagination">
+                            <div class="blog-pagination-content">
+                            <div class="explore-blog--content__category">
+                                <a href="http://localhost:8000/category/bra-trends/">
+                                    Bra Trends            </a>
+                            </div>
+                            <div class="explore-blog--content__title">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
+                            </div>
+                            </div>
+                            <div class="blog-pagination-cta">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-blog--box box-shadow-right">
+                        <div class="explore-blog--image">
+                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
+                            </a>
+                        </div>
+
+                        <div class="explore-blog--content blog-pagination">
+                            <div class="blog-pagination-content">
+                            <div class="explore-blog--content__category">
+                                <a href="http://localhost:8000/category/bra-trends/">
+                                    Bra Trends            </a>
+                            </div>
+                            <div class="explore-blog--content__title">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
+                            </div>
+                            </div>
+                            <div class="blog-pagination-cta">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="explore-blog">
+            <div class="explore-blog--bg">
+                <div class="explore-blog--wrapper blog-wrapper">
+                    <div class="explore-blog--box box-shadow-right">
+                        <div class="explore-blog--image">
+                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
+                            </a>
+                        </div>
+
+                        <div class="explore-blog--content blog-pagination">
+                            <div class="blog-pagination-content">
+                            <div class="explore-blog--content__category">
+                                <a href="http://localhost:8000/category/bra-trends/">
+                                    Bra Trends            </a>
+                            </div>
+                            <div class="explore-blog--content__title">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
+                            </div>
+                            </div>
+                            <div class="blog-pagination-cta">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-blog--box box-shadow-right">
+                        <div class="explore-blog--image">
+                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
+                            </a>
+                        </div>
+
+                        <div class="explore-blog--content blog-pagination">
+                            <div class="blog-pagination-content">
+                            <div class="explore-blog--content__category">
+                                <a href="http://localhost:8000/category/bra-trends/">
+                                    Bra Trends            </a>
+                            </div>
+                            <div class="explore-blog--content__title">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
+                            </div>
+                            </div>
+                            <div class="blog-pagination-cta">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="explore-blog">
+            <div class="explore-blog--bg">
+                <div class="explore-blog--wrapper blog-wrapper">
+                    <div class="explore-blog--box box-shadow-right">
+                        <div class="explore-blog--image">
+                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
+                            </a>
+                        </div>
+
+                        <div class="explore-blog--content blog-pagination">
+                            <div class="blog-pagination-content">
+                            <div class="explore-blog--content__category">
+                                <a href="http://localhost:8000/category/bra-trends/">
+                                    Bra Trends            </a>
+                            </div>
+                            <div class="explore-blog--content__title">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
+                            </div>
+                            </div>
+                            <div class="blog-pagination-cta">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="explore-blog--box box-shadow-right">
+                        <div class="explore-blog--image">
+                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
+                            </a>
+                        </div>
+
+                        <div class="explore-blog--content blog-pagination">
+                            <div class="blog-pagination-content">
+                            <div class="explore-blog--content__category">
+                                <a href="http://localhost:8000/category/bra-trends/">
+                                    Bra Trends            </a>
+                            </div>
+                            <div class="explore-blog--content__title">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
+                            </div>
+                            </div>
+                            <div class="blog-pagination-cta">
+                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
+                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 <?php
+
 
 $recent_posts = Btemptd_Query_posts(
     array(

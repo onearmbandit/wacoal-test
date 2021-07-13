@@ -76,6 +76,11 @@ input{
       left: 5px;
       top: 5px;
     }
+
+    @include respond-below(sm) {
+      left: 3px;
+      top: 3px;
+    }
   }
 }
 
@@ -94,6 +99,11 @@ input{
     @include respond-below(lg) {
       left: -5px;
       top: 5px;
+    }
+
+    @include respond-below(sm) {
+      left: -3px;
+      top: 3px;
     }
   }
 }
