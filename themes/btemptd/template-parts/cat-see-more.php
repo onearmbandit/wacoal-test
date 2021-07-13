@@ -49,7 +49,25 @@ if ($cat_post_counts >= 3) {
                 echo '</div></div></section>'; ?>
         </div>
 
-<?php } ?>
+<?php }
+if ($cat_post_counts >= 2) { ?>
+    <div class="category-posts category-posts-mobile">
+    <?php while (have_posts()) : the_post();
+        if ($i % 2 == 0) {
+            echo '<section class="explore-blog">
+                        <div class="explore-blog--bg">
+                            <div class="explore-blog--wrapper blog-wrapper">';
+        }
+                include locate_template('template-parts/content-excerpt.php');
+        if ($i % 2 == 1 || $cat_post_counts == ($i+1)) {
+            echo '</div>
+                        </div>
+                    </section>';
+        }
+                $i++;
+    endwhile; ?>
+    </div>
+<?php }?>
     </div>
 <?php if($cat_post_counts > 6) :?>
         <div class="see-more--wrapper">
