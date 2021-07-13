@@ -240,3 +240,118 @@ function Btemptd_Load_more()
 
 add_action('wp_ajax_nopriv_btemptd_load_more', 'Btemptd_Load_more');
 add_action('wp_ajax_btemptd_load_more', 'Btemptd_Load_more');
+
+
+/**
+ * Function for load more category posts
+ *
+ * @return string Return the posts html.
+ */
+function Btemptd_Cat_Posts_Load_more()
+{
+
+    if (isset($_POST['nonce']) && !empty($_POST['nonce'])) {
+        $nonce = $_POST['nonce'];
+    }
+    if (!wp_verify_nonce($nonce, 'ajax-nonce')) {
+        die('Busted!');
+    }
+
+    $cat_ID = $_POST['cat_id'];
+    $offset = $_POST['offset'];
+
+    $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
+        $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
+
+    foreach ( $featured_posts as $featured_post ) {
+        $posts_to_exclude[]    = $featured_post;
+    }
+
+    foreach ( $slider_posts as $slider_post ) {
+        array_push($posts_to_exclude, $slider_post);
+    }
+
+    $cat_posts = Btemptd_Query_posts(
+        array(
+            'post_type' => array('post'),
+            'cat'=> $cat_ID,
+            'post__not_in' => $posts_to_exclude,
+            'offset' => $offset,
+            'posts_per_page' => 6,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_status'=>'publish'
+        )
+    );
+
+    if (!empty($cat_posts)) {
+        ob_start();
+        ?>
+        <div class="cat-post-listing">
+        <?php
+        $i = 0;
+        ?>
+        <div class="category-posts category-posts-desktop">
+            <?php foreach($cat_posts as $key => $cat_post):
+                $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
+                $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                $categories    = Btemptd_Get_Primary_category($cat_post->ID);
+                $cat_ID        = $cat_post->term_id;
+                $cat_name      = $cat_ID->name;
+
+                if ($i % 3 == 0) { ?>
+                    <section class="explore-blog">
+                            <div class="explore-blog--bg">
+                                <div class="explore-blog--wrapper blog-wrapper">';
+                <?php } ?>
+                    <div class="explore-blog--box box-shadow-right">
+                    <div class="explore-blog--image">
+                        <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                        </a>
+                    </div>
+
+                    <div class="explore-blog--content blog-pagination">
+                        <div class="blog-pagination-content">
+                        <div class="explore-blog--content__category">
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name);?>
+                            </a>
+                        </div>
+                        <div class="explore-blog--content__title">
+                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                <?php echo esc_attr(get_the_title($cat_post->ID));?>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="blog-pagination-cta">
+                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php if ($i % 3 == 2) {
+                    echo '</div>
+                        </div>
+                    </section>';
+                }
+                $i++;
+            endforeach; ?>
+
+        </div>
+
+                    <?php
+                    $output = ob_get_contents();
+                    ob_end_clean();
+    } else {
+        $output = '';
+    }
+
+                    echo $output;
+                    die();
+}
+
+add_action('wp_ajax_nopriv_btemptd_cat_posts_load_more', 'Btemptd_Cat_Posts_Load_more');
+add_action('wp_ajax_btemptd_cat_posts_load_more', 'Btemptd_Cat_Posts_Load_more');
