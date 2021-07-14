@@ -140,9 +140,12 @@ $cat_name         = $current_cat_data->name;
         </section>
 
         <div id="post-listing">
-            <?php if (have_posts()) { ?>
+            <?php if (have_posts()) {
+                $i=0;
+                $j=0;
+                if (! wp_is_mobile()) { ?>
                 <div class="category-posts category-posts--desktop">
-                    <?php $i=0;
+                    <?php
                     while ( have_posts() ) : the_post();
                         if ($i%3 == 0 || $i==0) {
                             echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
@@ -155,70 +158,25 @@ $cat_name         = $current_cat_data->name;
                         $i++;
                     endwhile;?>
                 </div>
-
+                <?php } else { ?>
                 <div class="category-posts category-posts--mobile">
-                    <div class="more-blog">
-                        <div class="more-blog--wrapper">
-                            <article class="blog-tile">
-                                <div class="blog-tile--image">
-                                    <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                                </div>
-                                <div class="blog-tile--category">
-                                    Style Guide
-                                </div>
-                                <h5 class="blog-tile--heading">
-                                    HEADLINE COPY – LOREM IPSUM
-                                </h5>
-                                <a href="#" class="btn primary">Learn More</a>
-                            </article>
+                    <?php while ( have_posts() ) : the_post();
+                        if ($j % 2 == 0) { ?>
+                            <section class="more-blog">
+                                <div class="more-blog--wrapper">
+                        <?php }
+                        include locate_template('template-parts/content-excerpt.php');
 
-                            <article class="blog-tile">
-                                <div class="blog-tile--image">
-                                    <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                                </div>
-                                <div class="blog-tile--category">
-                                    Style Guide
-                                </div>
-                                <h5 class="blog-tile--heading">
-                                    HEADLINE COPY – LOREM IPSUM
-                                </h5>
-                                <a href="#" class="btn primary">Learn More</a>
-                            </article>
-                        </div>
-                    </div>
-
-                    <div class="more-blog">
-                        <div class="more-blog--wrapper">
-                            <article class="blog-tile">
-                                <div class="blog-tile--image">
-                                    <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                                </div>
-                                <div class="blog-tile--category">
-                                    Style Guide
-                                </div>
-                                <h5 class="blog-tile--heading">
-                                    HEADLINE COPY – LOREM IPSUM
-                                </h5>
-                                <a href="#" class="btn primary">Learn More</a>
-                            </article>
-
-                            <article class="blog-tile">
-                                <div class="blog-tile--image">
-                                    <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                                </div>
-                                <div class="blog-tile--category">
-                                    Style Guide
-                                </div>
-                                <h5 class="blog-tile--heading">
-                                    HEADLINE COPY – LOREM IPSUM
-                                </h5>
-                                <a href="#" class="btn primary">Learn More</a>
-                            </article>
-                        </div>
-                    </div>
+                        if ($j % 2 == 1) { ?>
+                            </div>
+                        </section>
+                        <?php }
+                        $j++;
+                    endwhile; ?>
                 </div>
 
-            <?php } ?>
+                <?php }
+            }?>
             <?php Wacoal_Paging_nav();?>
         </div>
 
