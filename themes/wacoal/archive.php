@@ -80,7 +80,7 @@ if ($template == 'wacoal') {
         </div>
         </div>
     </section>
-<?php } else {
+<?php }
     $featured_posts = get_posts(
         array(
         'numberposts' => 2,
@@ -165,7 +165,6 @@ if ($template == 'wacoal') {
 
             <?php Wacoal_Paging_nav();?>
     </div>
-<?php }?>
 
 
 <?php if(!empty($recent_posts['posts'])) :?>
