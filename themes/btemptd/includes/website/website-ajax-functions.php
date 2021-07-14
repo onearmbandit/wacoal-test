@@ -290,6 +290,7 @@ function Btemptd_Cat_Posts_Load_more()
         <div class="cat-post-listing">
         <?php
         $i = 0;
+        $j =0;
         ?>
         <div class="category-posts category-posts-desktop">
             <?php foreach($cat_posts as $key => $cat_post):
@@ -350,7 +351,7 @@ function Btemptd_Cat_Posts_Load_more()
                 $cat_ID        = $cat_post->term_id;
                 $cat_name      = $cat_ID->name;
 
-                if ($i % 2 == 0) { ?>
+                if ($j % 2 == 0) { ?>
                     <section class="explore-blog">
                             <div class="explore-blog--bg">
                                 <div class="explore-blog--wrapper blog-wrapper">';
@@ -382,12 +383,12 @@ function Btemptd_Cat_Posts_Load_more()
                         </div>
                     </div>
                 </div>
-                <?php if ($i % 2 == 1) {
+                <?php if ($j % 2 == 1) {
                     echo '</div>
                         </div>
                     </section>';
                 }
-                $i++;
+                $j++;
             endforeach; ?>
 
         </div>
