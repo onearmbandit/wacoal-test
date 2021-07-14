@@ -21,7 +21,7 @@ $categories    = Btemptd_Get_Primary_category(get_the_ID());
 <div class="explore-blog--box box-shadow-right">
     <div class="explore-blog--image">
         <a href="<?php echo esc_url(get_permalink());?>">
-            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
         </a>
     </div>
 

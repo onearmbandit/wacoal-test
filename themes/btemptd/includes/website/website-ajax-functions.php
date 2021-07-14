@@ -200,7 +200,7 @@ function Btemptd_Load_more()
                     <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                         <img class="img-fluid"
                              src="<?php echo esc_url($thumbnail_url); ?>"
-                             alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                             alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                     </a>
                 </div>
 
@@ -308,7 +308,7 @@ function Btemptd_Cat_Posts_Load_more()
                             <div class="explore-blog--box box-shadow-right">
                                 <div class="explore-blog--image">
                                     <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                                        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                                     </a>
                                 </div>
 
@@ -357,7 +357,7 @@ function Btemptd_Cat_Posts_Load_more()
                             <div class="explore-blog--box box-shadow-right">
                                 <div class="explore-blog--image">
                                     <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                                        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                                     </a>
                                 </div>
 

@@ -37,7 +37,7 @@ endif;
                     <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                         <img class="img-fluid"
                              src="<?php echo esc_url($thumbnail_url); ?>"
-                             alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                             alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                     </a>
                 </div>
 
