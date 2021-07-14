@@ -52,11 +52,9 @@
         $(window).scrollTop($(".cat-post-listing").last().offset().top-180);
 
         setTimeout(() => {
-          var article_count_load_more= ($(".cat-post-listing .explore-blog--box").length - 6 ) / 2;
-          var article_count = article_count_load_more + 6;
-          console.log('article_count_load_more ... ',article_count_load_more);
-          console.log('article_count ... ',article_count);
-          console.log('total ... ',total);
+          // var article_count_load_more= ($(".cat-post-listing .explore-blog--box").length - 6 ) / 2;
+          // var article_count = article_count_load_more + 6;
+          var article_count= $(".cat-post-listing .explore-blog--box").length;
           if(html == 0 || article_count == total){
             $(".cat-see-more-button").addClass("disabled");
             $(".cat-see-more-button").hide();
