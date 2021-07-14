@@ -131,17 +131,12 @@
   }
 
   &.featured-article {
-    // margin-bottom: calcRem(46);
 
-    @include respond-above(sm) {
-      // margin-bottom: get-vw(87.2px);
-    }
-
-    .swiper-slide {
-      @include respond-below(sm) {
-        padding: 0 23px;
-      }
-    }
+    // .swiper-slide {
+    //   @include respond-below(sm) {
+    //     padding: 0 23px;
+    //   }
+    // }
     .swiper-buttun-background {
       width: 3.0625rem;
       height: 3.6875rem;
