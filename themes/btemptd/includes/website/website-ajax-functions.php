@@ -200,7 +200,7 @@ function Btemptd_Load_more()
                     <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                         <img class="img-fluid"
                              src="<?php echo esc_url($thumbnail_url); ?>"
-                             alt="<?php echo esc_url($thumbnail_alt); ?>"/>
+                             alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                     </a>
                 </div>
 
@@ -249,7 +249,6 @@ add_action('wp_ajax_btemptd_load_more', 'Btemptd_Load_more');
  */
 function Btemptd_Cat_Posts_Load_more()
 {
-
     if (isset($_POST['nonce']) && !empty($_POST['nonce'])) {
         $nonce = $_POST['nonce'];
     }
@@ -261,7 +260,7 @@ function Btemptd_Cat_Posts_Load_more()
     $offset = $_POST['offset'];
 
     $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
-        $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
+    $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
 
     foreach ( $featured_posts as $featured_post ) {
         $posts_to_exclude[]    = $featured_post;
@@ -283,124 +282,125 @@ function Btemptd_Cat_Posts_Load_more()
             'post_status'=>'publish'
         )
     );
-
+    $found_post_count = count($cat_posts);
     if (!empty($cat_posts)) {
         ob_start();
         ?>
-        <div class="cat-post-listing">
+            <div class="cat-post-listing">
+                <?php
+                $i = 0;
+                $j =0;
+                if (! wp_is_mobile()) {
+                    ?>
+                <div class="category-posts category-posts-desktop">
+                    <?php foreach($cat_posts as $key => $cat_post):
+                        $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
+                        $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                        $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                        $cat_ID        = $cat_post->term_id;
+                        $cat_name      = $cat_ID->name;
+
+                        if ($i % 3 == 0) { ?>
+                            <section class="explore-blog">
+                                <div class="explore-blog--bg">
+                                    <div class="explore-blog--wrapper blog-wrapper">
+                        <?php } ?>
+                            <div class="explore-blog--box box-shadow-right">
+                                <div class="explore-blog--image">
+                                    <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
+                                    </a>
+                                </div>
+
+                                <div class="explore-blog--content blog-pagination">
+                                    <div class="blog-pagination-content">
+                                        <div class="explore-blog--content__category">
+                                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                                <?php echo esc_attr($cat_name);?>
+                                            </a>
+                                        </div>
+                                        <div class="explore-blog--content__title">
+                                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                                <?php echo esc_attr(get_the_title($cat_post->ID));?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="blog-pagination-cta">
+                                        <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php if ($i % 3 == 2 || $found_post_count == ($i+1)) { ?>
+                                    </div>
+                                </div>
+                            </section>
+                        <?php }
+                        $i++;
+                    endforeach; ?>
+                </div>
+                <?php } else { ?>
+                <div class="category-posts category-posts-mobile">
+                    <?php foreach($cat_posts as $key => $cat_post):
+                        $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
+                        $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                        $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                        $cat_ID        = $cat_post->term_id;
+                        $cat_name      = $cat_ID->name;
+
+                        if ($j % 2 == 0) { ?>
+                            <section class="explore-blog">
+                                <div class="explore-blog--bg">
+                                    <div class="explore-blog--wrapper blog-wrapper">
+                        <?php } ?>
+                            <div class="explore-blog--box box-shadow-right">
+                                <div class="explore-blog--image">
+                                    <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                        <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
+                                    </a>
+                                </div>
+
+                                <div class="explore-blog--content blog-pagination">
+                                    <div class="blog-pagination-content">
+                                        <div class="explore-blog--content__category">
+                                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                                <?php echo esc_attr($cat_name);?>
+                                            </a>
+                                        </div>
+                                        <div class="explore-blog--content__title">
+                                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                                <?php echo esc_attr(get_the_title($cat_post->ID));?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="blog-pagination-cta">
+                                        <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
+                                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php if ($j % 2 == 1 || $found_post_count == ($j+1)) { ?>
+                                    </div>
+                                </div>
+                            </section>
+                        <?php }
+                        $j++;
+                    endforeach; ?>
+                </div>
+                <?php } ?>
+            </div>
+
         <?php
-        $i = 0;
-        ?>
-        <div class="category-posts category-posts-desktop">
-            <?php foreach($cat_posts as $key => $cat_post):
-                $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
-                $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                $categories    = Btemptd_Get_Primary_category($cat_post->ID);
-                $cat_ID        = $cat_post->term_id;
-                $cat_name      = $cat_ID->name;
-
-                if ($i % 3 == 0) { ?>
-                    <section class="explore-blog">
-                            <div class="explore-blog--bg">
-                                <div class="explore-blog--wrapper blog-wrapper">';
-                <?php } ?>
-                    <div class="explore-blog--box box-shadow-right">
-                    <div class="explore-blog--image">
-                        <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
-                        </a>
-                    </div>
-
-                    <div class="explore-blog--content blog-pagination">
-                        <div class="blog-pagination-content">
-                        <div class="explore-blog--content__category">
-                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name);?>
-                            </a>
-                        </div>
-                        <div class="explore-blog--content__title">
-                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                <?php echo esc_attr(get_the_title($cat_post->ID));?>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="blog-pagination-cta">
-                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <?php if ($i % 3 == 2) {
-                    echo '</div>
-                        </div>
-                    </section>';
-                }
-                $i++;
-            endforeach; ?>
-
-        </div>
-        <div class="category-posts category-posts-mobile">
-            <?php foreach($cat_posts as $key => $cat_post):
-                $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
-                $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                $categories    = Btemptd_Get_Primary_category($cat_post->ID);
-                $cat_ID        = $cat_post->term_id;
-                $cat_name      = $cat_ID->name;
-
-                if ($i % 2 == 0) { ?>
-                    <section class="explore-blog">
-                            <div class="explore-blog--bg">
-                                <div class="explore-blog--wrapper blog-wrapper">';
-                <?php } ?>
-                    <div class="explore-blog--box box-shadow-right">
-                    <div class="explore-blog--image">
-                        <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                            <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_url($thumbnail_alt); ?>"/>
-                        </a>
-                    </div>
-
-                    <div class="explore-blog--content blog-pagination">
-                        <div class="blog-pagination-content">
-                        <div class="explore-blog--content__category">
-                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name);?>
-                            </a>
-                        </div>
-                        <div class="explore-blog--content__title">
-                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                <?php echo esc_attr(get_the_title($cat_post->ID));?>
-                            </a>
-                        </div>
-                        </div>
-                        <div class="blog-pagination-cta">
-                            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <?php if ($i % 2 == 1) {
-                    echo '</div>
-                        </div>
-                    </section>';
-                }
-                $i++;
-            endforeach; ?>
-
-        </div>
-
-                    <?php
-                    $output = ob_get_contents();
-                    ob_end_clean();
+        $output = ob_get_contents();
+        ob_end_clean();
     } else {
         $output = '';
     }
 
-                    echo $output;
-                    die();
+    echo $output;
+    die();
 }
 
 add_action('wp_ajax_nopriv_btemptd_cat_posts_load_more', 'Btemptd_Cat_Posts_Load_more');

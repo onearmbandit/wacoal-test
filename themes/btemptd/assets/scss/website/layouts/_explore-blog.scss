@@ -425,4 +425,39 @@
     //   }
     // }
   }
+
+  .cat-see-more-button {
+    @include NeutraText-BoldAlt;
+    background: var(--color-tile-bg);
+    color: var(--color-secondary);
+    border: none;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 1.05px;
+    line-height: 17px;
+    padding: 17px 36.5px 14px;
+    bottom: 0;
+
+
+    // .cta-button {
+    //   position: absolute;
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: calcRem(35);
+    //   height: calcRem(35);
+    //   top: calcRem(-25);
+
+    //   @include respond-above(sm) {
+    //     width: get-vw(72px);
+    //     height: get-vw(72px);
+    //     bottom: get-vw(-56px);
+    //     top: inherit;
+    //   }
+    // }
+  }
 }

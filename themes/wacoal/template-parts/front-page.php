@@ -255,88 +255,150 @@
 
 <?php endif; ?>
 
-
+<?php if ($featured_blogs && !empty($featured_blogs) ) {?>
 <section class="feature-article-desktop">
     <div class="feature-article-desktop--wrapper">
+        <?php if ($featured_blog_slider[0]) {
+            $thumbnail_id  = get_post_thumbnail_id($featured_blog_slider[0]->ID);
+            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
+            $categories    = Wacoal_Get_Primary_category($featured_blog_slider[0]->ID);
+            $cat_ID        = $categories->term_id;?>
         <div class="article-one-column">
             <div class="article-one-column--content">
                 <div>
                     <div class="article-one-column--content__subtitle">
-                        Bra’drobe
+                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                            <?php echo esc_attr($categories->name);?>
+                        </a>
                     </div>
 
                     <div class="article-one-column--content__title">
-                        BREAST CANCER AWARENESS MONTH: FEEL GOOD, DO GOOD WITH WACOAL
+                        <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
+                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[0]->post_title), 105));?>
+                        </a>
                     </div>
 
                     <div class="article-one-column--content__para">
-                        Lightweight, breathable fabrics so you can keep your cool all day (and night) long.
+                        <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
+                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[0]->tag_line), 160));?>
+                        </a>
                     </div>
 
                     <div class="article-one-column--content__cta">
-                        <a href="#" class="btn primary">Learn More</a>
+                        <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>"
+                                class="btn primary">learn more</a>
                     </div>
                 </div>
             </div>
 
-            <div class="article-one-column--image">
-                <img src="http://localhost:8000/wp-content/uploads/2020/09/blog-img-3.png" />
-            </div>
+            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
+                <div class="article-one-column--image">
+                    <img class="lazyload"
+                        data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                        alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                </div>
+            </a>
         </div>
+        <?php }?>
 
+        <?php if ($featured_blog_slider[1]) {
+            $thumbnail_id1  = get_post_thumbnail_id($featured_blog_slider[1]->ID);
+            $thumbnail_url1 = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id1, 'full'));
+            $thumbnail_alt1 = Wacoal_Get_Image_alt($thumbnail_id1, 'featured-img');
+            $categories1    = Wacoal_Get_Primary_category($featured_blog_slider[1]->ID);
+            $cat_ID1        = $categories1->term_id;
+
+            $thumbnail_id2  = get_post_thumbnail_id($featured_blog_slider[2]->ID);
+            $thumbnail_url2 = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id2, 'full'));
+            $thumbnail_alt2 = Wacoal_Get_Image_alt($thumbnail_id2, 'featured-img');
+            $categories2    = Wacoal_Get_Primary_category($featured_blog_slider[2]->ID);
+            $cat_ID2        = $categories2->term_id;?>
         <div class="article-two-column">
             <div class="article-two-column--wrapper">
+                <?php if ($featured_blog_slider[1]) {?>
                 <div>
-                    <div class="article-two-column--image">
-                        <img src="http://localhost:8000/wp-content/uploads/2020/09/blog-img-3.png" />
-                    </div>
+                    <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
+                        <div class="article-two-column--image">
+                            <img class="lazyload"
+                            data-src="<?php echo  esc_url($thumbnail_url1); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo esc_attr($thumbnail_alt1);?>" />
+                        </div>
+                    </a>
 
                     <div class="article-two-column--content">
+
                         <div class="article-two-column--content__subtitle">
-                            Bra’drobe
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID1));?>">
+                                <?php echo esc_attr($categories1->name);?>
+                            </a>
                         </div>
 
                         <div class="article-two-column--content__title">
-                            BREAST CANCER AWARENESS MONTH: FEEL GOOD, DO GOOD WITH WACOAL
+                            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[1]->post_title), 105));?>
+                            </a>
                         </div>
 
                         <div class="article-two-column--content__para">
-                            Lightweight, breathable fabrics so you can keep your cool all day (and night) long.
+                            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[1]->tag_line), 160));?>
+                            </a>
                         </div>
 
                         <div class="article-two-column--content__cta">
-                            <a href="#" class="btn primary">Learn More</a>
+                            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>"
+                                    class="btn primary">learn more</a>
                         </div>
                     </div>
                 </div>
+                <?php } ?>
 
+                <?php if ($featured_blog_slider[2]) {?>
                 <div>
-                    <div class="article-two-column--image">
-                        <img src="http://localhost:8000/wp-content/uploads/2020/09/blog-img-3.png" />
-                    </div>
+                    <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
+                        <div class="article-two-column--image">
+                            <img class="lazyload"
+                                data-src="<?php echo  esc_url($thumbnail_url2); ?>"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="<?php echo esc_attr($thumbnail_alt2);?>" />
+                        </div>
+                    </a>
 
                     <div class="article-two-column--content">
                         <div class="article-two-column--content__subtitle">
-                            Bra’drobe
+                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID2));?>">
+                                <?php echo esc_attr($categories2->name);?>
+                            </a>
                         </div>
 
                         <div class="article-two-column--content__title">
-                            BREAST CANCER AWARENESS MONTH: FEEL GOOD, DO GOOD WITH WACOAL
+                            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[2]->post_title), 105));?>
+                            </a>
                         </div>
 
                         <div class="article-two-column--content__para">
-                            Lightweight, breathable fabrics so you can keep your cool all day (and night) long.
+                            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[2]->tag_line), 160));?>
+                            </a>
                         </div>
 
                         <div class="article-two-column--content__cta">
-                            <a href="#" class="btn primary">Learn More</a>
+                            <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>"
+                                    class="btn primary">learn more</a>
                         </div>
                     </div>
                 </div>
+                <?php }?>
             </div>
         </div>
+        <?php }?>
     </div>
 </section>
+<?php } ?>
 
 
 <section class="featured-article--slider">
