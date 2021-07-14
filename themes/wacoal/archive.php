@@ -145,7 +145,7 @@ if ($template == 'wacoal') {
     <div id="post-listing">
     <?php if (have_posts()) { ?>
 
-        <div class="category-posts">
+        <div class="category-posts category-posts--desktop">
         <?php $i=0;?>
         <?php while ( have_posts() ) : the_post();
             if ($i%3 == 0 || $i==0) {
@@ -159,6 +159,68 @@ if ($template == 'wacoal') {
             $i++;
         endwhile;?>
 
+        </div>
+
+        <div class="category-posts category-posts--mobile">
+            <div class="more-blog">
+                <div class="more-blog--wrapper">
+                    <article class="blog-tile">
+                        <div class="blog-tile--image">
+                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
+                        </div>
+                        <div class="blog-tile--category">
+                            Style Guide
+                        </div>
+                        <h5 class="blog-tile--heading">
+                            HEADLINE COPY – LOREM IPSUM
+                        </h5>
+                        <a href="#" class="btn primary">Learn More</a>
+                    </article>
+
+                    <article class="blog-tile">
+                        <div class="blog-tile--image">
+                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
+                        </div>
+                        <div class="blog-tile--category">
+                            Style Guide
+                        </div>
+                        <h5 class="blog-tile--heading">
+                            HEADLINE COPY – LOREM IPSUM
+                        </h5>
+                        <a href="#" class="btn primary">Learn More</a>
+                    </article>
+                </div>
+            </div>
+
+            <div class="more-blog">
+                <div class="more-blog--wrapper">
+                    <article class="blog-tile">
+                        <div class="blog-tile--image">
+                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
+                        </div>
+                        <div class="blog-tile--category">
+                            Style Guide
+                        </div>
+                        <h5 class="blog-tile--heading">
+                            HEADLINE COPY – LOREM IPSUM
+                        </h5>
+                        <a href="#" class="btn primary">Learn More</a>
+                    </article>
+
+                    <article class="blog-tile">
+                        <div class="blog-tile--image">
+                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
+                        </div>
+                        <div class="blog-tile--category">
+                            Style Guide
+                        </div>
+                        <h5 class="blog-tile--heading">
+                            HEADLINE COPY – LOREM IPSUM
+                        </h5>
+                        <a href="#" class="btn primary">Learn More</a>
+                    </article>
+                </div>
+            </div>
         </div>
 
     <?php } ?>

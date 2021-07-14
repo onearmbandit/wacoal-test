@@ -251,10 +251,10 @@
 
     &--category {
       @include ProximaNova-Light;
-      font-size: 14px;
-      line-height: 25px;
-      letter-spacing: 0.21px;
-      margin: 8px 0;
+      font-size: 18px;
+      line-height: 19px;
+      letter-spacing: 0.27px;
+      margin: 12px 0 10px;
 
       @include respond-below(xl) {
 
@@ -279,7 +279,7 @@
       font-size: 24px;
       line-height: 28px;
       letter-spacing: 0.6px;
-      margin-bottom: 12px;
+      margin-bottom: 11px;
       min-height: 100px;
       display: flex;
       align-items: center;
@@ -303,7 +303,7 @@
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.4px;
-        min-height: 96px;
+        min-height: 80px;
       }
 
       @include respond-below(sm) {
@@ -375,13 +375,13 @@
 }
 
 .pagination {
-  margin-top: calcRem(15px);
   display: inline-block;
   width: 100%;
+  margin-bottom: 120px;
 
-  @include respond-above(sm) {
-    margin-top: get-vw(45px);
-  }
+  // @include respond-above(sm) {
+  //   margin-top: get-vw(45px);
+  // }
 
   &--wrapper {
     max-width: calcRem(336);
@@ -445,18 +445,75 @@
 }
 
 .category-posts {
-  margin-top: calcRem(23px);
 
-  // @include respond-above(sm) {
-  //   margin-top: 0;
-  // }
+  &.category-posts--desktop {
+    display: block;
+
+    @include respond-below(sm) {
+      display: none;
+    }
+  }
+
+  &.category-posts--mobile {
+    display: none;
+
+    @include respond-below(sm) {
+      display: block;
+    }
+
+    .more-blog {
+      padding: 0;
+      position: relative;
+      margin: 0 0 38px;
+
+      &--wrapper {
+        flex-direction: row;
+        max-width: 343px;
+        margin: auto;
+        padding-top: 20px;
+        position: initial;
+
+        &:before {
+          content: " ";
+          position: absolute;
+          width: 100%;
+          left: 0;
+          height: 160px;
+          top: 0;
+          background: var(--color-article-bg);
+        }
+      }
+
+      .blog-tile {
+        width: 166px;
+        margin: 0;
+
+        &:before {
+          display: none;
+        }
+
+        &--image {
+          width: 166px;
+          height: 152px;
+          margin: 0;
+        }
+      }
+    }
+  }
 
   .more-blog {
-    margin-bottom: calcRem(54);
-    padding: 0;
+    margin: 0 auto 80px;
+    max-width: 1132px;
+    padding: 37px 0 0;
 
-    @include respond-above(sm) {
-      margin-bottom: get-vw(90px);
+    @include respond-below(lg) {
+      max-width: 932px;
+      margin: 0 auto 50px;
+    }
+
+    @include respond-below(md) {
+      max-width: 768px;
+      margin: 0 auto 25px;
     }
 
     &::before {
@@ -464,36 +521,97 @@
       position: absolute;
       width: 100%;
       left: 0;
-      height: calcRem(127);
-      top: -18px;
+      height: 247px;
+      top: 0;
       background: var(--color-article-bg);
 
-      @include respond-above(sm) {
-        width: 92%;
-        left: 4%;
-        background: var(--color-article-bg);
-        top: get-vw(-30px);
+      @include respond-below(lg) {
+        height: 199px;
+      }
+    }
+
+    &--wrapper {
+      padding: 0;
+      max-width: 1050px;
+
+      @include respond-below(lg) {
+        max-width: 808px;
+      }
+
+      @include respond-below(md) {
+        max-width: 628px;
       }
     }
 
     .blog-tile {
-      &:not(:first-child) {
-        display: none;
 
-        @include respond-above(sm) {
-          display: block;
+      &:nth-child(2) {
+        margin: 0 66px;
+
+        @include respond-below(lg) {
+          margin: 0 50px;
+        }
+
+        @include respond-below(md) {
+          margin: 0 14px;
+        }
+
+        @include respond-below(sm) {
+          margin: 0 0 0 11px;
         }
       }
 
-      @include respond-below(sm) {
-        margin-bottom: 0;
+      &--category {
+
+        @include respond-below(md) {
+          font-size: 14px;
+        }
+
+        @include respond-below(sm) {
+          font-size: 11px;
+          line-height: 19px;
+          letter-spacing: 0.17px;
+          max-width: 154px;
+        }
       }
+
+      &--heading {
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0.55px;
+
+        @include respond-below(lg) {
+          font-size: 18px;
+          line-height: 22px;
+          letter-spacing: 0.45px;
+        }
+
+        @include respond-below(md) {
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.45px;
+        }
+
+        @include respond-below(sm) {
+          font-size: 13px;
+          line-height: 14px;
+          letter-spacing: 0.13px;
+          max-width: 154px;
+        }
+      }
+
+      .btn {
+
+        @include respond-below(sm) {
+          padding: 6.5px 19px;
+          font-size: 11px;
+        }
+      }
+
     }
   }
 
-  .more-blog--wrapper {
-    padding: 0;
-  }
+
 }
 
 .see-more--wrapper {
