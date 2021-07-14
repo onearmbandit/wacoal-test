@@ -34,20 +34,20 @@
 
   $(document).on('click', '.cat-see-more-button', function (event) {
 
-    var input = $("#offset").val();
+    var input = $("#cat_offset").val();
     var offset= parseInt(input)+6;
-    var total = $("#total").val();
+    var total = $("#cat_total").val();
     $.ajax({
       url: btemptd_js_var.ajaxurl,
       type: 'post',
       data: {
         action: 'btemptd_cat_posts_load_more',
-        cat_id:$("#cat_id").val(),
+        cat_id:$("#cate_id").val(),
         offset:offset,
         nonce:btemptd_js_var.nonce,
       },
       success: function (html) {
-        $("#offset").val(offset);
+        $("#cat_offset").val(offset);
         $(html).insertAfter( $( ".cat-post-listing" ).last() );
         $(window).scrollTop($(".cat-post-listing").last().offset().top-180);
 

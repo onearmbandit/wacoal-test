@@ -11,9 +11,9 @@
  */
 ?>
 
-<input type="hidden" name="cat" id="cat_id" value="<?php echo esc_attr($current_cat_id);?>">
-<input type="hidden" name="offset" id="offset" value="0">
-<input type="hidden" name="total" id="total" value="<?php echo esc_attr($cat_post_counts);?>">
+<input type="hidden" name="cate_id" id="cate_id" value="<?php echo esc_attr($current_cat_id);?>">
+<input type="hidden" name="cat_offset" id="cat_offset" value="0">
+<input type="hidden" name="cat_total" id="cat_total" value="<?php echo esc_attr($cat_post_counts);?>">
 
 <div class="cat-post-listing">
 <?php
