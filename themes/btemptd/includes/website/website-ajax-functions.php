@@ -392,6 +392,7 @@ function Btemptd_Cat_Posts_Load_more()
             endforeach; ?>
 
         </div>
+                            </div>
 
                     <?php
                     $output = ob_get_contents();
