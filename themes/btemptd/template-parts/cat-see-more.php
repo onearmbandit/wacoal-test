@@ -39,17 +39,7 @@ if ($cat_post_counts >= 3) {
         </div>
 
             <?php
-} else { ?>
-        <div class="category-posts category-posts-desktop">
-                <?php
-                echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
-                while (have_posts()) : the_post();
-                    include locate_template('template-parts/content-excerpt.php');
-                endwhile;
-                echo '</div></div></section>'; ?>
-        </div>
-
-<?php }
+}
 if ($cat_post_counts >= 2) { ?>
     <div class="category-posts category-posts-mobile">
     <?php while (have_posts()) : the_post();
