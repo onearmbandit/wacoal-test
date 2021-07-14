@@ -135,7 +135,7 @@ if ($template == 'simple') :
     $featured_posts= get_field('featured_posts', 'category_'.$current_cat_id);
     $slider_posts= get_field('slider_posts', 'category_'.$current_cat_id);
     ?>
-    <!-- featured article -->
+
     <?php if(!empty($featured_posts)) :?>
         <section class="featured-articles desktop">
     <div class="featured-articles--wrapper box-shadow-right">
@@ -148,7 +148,6 @@ if ($template == 'simple') :
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
                     $cat_name_obj = Btemptd_Get_Primary_category($featured_post);
                     $cat_ID        = $cat_name_obj->term_id;
-                    //print_r($cat_name_object);
                     ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--image">
@@ -213,7 +212,7 @@ if ($template == 'simple') :
                     $thumbnail_id  = get_post_thumbnail_id($slider_post);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name_obj      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_name_obj  = Btemptd_Get_Primary_category($slider_post);
                     $cat_ID        = $cat_name_obj->term_id;
                     ?>
                 <div class="swiper-slide">
@@ -345,7 +344,7 @@ if ($template == 'simple') :
                         $thumbnail_id  = get_post_thumbnail_id($slider_post);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                        $cat_name_obj      = Btemptd_Get_Primary_category($slider_post);
+                        $cat_name_obj  = Btemptd_Get_Primary_category($slider_post);
                         $cat_ID        = $cat_name_obj->term_id;
 
                         ?>
@@ -397,224 +396,34 @@ if ($template == 'simple') :
 </section>
     <?php endif;?>
 
-    <div id="post-listing">
-
     <?php
-    if (have_posts()) {
-        $i = 0;
-        if ($wp_query->post_count >= 3) {
-            ?>
-        <div class="category-posts category-posts-desktop">
-            <?php while (have_posts()) : the_post();
-                if ($i % 3 == 0) {
-                    echo '<section class="explore-blog">
-                            <div class="explore-blog--bg">
-                                <div class="explore-blog--wrapper blog-wrapper">';
-                }
-                include locate_template('template-parts/content-excerpt.php');
-                if ($i % 3 == 2 || $wp_query->post_count == ($i+1)) {
-                    echo '</div>
-                        </div>
-                    </section>';
-                }
-                $i++;
-            endwhile; ?>
+    $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
+    $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
 
-        </div>
-
-            <?php
-        } else { ?>
-        <div class="category-posts category-posts-desktop">
-            <?php
-            echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
-            while (have_posts()) : the_post();
-                include locate_template('template-parts/content-excerpt.php');
-            endwhile;
-             echo '</div></div></section>'; ?>
-        </div>
-
-        <?php }
+    foreach ( $featured_posts as $featured_post ) {
+        $posts_to_exclude[]    = $featured_post;
     }
-    Btemptd_Paging_nav();
-    ?>
-    </div>
 
-    <!-- category post mobile view -->
-    <div class="category-posts category-posts-mobile">
-        <section class="explore-blog">
-            <div class="explore-blog--bg">
-                <div class="explore-blog--wrapper blog-wrapper">
-                    <div class="explore-blog--box box-shadow-right">
-                        <div class="explore-blog--image">
-                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
-                            </a>
-                        </div>
+    foreach ( $slider_posts as $slider_post ) {
+        array_push($posts_to_exclude, $slider_post);
+    }
 
-                        <div class="explore-blog--content blog-pagination">
-                            <div class="blog-pagination-content">
-                            <div class="explore-blog--content__category">
-                                <a href="http://localhost:8000/category/bra-trends/">
-                                    Bra Trends            </a>
-                            </div>
-                            <div class="explore-blog--content__title">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
-                            </div>
-                            </div>
-                            <div class="blog-pagination-cta">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+    $cat_posts = array(
+        'post_type' => 'post',
+        'cat'=> $current_cat_id,
+        'post__not_in' => $posts_to_exclude,
+        'posts_per_page' => -1,
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    );
+    $cat_query = new WP_Query($cat_posts);
+    $cat_post_counts= $cat_query->post_count;
 
-                    <div class="explore-blog--box box-shadow-right">
-                        <div class="explore-blog--image">
-                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
-                            </a>
-                        </div>
-
-                        <div class="explore-blog--content blog-pagination">
-                            <div class="blog-pagination-content">
-                            <div class="explore-blog--content__category">
-                                <a href="http://localhost:8000/category/bra-trends/">
-                                    Bra Trends            </a>
-                            </div>
-                            <div class="explore-blog--content__title">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
-                            </div>
-                            </div>
-                            <div class="blog-pagination-cta">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="explore-blog">
-            <div class="explore-blog--bg">
-                <div class="explore-blog--wrapper blog-wrapper">
-                    <div class="explore-blog--box box-shadow-right">
-                        <div class="explore-blog--image">
-                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
-                            </a>
-                        </div>
-
-                        <div class="explore-blog--content blog-pagination">
-                            <div class="blog-pagination-content">
-                            <div class="explore-blog--content__category">
-                                <a href="http://localhost:8000/category/bra-trends/">
-                                    Bra Trends            </a>
-                            </div>
-                            <div class="explore-blog--content__title">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
-                            </div>
-                            </div>
-                            <div class="blog-pagination-cta">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="explore-blog--box box-shadow-right">
-                        <div class="explore-blog--image">
-                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
-                            </a>
-                        </div>
-
-                        <div class="explore-blog--content blog-pagination">
-                            <div class="blog-pagination-content">
-                            <div class="explore-blog--content__category">
-                                <a href="http://localhost:8000/category/bra-trends/">
-                                    Bra Trends            </a>
-                            </div>
-                            <div class="explore-blog--content__title">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
-                            </div>
-                            </div>
-                            <div class="blog-pagination-cta">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="explore-blog">
-            <div class="explore-blog--bg">
-                <div class="explore-blog--wrapper blog-wrapper">
-                    <div class="explore-blog--box box-shadow-right">
-                        <div class="explore-blog--image">
-                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
-                            </a>
-                        </div>
-
-                        <div class="explore-blog--content blog-pagination">
-                            <div class="blog-pagination-content">
-                            <div class="explore-blog--content__category">
-                                <a href="http://localhost:8000/category/bra-trends/">
-                                    Bra Trends            </a>
-                            </div>
-                            <div class="explore-blog--content__title">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
-                            </div>
-                            </div>
-                            <div class="blog-pagination-cta">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="explore-blog--box box-shadow-right">
-                        <div class="explore-blog--image">
-                            <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                <img class="img-fluid" src="http://localhost:8000/wp-content/uploads/2020/11/Article-10_ArticlePreviewImage_1920_893x630.png" alt="http://featured-img">
-                            </a>
-                        </div>
-
-                        <div class="explore-blog--content blog-pagination">
-                            <div class="blog-pagination-content">
-                            <div class="explore-blog--content__category">
-                                <a href="http://localhost:8000/category/bra-trends/">
-                                    Bra Trends            </a>
-                            </div>
-                            <div class="explore-blog--content__title">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    The Crop Top Style Insiders Wear To Do All The Things.            </a>
-                            </div>
-                            </div>
-                            <div class="blog-pagination-cta">
-                                <a href="http://localhost:8000/the-crop-top-style-insiders-wear-to-do-all-the-things/">
-                                    <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/category-post-arrow.svg">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+    if(!empty($cat_post_counts)) :
+        include locate_template('template-parts/cat-see-more.php');
+    endif; ?>
 <?php
 
 

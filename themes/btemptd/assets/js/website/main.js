@@ -32,6 +32,37 @@
     });
   });
 
+  $(document).on('click', '.cat-see-more-button', function (event) {
+
+    var input = $("#offset").val();
+    var offset= parseInt(input)+6;
+    var total = $("#total").val();
+    $.ajax({
+      url: btemptd_js_var.ajaxurl,
+      type: 'post',
+      data: {
+        action: 'btemptd_cat_posts_load_more',
+        cat_id:$("#cat_id").val(),
+        offset:offset,
+        nonce:btemptd_js_var.nonce,
+      },
+      success: function (html) {
+        $("#offset").val(offset);
+        $(html).insertAfter( $( ".cat-post-listing" ).last() );
+        $(window).scrollTop($(".cat-post-listing").last().offset().top-180);
+
+        var article_count= $(".cat-post-listing .explore-blog--box").length;
+        console.log(article_count);
+        if(html == 0 || total == article_count){
+
+          $(".cat-see-more-button").addClass("disabled");
+          $(".cat-see-more-button").hide();
+        }
+
+      }
+    });
+  });
+
   $(document).ready(function () {
 
     $('.js-search-form').submit(function () {
