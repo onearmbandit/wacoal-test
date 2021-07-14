@@ -256,9 +256,91 @@
 <?php endif; ?>
 
 
+<section class="feature-article-desktop">
+    <div class="feature-article-desktop--wrapper">
+        <div class="article-one-column">
+            <div class="article-one-column--content">
+                <div>
+                    <div class="article-one-column--content__subtitle">
+                        Bra’drobe
+                    </div>
+
+                    <div class="article-one-column--content__title">
+                        BREAST CANCER AWARENESS MONTH: FEEL GOOD, DO GOOD WITH WACOAL
+                    </div>
+
+                    <div class="article-one-column--content__para">
+                        Lightweight, breathable fabrics so you can keep your cool all day (and night) long.
+                    </div>
+
+                    <div class="article-one-column--content__cta">
+                        <a href="#" class="btn primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-one-column--image">
+                <img src="http://localhost:8000/wp-content/uploads/2020/09/blog-img-3.png" />
+            </div>
+        </div>
+
+        <div class="article-two-column">
+            <div class="article-two-column--wrapper">
+                <div>
+                    <div class="article-two-column--image">
+                        <img src="http://localhost:8000/wp-content/uploads/2020/09/blog-img-3.png" />
+                    </div>
+
+                    <div class="article-two-column--content">
+                        <div class="article-two-column--content__subtitle">
+                            Bra’drobe
+                        </div>
+
+                        <div class="article-two-column--content__title">
+                            BREAST CANCER AWARENESS MONTH: FEEL GOOD, DO GOOD WITH WACOAL
+                        </div>
+
+                        <div class="article-two-column--content__para">
+                            Lightweight, breathable fabrics so you can keep your cool all day (and night) long.
+                        </div>
+
+                        <div class="article-two-column--content__cta">
+                            <a href="#" class="btn primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="article-two-column--image">
+                        <img src="http://localhost:8000/wp-content/uploads/2020/09/blog-img-3.png" />
+                    </div>
+
+                    <div class="article-two-column--content">
+                        <div class="article-two-column--content__subtitle">
+                            Bra’drobe
+                        </div>
+
+                        <div class="article-two-column--content__title">
+                            BREAST CANCER AWARENESS MONTH: FEEL GOOD, DO GOOD WITH WACOAL
+                        </div>
+
+                        <div class="article-two-column--content__para">
+                            Lightweight, breathable fabrics so you can keep your cool all day (and night) long.
+                        </div>
+
+                        <div class="article-two-column--content__cta">
+                            <a href="#" class="btn primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <section class="featured-article--slider">
-    <div class="swiper-container featured-article">
+    <div class="swiper-container featured-article featured-article--mobile">
         <div class="swiper-wrapper">
             <?php foreach ($featured_blog_slider as $key => $featured_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($featured_blog->ID);

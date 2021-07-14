@@ -186,15 +186,345 @@
   }
 }
 
+.featured-article {
 
-// .page-wrapper {
+  &.featured-article--mobile {
+    display: none;
 
-//   &--content {
-//     width: calc(100% - 36px);
-//     margin: auto;
+    @include respond-below(sm) {
+      display: block;
+      margin-bottom: 105px;
+    }
+  }
 
-//     @include respond-above(sm) {
-//       width: get-vw(1720px);
-//     }
-//   }
-// }
+  .featured-box {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    &--content {
+      background: var(--color-feat-article-bg);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 25px 32px;
+
+      &__subtitle {
+        display: block;
+        @include ProximaNova-Light;
+        text-align: center;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.14px;
+        margin-bottom: 20px;
+      }
+
+      &__title {
+        text-align: center;
+        @include BentonModDisp-Regular;
+        max-width: 320px;
+        font-size: 23px;
+        line-height: 24px;
+        margin-bottom: 10px;
+      }
+
+      &__para {
+        text-transform: uppercase;
+        @include ProximaNova-Light;
+        text-align: center;
+        max-width: 280px;
+        font-size: 13px;
+        line-height: 17px;
+        letter-spacing: 1.04px;
+
+        strong {
+          @include ProximaNova-Bold;
+        }
+
+        a {
+          @include ProximaNova-Light;
+        }
+      }
+
+      .btn {
+          margin-top: 25px;
+      }
+    }
+
+    &--image {
+      display: flex;
+      width: 100%;
+      height: 343px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    // &:nth-child(even) {
+
+    //   @include respond-above(sm) {
+    //     flex-direction: row-reverse;
+    //   }
+    // }
+  }
+}
+
+.feature-article-desktop {
+  display: block;
+
+  @include respond-below(sm) {
+    display: none;
+  }
+
+  &--wrapper {
+    max-width: 1132px;
+    margin: 0 auto 120px;
+
+    @include respond-below(lg) {
+      max-width: 932px;
+      margin: 0 auto 130px;
+    }
+
+    @include respond-below(md) {
+      max-width: 700px;
+      margin: 0 auto 105px;
+    }
+  }
+
+  .article-one-column {
+    background: var(--color-feat-article-bg);
+    display: flex;
+    margin-bottom: 40px;
+
+    @include respond-below(lg) {
+      margin-bottom: 25px;
+    }
+
+    @include respond-below(md) {
+      margin-bottom: 18px;
+    }
+
+    &--content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      &__subtitle {
+        @include ProximaNova-Light;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0.16px;
+
+        @include respond-below(lg) {
+          font-size: 14px;
+          line-height: 15px;
+          letter-spacing: 0.14px;
+        }
+
+        @include respond-below(md) {
+          font-size: 12px;
+          letter-spacing: 0.12px;
+        }
+      }
+
+      &__title {
+        @include BentonModDisp-Regular;
+        text-transform: uppercase;
+        font-size: 36px;
+        line-height: 38px;
+        margin: 20px auto 0;
+        max-width: 490px;
+
+        @include respond-below(lg) {
+          font-size: 28px;
+          line-height: 29px;
+          max-width: 380px;
+        }
+
+        @include respond-below(md) {
+          font-size: 23px;
+          line-height: 24px;
+          margin: 15px auto 0;
+          max-width: 320px;
+        }
+      }
+
+      &__para {
+        @include ProximaNova-Light;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 1.36px;
+        margin: 10px auto 0;
+        max-width: 365px;
+
+        @include respond-below(lg) {
+          font-size: 13px;
+          line-height: 16px;
+          letter-spacing: 1.04px;
+          max-width: 280px;
+        }
+
+        @include respond-below(md) {
+          font-size: 12px;
+          line-height: 15px;
+          letter-spacing: 0.96px;
+          max-width: 260px;
+        }
+      }
+
+      &__cta {
+        margin-top: 40px;
+
+        @include respond-below(lg) {
+          margin-top: 30px;
+        }
+
+        @include respond-below(md) {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &--image {
+      width: 508px;
+      height: 466px;
+
+      @include respond-below(lg) {
+        width: 419px;
+        height: 383px;
+      }
+
+      @include respond-below(md) {
+        width: 315px;
+        height: 288px;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .article-two-column {
+
+    &--wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--image {
+      width: 546px;
+      height: 500px;
+
+      @include respond-below(lg) {
+        width: 453px;
+        height: 416px;
+      }
+
+      @include respond-below(md) {
+        width: 341px;
+        height: 312px;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &--content {
+      background: var(--color-feat-article-bg);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px 0 30px;
+
+      @include respond-below(lg) {
+        padding: 15px 0 25px;
+      }
+
+      @include respond-below(md) {
+        padding: 12px 0 25px;
+      }
+
+      &__subtitle {
+        @include ProximaNova-Light;
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: 0.16px;
+
+        @include respond-below(lg) {
+          font-size: 14px;
+          line-height: 15px;
+          letter-spacing: 0.14px;
+        }
+
+        @include respond-below(md) {
+          font-size: 12px;
+          line-height: 11px;
+          letter-spacing: 0.12px;
+        }
+      }
+
+      &__title {
+        @include BentonModDisp-Regular;
+        text-transform: uppercase;
+        font-size: 28px;
+        line-height: 30px;
+        letter-spacing: 0.14px;
+        margin: 15px auto 0;
+        max-width: 420px;
+
+        @include respond-below(lg) {
+          font-size: 25px;
+          line-height: 26px;
+          letter-spacing: 0.13px;
+          margin: 10px auto 0;
+          max-width: 356px;
+        }
+
+        @include respond-below(md) {
+          font-size: 21px;
+          line-height: 22px;
+          letter-spacing: 0.1px;
+          margin: 5px auto 0;
+          max-width: 270px;
+        }
+      }
+
+      &__para {
+        @include ProximaNova-Light;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.96px;
+        margin: 15px auto 0;
+        max-width: 260px;
+
+        @include respond-below(lg) {
+          margin: 10px auto 0;
+        }
+      }
+
+      &__cta {
+        margin-top: 30px;
+
+        @include respond-below(lg) {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
