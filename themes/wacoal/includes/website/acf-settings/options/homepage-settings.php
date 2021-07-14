@@ -379,7 +379,7 @@ acf_add_local_field_group(
                 0 => 'featured_image',
             ),
             'min' => '',
-            'max' => '',
+            'max' => 3,
             'return_format' => 'id',
         ),
     ),
