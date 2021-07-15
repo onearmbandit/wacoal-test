@@ -186,6 +186,7 @@
     box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.16);
     position: relative;
     margin-top: -2px;
+    z-index: 1;
   }
 }
 .header-navigation-mobile.mobile-nav-open + .header-navigation--ul {

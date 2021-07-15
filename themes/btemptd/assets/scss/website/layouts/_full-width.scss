@@ -16,17 +16,9 @@
       margin: 0 auto 20px;
     }
 
-    @include respond-below(md) {
+    @include respond-below(sm) {
       margin: 0 auto 15px;
     }
-
-
-    // @include respond-below(sm){
-    //   .full-width-section--content {
-    //     margin-left: 10px;
-    //     padding: calcRem(18, 20);
-    //   }
-    // }
 
     &.even {
       flex-direction: row-reverse;

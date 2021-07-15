@@ -333,7 +333,7 @@ if(!empty($banner_link)) :?>
 <?php if(!empty($featured_posts)) :?>
 <section class="featured-articles-mobile-one">
     <div class="featured-articles-mobile--wrapper">
-        <div class="swiper-container featured-articles-slider-mo">
+        <div class="swiper-container featured-articles-slider-one">
             <div class="swiper-wrapper">
                 <?php foreach($featured_posts as $featured_post): ?>
                     <?php
@@ -374,10 +374,10 @@ if(!empty($banner_link)) :?>
                             </a>
                         </div>
 
-                        <div class="swiper-button-next button-transparent">
+                        <div class="swiper-button-next swiper-button-next-one button-transparent">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
                         </div>
-                        <div class="swiper-button-prev button-transparent">
+                        <div class="swiper-button-prev swiper-button-prev-one button-transparent">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
                         </div>
 
@@ -396,7 +396,7 @@ if(!empty($banner_link)) :?>
 <?php if(!empty($slider_posts)) :?>
 <section class="featured-articles-mobile-two">
     <div class="featured-articles-mobile--wrapper">
-        <div class="swiper-container featured-articles-slider-mo">
+        <div class="swiper-container featured-articles-slider-two">
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
                     <?php
@@ -416,10 +416,10 @@ if(!empty($banner_link)) :?>
                                 alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </a>
 
-                        <div class="swiper-button-next button-transparent">
+                        <div class="swiper-button-next swiper-button-next-two button-transparent">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
                         </div>
-                        <div class="swiper-button-prev button-transparent">
+                        <div class="swiper-button-prev swiper-button-prev-two button-transparent">
                             <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
                         </div>
                     </div>

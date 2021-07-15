@@ -76,6 +76,7 @@
       &__title {
         text-align: center;
         @include BentonModDisp-Regular;
+        text-transform: uppercase;
         font-size: 36px;
         line-height: 38px;
         max-width: 490px;
@@ -195,6 +196,16 @@
       display: block;
       margin-bottom: 105px;
     }
+
+    .featured-box {
+      width: 100%;
+    }
+
+    .featured-box--image {
+      max-width: 348px;
+      height: 318px;
+      margin: auto;
+    }
   }
 
   .featured-box {
@@ -214,6 +225,7 @@
       justify-content: center;
       flex-direction: column;
       padding: 25px 32px;
+      min-height: 300px;
 
       &__subtitle {
         display: block;
@@ -232,6 +244,7 @@
         font-size: 23px;
         line-height: 24px;
         margin-bottom: 10px;
+        text-transform: uppercase;
       }
 
       &__para {
@@ -366,6 +379,7 @@
         letter-spacing: 1.36px;
         margin: 10px auto 0;
         max-width: 365px;
+        text-transform: uppercase;
 
         @include respond-below(lg) {
           font-size: 13px;
@@ -462,15 +476,15 @@
 
       &__subtitle {
         @include ProximaNova-Light;
-        font-size: 16px;
-        line-height: 18px;
+        font-size: 14px;
+        line-height: 16px;
         letter-spacing: 0.16px;
 
-        @include respond-below(lg) {
-          font-size: 14px;
-          line-height: 15px;
-          letter-spacing: 0.14px;
-        }
+        // @include respond-below(lg) {
+        //   font-size: 14px;
+        //   line-height: 15px;
+        //   letter-spacing: 0.14px;
+        // }
 
         @include respond-below(md) {
           font-size: 12px;
@@ -512,6 +526,7 @@
         letter-spacing: 0.96px;
         margin: 15px auto 0;
         max-width: 260px;
+        text-transform: uppercase;
 
         @include respond-below(lg) {
           margin: 10px auto 0;
