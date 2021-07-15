@@ -100,132 +100,18 @@ $cat_name         = $current_cat_data->name;
         <section class="featured-article-block">
             <div class="featured-article-block--wrapper">
                 <?php
-            }
-            ?>
-        </div>
-    </section>
-
-
-
-    <div id="post-listing">
-    <?php if (have_posts()) { ?>
-
-        <div class="category-posts category-posts--desktop">
-        <?php $i=0;?>
-        <?php while ( have_posts() ) : the_post();
-            if ($i%3 == 0 || $i==0) {
-                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
-            }
-            include locate_template('template-parts/content-excerpt.php');
-
-            if ($i%3 == 2 || $i == 2) {
-                echo '</div></section>';
-            }
-            $i++;
-        endwhile;?>
-
-        </div>
-
-        <div class="category-posts category-posts--mobile">
-            <div class="more-blog">
-                <div class="more-blog--wrapper">
-                    <article class="blog-tile">
-                        <div class="blog-tile--image">
-                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                        </div>
-                        <div class="blog-tile--category">
-                            Style Guide
-                        </div>
-                        <h5 class="blog-tile--heading">
-                            HEADLINE COPY – LOREM IPSUM
-                        </h5>
-                        <a href="#" class="btn primary">Learn More</a>
-                    </article>
-
-                    <article class="blog-tile">
-                        <div class="blog-tile--image">
-                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                        </div>
-                        <div class="blog-tile--category">
-                            Style Guide
-                        </div>
-                        <h5 class="blog-tile--heading">
-                            HEADLINE COPY – LOREM IPSUM
-                        </h5>
-                        <a href="#" class="btn primary">Learn More</a>
-                    </article>
-                </div>
-            </div>
-
-            <div class="more-blog">
-                <div class="more-blog--wrapper">
-                    <article class="blog-tile">
-                        <div class="blog-tile--image">
-                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                        </div>
-                        <div class="blog-tile--category">
-                            Style Guide
-                        </div>
-                        <h5 class="blog-tile--heading">
-                            HEADLINE COPY – LOREM IPSUM
-                        </h5>
-                        <a href="#" class="btn primary">Learn More</a>
-                    </article>
-
-                    <article class="blog-tile">
-                        <div class="blog-tile--image">
-                            <img src="http://localhost:8000/wp-content/uploads/2020/10/blog-img-1.png" alt="featured-img">
-                        </div>
-                        <div class="blog-tile--category">
-                            Style Guide
-                        </div>
-                        <h5 class="blog-tile--heading">
-                            HEADLINE COPY – LOREM IPSUM
-                        </h5>
-                        <a href="#" class="btn primary">Learn More</a>
-                    </article>
-                </div>
-            </div>
-        </div>
-
-    <?php } ?>
-
-            <?php Wacoal_Paging_nav();?>
-    </div>
-<?php }?>
-
-
-<?php if(!empty($recent_posts['posts'])) :?>
-    <section class="more-blog">
-        <div class="more-blog--title">
-                <?php echo esc_html($recent_posts['headline']);?>
-        </div>
-        <div class="more-blog--wrapper">
-            <?php foreach ($recent_posts['posts'] as  $blog) { ?>
-                <?php
-
-                $thumbnail_id  = get_post_thumbnail_id($blog);
-                $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-                $categories    = get_the_terms($blog, 'category');
-                $post_tagline  = get_field('tag_line', $blog);
-                $cat_ID        = $categories[0]->term_id;
-                $cat_url       = get_term_link($cat_ID);
-                ?>
-                <article class="blog-tile">
-                    <a href="<?php echo esc_url(get_permalink($blog));?>">
-                        <div class="blog-tile--image">
-                            <img class="lazyload"
-                                 data-src="<?php echo esc_url($thumbnail_url);?>"
-                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                 alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                        </div>
-                    </a>
-                    <div class="blog-tile--category">
-                        <?php if (! empty($categories) ) {?>
-                           <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
-                        <?php }?>
-                    </div>
+                foreach ( $featured_posts as $featured_post ) {
+                    $featured_post_id      = $featured_post->ID;
+                    $featured_post_title   = get_the_title($featured_post_id);
+                    $post_tagline          = get_field('tag_line', $featured_post_id);
+                    $featured_image        = get_the_post_thumbnail_url($featured_post_id);
+                    $posts_to_exclude[]    = $featured_post->ID;
+                    ?>
+                <article class="featured-box">
+                    <div class="featured-box--content">
+                        <p class="featured-box--content__subtitle">
+                            <?php echo esc_attr($cat_name); ?>
+                        </p>
 
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <h4 class="featured-box--content__title">
@@ -254,9 +140,12 @@ $cat_name         = $current_cat_data->name;
         </section>
 
         <div id="post-listing">
-            <?php if (have_posts()) { ?>
-                <div class="category-posts">
-                    <?php $i=0;
+            <?php if (have_posts()) {
+                $i=0;
+                $j=0;
+                if (! wp_is_mobile()) { ?>
+                <div class="category-posts category-posts--desktop">
+                    <?php
                     while ( have_posts() ) : the_post();
                         if ($i%3 == 0 || $i==0) {
                             echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
@@ -269,7 +158,25 @@ $cat_name         = $current_cat_data->name;
                         $i++;
                     endwhile;?>
                 </div>
-            <?php } ?>
+                <?php } else { ?>
+                <div class="category-posts category-posts--mobile">
+                    <?php while ( have_posts() ) : the_post();
+                        if ($j % 2 == 0) { ?>
+                            <section class="more-blog">
+                                <div class="more-blog--wrapper">
+                        <?php }
+                        include locate_template('template-parts/content-excerpt.php');
+
+                        if ($j % 2 == 1) { ?>
+                            </div>
+                        </section>
+                        <?php }
+                        $j++;
+                    endwhile; ?>
+                </div>
+
+                <?php }
+            }?>
             <?php Wacoal_Paging_nav();?>
         </div>
 

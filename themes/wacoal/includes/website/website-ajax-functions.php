@@ -61,16 +61,31 @@ function Wacoal_Ajax_pagination()
         get_template_part('content', 'none');
     } else {
         $i=0;
-        while ( $posts->have_posts() ) {
-            $posts->the_post();
-            if ($i%3 == 0 || $i==0) {
-                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
+        $j=0;
+        if (!wp_is_mobile()) {
+            while ($posts->have_posts()) {
+                $posts->the_post();
+                if ($i % 3 == 0 || $i == 0) {
+                    echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
+                }
+                include locate_template('template-parts/content-excerpt.php');
+                if ($i % 3 == 2 || $i == 2) {
+                    echo '</div></section>';
+                }
+                $i++;
             }
-            include locate_template('template-parts/content-excerpt.php');
-            if ($i%3 == 2 || $i == 2) {
-                echo '</div></section>';
+        } else {
+            while ($posts->have_posts()) {
+                $posts->the_post();
+                if ($j % 2 == 0) {
+                    echo '<section class="more-blog"><div class="more-blog--wrapper">';
+                }
+                include locate_template('template-parts/content-excerpt.php');
+                if ($j % 2 == 1) {
+                    echo '</div></section>';
+                }
+                $j++;
             }
-            $i++;
         }
     }
 
