@@ -57,6 +57,7 @@
 </a>
 <?php endif;?>
 
+<?php if($slider_blog_slider && !empty($slider_blog_slider)) :?>
 <section class="evergreen-article--slider evergreen-article--desktop">
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
@@ -66,9 +67,13 @@
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'slider-img');
                 $categories    = Wacoal_Get_Primary_category($slider_blog->ID);
                 $cat_ID        = $categories->term_id;
+                $tagline       = $slider_blog->tag_line;
+                $slider_post_title = $slider_blog->post_title;
                 ?>
 
                 <div class="swiper-slide evergreen-article">
+
+                <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                     <div class="evergreen-article--image">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
@@ -76,6 +81,7 @@
                             alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </a>
                     </div>
+                <?php endif;?>
 
                     <div class="evergreen-article--content">
 
@@ -84,17 +90,21 @@
                             <?php echo esc_attr($categories->name);?>
                         </a>
 
+                        <?php if($slider_post_title && !empty($slider_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->post_title), 78));?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
                             </h3>
                         </a>
+                        <?php endif;?>
 
+                        <?php if($tagline && !empty($tagline)) :?>
                         <div class="evergreen-article--content__para">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->tag_line), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 160));?>
                             </a>
                         </div>
+                        <?php endif;?>
 
                         <div class="evergreen-article--button">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>"
@@ -133,6 +143,8 @@
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'slider-img');
                 $categories    = Wacoal_Get_Primary_category($slider_blog->ID);
                 $cat_ID        = $categories->term_id;
+                $tagline       = $slider_blog->tag_line;
+                $slider_post_title = $slider_blog->post_title;
                 ?>
 
                 <div class="swiper-slide evergreen-article">
@@ -143,18 +155,25 @@
                             <?php echo esc_attr($categories->name);?>
                         </a>
 
+                        <?php if($slider_post_title && !empty($slider_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->post_title), 78));?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
                             </h3>
                         </a>
+                        <?php endif;?>
 
+                        <?php if($tagline && !empty($tagline)) :?>
                         <div class="evergreen-article--content__para">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_blog->tag_line), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 160));?>
                             </a>
                         </div>
+                        <?php endif;?>
+
                     </div>
+
+                    <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                     <div class="evergreen-article--image">
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <img class="lazyload" data-src="<?php echo  esc_url($thumbnail_url); ?>"
@@ -162,6 +181,7 @@
                             alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </a>
                     </div>
+                    <?php endif;?>
 
                     <div class="evergreen-article--content article-button">
                         <div class="evergreen-article--button">
@@ -191,6 +211,7 @@
         </div>
   </div>
 </section>
+<?php endif;?>
 
 <?php if(have_rows($static_section) || $static_section['image'] ) : ?>
 
@@ -263,7 +284,10 @@
             $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
             $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
             $categories    = Wacoal_Get_Primary_category($featured_blog_slider[0]->ID);
-            $cat_ID        = $categories->term_id;?>
+            $cat_ID        = $categories->term_id;
+            $feat_post_title = $featured_blog_slider[0]->post_title;
+            $tagline         = $featured_blog_slider[0]->tag_line;
+            ?>
         <div class="article-one-column">
             <div class="article-one-column--content">
                 <div>
@@ -273,17 +297,21 @@
                         </a>
                     </div>
 
+                    <?php if($feat_post_title && !empty($feat_post_title)) :?>
                     <div class="article-one-column--content__title">
                         <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
-                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[0]->post_title), 105));?>
+                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
                         </a>
                     </div>
+                    <?php endif;?>
 
+                    <?php if($tagline && !empty($tagline)) :?>
                     <div class="article-one-column--content__para">
                         <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
-                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[0]->tag_line), 160));?>
+                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 160));?>
                         </a>
                     </div>
+                    <?php endif;?>
 
                     <div class="article-one-column--content__cta">
                         <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>"
@@ -292,6 +320,7 @@
                 </div>
             </div>
 
+            <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
                 <div class="article-one-column--image">
                     <img class="lazyload"
@@ -300,6 +329,8 @@
                         alt="<?php echo esc_attr($thumbnail_alt);?>" />
                 </div>
             </a>
+            <?php endif;?>
+
         </div>
         <?php }?>
 
@@ -309,16 +340,22 @@
             $thumbnail_alt1 = Wacoal_Get_Image_alt($thumbnail_id1, 'featured-img');
             $categories1    = Wacoal_Get_Primary_category($featured_blog_slider[1]->ID);
             $cat_ID1        = $categories1->term_id;
+            $feat_post_title1 = $featured_blog_slider[1]->post_title;
+            $tagline1         = $featured_blog_slider[1]->tag_line;
 
             $thumbnail_id2  = get_post_thumbnail_id($featured_blog_slider[2]->ID);
             $thumbnail_url2 = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id2, 'full'));
             $thumbnail_alt2 = Wacoal_Get_Image_alt($thumbnail_id2, 'featured-img');
             $categories2    = Wacoal_Get_Primary_category($featured_blog_slider[2]->ID);
-            $cat_ID2        = $categories2->term_id;?>
+            $cat_ID2        = $categories2->term_id;
+            $feat_post_title2 = $featured_blog_slider[2]->post_title;
+            $tagline2        = $featured_blog_slider[2]->tag_line;
+            ?>
         <div class="article-two-column">
             <div class="article-two-column--wrapper">
                 <?php if ($featured_blog_slider[1]) {?>
                 <div>
+                    <?php if($thumbnail_id1 && !empty($thumbnail_id1)) :?>
                     <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
                         <div class="article-two-column--image">
                             <img class="lazyload"
@@ -327,6 +364,7 @@
                             alt="<?php echo esc_attr($thumbnail_alt1);?>" />
                         </div>
                     </a>
+                    <?php endif;?>
 
                     <div class="article-two-column--content">
 
@@ -336,17 +374,21 @@
                             </a>
                         </div>
 
+                        <?php if($feat_post_title1 && !empty($feat_post_title1)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[1]->post_title), 105));?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 105));?>
                             </a>
                         </div>
+                        <?php endif;?>
 
+                        <?php if($tagline1 && !empty($tagline1)) :?>
                         <div class="article-two-column--content__para">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[1]->tag_line), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline1), 160));?>
                             </a>
                         </div>
+                        <?php endif;?>
 
                         <div class="article-two-column--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>"
@@ -358,6 +400,7 @@
 
                 <?php if ($featured_blog_slider[2]) {?>
                 <div>
+                    <?php if($thumbnail_id2 && !empty($thumbnail_id2)) :?>
                     <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
                         <div class="article-two-column--image">
                             <img class="lazyload"
@@ -366,6 +409,7 @@
                                 alt="<?php echo esc_attr($thumbnail_alt2);?>" />
                         </div>
                     </a>
+                    <?php endif;?>
 
                     <div class="article-two-column--content">
                         <div class="article-two-column--content__subtitle">
@@ -374,17 +418,21 @@
                             </a>
                         </div>
 
+                        <?php if($feat_post_title2 && !empty($feat_post_title2)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
                                 <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[2]->post_title), 105));?>
                             </a>
                         </div>
+                        <?php endif;?>
 
+                        <?php if($tagline2 && !empty($tagline2)) :?>
                         <div class="article-two-column--content__para">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
                                 <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[2]->tag_line), 160));?>
                             </a>
                         </div>
+                        <?php endif;?>
 
                         <div class="article-two-column--content__cta">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>"
@@ -410,6 +458,8 @@
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
                 $categories    = Wacoal_Get_Primary_category($featured_blog->ID);
                 $cat_ID        = $categories->term_id;
+                $feat_post_title = $featured_blog->post_title;
+                $tag_line = $featured_blog->tag_line;
                 ?>
                 <div class="swiper-slide">
                     <article class="featured-box">
@@ -417,19 +467,28 @@
                             <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>" class="featured-box--content__subtitle">
                                 <?php echo esc_attr($categories->name);?>
                             </a>
+
+                            <?php if($feat_post_title && !empty($feat_post_title)) :?>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
                                 <h4 class="featured-box--content__title">
-                                    <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog->post_title), 105));?>
+                                    <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
                                 </h4>
                             </a>
+                            <?php endif;?>
+
+                            <?php if($tag_line && !empty($tag_line)) :?>
                             <div class="featured-box--content__para">
                                 <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
-                                    <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog->tag_line), 160));?>
+                                    <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tag_line), 160));?>
                                 </a>
                             </div>
+                            <?php endif;?>
+
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>"
                                 class="btn primary big">learn more</a>
                         </div>
+
+                        <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
                             <div class="featured-box--image">
                                 <img class="lazyload"
@@ -438,6 +497,8 @@
                                      alt="<?php echo esc_attr($thumbnail_alt);?>" />
                             </div>
                         </a>
+                        <?php endif;?>
+
                     </article>
                 </div>
             <?php } ?>
@@ -476,8 +537,11 @@
             $categories    = Wacoal_Get_Primary_category($blog->ID);
             $post_tagline  = get_field('tag_line', $blog->ID);
             $cat_ID        = $categories->term_id;
+            $feat_post_title = get_the_title($blog->ID);
             ?>
             <article class="blog-tile">
+
+            <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <div class="blog-tile--image">
                         <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
@@ -485,21 +549,30 @@
                         alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                 </a>
+            <?php endif;?>
+
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
                     <?php }?>
                 </div>
+
+                <?php if($feat_post_title && !empty($feat_post_title)) :?>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                         <?php echo esc_attr(get_the_title($blog->ID));?>
                     </a>
                 </h5>
+                <?php endif;?>
+
+                <?php if($post_tagline && !empty($post_tagline)) :?>
                 <div class="blog-tile--para">
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                    <?php echo  wp_kses_post($post_tagline);?>
+                    <?php echo wp_kses_post($post_tagline);?>
                     </a>
                 </div>
+                <?php endif;?>
+
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
                     class="btn primary">Learn More</a>
             </article>
