@@ -260,3 +260,89 @@ function Wacoal_Load_more()
 
 add_action('wp_ajax_nopriv_wacoal_load_more', 'Wacoal_Load_more');
 add_action('wp_ajax_wacoal_load_more', 'Wacoal_Load_more');
+
+/**
+ * Function for load more
+ *
+ * @return string Return the posts html.
+ */
+function Wacoal_Cat_Load_more()
+{
+
+    if (isset($_POST['nonce']) && !empty($_POST['nonce'])) {
+        $nonce = $_POST['nonce'];
+    }
+    if (!wp_verify_nonce($nonce, 'ajax-nonce')) {
+        die('Busted!');
+    }
+
+    $recent_posts = Wacoal_Query_posts(
+        array(
+            'post_type'        => array('post'),
+            'post__not_in'     => array($_POST['post_id']),
+            'posts_per_page'   => 3,
+            'offset'           => $_POST['offset'],
+            'orderby'          => 'post_date',
+            'order'            => 'DESC',
+            'post_status'      => 'publish',
+            'category__not_in' => $_POST['cat_id'],
+        )
+    );
+
+
+    if (!empty($recent_posts)) {
+        ob_start();
+        ?>
+        <section class="more-from-blog more-from-blog-multirow">
+        <div class="more-blog--wrapper">
+        <?php foreach ($recent_posts as $key =>$recent_post) { ?>
+            <?php
+            $thumbnail_id  = get_post_thumbnail_id($recent_post->ID);
+            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
+            $categories    = Wacoal_Get_Primary_category($recent_post->ID);
+            $cat_ID        = $categories->term_id;
+            $cat_url       = get_term_link($cat_ID);
+            ?>
+            <article class="blog-tile">
+                <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                    <div class="blog-tile--image">
+                        <img class="lazyload"
+                            data-src="<?php echo esc_url($thumbnail_url);?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+                </a>
+                <div class="blog-tile--category">
+                    <?php if (! empty($categories) ) {?>
+                    <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories->name); ?> </a>
+                    <?php }?>
+                </div>
+
+                <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                    <h5 class="blog-tile--heading">
+                        <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                    </h5>
+                </a>
+
+                <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>" class="btn primary">
+                    Learn More
+                </a>
+            </article>
+        <?php } ?>
+
+        </div>
+        </section>
+        <?php
+        $output = ob_get_contents();
+        ob_end_clean();
+    } else {
+        $output = '';
+    }
+
+    echo $output;
+    die();
+}
+
+add_action('wp_ajax_nopriv_wacoal_cat_load_more', 'Wacoal_Cat_Load_more');
+add_action('wp_ajax_wacoal_cat_load_more', 'Wacoal_Cat_Load_more');
