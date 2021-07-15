@@ -299,8 +299,8 @@ function Btemptd_Cat_Posts_Load_more()
                         $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                        $cat_ID        = $cat_post->term_id;
-                        $cat_name      = $cat_ID->name;
+                        $primary_category     = Btemptd_Get_Primary_category($cat_post->ID);
+                        $primary_category_url = get_term_link($primary_category->term_id);
 
                         if ($i % 3 == 0) { ?>
                             <section class="explore-blog">
@@ -319,8 +319,8 @@ function Btemptd_Cat_Posts_Load_more()
                                 <div class="explore-blog--content blog-pagination">
                                     <div class="blog-pagination-content">
                                         <div class="explore-blog--content__category">
-                                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                                <?php echo esc_attr($cat_name);?>
+                                            <a href="<?php echo esc_url_raw($primary_category_url);?>">
+                                                <?php echo esc_attr($primary_category->name);?>
                                             </a>
                                         </div>
                                         <div class="explore-blog--content__title">
@@ -350,8 +350,8 @@ function Btemptd_Cat_Posts_Load_more()
                         $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                        $cat_ID        = $cat_post->term_id;
-                        $cat_name      = $cat_ID->name;
+                        $primary_category     = Btemptd_Get_Primary_category($cat_post->ID);
+                        $primary_category_url = get_term_link($primary_category->term_id);
 
                         if ($j % 2 == 0) { ?>
                             <section class="explore-blog">
@@ -370,8 +370,8 @@ function Btemptd_Cat_Posts_Load_more()
                                 <div class="explore-blog--content blog-pagination">
                                     <div class="blog-pagination-content">
                                         <div class="explore-blog--content__category">
-                                            <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                                <?php echo esc_attr($cat_name);?>
+                                            <a href="<?php echo esc_url_raw($primary_category_url);?>">
+                                                <?php echo esc_attr($primary_category->name);?>
                                             </a>
                                         </div>
                                         <div class="explore-blog--content__title">
