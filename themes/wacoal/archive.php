@@ -26,7 +26,6 @@ $cat_name         = $current_cat_data->name;
         </section>
 
         <?php
-        $recent_posts= get_field('more_from_blog', 'category_'.$current_cat_id);
         $template= get_field('template', 'category_'.$current_cat_id);
         if ($template == 'wacoal') {
             $static_section= get_field('static_section', 'category_'.$current_cat_id);?>
@@ -180,57 +179,38 @@ $cat_name         = $current_cat_data->name;
             <?php Wacoal_Paging_nav();?>
         </div>
 
-        <?php if(!empty($recent_posts['posts'])) :?>
-            <section class="more-blog">
-                <div class="more-blog--title">
-                        <?php echo esc_html($recent_posts['headline']);?>
-                </div>
-                <div class="more-blog--wrapper">
-                    <?php foreach ($recent_posts['posts'] as  $blog) { ?>
-                        <?php
+        <?php
+        $recent_posts = Wacoal_Query_posts(
+            array(
+                'post_type' => array('post'),
+                'category__not_in' => $current_cat_id,
+                'posts_per_page' => 3,
+                'offset' => 0,
+                'orderby' => 'post_date',
+                'order' => 'DESC',
+                'post_status'=>'publish'
+            )
+        );
 
-                        $thumbnail_id  = get_post_thumbnail_id($blog);
-                        $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                        $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
-                        $categories    = get_the_terms($blog, 'category');
-                        $post_tagline  = get_field('tag_line', $blog);
-                        $cat_ID        = $categories[0]->term_id;
-                        $cat_url       = get_term_link($cat_ID);
-                        ?>
-                        <article class="blog-tile">
-                            <a href="<?php echo esc_url(get_permalink($blog));?>">
-                                <div class="blog-tile--image">
-                                    <img class="lazyload"
-                                        data-src="<?php echo esc_url($thumbnail_url);?>"
-                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                                </div>
-                            </a>
-                            <div class="blog-tile--category">
-                                <?php if (! empty($categories) ) {?>
-                                <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories[0]->name); ?> </a>
-                                <?php }?>
-                            </div>
+        $current_args = array(
+            'post_type' => 'post',
+            'category__not_in' => $current_cat_id,
+            'posts_per_page' => -1,
+            'offset' => 0,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_status'=>'publish'
+        );
 
-                            <a href="<?php echo esc_url(get_permalink($blog));?>">
-                                <h5 class="blog-tile--heading">
-                                    <?php echo esc_attr(get_the_title($blog));?>
-                                </h5>
-                            </a>
+        $output_the_query = new WP_Query($current_args);
+        $counts= $output_the_query->post_count;
 
-                            <div class="blog-tile--para">
-                                <a href="<?php echo esc_url(get_permalink($blog));?>">
-                                    <?php echo  wp_kses_post($post_tagline);?>
-                                </a>
-                            </div>
-                            <a href="<?php echo esc_url(get_permalink($blog));?>" class="btn primary">
-                                Learn More
-                            </a>
-                        </article>
-                    <?php } ?>
-                </div>
-            </section>
-        <?php endif;?>
+        if(!empty($recent_posts)) :
+            include locate_template('template-parts/more-from-blog.php');
+
+        endif;
+        ?>
+
     </main>
 </div>
 

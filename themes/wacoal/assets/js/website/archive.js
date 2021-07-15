@@ -88,5 +88,35 @@
     }
 
   });
+  $(document).on('click', '.more-blog', function (event) {
+
+    var input = $("#offset").val();
+    var offset= parseInt(input)+3;
+    var total = $("#total").val();
+    $.ajax({
+      url: wacoal_js_var.ajaxurl,
+      type: 'post',
+      data: {
+        action: 'wacoal_cat_load_more',
+        cat_id:$("#cat_id").val(),
+        offset:offset,
+        nonce:wacoal_js_var.nonce,
+        post_id:$("#hidden_post").val(),
+      },
+      success: function (html) {
+        $("#offset").val(offset);
+        $(html).insertAfter( $( ".more-from-blog" ).last() );
+        $(window).scrollTop($(".more-from-blog").last().offset().top-180);
+
+        var article_count= $(".more-from-blog .blog-tile").length;
+        console.log(article_count);
+        if(html == 0 || total == article_count){
+
+          $('.more-blog').parent('div').addClass('disable');
+        }
+
+      }
+    });
+  });
 
 })(jQuery);

@@ -186,7 +186,7 @@ function Btemptd_Load_more()
         ob_start();
         ?>
         <div class="explore-blog explore-see-more">
-        <div class="explore-blog--bg ">
+        <div class="explore-blog--bg">
         <div class="explore-blog--wrapper">
         <?php foreach($recent_posts as $key =>$recent_post):
             $thumbnail_id  = get_post_thumbnail_id($recent_post->ID);

@@ -1,4 +1,5 @@
-.more-blog {
+.more-blog,
+.more-from-blog {
   position: relative;
   padding: 80px 0;
   margin-top: -80px;
@@ -343,7 +344,8 @@
   }
 }
 
-.more-blog-multirow {
+.more-blog-multirow,
+.more-from-blog-multirow {
   padding: 0 0 80px;
   margin: 0;
 
@@ -458,7 +460,8 @@
       display: block;
     }
 
-    .more-blog {
+    .more-blog,
+    .more-from-blog {
       padding: 0;
       position: relative;
       margin: 0 0 38px;
@@ -498,7 +501,8 @@
     }
   }
 
-  .more-blog {
+  .more-blog,
+  .more-from-blog {
     margin: 0 auto 80px;
     max-width: 1132px;
     padding: 37px 0 0;
