@@ -422,11 +422,8 @@
       display: flex;
 
       li {
-        letter-spacing: calcRem(10);
-
-        @include respond-above(sm) {
-          letter-spacing: get-vw(12px);
-        }
+        letter-spacing: 12px;
+        font-size: 14px;
 
         a {
           @include ProximaNova-Light;
@@ -601,6 +598,7 @@
           line-height: 14px;
           letter-spacing: 0.13px;
           max-width: 154px;
+          min-height: 70px;
         }
       }
 

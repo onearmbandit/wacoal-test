@@ -226,15 +226,20 @@
       height: 45px;
     }
 
+    @include respond-below(sm) {
+      width: 49px;
+      height: 59px;
+    }
+
     img {
-      width: 23px;
+      width: 24px;
 
       @include respond-below(lg) {
-        width: 17px;
+        width: 18px;
       }
 
       @include respond-below(md) {
-        width: 11px;
+        width: 12px;
       }
     }
   }
@@ -322,11 +327,13 @@
 
     @include respond-below(sm) {
       padding: 25px 32px;
+      min-height: 228px;
     }
 
     &.article-button {
       @include respond-below(sm) {
         padding: 16px 32px;
+        min-height: initial;
       }
     }
 
@@ -452,117 +459,11 @@
   }
 }
 
-// .evergreen-article {
-//   text-align: center;
-//   background: var(--color-article-bg);
-
-//   &--content {
-//     padding-top: calcRem(16);
-//     min-height: calcRem(230);
-//     padding-bottom: calcRem(12);
-//     max-width: 90%;
-//     margin: auto;
-
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-
-//     @include respond-above(sm) {
-//       max-width: get-vw(840px);
-//       height: get-vw(432px);
-//       padding-top: get-vw(41px);
-//       padding-bottom: get-vw(50px);
-//     }
-
-//     &__subtitle {
-//       font-size: calcRem(18);
-//       line-height: 1;
-//       margin-bottom: calcRem(10);
-//       display: block;
-
-//       @include respond-above(sm) {
-//         margin-bottom: get-vw(26px);
-//         font-size: get-vw(27px);
-//       }
-//     }
-
-//     &__title {
-//       text-transform: uppercase;
-//       @include BentonModDisp-Regular;
-//       font-size: calcRem(26);
-//       line-height: calcRem(25);
-
-//       @include respond-above(sm) {
-//         font-size: get-vw(54px);
-//         line-height: get-vw(51px);
-//       }
-//     }
-
-//     &__para {
-//       font-size: calcRem(15);
-//       line-height: calcRem(19);
-//       text-transform: uppercase;
-//       margin-top: calcRem(6);
-//       @include ProximaNova-Light;
-
-//       @include respond-above(sm) {
-//         font-size: get-vw(24px);
-//         line-height: get-vw(31px);
-//         margin-top: get-vw(34px);
-//         max-width: get-vw(600px);
-//       }
-
-//       strong {
-//         @include ProximaNova-Bold;
-//       }
-
-//       a {
-//         @include ProximaNova-Light;
-//       }
-//     }
-//   }
-
-//   &--image {
-//     width: 100%;
-//     height: calcRem(442);
-
-//     @include respond-above(sm) {
-//       height: get-vw(881px);
-//     }
-//     img {
-//       width: 100%;
-//       height: 100%;
-//       object-fit: cover;
-//     }
-//   }
-
-//   &--button {
-//     padding-top: calcRem(17);
-//     padding-bottom: calcRem(17);
-
-//     @include respond-above(sm) {
-//       padding-top: get-vw(40px);
-//       padding-bottom: get-vw(40px);
-//     }
-//   }
-
-//   &.swiper-slide-active {
-//     background: var(--color-feat-article-bg);
-//   }
-// }
 .swiper-container.article-details-slider {
-  // margin: 0 -18px 0;
   width: 100%;
   max-width: 1440px;
 
-  // @include respond-above(sm) {
-  //   max-width: get-vw(1590px);
-  //   margin: auto;
-  // }
-
   .swiper-slide {
-    // height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
