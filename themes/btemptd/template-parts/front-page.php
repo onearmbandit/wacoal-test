@@ -442,7 +442,7 @@ if(!empty($banner_link)) :?>
                         </div>
                         <div class="swiper-slide--content__cta">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                Read more
+                                Learn more
                             </a>
                         </div>
                     </div>

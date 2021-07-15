@@ -391,6 +391,15 @@
     margin-bottom: 64px;
   }
 
+  &.see-more-relative {
+    height: auto;
+    margin: 0;
+
+    @include respond-below(sm) {
+      margin-top: 50px;
+    }
+  }
+
   .see-more-button {
     @include NeutraText-BoldAlt;
     background: var(--color-tile-bg);
@@ -428,13 +437,13 @@
 
   .cat-see-more-button {
     @include NeutraText-BoldAlt;
-    background: var(--color-tile-bg);
+    background: var(--color-primary);
     color: var(--color-secondary);
     border: none;
     text-transform: uppercase;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    // position: absolute;
+    // left: 50%;
+    // transform: translateX(-50%);
     cursor: pointer;
     outline: none;
     font-size: 14px;

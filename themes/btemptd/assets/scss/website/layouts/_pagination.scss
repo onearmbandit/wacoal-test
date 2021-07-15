@@ -135,7 +135,7 @@
       margin: 0 auto 80px;
     }
 
-    @include respond-below(md) {
+    @include respond-below(sm) {
       max-width: 375px;
       margin: 0 auto 60px;
     }
@@ -204,6 +204,10 @@
 
     &--image {
       height: 190px;
+
+      @include respond-below(lg) {
+        height: 183px;
+      }
 
       @include respond-below(md) {
         height: 134px;

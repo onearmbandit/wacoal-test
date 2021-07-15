@@ -56,7 +56,7 @@ $j = 0;
 </div>
 
 <?php if ($cat_post_counts > 6) {?>
-    <div class="see-more--wrapper">
+    <div class="see-more--wrapper see-more-relative">
         <button class="cat-see-more-button">See More</button>
     </div>
 <?php }

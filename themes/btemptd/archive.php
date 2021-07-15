@@ -61,7 +61,7 @@ if ($template == 'simple') :
                                 <?php echo wp_kses_post(Btemptd_Remove_ptag($section['question']));?>
                             </div>
                             <div class="arrow">
-                                <a href="<?php echo esc_url($section['url']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                                <a href="<?php echo esc_url($section['url']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/arrow-right.svg" /></a>
                             </div>
                         </div>
 
@@ -75,7 +75,7 @@ if ($template == 'simple') :
                                 </div>
                             </div>
                             <div class="arrow">
-                                <a href="<?php echo esc_url($section['url']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-right.svg" /></a>
+                                <a href="<?php echo esc_url($section['url']);?>" target="_blank"><img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/arrow-right.svg" /></a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ if ($template == 'simple') :
                         <?php endif; ?>
                         <div class="full-width-section--content desktop">
                             <div class="arrow">
-                            <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                            <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/arrow-left.svg" /></a>
                             </div>
                             <div class="content-title">
                                 <?php echo esc_attr(Btemptd_Remove_ptag($section['title']));?>
@@ -111,7 +111,7 @@ if ($template == 'simple') :
 
                         <div class="full-width-section--content mobile">
                             <div class="arrow">
-                            <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/red-arrow-left.svg" /></a>
+                            <a href="<?php echo esc_url($section['url']);?>" target="_blank"> <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/arrow-left.svg" /></a>
                             </div>
                             <div class="content-mobile">
                                 <div class="content-title">
