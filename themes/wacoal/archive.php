@@ -96,6 +96,7 @@ $cat_name         = $current_cat_data->name;
         $posts_to_exclude = array();
         ?>
 
+        <?php if($featured_posts && !empty($featured_posts)) :?>
         <section class="featured-article-block">
             <div class="featured-article-block--wrapper">
                 <?php
@@ -112,31 +113,41 @@ $cat_name         = $current_cat_data->name;
                             <?php echo esc_attr($cat_name); ?>
                         </p>
 
+                        <?php if($featured_post_title && !empty($featured_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <h4 class="featured-box--content__title">
                                 <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 110)); ?>
                             </h4>
                         </a>
+                        <?php endif;?>
 
+                        <?php if($post_tagline && !empty($post_tagline)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <p class="featured-box--content__para">
                                 <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 145)); ?>
                             </p>
                         </a>
+                        <?php endif;?>
+
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>" class="btn primary big">learn more</a>
                     </div>
+
+                    <?php if($featured_image && !empty($featured_image)) :?>
                     <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                         <div class="featured-box--image">
                             <img class="lazyload" data-src="<?php echo esc_url($featured_image); ?>"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Featured Article" />
                         </div>
                     </a>
+                    <?php endif;?>
+
                 </article>
                     <?php
                 }
                 ?>
             </div>
         </section>
+        <?php endif;?>
 
         <div id="post-listing">
             <?php if (have_posts()) {

@@ -217,12 +217,16 @@ function Wacoal_Load_more()
             ?>
 
             <article class="blog-tile">
+
+            <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <div class="blog-tile--image">
                         <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                 </a>
+            <?php endif;?>
+
                 <div class="blog-tile--category">
                 <?php if (! empty($categories) ) {?>
                         <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
@@ -235,11 +239,14 @@ function Wacoal_Load_more()
                     </h5>
                 </a>
 
+                <?php if($post_tagline && !empty($post_tagline)) :?>
                 <div class="blog-tile--para">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                         <?php echo  wp_kses_post($post_tagline);?>
                     </a>
                 </div>
+                <?php endif;?>
+
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
                     class="btn primary">Learn More</a>
             </article>
@@ -305,6 +312,8 @@ function Wacoal_Cat_Load_more()
             $cat_url       = get_term_link($cat_ID);
             ?>
             <article class="blog-tile">
+
+            <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                 <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                     <div class="blog-tile--image">
                         <img class="lazyload"
@@ -313,6 +322,8 @@ function Wacoal_Cat_Load_more()
                             alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                 </a>
+            <?php endif;?>
+
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>
                     <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories->name); ?> </a>

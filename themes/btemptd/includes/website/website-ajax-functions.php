@@ -35,11 +35,11 @@ function Btemptd_Ajax_pagination()
         $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
         $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
 
-        foreach( $featured_posts as $featured_post ) {
+        foreach ( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post;
         }
 
-        foreach( $slider_posts as $slider_post ) {
+        foreach ( $slider_posts as $slider_post ) {
             array_push($posts_to_exclude, $slider_post);
         }
 
@@ -196,6 +196,7 @@ function Btemptd_Load_more()
             $cat_ID        = $categories->term_id;
             ?>
             <div class="explore-blog--box">
+                <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                 <div class="explore-blog--image">
                     <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                         <img class="img-fluid"
@@ -203,6 +204,7 @@ function Btemptd_Load_more()
                              alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                     </a>
                 </div>
+                <?php endif;?>
 
                 <div class="explore-blog--content">
                     <div class="explore-blog--content__cta">
@@ -306,11 +308,13 @@ function Btemptd_Cat_Posts_Load_more()
                                     <div class="explore-blog--wrapper blog-wrapper">
                         <?php } ?>
                             <div class="explore-blog--box box-shadow-right">
+                                <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                                 <div class="explore-blog--image">
                                     <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
                                         <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                                     </a>
                                 </div>
+                                <?php endif;?>
 
                                 <div class="explore-blog--content blog-pagination">
                                     <div class="blog-pagination-content">
@@ -355,11 +359,13 @@ function Btemptd_Cat_Posts_Load_more()
                                     <div class="explore-blog--wrapper blog-wrapper">
                         <?php } ?>
                             <div class="explore-blog--box box-shadow-right">
+                                <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                                 <div class="explore-blog--image">
                                     <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
                                         <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                                     </a>
                                 </div>
+                                <?php endif;?>
 
                                 <div class="explore-blog--content blog-pagination">
                                     <div class="blog-pagination-content">

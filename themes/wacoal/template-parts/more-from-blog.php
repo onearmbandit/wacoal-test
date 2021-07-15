@@ -35,6 +35,8 @@ endif;
             $cat_url       = get_term_link($cat_ID);
             ?>
             <article class="blog-tile">
+
+            <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                 <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                     <div class="blog-tile--image">
                         <img class="lazyload"
@@ -43,6 +45,8 @@ endif;
                             alt="<?php echo esc_attr($thumbnail_alt);?>" />
                     </div>
                 </a>
+            <?php endif;?>
+
                 <div class="blog-tile--category">
                     <?php if (! empty($categories) ) {?>
                     <a href="<?php echo esc_url_raw($cat_url);?>"> <?php echo esc_attr($categories->name); ?> </a>
