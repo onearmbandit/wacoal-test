@@ -62,9 +62,8 @@ function Wacoal_Ajax_pagination()
     } else {
         $i=0;
         $j=0;
-        ?>
-        <div class="category-posts category-posts--desktop">
-            <?php while ($posts->have_posts()) {
+        if (!wp_is_mobile()) {
+            while ($posts->have_posts()) {
                 $posts->the_post();
                 if ($i % 3 == 0 || $i == 0) {
                     echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
@@ -74,23 +73,21 @@ function Wacoal_Ajax_pagination()
                     echo '</div></section>';
                 }
                 $i++;
-            } ?>
-            </div>
-            <div class="category-posts category-posts--mobile">
-        <?php
-        while ($posts->have_posts()) {
-            $posts->the_post();
-            if ($j % 2 == 0) {
-                echo '<section class="more-blog"><div class="more-blog--wrapper">';
             }
-            include locate_template('template-parts/content-excerpt.php');
-            if ($j % 2 == 1) {
-                echo '</div></section>';
+        } else {
+            while ($posts->have_posts()) {
+                $posts->the_post();
+                if ($j % 2 == 0) {
+                    echo '<section class="more-blog"><div class="more-blog--wrapper">';
+                }
+                include locate_template('template-parts/content-excerpt.php');
+                if ($j % 2 == 1) {
+                    echo '</div></section>';
+                }
+                $j++;
             }
-            $j++;
-        } ?>
-        </div>
-    <?php    }
+        }
+    }
 
     die();
 }
