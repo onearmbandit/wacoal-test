@@ -63,17 +63,21 @@
   &--image {
     display: flex;
     width: 568px;
+    height: 470px;
 
     @include respond-below(lg) {
       width: 466px;
+      height: 386px;
     }
 
     @include respond-below(md) {
       width: 350px;
+      height: 290px;
     }
 
     @include respond-below(sm) {
       width: 348px;
+      height: 290px;
     }
 
     img {
