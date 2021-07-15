@@ -292,8 +292,7 @@ function Btemptd_Cat_Posts_Load_more()
                 <?php
                 $i = 0;
                 $j =0;
-                if (! wp_is_mobile()) {
-                    ?>
+                ?>
                 <div class="category-posts category-posts-desktop">
                     <?php foreach($cat_posts as $key => $cat_post):
                         $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
@@ -344,7 +343,6 @@ function Btemptd_Cat_Posts_Load_more()
                         $i++;
                     endforeach; ?>
                 </div>
-                <?php } else { ?>
                 <div class="category-posts category-posts-mobile">
                     <?php foreach($cat_posts as $key => $cat_post):
                         $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
@@ -395,7 +393,6 @@ function Btemptd_Cat_Posts_Load_more()
                         $j++;
                     endforeach; ?>
                 </div>
-                <?php } ?>
             </div>
 
         <?php

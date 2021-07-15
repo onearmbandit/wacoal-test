@@ -153,7 +153,7 @@ $cat_name         = $current_cat_data->name;
             <?php if (have_posts()) {
                 $i=0;
                 $j=0;
-                if (! wp_is_mobile()) { ?>
+                ?>
                 <div class="category-posts category-posts--desktop">
                     <?php
                     while ( have_posts() ) : the_post();
@@ -168,7 +168,6 @@ $cat_name         = $current_cat_data->name;
                         $i++;
                     endwhile;?>
                 </div>
-                <?php } else { ?>
                 <div class="category-posts category-posts--mobile">
                     <?php while ( have_posts() ) : the_post();
                         if ($j % 2 == 0) { ?>
@@ -185,8 +184,7 @@ $cat_name         = $current_cat_data->name;
                     endwhile; ?>
                 </div>
 
-                <?php }
-            }?>
+            <?php } ?>
             <?php Wacoal_Paging_nav();?>
         </div>
 

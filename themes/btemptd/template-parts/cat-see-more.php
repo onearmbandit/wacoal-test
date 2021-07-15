@@ -18,7 +18,6 @@ $j = 0;
 <input type="hidden" name="cat_total" id="cat_total" value="<?php echo esc_attr($cat_post_counts);?>">
 
 <div class="cat-post-listing">
-    <?php if (! wp_is_mobile()) { ?>
         <div class="category-posts category-posts-desktop">
             <?php while (have_posts()) : the_post();
                 if ($i % 3 == 0) { ?>
@@ -35,7 +34,6 @@ $j = 0;
                     $i++;
             endwhile; ?>
         </div>
-    <?php } else { ?>
         <div class="category-posts category-posts-mobile">
             <?php while (have_posts()) : the_post();
                 if ($j % 2 == 0) { ?>
@@ -52,7 +50,6 @@ $j = 0;
                     $j++;
             endwhile; ?>
         </div>
-    <?php } ?>
 </div>
 
 <?php if ($cat_post_counts > 6) {?>
