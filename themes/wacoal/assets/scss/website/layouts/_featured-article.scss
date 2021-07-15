@@ -332,6 +332,7 @@
       justify-content: center;
       text-align: center;
 
+
       &__subtitle {
         @include ProximaNova-Light;
         font-size: 16px;
@@ -436,6 +437,11 @@
     &--wrapper {
       display: flex;
       justify-content: space-between;
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &--image {
@@ -465,13 +471,17 @@
       flex-direction: column;
       text-align: center;
       padding: 20px 0 30px;
+      flex: 1;
+      // min-height: 312px;
 
       @include respond-below(lg) {
         padding: 15px 0 25px;
+        // min-height: 280px;
       }
 
       @include respond-below(md) {
         padding: 12px 0 25px;
+        // min-height: 260px;
       }
 
       &__subtitle {

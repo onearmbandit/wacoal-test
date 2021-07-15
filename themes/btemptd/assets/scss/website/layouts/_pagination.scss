@@ -159,6 +159,7 @@
 
     &--wrapper {
       max-width: 988px;
+      justify-content: center;
 
       @include respond-below(lg) {
         max-width: 927px;
@@ -187,15 +188,15 @@
         margin-bottom: 0;
       }
 
-      &:nth-child(2) {
-        margin: 0 43px;
+      &:nth-child(2), &:nth-child(3) {
+        margin: 0 0 0 43px;
 
         @include respond-below(lg) {
-          margin: 0 39px;
+          margin: 0 0 0 39px;
         }
 
         @include respond-below(md) {
-          margin: 0 30px;
+          margin: 0 0 0 30px;
         }
 
         @include respond-below(sm) {

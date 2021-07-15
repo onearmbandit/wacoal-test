@@ -180,6 +180,19 @@
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                             alt="<?php echo esc_attr($thumbnail_alt);?>" />
                         </a>
+
+                        <div class="swiper-button-next swiper-buttun-background">
+                            <img class="lazyload"
+                                data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="Slider Arrow" />
+                        </div>
+                        <div class="swiper-button-prev swiper-buttun-background">
+                            <img class="lazyload"
+                                data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
+                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                alt="Slider Arrow" />
+                        </div>
                     </div>
                     <?php endif;?>
 
@@ -197,18 +210,7 @@
 
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
-        <div class="swiper-button-next swiper-buttun-background">
-            <img class="lazyload"
-                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
-                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                 alt="Slider Arrow" />
-        </div>
-        <div class="swiper-button-prev swiper-buttun-background">
-            <img class="lazyload"
-                 data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
-                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                 alt="Slider Arrow" />
-        </div>
+
   </div>
 </section>
 <?php endif;?>
@@ -354,7 +356,7 @@
         <div class="article-two-column">
             <div class="article-two-column--wrapper">
                 <?php if ($featured_blog_slider[1]) {?>
-                <div>
+                <div class="article-two-column--wrapper__inner">
                     <?php if($thumbnail_id1 && !empty($thumbnail_id1)) :?>
                     <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
                         <div class="article-two-column--image">
@@ -399,7 +401,7 @@
                 <?php } ?>
 
                 <?php if ($featured_blog_slider[2]) {?>
-                <div>
+                <div class="article-two-column--wrapper__inner">
                     <?php if($thumbnail_id2 && !empty($thumbnail_id2)) :?>
                     <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
                         <div class="article-two-column--image">

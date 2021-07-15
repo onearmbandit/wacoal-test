@@ -48,11 +48,12 @@
   }
 
 
-  &.more-blog-multirow {
+  &.more-blog-multirow, &.more-from-blog-multirow {
     &::before {
       top: 0;
     }
   }
+
 
   &--wrapper {
     position: relative;
@@ -472,6 +473,7 @@
         margin: auto;
         padding-top: 20px;
         position: initial;
+        justify-content: center;
 
         &:before {
           content: " ";
@@ -485,7 +487,7 @@
       }
 
       .blog-tile {
-        width: 166px;
+        max-width: 166px;
         margin: 0;
 
         &:before {
@@ -534,6 +536,7 @@
     &--wrapper {
       padding: 0;
       max-width: 1050px;
+      justify-content: center;
 
       @include respond-below(lg) {
         max-width: 808px;
@@ -546,21 +549,37 @@
 
     .blog-tile {
 
-      &:nth-child(2) {
-        margin: 0 66px;
+      &:nth-child(2), &:nth-child(3) {
+        margin: 0 0 0 66px;
 
         @include respond-below(lg) {
-          margin: 0 50px;
+          margin: 0 0 0 50px;
         }
 
         @include respond-below(md) {
-          margin: 0 14px;
+          margin: 0 0 0 14px;
         }
 
         @include respond-below(sm) {
           margin: 0 0 0 11px;
         }
       }
+
+      // &:nth-child(3) {
+      //   margin: 0 66px;
+
+      //   @include respond-below(lg) {
+      //     margin: 0 50px;
+      //   }
+
+      //   @include respond-below(md) {
+      //     margin: 0 14px;
+      //   }
+
+      //   @include respond-below(sm) {
+      //     margin: 0 0 0 11px;
+      //   }
+      // }
 
       &--category {
 
@@ -610,6 +629,12 @@
         }
       }
 
+      &--image {
+        @include respond-above(lg) {
+          height: 280px;
+        }
+      }
+
     }
   }
 
@@ -620,15 +645,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 88px;
 
 
   @include respond-below(lg) {
     margin-bottom: 60px;
   }
 
+  @include respond-below(sm) {
+    margin-bottom: 53px;
+  }
+
   &.disable {
     display: none;
+  }
+
+  .more-blog {
+    margin: 0;
+
+    &:before {
+      display: none;
+    }
   }
 }
 
