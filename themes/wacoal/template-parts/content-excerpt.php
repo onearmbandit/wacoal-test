@@ -20,6 +20,7 @@
     $post_tagline  = get_field('tag_line');
     ?>
 
+    <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
     <a href="<?php echo esc_url(get_permalink());?>">
         <div class="blog-tile--image">
             <img class="lazyload"
@@ -28,18 +29,23 @@
                  alt="<?php echo esc_attr($thumbnail_alt);?>" />
         </div>
     </a>
+    <?php endif;?>
+
     <div class="blog-tile--category">
         <?php echo esc_attr($cat_name); ?>
     </div>
     <?php
-        the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h2>');
+        the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h5>');
     ?>
 
+    <?php if($post_tagline && !empty($post_tagline)) :?>
     <div class="blog-tile--para">
         <a href="<?php echo esc_url(get_permalink());?>">
             <?php echo wp_kses_post($post_tagline); ?>
         </a>
     </div>
+    <?php endif;?>
+
     <a href="<?php echo esc_url(get_permalink());?>" class="btn primary">
         Learn More
     </a>

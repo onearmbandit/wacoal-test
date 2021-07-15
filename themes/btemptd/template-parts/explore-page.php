@@ -33,6 +33,7 @@ endif;
             $cat_ID        = $categories->term_id;
             ?>
             <div class="explore-blog--box ">
+                <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                 <div class="explore-blog--image">
                     <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                         <img class="img-fluid"
@@ -40,6 +41,7 @@ endif;
                              alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
                     </a>
                 </div>
+                <?php endif;?>
 
                 <div class="explore-blog--content box">
                     <div class="explore-blog--content__cta">
@@ -67,6 +69,5 @@ endif;
 <?php if($counts > 3) :?>
         <div class="see-more--wrapper">
             <button class="see-more-button">See More</button>
-            <!-- <img class="cta-button" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/blog-down-arrow.svg" /> -->
         </div>
 <?php endif;?>

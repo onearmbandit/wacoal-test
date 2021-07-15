@@ -19,11 +19,13 @@ $post_tagline  = get_field('tag_line');
 $categories    = Btemptd_Get_Primary_category(get_the_ID());
 ?>
 <div class="explore-blog--box box-shadow-right">
+    <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
     <div class="explore-blog--image">
         <a href="<?php echo esc_url(get_permalink());?>">
             <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
         </a>
     </div>
+    <?php endif;?>
 
     <div class="explore-blog--content blog-pagination">
         <div class="blog-pagination-content">
