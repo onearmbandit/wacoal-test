@@ -55,38 +55,42 @@ function Wacoal_Ajax_pagination()
     }
 
     $posts = new WP_Query($query_vars);
-
+    $cat_post_counts= $posts->post_count;
 
     if (! $posts->have_posts() ) {
         get_template_part('content', 'none');
     } else {
         $i=0;
         $j=0;
-        if (!wp_is_mobile()) {
-            while ($posts->have_posts()) {
-                $posts->the_post();
-                if ($i % 3 == 0 || $i == 0) {
-                    echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
-                }
-                include locate_template('template-parts/content-excerpt.php');
-                if ($i % 3 == 2 || $i == 2) {
-                    echo '</div></section>';
-                }
-                $i++;
+
+        echo '<div class="category-posts category-posts--desktop">';
+        while ($posts->have_posts()) {
+            $posts->the_post();
+            if ($i % 3 == 0 ) {
+                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
             }
-        } else {
-            while ($posts->have_posts()) {
-                $posts->the_post();
-                if ($j % 2 == 0) {
-                    echo '<section class="more-blog"><div class="more-blog--wrapper">';
-                }
-                include locate_template('template-parts/content-excerpt.php');
-                if ($j % 2 == 1) {
-                    echo '</div></section>';
-                }
-                $j++;
+            include locate_template('template-parts/content-excerpt.php');
+            if ($i % 3 == 2 || $cat_post_counts == ($i+1)) {
+                echo '</div></section>';
             }
+            $i++;
         }
+        echo '</div>';
+
+        echo '<div class="category-posts category-posts--mobile">';
+        while ($posts->have_posts()) {
+            $posts->the_post();
+            if ($j % 2 == 0) {
+                echo '<section class="more-blog"><div class="more-blog--wrapper">';
+            }
+            include locate_template('template-parts/content-excerpt.php');
+            if ($j % 2 == 1 || $cat_post_counts == ($j+1)) {
+                echo '</div></section>';
+            }
+            $j++;
+        }
+        echo '</div>';
+
     }
 
     die();

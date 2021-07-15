@@ -80,9 +80,9 @@
           nonce:wacoal_js_var.nonce,
         },
         success: function (html) {
-          $('#post-listing').find('div.category-posts').html('');
+          $('#post-listing').find('div.pagination_content').html('');
 
-          $('#post-listing').find('div.category-posts').html(html);
+          $('#post-listing').find('div.pagination_content').html(html);
         }
       });
     }
