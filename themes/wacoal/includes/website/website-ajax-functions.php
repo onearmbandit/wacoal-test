@@ -336,7 +336,7 @@ function Wacoal_Cat_Load_more()
 
                 <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($recent_post->ID),61));?>
                     </h5>
                 </a>
 

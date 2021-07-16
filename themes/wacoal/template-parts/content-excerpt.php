@@ -18,6 +18,7 @@
     $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
     $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
     $post_tagline  = get_field('tag_line');
+    $post_title    = get_the_title();
     ?>
 
     <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
@@ -34,9 +35,12 @@
     <div class="blog-tile--category">
         <?php echo esc_attr($cat_name); ?>
     </div>
-    <?php
-        the_title(sprintf('<h5 class="blog-tile--heading"><a href="%s" rel="bookmark">', esc_url(get_permalink())), '</a></h5>');
-    ?>
+
+    <h5 class="blog-tile--heading">
+        <a href="<?php echo esc_url(get_permalink());?>">
+            <?php echo wp_kses_post(Wacoal_Limit_text($post_title, 61));?>
+        </a>
+    </h5>
 
     <?php if($post_tagline && !empty($post_tagline)) :?>
     <div class="blog-tile--para">
