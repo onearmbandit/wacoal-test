@@ -101,7 +101,7 @@
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="evergreen-article--content__para">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 130));?>
                             </a>
                         </div>
                         <?php endif;?>
