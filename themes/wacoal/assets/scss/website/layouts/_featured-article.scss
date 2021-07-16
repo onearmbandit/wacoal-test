@@ -225,7 +225,7 @@
       justify-content: center;
       flex-direction: column;
       padding: 25px 32px;
-      min-height: 300px;
+      min-height: 371px;
 
       &__subtitle {
         display: block;
@@ -472,16 +472,17 @@
       text-align: center;
       padding: 20px 0 30px;
       flex: 1;
-      // min-height: 312px;
+      min-height: 372px;
+      position: relative;
 
       @include respond-below(lg) {
         padding: 15px 0 25px;
-        // min-height: 280px;
+        min-height: 331px;
       }
 
       @include respond-below(md) {
         padding: 12px 0 25px;
-        // min-height: 260px;
+        min-height: 324px;
       }
 
       &__subtitle {
@@ -544,11 +545,15 @@
       }
 
       &__cta {
-        margin-top: 30px;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        // margin-top: 30px;
 
-        @include respond-below(lg) {
-          margin-top: 25px;
-        }
+        // @include respond-below(lg) {
+        //   margin-top: 25px;
+        // }
       }
     }
   }
