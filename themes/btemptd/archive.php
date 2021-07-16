@@ -142,6 +142,8 @@ if ($template == 'simple') :
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
                         $cat_name_obj = Btemptd_Get_Primary_category($featured_post);
                         $cat_ID        = $cat_name_obj->term_id;
+                        $feat_title    = get_the_title($featured_post);
+                        $tagline      = get_field('tagline', $featured_post);
                         ?>
                     <div class="swiper-slide">
                         <div class="swiper-slide--image">
@@ -160,14 +162,18 @@ if ($template == 'simple') :
                             </div>
                             <div class="swiper-slide--content__title">
                                 <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                    <?php echo esc_attr(get_the_title($featured_post));?>
+                                    <?php echo esc_attr(Btemptd_Limit_text($feat_title, 73));?>
                                 </a>
                             </div>
+
+                            <?php if($tagline && !empty($tagline)):?>
                             <div class="swiper-slide--content__para">
                                 <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
-                                    <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                                    <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                                 </a>
                             </div>
+                            <?php endif;?>
+
                             <div class="swiper-slide--content__cta">
                                 <a class="btn primary" href="<?php echo esc_url(get_permalink($featured_post));?>">
                                     Learn More
@@ -208,6 +214,8 @@ if ($template == 'simple') :
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
                         $cat_name_obj  = Btemptd_Get_Primary_category($slider_post);
                         $cat_ID        = $cat_name_obj->term_id;
+                        $feat_title    = get_the_title($slider_post);
+                        $tagline       = get_field('tagline', $slider_post);
                         ?>
                     <div class="swiper-slide">
                         <div class="swiper-slide--image">
@@ -226,14 +234,18 @@ if ($template == 'simple') :
                             </div>
                             <div class="swiper-slide--content__title">
                                 <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                    <?php echo esc_attr(get_the_title($slider_post));?>
+                                    <?php echo esc_attr(Btemptd_Limit_text($feat_title, 73));?>
                                 </a>
                             </div>
+
+                            <?php if($tagline && !empty($tagline)):?>
                             <div class="swiper-slide--content__para">
                                 <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
-                                    <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                                    <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                                 </a>
                             </div>
+                            <?php endif;?>
+
                             <div class="swiper-slide--content__cta">
                                 <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post));?>">
                                     Learn More
@@ -275,6 +287,8 @@ if ($template == 'simple') :
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
                         $cat_name_obj      = Btemptd_Get_Primary_category($featured_post);
                         $cat_ID        = $cat_name_obj->term_id;
+                        $feat_title = get_the_title($featured_post);
+                        $tagline   = get_field('tagline', $featured_post);
                         ?>
                     <div class="swiper-slide">
 
@@ -294,14 +308,18 @@ if ($template == 'simple') :
                             </div>
                             <div class="swiper-slide--content__title">
                                 <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                    <?php echo esc_attr(get_the_title($featured_post));?>
+                                    <?php echo esc_attr(Btemptd_Limit_text($feat_title, 73));?>
                                 </a>
                             </div>
+
+                            <?php if($tagline && !empty($tagline)) :?>
                             <div class="swiper-slide--content__para">
                                 <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
-                                    <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                                    <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                                 </a>
                             </div>
+                            <?php endif;?>
+
                             <div class="swiper-slide--content__cta">
                                 <a class="btn primary" href="<?php echo esc_url(get_permalink($featured_post));?>">
                                     Learn more
@@ -339,6 +357,8 @@ if ($template == 'simple') :
                             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
                             $cat_name_obj  = Btemptd_Get_Primary_category($slider_post);
                             $cat_ID        = $cat_name_obj->term_id;
+                            $slider_post_title = get_the_title($slider_post);
+                            $tagline  = get_field('tagline', $slider_post);
 
                             ?>
                     <div class="swiper-slide">
@@ -366,14 +386,18 @@ if ($template == 'simple') :
                             </div>
                             <div class="swiper-slide--content__title">
                                 <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                    <?php echo esc_attr(get_the_title($slider_post));?>
+                                    <?php echo esc_attr(Btemptd_Limit_text($slider_post_title, 73));?>
                                 </a>
                             </div>
+
+                            <?php if($tagline && !empty($tagline)) :?>
                             <div class="swiper-slide--content__para">
                                 <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
-                                    <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                                    <?php echo esc_attr(Btemptd_Remove_ptag(Btemptd_Remove_ptag($tagline, 111)));?>
                                 </a>
                             </div>
+                            <?php endif;?>
+
                             <div class="swiper-slide--content__cta">
                                 <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post));?>">
                                     Learn more
