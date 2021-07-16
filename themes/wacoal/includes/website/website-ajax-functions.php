@@ -55,42 +55,43 @@ function Wacoal_Ajax_pagination()
     }
 
     $posts = new WP_Query($query_vars);
-
+    $cat_post_counts= $posts->post_count;
 
     if (! $posts->have_posts() ) {
         get_template_part('content', 'none');
     } else {
         $i=0;
         $j=0;
-        ?>
-        <div class="category-posts category-posts--desktop">
-            <?php while ($posts->have_posts()) {
-                $posts->the_post();
-                if ($i % 3 == 0 || $i == 0) {
-                    echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
-                }
-                include locate_template('template-parts/content-excerpt.php');
-                if ($i % 3 == 2 || $i == 2) {
-                    echo '</div></section>';
-                }
-                $i++;
-            } ?>
-            </div>
-            <div class="category-posts category-posts--mobile">
-        <?php
+
+        echo '<div class="category-posts category-posts--desktop">';
+        while ($posts->have_posts()) {
+            $posts->the_post();
+            if ($i % 3 == 0 ) {
+                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
+            }
+            include locate_template('template-parts/content-excerpt.php');
+            if ($i % 3 == 2 || $cat_post_counts == ($i+1)) {
+                echo '</div></section>';
+            }
+            $i++;
+        }
+        echo '</div>';
+
+        echo '<div class="category-posts category-posts--mobile">';
         while ($posts->have_posts()) {
             $posts->the_post();
             if ($j % 2 == 0) {
                 echo '<section class="more-blog"><div class="more-blog--wrapper">';
             }
             include locate_template('template-parts/content-excerpt.php');
-            if ($j % 2 == 1) {
+            if ($j % 2 == 1 || $cat_post_counts == ($j+1)) {
                 echo '</div></section>';
             }
             $j++;
-        } ?>
-        </div>
-    <?php    }
+        }
+        echo '</div>';
+
+    }
 
     die();
 }
@@ -238,7 +239,7 @@ function Wacoal_Load_more()
 
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo esc_attr(get_the_title($blog->ID));?>
+                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
                     </h5>
                 </a>
 

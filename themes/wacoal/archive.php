@@ -116,7 +116,7 @@ $cat_name         = $current_cat_data->name;
                         <?php if($featured_post_title && !empty($featured_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <h4 class="featured-box--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 110)); ?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 95)); ?>
                             </h4>
                         </a>
                         <?php endif;?>
@@ -124,7 +124,7 @@ $cat_name         = $current_cat_data->name;
                         <?php if($post_tagline && !empty($post_tagline)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <p class="featured-box--content__para">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 145)); ?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 100)); ?>
                             </p>
                         </a>
                         <?php endif;?>
@@ -149,42 +149,59 @@ $cat_name         = $current_cat_data->name;
         </section>
         <?php endif;?>
 
+        <?php
+
+        $cat_posts = array(
+            'post_type' => 'post',
+            'cat'=> $current_cat_id,
+            'post__not_in' => $posts_to_exclude,
+            'posts_per_page' => -1,
+            'orderby' => 'post_date',
+            'order' => 'DESC',
+            'post_status'=>'publish'
+        );
+        $cat_query = new WP_Query($cat_posts);
+        $cat_post_counts= $cat_query->post_count;
+        ?>
+
         <div id="post-listing">
-            <?php if (have_posts()) {
-                $i=0;
-                $j=0;
-                ?>
-                <div class="category-posts category-posts--desktop">
-                    <?php
-                    while ( have_posts() ) : the_post();
-                        if ($i%3 == 0 || $i==0) {
-                            echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
-                        }
-                        include locate_template('template-parts/content-excerpt.php');
+            <div class="pagination_content">
+                <?php if (have_posts()) {
+                    $i=0;
+                    $j=0;
+                    ?>
+                    <div class="category-posts category-posts--desktop">
+                        <?php
+                        while ( have_posts() ) : the_post();
+                            if ($i%3 == 0 ) {
+                                echo '<section class="more-blog category-blog"><div class="more-blog--wrapper">';
+                            }
+                            include locate_template('template-parts/content-excerpt.php');
 
-                        if ($i%3 == 2 || $i == 2) {
-                            echo '</div></section>';
-                        }
-                        $i++;
-                    endwhile;?>
-                </div>
-                <div class="category-posts category-posts--mobile">
-                    <?php while ( have_posts() ) : the_post();
-                        if ($j % 2 == 0) { ?>
-                            <section class="more-blog">
-                                <div class="more-blog--wrapper">
-                        <?php }
-                        include locate_template('template-parts/content-excerpt.php');
+                            if ($i%3 == 2 || $cat_post_counts == ($i+1)) {
+                                echo '</div></section>';
+                            }
+                            $i++;
+                        endwhile;?>
+                    </div>
+                    <div class="category-posts category-posts--mobile">
+                        <?php while ( have_posts() ) : the_post();
+                            if ($j % 2 == 0) { ?>
+                                <section class="more-blog category-blog">
+                                    <div class="more-blog--wrapper">
+                            <?php }
+                            include locate_template('template-parts/content-excerpt.php');
 
-                        if ($j % 2 == 1) { ?>
-                            </div>
-                        </section>
-                        <?php }
-                        $j++;
-                    endwhile; ?>
-                </div>
+                            if ($j % 2 == 1 || $cat_post_counts == ($j+1)) { ?>
+                                </div>
+                            </section>
+                            <?php }
+                            $j++;
+                        endwhile; ?>
+                    </div>
 
-            <?php } ?>
+                <?php }?>
+            </div>
             <?php Wacoal_Paging_nav();?>
         </div>
 
