@@ -239,7 +239,7 @@ function Wacoal_Load_more()
 
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo esc_attr(get_the_title($blog->ID));?>
+                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
                     </h5>
                 </a>
 

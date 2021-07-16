@@ -116,7 +116,7 @@ $cat_name         = $current_cat_data->name;
                         <?php if($featured_post_title && !empty($featured_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <h4 class="featured-box--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 110)); ?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 95)); ?>
                             </h4>
                         </a>
                         <?php endif;?>
@@ -124,7 +124,7 @@ $cat_name         = $current_cat_data->name;
                         <?php if($post_tagline && !empty($post_tagline)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <p class="featured-box--content__para">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 145)); ?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($post_tagline), 100)); ?>
                             </p>
                         </a>
                         <?php endif;?>

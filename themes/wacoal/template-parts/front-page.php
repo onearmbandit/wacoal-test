@@ -310,7 +310,7 @@
                     <?php if($tagline && !empty($tagline)) :?>
                     <div class="article-one-column--content__para">
                         <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
-                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 160));?>
+                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 130));?>
                         </a>
                     </div>
                     <?php endif;?>
@@ -562,7 +562,7 @@
                 <?php if($feat_post_title && !empty($feat_post_title)) :?>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo esc_attr(get_the_title($blog->ID));?>
+                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
                     </a>
                 </h5>
                 <?php endif;?>
