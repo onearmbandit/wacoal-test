@@ -71,7 +71,7 @@ $counts= $total_posts->publish;
             <?php if($post_title && !empty($post_title)) :?>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
-                    <?php echo esc_attr($post_title);?>
+                    <?php echo esc_attr(Btemptd_Limit_text($post_title, 70));?>
                 </a>
             </div>
             <?php endif;?>

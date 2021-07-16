@@ -98,7 +98,7 @@ function Wacoal_Ajax_pagination()
 
 
 /**
- * Function for ajax pagination
+ * Function for ajax search pagination
  *
  * @return string Return the posts html.
  */

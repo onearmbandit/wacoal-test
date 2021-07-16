@@ -73,7 +73,7 @@ add_action('wp_ajax_nopriv_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
 add_action('wp_ajax_btemptd_ajax_pagination', 'Btemptd_Ajax_pagination');
 
 /**
- * Function for ajax pagination
+ * Function for ajax search pagination
  *
  * @return string Return the posts html.
  */
@@ -219,7 +219,7 @@ function Btemptd_Load_more()
                     </div>
                     <div class="explore-blog--content__title">
                         <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
-                            <?php echo esc_attr(get_the_title($recent_post->ID));?>
+                            <?php echo esc_attr(Btemptd_Limit_text(get_the_title($recent_post->ID), 70));?>
                         </a>
                     </div>
                 </div>

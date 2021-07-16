@@ -66,7 +66,7 @@ $counts= $total_posts->publish;
             </div>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
-                    <?php echo esc_attr($post_title);?>
+                    <?php echo esc_attr(Wacoal_Limit_text($post_title, 78));?>
                 </a>
             </div>
 

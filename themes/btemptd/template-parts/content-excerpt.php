@@ -36,7 +36,7 @@ $categories    = Btemptd_Get_Primary_category(get_the_ID());
         </div>
         <div class="explore-blog--content__title">
             <a href="<?php echo esc_url(get_permalink());?>">
-                <?php echo esc_attr(get_the_title());?>
+                <?php echo esc_attr(Btemptd_Limit_text(get_the_title(), 70));?>
             </a>
         </div>
         </div>
