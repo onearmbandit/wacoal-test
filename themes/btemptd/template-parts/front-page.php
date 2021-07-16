@@ -230,14 +230,14 @@ if(!empty($banner_link)) :?>
                         </div>
                         <div class="swiper-slide--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                <?php echo esc_attr(get_the_title($featured_post));?>
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($featured_post), 73));?>
                             </a>
                         </div>
 
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="swiper-slide--content__para">
                             <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
-                                <?php echo wp_kses_post(Btemptd_Remove_ptag($tagline));?>
+                                <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -304,14 +304,14 @@ if(!empty($banner_link)) :?>
                         </div>
                         <div class="swiper-slide--content__title">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <?php echo esc_attr(get_the_title($slider_post));?>
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post), 73));?>
                             </a>
                         </div>
 
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="swiper-slide--content__para">
                         <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
-                            <?php echo esc_attr(Btemptd_Remove_ptag($tagline));?>
+                            <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                         </a>
                         </div>
                         <?php endif;?>
@@ -378,14 +378,14 @@ if(!empty($banner_link)) :?>
                         </div>
                         <div class="swiper-slide--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_post));?>">
-                                <?php echo esc_attr(get_the_title($featured_post));?>
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($featured_post), 73));?>
                             </a>
                         </div>
 
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="swiper-slide--content__para">
                         <a href="<?php echo esc_url(get_permalink($featured_post)); ?>">
-                            <?php echo wp_kses_post(Btemptd_Remove_ptag(get_field('tagline', $featured_post)));?>
+                            <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag(get_field('tagline', $featured_post)), 111));?>
                         </a>
                         </div>
                         <?php endif;?>
@@ -457,14 +457,14 @@ if(!empty($banner_link)) :?>
                         </div>
                         <div class="swiper-slide--content__title">
                             <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <?php echo esc_attr(get_the_title($slider_post));?>
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post), 73));?>
                             </a>
                         </div>
 
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="swiper-slide--content__para">
                         <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
-                            <?php echo esc_attr(Btemptd_Remove_ptag(get_field('tagline', $slider_post)));?>
+                            <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag(get_field('tagline', $slider_post)), 111));?>
                         </a>
                         </div>
                         <?php endif;?>

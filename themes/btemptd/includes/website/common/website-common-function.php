@@ -676,3 +676,20 @@ function Btemptd_WP_Backend_edit($blockName)
     </div>
     <?php
 }
+
+
+/**
+ * Function used to truncate the text.
+ *
+ * @param string $text  string to truncate.
+ * @param int    $limit number to truncate the text.
+ *
+ * @return void
+ */
+function Btemptd_Limit_text($text, $limit)
+{
+    if (strlen($text) > $limit) {
+        $text  = substr($text, 0, $limit) . '...';
+    }
+    return $text;
+}
