@@ -374,7 +374,7 @@ function Btemptd_Cat_Posts_Load_more()
                                         </div>
                                         <div class="explore-blog--content__title">
                                             <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
-                                                <?php echo esc_attr(get_the_title($cat_post->ID));?>
+                                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($cat_post->ID), 70));?>
                                             </a>
                                         </div>
                                     </div>
