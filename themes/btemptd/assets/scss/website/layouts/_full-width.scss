@@ -134,7 +134,7 @@
         font-size: 18px;
         line-height: 24px;
         letter-spacing: 0.45px;
-        margin-bottom: 13px;
+        // margin-bottom: 13px;
       }
     }
 
@@ -146,7 +146,6 @@
       color: var(--color-text);
       font-size: 14px;
       line-height: 16px;
-      max-width: 320px;
       text-align: center;
 
       @include respond-below(md) {
@@ -155,11 +154,12 @@
         letter-spacing: 0.18px;
       }
 
-      @include respond-below(md) {
+      @include respond-below(sm) {
         font-size: 12px;
         line-height: 16px;
         letter-spacing: 0;
-        max-width: 275px;
+        // max-width: 275px;
+        text-align: left;
       }
 
       &.quote-icon {
@@ -168,6 +168,20 @@
           position: relative;
           display: flex;
           align-items: center;
+          width: 100%;
+          max-width: 320px;
+          padding: 0 47px;
+
+          @include respond-below(md) {
+            max-width: 275px;
+            padding: 0 35px;
+          }
+
+          @include respond-below(sm) {
+            max-width: initial;
+            padding: 0;
+          }
+
 
           &::before, &::after {
             content: '';
@@ -188,23 +202,23 @@
 
           &::before {
             background-image: url("../../images/quote-left.svg");
-            margin-top: -40px;
-            margin-right: 22px;
+            position: absolute;
+            top: -26px;
+            left: 0;
 
             @include respond-below(md) {
-              margin-right: 8px;
-              margin-top: -30px;
+              top: -16px;
             }
           }
 
           &::after {
             background-image: url("../../images/quote-right.svg");
-            margin-top: 40px;
-            margin-left: 22px;
+            position: absolute;
+            bottom: -26px;
+            right: 0;
 
             @include respond-below(md) {
-              margin-left: 8px;
-              margin-top: 30px;
+              bottom: -16px;
             }
           }
         }

@@ -196,6 +196,10 @@
           @include respond-below(lg) {
             margin-top: 20px;
           }
+
+          @include respond-below(md) {
+            margin-top: 15px;
+          }
         }
       }
     }
@@ -371,7 +375,7 @@
         // margin-top: 10px;
         background: var(--color-tile-bg);
         padding: 20px;
-        min-height: 255px;
+        min-height: 275px;
         position: relative;
         width: calc(100% - 37px);
         margin: 10px 21px 0 auto;
