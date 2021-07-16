@@ -382,9 +382,17 @@
   width: 100%;
   margin-bottom: 120px;
 
-  // @include respond-above(sm) {
-  //   margin-top: get-vw(45px);
-  // }
+  @include respond-below(lg) {
+    margin-bottom: 130px;
+  }
+
+  @include respond-below(md) {
+    margin-bottom: 105px;
+  }
+
+  @include respond-below(sm) {
+    padding-top: 22px;
+  }
 
   &--wrapper {
     max-width: calcRem(336);
@@ -392,7 +400,7 @@
     margin: auto;
 
     @include respond-above(sm) {
-      max-width: get-vw(400px);
+      max-width: get-vw(800px);
     }
   }
 
@@ -403,19 +411,19 @@
     justify-content: center;
 
     &--btn {
-      width: calcRem(46);
-      height: calcRem(27);
       display: flex;
       align-items: center;
       justify-content: center;
       background: var(--color-article-bg);
-      margin: calcRem(0, 37);
+      width: 52px;
+      height: 32px;
 
-      @include respond-above(sm) {
-        width: get-vw(69px);
-        height: get-vw(40px);
-        margin-left: get-vw(37px);
-        margin-right: get-vw(37px);
+      &.prev {
+        margin: 0 44px 0 0;
+      }
+
+      &.next {
+        margin: 0 0 0 44px;
       }
     }
 
@@ -423,17 +431,18 @@
       display: flex;
 
       li {
-        letter-spacing: 12px;
-        font-size: 14px;
+        min-width: 24px;
+        display: flex;
+        justify-content: center;
 
         a {
           @include ProximaNova-Light;
-          font-size: calcRem(19);
+          font-size: 20px;
           color: var(--color-gray);
 
-          @include respond-above(sm) {
-            font-size: get-vw(28px);
-          }
+          // @include respond-above(sm) {
+          //   font-size: get-vw(28px);
+          // }
 
           &.active {
             color: var(--color-black);
