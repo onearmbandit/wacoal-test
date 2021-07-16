@@ -166,7 +166,7 @@
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="evergreen-article--content__para">
                             <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline), 110));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -379,7 +379,7 @@
                         <?php if($feat_post_title1 && !empty($feat_post_title1)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 105));?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 90));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -387,7 +387,7 @@
                         <?php if($tagline1 && !empty($tagline1)) :?>
                         <div class="article-two-column--content__para">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline1), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline1), 130));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -423,7 +423,7 @@
                         <?php if($feat_post_title2 && !empty($feat_post_title2)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[2]->post_title), 105));?>
+                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title2), 90));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -431,7 +431,7 @@
                         <?php if($tagline2 && !empty($tagline2)) :?>
                         <div class="article-two-column--content__para">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_blog_slider[2]->tag_line), 160));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($tagline2), 130));?>
                             </a>
                         </div>
                         <?php endif;?>
