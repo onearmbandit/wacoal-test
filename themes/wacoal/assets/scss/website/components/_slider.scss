@@ -27,6 +27,7 @@
 
 .swiper-container {
   // margin-bottom: get-vw(56px);
+  width: auto !important;
 
   .swiper-wrapper {
     // padding-bottom: get-vw(20px);
@@ -170,6 +171,7 @@
       @include respond-below(sm) {
         top: 23%;
         transform: translateY(-23%);
+        display: flex !important;
       }
 
       @include respond-above(sm) {
@@ -183,6 +185,7 @@
       @include respond-below(sm) {
         top: 23%;
         transform: translateY(-23%);
+        display: flex !important;
       }
 
       @include respond-above(sm) {
@@ -304,10 +307,12 @@
 
     .swiper-button-next {
       right: 0;
+      display: flex !important;
     }
 
     .swiper-button-prev {
       left: 0;
+      display: flex !important;
     }
 
   }
@@ -498,6 +503,9 @@
 
     @include respond-below(sm) {
       height: 193px;
+      .swiper-button-next, .swiper-button-prev {
+        display: flex !important;
+      }
     }
 
     img {

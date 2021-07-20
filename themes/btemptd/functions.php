@@ -56,8 +56,6 @@ function Btemptd_scripts()
     wp_enqueue_script('btemptd-js', STYLESHEETURI . '/dist/' . $distFile['website']['js'], array('jquery'), null, true);
     wp_enqueue_style('btemptd-css', STYLESHEETURI . '/dist/' . $distFile['website']['css']);
 
-    wp_enqueue_style('btemptd-jetpack-test', STYLESHEETURI . '/jetpack-test.css');
-
     wp_localize_script(
         'btemptd-js',
         'btemptd_js_var',
