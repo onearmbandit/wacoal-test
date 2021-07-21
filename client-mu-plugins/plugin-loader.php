@@ -10,7 +10,9 @@
  * @see https://vip.wordpress.com/documentation/vip-go/understanding-your-vip-go-codebase/
  */
 
-// wpcom_vip_load_plugin( 'plugin-name' );
+ wpcom_vip_load_plugin( 'distributor/distributor.php' );
+ wpcom_vip_load_plugin( 'syndication/push-syndication.php' );
+
 /**
  * Note the above requires a specific naming structure: /plugin-name/plugin-name.php
  * You can also specify a specific root file: wpcom_vip_load_plugin( 'plugin-name/plugin.php' );
