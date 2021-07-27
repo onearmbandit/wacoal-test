@@ -1,16 +1,11 @@
 <?php
-/**
- * The abstract presentation class.
- *
- * @package Yoast\YoastSEO\Presentations
- */
 
 namespace Yoast\WP\SEO\Presentations;
 
 use Exception;
 
 /**
- * Class Abstract_Presentation
+ * The abstract presentation class.
  */
 class Abstract_Presentation {
 
@@ -75,11 +70,11 @@ class Abstract_Presentation {
 	/**
 	 * Magic isset for ensuring methods that have a generator are recognised.
 	 *
+	 * @codeCoverageIgnore Wrapper method.
+	 *
 	 * @param string $name The property to get.
 	 *
 	 * @return bool Whether or not there is a generator for the requested property.
-	 *
-	 * @codeCoverageIgnore Wrapper method.
 	 */
 	public function __isset( $name ) {
 		return \method_exists( $this, "generate_$name" );

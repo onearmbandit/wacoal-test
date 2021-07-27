@@ -54,7 +54,7 @@ class WPSEO_HelpScout implements WPSEO_WordPress_Integration {
 	}
 
 	/**
-	 * @inheritDoc
+	 * {@inheritDoc}
 	 */
 	public function register_hooks() {
 		if ( ! $this->is_beacon_page() ) {
@@ -87,6 +87,8 @@ class WPSEO_HelpScout implements WPSEO_WordPress_Integration {
 
 	/**
 	 * Checks if the current page is a page containing the beacon.
+	 *
+	 * @return bool
 	 */
 	private function is_beacon_page() {
 		return in_array( $this->get_current_page(), $this->pages, true );
@@ -220,7 +222,7 @@ class WPSEO_HelpScout implements WPSEO_WordPress_Integration {
 
 		$theme_info = sprintf(
 			'<a href="%1$s">%2$s</a> v%3$s by %4$s',
-			esc_attr( $theme->display( 'esc_url(THEMEURI)' ) ),
+			esc_attr( $theme->display( 'ThemeURI' ) ),
 			esc_html( $theme->display( 'Name' ) ),
 			esc_html( $theme->display( 'Version' ) ),
 			esc_html( $theme->display( 'Author' ) )

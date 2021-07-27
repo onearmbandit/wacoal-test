@@ -1,16 +1,11 @@
 <?php
-/**
- * Presenter class for the breadcrumbs.
- *
- * @package Yoast\YoastSEO\Presenters
- */
 
 namespace Yoast\WP\SEO\Presenters;
 
 use Yoast\WP\SEO\Presentations\Indexable_Presentation;
 
 /**
- * Class Breadcrumbs_Presenter
+ * Presenter class for the breadcrumbs.
  */
 class Breadcrumbs_Presenter extends Abstract_Indexable_Presenter {
 
@@ -171,7 +166,6 @@ class Breadcrumbs_Presenter extends Abstract_Indexable_Presenter {
 		 *
 		 * @api string $link_output The output string.
 		 */
-
 		return \apply_filters( 'wpseo_breadcrumb_single_link', $link, $breadcrumb );
 	}
 

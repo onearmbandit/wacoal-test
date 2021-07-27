@@ -49,7 +49,7 @@ class WPSEO_Options {
 	/**
 	 * Instance of this class.
 	 *
-	 * @var object
+	 * @var WPSEO_Options
 	 */
 	protected static $instance;
 
@@ -334,20 +334,22 @@ class WPSEO_Options {
 		if ( $value === false ) {
 			$passed_default = func_num_args() > 1;
 
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- Using WP native filter.
 			return apply_filters( "default_option_{$option}", $default, $option, $passed_default );
 		}
 
+		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals -- Using WP native filter.
 		return apply_filters( "option_{$option}", maybe_unserialize( $value ), $option );
 	}
 
 	/**
 	 * Run the clean up routine for one or all options.
 	 *
-	 * @param array|string $option_name     Optional. the option you want to clean or an array of
-	 *                                      option names for the options you want to clean.
-	 *                                      If not set, all options will be cleaned.
-	 * @param string       $current_version Optional. Version from which to upgrade, if not set,
-	 *                                      version specific upgrades will be disregarded.
+	 * @param array|string|null $option_name     Optional. the option you want to clean or an array of
+	 *                                           option names for the options you want to clean.
+	 *                                           If not set, all options will be cleaned.
+	 * @param string|null       $current_version Optional. Version from which to upgrade, if not set,
+	 *                                           version specific upgrades will be disregarded.
 	 *
 	 * @return void
 	 */
@@ -492,7 +494,7 @@ class WPSEO_Options {
 	 * @param string $option_name              The name for the option to set.
 	 * @param mixed  $option_value             The value for the option.
 	 *
-	 * @return boolean Returns true if the option is successfully saved in the database.
+	 * @return bool Returns true if the option is successfully saved in the database.
 	 */
 	public static function save_option( $wpseo_options_group_name, $option_name, $option_value ) {
 		$options                 = static::get_option( $wpseo_options_group_name );
@@ -583,18 +585,5 @@ class WPSEO_Options {
 		}
 
 		return $pattern_table;
-	}
-
-	/* ********************* DEPRECATED METHODS ********************* */
-
-	/**
-	 * Fills our option cache.
-	 *
-	 * @deprecated  12.8.1
-	 * @codeCoverageIgnore
-	 */
-	public static function fill_cache() {
-		_deprecated_function( __METHOD__, 'WPSEO 12.8.1', '::clear_cache' );
-		static::clear_cache();
 	}
 }
