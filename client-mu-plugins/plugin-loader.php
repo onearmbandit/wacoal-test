@@ -11,7 +11,7 @@
  */
 
  wpcom_vip_load_plugin('distributor/distributor.php');
- wpcom_vip_load_plugin('syndication/push-syndication.php');
+ wpcom_vip_load_plugin('insert-headers-and-footers/ihaf.php');
 
 /**
  * Note the above requires a specific naming structure: /plugin-name/plugin-name.php
