@@ -349,7 +349,7 @@ function Wacoal_Acf_init()
 
         acf_register_block(
             array(
-            'name'            => 'wacoal-benton-text_image-list',
+            'name'            => 'wacoal-benton-text-image-list',
             'title'           => __('Benton Text + Image (Left & Right)'),
             'description'     => __('A custom Benton Text + Image List Block'),
             'render_callback' => 'Wacoal_Benton_Text_Image_List_Block_Render_callback',
@@ -400,4 +400,3 @@ function Wacoal_Acf_init()
 }
 
 add_action('acf/init', 'Wacoal_Acf_init');
-

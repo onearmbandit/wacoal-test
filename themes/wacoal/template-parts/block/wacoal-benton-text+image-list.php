@@ -14,8 +14,8 @@
 <?php if ($block_lists && !empty($block_lists)) {
     ?>
 <section class="benton-text-block">
-    <div class="benton-text-block--wrapper">
-    <?php foreach ($block_lists as $key => $list) {
+ <div class="benton-text-block--wrapper">
+  <?php foreach ($block_lists as $key => $list) {
         $list_position      = !empty($list['image_position']) ? $list['image_position'] : 'left';
         $list_title         = $list['title'];
         $list_img_id        = $list['image'];
@@ -32,81 +32,84 @@
 
         if ($list_position == 'left') {
             ?>
-        <div class="benton-text-block--inner img-left">
-            <div class="image-wrapper">
+  <div class="benton-text-block--inner img-left">
+   <div class="image-wrapper">
 
-            <?php if($list_img_id && !empty($list_img_id)) :
+    <?php if($list_img_id && !empty($list_img_id)) :
                 if(!empty($img_link)) :?>
-                <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
-               endif;?>>
-                <?php endif;?>
-                <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>">
-                </div>
-                <?php if(!empty($img_link)) :?>
-                    </a>
-                <?php endif;
+    <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+   endif;?>>
+     <?php endif;?>
+     <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>">
+     </div>
+     <?php if(!empty($img_link)) :?>
+    </a>
+    <?php endif;
             endif;?>
 
-            <?php if($list_image_caption && !empty($list_image_caption)) :?>
-                <div class="image-caption">
-                    <?php echo wp_kses_post($list_image_caption);?>
-                </div>
-            <?php endif;?>
+    <?php if($list_image_caption && !empty($list_image_caption)) :?>
+    <div class="image-caption">
+     <?php echo wp_kses_post($list_image_caption);?>
+    </div>
+    <?php endif;?>
 
-            </div>
+   </div>
 
-            <?php if($list_desc && !empty($list_desc)) :?>
-                <div class="content-wrapper">
-                    <?php if($list_title && !empty($list_title)) :?>
-                        <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
-                    <?php endif;?>
-                    <div>
-                        <?php echo wp_kses_post($list_desc);?>
-                    </div>
-                </div>
-            <?php endif;?>
-        </div>
-            <?php
+   <?php if($list_desc || !empty($list_title)) :?>
+   <div class="content-wrapper">
+    <?php if($list_title && !empty($list_title)) :?>
+    <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
+    <?php endif;?>
+    <?php if($list_desc && !empty($list_desc)) :?>
+    <div>
+     <?php echo wp_kses_post($list_desc);?>
+    </div>
+    <?php endif?>
+   </div>
+   <?php endif;?>
+  </div>
+  <?php
         } elseif ($list_position == 'right') {
             ?>
-        <div class="benton-text-block--inner img-right">
-            <div class="image-wrapper">
+  <div class="benton-text-block--inner img-right">
+   <div class="image-wrapper">
 
-            <?php if($list_img_id && !empty($list_img_id)) :
+    <?php if($list_img_id && !empty($list_img_id)) :
                 if(!empty($img_link)) :?>
-                <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
-               endif;?>>
-                <?php endif;?>
-                <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>">
-                </div>
-                <?php if(!empty($img_link)) :?>
-                    </a>
-                <?php endif;
+    <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
+   endif;?>>
+     <?php endif;?>
+     <div class="image" style="background-image:url(<?php echo  esc_url($list_image_url); ?>">
+     </div>
+     <?php if(!empty($img_link)) :?>
+    </a>
+    <?php endif;
             endif;?>
 
-            <?php if($list_image_caption && !empty($list_image_caption)) :?>
-                <div class="image-caption">
-                    <?php echo wp_kses_post($list_image_caption);?>
-                </div>
-            <?php endif;?>
-
-            </div>
-
-            <?php if($list_desc && !empty($list_desc)) :?>
-                <div class="content-wrapper">
-                    <?php if($list_title && !empty($list_title)) :?>
-                        <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
-                    <?php endif;?>
-                    <div>
-                        <?php echo wp_kses_post($list_desc);?>
-                    </div>
-                </div>
-            <?php endif;?>
-
-        </div>
-        <?php }
-    }?>
+    <?php if($list_image_caption && !empty($list_image_caption)) :?>
+    <div class="image-caption">
+     <?php echo wp_kses_post($list_image_caption);?>
     </div>
+    <?php endif;?>
+
+   </div>
+
+   <?php if($list_desc || !empty($list_title)) :?>
+   <div class="content-wrapper">
+    <?php if($list_title && !empty($list_title)) :?>
+    <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
+    <?php endif;?>
+    <?php if($list_desc && !empty($list_desc)) :?>
+    <div>
+     <?php echo wp_kses_post($list_desc);?>
+    </div>
+    <?php endif;?>
+   </div>
+   <?php endif;?>
+
+  </div>
+  <?php }
+    }?>
+ </div>
 </section>
 <?php } ?>
-
