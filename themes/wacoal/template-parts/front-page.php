@@ -10,6 +10,12 @@
  * @link     Wacoal
  */
 
+$top_banner_image_url = $top_desktop_banner_image_url;
+$banner_class = 'desktop-banner';
+if (wp_is_mobile()) {
+    $top_banner_image_url = $top_mobile_banner_image_url;
+    $banner_class = 'mobile-banner';
+}
 ?>
 
 <!-- Top Banner Section Start -->
@@ -19,25 +25,8 @@
     endif;?>>
 <?php endif;?>
 
-<section class="banner-with-image desktop-banner"
-         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
-
-    <?php if($top_banner_title && !empty($top_banner_title)) :?>
-        <h1 class="banner-with-image--heading">
-            <?php echo esc_attr($top_banner_title);?>
-        </h1>
-    <?php endif; ?>
-
-    <?php if($top_banner_subtitle && !empty($top_banner_subtitle)) :?>
-        <p class="banner-with-image--subtitle">
-            <?php echo esc_attr($top_banner_subtitle);?>
-        </p>
-    <?php endif; ?>
-
-</section>
-
-<section class="banner-with-image mobile-banner"
-         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_mobile_banner_image_url));?>);">
+<section class="banner-with-image <?php echo $banner_class ?>"
+         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
 
     <?php if($top_banner_title && !empty($top_banner_title)) :?>
         <h1 class="banner-with-image--heading">
@@ -562,7 +551,7 @@
                 <?php if($feat_post_title && !empty($feat_post_title)) :?>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
+                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
                     </a>
                 </h5>
                 <?php endif;?>

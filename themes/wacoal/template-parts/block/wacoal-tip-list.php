@@ -49,9 +49,9 @@
                 <div class="content">
 
                     <?php if($title && !empty($title)) :?>
-                <h1 class="head">
+                <h2 class="head">
                         <?php echo wp_kses_post($title);?>
-                </h1>
+                </h2>
                     <?php endif;?>
 
                     <?php if($subtitle && !empty($subtitle)) :?>
@@ -99,9 +99,9 @@
 
                 <div class="content">
                     <?php if($title && !empty($title)) :?>
-                        <h1 class="head">
+                        <h2 class="head">
                             <?php echo wp_kses_post($title);?>
-                        </h1>
+                        </h2>
                     <?php endif;?>
 
                     <?php if($subtitle && !empty($subtitle)) :?>
@@ -161,9 +161,9 @@
                 <div class="content">
 
                     <?php if($title && !empty($title)) :?>
-                        <h1 class="head">
+                        <h2 class="head">
                             <?php echo wp_kses_post($title);?>
-                        </h1>
+                        </h2>
                     <?php endif;?>
 
                     <?php if($subtitle && !empty($subtitle)) :?>
@@ -213,9 +213,9 @@
                 <div class="content">
 
                     <?php if($title && !empty($title)) :?>
-                        <h1 class="head">
+                        <h2 class="head">
                             <?php echo wp_kses_post($title);?>
-                        </h1>
+                        </h2>
                     <?php endif;?>
 
                     <?php if($subtitle && !empty($subtitle)) :?>
