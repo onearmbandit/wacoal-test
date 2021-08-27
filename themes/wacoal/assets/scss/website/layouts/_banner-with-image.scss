@@ -1,5 +1,5 @@
 .banner-with-image {
-  background-color:#FCE2FF;
+  background-color: #fce2ff;
   background-size: cover;
   flex-direction: column;
   max-width: 1920px;
@@ -40,25 +40,25 @@
     @include respond-below(xl) {
       font-size: 137px;
       line-height: 132px;
-      max-width: 630px
+      max-width: 630px;
     }
 
     @include respond-below(lg) {
       font-size: 99px;
       line-height: 95px;
-      max-width: 450px
+      max-width: 450px;
     }
 
     @include respond-below(md) {
       font-size: 72px;
       line-height: 69px;
-      max-width: 330px
+      max-width: 330px;
     }
 
     @include respond-below(sm) {
       font-size: 73px;
       line-height: 70px;
-      max-width: 252px
+      max-width: 252px;
     }
   }
 
@@ -73,7 +73,7 @@
       font-size: 19px;
       line-height: 19px;
       letter-spacing: 0.47px;
-      max-width: 630px
+      max-width: 630px;
     }
 
     @include respond-below(lg) {
@@ -93,18 +93,20 @@
   }
 
   &.desktop-banner {
-      display: none;
+    // display: none;
+    visibility: hidden;
 
-      @include respond-above(sm) {
-        display: flex;
-      }
+    @include respond-above(sm) {
+      display: flex;
+    }
   }
 
   &.mobile-banner {
     display: flex;
 
     @include respond-above(sm) {
-      display: none;
+      // display: none;
+      visibility: none;
     }
   }
 }
