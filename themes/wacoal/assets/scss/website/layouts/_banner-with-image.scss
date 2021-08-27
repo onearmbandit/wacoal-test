@@ -98,11 +98,13 @@
 
     @include respond-above(sm) {
       display: flex;
+      visibility: visible;
     }
   }
 
   &.mobile-banner {
     display: flex;
+    visibility: visible;
 
     @include respond-above(sm) {
       // display: none;
