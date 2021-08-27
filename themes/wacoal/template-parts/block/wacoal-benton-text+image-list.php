@@ -58,7 +58,7 @@
    <?php if($list_desc || !empty($list_title)) :?>
    <div class="content-wrapper">
     <?php if($list_title && !empty($list_title)) :?>
-    <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
+    <h2 class="title"><?php echo wp_kses_post($list_title);?></h2>
     <?php endif;?>
     <?php if($list_desc && !empty($list_desc)) :?>
     <div>
@@ -97,7 +97,7 @@
    <?php if($list_desc || !empty($list_title)) :?>
    <div class="content-wrapper">
     <?php if($list_title && !empty($list_title)) :?>
-    <h1 class="title"><?php echo wp_kses_post($list_title);?></h1>
+    <h2 class="title"><?php echo wp_kses_post($list_title);?></h2>
     <?php endif;?>
     <?php if($list_desc && !empty($list_desc)) :?>
     <div>
