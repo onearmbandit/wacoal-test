@@ -9,13 +9,6 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Wacoal
  */
-
-$top_banner_image_url = $top_desktop_banner_image_url;
-$banner_class = 'desktop-banner';
-if (wp_is_mobile()) {
-    $top_banner_image_url = $top_mobile_banner_image_url;
-    $banner_class = 'mobile-banner';
-}
 ?>
 
 <!-- Top Banner Section Start -->
@@ -25,8 +18,8 @@ if (wp_is_mobile()) {
     endif;?>>
 <?php endif;?>
 
-<section class="banner-with-image <?php echo $banner_class ?>"
-         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_banner_image_url));?>);">
+<section class="banner-with-image desktop-banner"
+         style="background-image:url(<?php  echo esc_attr(Wacoal_Get_image($top_desktop_banner_image_url));?>);">
 
     <?php if($top_banner_title && !empty($top_banner_title)) :?>
         <h1 class="banner-with-image--heading">

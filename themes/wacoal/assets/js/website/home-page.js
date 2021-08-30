@@ -26,5 +26,15 @@
     });
   });
 
+  if($('.banner-with-image').length > 0){
+
+    let screenWidth = $( window ).width();
+    if(screenWidth < 767){
+      $('.banner-with-image').removeClass('desktop-banner');
+      $('.banner-with-image').addClass('mobile-banner');
+
+      $('.banner-with-image').css("background-image", "url(" + wacoal_js_var.homepage_banner_mobile_img + ")");
+    }
+  }
 
 })(jQuery);

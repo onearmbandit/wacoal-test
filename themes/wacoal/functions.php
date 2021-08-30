@@ -56,6 +56,12 @@ function Wacoal_scripts()
     wp_enqueue_script('wacoal-js', STYLESHEETURI . '/dist/' . $distFile['website']['js'], array('jquery'), null, true);
     wp_enqueue_style('wacoal-css', STYLESHEETURI . '/dist/' . $distFile['website']['css']);
 
+    $top_mobile_banner_image_url  = '';
+    if (is_home() || is_front_page()) {
+        $top_banner_fields            = get_field('top_banner', 'options');
+        $top_mobile_banner_image_url  = esc_attr(Wacoal_Get_image(wp_get_attachment_image_src($top_banner_fields['moible_banner_image'], 'full')));
+    }
+
     wp_localize_script(
         'wacoal-js',
         'wacoal_js_var',
@@ -63,6 +69,7 @@ function Wacoal_scripts()
         'ajaxurl' => admin_url('admin-ajax.php'),
         'query_vars' => wp_json_encode($wp_query->query),
         'nonce' => wp_create_nonce('ajax-nonce'),
+        'homepage_banner_mobile_img' => $top_mobile_banner_image_url,
         )
     );
 
