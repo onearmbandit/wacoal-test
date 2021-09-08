@@ -10,7 +10,9 @@
  * @see https://vip.wordpress.com/documentation/vip-go/understanding-your-vip-go-codebase/
  */
 
- wpcom_vip_load_plugin('distributor/distributor.php');
+ wpcom_vip_load_plugin( 'threewp-broadcast/ThreeWP_Broadcast.php' );
+ wpcom_vip_load_plugin( 'threewp-broadcast-3rd-party-pack/ThreeWP_Broadcast_3rd_Party_Pack.php' );
+ wpcom_vip_load_plugin( 'threewp-broadcast-control-pack/ThreeWP_Broadcast_Control_Pack.php' );
  wpcom_vip_load_plugin('insert-headers-and-footers/ihaf.php');
 
 /**
