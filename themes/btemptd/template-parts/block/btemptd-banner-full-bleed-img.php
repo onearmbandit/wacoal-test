@@ -22,6 +22,6 @@
         </a>
     <?php endif;?>
     <div class="image-caption">
-        <?php echo  esc_attr($image_caption); ?>
+        <?php echo esc_attr($image_caption); ?>
     </div>
 </section>

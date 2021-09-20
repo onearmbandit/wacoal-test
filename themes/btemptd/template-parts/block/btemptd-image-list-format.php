@@ -50,12 +50,16 @@ if ($list_type == 'simple_data') :
 
                     <div class="content-wrapper">
                         <div class="content">
+                            <?php if($list_title && !empty($list_title)) :?>
                             <h2 class="title">
                                 <?php echo esc_attr($list_title); ?>
                             </h2>
+                            <?php endif;
+                            if($list_desc && !empty($list_desc)) :?>
                             <div class="para">
                                 <?php echo wp_kses_post($list_desc); ?>
                             </div>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>

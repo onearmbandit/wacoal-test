@@ -1230,7 +1230,7 @@
       .image-caption {
         color: var(--color-gray-lighter);
         @include NeutraText-BookAlt;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         font-size: 14px;
         line-height: 16px;
         letter-spacing: 0.77px;
@@ -1927,7 +1927,7 @@
       letter-spacing: 0.21px;
       @include NeutraText-BookAlt;
       margin-top: 15px;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       color: var(--color-gray-lighter);
 
       @include respond-below(lg) {
@@ -2279,7 +2279,7 @@
 
     .image-title {
       @include NeutraText-BookAlt;
-      text-transform: uppercase;
+      // text-transform: uppercase;
       color: var(--color-gray-lighter);
       font-size: 14px;
       line-height: 16px;
@@ -2386,7 +2386,6 @@
       font-size: 14px;
       line-height: 16px;
       letter-spacing: 0.77px;
-      text-transform: uppercase;
       text-align: center;
       margin: 22px 0;
     }
@@ -2842,6 +2841,8 @@
 
   .image-wrapper {
     width: 560px;
+    position: relative;
+    z-index: -1;
 
     @include respond-below(lg) {
       width: 400px;
