@@ -129,3 +129,19 @@ add_filter('use_block_editor_for_post', '__return_true');
  * Website ajax functions include
 */
 require THEMEPATH . '/includes/website/website-ajax-functions.php';
+
+/**
+ * Function used to change the order of posts in acf settings
+ *
+ * @param [string] $args
+ * @return void
+ */
+function filter_acf_relationship ($args) {
+    $args['post_status'] = 'publish';
+    $args['order'] = 'desc';
+    $args['orderby'] = 'date';
+    error_log('$args'.print_r($args,1));
+    return $args;
+}
+
+add_filter('acf/fields/relationship/query', 'filter_acf_relationship', 10, 3);
