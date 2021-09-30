@@ -39,11 +39,11 @@
 </a>
 <?php endif;?>
 
-<?php if($slider_blog_slider && !empty($slider_blog_slider)) :?>
+<?php if($slider_blogs_posts && !empty($slider_blogs_posts)) :?>
 <section class="evergreen-article--slider evergreen-article--desktop">
     <div class="swiper-container center-slide-slider">
         <div class="swiper-wrapper">
-            <?php foreach ($slider_blog_slider as $key => $slider_blog) {
+            <?php foreach ($slider_blogs_posts as $key => $slider_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
                 $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'slider-img');

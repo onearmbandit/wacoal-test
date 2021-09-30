@@ -191,9 +191,50 @@ function Wacoal_Load_more()
         die('Busted!');
     }
 
+    $post_not_in = array();
+
+    $slider_blogs_posts = Wacoal_Query_posts(
+        array(
+            'post_type'      => array('post'),
+            'posts_per_page' => 4,
+            'offset'         => 0,
+            'orderby'        => 'post_date',
+            'order'          => 'DESC',
+            'post_status'    => 'publish'
+        )
+    );
+
+    foreach ( $slider_blogs_posts as $p ) {
+        $post_not_in[]=$p->ID;
+    }
+
+    $featured_blogs       = get_field('featured_posts', 'options');
+    $featured_blogs_ids   = ! empty($featured_blogs) ? array_values($featured_blogs) : array();
+
+    $featured_blogs_posts = Wacoal_Query_posts(
+        array(
+            'post__in'  => $featured_blogs_ids,
+            'posts_per_page' => -1,
+            'post_type' => array(
+                'post',
+            ),
+        )
+    );
+
+    $featured_blog_slider = [];
+    foreach ( $featured_blogs_ids as $featured_blog_id ) {
+        foreach ( $featured_blogs_posts as $p ) {
+            if ($p->ID === $featured_blog_id ) {
+                $featured_blog_slider[] = $p;
+                $post_not_in[]=$p->ID;
+            }
+        }
+    }
+
     $recent_posts = Wacoal_Query_posts(
         array(
             'post_type'      => array('post'),
+            'post__not_in'   => $post_not_in,
             'posts_per_page' => 3,
             'offset'         => $_POST['offset'],
             'orderby'        => 'post_date',

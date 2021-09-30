@@ -23,28 +23,22 @@ $top_mobile_banner_image_id   = $top_banner_fields['moible_banner_image'];
 $top_mobile_banner_image_url  = wp_get_attachment_image_src($top_mobile_banner_image_id, 'full');
 
 $post_not_in      =array();
-$slider_blogs     = get_field('slider_posts', 'options');
-$slider_blogs_ids = ! empty($slider_blogs) ? array_values($slider_blogs) : array();
 
 $slider_blogs_posts = Wacoal_Query_posts(
     array(
-        'post__in'  => $slider_blogs_ids,
-        'posts_per_page' => -1,
-        'post_type' => array(
-            'post',
-        ),
+        'post_type'      => array('post'),
+        'posts_per_page' => 4,
+        'offset'         => 0,
+        'orderby'        => 'post_date',
+        'order'          => 'DESC',
+        'post_status'    => 'publish'
     )
 );
 
 $slider_blog_slider = [];
-foreach ( $slider_blogs_ids as $slider_blog_id ) {
-    foreach ( $slider_blogs_posts as $p ) {
-        if ($p->ID === $slider_blog_id ) {
-            $slider_blog_slider[] = $p;
-            $post_not_in[]=$p->ID;
-        }
+foreach ( $slider_blogs_posts as $p ) {
+        $post_not_in[]=$p->ID;
     }
-}
 
 $featured_blogs       = get_field('featured_posts', 'options');
 $featured_blogs_ids   = ! empty($featured_blogs) ? array_values($featured_blogs) : array();
@@ -73,6 +67,7 @@ $static_section = get_field('static_section', 'options');
 $recent_posts = Wacoal_Query_posts(
     array(
         'post_type'      => array('post'),
+        'post__not_in'   => $post_not_in,
         'posts_per_page' => 3,
         'offset'         => 0,
         'orderby'        => 'post_date',
