@@ -3,7 +3,9 @@
   $(document).on('click', '.more', function (event) {
     var input= $("#offset").val();
     var offset= parseInt(input)+3;
-    var total= $("#total").val();
+    var exclude_post = $("#exclude").val();
+    var total_posts = $("#total").val();
+    var total= total_posts - exclude_post;
 
     $.ajax({
       url: wacoal_js_var.ajaxurl,

@@ -507,6 +507,7 @@
 
 <?php $counts= wp_count_posts();?>
 <input type="hidden" name="offset" id="offset" value="0">
+<input type="hidden" name="exclude" id="exclude" value="<?php echo $exclude_post;?>">
 <input type="hidden" name="total" id="total" value="<?php echo $counts->publish;?>">
 <section class="more-blog">
     <div class="more-blog--title">

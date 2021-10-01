@@ -76,7 +76,7 @@ $recent_posts = Wacoal_Query_posts(
     )
 );
 
-$exclude_post = $slider_post_count + $featured_post_count;
+$exclude_post = 4 + count($featured_blogs);
 
 require locate_template('template-parts/front-page.php');
 
