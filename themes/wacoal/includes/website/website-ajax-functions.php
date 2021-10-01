@@ -178,7 +178,7 @@ function Wacoal_Search_Ajax_pagination()
  add_action('wp_ajax_wacoal_search_ajax_pagination', 'Wacoal_Search_Ajax_pagination');
 
 /**
- * Function for load more
+ * Function for load more.
  *
  * @return string Return the posts html.
  */
@@ -231,17 +231,30 @@ function Wacoal_Load_more()
         }
     }
 
-    $recent_posts = Wacoal_Query_posts(
-        array(
-            'post_type'      => array('post'),
-            'post__not_in'   => $post_not_in,
-            'posts_per_page' => 3,
-            'offset'         => $_POST['offset'],
-            'orderby'        => 'post_date',
-            'order'          => 'DESC',
-            'post_status'    => 'publish'
-        )
-    );
+    if(is_front_page()) {
+        $recent_posts = Wacoal_Query_posts(
+            array(
+                'post_type'      => array('post'),
+                'post__not_in'   => $post_not_in,
+                'posts_per_page' => 3,
+                'offset'         => $_POST['offset'],
+                'orderby'        => 'post_date',
+                'order'          => 'DESC',
+                'post_status'    => 'publish'
+            )
+        );
+    }else {
+        $recent_posts = Wacoal_Query_posts(
+            array(
+                'post_type'      => array('post'),
+                'posts_per_page' => 3,
+                'offset'         => $_POST['offset'],
+                'orderby'        => 'post_date',
+                'order'          => 'DESC',
+                'post_status'    => 'publish'
+            )
+        );
+    }
 
 
     if (!empty($recent_posts)) {
