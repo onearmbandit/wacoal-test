@@ -231,31 +231,17 @@ function Wacoal_Load_more()
         }
     }
 
-    if(is_front_page()) {
-        $recent_posts = Wacoal_Query_posts(
-            array(
-                'post_type'      => array('post'),
-                'post__not_in'   => $post_not_in,
-                'posts_per_page' => 3,
-                'offset'         => $_POST['offset'],
-                'orderby'        => 'post_date',
-                'order'          => 'DESC',
-                'post_status'    => 'publish'
-            )
-        );
-    }else {
-        $recent_posts = Wacoal_Query_posts(
-            array(
-                'post_type'      => array('post'),
-                'posts_per_page' => 3,
-                'offset'         => $_POST['offset'],
-                'orderby'        => 'post_date',
-                'order'          => 'DESC',
-                'post_status'    => 'publish'
-            )
-        );
-    }
-
+    $recent_posts = Wacoal_Query_posts(
+        array(
+            'post_type'      => array('post'),
+            'post__not_in'   => $post_not_in,
+            'posts_per_page' => 3,
+            'offset'         => $_POST['offset'],
+            'orderby'        => 'post_date',
+            'order'          => 'DESC',
+            'post_status'    => 'publish'
+        )
+    );
 
     if (!empty($recent_posts)) {
         ob_start();
@@ -415,3 +401,97 @@ function Wacoal_Cat_Load_more()
 
 add_action('wp_ajax_nopriv_wacoal_cat_load_more', 'Wacoal_Cat_Load_more');
 add_action('wp_ajax_wacoal_cat_load_more', 'Wacoal_Cat_Load_more');
+
+/**
+ * Function for search page load more.
+ *
+ * @return string Return the posts html.
+ */
+function Wacoal_Search_Load_more()
+{
+    if (isset($_POST['nonce']) && !empty($_POST['nonce'])) {
+        $nonce = $_POST['nonce'];
+    }
+    if (! wp_verify_nonce($nonce, 'ajax-nonce') ) {
+        die('Busted!');
+    }
+
+    $search_recent_posts = Wacoal_Query_posts(
+        array(
+            'post_type'      => array('post'),
+            'posts_per_page' => 3,
+            'offset'         => $_POST['offset'],
+            'orderby'        => 'post_date',
+            'order'          => 'DESC',
+            'post_status'    => 'publish'
+        )
+    );
+
+    if (!empty($search_recent_posts)) {
+        ob_start();
+        ?>
+        <section class="more-blog more-blog-multirow">
+
+        <div class="more-blog--wrapper">
+        <?php
+
+        foreach ($search_recent_posts as $key => $blog) {
+            $thumbnail_id  = get_post_thumbnail_id($blog->ID);
+            $thumbnail_url = Wacoal_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = Wacoal_Get_Image_alt($thumbnail_id, 'featured-img');
+            $categories    = Wacoal_Get_Primary_category($blog->ID);
+            $post_tagline  = get_field('tag_line', $blog->ID);
+            $cat_ID        = $categories->term_id;
+            ?>
+
+            <article class="blog-tile">
+
+            <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                    <div class="blog-tile--image">
+                        <img class="lazyload" data-src="<?php echo esc_url($thumbnail_url);?>"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                    </div>
+                </a>
+            <?php endif;?>
+
+                <div class="blog-tile--category">
+                <?php if (! empty($categories) ) {?>
+                        <a href="<?php echo esc_url_raw(get_term_link($cat_ID));?>"> <?php echo esc_attr($categories->name); ?></a>
+                <?php }?>
+                </div>
+
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                    <h5 class="blog-tile--heading">
+                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
+                    </h5>
+                </a>
+
+                <?php if($post_tagline && !empty($post_tagline)) :?>
+                <div class="blog-tile--para">
+                    <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
+                        <?php echo  wp_kses_post($post_tagline);?>
+                    </a>
+                </div>
+                <?php endif;?>
+
+                <a href="<?php echo esc_url(get_permalink($blog->ID));?>"
+                    class="btn primary">Learn More</a>
+            </article>
+        <?php } ?>
+
+            </div>
+        </section>
+        <?php
+        $output = ob_get_contents();
+        ob_end_clean();
+    } else {
+        $output = 0;
+    }
+
+    echo $output;
+    die();
+}
+
+add_action('wp_ajax_nopriv_wacoal_search_load_more', 'Wacoal_Search_Load_more');
+add_action('wp_ajax_wacoal_search_load_more', 'Wacoal_Search_Load_more');

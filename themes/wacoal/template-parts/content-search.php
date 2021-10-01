@@ -135,6 +135,6 @@ $counts= $total_posts->publish;
 </section>
 <?php if($counts->publish > 3) :?>
 <div class="see-more--wrapper">
-    <button class="more btn secondary">See More</button>
+    <button class="search-more btn secondary">See More</button>
 </div>
 <?php endif;?>
