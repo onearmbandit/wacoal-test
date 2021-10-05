@@ -419,6 +419,24 @@
     bottom: 0;
   }
 
+  .search-more {
+    @include NeutraText-BoldAlt;
+    background: var(--color-tile-bg);
+    color: var(--color-secondary);
+    border: none;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    outline: none;
+    font-size: 14px;
+    letter-spacing: 1.05px;
+    line-height: 17px;
+    padding: 17px 36.5px 14px;
+    bottom: 0;
+  }
+
   .cat-see-more-button {
     @include NeutraText-BoldAlt;
     background: var(--color-primary);

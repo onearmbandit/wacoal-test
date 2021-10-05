@@ -21,7 +21,7 @@ $banner_link        = get_field('banner_link', 'option');
 $open_in_new_tab    = get_field('open_in_new_tab', 'option');
 $static_section     = get_field('static_section', 'option');
 $featured_posts     = get_field('featured_posts', 'option');
-$featured_blogs_ids   = ! empty($featured_blogs) ? array_values($featured_blogs) : array();
+$featured_blogs_ids   = ! empty($featured_posts) ? array_values($featured_posts) : array();
 
 $post_not_in = array();
 
@@ -38,7 +38,7 @@ $slider_posts = Btemptd_Query_posts(
 
 $featured_blog_slider = [];
 foreach ( $featured_blogs_ids as $featured_blog_id ) {
-    foreach ( $featured_blogs_posts as $p ) {
+    foreach ( $featured_posts as $p ) {
         if ($p->ID === $featured_blog_id ) {
             $featured_blog_slider[] = $p;
             $post_not_in[]=$p->ID;
@@ -62,8 +62,9 @@ $recent_posts = Btemptd_Query_posts(
     )
 );
 
-$total_posts = wp_count_posts('post');
-$counts= $total_posts->publish;
+$exclude_post = 4 + count($featured_posts);
+$total_posts  = wp_count_posts('post');
+$counts       = $total_posts->publish;
 
 require locate_template('template-parts/front-page.php');
 

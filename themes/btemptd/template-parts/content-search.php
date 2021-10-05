@@ -22,8 +22,8 @@ $recent_posts = Btemptd_Query_posts(
         'post_status'=>'publish'
     )
 );
-$total_posts = wp_count_posts('post');
-$counts= $total_posts->publish;
+$total_posts    = wp_count_posts('post');
+$counts         = $total_posts->publish;
 
 ?>
 <div class="search-count">
@@ -95,6 +95,57 @@ $counts= $total_posts->publish;
 </section>
 </section>
 
-<?php if(!empty($recent_posts)) :?>
-    <?php include locate_template('template-parts/explore-page.php');?>
-<?php endif; ?>
+<input type="hidden" name="offset" id="offset" value="0">
+<input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts);?>">
+<section class="explore-blog explore-see-more">
+    <div class="explore-blog--title">EXPLORE THE BLOG</div>
+
+    <div class="explore-blog--bg ">
+    <div class="explore-blog--wrapper">
+        <?php foreach($recent_posts as $key =>$recent_post):
+            $thumbnail_id  = get_post_thumbnail_id($recent_post->ID);
+            $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+            $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+            $categories    = Btemptd_Get_Primary_category($recent_post->ID);
+            $cat_ID        = $categories->term_id;
+            ?>
+            <div class="explore-blog--box ">
+                <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
+                <div class="explore-blog--image">
+                    <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                        <img class="img-fluid"
+                             src="<?php echo esc_url($thumbnail_url); ?>"
+                             alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
+                    </a>
+                </div>
+                <?php endif;?>
+
+                <div class="explore-blog--content box">
+                    <div class="explore-blog--content__cta">
+                        <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                            <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/cta-down-arrow.svg" />
+                        </a>
+                    </div>
+                    <div class="explore-blog--content__category">
+                        <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                            <?php echo esc_attr($categories->name);?>
+                        </a>
+                    </div>
+                    <div class="explore-blog--content__title">
+                        <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
+                            <?php echo esc_attr(Btemptd_Limit_text(get_the_title($recent_post->ID), 70));?>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach;?>
+
+    </div>
+    </div>
+</section>
+
+<?php if($counts > 3) :?>
+        <div class="see-more--wrapper">
+            <button class="search-more">See More</button>
+        </div>
+<?php endif;?>

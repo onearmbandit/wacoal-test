@@ -20,6 +20,7 @@ endif;
 <input type="hidden" name="cat" id="cat_id" value="<?php echo esc_attr($current_cat_id);?>">
 <input type="hidden" name="offset" id="offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts);?>">
+<input type="hidden" name="exclude" id="exclude" value="<?php echo $exclude_post;?>">
 <section class="explore-blog explore-see-more">
     <div class="explore-blog--title">EXPLORE THE BLOG</div>
 

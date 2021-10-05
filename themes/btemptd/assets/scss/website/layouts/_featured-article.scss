@@ -125,6 +125,7 @@
         justify-content: center;
         max-width: 474px;
         padding: 0 38px;
+        width: 100%;
 
         @include respond-below(lg) {
           max-width: 382px;
