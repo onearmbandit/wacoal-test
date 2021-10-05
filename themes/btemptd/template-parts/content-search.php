@@ -95,7 +95,7 @@ $counts         = $total_posts->publish;
 </section>
 </section>
 
-<input type="hidden" name="offset" id="offset" value="0">
+<input type="hidden" name="search_offset" id="search_offset" value="0">
 <input type="hidden" name="total" id="total" value="<?php echo esc_attr($counts);?>">
 <section class="explore-blog explore-see-more">
     <div class="explore-blog--title">EXPLORE THE BLOG</div>

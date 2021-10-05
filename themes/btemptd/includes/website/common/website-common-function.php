@@ -237,7 +237,7 @@ function Btemptd_Query_posts( $args )
 
     foreach ( $wmag_query->posts as $post ) {
 
-        $meta         = btemptd_get_post_details($post->ID);
+        $meta         = Btemptd_Get_Post_details($post->ID);
         $wmag_posts[] = new btemptd_Post($post, $meta);
     }
 
