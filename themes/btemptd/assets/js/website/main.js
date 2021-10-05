@@ -54,7 +54,8 @@
         $(window).scrollTop($(".explore-see-more").last().offset().top-180);
 
         var article_count= $(".explore-see-more .explore-blog--box").length;
-        console.log(article_count);
+        console.log('total-->',total);
+        console.log('article_count-->',article_count);
         if(html == 0 || total == article_count){
 
           $(".see-more-home-button").addClass("disabled");
