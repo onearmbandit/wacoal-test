@@ -277,18 +277,18 @@ if(!empty($banner_link)) :?>
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
                     <?php
-                    $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                    $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_name      = Btemptd_Get_Primary_category($slider_post->ID);
                     $cat_ID        = $cat_name->term_id;
-                    $tagline       = get_field('tagline', $slider_post)
+                    $tagline       = get_field('tagline', $slider_post->ID)
                     ?>
                 <div class="swiper-slide">
 
                     <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
                     <div class="swiper-slide--image">
-                        <a href ="<?php echo esc_url(get_permalink($slider_post));?>" >
+                        <a href ="<?php echo esc_url(get_permalink($slider_post->ID));?>" >
                             <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                             alt="<?php echo esc_attr($thumbnail_alt);?>" />
@@ -303,21 +303,21 @@ if(!empty($banner_link)) :?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__title">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post), 73));?>
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post->ID), 73));?>
                             </a>
                         </div>
 
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="swiper-slide--content__para">
-                        <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
+                        <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
                             <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                         </a>
                         </div>
                         <?php endif;?>
 
                         <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>" class="btn primary">
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>" class="btn primary">
                                 Learn More
                             </a>
                         </div>
@@ -422,18 +422,18 @@ if(!empty($banner_link)) :?>
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
                     <?php
-                    $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                    $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
                     $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                     $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name      = Btemptd_Get_Primary_category($slider_post);
+                    $cat_name      = Btemptd_Get_Primary_category($slider_post->ID);
                     $cat_ID        = $cat_name->term_id;
-                    $tagline       = get_field('tagline', $slider_post);
+                    $tagline       = get_field('tagline', $slider_post->ID);
 
                     ?>
                 <div class="swiper-slide">
                     <div class="swiper-slide--image">
                     <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
-                        <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                        <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                             <img class="lazyload img-fluid"
                                 data-src="<?php echo  esc_url($thumbnail_url); ?>"
                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -456,21 +456,21 @@ if(!empty($banner_link)) :?>
                             </a>
                         </div>
                         <div class="swiper-slide--content__title">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
-                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post), 73));?>
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post->ID), 73));?>
                             </a>
                         </div>
 
                         <?php if($tagline && !empty($tagline)) :?>
                         <div class="swiper-slide--content__para">
-                        <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
-                            <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag(get_field('tagline', $slider_post)), 111));?>
+                        <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
+                            <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag(get_field('tagline', $slider_post->ID)), 111));?>
                         </a>
                         </div>
                         <?php endif;?>
 
                         <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                                 Learn more
                             </a>
                         </div>
