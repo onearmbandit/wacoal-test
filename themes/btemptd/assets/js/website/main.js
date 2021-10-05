@@ -56,7 +56,7 @@
         var article_count= $(".explore-see-more .explore-blog--box").length;
         console.log('total-->',total);
         console.log('article_count-->',article_count);
-        if(html == 0 || total == article_count){
+        if(html == 0 || total == article_count || total <= article_count){
 
           $(".see-more-home-button").addClass("disabled");
           $(".see-more-home-button").hide();
