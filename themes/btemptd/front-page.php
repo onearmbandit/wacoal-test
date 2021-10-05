@@ -21,6 +21,7 @@ $banner_link        = get_field('banner_link', 'option');
 $open_in_new_tab    = get_field('open_in_new_tab', 'option');
 $static_section     = get_field('static_section', 'option');
 $featured_posts     = get_field('featured_posts', 'option');
+$featured_blogs_ids   = ! empty($featured_blogs) ? array_values($featured_blogs) : array();
 
 $post_not_in = array();
 
@@ -34,6 +35,16 @@ $slider_posts = Btemptd_Query_posts(
         'post_status'    => 'publish'
     )
 );
+
+$featured_blog_slider = [];
+foreach ( $featured_blogs_ids as $featured_blog_id ) {
+    foreach ( $featured_blogs_posts as $p ) {
+        if ($p->ID === $featured_blog_id ) {
+            $featured_blog_slider[] = $p;
+            $post_not_in[]=$p->ID;
+        }
+    }
+}
 
 foreach ( $slider_posts as $p ) {
         $post_not_in[]=$p->ID;
