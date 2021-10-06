@@ -9,7 +9,6 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Btemptd
  */
-error_log('in page');
 ?>
 
 <div class="explore-blog--box box-shadow-right">
@@ -29,13 +28,13 @@ error_log('in page');
             </a>
         </div>
         <div class="explore-blog--content__title">
-            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
+            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
                 <?php echo esc_attr(Btemptd_Limit_text($feat_title, 73));?>
             </a>
         </div>
         </div>
         <div class="blog-pagination-cta">
-            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
+            <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
                 <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
             </a>
         </div>
