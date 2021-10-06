@@ -11,7 +11,13 @@
  */
 
 ?>
-
+<?php
+$thumbnail_id  = get_post_thumbnail_id();
+$thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+$thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+$post_tagline  = get_field('tag_line');
+$categories    = Btemptd_Get_Primary_category(get_the_ID());
+?>
 <div class="explore-blog--box box-shadow-right">
     <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
     <div class="explore-blog--image">
@@ -29,17 +35,15 @@
             </a>
         </div>
         <div class="explore-blog--content__title">
-            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
-                <?php echo esc_attr(Btemptd_Limit_text($feat_title, 73));?>
+            <a href="<?php echo esc_url(get_permalink());?>">
+                <?php echo esc_attr(Btemptd_Limit_text(get_the_title(), 70));?>
             </a>
         </div>
         </div>
         <div class="blog-pagination-cta">
-            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
+            <a href="<?php echo esc_url(get_permalink());?>">
                 <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/category-post-arrow.svg" />
             </a>
         </div>
     </div>
 </div>
-
-

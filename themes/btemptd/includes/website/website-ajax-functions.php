@@ -33,7 +33,18 @@ function Btemptd_Ajax_pagination()
         $cat_name         = $get_cat_ID->name;
         $cat_ID      = $get_cat_ID->term_id;
         $featured_posts= get_field('featured_posts', 'category_'.$cat_ID);
-        $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
+        // $slider_posts= get_field('slider_posts', 'category_'.$cat_ID);
+        $slider_posts   = Btemptd_Query_posts(
+            array(
+                'post_type'      => array('post'),
+                'cat'            => $cat_ID,
+                'posts_per_page' => 4,
+                'offset'         => 0,
+                'orderby'        => 'post_date',
+                'order'          => 'DESC',
+                'post_status'    => 'publish'
+            )
+        );
 
         foreach ( $featured_posts as $featured_post ) {
             $posts_to_exclude[]    = $featured_post;
@@ -138,7 +149,7 @@ function Btemptd_Search_Ajax_pagination()
             if ($i%3 == 0 || $i==0) {
                 echo '<section class="explore-blog"><div class="explore-blog--bg"><div class="explore-blog--wrapper blog-wrapper">';
             }
-            include locate_template('template-parts/content-excerpt.php');
+            include locate_template('template-parts/search-content-excerpt.php');
             if ($i%3 == 2 || $i == 2) {
                 echo '</div></div></section>';
             }

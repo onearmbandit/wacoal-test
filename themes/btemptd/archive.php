@@ -16,8 +16,20 @@ $current_cat_data = get_queried_object();
 $current_cat_id   = $current_cat_data->term_id;
 $cat_name         = $current_cat_data->name;
 
-$featured_posts= get_field('featured_posts', 'category_'.$current_cat_id);
-$slider_posts= get_field('slider_posts', 'category_'.$current_cat_id);
+$featured_posts = get_field('featured_posts', 'category_'.$current_cat_id);
+$slider_posts   = Btemptd_Query_posts(
+    array(
+        'post_type'      => array('post'),
+        'cat'            => $current_cat_id,
+        'posts_per_page' => 4,
+        'offset'         => 0,
+        'orderby'        => 'post_date',
+        'order'          => 'DESC',
+        'post_status'    => 'publish'
+    )
+);
+
+// error_log('$slider_posts'.print_r($slider_posts,1));
 ?>
 <section class="banner-with-background">
     <h2 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h2>
@@ -209,17 +221,17 @@ if ($template == 'simple') :
                 <div class="swiper-wrapper">
                     <?php foreach($slider_posts as $slider_post): ?>
                         <?php
-                        $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                        $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
                         $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                         $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                        $cat_name_obj  = Btemptd_Get_Primary_category($slider_post);
+                        $cat_name_obj  = Btemptd_Get_Primary_category($slider_post->ID);
                         $cat_ID        = $cat_name_obj->term_id;
-                        $feat_title    = get_the_title($slider_post);
-                        $tagline       = get_field('tagline', $slider_post);
+                        $feat_title    = get_the_title($slider_post->ID);
+                        $tagline       = get_field('tagline', $slider_post->ID);
                         ?>
                     <div class="swiper-slide">
                         <div class="swiper-slide--image">
-                            <a href ="<?php echo esc_url(get_permalink($slider_post));?>" >
+                            <a href ="<?php echo esc_url(get_permalink($slider_post->ID));?>" >
                                 <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                 alt="<?php echo esc_attr($thumbnail_alt);?>" />
@@ -233,21 +245,21 @@ if ($template == 'simple') :
                                 </a>
                             </div>
                             <div class="swiper-slide--content__title">
-                                <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                                     <?php echo esc_attr(Btemptd_Limit_text($feat_title, 73));?>
                                 </a>
                             </div>
 
                             <?php if($tagline && !empty($tagline)):?>
                             <div class="swiper-slide--content__para">
-                                <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
+                                <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
                                     <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                                 </a>
                             </div>
                             <?php endif;?>
 
                             <div class="swiper-slide--content__cta">
-                                <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                                     Learn More
                                 </a>
                             </div>
@@ -352,18 +364,18 @@ if ($template == 'simple') :
                 <div class="swiper-wrapper">
                         <?php foreach($slider_posts as $slider_post): ?>
                             <?php
-                            $thumbnail_id  = get_post_thumbnail_id($slider_post);
+                            $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
                             $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                             $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                            $cat_name_obj  = Btemptd_Get_Primary_category($slider_post);
+                            $cat_name_obj  = Btemptd_Get_Primary_category($slider_post->ID);
                             $cat_ID        = $cat_name_obj->term_id;
-                            $slider_post_title = get_the_title($slider_post);
-                            $tagline  = get_field('tagline', $slider_post);
+                            $slider_post_title = get_the_title($slider_post->ID);
+                            $tagline  = get_field('tagline', $slider_post->ID);
 
                             ?>
                     <div class="swiper-slide">
                         <div class="swiper-slide--image">
-                            <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                                 <img class="lazyload img-fluid"
                                     data-src="<?php echo  esc_url($thumbnail_url); ?>"
                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
@@ -385,21 +397,21 @@ if ($template == 'simple') :
                                 </a>
                             </div>
                             <div class="swiper-slide--content__title">
-                                <a href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                                     <?php echo esc_attr(Btemptd_Limit_text($slider_post_title, 73));?>
                                 </a>
                             </div>
 
                             <?php if($tagline && !empty($tagline)) :?>
                             <div class="swiper-slide--content__para">
-                                <a href="<?php echo esc_url(get_permalink($slider_post)); ?>">
+                                <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
                                     <?php echo esc_attr(Btemptd_Remove_ptag(Btemptd_Limit_text($tagline, 111)));?>
                                 </a>
                             </div>
                             <?php endif;?>
 
                             <div class="swiper-slide--content__cta">
-                                <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post));?>">
+                                <a class="btn primary" href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
                                     Learn more
                                 </a>
                             </div>
@@ -419,21 +431,29 @@ foreach ( $featured_posts as $featured_post ) {
 }
 
 foreach ( $slider_posts as $slider_post ) {
-    array_push($posts_to_exclude, $slider_post);
+    array_push($posts_to_exclude, $slider_post->ID);
 }
 
-$cat_posts = array(
-    'post_type' => 'post',
-    'cat'=> $current_cat_id,
-    'post__not_in' => $posts_to_exclude,
-    'posts_per_page' => -1,
-    'orderby' => 'post_date',
-    'order' => 'DESC',
-    'post_status'=>'publish'
-);
-$cat_query = new WP_Query($cat_posts);
-$cat_post_counts= $cat_query->post_count;
+// error_log('$posts_to_exclude'.print_r($posts_to_exclude,1));
 
+$cat_posts = Btemptd_Query_posts(
+    array(
+        'post_type' => 'post',
+        'cat'=> $current_cat_id,
+        'post__not_in' => $posts_to_exclude,
+        'posts_per_page' => -1,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_status'=>'publish'
+    )
+);
+
+// $cat_query = new WP_Query($cat_posts);
+// $cat_post_counts= $cat_query->post_count;
+$cat_post_counts= count($cat_posts);;
+
+// error_log('$cat_post_counts'.print_r($cat_post_counts,1));
+// error_log('$cat_posts'.print_r($cat_posts,1));
 if (!empty($cat_post_counts)) {
     include locate_template('template-parts/cat-see-more.php');
 };
