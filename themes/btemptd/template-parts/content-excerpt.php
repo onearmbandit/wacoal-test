@@ -9,7 +9,7 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Btemptd
  */
-
+error_log('in page');
 ?>
 
 <div class="explore-blog--box box-shadow-right">

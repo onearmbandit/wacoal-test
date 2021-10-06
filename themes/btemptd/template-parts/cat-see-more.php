@@ -20,18 +20,19 @@ $j = 0;
 <div class="cat-post-listing">
         <div class="category-posts category-posts-desktop">
             <?php //while (have_posts()) : the_post();
-            foreach($cat_posts as $key => $slider_post):
+            foreach($cat_posts as $key => $cat_post):
                 // $i = 1;
+                // error_log('$cat_posts'.print_r($key,1));
                 if($key < 6) {
-                $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
+                $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
                 $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
                 $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                $cat_name_obj  = Btemptd_Get_Primary_category($slider_post->ID);
+                $cat_name_obj  = Btemptd_Get_Primary_category($cat_post->ID);
                 $cat_ID        = $cat_name_obj->term_id;
-                $feat_title    = get_the_title($slider_post->ID);
-                $tagline       = get_field('tagline', $slider_post->ID);
+                $feat_title    = get_the_title($cat_post->ID);
+                $tagline       = get_field('tagline', $cat_post->ID);
 
-                if ($key % 3 == 0) { ?>
+                if ($key % 3 == 0 ) { ?>
                     <section class="explore-blog">
                         <div class="explore-blog--bg">
                             <div class="explore-blog--wrapper blog-wrapper">
@@ -42,26 +43,37 @@ $j = 0;
                         </div>
                     </section>
                 <?php }
-                    // $i++;
                 }
+                    // $i++;
                 endforeach;
             //endwhile; ?>
         </div>
+
         <div class="category-posts category-posts-mobile">
-            <?php while (have_posts()) : the_post();
-                if ($j % 2 == 0) { ?>
+            <?php
+            foreach($cat_posts as $key => $cat_post):
+
+                $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
+                $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                $cat_name_obj  = Btemptd_Get_Primary_category($cat_post->ID);
+                $cat_ID        = $cat_name_obj->term_id;
+                $feat_title    = get_the_title($cat_post->ID);
+                $tagline       = get_field('tagline', $cat_post->ID);
+
+                if ($key % 2 == 0) { ?>
                     <section class="explore-blog">
                         <div class="explore-blog--bg">
                             <div class="explore-blog--wrapper blog-wrapper">
                 <?php }
-                    include locate_template('template-parts/content-excerpt.php');
-                if ($j % 2 == 1 || $cat_post_counts == ($j+1)) { ?>
+                if ($key % 2 == 1 || $cat_post_counts == ($key+1)) { ?>
                             </div>
                         </div>
                     </section>
                 <?php }
-                    $j++;
-            endwhile; ?>
+                    $key++;
+                endforeach;
+                 ?>
         </div>
 </div>
 
