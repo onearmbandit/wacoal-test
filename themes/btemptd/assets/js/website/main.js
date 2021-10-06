@@ -21,7 +21,6 @@
         $(window).scrollTop($(".explore-see-more").last().offset().top-180);
 
         var article_count= $(".explore-see-more .explore-blog--box").length;
-        console.log(article_count);
         if(html == 0 || total == article_count){
 
           $(".see-more-button").addClass("disabled");
@@ -54,8 +53,6 @@
         $(window).scrollTop($(".explore-see-more").last().offset().top-180);
 
         var article_count= $(".explore-see-more .explore-blog--box").length;
-        console.log('total-->',total);
-        console.log('article_count-->',article_count);
         if(html == 0 || total == article_count || total <= article_count){
 
           $(".see-more-home-button").addClass("disabled");
@@ -87,7 +84,6 @@
         $(window).scrollTop($(".explore-see-more").last().offset().top-180);
 
         var article_count= $(".explore-see-more .explore-blog--box").length;
-        console.log(article_count);
         if(html == 0 || total == article_count){
 
           $(".search-more").addClass("disabled");

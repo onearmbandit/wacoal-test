@@ -33,7 +33,6 @@
 
     var next = $('.nav-links .active').parent().next('.nav-links').children('a');
 
-    console.log(next.html());
     if (next.html() !== undefined) {
       $('.nav-links a').removeClass('active');
       next.addClass("active");
