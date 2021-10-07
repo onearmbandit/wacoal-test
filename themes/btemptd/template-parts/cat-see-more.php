@@ -19,10 +19,9 @@ $j = 0;
 
 <div class="cat-post-listing">
         <div class="category-posts category-posts-desktop">
-            <?php //while (have_posts()) : the_post();
+            <?php
             foreach($cat_posts as $key => $cat_post):
-                // $i = 1;
-                // error_log('$cat_posts'.print_r($key,1));
+
                 if($key < 6) {
                 $thumbnail_id  = get_post_thumbnail_id($cat_post->ID);
                 $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
@@ -44,9 +43,7 @@ $j = 0;
                     </section>
                 <?php }
                 }
-                    // $i++;
-                endforeach;
-            //endwhile; ?>
+                endforeach;?>
         </div>
 
         <div class="category-posts category-posts-mobile">
@@ -66,6 +63,7 @@ $j = 0;
                         <div class="explore-blog--bg">
                             <div class="explore-blog--wrapper blog-wrapper">
                 <?php }
+                include locate_template('template-parts/content-excerpt.php');
                 if ($key % 2 == 1 || $cat_post_counts == ($key+1)) { ?>
                             </div>
                         </div>

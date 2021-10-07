@@ -29,7 +29,6 @@ $slider_posts   = Btemptd_Query_posts(
     )
 );
 
-// error_log('$slider_posts'.print_r($slider_posts,1));
 ?>
 <section class="banner-with-background">
     <h2 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h2>
@@ -434,8 +433,6 @@ foreach ( $slider_posts as $slider_post ) {
     array_push($posts_to_exclude, $slider_post->ID);
 }
 
-// error_log('$posts_to_exclude'.print_r($posts_to_exclude,1));
-
 $cat_posts = Btemptd_Query_posts(
     array(
         'post_type' => 'post',
@@ -448,12 +445,8 @@ $cat_posts = Btemptd_Query_posts(
     )
 );
 
-// $cat_query = new WP_Query($cat_posts);
-// $cat_post_counts= $cat_query->post_count;
 $cat_post_counts= count($cat_posts);;
 
-// error_log('$cat_post_counts'.print_r($cat_post_counts,1));
-// error_log('$cat_posts'.print_r($cat_posts,1));
 if (!empty($cat_post_counts)) {
     include locate_template('template-parts/cat-see-more.php');
 };

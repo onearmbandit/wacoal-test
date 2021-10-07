@@ -14,7 +14,7 @@
 <div class="explore-blog--box box-shadow-right">
     <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
     <div class="explore-blog--image">
-        <a href="<?php echo esc_url(get_permalink());?>">
+        <a href="<?php echo esc_url(get_permalink($cat_post->ID));?>">
             <img class="img-fluid" src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($thumbnail_alt); ?>"/>
         </a>
     </div>
