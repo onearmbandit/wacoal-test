@@ -252,7 +252,7 @@ if ($template == 'simple') :
                             <?php if($tagline && !empty($tagline)):?>
                             <div class="swiper-slide--content__para">
                                 <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
-                                    <?php echo esc_attr(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
+                                    <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
                                 </a>
                             </div>
                             <?php endif;?>
@@ -404,7 +404,7 @@ if ($template == 'simple') :
                             <?php if($tagline && !empty($tagline)) :?>
                             <div class="swiper-slide--content__para">
                                 <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
-                                    <?php echo esc_attr(Btemptd_Remove_ptag(Btemptd_Limit_text($tagline, 111)));?>
+                                    <?php echo wp_kses_post(Btemptd_Remove_ptag(Btemptd_Limit_text($tagline, 111)));?>
                                 </a>
                             </div>
                             <?php endif;?>
