@@ -885,7 +885,18 @@ function Wacoal_Login_form()
 
 add_action('login_form', 'Wacoal_Login_form');
 
-/**
- * Code to disable XML-RPC
-*/
-add_filter('xmlrpc_enabled', '__return_false');
+// remove x-pingback HTTP header
+add_filter(
+    'wp_headers', function ($headers) {
+        unset($headers['X-Pingback']);
+        return $headers;
+    }
+);
+// disable pingbacks
+add_filter(
+    'xmlrpc_methods', function ( $methods ) {
+        unset($methods['pingback.ping']);
+        return $methods;
+    }
+);
+add_filter('auto_update_translation', '__return_false');
