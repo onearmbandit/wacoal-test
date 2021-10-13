@@ -693,3 +693,8 @@ function Btemptd_Limit_text($text, $limit)
     }
     return $text;
 }
+
+/**
+ * Code to disable XML-RPC
+*/
+add_filter('xmlrpc_enabled', '__return_false');

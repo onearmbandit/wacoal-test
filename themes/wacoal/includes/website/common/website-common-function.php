@@ -884,3 +884,8 @@ function Wacoal_Login_form()
 }
 
 add_action('login_form', 'Wacoal_Login_form');
+
+/**
+ * Code to disable XML-RPC
+*/
+add_filter('xmlrpc_enabled', '__return_false');
