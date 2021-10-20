@@ -25,7 +25,18 @@ $oembeded        = get_field('instagram_feeds', 'options');
 
         </div>
         <div class="footer-wrapper--right">
+            <div class="footer-links--title">Stay Connected</div>
+            <div class="footer-subscribe">
+                <div class="footer-subscribe--note">
+                    New product releases, markdowns and more!
+                </div>
+                <div class="footer-subscribe--input">
+                    <input class="input-box" type="text" placeholder="Email Address">
+                    <button class="input-button">Subscribe</button>
+                </div>
+            </div>
             <div class="footer-images">
+                <dfiv class="footer-images--title">Instagram</dfiv>
                 <iframe src="<?php echo esc_url($oembeded);?>"
                         scrolling="no"
                         allowtransparency="true"
@@ -33,8 +44,15 @@ $oembeded        = get_field('instagram_feeds', 'options');
                         style="width: 100%; border: 0px; overflow: hidden; height: 81.9px;">
                 </iframe>
             </div>
+        </div>
+    </div>
 
-            <div class="footer-social">
+    <div class="footer-wrapper footer-wrapper--bottom">
+        <div class="footer-wrapper--copyright">
+            <?php echo wp_kses_post($copyright_value);?>
+        </div>
+
+        <div class="footer-social">
                 <?php foreach($social_share as $key => $value){ ?>
                    <a href="<?php echo esc_url($value['link']['url']);?>" class="footer-social--icon"
                       target="_blank">
@@ -46,12 +64,5 @@ $oembeded        = get_field('instagram_feeds', 'options');
                 <?php } ?>
 
             </div>
-        </div>
-    </div>
-
-    <div class="footer-wrapper">
-        <div class="footer-wrapper--copyright">
-            <?php echo wp_kses_post($copyright_value);?>
-        </div>
     </div>
 </footer>
