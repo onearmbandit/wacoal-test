@@ -30,9 +30,15 @@ $oembeded        = get_field('instagram_feeds', 'options');
                 <div class="footer-subscribe--note">
                     New product releases, markdowns and more!
                 </div>
-                <div class="footer-subscribe--input">
+                <!-- <div class="footer-subscribe--input">
                     <input class="input-box" type="text" placeholder="Email Address">
                     <button class="input-button">Subscribe</button>
+                </div> -->
+                <div class="footer-subscribe--input">
+                    <!-- <form method="post" action="/"> -->
+                        <input class="input-box" type="footerEmailAddr" class="text" id="footerEmailAddr" name="email" placeholder="Email Address" aria-label="Email Address" />
+                        <button class="input-button" type="submit" id="emailSignupFooter" onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)" value="Subscribe"><span>Subscribe</span></button>
+                    <!-- </form> -->
                 </div>
             </div>
             <div class="footer-images">
