@@ -35,10 +35,10 @@ $subscribe       = get_field('subscribe_link', 'options');
                     <input class="input-box" type="text" placeholder="Email Address">
                     <button class="input-button">Subscribe</button>
                 </div> -->
-                <div class="footer-subscribe--input">
+                <!-- <div class="footer-subscribe--input"> -->
                 <?php if(!empty($subscribe)) :?>
-                    <form method="post" action="<?php echo esc_url($subscribe);?>">
-                        <div class="input-button-wrapper">
+                    <form method="post" action="<?php echo esc_url($subscribe);?>" class="">
+                        <div class="footer-subscribe--input">
                         <input type="footerEmailAddr" class="input-box" placeholder="user@email.com" name="email" id="footerEmailAddr">
                             <button type="submit" class="input-button"
                                     onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)">
@@ -47,7 +47,7 @@ $subscribe       = get_field('subscribe_link', 'options');
                         </div>
                     </form>
                 <?php endif;?>
-                </div>
+                <!-- </div> -->
             </div>
             <div class="footer-images">
                 <dfiv class="footer-images--title">Instagram</dfiv>
