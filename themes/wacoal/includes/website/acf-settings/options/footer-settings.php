@@ -16,6 +16,22 @@ acf_add_local_field_group(
     'title' => 'Footer Settings',
     'fields' => array(
         array(
+            'key' => 'field_5f8d396fb2200',
+            'label' => 'Subscribe link',
+            'name' => 'subscribe_link',
+            'type' => 'url',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'default_value' => '',
+            'placeholder' => '',
+        ),
+        array(
             'key' => 'field_5f6c4526eaabb',
             'label' => 'Copyright text',
             'name' => 'copyright_text',

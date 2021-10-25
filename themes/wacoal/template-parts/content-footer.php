@@ -13,6 +13,7 @@
 $copyright_value = get_field('copyright_text', 'options');
 $social_share    = get_field('social_share', 'options');
 $oembeded        = get_field('instagram_feeds', 'options');
+$subscribe       = get_field('subscribe_link', 'options');
 ?>
 <footer class="footer-section">
     <div class="footer-wrapper">
@@ -35,10 +36,17 @@ $oembeded        = get_field('instagram_feeds', 'options');
                     <button class="input-button">Subscribe</button>
                 </div> -->
                 <div class="footer-subscribe--input">
-                    <!-- <form method="post" action="/"> -->
-                        <input class="input-box" type="footerEmailAddr" class="text" id="footerEmailAddr" name="email" placeholder="Email Address" aria-label="Email Address" />
-                        <button class="input-button" type="submit" id="emailSignupFooter" onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)" value="Subscribe"><span>Subscribe</span></button>
-                    <!-- </form> -->
+                <?php if(!empty($subscribe)) :?>
+                    <form method="post" action="<?php echo esc_url($subscribe);?>">
+                        <div class="input-button-wrapper">
+                        <input type="footerEmailAddr" class="input-box" placeholder="user@email.com" name="email" id="footerEmailAddr">
+                            <button type="submit" class="input-button"
+                                    onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)">
+                                <!-- <img src="<?php //echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/subscribe-arrow.svg" /> -->
+                            </button>
+                        </div>
+                    </form>
+                <?php endif;?>
                 </div>
             </div>
             <div class="footer-images">
@@ -72,3 +80,44 @@ $oembeded        = get_field('instagram_feeds', 'options');
             </div>
     </div>
 </footer>
+
+<script>
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  var expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function removeCookie(name) {
+document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+    function setSubscriptionEmailInput() {
+        var emailAddrCookie = getCookie("subscriptionEmail");
+
+        if(emailAddrCookie != null){
+            removeCookie("emailSignupEmail");
+        }
+    }
+    function setSubscriptionEmailCookie(emailAddr) {
+        setCookie("subscriptionEmail", emailAddr);
+    }
+    setSubscriptionEmailInput();
+</script>

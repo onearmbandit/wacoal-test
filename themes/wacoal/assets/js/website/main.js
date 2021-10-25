@@ -1,12 +1,6 @@
 (function ($) {
   console.log('inside website main.js');
 
-  function setSubscriptionEmailCookie(
-    emailAddr) {
-    setCookie("subscriptionEmail",
-      emailAddr);
-  }
-
   // $.fn.mathSpace = function() {
   //   return $(this).each(function(){
   //     $(this).children('span').each(function() {
