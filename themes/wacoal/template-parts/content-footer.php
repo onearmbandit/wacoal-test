@@ -42,7 +42,7 @@ $subscribe       = get_field('subscribe_link', 'options');
                         <input type="footerEmailAddr" class="input-box" placeholder="user@email.com" name="email" id="footerEmailAddr">
                             <button type="submit" class="input-button"
                                     onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)">
-                                <!-- <img src="<?php //echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/subscribe-arrow.svg" /> -->
+                                Subscribe
                             </button>
                         </div>
                     </form>
