@@ -267,6 +267,10 @@
     color: var(--color-white);
     text-align: left;
     font-weight: 500;
+
+    @include respond-below(sm) {
+      text-align: center;
+    }
   }
 }
 
