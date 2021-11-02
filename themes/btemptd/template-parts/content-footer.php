@@ -23,10 +23,10 @@ $subscribe = get_field('subscribe_link', 'options');
                 <?php if(!empty($subscribe)) :?>
                     <form method="post" action="<?php echo esc_url($subscribe);?>">
                         <div class="input-button-wrapper">
-                        <input type="footerEmailAddr" placeholder="user@email.com" name="email" id="footerEmailAddr">
+                        <input type="footerEmailAddr" placeholder="Email Address" name="email" id="footerEmailAddr">
                             <button type="submit"
                                     onclick="javascript:setSubscriptionEmailCookie(document.getElementById('footerEmailAddr').value)">
-                                <img src="<?php echo  esc_url(esc_url(THEMEURI)); ?>/assets/images/subscribe-arrow.svg" />
+                                Subscribe
                             </button>
                         </div>
                     </form>
