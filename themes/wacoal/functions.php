@@ -120,6 +120,8 @@ if (is_admin()) {
  */
 require THEMEPATH . '/includes/website/website-functions.php';
 
+require THEMEPATH . '/includes/block-patterns/block-patterns.php';
+
 /**
  * Enable gutenberg
  */
@@ -129,3 +131,13 @@ add_filter('use_block_editor_for_post', '__return_true');
  * Website ajax functions include
 */
 require THEMEPATH . '/includes/website/website-ajax-functions.php';
+
+
+register_block_style(
+    'core/paragraph',
+    array(
+        'name'         => 'blue-quote',
+        'label'        => __( 'Blue Quote', 'textdomain' ),
+        'inline_style' => '.wp-block-quote.is-style-blue-quote { color: blue; }',
+    )
+);
