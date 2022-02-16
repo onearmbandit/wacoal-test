@@ -1,0 +1,34 @@
+<?php
+/**
+ * List Text Left Image
+ */
+return array(
+	'title'      => __( 'List Text Left Image', 'wacoal' ),
+	'categories' => array( 'text' ),
+	'blockTypes' => array( 'core/template-part/text' ),
+	'content'    => '<!-- wp:group {"tagName":"section","className":"list-text-image"} -->
+	<section class="wp-block-group list-text-image"><!-- wp:columns {"verticalAlignment":"center","className":"list-text-image\u002d\u002dwrapper img-left"} -->
+	<div class="wp-block-columns are-vertically-aligned-center list-text-image--wrapper img-left"><!-- wp:column {"verticalAlignment":"center","width":"567px"} -->
+	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:567px"><!-- wp:image {"id":231,"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
+	<figure class="wp-block-image size-large image-name"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/09/wacoal-101-image.png" alt="" class="wp-image-231"/><figcaption>Body Base® Shorty Panty</figcaption></figure>
+	<!-- /wp:image --></div>
+	<!-- /wp:column -->
+
+	<!-- wp:column {"verticalAlignment":"center","className":"ml-0"} -->
+	<div class="wp-block-column is-vertically-aligned-center ml-0"><!-- wp:group {"className":"list-text-image\u002d\u002dcontent"} -->
+	<div class="wp-block-group list-text-image--content"><!-- wp:heading {"className":"title"} -->
+	<h2 class="title" id="for-smoothing">For Smoothing</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"className":"sub-title"} -->
+	<p class="sub-title">Body Base® Shorty Panty</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:paragraph {"className":"content"} -->
+	<p class="content">A hands-down cult favorite at Wacoal HQ, Body Base® is all about solutions—and we love it for that. It’s lightweight, smoothing, and helps clothing skim your body. Think of it as a supportive hybrid between panties and shapewear—only it’s not constricting. We truly cannot get enough of this style.</p>
+	<!-- /wp:paragraph --></div>
+	<!-- /wp:group --></div>
+	<!-- /wp:column --></div>
+	<!-- /wp:columns --></section>
+	<!-- /wp:group -->',
+);
