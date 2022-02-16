@@ -4,9 +4,9 @@ zip -r wacoal.zip themes/wacoal/
 
 echo "Uploading theme zip file"
 
-scp -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem wacoal.zip ubuntu@54.176.104.254:/home/ubuntu/wordpress/wacoal/wp-content/themes
+scp -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem wacoal.zip ubuntu@13.52.136.49:/home/ubuntu/wordpress/wacoal/wp-content/themes
 
-ssh -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem ubuntu@54.176.104.254 << EOF
+ssh -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem ubuntu@13.52.136.49 << EOF
   pwd
   cd wordpress/wacoal/wp-content/themes
   pwd
@@ -28,4 +28,4 @@ pwd
 
 cd ../../..
 
-# scp -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem /home/swapnil/Projects/wacoal/plugins/advanced-custom-fields-pro.zip ubuntu@54.176.104.254:/home/ubuntu/wordpress/wacoal/wp-content/plugins
+# scp -i ~/.ssh/mark4-qa-server-cemtrexlabs.pem /home/swapnil/Projects/wacoal/plugins/advanced-custom-fields-pro.zip ubuntu@13.52.136.49:/home/ubuntu/wordpress/wacoal/wp-content/plugins
