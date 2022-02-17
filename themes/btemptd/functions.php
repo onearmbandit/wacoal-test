@@ -101,6 +101,8 @@ add_action('admin_enqueue_scripts', 'Btemptd_Admin_scripts', 10, 1);
  */
 require THEMEPATH . '/includes/website/website-functions.php';
 
+require THEMEPATH . '/includes/block-patterns/block-patterns.php';
+
 /**
  * Enable gutenberg
  */
