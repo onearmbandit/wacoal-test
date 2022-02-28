@@ -30,10 +30,12 @@
   }
 
   .image-wrapper {
-    .image {
+    .image,
+    img {
       background-size: cover;
       width: 442px;
       height: 442px;
+      object-fit: contain;
 
       @include respond-below(lg) {
         width: 305px;
