@@ -9,7 +9,6 @@
     padding-top: 10px;
   }
 
-
   &--wrapper {
     margin: auto;
     text-align: center;
@@ -27,7 +26,6 @@
       max-width: 100%;
       padding: 0 17px;
     }
-
 
     &__category {
       @include ProximaNova-Light;
@@ -142,17 +140,17 @@
   // padding: 40px 0;
   padding: 0 0 80px;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     // padding: 25px 0;
     padding: 0 0 50px;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     // padding: 25px 0;
     padding: 0 0 50px;
   }
 
-  @include respond-below(sm){
+  @include respond-below(sm) {
     padding: 0;
 
     &:first-child {
@@ -273,11 +271,9 @@
   }
 
   &.odd-sequence {
-
   }
 
   &.img-left {
-
     .article-questions--wrapper {
       flex-direction: column-reverse;
 
@@ -306,7 +302,7 @@
       }
 
       @include respond-below(sm) {
-        margin:0 auto 50px;
+        margin: 0 auto 50px;
       }
     }
   }
@@ -337,12 +333,12 @@
     // }
 
     span {
-        @include BentonModDisp-Bold;
-        font-size: calcRem(32);
+      @include BentonModDisp-Bold;
+      font-size: calcRem(32);
 
-        @include respond-above(sm) {
-          font-size: get-vw(46px);
-        }
+      @include respond-above(sm) {
+        font-size: get-vw(46px);
+      }
     }
   }
 
@@ -373,7 +369,6 @@
     margin-bottom: 40px;
 
     .article-questions--content {
-
       figure {
         width: calcRem(153);
         float: right;
@@ -409,21 +404,19 @@
   }
 }
 
-
 //
 .product-gallery {
   position: relative;
 
   padding: 20px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
-
 
   // &:before {
 
@@ -460,8 +453,8 @@
       margin-left: 110px;
     }
 
-    &:nth-child(3), &:nth-child(4) {
-
+    &:nth-child(3),
+    &:nth-child(4) {
       @include respond-below(lg) {
         margin-top: 94px;
       }
@@ -480,8 +473,8 @@
         margin-left: 42px;
       }
 
-      &:nth-child(3), &:nth-child(4) {
-
+      &:nth-child(3),
+      &:nth-child(4) {
         @include respond-below(lg) {
           margin-top: 29px;
         }
@@ -539,12 +532,9 @@
         margin-bottom: 6px;
       }
     }
-
-
   }
 
   &.wacoal-101 {
-
     margin-bottom: 100px;
 
     &:before {
@@ -578,14 +568,12 @@
     }
 
     .product-gallery--box__title {
-
       @include respond-below(sm) {
         font-size: 22px;
         line-height: 26px;
         letter-spacing: 0.55px;
         margin-top: 24px;
       }
-
     }
 
     .product-gallery--box__size {
@@ -601,11 +589,11 @@
 .product-quote {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -698,7 +686,7 @@
 
     .content {
       max-width: 408px;
-      margin:  auto;
+      margin: auto;
 
       @include respond-below(lg) {
         width: 288px;
@@ -713,8 +701,9 @@
       }
     }
 
-    &:before, &:after {
-      content: '';
+    &:before,
+    &:after {
+      content: "";
       position: absolute;
       width: 90px;
       height: 86px;
@@ -753,7 +742,6 @@
         top: -36px;
       }
     }
-
 
     &:after {
       bottom: -120px;
@@ -838,14 +826,14 @@
       flex: 1;
 
       &__heading {
-          font-size: calcRem(23);
-          @include BentonModDisp-Bold;
-          margin-bottom: calcRem(7);
+        font-size: calcRem(23);
+        @include BentonModDisp-Bold;
+        margin-bottom: calcRem(7);
 
-          @include respond-above(sm) {
-            font-size: get-vw(69px);
-            margin-bottom: get-vw(20px);
-          }
+        @include respond-above(sm) {
+          font-size: get-vw(69px);
+          margin-bottom: get-vw(20px);
+        }
       }
 
       &__subheading-one {
@@ -890,7 +878,6 @@
     }
 
     &.list-odd-order {
-
     }
 
     &.list-even-order {
@@ -933,7 +920,6 @@
 
 //
 .subhead-two {
-
   &--wrapper {
     margin: auto;
     @include BentonModDisp-Regular;
@@ -1013,7 +999,6 @@
   }
 
   .list-box {
-
     &:not(:last-child) {
       margin-bottom: 160px;
 
@@ -1102,7 +1087,6 @@
       }
     }
 
-
     &--heading {
       @include BentonModDisp-BoldItalic;
       border-bottom: 1px solid var(--color-black);
@@ -1159,7 +1143,6 @@
         letter-spacing: 0.53px;
       }
 
-
       strong {
         @include BentonModDisp-Bold;
       }
@@ -1183,7 +1166,6 @@
         padding: 0 36px;
         text-align: left;
       }
-
 
       .list-box--number {
         text-align: center;
@@ -1301,7 +1283,6 @@
         }
 
         span {
-
           @include respond-above(sm) {
             line-height: get-vw(400px);
           }
@@ -1351,7 +1332,6 @@
         }
 
         span {
-
           @include respond-above(sm) {
             line-height: get-vw(400px);
           }
@@ -1364,7 +1344,6 @@
       }
     }
 
-
     &.myth-box {
       .list-box--number {
         span {
@@ -1376,11 +1355,9 @@
     }
 
     &.myth-box:nth-child(odd) {
-
     }
 
     &.number-right {
-
       @include respond-above(sm) {
         flex-direction: row-reverse;
 
@@ -1395,7 +1372,6 @@
         }
       }
     }
-
   }
   strong {
     @include BentonModDisp-Bold;
@@ -1413,11 +1389,11 @@
 
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -1440,8 +1416,25 @@
     @include respond-below(sm) {
       height: 198px;
     }
+
+    .wp-block-embed__wrapper {
+      height: 760px;
+
+      @include respond-below(lg) {
+        height: 540px;
+      }
+
+      @include respond-below(md) {
+        height: 405px;
+      }
+
+      @include respond-below(sm) {
+        height: 198px;
+      }
+    }
   }
-  video, iframe {
+  video,
+  iframe {
     width: 100%;
     height: 100%;
   }
@@ -1493,12 +1486,12 @@
   align-items: center;
   justify-content: center;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
     max-width: 854px;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
     max-width: 708px;
   }
@@ -1506,7 +1499,6 @@
   @include respond-below(sm) {
     flex-direction: column;
   }
-
 
   &__left {
     width: 512px;
@@ -1532,6 +1524,12 @@
       margin-right: 0;
     }
 
+    .wp-block-embed__wrapper {
+      height: 360px;
+      iframe {
+        height: 100%;
+      }
+    }
 
     .video-caption {
       @include ProximaNova-Light;
@@ -1567,7 +1565,8 @@
         text-decoration: underline;
       }
     }
-    video, iframe{
+    video,
+    iframe {
       width: 100%;
       // height: 910px;
     }
@@ -1599,7 +1598,7 @@
     }
 
     &::after {
-      content:'';
+      content: "";
       position: absolute;
       height: 300px;
       width: 1px;
@@ -1663,12 +1662,17 @@
       width: 100%;
       height: 302px;
     }
-
   }
 
   .product-quote--wrapper {
     min-height: auto;
     margin: 35px 0;
+  }
+
+  .wp-block-column {
+    @media (min-width: 600px) and (max-width: 781px) {
+      flex-basis: calc(48% - 1em) !important;
+    }
   }
 }
 
@@ -1681,11 +1685,11 @@
   width: 100%;
   // height: 743px;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -1698,15 +1702,15 @@
     height: 743px;
     object-fit: cover;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       height: 529px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       height: 397px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       height: 194px;
     }
   }
@@ -1755,7 +1759,6 @@
   }
 }
 
-
 .wacoal-seperator {
   margin-bottom: calcRem(28);
 
@@ -1775,9 +1778,7 @@
   }
 }
 
-
 .fixes-list {
-
   &--wrapper {
     margin: auto;
     max-width: 1180px;
@@ -1786,20 +1787,19 @@
   &--box {
     padding: 80px 0 198px;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0 130px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0 120px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       padding: 25px 0 45px;
     }
 
     &.img-right {
-
       .fixes-list--boxtitle-wrapper {
         float: right;
       }
@@ -1827,7 +1827,6 @@
         @include respond-below(md) {
           margin: 0 0 0 60px;
         }
-
       }
     }
   }
@@ -1855,13 +1854,17 @@
     position: relative;
     // width: 100%;
     text-transform: uppercase;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(235,222,213,0.5) 50%, rgba(235,222,213,0.5) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(235, 222, 213, 0.5) 50%,
+      rgba(235, 222, 213, 0.5) 100%
+    );
     font-size: 43px;
     line-height: 52px;
     letter-spacing: 0.25px;
     padding: 10px 40px 0;
     display: inline-block;
-
 
     @include respond-below(lg) {
       font-size: 39px;
@@ -1876,7 +1879,6 @@
       letter-spacing: 0.15px;
       padding: 10px 15px 0;
     }
-
   }
 
   &--boxcontent {
@@ -1907,7 +1909,6 @@
         display: block;
         width: 100%;
       }
-
     }
 
     .verticle-text {
@@ -1971,7 +1972,7 @@
         justify-content: center;
 
         &::after {
-          content: '';
+          content: "";
           height: 50%;
           bottom: 0;
           width: 100%;
@@ -1987,7 +1988,6 @@
           box-shadow: -1px -1px 21px #00000029;
         }
       }
-
     }
 
     .list-content {
@@ -2006,8 +2006,8 @@
         @include respond-below(md) {
           margin-bottom: 30px;
           font-size: 16px;
-        line-height: 27px;
-        letter-spacing: 0.24px;
+          line-height: 27px;
+          letter-spacing: 0.24px;
         }
 
         strong {
@@ -2019,7 +2019,6 @@
           text-decoration: underline;
         }
       }
-
     }
   }
   &.desktop-ui {
@@ -2057,7 +2056,7 @@
       position: relative;
 
       &:after {
-        content:'';
+        content: "";
         height: 1px;
         background: var(--color-black);
         width: calc(100% - 110px);
@@ -2089,20 +2088,19 @@
   }
 }
 
-
 .reminder-note {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
   &--wrapper {
-    background: #FDF0F7;
+    background: #fdf0f7;
     display: flex;
     margin: auto;
     align-items: center;
@@ -2118,7 +2116,6 @@
       // margin: 33px 15px 0;
       padding: 30px 36px 30px 25px;
     }
-
 
     .image {
       width: 65px;
@@ -2211,7 +2208,7 @@
         }
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           width: 100%;
           height: 1px;
@@ -2221,7 +2218,8 @@
         }
       }
 
-      span, strong {
+      span,
+      strong {
         @include ProximaNova-Bold;
       }
 
@@ -2233,7 +2231,6 @@
   }
 
   &--center {
-
     .reminder-note--wrapper {
       background: var(--color-feat-article-bg);
       min-height: 130px;
@@ -2257,15 +2254,14 @@
   }
 }
 
-
 .donation {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -2286,8 +2282,6 @@
       flex-direction: column;
     }
 
-
-
     .title {
       @include BentonModDisp-Regular;
       text-transform: uppercase;
@@ -2307,7 +2301,6 @@
         letter-spacing: 0.14px;
         margin-bottom: 20px;
       }
-
     }
 
     .para {
@@ -2349,8 +2342,6 @@
           margin-bottom: 40px;
         }
       }
-
-
 
       a {
         @include BentonModDisp-Bold;
@@ -2403,9 +2394,9 @@
       line-height: 40px;
       text-align: center;
       border-radius: 50%;
-      background-color: #E390B7;
+      background-color: #e390b7;
       // counter-increment: list;
-      content: ' ';
+      content: " ";
     }
     .timeline-text {
       margin: 0;
@@ -2424,7 +2415,8 @@
         padding-top: 0;
       }
 
-      a, strong {
+      a,
+      strong {
         @include ProximaNova-Bold;
         text-decoration: underline;
       }
@@ -2462,7 +2454,6 @@
       margin-left: initial;
     }
 
-
     .quote {
       @include BentonModDisp-RegularItalic;
       position: relative;
@@ -2489,9 +2480,9 @@
         }
       }
 
-
-      &:before, &:after {
-        content: '';
+      &:before,
+      &:after {
+        content: "";
         display: flex;
         background-size: contain;
         width: 100%;
@@ -2561,7 +2552,6 @@
   }
 }
 
-
 .article--para {
   font-size: 18px;
   line-height: 26px;
@@ -2588,8 +2578,6 @@
     letter-spacing: 0;
     padding: 0 36px;
   }
-
-
 
   ul {
     margin: 0 auto;
@@ -2622,12 +2610,11 @@
         @include respond-below(sm) {
           margin-bottom: 25px;
         }
-
       }
 
       &:before {
-        content:'';
-        background: url('../../images/checkmark.svg');
+        content: "";
+        background: url("../../images/checkmark.svg");
         width: 12px;
         height: 12px;
         background-size: cover;
@@ -2641,7 +2628,6 @@
         }
       }
     }
-
   }
 
   strong {
@@ -2654,15 +2640,14 @@
   }
 }
 
-
 .subhead-description {
   padding: 15px 0;
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 15px 0 25px;
   }
 
-  @include respond-below(sm){
+  @include respond-below(sm) {
     padding: 10px 20px;
   }
 
@@ -2672,11 +2657,11 @@
     text-align: center;
 
     @include respond-below(lg) {
-      max-width: 716px
+      max-width: 716px;
     }
 
     @include respond-below(md) {
-      max-width: 636px
+      max-width: 636px;
     }
   }
 
@@ -2704,7 +2689,7 @@
 
     a {
       @include BentonModDisp-Bold;
-      text-decoration: underline
+      text-decoration: underline;
     }
   }
 
@@ -2740,15 +2725,14 @@
   }
 }
 
-
 .body-intro {
   padding: 15px 0 30px;
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
-  @include respond-below(sm){
+  @include respond-below(sm) {
     padding: 25px 36px;
   }
 
@@ -2818,7 +2802,6 @@
         margin-bottom: 25px;
       }
       @include respond-below(md) {
-
         &:not(:last-child) {
           margin-bottom: 20px;
         }
@@ -2826,7 +2809,6 @@
     }
   }
 }
-
 
 .benton-text-block {
   &--wrapper {
@@ -2847,15 +2829,15 @@
     display: flex;
     align-items: center;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0 50px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       padding: 25px 36px 50px;
       flex-direction: column;
     }
@@ -2972,7 +2954,6 @@
           line-height: 32px;
           margin-bottom: 16px;
         }
-
       }
     }
 
@@ -3004,20 +2985,19 @@
 }
 
 .block-bordered-image {
-
   &--wrapper {
     max-width: 1230px;
     margin: auto;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       max-width: 890px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       max-width: 700px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       max-width: 350px;
     }
   }
@@ -3032,18 +3012,18 @@
       display: none;
     }
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0;
     }
 
-    @include respond-below(sm){
-    padding: 25px 0 76px;
-    margin-bottom: 25px;
-    // flex-direction: column;
+    @include respond-below(sm) {
+      padding: 25px 0 76px;
+      margin-bottom: 25px;
+      // flex-direction: column;
 
       .mobile-button {
         position: absolute;
@@ -3054,7 +3034,6 @@
       }
     }
 
-
     &.img-left {
       justify-content: flex-start;
       .image {
@@ -3062,7 +3041,7 @@
         margin-left: 16px;
         margin-top: 0;
 
-        @include respond-below(lg){
+        @include respond-below(lg) {
           margin-left: 12px;
         }
 
@@ -3071,12 +3050,12 @@
           left: -16px;
           top: 16px;
 
-          @include respond-below(lg){
+          @include respond-below(lg) {
             left: -12px;
             top: 12px;
           }
 
-          @include respond-below(sm){
+          @include respond-below(sm) {
             left: -6px;
             top: 6px;
           }
@@ -3086,34 +3065,32 @@
         left: 44.5%;
         right: inherit;
 
-        @include respond-below(lg){
-          left: 39.5%
+        @include respond-below(lg) {
+          left: 39.5%;
         }
 
-        @include respond-below(md){
+        @include respond-below(md) {
           left: 35.5%;
         }
 
-        @include respond-below(sm){
+        @include respond-below(sm) {
           left: 50%;
         }
       }
 
-      .image-caption  {
+      .image-caption {
         text-align: left;
         margin-left: 16px;
         margin-top: 27px;
 
-        @include respond-below(lg){
+        @include respond-below(lg) {
           margin-top: 16px;
         }
       }
-
     }
   }
 
   .image-wrapper {
-
   }
   .image {
     background-size: cover;
@@ -3124,25 +3101,25 @@
     margin-right: 16px;
     margin-top: 16px;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       width: 489px;
       height: 489px;
       margin-right: 12px;
       margin-top: 12px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       width: 384px;
       height: 384px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       width: 240px;
       height: 240px;
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -3152,12 +3129,12 @@
       background: var(--color-white);
       border: 1px solid var(--color-black);
 
-      @include respond-below(lg){
+      @include respond-below(lg) {
         right: -12px;
         top: -12px;
       }
 
-      @include respond-below(sm){
+      @include respond-below(sm) {
         right: -6px;
         top: -6px;
       }
@@ -3172,11 +3149,11 @@
     text-align: right;
     letter-spacing: 0.55px;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       margin-top: 8px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       margin-top: 5px;
       font-size: 10px;
     }
@@ -3197,13 +3174,13 @@
     height: calc(100% - 160px);
     top: 80px;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       right: 39.5%;
       height: calc(100% - 120px);
       top: 50px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       right: 35.5%;
     }
 
@@ -3266,24 +3243,24 @@
     align-items: center;
     padding: 80px 0;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0;
       max-width: 835px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0;
     }
 
-    @include respond-below(sm){
-        flex-direction: column;
-        padding: 25px 36px;
+    @include respond-below(sm) {
+      flex-direction: column;
+      padding: 25px 36px;
     }
 
     &.img-right {
       flex-direction: row-reverse;
 
-      @include respond-below(sm){
+      @include respond-below(sm) {
         flex-direction: column;
       }
 

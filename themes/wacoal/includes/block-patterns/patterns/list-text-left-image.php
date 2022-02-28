@@ -8,8 +8,8 @@ return array(
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"list-text-image"} -->
 	<section class="wp-block-group list-text-image"><!-- wp:columns {"verticalAlignment":"center","className":"list-text-image\u002d\u002dwrapper img-left"} -->
-	<div class="wp-block-columns are-vertically-aligned-center list-text-image--wrapper img-left"><!-- wp:column {"verticalAlignment":"center","width":"567px"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:567px"><!-- wp:image {"id":231,"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
+	<div class="wp-block-columns are-vertically-aligned-center list-text-image--wrapper img-left"><!-- wp:column {"verticalAlignment":"center","width":"auto"} -->
+	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:auto"><!-- wp:image {"id":231,"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
 	<figure class="wp-block-image size-large image-name"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/09/wacoal-101-image.png" alt="" class="wp-image-231"/><figcaption>Body Base® Shorty Panty</figcaption></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column -->

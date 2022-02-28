@@ -14,3 +14,35 @@
 
 //Layout
 @import "layouts/__layouts-dir";
+
+@media (min-width: 782px) {
+  .wp-block-column:not(:first-child) {
+    margin-left: 0;
+  }
+}
+
+.wp-block-column {
+  flex-basis: 100% !important;
+}
+
+.wp-block-button__link {
+  background-color: inherit;
+  border-radius: inherit;
+  font-size: inherit;
+  padding: 0;
+  display: block;
+}
+
+.wp-block-buttons > .wp-block-button {
+  margin-bottom: 0;
+}
+
+.wp-block-column {
+  flex-basis: 100% !important;
+
+  &:nth-child(2n) {
+    @media (min-width: 600px) and (max-width: 781px) {
+      margin-left: 0;
+    }
+  }
+}

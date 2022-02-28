@@ -26,8 +26,8 @@ return array(
  <!-- /wp:group --></div>
  <!-- /wp:column -->
 
- <!-- wp:column {"verticalAlignment":"center","width":"567px"} -->
- <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:567px"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
+ <!-- wp:column {"verticalAlignment":"center","width":"auto"} -->
+ <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:auto"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
  <figure class="wp-block-image size-large image-name"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_FF_WF_Balconette.jpeg" alt=""/></figure>
  <!-- /wp:image -->
 

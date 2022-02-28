@@ -24,8 +24,8 @@ return array(
  <!-- /wp:group --></div>
  <!-- /wp:column -->
 
- <!-- wp:column {"verticalAlignment":"center","width":"567px"} -->
- <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:567px"><!-- wp:image {"id":250,"sizeSlug":"full","linkDestination":"none","className":"image-name"} -->
+ <!-- wp:column {"verticalAlignment":"center","width":"auto"} -->
+ <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:auto"><!-- wp:image {"id":250,"sizeSlug":"full","linkDestination":"none","className":"image-name"} -->
  <figure class="wp-block-image size-full image-name"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/minimizer_desktop.jpeg" alt="" class="wp-image-250"/><figcaption>Body Base® Shorty Panty</figcaption></figure>
  <!-- /wp:image --></div>
  <!-- /wp:column --></div>

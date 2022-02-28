@@ -27,7 +27,6 @@
     }
   }
 
-
   &--banner {
     width: 100%;
     background-size: cover;
@@ -43,7 +42,6 @@
     }
 
     @include respond-below(md) {
-
     }
 
     @include respond-below(sm) {
@@ -188,15 +186,13 @@
   }
 }
 
-
 .three-reason {
-
   @include respond-below(sm) {
     padding: calcRem(0, 18);
   }
 
   &--wrapper {
-    margin: 0 auto ;
+    margin: 0 auto;
     // padding-top: 30px;
     padding: 90px 0 80px;
 
@@ -231,8 +227,6 @@
       margin-bottom: 30px;
     }
 
-
-
     strong {
       @include NeutraText-BoldAlt;
     }
@@ -244,206 +238,201 @@
   }
 
   .reason-box {
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    @include respond-below(sm) {
+      margin-bottom: calcRem(50);
+    }
+
+    @include respond-above(sm) {
+      height: get-vw(408px);
+      // align-items: flex-start;
+
+      // &:last-child {
+      //   margin-bottom: get-vw(80px);
+      // }
+    }
+
+    &--content {
+      background: var(--color-tile-bg);
+      flex: 1;
       display: flex;
-      width: 100%;
-      position: relative;
+      align-items: center;
+      position: absolute;
+      color: var(--color-text);
+      width: calcRem(198);
+      right: 0;
 
       @include respond-below(sm) {
-        margin-bottom: calcRem(50);
+        margin-top: calcRem(20);
+        position: relative;
       }
 
       @include respond-above(sm) {
-        height: get-vw(408px);
-        // align-items: flex-start;
-
-        // &:last-child {
-        //   margin-bottom: get-vw(80px);
-        // }
+        width: get-vw(833px);
+        min-height: get-vw(198px);
+        padding-left: get-vw(50px);
+        padding-right: get-vw(80px);
       }
 
-      &--content {
-        background: var(--color-tile-bg);
-        flex: 1;
-        display: flex;
-        align-items: center;
-        position: absolute;
-        color: var(--color-text);
-        width: calcRem(198);
-        right: 0;
+      &__number {
+        @include NeutraText-BoldAlt;
 
         @include respond-below(sm) {
-          margin-top: calcRem(20);
-          position: relative;
+          position: absolute;
+          right: 20px;
+          top: -45px;
+          background: var(--color-primary);
+          width: calcRem(79);
+          height: calcRem(79);
+          border-radius: 50%;
+          font-size: calcRem(56);
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         @include respond-above(sm) {
-          width: get-vw(833px);
-          min-height: get-vw(198px);
-          padding-left: get-vw(50px);
-          padding-right: get-vw(80px);
+          font-size: get-vw(133px);
+          line-height: get-vw(63px);
+        }
+      }
+
+      &__para {
+        @include NeutraText-BookAlt;
+        padding: calcRem(50, 25, 25);
+        font-size: calcRem(14);
+        line-height: calcRem(16);
+
+        @include respond-above(sm) {
+          font-size: get-vw(21px);
+          line-height: get-vw(25px);
+          letter-spacing: get-vw(0.28px);
+          margin-left: get-vw(66px);
+          padding-top: get-vw(20px);
+          padding-bottom: get-vw(20px);
+          padding-left: 0;
+          padding-right: 0;
         }
 
-        &__number {
+        strong {
           @include NeutraText-BoldAlt;
-
-          @include respond-below(sm) {
-            position: absolute;
-            right: 20px;
-            top: -45px;
-            background: var(--color-primary);
-            width: calcRem(79);
-            height: calcRem(79);
-            border-radius: 50%;
-            font-size: calcRem(56);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
-
-          @include respond-above(sm) {
-            font-size: get-vw(133px);
-            line-height: get-vw(63px);
-          }
         }
 
-        &__para {
-          @include NeutraText-BookAlt;
-          padding: calcRem(50, 25, 25);
-          font-size: calcRem(14);
-          line-height: calcRem(16);
-
-          @include respond-above(sm) {
-            font-size: get-vw(21px);
-            line-height: get-vw(25px);
-            letter-spacing: get-vw(0.28px);
-            margin-left: get-vw(66px);
-            padding-top: get-vw(20px);
-            padding-bottom: get-vw(20px);
-            padding-left: 0;
-            padding-right: 0;
-          }
-
-          strong {
-            @include NeutraText-BoldAlt;
-          }
-
-          a {
-            @include NeutraText-BoldAlt;
-            text-decoration: underline;
-          }
+        a {
+          @include NeutraText-BoldAlt;
+          text-decoration: underline;
         }
       }
+    }
 
-      &--image {
-        width: calcRem(154);
-        height: calcRem(205);
+    &--image {
+      width: calcRem(154);
+      height: calcRem(205);
 
+      @include respond-below(sm) {
+        z-index: -2;
+      }
+
+      img {
         @include respond-below(sm) {
-          z-index: -2;
-        }
-
-        img {
-
-          @include respond-below(sm) {
-            height: 100%;
-            object-fit: cover;
-          }
-        }
-
-        @include respond-above(sm) {
-          width: get-vw(560px);
           height: 100%;
-          z-index: -2;
-          position: relative;
+          object-fit: cover;
         }
       }
 
-      &.img-right {
+      @include respond-above(sm) {
+        width: get-vw(560px);
+        height: 100%;
+        z-index: -2;
+        position: relative;
+      }
+    }
+
+    &.img-right {
+      @include respond-above(sm) {
+        justify-content: flex-end;
+      }
+
+      .reason-box--content {
+        @include respond-above(sm) {
+          left: 0;
+          top: get-vw(40px);
+        }
+      }
+
+      .reason-box--image {
+        position: relative;
+
+        .tag-name {
+          position: absolute;
+          left: get-vw(-26px);
+          bottom: 0;
+          transform: rotate(-90deg);
+          transform-origin: left;
+          @include NeutraText-DemiAlt;
+          font-size: get-vw(20px);
+          color: var(--color-text);
+          letter-spacing: 0.3px;
+
+          @include respond-below(sm) {
+            transform: rotate(0deg);
+            font-size: calcRem(11);
+            bottom: -15px;
+            left: 10px;
+          }
+        }
+      }
+    }
+
+    &.img-left {
+      justify-content: flex-start;
+
+      @include respond-below(sm) {
+        flex-direction: row-reverse;
+      }
+
+      @include respond-above(sm) {
+        margin-top: get-vw(-70px);
+        margin-bottom: get-vw(70px);
+      }
+
+      .reason-box--content {
+        @include respond-below(sm) {
+          left: 0;
+        }
 
         @include respond-above(sm) {
-          justify-content: flex-end;
-        }
-
-        .reason-box--content {
-
-          @include respond-above(sm) {
-            left: 0;
-            top: get-vw(40px);
-          }
-        }
-
-        .reason-box--image {
-          position: relative;
-
-          .tag-name {
-            position: absolute;
-            left: get-vw(-26px);
-            bottom: 0;
-            transform: rotate(-90deg);
-            transform-origin: left;
-            @include NeutraText-DemiAlt;
-            font-size: get-vw(20px);
-            color: var(--color-text);
-            letter-spacing: 0.3px;
-
-            @include respond-below(sm) {
-              transform: rotate(0deg);
-              font-size: calcRem(11);
-              bottom: -15px;
-              left: 10px;
-            }
-          }
+          right: 0;
+          top: inherit;
+          bottom: get-vw(40px);
         }
       }
 
-      &.img-left {
-        justify-content: flex-start;
+      .reason-box--image {
+        position: relative;
 
-        @include respond-below(sm) {
-          flex-direction: row-reverse;
+        .tag-name {
+          @include respond-below(sm) {
+            font-size: calcRem(11);
+            // right: 0;
+            left: inherit;
+            bottom: -15px;
+          }
+          position: absolute;
+          left: 0;
+          bottom: get-vw(-35px);
+          @include NeutraText-DemiAlt;
+          font-size: get-vw(20px);
+          color: var(--color-text);
         }
-
-          @include respond-above(sm) {
-            margin-top: get-vw(-70px);
-            margin-bottom: get-vw(70px);
-          }
-
-          .reason-box--content {
-
-            @include respond-below(sm) {
-              left: 0;
-            }
-
-            @include respond-above(sm) {
-              right: 0;
-              top: inherit;
-              bottom: get-vw(40px);
-            }
-          }
-
-          .reason-box--image {
-            position: relative;
-
-            .tag-name {
-              @include respond-below(sm) {
-                font-size: calcRem(11);
-                // right: 0;
-                left: inherit;
-                bottom: -15px;
-              }
-              position: absolute;
-              left: 0;
-              bottom: get-vw(-35px);
-              @include NeutraText-DemiAlt;
-              font-size: get-vw(20px);
-              color: var(--color-text);
-            }
-          }
       }
+    }
   }
 
   &.para-content {
-
     .three-reason--wrapper {
       max-width: 664px;
       margin: 0 auto;
@@ -460,9 +449,7 @@
   }
 }
 
-
 .wow-factor {
-
   &--wrapper {
     margin: auto;
     display: flex;
@@ -483,7 +470,6 @@
     }
 
     &.bottom {
-
       z-index: 1;
 
       @include respond-below(sm) {
@@ -504,7 +490,6 @@
     width: calcRem(333);
     font-size: calcRem(16);
     line-height: calcRem(28);
-
 
     @include respond-above(sm) {
       width: get-vw(566px);
@@ -611,10 +596,8 @@
   }
 }
 
-
 //
 .image-content {
-
   @include respond-above(sm) {
     margin-top: get-vw(78px);
     margin-bottom: get-vw(123px);
@@ -744,7 +727,6 @@
     }
 
     .image-content--content {
-
       @include respond-above(sm) {
         margin-left: get-vw(64px);
       }
@@ -764,7 +746,6 @@
     }
 
     .image-content--content {
-
       @include respond-above(sm) {
         margin-right: get-vw(64px);
       }
@@ -772,9 +753,7 @@
   }
 
   &.image-content-gif {
-
     .image-content--image {
-
       @include respond-above(sm) {
         width: get-vw(640px);
         height: get-vw(640px);
@@ -817,7 +796,6 @@
       }
 
       .content-inner {
-
         @include respond-above(sm) {
           position: absolute;
           // width: get-vw(390px);
@@ -914,9 +892,8 @@
         top: get-vw(-32px);
       }
     }
+  }
 }
-}
-
 
 .article--para {
   @include NeutraText-BookAlt;
@@ -1024,9 +1001,7 @@
   }
 }
 
-
 .four-image {
-
   &--wrapper {
     margin: auto;
     display: flex;
@@ -1060,7 +1035,6 @@
   }
 }
 
-
 .shop-button--wrapper {
   width: 100%;
   display: flex;
@@ -1085,7 +1059,6 @@
     position: relative;
     text-decoration: none !important;
 
-
     @include respond-above(sm) {
       font-size: get-vw(32px);
       padding-top: get-vw(35px);
@@ -1109,9 +1082,8 @@
         top: get-vw(-32px);
       }
     }
+  }
 }
-}
-
 
 //// bt style
 .seasonless-style {
@@ -1159,8 +1131,6 @@
       margin-bottom: 0;
     }
 
-
-
     &--left {
       position: relative;
       padding-left: 18px;
@@ -1174,9 +1144,9 @@
       }
 
       &:before {
-        content:'';
+        content: "";
         position: absolute;
-        background: #6D4F6D;
+        background: #6d4f6d;
         left: 0;
         z-index: -1;
         max-width: 560px;
@@ -1201,7 +1171,6 @@
           max-width: 294px;
           max-height: 294px;
         }
-
       }
 
       img {
@@ -1302,7 +1271,7 @@
         }
 
         &::before {
-          content:'';
+          content: "";
           position: absolute;
           width: 100%;
           background: var(--color-primary);
@@ -1319,7 +1288,6 @@
             height: 16px;
           }
         }
-
       }
 
       .para {
@@ -1365,12 +1333,10 @@
 
     &.odd {
       .box--right {
-
       }
     }
 
     &.img-right {
-
       @include respond-above(sm) {
         flex-direction: row-reverse;
       }
@@ -1402,7 +1368,7 @@
   margin: 0 auto;
   padding: 50px 0;
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -1423,8 +1389,25 @@
     @include respond-below(sm) {
       height: 198px;
     }
+
+    .wp-block-embed__wrapper {
+      height: 760px;
+
+      @include respond-below(lg) {
+        height: 540px;
+      }
+
+      @include respond-below(md) {
+        height: 405px;
+      }
+
+      @include respond-below(sm) {
+        height: 198px;
+      }
+    }
   }
-  video, iframe {
+  video,
+  iframe {
     width: 100%;
     height: 100%;
   }
@@ -1461,49 +1444,49 @@
 
 //
 .body-outro-para {
-    padding: 25px 0;
+  padding: 25px 0;
+
+  @include respond-below(md) {
+    padding: 15px 0;
+  }
+
+  &--wrapper {
+    max-width: 754px;
+    margin: 0 auto;
 
     @include respond-below(md) {
-      padding: 15px 0;
+      max-width: 566px;
     }
 
-    &--wrapper {
-      max-width: 754px;
-      margin: 0 auto;
+    @include respond-below(sm) {
+      max-width: 304px;
+    }
+  }
 
-      @include respond-below(md) {
-        max-width: 566px;
-      }
+  .content {
+    color: var(--color-text);
+    font-size: 20px;
+    line-height: 33px;
+    @include NeutraText-BoldAlt;
+    text-align: center;
 
-      @include respond-below(sm) {
-        max-width: 304px;
-      }
+    @include respond-below(sm) {
+      line-height: 24px;
     }
 
-    .content {
-      color: var(--color-text);
-      font-size: 20px;
-      line-height: 33px;
+    strong {
       @include NeutraText-BoldAlt;
-      text-align: center;
-
-      @include respond-below(sm) {
-        line-height: 24px;
-      }
-
-      strong {
-        @include NeutraText-BoldAlt;
-      }
-
-      a {
-        @include NeutraText-BoldAlt;
-        text-decoration: underline;
-      }
-
-      em {
-        @include NeutraText-BoldItalicAlt;
-      }
     }
+
+    a {
+      @include NeutraText-BoldAlt;
+      text-decoration: underline;
+    }
+
+    em {
+      @include NeutraText-BoldItalicAlt;
+    }
+  }
 }
 
 //
@@ -1565,11 +1548,11 @@
 .internal-banner {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -1646,11 +1629,11 @@
   position: relative;
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -1680,8 +1663,8 @@
       margin-left: 110px;
     }
 
-    &:nth-child(3), &:nth-child(4) {
-
+    &:nth-child(3),
+    &:nth-child(4) {
       @include respond-below(md) {
         margin-top: 42px;
       }
@@ -1707,8 +1690,8 @@
         margin-left: 17px;
       }
 
-      &:nth-child(3), &:nth-child(4) {
-
+      &:nth-child(3),
+      &:nth-child(4) {
         @include respond-below(lg) {
           margin-top: 39px;
         }
@@ -1793,12 +1776,12 @@
   align-items: center;
   justify-content: center;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
     max-width: 956px;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
     max-width: 728px;
   }
@@ -1806,7 +1789,6 @@
   @include respond-below(sm) {
     flex-direction: column;
   }
-
 
   &__left {
     width: 512px;
@@ -1832,9 +1814,8 @@
     }
 
     &.only-video {
-      margin-right: 0
+      margin-right: 0;
     }
-
 
     .video-caption {
       @include NeutraText-BookAlt;
@@ -1867,7 +1848,8 @@
         text-decoration: underline;
       }
     }
-    video, iframe{
+    video,
+    iframe {
       width: 100%;
       // height: 910px;
     }
@@ -1895,7 +1877,7 @@
     }
 
     &::after {
-      content:'';
+      content: "";
       position: absolute;
       height: 520px;
       width: 1px;
@@ -1963,7 +1945,20 @@
       width: 100%;
       height: 302px;
     }
+  }
 
+  .wp-block-embed__wrapper {
+    height: 360px;
+
+    iframe {
+      height: 100%;
+    }
+  }
+
+  .wp-block-column {
+    @media (min-width: 600px) and (max-width: 781px) {
+      flex-basis: calc(48% - 1em) !important;
+    }
   }
 }
 
@@ -1971,11 +1966,11 @@
 .image-medium {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -1983,7 +1978,7 @@
     max-width: 885px;
     margin: 0 auto;
 
-    @include respond-below(md){
+    @include respond-below(md) {
       max-width: 666px;
     }
   }
@@ -1994,11 +1989,11 @@
     background-size: cover;
     background-position: center;
 
-    @include respond-below(md){
+    @include respond-below(md) {
       height: 452px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       height: 254px;
     }
   }
@@ -2010,13 +2005,12 @@
     font-size: 18px;
     line-height: 26px;
 
-
-    @include respond-below(md){
+    @include respond-below(md) {
       max-width: 590px;
       margin: 30px auto 0;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       max-width: 303px;
       margin: 15px auto 0;
       font-size: 16px;
@@ -2055,11 +2049,11 @@
 .text-hover-box {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -2095,7 +2089,7 @@
       &:after {
         height: 100%;
         width: 100%;
-        content: '';
+        content: "";
         position: absolute;
         background: var(--color-primary);
         z-index: -1;
@@ -2124,19 +2118,18 @@
 
 //
 .italics-title {
-
   &--wrapper {
     max-width: 1222px;
     margin: 0 auto;
     display: flex;
     padding: 80px 0;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0;
       max-width: 956px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0;
       max-width: 716px;
     }
@@ -2186,7 +2179,6 @@
     @include respond-below(sm) {
       padding: 0 28px;
     }
-
 
     .title {
       @include NeutraText-DemiItalicAlt;
@@ -2255,7 +2247,6 @@
   }
 
   .right-box {
-
     @include respond-below(sm) {
       margin: 0 auto;
     }
@@ -2301,7 +2292,7 @@
 .button-block {
   padding: 25px 0;
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 15px 0;
   }
 
@@ -2321,26 +2312,29 @@
     letter-spacing: 1.05px;
     text-transform: uppercase;
     display: inline-block;
+    cursor: pointer;
 
     &:hover {
       background: transparent;
       border: 1px solid var(--color-secondary);
       color: var(--color-secondary);
+
+      .wp-block-button__link {
+        color: inherit;
+      }
     }
   }
 }
-
-
 
 //
 .image-text-image {
   padding: 80px 0;
 
-  @include respond-below(lg){
+  @include respond-below(lg) {
     padding: 50px 0;
   }
 
-  @include respond-below(md){
+  @include respond-below(md) {
     padding: 25px 0;
   }
 
@@ -2443,11 +2437,16 @@
       }
     }
   }
+
+  .wp-block-column {
+    @media (min-width: 600px) and (max-width: 781px) {
+      flex-basis: calc(33.33% - 1em) !important;
+    }
+  }
 }
 
 //
 .list-number-tip {
-
   &--wrapper {
     max-width: 1440px;
     margin: 0 auto;
@@ -2455,17 +2454,17 @@
     align-items: center;
     padding: 80px 0;
 
-  @include respond-below(lg){
-    padding: 50px 0;
-  }
+    @include respond-below(lg) {
+      padding: 50px 0;
+    }
 
-  @include respond-below(md){
-    padding: 25px 0;
-  }
+    @include respond-below(md) {
+      padding: 25px 0;
+    }
 
-  @include respond-below(sm) {
-    flex-direction: column;
-  }
+    @include respond-below(sm) {
+      flex-direction: column;
+    }
 
     &.img-right {
       flex-direction: row-reverse;
@@ -2517,7 +2516,6 @@
   }
 
   .image-title {
-
     .image-block {
       width: 720px;
       height: 720px;
@@ -2592,7 +2590,7 @@
 
       .number-inner {
         position: relative;
-        background: #F8F3F0;
+        background: #f8f3f0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2621,7 +2619,7 @@
         }
 
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           background: var(--color-primary);
           width: 128px;
@@ -2753,7 +2751,6 @@
           line-height: 26px;
           letter-spacing: 0.23px;
           padding-left: 0;
-
         }
 
         @include respond-below(md) {
@@ -2761,7 +2758,6 @@
           line-height: 23px;
           letter-spacing: 0.21px;
           padding-left: 0;
-
         }
 
         strong {
@@ -2779,7 +2775,6 @@
 
 //
 .image-text-hover {
-
   &--wrapper {
     padding: 80px 0;
     display: flex;
@@ -2787,24 +2782,24 @@
     max-width: 1140px;
     margin: 0 auto;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0;
       max-width: 820px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0;
       max-width: 666px;
     }
 
-    @include respond-below(sm){
+    @include respond-below(sm) {
       flex-direction: column;
     }
 
     &.img-right {
       flex-direction: row-reverse;
 
-      @include respond-below(sm){
+      @include respond-below(sm) {
         flex-direction: column;
       }
 
@@ -2907,7 +2902,7 @@
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       height: 100%;
       width: 100%;
@@ -2922,7 +2917,6 @@
       }
     }
     .content {
-
       .title {
         @include NeutraText-BookItalicAlt;
         color: var(--color-text);
@@ -2967,7 +2961,6 @@
 
 //
 .image-quote-button {
-
   &--wrapper {
     padding: 80px 0;
     display: flex;
@@ -2975,12 +2968,12 @@
     max-width: 1280px;
     margin: 0 auto;
 
-    @include respond-below(lg){
+    @include respond-below(lg) {
       padding: 50px 0;
       max-width: 968px;
     }
 
-    @include respond-below(md){
+    @include respond-below(md) {
       padding: 25px 0;
       max-width: 726px;
     }
@@ -3105,11 +3098,16 @@
         line-height: 17px;
         letter-spacing: 1.05px;
         display: inline-block;
+        cursor: pointer;
 
         &:hover {
           background: transparent;
           border: 1px solid var(--color-secondary);
           color: var(--color-secondary);
+
+          .wp-block-button__link {
+            color: inherit;
+          }
         }
       }
     }
