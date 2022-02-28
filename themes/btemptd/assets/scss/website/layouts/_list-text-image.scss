@@ -15,12 +15,12 @@
     }
 
     &.img-right {
+      @include respond-below(sm) {
+        flex-direction: column-reverse;
+      }
+
       .list-text-image--inner {
         flex-direction: row-reverse;
-
-        @include respond-below(sm) {
-          flex-direction: column;
-        }
       }
 
       .list-text-image--content {
@@ -208,25 +208,4 @@
       }
     }
   }
-
-  // .wp-block-column {
-  //   width: 560px;
-  //   height: 560px;
-  //   background-size: cover;
-
-  //   @include respond-below(lg) {
-  //     width: 420px;
-  //     height: 420px;
-  //   }
-
-  //   @include respond-below(md) {
-  //     width: 350px;
-  //     height: 350px;
-  //   }
-
-  //   @include respond-below(sm) {
-  //     width: 352px;
-  //     height: 352px;
-  //   }
-  // }
 }
