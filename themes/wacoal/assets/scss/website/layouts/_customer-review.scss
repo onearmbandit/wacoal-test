@@ -30,10 +30,12 @@
   }
 
   .image-wrapper {
-    .image {
+    .image,
+    img {
       background-size: cover;
       width: 442px;
       height: 442px;
+      object-fit: contain;
 
       @include respond-below(lg) {
         width: 305px;
@@ -127,6 +129,10 @@
         @include respond-below(lg) {
           width: 16px;
         }
+      }
+
+      .wp-block-group__inner-container {
+        display: flex;
       }
     }
 

@@ -22,11 +22,12 @@
 }
 
 .wp-block-button__link {
-  background-color: inherit;
+  background-color: inherit !important;
   border-radius: inherit;
   font-size: inherit;
   padding: 0;
   display: block;
+  color: inherit !important;
 }
 
 .wp-block-buttons {
@@ -45,4 +46,9 @@
       margin-left: 0;
     }
   }
+}
+
+.wp-block-columns:not(.is-not-stacked-on-mobile)
+  > .wp-block-column:not(:first-child) {
+  margin-left: 0;
 }
