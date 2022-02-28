@@ -21,6 +21,10 @@
 
       .list-text-image--inner {
         flex-direction: row-reverse;
+
+        @include respond-below(sm) {
+          flex-direction: column;
+        }
       }
 
       .list-text-image--content {
@@ -207,5 +211,9 @@
         display: block;
       }
     }
+  }
+
+  .wp-block-buttons {
+    justify-content: flex-start;
   }
 }

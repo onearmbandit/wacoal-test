@@ -135,6 +135,10 @@
           width: 13px;
         }
       }
+
+      .wp-block-group__inner-container {
+        display: flex;
+      }
     }
 
     .rating-content {
