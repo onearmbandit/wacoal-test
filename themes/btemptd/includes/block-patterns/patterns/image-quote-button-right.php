@@ -6,16 +6,10 @@ return array(
 	'title'      => __( 'Right Image Quote Button', 'btemptd' ),
 	'categories' => array( 'text' ),
 	'blockTypes' => array( 'core/template-part/text' ),
-	'content'    => '<!-- wp:group {"tagName":"section","className":"image-quote-button"} -->
-	<section class="wp-block-group image-quote-button"><!-- wp:columns {"verticalAlignment":"center","className":"image-quote-button\u002d\u002dwrapper  img-right"} -->
-	<div class="wp-block-columns are-vertically-aligned-center image-quote-button--wrapper  img-right"><!-- wp:column {"verticalAlignment":"center","width":"","className":"image-wrapper"} -->
-	<div class="wp-block-column is-vertically-aligned-center image-wrapper"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
-	<figure class="wp-block-image size-large image-name"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/10/BT_BEATRIZA_596X596.png" alt=""/></figure>
-	<!-- /wp:image --></div>
-	<!-- /wp:column -->
-
-	<!-- wp:column {"verticalAlignment":"center","className":"content-wrapper content-wrapper\u002d\u002dinner"} -->
-	<div class="wp-block-column is-vertically-aligned-center content-wrapper content-wrapper--inner"><!-- wp:image {"sizeSlug":"large","className":"quote-left"} -->
+	'content'    => '<!-- wp:group {"tagName":"section","className":"image-quote-button img-right"} -->
+	<section class="wp-block-group image-quote-button img-right"><!-- wp:columns {"verticalAlignment":"center","className":"image-quote-button\u002d\u002dwrapper"} -->
+	<div class="wp-block-columns are-vertically-aligned-center image-quote-button--wrapper"><!-- wp:column {"verticalAlignment":"center","className":"content-wrapper"} -->
+	<div class="wp-block-column is-vertically-aligned-center content-wrapper"><!-- wp:image {"sizeSlug":"large","className":"quote-left"} -->
 	<figure class="wp-block-image size-large quote-left"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/themes/btemptd/assets/images/quote-left.svg" alt=""/></figure>
 	<!-- /wp:image -->
 
@@ -37,6 +31,12 @@ return array(
 
 	<!-- wp:image {"sizeSlug":"large","className":"quote-right"} -->
 	<figure class="wp-block-image size-large quote-right"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/themes/btemptd/assets/images/quote-right.svg" alt=""/></figure>
+	<!-- /wp:image --></div>
+	<!-- /wp:column -->
+
+	<!-- wp:column {"verticalAlignment":"center","width":"","className":"image-wrapper"} -->
+	<div class="wp-block-column is-vertically-aligned-center image-wrapper"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
+	<figure class="wp-block-image size-large image-name"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/10/BT_BEATRIZA_596X596.png" alt=""/></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></section>
