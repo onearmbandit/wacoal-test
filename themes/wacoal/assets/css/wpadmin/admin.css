@@ -63,3 +63,13 @@
 .fixes-list--box.even {
   width: 80%;
 }
+
+.wp-block.list-text-image .image-name img{
+  width: 380px;
+  height: 380px;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block:after {
+  margin-left: 50px;
+  margin-top: 80px;
+}

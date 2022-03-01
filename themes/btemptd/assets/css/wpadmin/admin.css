@@ -112,3 +112,21 @@ section.image-content.image-content-gif a {
 section.article--para {
   margin: 10%;
 }
+
+.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:first-child) {
+  margin-left: 32px;
+}
+
+.wp-block.list-text-image .wp-block-image .components-resizable-box__container{
+    width: 350px !important;
+    height: 350px !important;
+}
+
+.wp-block.list-text-image .wp-block-image img{
+  max-width: 100% !important;
+  height: 100%;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block:after {
+  top: 50%;
+}
