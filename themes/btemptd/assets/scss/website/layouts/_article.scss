@@ -1961,12 +1961,16 @@
     }
   }
 
-  .wp-block-columns:not(.is-not-stacked-on-mobile)
-    > .wp-block-column:not(:only-child) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column:not(:only-child) {
     @media (min-width: 600px) and (max-width: 781px) {
       flex-basis: calc(48% - 1em) !important;
     }
   }
+  // @media (min-width: 600px) and (max-width: 781px) {
+  //   .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column:not(:only-child) {
+  //     flex-basis: calc(48% - 1em) !important;
+  //   }
+  // }
 }
 
 //
@@ -3173,7 +3177,7 @@
     }
   }
 
-  .img-right {
+  &.img-right {
     .image-quote-button--wrapper {
       @include respond-below(sm) {
         flex-direction: column-reverse;
