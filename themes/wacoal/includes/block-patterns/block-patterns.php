@@ -43,7 +43,14 @@ function Wacoal_register_block_patterns() {
 		'video-vertical-image',
 		'video-horizontal',
 		'link-button',
-		'conclusion-summary'
+		'conclusion-summary',
+		'list-text-left-image-tip',
+		'list-text-right-image-tip',
+		'product-gallery',
+		'quote-image',
+		'quote-timeline',
+		'quote-progressbar',
+		'checklist'
 	);
 
 	/**
