@@ -50,7 +50,7 @@ function Wacoal_register_block_patterns() {
 		'quote-image',
 		'quote-timeline',
 		'quote-progressbar',
-		'checklist',
+		'checklist'
 	);
 
 	/**
