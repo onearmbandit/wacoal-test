@@ -50,7 +50,12 @@ function Wacoal_register_block_patterns() {
 		'quote-image',
 		'quote-timeline',
 		'quote-progressbar',
-		'checklist'
+		'checklist',
+		'list-title-body-image-bullets',
+		'list-number-title-subhead-copy',
+		'list-title-statement-body-left-image',
+		'list-title-statement-body-right-image',
+		'image-gallery-full-bleed'
 	);
 
 	/**
