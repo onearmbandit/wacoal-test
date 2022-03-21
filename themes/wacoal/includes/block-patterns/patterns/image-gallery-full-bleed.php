@@ -21,6 +21,22 @@ return array(
 	<figure class="wp-block-image size-large swiper-slide"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2021/08/full-width-slider-img-1.png" alt=""/></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
-	<!-- /wp:columns --></section>
+	<!-- /wp:columns -->
+
+	<!-- wp:group {"className":"swiper-pagination custom-swiper-pagination"} -->
+	<div class="wp-block-group swiper-pagination custom-swiper-pagination"></div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"swiper-button-next swiper-buttun-background"} -->
+	<div class="wp-block-group swiper-button-next swiper-buttun-background"><!-- wp:image {"sizeSlug":"large","className":" ls-is-cached lazyloaded "} -->
+	<figure class="wp-block-image size-large  ls-is-cached lazyloaded"><img src="https://www.wacoal-america.com/blog/wp-content/uploads/sites/2/2022/03/swiper-arrow.svg" alt=""/></figure>
+	<!-- /wp:image --></div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"swiper-button-prev swiper-buttun-background"} -->
+	<div class="wp-block-group swiper-button-prev swiper-buttun-background"><!-- wp:image {"sizeSlug":"large","className":" ls-is-cached lazyloaded "} -->
+	<figure class="wp-block-image size-large  ls-is-cached lazyloaded"><img src="https://www.wacoal-america.com/blog/wp-content/uploads/sites/2/2022/03/swiper-arrow.svg" alt=""/></figure>
+	<!-- /wp:image --></div>
+	<!-- /wp:group --></section>
 	<!-- /wp:group -->',
 );
