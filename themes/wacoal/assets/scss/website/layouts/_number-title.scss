@@ -62,36 +62,31 @@
       flex-direction: column;
       justify-content: center;
 
-
-      @include respond-below(lg){
+      @include respond-below(lg) {
         max-width: 300px;
         margin: 0 30px 0 13px;
       }
-      @include respond-below(md){
+      @include respond-below(md) {
         margin: 0 30px 0 0;
       }
 
-      @include respond-below(sm){
+      @include respond-below(sm) {
         margin: 0 auto;
       }
 
-
-
-
-      span {
+      .span {
         display: inline;
         @include BentonModDisp-Bold;
         font-size: 40px;
         letter-spacing: 0.2px;
         padding: 0 10px;
-        background: linear-gradient(180deg, transparent 65%, #EBDED5 0);
+        background: linear-gradient(180deg, transparent 65%, #ebded5 0);
         background-size: 100% 100%;
         background-repeat: no-repeat;
         box-decoration-break: clone;
         -webkit-box-decoration-break: clone;
 
-
-        @include respond-below(lg){
+        @include respond-below(lg) {
           font-size: 28px;
           line-height: 30px;
           letter-spacing: 0.14px;
@@ -106,7 +101,7 @@
         margin-top: 18px;
         text-transform: uppercase;
 
-        @include respond-below(lg){
+        @include respond-below(lg) {
           font-size: 12px;
           line-height: 22px;
           letter-spacing: 0.42px;
@@ -117,13 +112,14 @@
     .content {
       flex: 1;
       display: flex;
-      align-items: center;
+      // align-items: center;
+      flex-direction: column;
       border-left: 1px solid var(--color-black);
       padding-left: 58px;
       font-size: 18px;
       line-height: 26px;
 
-      @include respond-below(lg){
+      @include respond-below(lg) {
         font-size: 16px;
         line-height: 23px;
         padding-left: 30px;

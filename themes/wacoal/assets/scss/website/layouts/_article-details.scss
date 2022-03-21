@@ -2358,6 +2358,7 @@
       position: relative;
       width: 435px;
       margin-bottom: 80px;
+      flex-wrap: wrap;
 
       @include respond-below(sm) {
         margin: 40px 0 48px;
@@ -2435,6 +2436,7 @@
 
       .timeline {
         margin-bottom: 0;
+        flex-wrap: wrap;
       }
     }
   }
