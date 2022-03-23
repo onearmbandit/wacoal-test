@@ -107,6 +107,14 @@
           letter-spacing: 0.42px;
         }
       }
+
+      .wp-block-group__inner-container {
+        @include respond-below(md) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
     }
 
     .content {
@@ -118,6 +126,7 @@
       padding-left: 58px;
       font-size: 18px;
       line-height: 26px;
+      justify-content: center;
 
       @include respond-below(lg) {
         font-size: 16px;
@@ -140,6 +149,14 @@
       a {
         @include ProximaNova-Bold;
         text-decoration: underline;
+      }
+    }
+
+    & > .wp-block-group__inner-container {
+      display: flex;
+
+      @include respond-below(xs) {
+        flex-direction: column;
       }
     }
   }

@@ -44,10 +44,12 @@
     width: 720px;
     height: 720px;
     background-size: cover;
+    flex-basis: 36.8%;
 
     @include respond-below(lg) {
       width: 512px;
       height: 512px;
+      flex-basis: 50%;
     }
 
     @include respond-below(md) {
@@ -58,6 +60,7 @@
     @include respond-below(sm) {
       width: 375px;
       height: 375px;
+      margin: auto;
     }
   }
 
@@ -88,6 +91,7 @@
     flex: 1;
     padding: 0 135px;
     max-width: 720px;
+    flex-basis: 50%;
 
     @include respond-below(lg) {
       padding: 0 58px;
