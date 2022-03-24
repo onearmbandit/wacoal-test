@@ -70,6 +70,10 @@
         }
       }
     }
+
+    .wp-block-column {
+      flex-basis: 100% !important;
+    }
   }
 
   &--inner {
