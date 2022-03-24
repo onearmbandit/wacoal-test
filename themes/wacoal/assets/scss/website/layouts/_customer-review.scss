@@ -99,10 +99,11 @@
     @include respond-below(lg) {
       padding: 0 24px;
       max-width: 382px;
+      margin-left: 0 !important;
     }
 
     @include respond-below(md) {
-      padding: 0 40px;
+      // padding: 0 40px;
       margin-bottom: 35px;
       max-width: 332px;
     }
@@ -193,4 +194,9 @@
       flex-basis: calc(33.33% - 1em) !important;
     }
   }
+}
+
+.wp-block-columns.is-not-stacked-on-mobile
+  > .wp-block-column:not(:first-child).image-wrapper.right {
+  margin-left: 0 !important;
 }

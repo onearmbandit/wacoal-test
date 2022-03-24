@@ -3,12 +3,11 @@
   width: 30%;
 }
 
-
 /* Quote block Css */
-.product-quote .product-quote--image{
+.product-quote .product-quote--image {
   width: 30%;
 }
-.product-quote .product-quote--content{
+.product-quote .product-quote--content {
   font-size: 1.4em;
 }
 
@@ -46,12 +45,12 @@
 /*Video block CSS*/
 .video-full-width,
 .video-full-width .video-caption {
-  width:100%;
+  width: 100%;
 }
 
 /*Video Image and Video block CSS*/
 .video-image--wrapper {
-  width:100%;
+  width: 100%;
 }
 
 /*Horizonatal line block CSS*/
@@ -64,7 +63,7 @@
   width: 80%;
 }
 
-.wp-block.list-text-image .image-name img{
+.wp-block.list-text-image .image-name img {
   width: 380px;
   height: 380px;
 }
@@ -79,10 +78,16 @@
 }
 
 .product-quote--content:after {
-    margin-top: 130px !important;
-    margin-left: 70% !important;
+  margin-top: 130px !important;
+  margin-left: 70% !important;
 }
 
-.wp-block-buttons>.wp-block-button.has-custom-font-size .wp-block-button__link {
+.wp-block-buttons
+  > .wp-block-button.has-custom-font-size
+  .wp-block-button__link {
   background: inherit !important;
+}
+
+.customer-review .review-content {
+  flex-basis: 70% !important;
 }
