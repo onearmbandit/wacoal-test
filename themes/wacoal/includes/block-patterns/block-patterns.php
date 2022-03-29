@@ -55,7 +55,30 @@ function Wacoal_register_block_patterns() {
 		'list-number-title-subhead-copy',
 		'list-title-statement-body-left-image',
 		'list-title-statement-body-right-image',
-		'image-gallery-full-bleed'
+		'image-gallery-full-bleed',
+		'subhead-description',
+		'benton-text-left-image',
+		'benton-text-right-image',
+		'questions-answer-left-image',
+		'questions-answer-right-image',
+		'questions-answer',
+		'image-full-bleed',
+		'timeline',
+		'list-numbered-center-text',
+		'list-numbered-right-text',
+		'list-numbered-left-text',
+		'myth-list-numbered-left-text',
+		'myth-list-numbered-right-text',
+		'reminder',
+		'tip',
+		'list-left-image-title-button',
+		'list-right-image-title-button',
+		'banner-large-image',
+		'banner-medium-image',
+		'banner-small-image',
+		'image-medium',
+		'list-benton-title-button-bordered-left-image',
+		'list-benton-title-button-bordered-right-image'
 	);
 
 	/**
