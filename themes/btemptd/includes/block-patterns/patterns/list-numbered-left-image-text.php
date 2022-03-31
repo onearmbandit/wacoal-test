@@ -11,7 +11,7 @@ return array(
  <div class="wp-block-group three-reason--wrapper"><!-- wp:columns {"className":"reason-box odd img-left"} -->
  <div class="wp-block-columns reason-box odd img-left"><!-- wp:column {"className":"reason-box\u002d\u002dcontent box-shadow-right"} -->
  <div class="wp-block-column reason-box--content box-shadow-right"><!-- wp:paragraph {"className":"reason-box\u002d\u002dcontent__number"} -->
- <p class="reason-box--content__number">4.</p>
+ <p class="reason-box--content__number">1.</p>
  <!-- /wp:paragraph -->
 
  <!-- wp:paragraph {"className":"reason-box\u002d\u002dcontent__para"} -->
