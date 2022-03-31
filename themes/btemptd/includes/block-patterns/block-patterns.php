@@ -46,7 +46,23 @@ function Btemptd_register_block_patterns() {
 		'customer-review',
 		'vertical-video-image',
 		'vertical-video',
-		'full-video'
+		'full-video',
+		'left-image-text-colorblock',
+		'right-image-text-colorblock',
+		'list-left-image-text-hover-box',
+		'list-right-image-text-hover-box',
+		'body-outro-paragraph',
+		'text-hover-box',
+		'image-full-bleed',
+		'list-numbered-left-image-text',
+		'list-numbered-right-image-text',
+		'product-gallery',
+		'list-left-image-italic-title-subhead-body',
+		'list-right-image-italic-title-subhead-body',
+		'banner-large',
+		'banner-medium',
+		'banner-small',
+		'image-body'
 	);
 
 	/**
