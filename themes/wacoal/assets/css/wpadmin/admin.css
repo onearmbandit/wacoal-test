@@ -109,3 +109,15 @@
   > .wp-block-column:not(:first-child).content {
   margin-left: 50px;
 }
+
+.list-text-format .list-box.list-box-one .list-box--number,
+.list-text-format .list-box.list-box-two .list-box--number,
+.list-text-format .list-box.list-box-three .list-box--number {
+  flex-basis: auto;
+}
+
+.list-text-format .list-box--number span,
+.list-text-format .list-box--number p {
+  font-size: 200px;
+  line-height: 0;
+}
