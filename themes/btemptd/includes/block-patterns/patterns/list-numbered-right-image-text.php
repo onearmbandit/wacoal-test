@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List - Numbered Right Image + Text', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"three-reason"} -->
  <section class="wp-block-group three-reason"><!-- wp:group {"className":"three-reason\u002d\u002dwrapper"} -->

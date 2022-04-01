@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Banner – Large', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"internal-banner"} -->
  <section class="wp-block-group internal-banner"><!-- wp:image {"sizeSlug":"large","className":"banner-wrapper big-banner"} -->

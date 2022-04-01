@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Body Outro Paragraph', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"body-outro-para"} -->
 	<section class="wp-block-group body-outro-para"><!-- wp:group {"className":"body-outro-para\u002d\u002dwrapper"} -->

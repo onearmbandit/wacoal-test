@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image - Full Bleed', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"full-bleed-image"} -->
  <section class="wp-block-group full-bleed-image"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom"} -->

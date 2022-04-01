@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List - Right Image + Text Hover Box', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"image-text-hover"} -->
 	<section class="wp-block-group image-text-hover"><!-- wp:columns {"className":"image-text-hover\u002d\u002dwrapper img-right"} -->

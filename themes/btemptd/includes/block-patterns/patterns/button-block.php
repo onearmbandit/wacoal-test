@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Button Block', 'btemptd' ),
-	'categories' => array( 'buttons' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"button-block"} -->
  <section class="wp-block-group button-block"><!-- wp:buttons {"className":"button-block\u002d\u002dwrapper","layout":{"type":"flex","justifyContent":"center"}} -->

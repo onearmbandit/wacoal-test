@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Left Image + Text Colorblock', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"seasonless-style"} -->
 	<section class="wp-block-group seasonless-style"><!-- wp:group {"className":"seasonless-style\u002d\u002dwrapper"} -->

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List - Left Image + Italics Title + Subhead + Body', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"italics-title"} -->
  <section class="wp-block-group italics-title"><!-- wp:columns {"className":"italics-title\u002d\u002dwrapper img-left"} -->

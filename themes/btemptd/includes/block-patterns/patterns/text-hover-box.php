@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Text Hover Box', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"text-hover-box"} -->
 	<section class="wp-block-group text-hover-box"><!-- wp:group {"className":"text-hover-box\u002d\u002dwrapper"} -->

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Video Vertical with image', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'custom' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section"} -->
  <section class="wp-block-group"><!-- wp:columns {"verticalAlignment":"center","className":"video-image\u002d\u002dwrapper"} -->

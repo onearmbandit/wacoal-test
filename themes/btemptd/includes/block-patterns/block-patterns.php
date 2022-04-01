@@ -10,7 +10,7 @@
  */
 function Btemptd_register_block_patterns() {
 	$block_pattern_categories = array(
-		'btemptd' => array( 'label' => __( 'Btemptd', 'btemptd' ) ),
+		'btemptd' => array( 'label' => __( 'Btemptd Patterns', 'btemptd' ) ),
 	);
 
 	/**
