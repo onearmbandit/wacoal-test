@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List - Title + Body + Image + Bullets ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"title-body-image"} -->
  <section class="wp-block-group title-body-image"><!-- wp:image {"sizeSlug":"large","className":"image\u002d\u002dwrapper mobile"} -->

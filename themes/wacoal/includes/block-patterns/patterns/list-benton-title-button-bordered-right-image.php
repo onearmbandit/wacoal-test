@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List - Benton Title + Button + Bordered Right Image', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"block-bordered-image"} -->
  <section class="wp-block-group block-bordered-image"><!-- wp:group {"className":"block-bordered-image\u002d\u002dwrapper"} -->

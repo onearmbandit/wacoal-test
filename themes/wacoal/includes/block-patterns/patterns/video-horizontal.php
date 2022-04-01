@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Video Horizontal', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"video-full-width"} -->
  <section class="wp-block-group video-full-width"><!-- wp:embed {"url":"https://www.youtube.com/watch?v=4QCxwSEuHYg","type":"video","providerNameSlug":"youtube","responsive":true,"className":"video-full-width\u002d\u002dwrapper"} -->

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Link Button', 'wacoal' ),
-	'categories' => array( 'buttons' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"link-button"} -->
  <section class="wp-block-group link-button"><!-- wp:buttons {"className":"link-button\u002d\u002dwrapper","layout":{"type":"flex","justifyContent":"center"}} -->

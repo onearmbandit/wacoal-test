@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Reminder', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"reminder-note"} -->
  <section class="wp-block-group reminder-note"><!-- wp:group {"className":"reminder-note\u002d\u002dwrapper"} -->

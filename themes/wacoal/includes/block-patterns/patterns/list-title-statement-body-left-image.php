@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List - Title + Statement + Body + Image (Left) ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"list-statment-image"} -->
  <section class="wp-block-group list-statment-image"><!-- wp:group {"className":"list-statment-image\u002d\u002dwrapper img-left"} -->

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Pull Quote With Image ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"product-quote"} -->
  <section class="wp-block-group product-quote"><!-- wp:columns {"verticalAlignment":"center","className":"product-quote\u002d\u002dwrapper"} -->

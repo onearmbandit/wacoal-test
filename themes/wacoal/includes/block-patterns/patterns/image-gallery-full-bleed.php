@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image Gallery - Full Bleed ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"full-width-slider\u002d\u002dwrapper"} -->
 	<section class="wp-block-group full-width-slider--wrapper"><!-- wp:columns {"className":"swiper-container article-details-slider"} -->

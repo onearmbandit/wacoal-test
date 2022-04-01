@@ -10,7 +10,7 @@
  */
 function Wacoal_register_block_patterns() {
 	$block_pattern_categories = array(
-		'wacoal' => array( 'label' => __( 'Wacoal', 'wacoal' ) ),
+		'wacoal' => array( 'label' => __( 'Wacoal Patterns', 'wacoal' ) ),
 	);
 
 	/**

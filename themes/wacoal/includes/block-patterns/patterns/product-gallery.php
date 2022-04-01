@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'product Gallery', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"product-gallery"} -->
  <section class="wp-block-group product-gallery"><!-- wp:columns {"className":"product-gallery\u002d\u002dwrapper"} -->

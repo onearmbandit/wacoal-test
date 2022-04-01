@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List- Text + Right Image + Tip', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"text-image-tip"} -->
 	<section class="wp-block-group text-image-tip"><!-- wp:columns {"className":"text-image-tip\u002d\u002dwrapper img-right"} -->
