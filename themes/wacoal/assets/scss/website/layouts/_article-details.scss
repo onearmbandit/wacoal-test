@@ -2118,6 +2118,16 @@
         }
       }
     }
+
+    &.wp-block-column {
+      @include respond-below(sm) {
+        background: transparent;
+
+        .list-content {
+          background: var(--color-feat-article-bg);
+        }
+      }
+    }
   }
   &.desktop-ui {
     display: none;

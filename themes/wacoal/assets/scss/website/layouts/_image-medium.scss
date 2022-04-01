@@ -24,6 +24,14 @@
     @include respond-below(sm) {
       max-width: 355px;
     }
+
+    &.wp-block-group {
+      .image-medium--content {
+        @include respond-below(md) {
+          margin: 35px auto 0;
+        }
+      }
+    }
   }
 
   &--image {
