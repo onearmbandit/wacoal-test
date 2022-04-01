@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Benton Text + Left Image', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"benton-text-block benton-text-block\u002d\u002dwrapper"} -->
  <section class="wp-block-group benton-text-block benton-text-block--wrapper"><!-- wp:columns {"verticalAlignment":null,"className":"benton-text-block\u002d\u002dinner img-left"} -->

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Timeline ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"donation"} -->
  <section class="wp-block-group donation"><!-- wp:columns {"className":"donation\u002d\u002dwrapper"} -->

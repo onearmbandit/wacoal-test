@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Subhead Description', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"subhead-description"} -->
  <section class="wp-block-group subhead-description"><!-- wp:group {"className":"subhead-description\u002d\u002dwrapper"} -->

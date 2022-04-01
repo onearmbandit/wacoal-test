@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Image + Text + Image', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"image-text-image"} -->
  <section class="wp-block-group image-text-image"><!-- wp:columns {"className":"image-text-image\u002d\u002dwrapper"} -->

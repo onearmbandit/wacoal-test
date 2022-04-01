@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Myth Style List - Numbered Right Text Only', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"list-text-format"} -->
 	<section class="wp-block-group list-text-format"><!-- wp:group {"className":"list-text-format\u002d\u002dwrapper"} -->

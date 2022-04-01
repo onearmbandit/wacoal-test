@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Question Answer', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"article-questions"} -->
  <section class="wp-block-group article-questions"><!-- wp:columns {"verticalAlignment":"center","className":"article-questions\u002d\u002dwrapper"} -->

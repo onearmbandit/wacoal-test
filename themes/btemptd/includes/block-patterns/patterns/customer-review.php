@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Customer Review', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"customer-review"} -->
  <section class="wp-block-group customer-review"><!-- wp:columns {"isStackedOnMobile":false,"className":"customer-review\u002d\u002dwrapper"} -->

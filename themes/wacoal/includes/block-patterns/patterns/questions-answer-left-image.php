@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Question Answer + Left Image', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"article-questions even-sequence img-left"} -->
  <section class="wp-block-group article-questions even-sequence img-left"><!-- wp:columns {"verticalAlignment":"center","className":"article-questions\u002d\u002dwrapper"} -->

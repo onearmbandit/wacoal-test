@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Right Image Quote Button', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"image-quote-button img-right"} -->
 	<section class="wp-block-group image-quote-button img-right"><!-- wp:columns {"verticalAlignment":"center","className":"image-quote-button\u002d\u002dwrapper"} -->

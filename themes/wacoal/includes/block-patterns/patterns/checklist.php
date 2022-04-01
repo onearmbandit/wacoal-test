@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Checklist ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"article\u002d\u002dpara"} -->
  <section class="wp-block-group article--para"><!-- wp:list -->

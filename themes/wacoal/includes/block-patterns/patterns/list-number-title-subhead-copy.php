@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'List – Number + Title + Subhead + Copy ', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"number-title"} -->
  <section class="wp-block-group number-title"><!-- wp:group {"className":"number-title\u002d\u002dwrapper"} -->

@@ -1,14 +1,14 @@
 <?php
 /**
- * Banner Large Image
+ * Banner – Large
  */
 return array(
-	'title'      => __( 'Banner Large Image', 'wacoal' ),
-	'categories' => array( 'wacoal' ),
+	'title'      => __( 'Banner – Large', 'btemptd' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"internal-banner"} -->
  <section class="wp-block-group internal-banner"><!-- wp:image {"sizeSlug":"large","className":"banner-wrapper big-banner"} -->
- <figure class="wp-block-image size-large banner-wrapper big-banner"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2021/08/full-width-slider-img-1.png" alt=""/></figure>
+ <figure class="wp-block-image size-large banner-wrapper big-banner"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2021/07/HeroBanner.png" alt=""/></figure>
  <!-- /wp:image --></section>
  <!-- /wp:group -->',
 );

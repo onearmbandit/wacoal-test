@@ -3,7 +3,7 @@
  * Pull Quote With Progressbar */
 return array(
 	'title'      => __( 'Pull Quote With Progressbar', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"donation"} -->
  <section class="wp-block-group donation"><!-- wp:columns {"className":"donation\u002d\u002dwrapper"} -->
