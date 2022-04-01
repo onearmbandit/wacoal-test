@@ -3309,8 +3309,9 @@
       height: calc(100% - 120px);
       top: 25px;
 
+      .wp-block-button,
       a {
-        // display: none;
+        display: none;
       }
     }
 
