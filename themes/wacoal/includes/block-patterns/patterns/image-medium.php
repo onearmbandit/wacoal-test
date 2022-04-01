@@ -8,8 +8,8 @@ return array(
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"image-medium"} -->
  <section class="wp-block-group image-medium"><!-- wp:group {"className":"image-medium\u002d\u002dwrapper"} -->
- <div class="wp-block-group image-medium--wrapper"><!-- wp:image {"width":840,"height":488,"sizeSlug":"large","linkDestination":"custom","className":"image-caption"} -->
- <figure class="wp-block-image size-large is-resized image-caption"><a href="https://www.wacoal-america.com/blog/"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2021/08/perfect_solution_desktop@2x-1.jpeg" alt="" width="840" height="488"/></a><figcaption>Lorem ipsum dolor sit amet,</figcaption></figure>
+ <div class="wp-block-group image-medium--wrapper"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"image-caption"} -->
+ <figure class="wp-block-image size-large is-resized image-medium--image"><a href="https://www.wacoal-america.com/blog/"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2021/08/perfect_solution_desktop@2x-1.jpeg" alt=""/></a><figcaption>Lorem ipsum dolor sit amet,</figcaption></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"image-medium\u002d\u002dcontent"} -->
