@@ -22,7 +22,7 @@ return array(
 
  <!-- wp:column {"verticalAlignment":"center","className":"video-image\u002d\u002dwrapper__right"} -->
  <div class="wp-block-column is-vertically-aligned-center video-image--wrapper__right"><!-- wp:image {"align":"center","id":188,"sizeSlug":"full","linkDestination":"none"} -->
- <div class="wp-block-image"><figure class="aligncenter size-full"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_BWOWD_Pushup.jpeg" alt="" class="wp-image-188"/><figcaption>LOREM IPSUM DOLOR SIT AMET,</figcaption></figure></div>
+ <div class="wp-block-image"><figure class="aligncenter size-full"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/vertical-video-image.jpeg" alt="" class="wp-image-188"/><figcaption>LOREM IPSUM DOLOR SIT AMET,</figcaption></figure></div>
  <!-- /wp:image --></div>
  <!-- /wp:column --></div>
  <!-- /wp:columns --></section>

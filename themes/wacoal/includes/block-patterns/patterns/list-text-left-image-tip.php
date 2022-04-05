@@ -10,7 +10,7 @@ return array(
  <section class="wp-block-group text-image-tip"><!-- wp:columns {"className":"text-image-tip\u002d\u002dwrapper img-left"} -->
  <div class="wp-block-columns text-image-tip--wrapper img-left"><!-- wp:column {"className":"image"} -->
  <div class="wp-block-column image"><!-- wp:image {"sizeSlug":"large"} -->
- <figure class="wp-block-image size-large"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/12/4.png" alt=""/></figure>
+ <figure class="wp-block-image size-large"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/list-text-left-image-tip.png" alt=""/></figure>
  <!-- /wp:image --></div>
  <!-- /wp:column -->
 

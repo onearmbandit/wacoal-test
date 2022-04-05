@@ -10,7 +10,7 @@ return array(
 	<section class="wp-block-group list-text-image"><!-- wp:columns {"verticalAlignment":"center","className":"list-text-image\u002d\u002dwrapper img-left"} -->
 	<div class="wp-block-columns are-vertically-aligned-center list-text-image--wrapper img-left"><!-- wp:column {"verticalAlignment":"center","width":""} -->
 	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
-	<figure class="wp-block-image size-large image-name"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_BENTICING_Strapless.jpeg" alt=""/></figure>
+	<figure class="wp-block-image size-large image-name"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/left-image-text.jpeg" alt=""/></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:paragraph {"className":"image-name"} -->

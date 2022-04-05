@@ -28,7 +28,7 @@ return array(
 
  <!-- wp:column {"verticalAlignment":"center","className":"article-questions\u002d\u002dimage"} -->
  <div class="wp-block-column is-vertically-aligned-center article-questions--image"><!-- wp:image {"sizeSlug":"large"} -->
- <figure class="wp-block-image size-large"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/12/2.png" alt=""/></figure>
+ <figure class="wp-block-image size-large"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/qa-right.png" alt=""/></figure>
  <!-- /wp:image --></div>
  <!-- /wp:column --></div>
  <!-- /wp:columns --></section>

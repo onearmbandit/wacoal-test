@@ -11,7 +11,7 @@ return array(
 	<div class="wp-block-group seasonless-style--wrapper"><!-- wp:columns {"className":"box img-right"} -->
 	<div class="wp-block-columns box img-right"><!-- wp:column {"className":"box\u002d\u002dleft"} -->
 	<div class="wp-block-column box--left"><!-- wp:image {"sizeSlug":"large","linkDestination":"none"} -->
-	<figure class="wp-block-image size-large"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_FF_WF_Balconette.jpeg" alt=""/></figure>
+	<figure class="wp-block-image size-large"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/right-image-text-colorblock.jpeg" alt=""/></figure>
 	<!-- /wp:image -->
 
 	<!-- wp:paragraph {"className":"image-caption"} -->

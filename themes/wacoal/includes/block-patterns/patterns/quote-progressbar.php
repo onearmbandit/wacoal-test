@@ -56,7 +56,7 @@ return array(
 
  <!-- wp:group {"className":"quote-image"} -->
  <div class="wp-block-group quote-image"><!-- wp:image {"sizeSlug":"large","className":"quote-wrapper"} -->
- <figure class="wp-block-image size-large quote-wrapper"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/download-4-1.png" alt=""/></figure>
+ <figure class="wp-block-image size-large quote-wrapper"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/quote-image.png" alt=""/></figure>
  <!-- /wp:image --></div>
  <!-- /wp:group -->
 

@@ -10,7 +10,7 @@ return array(
 	<section class="wp-block-group image-quote-button img-left"><!-- wp:columns {"verticalAlignment":"center","className":"image-quote-button\u002d\u002dwrapper "} -->
 	<div class="wp-block-columns are-vertically-aligned-center image-quote-button--wrapper"><!-- wp:column {"verticalAlignment":"center","width":"","className":"image-wrapper"} -->
 	<div class="wp-block-column is-vertically-aligned-center image-wrapper"><!-- wp:image {"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
-	<figure class="wp-block-image size-large image-name"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/10/BT_ERICALUOO_596X596.png" alt=""/></figure>
+	<figure class="wp-block-image size-large image-name"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/image-quote-button-left.png" alt=""/></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column -->
 
