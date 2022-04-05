@@ -330,7 +330,7 @@
     }
 
     &--image {
-      max-width: calcRem(154);
+      max-width: calcRem(140);
       height: calcRem(205);
       width: 100%;
 
@@ -455,6 +455,10 @@
           font-size: get-vw(20px);
           color: var(--color-text);
         }
+      }
+
+      &.wp-block-columns {
+        margin-top: 0;
       }
     }
   }
