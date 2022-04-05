@@ -8,7 +8,7 @@ return array(
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"title-body-image"} -->
  <section class="wp-block-group title-body-image"><!-- wp:image {"sizeSlug":"large","className":"image\u002d\u002dwrapper mobile"} -->
- <figure class="wp-block-image size-large image--wrapper mobile"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/product-gallery-image.png" alt=""/><figcaption>This is the Image Caption</figcaption></figure>
+ <figure class="wp-block-image size-large image--wrapper mobile"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/list-title-body-image-bullets.png" alt=""/><figcaption>This is the Image Caption</figcaption></figure>
  <!-- /wp:image -->
 
  <!-- wp:group {"className":"wrapper"} -->
@@ -25,7 +25,7 @@ return array(
 
  <!-- wp:group {"className":"image-bullets"} -->
  <div class="wp-block-group image-bullets"><!-- wp:image {"sizeSlug":"large","className":"image\u002d\u002dwrapper image-caption desktop"} -->
- <figure class="wp-block-image size-large image--wrapper image-caption desktop"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/product-gallery-image.png" alt=""/><figcaption>This is the Image Caption</figcaption></figure>
+ <figure class="wp-block-image size-large image--wrapper image-caption desktop"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/list-title-body-image-bullets.png" alt=""/><figcaption>This is the Image Caption</figcaption></figure>
  <!-- /wp:image -->
 
  <!-- wp:group {"className":"bullets\u002d\u002dwrapper"} -->

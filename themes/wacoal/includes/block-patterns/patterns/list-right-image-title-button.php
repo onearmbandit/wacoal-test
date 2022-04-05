@@ -30,7 +30,7 @@ return array(
 
  <!-- wp:group {"className":"list-image"} -->
  <div class="wp-block-group list-image"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom"} -->
- <figure class="wp-block-image size-large"><a href="https://www.wacoal-america.com/blog"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/12/1.png" alt=""/></a></figure>
+ <figure class="wp-block-image size-large"><a href="https://www.wacoal-america.com/blog"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/list-right-image-title-button.png" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"verticle-text"} -->

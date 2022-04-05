@@ -10,7 +10,7 @@ return array(
  <section class="wp-block-group product-gallery"><!-- wp:columns {"className":"product-gallery\u002d\u002dwrapper"} -->
  <div class="wp-block-columns product-gallery--wrapper"><!-- wp:column {"className":"product-gallery\u002d\u002dbox"} -->
  <div class="wp-block-column product-gallery--box"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"product-gallery\u002d\u002dbox__image"} -->
- <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/Article-7_ArticlePreviewImage_1920_893x630.png" alt=""/></a></figure>
+ <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/product-gallery-1.png" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"product-gallery\u002d\u002dbox__title"} -->
@@ -24,7 +24,7 @@ return array(
 
  <!-- wp:column {"className":"product-gallery\u002d\u002dbox"} -->
  <div class="wp-block-column product-gallery--box"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"product-gallery\u002d\u002dbox__image"} -->
- <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_FF_WF_Balconette.jpeg" alt=""/></a></figure>
+ <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/product-gallery-2.jpeg" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"product-gallery\u002d\u002dbox__title"} -->
@@ -38,7 +38,7 @@ return array(
 
  <!-- wp:column {"className":"product-gallery\u002d\u002dbox"} -->
  <div class="wp-block-column product-gallery--box"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"product-gallery\u002d\u002dbox__image"} -->
- <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_MODEL_560X560.jpeg" alt=""/></a></figure>
+ <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/product-gallery-3.png" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"product-gallery\u002d\u002dbox__title"} -->
@@ -52,7 +52,7 @@ return array(
 
  <!-- wp:column {"className":"product-gallery\u002d\u002dbox"} -->
  <div class="wp-block-column product-gallery--box"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"product-gallery\u002d\u002dbox__image"} -->
- <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/Article-1_ArticlePreviewImage_893x630.png" alt=""/></a></figure>
+ <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/product-gallery-4.png" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"product-gallery\u002d\u002dbox__title"} -->

@@ -9,7 +9,7 @@ return array(
 	'content'    => '<!-- wp:group {"tagName":"section","className":"image-medium"} -->
  <section class="wp-block-group image-medium"><!-- wp:group {"className":"image-medium\u002d\u002dwrapper"} -->
  <div class="wp-block-group image-medium--wrapper"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"image-medium\u002d\u002dimage"} -->
- <figure class="wp-block-image size-large image-medium--image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/Article-13_ArticlePreviewImage_1920_893x630.png" alt=""/></a></figure>
+ <figure class="wp-block-image size-large image-medium--image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/image-body.png" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"image-caption"} -->

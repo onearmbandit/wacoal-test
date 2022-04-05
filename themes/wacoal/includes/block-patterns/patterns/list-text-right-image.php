@@ -26,7 +26,7 @@ return array(
 
 	<!-- wp:column {"verticalAlignment":"center"} -->
 	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"large","className":"image-name"} -->
-	<figure class="wp-block-image size-large image-name"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/minimizer_desktop.jpeg" alt=""/><figcaption>Body Base® Shorty Panty</figcaption></figure>
+	<figure class="wp-block-image size-large image-name"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/list-text-right-image.jpeg" alt=""/><figcaption>Body Base® Shorty Panty</figcaption></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></section>

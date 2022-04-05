@@ -10,7 +10,7 @@ return array(
  <section class="wp-block-group benton-text-block benton-text-block--wrapper"><!-- wp:columns {"verticalAlignment":null,"className":"benton-text-block\u002d\u002dinner img-left"} -->
  <div class="wp-block-columns benton-text-block--inner img-left"><!-- wp:column {"verticalAlignment":"center","className":"image-wrapper"} -->
  <div class="wp-block-column is-vertically-aligned-center image-wrapper"><!-- wp:image {"sizeSlug":"large"} -->
- <figure class="wp-block-image size-large"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/download-4-1.png" alt=""/></figure>
+ <figure class="wp-block-image size-large"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/benton-text-left-image.png" alt=""/></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"image-caption"} -->

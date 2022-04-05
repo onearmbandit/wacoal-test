@@ -10,7 +10,7 @@ return array(
  <section class="wp-block-group image-text-image"><!-- wp:columns {"className":"image-text-image\u002d\u002dwrapper"} -->
  <div class="wp-block-columns image-text-image--wrapper"><!-- wp:column {"className":"image-title"} -->
  <div class="wp-block-column image-title"><!-- wp:image {"sizeSlug":"large"} -->
- <figure class="wp-block-image size-large"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_FF_WF-T-Shirt-Bra.jpeg" alt=""/></figure>
+ <figure class="wp-block-image size-large"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/left-image-text-image.jpeg" alt=""/></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"title"} -->
@@ -30,7 +30,7 @@ return array(
 
  <!-- wp:column {"className":"image-title"} -->
  <div class="wp-block-column image-title"><!-- wp:image {"sizeSlug":"large"} -->
- <figure class="wp-block-image size-large"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_WIREFREE_FF_LACE_560X560.jpeg" alt=""/></figure>
+ <figure class="wp-block-image size-large"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/right-image-text-image.jpeg" alt=""/></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"title"} -->

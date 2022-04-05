@@ -26,7 +26,7 @@ return array(
 
  <!-- wp:column {"className":"right-box"} -->
  <div class="wp-block-column right-box"><!-- wp:image {"sizeSlug":"large","className":"image-wrapper"} -->
- <figure class="wp-block-image size-large image-wrapper"><img src="https://btemptdblog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/sites/3/2020/11/BT_BENTICING_Strapless.jpeg" alt=""/></figure>
+ <figure class="wp-block-image size-large image-wrapper"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/list-right-image-italic-title-subhead-body.jpeg" alt=""/></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"image-title"} -->
