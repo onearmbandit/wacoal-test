@@ -40,7 +40,7 @@ foreach ( $slider_blogs_posts as $p ) {
         $post_not_in[]=$p->ID;
     }
 
-$featured_blogs       = get_field('featured_posts');
+$featured_blogs       = get_field('featured_posts', 'options');
 $featured_blogs_ids   = ! empty($featured_blogs) ? array_values($featured_blogs) : array();
 
 $featured_blogs_posts = Wacoal_Query_posts(
@@ -63,7 +63,7 @@ foreach ( $featured_blogs_ids as $featured_blog_id ) {
     }
 }
 
-$static_section = get_field('static_section');
+$static_section = get_field('static_section', 'options');
 $recent_posts = Wacoal_Query_posts(
     array(
         'post_type'      => array('post'),
@@ -75,8 +75,10 @@ $recent_posts = Wacoal_Query_posts(
         'post_status'    => 'publish'
     )
 );
-
-$exclude_post = 4 + count($featured_blogs);
+if (is_countable($featured_blogs) && count($featured_blogs) > 0) {
+    $featured_blogs_count = count($featured_blogs);
+}
+$exclude_post = 4 + $featured_blogs_count;
 
 require locate_template('template-parts/front-page.php');
 
