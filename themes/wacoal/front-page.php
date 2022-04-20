@@ -1,7 +1,7 @@
 <?php
 /**
  * Front page
- * php version 7.4
+ * php version 8.0
  *
  * @category Wacoal
  * @package  Wacoal
