@@ -197,7 +197,7 @@
 </section>
 <?php endif;?>
 
-<?php if(have_rows($static_section) || $static_section['image'] ) : ?>
+
 
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
@@ -258,7 +258,7 @@
     </div>
 </section>
 
-<?php endif; ?>
+
 
 <?php if ($featured_blogs && !empty($featured_blogs) ) {?>
 <section class="feature-article-desktop">
