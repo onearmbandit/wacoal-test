@@ -38,7 +38,7 @@ return array(
 
  <!-- wp:column {"className":"product-gallery\u002d\u002dbox"} -->
  <div class="wp-block-column product-gallery--box"><!-- wp:image {"sizeSlug":"large","linkDestination":"custom","className":"product-gallery\u002d\u002dbox__image"} -->
- <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/product-gallery-3.png" alt=""/></a></figure>
+ <figure class="wp-block-image size-large product-gallery--box__image"><a href="https://btemptd.wacoal-america.com/blog/"><img src="https://btemptd.wacoal-america.com/blog/wp-content/themes/btemptd/assets/images/pattern-images/product-gallery-3.jpeg" alt=""/></a></figure>
  <!-- /wp:image -->
 
  <!-- wp:paragraph {"className":"product-gallery\u002d\u002dbox__title"} -->
