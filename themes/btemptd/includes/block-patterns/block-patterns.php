@@ -54,15 +54,15 @@ function Btemptd_register_block_patterns() {
 		'body-outro-paragraph',
 		'text-hover-box',
 		'image-full-bleed',
-		'list-numbered-left-image-text',
-		'list-numbered-right-image-text',
 		'product-gallery',
 		'list-left-image-italic-title-subhead-body',
 		'list-right-image-italic-title-subhead-body',
 		'banner-large',
 		'banner-medium',
 		'banner-small',
-		'image-body'
+		'image-body',
+		'numbered-image-left-text',
+		'numbered-image-right-text'
 	);
 
 	/**

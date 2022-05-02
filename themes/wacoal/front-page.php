@@ -75,10 +75,8 @@ $recent_posts = Wacoal_Query_posts(
         'post_status'    => 'publish'
     )
 );
-if (is_countable($featured_blogs) && count($featured_blogs) > 0) {
-    $featured_blogs_count = count($featured_blogs);
-}
-$exclude_post = 4 + $featured_blogs_count;
+
+$exclude_post = 4 + count($featured_blogs);
 
 require locate_template('template-parts/front-page.php');
 
