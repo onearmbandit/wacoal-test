@@ -62,7 +62,7 @@ function Btemptd_register_block_patterns() {
 		'banner-small',
 		'image-body',
 		'numbered-image-left-text',
-		'numbered-image-right-text'
+		'numbered-image-right-text',
 	);
 
 	/**
