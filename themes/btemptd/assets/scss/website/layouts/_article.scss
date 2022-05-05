@@ -2634,6 +2634,11 @@
         width: 342px;
         height: 342px;
       }
+
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
     }
 
     .image-name {
@@ -2868,6 +2873,16 @@
           text-decoration: underline;
         }
       }
+
+      .wp-block-group__inner-container {
+        @include respond-above(lg) {
+          display: flex;
+        }
+      }
+    }
+
+    .wp-block-buttons {
+      justify-content: flex-start;
     }
   }
 }
