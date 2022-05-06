@@ -170,3 +170,20 @@ section.article--para {
   width: 840px !important;
   height: 135px !important;
 }
+
+.list-number-tip .image-title .image-block {
+  width: 400px;
+  height: 400px;
+}
+
+.list-number-tip .content .number-wrapper {
+  left: -150px;
+}
+
+.list-number-tip .content,
+.list-number-tip--wrapper.img-right .content {
+  padding: 0 20px;
+}
+.list-number-tip--wrapper.img-right .content .number-wrapper {
+  right: -120px;
+}
