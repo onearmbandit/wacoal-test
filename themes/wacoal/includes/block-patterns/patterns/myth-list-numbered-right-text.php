@@ -15,7 +15,7 @@ return array(
 	<!-- /wp:paragraph -->
 
 	<!-- wp:heading -->
-	<h2>List Header</h2>
+	<h2>Myth</h2>
 	<!-- /wp:heading --></div>
 	<!-- /wp:column -->
 

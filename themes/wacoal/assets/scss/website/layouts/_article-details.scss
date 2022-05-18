@@ -1389,7 +1389,7 @@
 
     &.myth-box {
       .list-box--number {
-        span {
+        span,p {
           @include BentonModDisp-BoldItalic;
           color: var(--color-error);
           opacity: 0.14;
