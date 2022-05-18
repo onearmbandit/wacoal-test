@@ -1,9 +1,9 @@
 <?php
 /**
- * Myth Style List - Numbered Right Text Only
+ * List - Numbered Right Text Only
  */
 return array(
-	'title'      => __( 'Myth Style List - Numbered Right Text Only', 'wacoal' ),
+	'title'      => __( 'List - Numbered Right Text Only', 'wacoal' ),
 	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"list-text-format"} -->
