@@ -2291,6 +2291,10 @@
       line-height: 26px;
       letter-spacing: 0.45px;
 
+      .content {
+        width: 100%;
+      }
+
       @include respond-below(md) {
         font-size: 15px;
         line-height: 22px;
