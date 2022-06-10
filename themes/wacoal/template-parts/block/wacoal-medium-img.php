@@ -18,7 +18,9 @@
         <a href="<?php echo esc_url($img_link);?>" <?php if($new_tab == true) : echo "target='_blank'";
        endif;?>>
     <?php endif;?>
-            <div class="image-medium--image" style="background-image:url(<?php echo  esc_url($block_image_url); ?>">
+            <div class="image-medium--image">
+                <img src="<?php echo  esc_url($block_image_url); ?>"
+                         alt="image-medium--image" />
             </div>
         <?php if(!empty($img_link)) :?>
         </a>
