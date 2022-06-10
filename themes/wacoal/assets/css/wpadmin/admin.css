@@ -124,7 +124,7 @@
 
 .fixes-list--boxcontent,
 .fixes-list--box.img-right .fixes-list--boxcontent {
-  padding: 0 80px;
+  padding: 0 40px;
 }
 
 .fixes-list--boxcontent .list-image {
@@ -177,4 +177,31 @@
 
 .block-bordered-image .content .wp-block-buttons {
   justify-content: center;
+}
+
+.product-gallery--box__image {
+  height: 200px;
+}
+
+.product-gallery--box:not(:first-child) {
+  margin-left: 10px !important;
+}
+
+.donation--wrapper-left.only-timeline .timeline {
+  flex-direction: column;
+  gap: 0;
+}
+
+.donation--wrapper .timeline {
+  flex-wrap: wrap !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+}
+
+.fixes-list--boxtitle-wrapper {
+  max-width: 273px;
+}
+
+.fixes-list--box.img-right .list-image {
+  margin: 0 0 0 35px;
 }

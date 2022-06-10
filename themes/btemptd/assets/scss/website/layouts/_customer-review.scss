@@ -19,6 +19,7 @@
     max-width: 1332px;
     margin: 0 auto;
     justify-content: center;
+    gap: 0 !important;
 
     @include respond-below(lg) {
       max-width: 948px;

@@ -185,5 +185,39 @@ section.article--para {
   padding: 0 20px;
 }
 .list-number-tip--wrapper.img-right .content .number-wrapper {
-  right: -120px;
+  /* right: -120px; */
+  right: inherit;
+  left: -130px;
+}
+
+.image-text-hover .image-wrapper figure {
+  width: 510px;
+  height: 360px;
+}
+
+.image-text-hover .content-wrapper {
+  padding: 10px 30px;
+}
+
+.image-text-hover .image-wrapper .image-caption {
+  width: 440px;
+}
+
+.product-gallery--box:not(:first-child) {
+  margin-left: 10px !important;
+}
+
+.image-text-image {
+  padding: 80px 0 0px;
+}
+.italics-title--wrapper.img-left .left-box {
+  padding: 0 30px;
+}
+.image-text-image .content {
+  padding: 0 30px 0;
+}
+.image-text-image .content .title {
+  font-size: 30px;
+  line-height: 32px;
+  margin-bottom: 0;
 }

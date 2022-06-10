@@ -35,7 +35,7 @@
       background-size: cover;
       width: 442px;
       height: 442px;
-      object-fit: contain;
+      object-fit: cover;
 
       @include respond-below(lg) {
         width: 305px;
@@ -192,6 +192,12 @@
   .wp-block-column {
     @media (min-width: 600px) and (max-width: 781px) {
       flex-basis: calc(33.33% - 1em) !important;
+    }
+  }
+
+  .wp-block-column.review-content {
+    @media (min-width: 600px) and (max-width: 781px) {
+      flex-basis: 60% !important;
     }
   }
 }

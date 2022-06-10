@@ -3,6 +3,7 @@
     max-width: 1066px;
     margin: 0 auto;
     padding: 80px 0;
+    gap: 0 !important;
 
     @include respond-below(lg) {
       padding: 50px 0;
@@ -215,5 +216,12 @@
 
   .wp-block-buttons {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 781px) {
+  .wp-block-columns:not(.is-not-stacked-on-mobile)
+    > .wp-block-column.is-vertically-aligned-center {
+    flex-basis: 40% !important;
   }
 }
