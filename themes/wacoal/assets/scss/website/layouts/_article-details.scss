@@ -460,7 +460,9 @@
     }
 
     @include respond-below(sm) {
-      max-width: 280px;
+      &.wp-block-columns {
+        max-width: 280px;
+      }
     }
   }
 
@@ -631,6 +633,7 @@
     max-width: 1250px;
     justify-content: center;
     min-height: 650px;
+    width: 100%;
 
     @include respond-below(lg) {
       max-width: 876px;
@@ -3398,7 +3401,7 @@
     max-width: 1120px;
     margin: auto;
     display: flex;
-    align-items: center;
+    align-items: center !important;
     padding: 80px 0;
     gap: 0 !important;
 

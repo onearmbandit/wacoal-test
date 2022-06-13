@@ -221,7 +221,7 @@
       @include respond-below(xs) {
         display: flex;
         width: 335px;
-        // height: 263px;
+        height: 263px;
         background-size: cover;
         margin: 0 auto 10px;
         flex-direction: column;

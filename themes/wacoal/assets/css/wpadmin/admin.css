@@ -199,7 +199,12 @@
 }
 
 .fixes-list--boxtitle-wrapper {
-  max-width: 273px;
+  max-width: 450px;
+  margin-bottom: 0 !important;
+}
+
+.fixes-list--box.block-editor-block-list__layout {
+  flex-direction: column !important;
 }
 
 .fixes-list--box.img-right .list-image {
