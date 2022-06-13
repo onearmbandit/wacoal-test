@@ -13,7 +13,10 @@
 
 <section class="title-body-image">
     <?php if($block_image_id && !empty($block_image_id)) :?>
-        <div class="image--wrapper mobile" style="background-image:url(<?php echo  esc_url($block_image_url); ?>"></div>
+        <div class="image--wrapper mobile">
+            <img src="<?php echo  esc_url($block_image_url); ?>"
+                         alt="bullet list" />
+        </div>
         <div class="image-caption mobile">
             <?php echo wp_kses_post($image_caption); ?>
         </div>
