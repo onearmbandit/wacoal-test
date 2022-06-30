@@ -46,6 +46,80 @@ if(!empty($banner_link)) :?>
 </a>
 <?php endif;?>
 
+<?php if(!empty($slider_posts)) :?>
+<section class="featured-articles desktop even">
+    <div class="featured-articles--wrapper box-shadow-left">
+        <div class="swiper-container featured-articles-slider">
+            <div class="swiper-wrapper">
+                <?php foreach($slider_posts as $slider_post): ?>
+                    <?php
+                    $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
+                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
+                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
+                    $cat_name      = Btemptd_Get_Primary_category($slider_post->ID);
+                    $cat_ID        = $cat_name->term_id;
+                    $tagline       = get_field('tagline', $slider_post->ID)
+                    ?>
+                <div class="swiper-slide">
+
+                    <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
+                    <div class="swiper-slide--image">
+                        <a href ="<?php echo esc_url(get_permalink($slider_post->ID));?>" >
+                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
+                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
+                        </a>
+                    </div>
+                    <?php endif;?>
+
+                    <div class="swiper-slide--content">
+                        <div class="swiper-slide--content__category">
+                            <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
+                                <?php echo esc_attr($cat_name->name);?>
+                            </a>
+                        </div>
+                        <div class="swiper-slide--content__title">
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
+                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post->ID), 73));?>
+                            </a>
+                        </div>
+
+                        <?php if($tagline && !empty($tagline)) :?>
+                        <div class="swiper-slide--content__para">
+                        <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
+                            <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
+                        </a>
+                        </div>
+                        <?php endif;?>
+
+                        <div class="swiper-slide--content__cta">
+                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>" class="btn primary">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach;?>
+
+            </div>
+
+            <div class="swiper-button--wrapper">
+                <div class="swiper-button--wrapper-inner">
+            <div class="swiper-pagination custom-swiper-pagination"></div>
+
+            <div class="swiper-button-next button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
+            </div>
+            <div class="swiper-button-prev button-transparent">
+                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif;?>
+
 <!-- full width section -->
 <?php if(!empty($static_section['faq'])) : ?>
 <section class="full-width-section">
@@ -267,83 +341,7 @@ if(!empty($banner_link)) :?>
         </div>
     </div>
 </section>
-
 <?php endif;?>
-
-<?php if(!empty($slider_posts)) :?>
-<section class="featured-articles desktop even">
-    <div class="featured-articles--wrapper box-shadow-left">
-        <div class="swiper-container featured-articles-slider">
-            <div class="swiper-wrapper">
-                <?php foreach($slider_posts as $slider_post): ?>
-                    <?php
-                    $thumbnail_id  = get_post_thumbnail_id($slider_post->ID);
-                    $thumbnail_url = Btemptd_Get_image(wp_get_attachment_image_src($thumbnail_id, 'full'));
-                    $thumbnail_alt = Btemptd_Get_Image_alt($thumbnail_id, 'featured-img');
-                    $cat_name      = Btemptd_Get_Primary_category($slider_post->ID);
-                    $cat_ID        = $cat_name->term_id;
-                    $tagline       = get_field('tagline', $slider_post->ID)
-                    ?>
-                <div class="swiper-slide">
-
-                    <?php if($thumbnail_id && !empty($thumbnail_id)) :?>
-                    <div class="swiper-slide--image">
-                        <a href ="<?php echo esc_url(get_permalink($slider_post->ID));?>" >
-                            <img class="lazyload img-fluid" data-src="<?php echo  esc_url($thumbnail_url); ?>"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            alt="<?php echo esc_attr($thumbnail_alt);?>" />
-                        </a>
-                    </div>
-                    <?php endif;?>
-
-                    <div class="swiper-slide--content">
-                        <div class="swiper-slide--content__category">
-                            <a href= "<?php echo esc_url_raw(get_term_link($cat_ID));?>">
-                                <?php echo esc_attr($cat_name->name);?>
-                            </a>
-                        </div>
-                        <div class="swiper-slide--content__title">
-                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>">
-                                <?php echo esc_attr(Btemptd_Limit_text(get_the_title($slider_post->ID), 73));?>
-                            </a>
-                        </div>
-
-                        <?php if($tagline && !empty($tagline)) :?>
-                        <div class="swiper-slide--content__para">
-                        <a href="<?php echo esc_url(get_permalink($slider_post->ID)); ?>">
-                            <?php echo wp_kses_post(Btemptd_Limit_text(Btemptd_Remove_ptag($tagline), 111));?>
-                        </a>
-                        </div>
-                        <?php endif;?>
-
-                        <div class="swiper-slide--content__cta">
-                            <a href="<?php echo esc_url(get_permalink($slider_post->ID));?>" class="btn primary">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <?php endforeach;?>
-
-            </div>
-
-            <div class="swiper-button--wrapper">
-                <div class="swiper-button--wrapper-inner">
-            <div class="swiper-pagination custom-swiper-pagination"></div>
-
-            <div class="swiper-button-next button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-right.svg" alt="Slider Arrow" />
-            </div>
-            <div class="swiper-button-prev button-transparent">
-                <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
-            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<?php endif;?>
-
 
 <?php if(!empty($featured_posts)) :?>
 <section class="featured-articles-mobile-one">
