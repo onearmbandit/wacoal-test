@@ -359,7 +359,7 @@
 .featured-articles-mobile-two {
   // width: calc(100% - 32px);
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 
   @include respond-above(sm) {
     display: none;
