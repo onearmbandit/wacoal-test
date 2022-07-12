@@ -12,6 +12,9 @@ require('../../scss/website/btemptd-swiper.scss');
       el: '.swiper-pagination',
       clickable: true,
     },
+    autoplay: {
+      delay: 5000,
+    },
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
@@ -22,6 +25,9 @@ require('../../scss/website/btemptd-swiper.scss');
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -36,6 +42,9 @@ require('../../scss/website/btemptd-swiper.scss');
     slidesPerView: 1,
     spaceBetween: 30,
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,

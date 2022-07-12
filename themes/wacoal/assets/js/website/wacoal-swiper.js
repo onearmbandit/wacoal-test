@@ -22,6 +22,9 @@ require('../../scss/website/wacoal-swiper.scss');
     spaceBetween: 30,
     centeredSlides: true,
     loop: true,
+    autoplay: {
+      delay: 5000,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
