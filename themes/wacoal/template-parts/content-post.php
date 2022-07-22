@@ -32,7 +32,7 @@ endif; ?>
             <?php echo esc_attr($primary_category->name); ?>
         </a>
         <h1 class="article-header--wrapper__heading">
-            <?php echo esc_attr($post_title); ?>
+            <?php echo html_entity_decode($post_title); ?>
         </h1>
         <div class="article-header--wrapper__para">
             <?php echo wp_kses_post($tag_line); ?>

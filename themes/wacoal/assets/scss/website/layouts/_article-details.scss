@@ -66,6 +66,18 @@
         font-size: 36px;
         line-height: 37px;
       }
+      sup {
+        font-size: 40px;
+        vertical-align: super;
+
+        @include respond-below(md) {
+          font-size: 25px;
+        }
+
+        @include respond-below(sm) {
+          font-size: 20px;
+        }
+      }
     }
 
     &__para {

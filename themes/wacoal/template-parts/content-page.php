@@ -20,7 +20,7 @@
             <?php echo esc_attr($primary_category->name); ?>
         </a>
         <h1 class="article-header--wrapper__heading">
-            <?php echo esc_attr(the_title()); ?>
+            <?php echo html_entity_decode(the_title()); ?>
         </h1>
     </div>
 </section>
