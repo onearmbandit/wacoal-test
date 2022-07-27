@@ -68,7 +68,7 @@ $counts= $total_posts->publish;
                 </div>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo html_entity_decode(get_the_title($blog->ID));?>
+                        <?php echo wp_kses_post(get_the_title($blog->ID));?>
                     </a>
                 </h5>
                 <div class="blog-tile--para">
