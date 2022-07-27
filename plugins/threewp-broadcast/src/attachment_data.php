@@ -98,11 +98,6 @@ class attachment_data
 	**/
 	public function is_url()
 	{
-        // If the URL is from the VIP Filesystem (vip://wp-content/uploads/...) return false, as it's not a URL.
-		if ( strpos( $this->filename_path, 'vip://' ) !== false ) {
-			return false;
-		}
-
 		return strpos( $this->filename_path, '://' ) !== false;
 	}
 
