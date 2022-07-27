@@ -68,7 +68,7 @@
                     <?php }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo esc_attr($blog->post_title);?>
+                    <?php echo html_entity_decode($blog->post_title);?>
                 </h5>
                 <div class="blog-tile--para">
                 <?php echo  wp_kses_post($post_tagline);?>

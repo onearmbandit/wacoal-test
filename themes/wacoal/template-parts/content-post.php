@@ -88,7 +88,7 @@ endif; ?>
                     </div>
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                         <h5 class="blog-tile--heading">
-                            <?php echo esc_attr($blog->post_title);?>
+                            <?php echo html_entity_decode($blog->post_title);?>
                         </h5>
                     </a>
                     <div class="blog-tile--para">
