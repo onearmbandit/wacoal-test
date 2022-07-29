@@ -66,7 +66,7 @@ $counts= $total_posts->publish;
             </div>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
-                    <?php echo wp_kses_decode_entities(Wacoal_Limit_text($post_title, 61));?>
+                    <?php echo html_entity_decode(Wacoal_Limit_text($post_title, 61));?>
                 </a>
             </div>
 
@@ -119,7 +119,7 @@ $counts= $total_posts->publish;
                 </div>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo wp_kses_decode_entities(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
+                        <?php echo html_entity_decode(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
                     </a>
                 </h5>
                 <div class="blog-tile--para">

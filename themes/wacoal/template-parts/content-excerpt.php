@@ -38,7 +38,7 @@
 
     <h5 class="blog-tile--heading">
         <a href="<?php echo esc_url(get_permalink());?>">
-            <?php echo wp_kses_decode_entities(Wacoal_Limit_text($post_title, 61));?>
+            <?php echo html_entity_decode(Wacoal_Limit_text($post_title, 61));?>
         </a>
     </h5>
 
