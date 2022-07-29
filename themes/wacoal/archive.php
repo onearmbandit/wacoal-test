@@ -116,7 +116,7 @@ $cat_name         = $current_cat_data->name;
                         <?php if($featured_post_title && !empty($featured_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($featured_post_id)); ?>">
                             <h4 class="featured-box--content__title">
-                                <?php echo html_entity_decode(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 95)); ?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($featured_post_title), 95)); ?>
                             </h4>
                         </a>
                         <?php endif;?>
