@@ -49,7 +49,7 @@ foreach ( $redirect_domains as $redirect_to => $redirect_from_domains ) {
     }
 }
 
-$proxy_lib = ABSPATH . '/wp-content/mu-plugins/lib/proxy/ip-forward.php';
+/*$proxy_lib = ABSPATH . '/wp-content/mu-plugins/lib/proxy/ip-forward.php';
 $forwarded_ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
 $forwarded_ips = array_map('trim', $forwarded_ips);
 if ($forwarded_ips[0] && ! empty($_SERVER['REMOTE_ADDR']) && file_exists($proxy_lib) ) {
@@ -61,4 +61,4 @@ if ($forwarded_ips[0] && ! empty($_SERVER['REMOTE_ADDR']) && file_exists($proxy_
         $forwarded_ips[0],
         MY_PROXY_IP_ALLOW_LIST
     );
-}
+}*/

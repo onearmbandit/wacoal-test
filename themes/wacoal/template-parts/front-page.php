@@ -75,7 +75,7 @@
                         <?php if($slider_post_title && !empty($slider_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
+                                <?php echo wp_kses_decode_entities(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
                             </h3>
                         </a>
                         <?php endif;?>
@@ -140,7 +140,7 @@
                         <?php if($slider_post_title && !empty($slider_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
+                                <?php echo wp_kses_decode_entities(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
                             </h3>
                         </a>
                         <?php endif;?>
@@ -284,7 +284,7 @@
                     <?php if($feat_post_title && !empty($feat_post_title)) :?>
                     <div class="article-one-column--content__title">
                         <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
-                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
+                            <?php echo wp_kses_decode_entities(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
                         </a>
                     </div>
                     <?php endif;?>
@@ -361,7 +361,7 @@
                         <?php if($feat_post_title1 && !empty($feat_post_title1)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 90));?>
+                                <?php echo wp_kses_decode_entities(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 90));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -405,7 +405,7 @@
                         <?php if($feat_post_title2 && !empty($feat_post_title2)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
-                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title2), 90));?>
+                                <?php echo wp_kses_decode_entities(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title2), 90));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -455,7 +455,7 @@
                             <?php if($feat_post_title && !empty($feat_post_title)) :?>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
                                 <h4 class="featured-box--content__title">
-                                    <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
+                                    <?php echo wp_kses_decode_entities(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
                                 </h4>
                             </a>
                             <?php endif;?>
@@ -545,7 +545,7 @@
                 <?php if($feat_post_title && !empty($feat_post_title)) :?>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo wp_kses_post(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
+                        <?php echo wp_kses_decode_entities(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
                     </a>
                 </h5>
                 <?php endif;?>

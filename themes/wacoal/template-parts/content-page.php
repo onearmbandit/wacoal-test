@@ -20,7 +20,7 @@
             <?php echo esc_attr($primary_category->name); ?>
         </a>
         <h1 class="article-header--wrapper__heading">
-            <?php echo wp_kses_post(the_title()); ?>
+            <?php echo wp_kses_decode_entities(the_title()); ?>
         </h1>
     </div>
 </section>
@@ -68,7 +68,7 @@
                     <?php }?>
                 </div>
                 <h5 class="blog-tile--heading">
-                    <?php echo wp_kses_post($blog->post_title);?>
+                    <?php echo wp_kses_decode_entities($blog->post_title);?>
                 </h5>
                 <div class="blog-tile--para">
                 <?php echo  wp_kses_post($post_tagline);?>

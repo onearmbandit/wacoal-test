@@ -279,7 +279,7 @@ function Wacoal_Load_more()
 
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo wp_kses_post(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
+                        <?php echo wp_kses_decode_entities(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
                     </h5>
                 </a>
 
@@ -376,7 +376,7 @@ function Wacoal_Cat_Load_more()
 
                 <a href="<?php echo esc_url(get_permalink($recent_post->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo wp_kses_post(Wacoal_Limit_text(get_the_title($recent_post->ID),61));?>
+                        <?php echo wp_kses_decode_entities(Wacoal_Limit_text(get_the_title($recent_post->ID),61));?>
                     </h5>
                 </a>
 
@@ -463,7 +463,7 @@ function Wacoal_Search_Load_more()
 
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo wp_kses_post(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
+                        <?php echo wp_kses_decode_entities(Wacoal_Limit_text(get_the_title($blog->ID),61));?>
                     </h5>
                 </a>
 
