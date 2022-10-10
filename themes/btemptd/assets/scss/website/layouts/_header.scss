@@ -78,8 +78,8 @@
     }
 
     @include respond-above(md) {
-      margin-left: 60px;
-      margin-right: 60px;
+      margin-left: 45px;
+      margin-right: 45px;
     }
   }
 
@@ -176,7 +176,7 @@
   visibility: visible;
   overflow: visible;
   padding-bottom: calcRem(20);
-  height: 354px;
+  height: 370px;
   background: var(--color-white);
   border: 1px solid var(--color-black);
   border-top: 0;
