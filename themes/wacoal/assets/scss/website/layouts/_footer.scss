@@ -102,22 +102,23 @@
       &--input {
         display: flex;
         margin-bottom: 40px;
+        position: relative;
 
         input {
           appearance: none;
 
           &:focus, &:hover {
-            outline: none;
+            outline: 2px solid #b1a491;
           }
         }
 
         .input-box {
-          width: calc(100% - 90px);
+          width: 100%;
           border: 0px;
           height: 48px;
           font-size: 13px;
           letter-spacing: 0.25px;
-          padding: 0px 15px;
+          padding: 0px 105px 0 15px;
           box-sizing: border-box;
         }
 
@@ -125,6 +126,8 @@
           width: 90px;
           border: 0px;
           height: 48px;
+          position: absolute;
+          right: 0;
           font-size: 13px;
           letter-spacing: 0.25px;
           padding: 0px 15px;
