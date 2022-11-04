@@ -360,7 +360,7 @@ trait post_actions
 		$this->debug( 'Running trash_untrash_delete_post command %s on blog %s, post %s',
 			$action->command,
 			$action->child_blog_id,
-			$action->child_post_id,
+			$action->child_post_id
 		);
 
 		switch_to_blog( $action->child_blog_id );
