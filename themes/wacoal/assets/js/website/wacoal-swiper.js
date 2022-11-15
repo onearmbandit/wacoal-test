@@ -24,6 +24,8 @@ require('../../scss/website/wacoal-swiper.scss');
     loop: true,
     autoplay: {
       delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     pagination: {
       el: '.swiper-pagination',

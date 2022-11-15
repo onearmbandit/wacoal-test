@@ -419,7 +419,7 @@
     bottom: 0;
 
     &:focus, &:active {
-      outline: 2px solid var(--color-tile-bg);
+      outline: thin dotted var(--color-tile-bg);
     }
   }
 
@@ -441,7 +441,7 @@
     bottom: 0;
 
     &:focus, &:active {
-      outline: 2px solid var(--color-tile-bg);
+      outline: thin dotted var(--color-tile-bg);
     }
   }
 
@@ -463,7 +463,7 @@
     bottom: 0;
 
     &:focus, &:active {
-      outline: 2px solid var(--color-tile-bg);
+      outline: thin dotted var(--color-tile-bg);
     }
   }
 
@@ -482,7 +482,7 @@
     bottom: 0;
 
     &:focus, &:active {
-      outline: 2px solid var(--color-primary);
+      outline: thin dotted var(--color-primary);
     }
   }
 }

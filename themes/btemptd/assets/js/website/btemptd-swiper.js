@@ -14,6 +14,8 @@ require('../../scss/website/btemptd-swiper.scss');
     },
     autoplay: {
       delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -44,6 +46,8 @@ require('../../scss/website/btemptd-swiper.scss');
     loop: true,
     autoplay: {
       delay: 5000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     pagination: {
       el: '.swiper-pagination',

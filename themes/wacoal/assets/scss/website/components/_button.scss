@@ -34,7 +34,7 @@
       }
 
       &:focus, &:active {
-        outline: 2px solid  var(--color-black);
+        outline: thin dotted var(--color-black);
       }
   }
 
@@ -50,7 +50,7 @@
       line-height: 18px;
 
       &:focus, &:active {
-        outline: 2px solid  var(--color-nav-bg);
+        outline: thin dotted var(--color-nav-bg);
       }
   }
 

@@ -51,7 +51,7 @@
 
       }
       &:focus, &:active {
-          outline: 2px solid var(--color-black);
+          outline: thin dotted var(--color-black);
       }
 
   }
@@ -71,7 +71,7 @@
       color: var(--color-white);
     }
     &:focus, &:active {
-      outline: 2px solid var(--color-text);
+      outline: thin dotted var(--color-text);
     }
   }
 
