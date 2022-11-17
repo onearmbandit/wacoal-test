@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/swiper-bundle';
 
 require('../../scss/website/btemptd-swiper.scss');
 
@@ -13,7 +13,7 @@ require('../../scss/website/btemptd-swiper.scss');
       clickable: true,
     },
     autoplay: {
-      delay: 5000,
+      delay: 2500,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
@@ -28,7 +28,9 @@ require('../../scss/website/btemptd-swiper.scss');
     spaceBetween: 30,
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 2500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     },
     pagination: {
       el: '.swiper-pagination',

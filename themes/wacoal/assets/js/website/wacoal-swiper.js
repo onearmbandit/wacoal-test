@@ -1,4 +1,5 @@
-import Swiper from 'swiper';
+//import Swiper from 'swiper';
+import Swiper from 'swiper/swiper-bundle';
 
 require('../../scss/website/wacoal-swiper.scss');
 
@@ -23,7 +24,7 @@ require('../../scss/website/wacoal-swiper.scss');
     centeredSlides: true,
     loop: true,
     autoplay: {
-      delay: 5000,
+      delay: 2500,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
@@ -35,6 +36,7 @@ require('../../scss/website/wacoal-swiper.scss');
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+
 
     // breakpoints: {
     //   768: {
@@ -86,5 +88,6 @@ require('../../scss/website/wacoal-swiper.scss');
       prevEl: '.swiper-button-prev',
     },
   });
+
 
 })(jQuery);
