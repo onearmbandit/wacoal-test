@@ -190,6 +190,7 @@
 .featured-article {
 
   &.featured-article--mobile {
+    position: relative;
     display: none;
 
     @include respond-below(sm) {

@@ -60,9 +60,11 @@ $counts= $total_posts->publish;
 
         <div class="search-content">
             <div class="category">
-                <a href="<?php echo esc_url_raw($cat_url);?>">
-                    <?php echo esc_attr($cat_name);?>
-                </a>
+                <?php if (! empty($cat_name) || ! empty($cat_url)) { ?>
+                    <a href="<?php echo esc_url_raw($cat_url);?>">
+                        <?php echo esc_attr($cat_name);?>
+                    </a>
+                <?php } ?>
             </div>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
