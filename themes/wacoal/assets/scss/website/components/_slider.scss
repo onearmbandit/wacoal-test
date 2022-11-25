@@ -51,6 +51,8 @@
 .swiper-container {
   // margin-bottom: get-vw(56px);
   width: auto !important;
+  position: relative;
+  overflow: hidden;
 
   .swiper-wrapper {
     // padding-bottom: get-vw(20px);
