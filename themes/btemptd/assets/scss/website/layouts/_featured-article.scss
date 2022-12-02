@@ -66,6 +66,7 @@
 
       .swiper-button-next, .swiper-button-prev {
         width: 10px;
+        z-index: 11;
 
         @include respond-below(sm) {
           top: 270px;
