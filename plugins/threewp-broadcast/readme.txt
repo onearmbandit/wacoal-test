@@ -3,8 +3,8 @@ Contributors: edward_plainview
 Donate link: https://broadcast.plainviewplugins.com
 License: GPLv3
 Requires at least: 4.6
-Requires PHP: 7.2
-Stable tag: 48.15
+Requires PHP: 7.4
+Stable tag: 49.01
 Tags: multipost, sharing, duplicate, franchise, syndication, marketing, news, hub
 Tested up to: 6.1
 
@@ -366,6 +366,13 @@ This will broadcast all normal product settings: SKU, price, etc.
 If your products have variations, a product image gallery, you want to sync stock, you want to sync orders, need the attribute taxonomies to be synced, you'll be wanting the <a href="https://broadcast.plainviewplugins.com/addon/woocommerce/">WooCommerce add-on</a>.
 
 == Changelog ==
+
+= 48.15 20221031 =
+
+* Code: Broadcast now requires at least php 7.4
+* Code: Increase compatibility with php 8.1.
+* Code: Add broadcast_menu_target filter to allow the displayed menu override: all settings, broadcast info or no menu at all.
+* Code: Add find_unlinked_children_post_action to allow add-ons to assist Broadcast in deciding which found post on the child site is the one to link.
 
 = 48.15 20221031 =
 
