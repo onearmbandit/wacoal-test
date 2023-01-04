@@ -31,7 +31,7 @@ $slider_posts   = Btemptd_Query_posts(
 
 ?>
 <section class="banner-with-background">
-    <h2 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h2>
+    <h1 class="banner-with-background--heading"><?php echo esc_attr($cat_name);?></h1>
 
     <div class="banner-with-background--subtitle">
         <?php echo category_description(); ?>
