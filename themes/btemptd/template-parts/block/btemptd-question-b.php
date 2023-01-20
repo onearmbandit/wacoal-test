@@ -12,7 +12,6 @@
 
 if ($list_data && !empty($list_data)) {
  $list_position      = !empty($img_position) ? $img_position : 'right';
- echo $list_position;
 ?>
 
 <!-- Question Answer structure -->
