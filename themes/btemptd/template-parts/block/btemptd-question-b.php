@@ -12,11 +12,12 @@
 
 if ($list_data && !empty($list_data)) {
  $list_position      = !empty($img_position) ? $img_position : 'right';
+ echo $list_position;
 ?>
 
 <!-- Question Answer structure -->
 <section class="question-set-one">
-    <div class="question-set-one--wrapper image-of-question<?php  if($list_position == 'left') { echo "left-image"; }?>">
+    <div class="question-set-one--wrapper image-of-question <?php  if($list_position == 'left') { echo "left-image"; }?>">
        <div class="left-column">
         <?php
         $row_index = get_row_index();
