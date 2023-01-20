@@ -6,6 +6,7 @@
   @include respond-below(sm) {
     background: transparent;
     padding: 0;
+    margin: 32px auto;
   }
 
   &--wrapper {
@@ -13,24 +14,33 @@
     display: flex;
     justify-content: space-between;
     gap: 60px;
+    width: get-vw(1680px);
 
-    @include respond-above(sm) {
-      width: get-vw(1590px);
+    @include respond-below(md) {
+      width: 90%;
+      gap: 40px;
     }
 
     @include respond-below(sm) {
       flex-direction: column;
       gap: 20px;
+      width: 100%;
     }
 
     .left-column,
     .right-column {
       width: 50%;
-      padding: 40px 20px;
 
       @include respond-below(sm) {
         background: var(--color-light-tan);
         width: 100%;
+        padding: 40px 20px 10px;
+      }
+
+      &--image {
+        @include respond-below(sm) {
+          padding: 40px 20px 60px;
+        }
       }
     }
 
@@ -40,9 +50,9 @@
   }
 
   .question-box {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
 
     .number {
       background: var(--color-purple);
@@ -74,13 +84,21 @@
   }
 
   .question-image {
-    width: 100%;
-    height: 100%;
-    max-width: 350px;
-    max-height: 350px;
+    width: 350px;
+    height: 350px;
     margin: auto;
     position: relative;
     margin-top: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include respond-below(sm) {
+      margin-top: 0px;
+      top: inherit;
+      transform: inherit;
+      width: 300px;
+      height: 300px;
+    }
 
     &:after {
       content: "";
@@ -105,7 +123,12 @@
 }
 
 .temptd-to {
-  margin: 80px 0;
+  margin: 80px auto;
+
+  @include respond-below(sm) {
+    margin: 32px 0;
+  }
+
   &--wrapper {
     margin: auto;
     max-width: 965px;

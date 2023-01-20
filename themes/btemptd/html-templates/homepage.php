@@ -249,7 +249,7 @@ Btemptd_Page_Entry_top('');
                 </div>
             </div>
         </div>
-        <div class="right-column">
+        <div class="right-column right-column--image">
             <div class="question-image">
                 <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/featured-article-img-2.png">
             </div>
@@ -282,7 +282,7 @@ Btemptd_Page_Entry_top('');
 </section>
 
 <!-- size chart section -->
-<section class="size-chart">
+<!-- <section class="size-chart">
     <div class="size-chart--wrapper">
         <div class="size-chart--left box-shadow-right">
             <div class="size-chart--image">
@@ -312,7 +312,7 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <!-- Explore the Blog -->
