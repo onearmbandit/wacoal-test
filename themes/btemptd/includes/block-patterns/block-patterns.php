@@ -64,7 +64,8 @@ function Btemptd_register_block_patterns() {
 		'numbered-image-left-text',
 		'numbered-image-right-text',
 		'questions-a',
-		'questions-b',
+		'questions-b-right',
+		'questions-b-left',
 		'temptd-to',
 	);
 
