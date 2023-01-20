@@ -17,7 +17,7 @@
     max-width: 1100px;
     flex-wrap: nowrap !important;
 
-    @include respond-below(md) {
+    @include respond-below(lg) {
       width: 90%;
       gap: 40px;
     }
