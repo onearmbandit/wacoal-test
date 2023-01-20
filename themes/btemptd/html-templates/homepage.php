@@ -257,6 +257,30 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 
+<!-- Temptd to -->
+<section class="temptd-to">
+    <div class="temptd-to--wrapper">
+        <div class="image">
+            <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/featured-article-img-1.png" />
+        </div>
+        <div class="heading">
+            i'm tempt'd to
+        </div>
+        <div class="sub-heading">
+            "Pack my life up and move <br />
+            to a vineyard in Florance"
+        </div>
+
+        <div class="heading">
+            i'm tempt'd to
+        </div>
+        <div class="sub-heading">
+            "Pack my life up and move <br />
+            to a vineyard in Florance"
+        </div>
+    </div>
+</section>
+
 <!-- size chart section -->
 <section class="size-chart">
     <div class="size-chart--wrapper">

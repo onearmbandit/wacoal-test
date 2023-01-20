@@ -1,51 +1,79 @@
 // Neutra Text
-@include custom-font(NeutraText-Bold, '../../fonts/neutra/NeutraText-Bold');
-@include custom-font(NeutraText-BoldAlt, '../../fonts/neutra/NeutraText-BoldAlt');
-@include custom-font(NeutraText-BoldItalicAlt, '../../fonts/neutra/NeutraText-BoldItalicAlt');
+@include custom-font(NeutraText-Bold, "../../fonts/neutra/NeutraText-Bold");
+@include custom-font(
+  NeutraText-BoldAlt,
+  "../../fonts/neutra/NeutraText-BoldAlt"
+);
+@include custom-font(
+  NeutraText-BoldItalicAlt,
+  "../../fonts/neutra/NeutraText-BoldItalicAlt"
+);
 
-@include custom-font(NeutraText-Book, '../../fonts/neutra/NeutraText-Book');
-@include custom-font(NeutraText-BookAlt, '../../fonts/neutra/NeutraText-BookAlt');
-@include custom-font(NeutraText-BookItalicAlt, '../../fonts/neutra/NeutraText-BookItalicAlt');
+@include custom-font(NeutraText-Book, "../../fonts/neutra/NeutraText-Book");
+@include custom-font(
+  NeutraText-BookAlt,
+  "../../fonts/neutra/NeutraText-BookAlt"
+);
+@include custom-font(
+  NeutraText-BookItalicAlt,
+  "../../fonts/neutra/NeutraText-BookItalicAlt"
+);
 
-@include custom-font(NeutraText-DemiAlt, '../../fonts/neutra/NeutraText-DemiAlt');
-@include custom-font(NeutraText-DemiItalicAlt, '../../fonts/neutra/NeutraText-DemiItalicAlt');
+@include custom-font(
+  NeutraText-DemiAlt,
+  "../../fonts/neutra/NeutraText-DemiAlt"
+);
+@include custom-font(
+  NeutraText-DemiItalicAlt,
+  "../../fonts/neutra/NeutraText-DemiItalicAlt"
+);
 
-@include custom-font(NeutraText-LightAlt, '../../fonts/neutra/NeutraText-LightAlt');
+@include custom-font(
+  NeutraText-LightAlt,
+  "../../fonts/neutra/NeutraText-LightAlt"
+);
+
+@include custom-font(
+  Recoleta-Alt-Black,
+  "../../fonts/recoleta/Recoleta-Alt-Black"
+);
 
 @mixin NeutraText-Bold {
-  font-family: 'NeutraText-Bold';
+  font-family: "NeutraText-Bold";
 }
 
 @mixin NeutraText-BoldAlt {
-    font-family: 'NeutraText-BoldAlt';
+  font-family: "NeutraText-BoldAlt";
 }
 
 @mixin NeutraText-BoldItalicAlt {
-  font-family: 'NeutraText-BoldItalicAlt';
+  font-family: "NeutraText-BoldItalicAlt";
 }
 
 @mixin NeutraText-Book {
-  font-family: 'NeutraText-Book';
+  font-family: "NeutraText-Book";
 }
 
 @mixin NeutraText-BookAlt {
-  font-family: 'NeutraText-BookAlt';
+  font-family: "NeutraText-BookAlt";
 }
 
 @mixin NeutraText-BookItalicAlt {
-  font-family: 'NeutraText-BookItalicAlt';
+  font-family: "NeutraText-BookItalicAlt";
 }
 
 @mixin NeutraText-DemiAlt {
-  font-family: 'NeutraText-DemiAlt';
+  font-family: "NeutraText-DemiAlt";
 }
 
 @mixin NeutraText-DemiItalicAlt {
-  font-family: 'NeutraText-DemiItalicAlt';
+  font-family: "NeutraText-DemiItalicAlt";
 }
 
 @mixin NeutraText-LightAlt {
-  font-family: 'NeutraText-LightAlt';
+  font-family: "NeutraText-LightAlt";
 }
 
-
+@mixin Recoleta-Alt-Black {
+  font-family: "Recoleta-Alt-Black";
+}
