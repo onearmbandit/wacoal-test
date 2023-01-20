@@ -50,15 +50,14 @@
   }
 
   .question-box {
-    & > .wp-block-group__inner-container{
-      margin-bottom: 30px;
-      display: flex;
-      gap: 15px;
-    }
-
     margin-bottom: 30px;
     display: flex;
     gap: 15px;
+
+    & > .wp-block-group__inner-container {
+      display: flex;
+      gap: 15px;
+    }
 
     .number {
       background: var(--color-purple);
@@ -81,6 +80,7 @@
     .question {
       @include NeutraText-BoldAlt;
       font-size: 16px;
+      margin-bottom: 5px;
     }
 
     .answer {
