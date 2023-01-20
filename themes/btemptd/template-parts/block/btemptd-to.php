@@ -9,9 +9,15 @@
  * @license  https://cemtrexlabs.com 1.0
  * @link     Btemptd
  */
-
- echo $title;
- echo $description;
 ?>
 
-
+<section class="temptd-to">
+    <div class="temptd-to--wrapper">
+       <div class="heading">
+            <?php echo wp_kses_post($title);?>
+       </div>
+       <div class="sub-heading">
+            <?php echo wp_kses_post($description);?>
+       </div>
+    </div>
+</section>

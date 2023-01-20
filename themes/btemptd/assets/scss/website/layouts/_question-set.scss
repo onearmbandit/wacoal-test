@@ -50,6 +50,12 @@
   }
 
   .question-box {
+    & > .wp-block-group__inner-container{
+      margin-bottom: 30px;
+      display: flex;
+      gap: 15px;
+    }
+
     margin-bottom: 30px;
     display: flex;
     gap: 15px;

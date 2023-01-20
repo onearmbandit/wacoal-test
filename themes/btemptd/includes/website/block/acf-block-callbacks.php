@@ -680,6 +680,8 @@ function Btemptd_Qustion_A_Block_Render_callback( $block )
 function Btemptd_Qustion_B_Block_Render_callback( $block )
 {
     $list_data  = get_field('list_data');
+    $img_position  = get_field('image_position');
+    $image_id    = get_field('image');
 
     if (! empty($list_data[0]) ) {
         if (is_admin() ) {
