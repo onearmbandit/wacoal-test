@@ -7,8 +7,8 @@ return array(
 	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"question-set-one","layout":{"type":"constrained"}} -->
-	<section class="wp-block-group question-set-one"><!-- wp:columns {"className":"question-set-one\u002d\u002dwrapper"} -->
-	<div class="wp-block-columns question-set-one--wrapper"><!-- wp:column {"className":"left-column"} -->
+	<section class="wp-block-group question-set-one"><!-- wp:columns {"className":"question-set-one\u002d\u002dwrapper image-of-question"} -->
+	<div class="wp-block-columns question-set-one--wrapper image-of-question"><!-- wp:column {"className":"left-column"} -->
 	<div class="wp-block-column left-column"><!-- wp:group {"className":"question-box","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group question-box"><!-- wp:paragraph {"className":"number"} -->
 	<p class="number">1</p>
