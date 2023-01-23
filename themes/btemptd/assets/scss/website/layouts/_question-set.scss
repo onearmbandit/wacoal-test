@@ -14,17 +14,17 @@
     display: flex;
     justify-content: space-between;
     gap: 60px;
-    max-width: 1100px;
+    width: get-vw(1680px);
     flex-wrap: nowrap !important;
 
-    @include respond-below(lg) {
+    @include respond-below(md) {
       width: 90%;
       gap: 40px;
     }
 
     @include respond-below(sm) {
       flex-direction: column;
-      gap: 20px;
+      gap: 0;
       width: 100%;
       flex-wrap: wrap !important;
     }
@@ -46,11 +46,29 @@
       }
     }
 
+    .right-column {
+      @include respond-below(sm) {
+        padding: 0 20px 10px;
+      }
+
+      &--image {
+        @include respond-below(sm) {
+          padding: 0px 19px 60px;
+        }
+      }
+    }
+
     &.left-image {
       flex-direction: row-reverse;
 
       @include respond-below(sm) {
         flex-direction: column-reverse;
+      }
+
+      .right-column--image {
+        @include respond-below(sm) {
+          padding: 40px 20px 20px;
+        }
       }
     }
 
@@ -97,9 +115,6 @@
     .answer {
       @include NeutraText-Book;
       font-size: 15px;
-      a {
-        @include NeutraText-Bold;
-      }
     }
   }
 
