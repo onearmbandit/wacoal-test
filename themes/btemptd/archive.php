@@ -425,6 +425,7 @@ if ($template == 'simple') :
 <?php endif;?>
 
 <?php
+$posts_to_exclude = [];
 foreach ( $featured_posts as $featured_post ) {
     $posts_to_exclude[]    = $featured_post;
 }
