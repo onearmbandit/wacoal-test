@@ -51,7 +51,7 @@
 
       }
       &:focus, &:active {
-          outline: thin dotted var(--color-black);
+          outline: -webkit-focus-ring-color auto 1px;
       }
 
   }
@@ -71,7 +71,7 @@
       color: var(--color-white);
     }
     &:focus, &:active {
-      outline: thin dotted var(--color-text);
+      outline: -webkit-focus-ring-color auto 1px;
     }
   }
 

@@ -34,7 +34,7 @@
       }
 
       &:focus, &:active {
-        outline: thin dotted var(--color-black);
+        outline: -webkit-focus-ring-color auto 1px;
       }
   }
 
@@ -50,7 +50,7 @@
       line-height: 18px;
 
       &:focus, &:active {
-        outline: thin dotted var(--color-nav-bg);
+        outline: -webkit-focus-ring-color auto 1px;
       }
   }
 
