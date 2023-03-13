@@ -232,6 +232,30 @@
   }
 }
 
+.pause-btn, .pause-btn-blog, .pause-btn-mobile, .pause-btn-blog-mobile{
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  @include respond-below(sm) {
+    width: 20px;
+    height: 20px;
+    left:20px;
+  }
+  img {
+    width: 100%;
+  }
+}
+.pause-btn-blog {
+  left:inherit;
+  right: 0;
+  @include respond-below(sm) {
+    right:20px;
+  }
+}
+
 .swiper-container.featured-articles-slider-mo {
   // overflow-y: visible;
   // padding-bottom: 50px;
@@ -361,6 +385,7 @@
   // width: calc(100% - 32px);
   width: 100%;
   margin: 0 auto 50px;
+  position: relative;
 
   @include respond-above(sm) {
     display: none;

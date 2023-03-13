@@ -113,11 +113,14 @@
                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                  alt="Slider Arrow" />
         </div>
+        <div class="pause-btn">
+                <img class="play-pause" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+        </div>
   </div>
 </section>
 
 <section class="evergreen-article--slider evergreen-article--mobile">
-    <div class="swiper-container center-slide-slider">
+    <div class="swiper-container center-slide-slider-mobile">
         <div class="swiper-wrapper">
             <?php foreach ($slider_blogs_posts as $key => $slider_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
@@ -192,7 +195,9 @@
 
         <div class="swiper-pagination custom-swiper-pagination"></div>
 
-
+        <div class="pause-btn-mobile">
+                <img class="play-pause-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+        </div>
   </div>
 </section>
 <?php endif;?>

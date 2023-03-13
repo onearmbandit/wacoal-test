@@ -18,7 +18,7 @@ require('../../scss/website/wacoal-swiper.scss');
     },
   });
 
-  let centerSlideSwiper = new Swiper('.center-slide-slider', {
+  var centerSlideSwiper = new Swiper('.center-slide-slider', {
     slidesPerView: 1,
     spaceBetween: 30,
     centeredSlides: true,
@@ -37,13 +37,53 @@ require('../../scss/website/wacoal-swiper.scss');
       prevEl: '.swiper-button-prev',
     },
 
+  });
+  $(".pause-btn").on("click", function (e) {
+    $(".center-slide-slider").toggleClass("pause");
+  });
 
-    // breakpoints: {
-    //   768: {
-    //     slidesPerView: 1.75,
-    //     spaceBetween: 70
-    //   }
-    // }
+  $(".pause-btn").on("click", function () {
+    if ($(".center-slide-slider").hasClass("pause")) {
+      centerSlideSwiper.autoplay.stop();
+      $(".play-pause").attr("src", "wp-content/themes/btemptd/assets/images/play-button.png");
+    } else {
+      centerSlideSwiper.autoplay.start();
+      $(".play-pause").attr("src", "wp-content/themes/btemptd/assets/images/pause-button.png");
+    }
+  });
+
+  var centerSlideSwiperMobile = new Swiper('.center-slide-slider-mobile', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  $(".pause-btn-mobile").on("click", function (e) {
+    $(".center-slide-slider-mobile").toggleClass("pause");
+  });
+
+  $(".pause-btn-mobile").on("click", function () {
+    if ($(".center-slide-slider-mobile").hasClass("pause")) {
+      centerSlideSwiperMobile.autoplay.stop();
+      $(".play-pause-mobile").attr("src", "wp-content/themes/btemptd/assets/images/play-button.png");
+    } else {
+      centerSlideSwiperMobile.autoplay.start();
+      $(".play-pause-mobile").attr("src", "wp-content/themes/btemptd/assets/images/pause-button.png");
+    }
   });
 
   let featuredSwiper = new Swiper('.featured-article', {
