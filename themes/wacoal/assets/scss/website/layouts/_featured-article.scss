@@ -190,14 +190,15 @@
 .pause-btn, .pause-btn-blog, .pause-btn-mobile, .pause-btn-blog-mobile{
   position: absolute;
   top: 40px;
-  left: 0;
+  left: 20px;
   z-index: 1;
   width: 40px;
   height: 40px;
-  @include respond-below(sm) {
+  cursor: pointer;
+  @include respond-below(md) {
     width: 20px;
     height: 20px;
-    left:20px;
+   // left:20px;
   }
   img {
     width: 100%;
@@ -205,10 +206,10 @@
 }
 .pause-btn-blog {
   left:inherit;
-  right: 0;
-  @include respond-below(sm) {
-    right:20px;
-  }
+  right: 20px;
+  // @include respond-below(md) {
+  //   right:20px;
+  // }
 }
 
 .featured-article {

@@ -4,6 +4,7 @@ require('../../scss/website/btemptd-swiper.scss');
 
 (function ($) {
 
+  var base_url = window.location.origin;
   var featuredArticles = new Swiper('.featured-articles-slider', {
     slidesPerView: 1,
     centeredSlides: true,
@@ -30,10 +31,10 @@ require('../../scss/website/btemptd-swiper.scss');
   $(".pause-btn").on("click", function () {
     if ($(".featured-articles-slider").hasClass("pause")) {
       featuredArticles.autoplay.stop();
-      $(".play-pause").attr("src", "wp-content/themes/btemptd/assets/images/play-button.png");
+      $(".play-pause").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/play-button.png");
     } else {
       featuredArticles.autoplay.start();
-      $(".play-pause").attr("src", "wp-content/themes/btemptd/assets/images/pause-button.png");
+      $(".play-pause").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/pause-button.png");
     }
   });
 
@@ -64,10 +65,10 @@ require('../../scss/website/btemptd-swiper.scss');
   $(".pause-btn-blog").on("click", function () {
     if ($(".featured-articles-slider-blog").hasClass("pause")) {
       featuredBlogArticles.autoplay.stop();
-      $(".play-pause-blog").attr("src", "wp-content/themes/btemptd/assets/images/play-button.png");
+      $(".play-pause-blog").attr("src",base_url+"/wp-content/themes/btemptd/assets/images/play-button.png");
     } else {
       featuredBlogArticles.autoplay.start();
-      $(".play-pause-blog").attr("src", "wp-content/themes/btemptd/assets/images/pause-button.png");
+      $(".play-pause-blog").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/pause-button.png");
     }
   });
 
@@ -98,10 +99,10 @@ require('../../scss/website/btemptd-swiper.scss');
   $(".pause-btn-blog-mobile").on("click", function () {
     if ($(".featured-articles-slider-one").hasClass("pause")) {
       featuredArticlesOne.autoplay.stop();
-      $(".play-pause-blog-mobile").attr("src", "wp-content/themes/btemptd/assets/images/play-button.png");
+      $(".play-pause-blog-mobile").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/play-button.png");
     } else {
       featuredArticlesOne.autoplay.start();
-      $(".play-pause-blog-mobile").attr("src", "wp-content/themes/btemptd/assets/images/pause-button.png");
+      $(".play-pause-blog-mobile").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/pause-button.png");
     }
   });
 
@@ -131,10 +132,10 @@ require('../../scss/website/btemptd-swiper.scss');
   $(".pause-btn-mobile").on("click", function () {
     if ($(".featured-articles-slider-two").hasClass("pause")) {
       featuredArticlesTwo.autoplay.stop();
-      $(".play-pause-mobile").attr("src", "wp-content/themes/btemptd/assets/images/play-button.png");
+      $(".play-pause-mobile").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/play-button.png");
     } else {
       featuredArticlesTwo.autoplay.start();
-      $(".play-pause-mobile").attr("src", "wp-content/themes/btemptd/assets/images/pause-button.png");
+      $(".play-pause-mobile").attr("src", base_url+"/wp-content/themes/btemptd/assets/images/pause-button.png");
     }
   });
 
