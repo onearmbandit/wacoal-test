@@ -73,11 +73,12 @@ function wpcode_get_auto_insert_location_picker( $selected_location, $code_type 
 				<?php echo $extra_data; ?>
 			>
 				<?php
-				foreach ( $options as $key => $label ) {
+				foreach ( $options as $key => $location ) {
 					$disabled = false;
 					if ( 'all' !== $type->code_type && $type->code_type !== $code_type ) {
 						$disabled = true;
 					}
+					$label = wpcode_find_location_label( $key );
 					?>
 					<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $selected_location, $key ); ?> <?php disabled( $disabled ); ?>>
 						<?php echo esc_html( $label ); ?>
@@ -104,8 +105,13 @@ function wpcode_find_location_label( $location_slug ) {
 	$location_label  = '';
 	foreach ( $available_types as $type ) {
 		$options = $type->get_locations();
-		foreach ( $options as $key => $label ) {
+		foreach ( $options as $key => $location ) {
 			if ( $key === $location_slug ) {
+				if ( isset( $location['label'] ) ) {
+					$label = $location['label'];
+				} else {
+					$label = $location;
+				}
 				$location_label = $label;
 				break 2;
 			}

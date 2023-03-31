@@ -1033,14 +1033,16 @@ abstract class WPCode_Admin_Page {
 				</div>
 			<?php } ?>
 			<ul class="wpcode-items-categories-list wpcode-items-filters">
-				<li>
-					<button type="button" data-category="*" class="<?php echo empty( $selected_category ) ? 'wpcode-active' : ''; ?>">
-						<?php echo esc_html( $all_text ); ?>
-						<?php if ( $all_count ) { ?>
-							<span class="wpcode-items-count"><?php echo esc_html( $all_count ); ?></span>
-						<?php } ?>
-					</button>
-				</li>
+				<?php if ( ! empty( $all_text ) ) { ?>
+					<li>
+						<button type="button" data-category="*" class="<?php echo empty( $selected_category ) ? 'wpcode-active' : ''; ?>">
+							<?php echo esc_html( $all_text ); ?>
+							<?php if ( $all_count ) { ?>
+								<span class="wpcode-items-count"><?php echo esc_html( $all_count ); ?></span>
+							<?php } ?>
+						</button>
+					</li>
+				<?php } ?>
 				<?php
 				foreach ( $categories as $category ) {
 					// Mark the first category as active.

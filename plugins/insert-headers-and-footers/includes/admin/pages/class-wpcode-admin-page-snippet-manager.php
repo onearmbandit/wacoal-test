@@ -368,10 +368,9 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 	 * @return void
 	 */
 	public function field_insert_options() {
-		$title               = __( 'Insertion', 'insert-headers-and-footers' );
-		$insert_toggle       = $this->get_input_insert_toggle();
-		$auto_insert_options = $this->get_input_auto_insert_options();
-		$shortcode_field     = $this->get_input_shortcode();
+		$title           = __( 'Insertion', 'insert-headers-and-footers' );
+		$insert_toggle   = $this->get_input_insert_toggle();
+		$shortcode_field = $this->get_input_shortcode();
 		// Build the field markup here.
 		ob_start();
 		?>
@@ -380,21 +379,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 		<div class="wpcode-metabox-form">
 			<?php $this->metabox_row( __( 'Insert Method', 'insert-headers-and-footers' ), $insert_toggle ); ?>
 			<div class="wpcode-auto-insert-form-fields" data-show-if-id="#wpcode_auto_insert" data-show-if-value="1">
-				<?php
-				$this->metabox_row( __( 'Location', 'insert-headers-and-footers' ), $auto_insert_options, 'wpcode_auto_insert_location' );
-				$this->metabox_row(
-					__( 'Insert Number', 'insert-headers-and-footers' ),
-					$this->get_input_number(
-						'wpcode_auto_insert_number',
-						$this->get_auto_insert_number_value(),
-						'',
-						1
-					) . $this->get_insert_number_descriptions(),
-					'wpcode_auto_insert_number',
-					'#wpcode_auto_insert_location',
-					implode( ',', wpcode_get_auto_insert_locations_with_number() )
-				);
-				?>
+				<?php $this->metabox_row( __( 'Location', 'insert-headers-and-footers' ), $this->get_selected_auto_insert_location() ); ?>
 			</div>
 			<div class="wpcode-shortcode-form-fields" data-show-if-id="#wpcode_auto_insert" data-show-if-value="0">
 				<?php
@@ -402,6 +387,9 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 				$this->get_input_row_custom_shortcode();
 				?>
 			</div>
+		</div>
+		<?php $this->get_input_auto_insert_options(); ?>
+		<div class="wpcode-metabox-form">
 			<?php $this->get_input_row_schedule(); ?>
 		</div>
 		<?php
@@ -421,14 +409,14 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 	 */
 	public function get_insert_number_descriptions() {
 		$descriptions = array(
-			'before_paragraph'    => __( 'Number of paragraphs before which to insert the snippet.', 'insert-headers-and-footers' ),
-			'after_paragraph'     => __( 'Number of paragraphs after which to insert the snippet.', 'insert-headers-and-footers' ),
-			'archive_before_post' => __( 'Number of posts before which to insert the snippet.', 'insert-headers-and-footers' ),
-			'archive_after_post'  => __( 'Number of posts after which to insert the snippet.', 'insert-headers-and-footers' ),
+			'before_paragraph'    => __( 'before paragraph number', 'insert-headers-and-footers' ),
+			'after_paragraph'     => __( 'after paragraph number', 'insert-headers-and-footers' ),
+			'archive_before_post' => __( 'before post number', 'insert-headers-and-footers' ),
+			'archive_after_post'  => __( 'after post number', 'insert-headers-and-footers' ),
 		);
 		$markup       = '';
 		foreach ( $descriptions as $value => $description ) {
-			$markup .= sprintf( '<p data-show-if-id="#wpcode_auto_insert_location" data-show-if-value="%1$s" style="display:none;">%2$s</p>', $value, esc_html( $description ) );
+			$markup .= sprintf( '<div class="wpcode-location-extra-input-description" data-show-if-id="[name=\'wpcode_auto_insert_location\']" data-show-if-value="%1$s" style="display:none;">%2$s</div>', $value, esc_html( $description ) );
 		}
 
 		return $markup;
@@ -487,11 +475,187 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 	 * This uses the auto-insert class that loads all the available types.
 	 * Each type has some specific options.
 	 *
-	 * @return string
+	 * @return void
 	 * @see WPCode_Auto_Insert
 	 */
 	public function get_input_auto_insert_options() {
-		$location       = '';
+
+		$code_type        = $this->code_type;
+		$current_location = $this->get_current_snippet_location();
+
+		$locations_by_category = wpcode()->auto_insert->get_type_categories();
+		// Let's find the active category from the selected location.
+		$active_category = 'global';
+		foreach ( $locations_by_category as $category_key => $category_data ) {
+			/**
+			 * @var WPCode_Auto_Insert_Type $type
+			 */
+			foreach ( $category_data['types'] as $type ) {
+				$locations = $type->get_locations();
+				if ( array_key_exists( $current_location, $locations ) ) {
+					$active_category = $category_key;
+					break 2;
+				}
+			}
+		}
+
+		?>
+		<div class="wpcode-items-metabox wpcode-items-metabox-inside" id="wpcode_auto_insert_location">
+			<?php
+			$this->get_items_list_sidebar(
+				wpcode()->auto_insert->get_type_categories_for_sidebar(),
+				'',
+				__( 'Search locations', 'insert-headers-and-footers' ),
+				$active_category
+			);
+			?>
+			<div class="wpcode-items-list">
+				<ul class="wpcode-items-list-category">
+					<?php
+					$index          = 0;
+					$selected_label = __( 'Selected', 'insert-headers-and-footers' );
+					foreach ( $locations_by_category as $category_key => $category_data ) {
+						$style = '';
+						if ( $category_key !== $active_category ) {
+							$style = 'display:none;';
+						}
+						foreach ( $category_data['types'] as $type ) {
+							$locations  = $type->get_locations();
+							$label_pill = '';
+							if ( ! empty( $type->label_pill ) ) {
+								$label_pill = $type->label_pill;
+							}
+							?>
+							<li class="wpcode-list-item wpcode-list-item-separator" data-index="<?php echo absint( $index ); ?>" data-categories='<?php echo wp_json_encode( array( $category_key ) ); ?>' style="<?php echo esc_attr( $style ); ?>" data-code-type="<?php echo esc_attr( $type->code_type ); ?>">
+								<?php echo esc_html( $type->get_label() ); ?>
+								<?php if ( ! empty( $label_pill ) ) : ?>
+									<span class="wpcode-list-item-pill wpcode-list-item-pill-light"><?php echo esc_html( $label_pill ); ?></span>
+								<?php endif; ?>
+							</li>
+							<?php
+							$index ++;
+
+							foreach ( $locations as $location_slug => $location ) {
+								$description    = '';
+								$style_class    = 'wpcode-list-item wpcode-list-item-location';
+								$label          = $location;
+								$extra_data     = '';
+								$input_disabled = false;
+								$tabindex       = 'tabindex="0"';
+								if ( isset( $location['label'] ) ) {
+									$label       = $location['label'];
+									$description = $location['description'];
+								}
+								if ( 'all' !== $type->code_type && $type->code_type !== $code_type ) {
+									$style_class .= ' wpcode-list-item-disabled';
+									$tabindex    = '';
+
+									$input_disabled = true;
+								}
+								if ( ! empty( $type->upgrade_title ) ) {
+									$extra_data = ' data-upgrade-title="' . esc_attr( $type->upgrade_title ) . '"';
+								}
+								if ( ! empty( $type->upgrade_text ) ) {
+									$extra_data .= ' data-upgrade-text="' . esc_attr( $type->upgrade_text ) . '"';
+								}
+								if ( ! empty( $type->upgrade_link ) ) {
+									$extra_data .= ' data-upgrade-link="' . esc_attr( $type->upgrade_link ) . '"';
+								}
+								if ( ! empty( $type->upgrade_button ) ) {
+									$extra_data .= ' data-upgrade-button="' . esc_attr( $type->upgrade_button ) . '"';
+								}
+								if ( $location_slug === $current_location ) {
+									$style_class .= ' wpcode-list-item-selected';
+								}
+								?>
+								<li class="<?php echo esc_attr( $style_class ); ?>" data-index="<?php echo absint( $index ); ?>" data-id="<?php echo esc_attr( $location_slug ); ?>" data-categories='<?php echo wp_json_encode( array( $category_key ) ); ?>' data-code-type="<?php echo esc_attr( $type->code_type ); ?>" style="<?php echo esc_attr( $style ); ?>" <?php echo $tabindex; ?>>
+									<label <?php echo $extra_data; // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+										<span class="wpcode-list-item-title" title="<?php echo esc_attr( $label ); ?>" data-selected-label="<?php echo esc_attr( $selected_label ); ?>">
+											<span class="wpcode-keywords">
+												<?php
+												// Output the type label to improve search results without displaying the text to the user.
+												echo esc_html( $type->label );
+												?>
+											</span>
+											<?php echo esc_html( $label ); ?>
+										</span>
+										<span class="wpcode-list-item-actions">
+											<span class="wpcode-list-item-description">
+											<?php echo esc_html( $description ); ?>
+											</span>
+										</span>
+										<input type="radio" name="wpcode_auto_insert_location" value="<?php echo esc_attr( $location_slug ); ?>" <?php checked( $location_slug, $current_location ); ?> <?php disabled( $input_disabled ); ?> />
+									</label>
+								</li>
+								<?php
+								$index ++;
+							}
+						}
+					}
+					?>
+				</ul>
+			</div>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Get the selected auto insert location.
+	 *
+	 * @return string
+	 */
+	public function get_selected_auto_insert_location() {
+		$current_location = $this->get_current_snippet_location();
+
+		if ( empty( $current_location ) ) {
+			$current_location = 'site_wide_header';
+		}
+
+		$location_extra = isset( $this->snippet ) ? $this->snippet->get_location_extra() : '';
+
+		// Show a faux select box with the current location.
+		$location_label = wpcode()->auto_insert->get_location_label( $current_location );
+
+		$markup = '<input type="hidden" name="wpcode_auto_insert_location_extra" id="wpcode_auto_insert_location_extra" value="' . esc_attr( $location_extra ) . '" />';
+
+		$markup .= '<div class="wpcode-faux-select" id="wpcode-selected-location-display" tabindex="0"><span>' . esc_html( $location_label ) . '</span></div>';
+		$markup .= '<div class="wpcode-extra-location-fields">';
+		$markup .= '<div class="wpcode-extra-location-input" data-show-if-id="[name=\'wpcode_auto_insert_location\']" data-show-if-value="' . implode( ',', wpcode_get_auto_insert_locations_with_number() ) . '">';
+		$markup .= $this->get_insert_number_descriptions();
+		$markup .= $this->get_input_number(
+			'wpcode_auto_insert_number',
+			$this->get_auto_insert_number_value(),
+			'',
+			1
+		);
+		$markup .= '</div>';
+
+		/**
+		 * Filter the markup for the location display inputs.
+		 * This is used to add the number input for auto insert locations.
+		 *
+		 * @param string               $markup The markup to display.
+		 * @param WPCode_Snippet|false $snippet The snippet object.
+		 * @param WPCode_Admin_Page    $this The admin page object.
+		 */
+		$markup = apply_filters( 'wpcode_location_display_inputs', $markup, isset( $this->snippet ) ? $this->snippet : false, $this );
+
+		$markup .= '</div>';// End wpcode-extra-location-fields.
+
+		return $markup;
+
+	}
+
+	/**
+	 * Grab the current snippet location.
+	 *
+	 * @return mixed|string
+	 */
+	public function get_current_snippet_location() {
+		$current_location = 'site_wide_header';
+		if ( ! isset( $this->snippet_id ) ) {
+			return $current_location;
+		}
 		$location_terms = wp_get_post_terms(
 			$this->snippet_id,
 			'wpcode_location',
@@ -501,10 +665,10 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 			)
 		);
 		if ( ! empty( $location_terms ) ) {
-			$location = $location_terms[0];
+			$current_location = $location_terms[0];
 		}
 
-		return wpcode_get_auto_insert_location_picker( $location, $this->code_type );
+		return $current_location;
 	}
 
 	/**
@@ -802,19 +966,20 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 
 		$snippet = new WPCode_Snippet(
 			array(
-				'id'            => empty( $_REQUEST['id'] ) ? 0 : absint( $_REQUEST['id'] ),
-				'title'         => isset( $_POST['wpcode_snippet_title'] ) ? sanitize_text_field( wp_unslash( $_POST['wpcode_snippet_title'] ) ) : '',
-				'code'          => $snippet_code,
-				'active'        => isset( $_REQUEST['wpcode_active'] ),
-				'code_type'     => $code_type,
-				'location'      => isset( $_POST['wpcode_auto_insert_location'] ) ? sanitize_text_field( wp_unslash( $_POST['wpcode_auto_insert_location'] ) ) : '',
-				'insert_number' => isset( $_POST['wpcode_auto_insert_number'] ) ? absint( $_POST['wpcode_auto_insert_number'] ) : 0,
-				'auto_insert'   => isset( $_POST['wpcode_auto_insert'] ) ? absint( $_POST['wpcode_auto_insert'] ) : 0,
-				'tags'          => $tags,
-				'use_rules'     => isset( $_POST['wpcode_conditional_logic_enable'] ),
-				'rules'         => $rules,
-				'priority'      => isset( $_POST['wpcode_priority'] ) ? intval( $_POST['wpcode_priority'] ) : 10,
-				'note'          => isset( $_POST['wpcode_note'] ) ? sanitize_textarea_field( wp_unslash( $_POST['wpcode_note'] ) ) : '',
+				'id'             => empty( $_REQUEST['id'] ) ? 0 : absint( $_REQUEST['id'] ),
+				'title'          => isset( $_POST['wpcode_snippet_title'] ) ? sanitize_text_field( wp_unslash( $_POST['wpcode_snippet_title'] ) ) : '',
+				'code'           => $snippet_code,
+				'active'         => isset( $_REQUEST['wpcode_active'] ),
+				'code_type'      => $code_type,
+				'location'       => isset( $_POST['wpcode_auto_insert_location'] ) ? sanitize_text_field( wp_unslash( $_POST['wpcode_auto_insert_location'] ) ) : '',
+				'insert_number'  => isset( $_POST['wpcode_auto_insert_number'] ) ? absint( $_POST['wpcode_auto_insert_number'] ) : 0,
+				'auto_insert'    => isset( $_POST['wpcode_auto_insert'] ) ? absint( $_POST['wpcode_auto_insert'] ) : 0,
+				'tags'           => $tags,
+				'use_rules'      => isset( $_POST['wpcode_conditional_logic_enable'] ),
+				'rules'          => $rules,
+				'priority'       => isset( $_POST['wpcode_priority'] ) ? intval( $_POST['wpcode_priority'] ) : 10,
+				'note'           => isset( $_POST['wpcode_note'] ) ? sanitize_textarea_field( wp_unslash( $_POST['wpcode_note'] ) ) : '',
+				'location_extra' => isset( $_POST['wpcode_auto_insert_location_extra'] ) ? sanitize_text_field( wp_unslash( $_POST['wpcode_auto_insert_location_extra'] ) ) : '',
 			)
 		);
 
@@ -989,9 +1154,12 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 				$multiple = isset( $data['multiple'] ) && $data['multiple'] ? 'multiple' : '';
 				$class    = isset( $data['multiple'] ) && $data['multiple'] ? 'wpcode-select2' : '';
 				$markup   = '<select class=' . esc_attr( $class ) . '  ' . $multiple . '>';
+				if ( empty( $value ) ) {
+					$value = false;
+				}
+				$selected = ! is_array( $value ) ? array( $value ) : $value;
 				foreach ( $data['options'] as $option ) {
-					$selected = ! is_array( $value ) ? array( $value ) : $value;
-					$markup   .= '<option value="' . esc_attr( $option['value'] ) . '" ' . selected( in_array( $option['value'], $selected, true ), true, false ) . ' ' . disabled( isset( $option['disabled'] ) && $option['disabled'], true, false ) . '>' . esc_html( $option['label'] ) . '</option>';
+					$markup .= '<option value="' . esc_attr( $option['value'] ) . '" ' . selected( in_array( $option['value'], $selected, true ), true, false ) . ' ' . disabled( isset( $option['disabled'] ) && $option['disabled'], true, false ) . '>' . esc_html( $option['label'] ) . '</option>';
 				}
 				$markup .= '</select>';
 				break;

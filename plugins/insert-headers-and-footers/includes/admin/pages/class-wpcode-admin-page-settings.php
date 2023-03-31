@@ -46,6 +46,7 @@ class WPCode_Admin_Page_Settings extends WPCode_Admin_Page {
 	 */
 	public function page_hooks() {
 		add_action( 'admin_init', array( $this, 'submit_listener' ) );
+		add_filter( 'wpcode_admin_js_data', array( $this, 'add_connect_strings' ) );
 	}
 
 	/**
@@ -77,6 +78,11 @@ class WPCode_Admin_Page_Settings extends WPCode_Admin_Page {
 			__( '%1$sNOTE:%2$s Please use this setting with caution. It will disable all custom snippets that you add using the new snippet management interface.', 'insert-headers-and-footers' ),
 			'<strong>',
 			'</strong>'
+		);
+
+		$this->metabox_row(
+			__( 'License Key', 'insert-headers-and-footers' ),
+			$this->get_license_key_input()
 		);
 
 		$this->metabox_row(
@@ -232,5 +238,58 @@ class WPCode_Admin_Page_Settings extends WPCode_Admin_Page {
 		$html .= '</p>';
 
 		return $html;
+	}
+
+	/**
+	 * Get the license key input.
+	 *
+	 * @return string
+	 */
+	public function get_license_key_input() {
+		ob_start();
+		?>
+		<div class="wpcode-metabox-form">
+			<p><?php esc_html_e( 'You\'re using WPCode Lite - no license needed. Enjoy!', 'insert-headers-and-footers' ); ?>
+				<img draggable="false" role="img" class="emoji" alt="🙂" src="https://s.w.org/images/core/emoji/14.0.0/svg/1f642.svg">
+			</p>
+			<p>
+				<?php
+				printf(
+				// Translators: %1$s - Opening anchor tag, do not translate. %2$s - Closing anchor tag, do not translate.
+					esc_html__( 'To unlock more features consider %1$supgrading to PRO%2$s.', 'insert-headers-and-footers' ),
+					'<strong><a href="' . esc_url( wpcode_utm_url( 'https://wpcode.com/lite/', 'settings-license', 'upgrading-to-pro' ) ) . '" target="_blank" rel="noopener noreferrer">',
+					'</a></strong>'
+				)
+				?>
+			</p>
+			<hr>
+			<p><?php esc_html_e( 'Already purchased? Simply enter your license key below to enable WPCode PRO!', 'insert-headers-and-footers' ); ?></p>
+			<p>
+				<input type="password" class="wpcode-input-text" id="wpcode-settings-upgrade-license-key" placeholder="<?php esc_attr_e( 'Paste license key here', 'insert-headers-and-footers' ); ?>" value="">
+				<button type="button" class="wpcode-button" id="wpcode-settings-connect-btn">
+					<?php esc_html_e( 'Verify Key', 'insert-headers-and-footers' ); ?>
+				</button>
+			</p>
+		</div>
+		<?php
+
+		return ob_get_clean();
+	}
+
+	/**
+	 * Add the strings for the connect page to the JS object.
+	 *
+	 * @param array $data The localized data we already have.
+	 *
+	 * @return array
+	 */
+	public function add_connect_strings( $data ) {
+		$data['oops']                = esc_html__( 'Oops!', 'insert-headers-and-footers' );
+		$data['ok']                  = esc_html__( 'OK', 'insert-headers-and-footers' );
+		$data['almost_done']         = esc_html__( 'Almost Done', 'insert-headers-and-footers' );
+		$data['plugin_activate_btn'] = esc_html__( 'Activate', 'insert-headers-and-footers' );
+		$data['server_error']        = esc_html__( 'Unfortunately there was a server connection error.', 'insert-headers-and-footers' );
+
+		return $data;
 	}
 }

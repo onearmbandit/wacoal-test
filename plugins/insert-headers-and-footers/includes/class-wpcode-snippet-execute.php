@@ -299,7 +299,7 @@ class WPCode_Snippet_Execute {
 			)
 		);
 		if ( isset( $this->snippet_executed ) && in_array( $this->snippet_executed->get_location(), $locations_to_auto_disable, true ) ) {
-			$this->snippet_executed->deactivate();
+			$this->snippet_executed->force_deactivate();
 		}
 	}
 
