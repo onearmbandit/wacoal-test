@@ -115,9 +115,6 @@ if(!empty($banner_link)) :?>
             </div>
                 </div>
             </div>
-            <div class="pause-btn">
-                <img class="play-pause" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
-            </div>
         </div>
     </div>
 </section>
@@ -188,9 +185,6 @@ if(!empty($banner_link)) :?>
 
             </div>
             <div class="swiper-pagination custom-swiper-pagination"></div>
-            <div class="pause-btn-mobile">
-                <img class="play-pause-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
-            </div>
         </div>
     </div>
 </section>
@@ -349,7 +343,7 @@ if(!empty($banner_link)) :?>
 <?php if(!empty($featured_posts)) :?>
 <section class="featured-articles desktop">
     <div class="featured-articles--wrapper box-shadow-right">
-        <div class="swiper-container featured-articles-slider-blog">
+        <div class="swiper-container featured-articles-slider">
             <div class="swiper-wrapper">
                 <?php foreach($featured_posts as $featured_post): ?>
                     <?php
@@ -413,10 +407,6 @@ if(!empty($banner_link)) :?>
                         <img src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow-left.svg" alt="Slider Arrow" />
                     </div>
                 </div>
-            </div>
-
-            <div class="pause-btn-blog">
-                <img class="play-pause-blog" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
             </div>
         </div>
     </div>
@@ -487,9 +477,6 @@ if(!empty($banner_link)) :?>
 
             </div>
             <div class="swiper-pagination custom-swiper-pagination"></div>
-            <div class="pause-btn-blog-mobile">
-                <img class="play-pause-blog-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
-            </div>
         </div>
     </div>
 </section>
