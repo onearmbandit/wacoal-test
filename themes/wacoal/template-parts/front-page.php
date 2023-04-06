@@ -42,6 +42,9 @@
 <?php if($slider_blogs_posts && !empty($slider_blogs_posts)) :?>
 <section class="evergreen-article--slider evergreen-article--desktop">
     <div class="swiper-container center-slide-slider">
+        <button aria-label="Stop automatic slideshow" class="pause-btn" type="button">
+            <img class="play-pause" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+        </button>
         <div class="swiper-wrapper">
             <?php foreach ($slider_blogs_posts as $key => $slider_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
@@ -112,9 +115,6 @@
                  data-src="<?php echo  esc_url(THEMEURI); ?>/assets/images/swiper-arrow.svg"
                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                  alt="Slider Arrow" />
-        </div>
-        <div class="pause-btn">
-                <img class="play-pause" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
         </div>
   </div>
 </section>
