@@ -50,6 +50,9 @@ if(!empty($banner_link)) :?>
 <section class="featured-articles desktop even">
     <div class="featured-articles--wrapper box-shadow-left">
         <div class="swiper-container featured-articles-slider">
+            <button aria-label="Stop automatic slideshow" class="pause-btn" type="button">
+                <img class="play-pause" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+            </button>
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
                     <?php
@@ -124,6 +127,9 @@ if(!empty($banner_link)) :?>
 <section class="featured-articles-mobile-two">
     <div class="featured-articles-mobile--wrapper">
         <div class="swiper-container featured-articles-slider-two">
+            <button aria-label="Stop automatic slideshow" class="pause-btn-mobile" type="button">
+                <img class="play-pause-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+            </button>
             <div class="swiper-wrapper">
                 <?php foreach($slider_posts as $slider_post): ?>
                     <?php
@@ -343,7 +349,10 @@ if(!empty($banner_link)) :?>
 <?php if(!empty($featured_posts)) :?>
 <section class="featured-articles desktop">
     <div class="featured-articles--wrapper box-shadow-right">
-        <div class="swiper-container featured-articles-slider">
+        <div class="swiper-container featured-articles-slider-blog">
+            <button aria-label="Stop automatic slideshow" class="pause-btn-blog" type="button">
+                <img class="play-pause-blog" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+            </button>
             <div class="swiper-wrapper">
                 <?php foreach($featured_posts as $featured_post): ?>
                     <?php
@@ -417,6 +426,9 @@ if(!empty($banner_link)) :?>
 <section class="featured-articles-mobile-one">
     <div class="featured-articles-mobile--wrapper">
         <div class="swiper-container featured-articles-slider-one">
+            <button aria-label="Stop automatic slideshow" class="pause-btn-blog-mobile" type="button">
+                <img class="play-pause-blog-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+            </button>
             <div class="swiper-wrapper">
                 <?php foreach($featured_posts as $featured_post): ?>
                     <?php

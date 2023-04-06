@@ -121,6 +121,9 @@
 
 <section class="evergreen-article--slider evergreen-article--mobile">
     <div class="swiper-container center-slide-slider-mobile">
+        <button aria-label="Stop automatic slideshow" class="pause-btn-mobile" type="button">
+            <img class="play-pause-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+        </button>
         <div class="swiper-wrapper">
             <?php foreach ($slider_blogs_posts as $key => $slider_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
@@ -194,10 +197,6 @@
         </div>
 
         <div class="swiper-pagination custom-swiper-pagination"></div>
-
-        <div class="pause-btn-mobile">
-                <img class="play-pause-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
-        </div>
   </div>
 </section>
 <?php endif;?>
