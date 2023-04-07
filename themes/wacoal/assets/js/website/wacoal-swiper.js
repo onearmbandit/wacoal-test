@@ -40,21 +40,23 @@ require("../../scss/website/wacoal-swiper.scss");
     $(".center-slide-slider").toggleClass("pause");
   });
 
-  $(".pause-btn").on("click", function () {
-    if ($(".center-slide-slider").hasClass("pause")) {
-      $(".pause-btn").attr("aria-label", "Start automatic slideshow");
-      centerSlideSwiper.autoplay.stop();
-      $(".play-pause").attr(
-        "src",
-        "wp-content/themes/wacoal/assets/images/play-button.png"
-      );
-    } else {
-      $(".pause-btn").attr("aria-label", "Stop Automatic Slide Show");
-      centerSlideSwiper.autoplay.start();
-      $(".play-pause").attr(
-        "src",
-        "wp-content/themes/wacoal/assets/images/pause-button.png"
-      );
+  $(".pause-btn").on("click keydown", function (event) {
+    if (event.type === "click" || (event.type === "keydown" && (event.keyCode === 32 || event.keyCode === 13))) {
+      if ($(".center-slide-slider").hasClass("pause")) {
+        $(".pause-btn").attr("aria-label", "Start automatic slideshow");
+        centerSlideSwiper.autoplay.stop();
+        $(".play-pause").attr(
+          "src",
+          "wp-content/themes/wacoal/assets/images/play-button.png"
+        );
+      } else {
+        $(".pause-btn").attr("aria-label", "Stop Automatic Slide Show");
+        centerSlideSwiper.autoplay.start();
+        $(".play-pause").attr(
+          "src",
+          "wp-content/themes/wacoal/assets/images/pause-button.png"
+        );
+      }
     }
   });
 
@@ -82,19 +84,23 @@ require("../../scss/website/wacoal-swiper.scss");
     $(".center-slide-slider-mobile").toggleClass("pause");
   });
 
-  $(".pause-btn-mobile").on("click", function () {
-    if ($(".center-slide-slider-mobile").hasClass("pause")) {
-      centerSlideSwiperMobile.autoplay.stop();
-      $(".play-pause-mobile").attr(
-        "src",
-        "wp-content/themes/btemptd/assets/images/play-button.png"
-      );
-    } else {
-      centerSlideSwiperMobile.autoplay.start();
-      $(".play-pause-mobile").attr(
-        "src",
-        "wp-content/themes/btemptd/assets/images/pause-button.png"
-      );
+  $(".pause-btn-mobile").on("click keydown", function (event) {
+    if (event.type === "click" || (event.type === "keydown" && (event.keyCode === 32 || event.keyCode === 13))) {
+      if ($(".center-slide-slider-mobile").hasClass("pause")) {
+        $(".play-pause-mobile").attr("aria-label", "Start automatic slideshow");
+        centerSlideSwiperMobile.autoplay.stop();
+        $(".play-pause-mobile").attr(
+          "src",
+          "wp-content/themes/wacoal/assets/images/play-button.png"
+        );
+      } else {
+        $(".play-pause-mobile").attr("aria-label", "Stop Automatic Slide Show");
+        centerSlideSwiperMobile.autoplay.start();
+        $(".play-pause-mobile").attr(
+          "src",
+          "wp-content/themes/wacoal/assets/images/pause-button.png"
+        );
+      }
     }
   });
 

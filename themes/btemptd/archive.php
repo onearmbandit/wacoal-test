@@ -369,8 +369,8 @@ if ($template == 'simple') :
     <section class="featured-articles-mobile-two">
         <div class="featured-articles-mobile--wrapper">
             <div class="swiper-container featured-articles-slider-two">
-            <button aria-label="Stop automatic slideshow" class="pause-btn-btn-mobile" type="button">
-                    <img class="play-pause-btn-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+            <button aria-label="Stop automatic slideshow" class="pause-btn-mobile" type="button">
+                    <img class="play-btn-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
                 </button>
                 <div class="swiper-wrapper">
                         <?php foreach($slider_posts as $slider_post): ?>

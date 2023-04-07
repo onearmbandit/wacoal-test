@@ -46,6 +46,7 @@ require('../../scss/website/btemptd-swiper.scss');
     }
   });
 
+
   var featuredBlogArticles = new Swiper('.featured-articles-slider-blog', {
     slidesPerView: 1,
     centeredSlides: true,
