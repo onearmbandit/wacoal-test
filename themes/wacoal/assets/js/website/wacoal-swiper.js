@@ -23,8 +23,7 @@ require("../../scss/website/wacoal-swiper.scss");
     centeredSlides: true,
     loop: true,
     autoplay: {
-      // delay: 2500,
-      delay: 500,
+      delay: 2500,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
