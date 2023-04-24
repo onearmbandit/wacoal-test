@@ -507,8 +507,6 @@
   }
 
   @include respond-below(md) {
-    width: 40px;
-    height: 40px;
     left:20px;
   }
 
