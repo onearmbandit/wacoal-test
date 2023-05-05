@@ -4,7 +4,7 @@ Tags: code, css, php, footer, functions, content, facebook pixel, footer code, f
 Requires at least: 4.6
 Tested up to: 6.2
 Requires PHP: 5.5
-Stable tag: 2.0.10
+Stable tag: 2.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -307,6 +307,11 @@ Thank you
 Syed Balkhi
 
 == Changelog ==
+
+= 2.0.11 =
+* New: Automatically disabled snippets due to errors will now be highlighted in the list for easier debugging.
+* New: We added a filter to allow users to easily customize the Codemirror settings for the WPCode editor.
+* Tweak: We extended our plugin-specific snippet loading to allow plugin version checks.
 
 = 2.0.10 =
 * New: We added a way to load more snippets in the WPCode Library relevant to other plugins you are using.

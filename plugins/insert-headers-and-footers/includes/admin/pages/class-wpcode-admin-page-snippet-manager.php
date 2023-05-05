@@ -108,6 +108,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 		add_filter( 'admin_body_class', array( $this, 'body_class_code_type' ) );
 		add_filter( 'admin_body_class', array( $this, 'maybe_editor_height_auto' ) );
 		add_filter( 'admin_head', array( $this, 'maybe_editor_height' ) );
+		add_action( 'wpcode_admin_notices', array( $this, 'maybe_show_deactivated_notice' ) );
 	}
 
 	/**
@@ -921,7 +922,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 				type="button">
 			<?php
 			wpcode_icon( 'cloud', 16, 12 );
-			esc_html_e( 'Save to Library', 'wpcode-premium' );
+			esc_html_e( 'Save to Library', 'insert-headers-and-footers' );
 			?>
 		</button>
 		<?php
@@ -1547,7 +1548,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 	public function field_code_revisions() {
 		$html = sprintf(
 			'<p>%s</p><hr />',
-			esc_html__( 'As you make changes to your snippet and save, you will get a list of previous versions with all the changes made in each revision. You can compare revisions to the current version or see changes as they have been saved by going through each revision. Any of the revisions can then be restored as needed.', 'wpcode-premium' )
+			esc_html__( 'As you make changes to your snippet and save, you will get a list of previous versions with all the changes made in each revision. You can compare revisions to the current version or see changes as they have been saved by going through each revision. Any of the revisions can then be restored as needed.', 'insert-headers-and-footers' )
 		);
 
 		$html .= $this->code_revisions_list();
@@ -1566,7 +1567,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 	public function field_device_type() {
 		$html = sprintf(
 			'<p>%s</p>',
-			esc_html__( 'Limit where you want this snippet to be loaded by device type. By default, snippets are loaded on all devices.', 'wpcode-premium' )
+			esc_html__( 'Limit where you want this snippet to be loaded by device type. By default, snippets are loaded on all devices.', 'insert-headers-and-footers' )
 		);
 
 		$html .= '<div class="wpcode-separator"></div>';
@@ -1650,7 +1651,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 
 		$compare = sprintf(
 			'<span>%s</span>',
-			esc_html__( 'Compare', 'wpcode-premium' )
+			esc_html__( 'Compare', 'insert-headers-and-footers' )
 		);
 		$view    = sprintf(
 			'<span>%s</a>',
@@ -1660,7 +1661,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 		foreach ( $revisions_data as $revisions_date ) {
 			$updated = sprintf(
 			// Translators: time since the revision has been updated.
-				esc_html__( 'Updated %s ago', 'wpcode-premium' ),
+				esc_html__( 'Updated %s ago', 'insert-headers-and-footers' ),
 				human_time_diff( $revisions_date )
 			);
 
@@ -1683,7 +1684,7 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 
 		$button_text = sprintf(
 		// Translators: The placeholder gets replaced with the extra number of revisions available.
-			esc_html__( '%d Other Revisions', 'wpcode-premium' ),
+			esc_html__( '%d Other Revisions', 'insert-headers-and-footers' ),
 			3
 		);
 
@@ -1776,5 +1777,77 @@ class WPCode_Admin_Page_Snippet_Manager extends WPCode_Admin_Page {
 		$list_item .= '</li>';
 
 		return $list_item;
+	}
+
+	/**
+	 * Display a notice if the snippet loaded for editing has been recently deactivated.
+	 *
+	 * @return void
+	 */
+	public function maybe_show_deactivated_notice() {
+		if ( ! isset( $this->snippet ) ) {
+			return;
+		}
+		$recently_deactivated = $this->snippet->get_recently_deactivated_time();
+		if ( empty( $recently_deactivated ) ) {
+			return;
+		}
+
+		// Let's see if error logging is enabled.
+		$logging_enabled = wpcode()->settings->get_option( 'error_logging' );
+		if ( $logging_enabled ) {
+			$button_text = esc_html__( 'View Error Logs', 'insert-headers-and-footers' );
+			$button_url  = add_query_arg(
+				array(
+					'page' => 'wpcode-tools',
+					'view' => 'logs',
+				),
+				admin_url( 'admin.php' )
+			);
+		} else {
+			$button_text = esc_html__( 'Enable Error Logging', 'insert-headers-and-footers' );
+			$button_url  = add_query_arg(
+				array(
+					'page' => 'wpcode-settings',
+				),
+				admin_url( 'admin.php' )
+			);
+		}
+
+		?>
+		<div class="info fade notice is-dismissible">
+			<p>
+				<?php
+				printf(
+				// Translators: The placeholder gets replaced with the time passed since the snippet was deactivated.
+					esc_html__( 'This snippet was automatically deactivated due to an error at %1$s on %2$s (%3$s ago).', 'insert-headers-and-footers' ),
+					gmdate( 'H:i:s', $recently_deactivated ),
+					gmdate( 'Y-m-d', $recently_deactivated ),
+					human_time_diff( $recently_deactivated )
+				);
+				?>
+			</p>
+			<p>
+				<?php
+				if ( $logging_enabled ) {
+					esc_html_e( 'You can view the error log to get more details about the error that caused this.', 'insert-headers-and-footers' );
+				} else {
+					esc_html_e( 'You can enable error logging to get more details about the error that caused this.', 'insert-headers-and-footers' );
+				}
+				?>
+			</p>
+			<p>
+				<?php esc_html_e( 'This message will disappear when the snippet is updated.', 'insert-headers-and-footers' ); ?>
+			</p>
+			<p>
+				<a href="<?php echo esc_url( $button_url ); ?>" class="button button-primary">
+					<?php echo esc_html( $button_text ); ?>
+				</a>
+				<a href="<?php echo esc_url( wpcode_utm_url( 'https://wpcode.com/docs/php-error-handling-safe-mode/', 'snippet-deactivated-notice', 'edit-snippet' ) ); ?>" class="button button-secondary" target="_blank" rel="noopener noreferrer">
+					<?php esc_html_e( 'Learn More', 'insert-headers-and-footers' ); ?>
+				</a>
+			</p>
+		</div>
+		<?php
 	}
 }
