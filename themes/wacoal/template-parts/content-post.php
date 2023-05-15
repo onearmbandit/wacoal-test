@@ -32,7 +32,7 @@ endif; ?>
             <?php echo esc_attr($primary_category->name); ?>
         </a>
         <h1 class="article-header--wrapper__heading">
-            <?php echo esc_attr($post_title); ?>
+            <?php echo wp_kses_post($post_title); ?>
         </h1>
         <div class="article-header--wrapper__para">
             <?php echo wp_kses_post($tag_line); ?>
@@ -88,7 +88,7 @@ endif; ?>
                     </div>
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                         <h5 class="blog-tile--heading">
-                            <?php echo esc_attr($blog->post_title);?>
+                            <?php echo wp_kses_post($blog->post_title);?>
                         </h5>
                     </a>
                     <div class="blog-tile--para">

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Conclusion Summary Description', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"conclusion"} -->
  <section class="wp-block-group conclusion"><!-- wp:group {"className":"conclusion\u002d\u002dwrapper"} -->

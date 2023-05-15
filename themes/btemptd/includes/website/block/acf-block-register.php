@@ -228,6 +228,39 @@ function Wacoal_Acf_init()
             'keywords'        => array('image' ),
             )
         );
+        acf_register_block_type(
+            array(
+            'name'            => 'btemptd-question-a',
+            'title'           => __('Questions A'),
+            'description'     => __('A custom Btemptd list block.'),
+            'render_callback' => 'Btemptd_Qustion_A_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('list', 'content'),
+            )
+        );
+        acf_register_block_type(
+            array(
+            'name'            => 'btemptd-question-b',
+            'title'           => __('Questions B'),
+            'description'     => __('A custom Btemptd list block.'),
+            'render_callback' => 'Btemptd_Qustion_B_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'welcome-widgets-menus',
+            'keywords'        => array('list', 'content', 'image'),
+            )
+        );
+        acf_register_block_type(
+            array(
+            'name'            => 'btemptd-to',
+            'title'           => __('Tempt\'d To'),
+            'description'     => __('A custom Btemptd list block.'),
+            'render_callback' => 'Btemptd_temptd_to_Block_Render_callback',
+            'category'        => 'btemptd',
+            'icon'            => 'id-alt',
+            'keywords'        => array('text', 'content'),
+            )
+        );
 
 
     }

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Video Vertical - Only Video', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"video-image\u002d\u002dwrapper"} -->
  <section class="wp-block-group video-image--wrapper"><!-- wp:group {"className":"video-image\u002d\u002dwrapper__left only-video wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->

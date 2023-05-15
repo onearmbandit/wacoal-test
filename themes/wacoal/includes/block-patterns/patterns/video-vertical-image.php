@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Video Vertical with image', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"video-image\u002d\u002dwrapper"} -->
 	<section class="wp-block-group"><!-- wp:columns {"verticalAlignment":"center"} -->
@@ -22,7 +22,7 @@ return array(
 
 	<!-- wp:column {"verticalAlignment":"center","className":"video-image\u002d\u002dwrapper__right"} -->
 	<div class="wp-block-column is-vertically-aligned-center video-image--wrapper__right"><!-- wp:image {"align":"center","id":188,"sizeSlug":"full","linkDestination":"none"} -->
-	<div class="wp-block-image"><figure class="aligncenter size-full"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/10/blog-img-1.png" alt="" class="wp-image-188"/><figcaption>LOREM IPSUM DOLOR SIT AMET</figcaption></figure></div>
+	<div class="wp-block-image"><figure class="aligncenter size-full"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/video-vertical-image.png" alt="" class="wp-image-188"/><figcaption>LOREM IPSUM DOLOR SIT AMET</figcaption></figure></div>
 	<!-- /wp:image --></div>
 	<!-- /wp:column --></div>
 	<!-- /wp:columns --></section>

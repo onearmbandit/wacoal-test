@@ -24,7 +24,7 @@
     height: 26px;
     @include NeutraText-Book;
     font-size: 14px;
-    outline: none;
+
 
     &::-webkit-search-cancel-button {
       cursor: pointer;
@@ -36,17 +36,24 @@
     @include respond-below(sm) {
       width: 100%;
     }
+    &:focus, &:active {
+      outline: 2px solid var(--color-black);
+      border-bottom: 0;
+    }
   }
 
   .search-btn {
     background: url("../../images/search-icon.svg") no-repeat;
     // background-size: 20px;
     appearance: none;
-    width: 24px;
+    width: 29px;
+    background-position: 100% 50%;
+    position: absolute;
+    right: 0;
     height: 26px;
     border: none;
     padding: 0;
-    border-bottom: 1px solid var(--color-black);
+    //border-bottom: 1px solid var(--color-black);
     cursor: pointer;
     margin-left: -2px;
   }

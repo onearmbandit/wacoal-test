@@ -23,10 +23,7 @@
 
   .search-input {
     background: transparent;
-    border: none;
-    border-bottom: 1px solid var(--search-border);
-    border-top: 1px solid var(--search-border);
-    border-left: 1px solid var(--search-border);
+    border: 1px solid var(--search-border);
     height: 30px;
     @include ProximaNova-Reg;
     font-size: 14px;
@@ -46,21 +43,25 @@
       cursor: pointer;
       -webkit-appearance: none;
     }
+
+    &:focus, &:active {
+      outline: 2px solid var(--search-border);
+      border:0;
+    }
+
   }
 
   .search-btn {
     background: url("../../images/search-icon.svg") no-repeat center;
     background-size: 20px;
     appearance: none;
+    position: absolute;
+    right: 0;
     width: 36px;
     height: 30px;
     border: none;
     padding: 0;
-    border-bottom: 1px solid var(--search-border);
-    border-top: 1px solid var(--search-border);
-    border-right: 1px solid var(--search-border);
     cursor: pointer;
-    margin-left: -2px;
     outline: none;
   }
 }

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Subheading Description, Body Intro Paragraph – Full Width', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"article\u002d\u002dpara"} -->
  <section class="wp-block-group article--para"><!-- wp:paragraph -->

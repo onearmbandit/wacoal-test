@@ -74,7 +74,7 @@ function Wacoal_scripts()
     );
 
 }
-add_action('wp_enqueue_scripts', 'Wacoal_scripts');
+add_action('wp_enqueue_scripts', 'Wacoal_scripts', 9999);
 
 /**
  * Admin Enqueue scripts and styles.

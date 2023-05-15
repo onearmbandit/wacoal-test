@@ -10,7 +10,7 @@
  */
 function Btemptd_register_block_patterns() {
 	$block_pattern_categories = array(
-		'btemptd' => array( 'label' => __( 'Btemptd', 'btemptd' ) ),
+		'btemptd' => array( 'label' => __( 'Btemptd Patterns', 'btemptd' ) ),
 	);
 
 	/**
@@ -46,7 +46,27 @@ function Btemptd_register_block_patterns() {
 		'customer-review',
 		'vertical-video-image',
 		'vertical-video',
-		'full-video'
+		'full-video',
+		'left-image-text-colorblock',
+		'right-image-text-colorblock',
+		'list-left-image-text-hover-box',
+		'list-right-image-text-hover-box',
+		'body-outro-paragraph',
+		'text-hover-box',
+		'image-full-bleed',
+		'product-gallery',
+		'list-left-image-italic-title-subhead-body',
+		'list-right-image-italic-title-subhead-body',
+		'banner-large',
+		'banner-medium',
+		'banner-small',
+		'image-body',
+		'numbered-image-left-text',
+		'numbered-image-right-text',
+		'questions-a',
+		'questions-b-right',
+		'questions-b-left',
+		'temptd-to',
 	);
 
 	/**

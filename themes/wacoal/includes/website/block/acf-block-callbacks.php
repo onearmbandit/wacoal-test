@@ -479,7 +479,7 @@ function Wacoal_Note_Block_Render_callback( $block )
 
     $shortcode_template = '/template-parts/block/wacoal-tip.php';
 
-    if ($tip_text && ! empty($tip_text) ) {
+    if (! empty($tip_title) || ! empty($tip_text) ) {
         include locate_template($shortcode_template);
     } else {
         if (is_admin() ) {

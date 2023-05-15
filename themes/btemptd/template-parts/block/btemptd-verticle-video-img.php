@@ -14,7 +14,7 @@
 
 switch ($video_option) {
 case 'video_file':
-    $video_file = get_field('video_file');
+    $video_file = get_field('select_or_add_video');
     $video_url = wp_get_attachment_url($video_file);
     $video = '<video controls>
                     <source src="'.esc_url($video_url).'" type="video/mp4">
@@ -27,7 +27,7 @@ case 'embed_video':
     break;
 
 case 'external_url':
-    $external_url = get_field('external_url');
+    $external_url = get_field('insert_external_video_url');
     $video = '<video controls>
                     <source src="'. esc_url($external_url) .'" type="video/mp4">
                 </video>';

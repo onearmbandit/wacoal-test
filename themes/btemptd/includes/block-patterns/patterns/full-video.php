@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Video - Full Video', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"video-full-width"} -->
  <section class="wp-block-group video-full-width"><!-- wp:group {"className":"video-full-width\u002d\u002dwrapper"} -->

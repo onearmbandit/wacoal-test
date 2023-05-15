@@ -417,6 +417,10 @@
     line-height: 17px;
     padding: 17px 36.5px 14px;
     bottom: 0;
+
+    &:focus, &:active {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
 
   .search-more {
@@ -435,6 +439,10 @@
     line-height: 17px;
     padding: 17px 36.5px 14px;
     bottom: 0;
+
+    &:focus, &:active {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
 
   .see-more-home-button {
@@ -453,6 +461,10 @@
     line-height: 17px;
     padding: 17px 36.5px 14px;
     bottom: 0;
+
+    &:focus, &:active {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
 
   .cat-see-more-button {
@@ -468,5 +480,9 @@
     line-height: 17px;
     padding: 17px 36.5px 14px;
     bottom: 0;
+
+    &:focus, &:active {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
   }
 }

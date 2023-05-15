@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Subheading Description, Body Intro Paragraph – Bold Content', 'btemptd' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'btemptd' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"article-para-bold"} -->
  <section class="wp-block-group article-para-bold"><!-- wp:paragraph -->

@@ -118,8 +118,171 @@ Btemptd_Page_Entry_top('');
     </div>
 </section>
 
+<!-- Question Answer structure -->
+<section class="question-set-one">
+    <div class="question-set-one--wrapper">
+        <div class="left-column">
+            <div class="question-box">
+                <span class="number">1</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+            <div class="question-box">
+                <span class="number">2</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+            <div class="question-box">
+                <span class="number">3</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="question-box">
+                <span class="number">4</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </span>
+                </div>
+            </div>
+            <div class="question-box">
+                <span class="number">5</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+            <div class="question-box">
+                <span class="number">6</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Question Image structure -->
+<section class="question-set-one">
+    <div class="question-set-one--wrapper"><!-- "left-image" add class here for left right image -->
+        <div class="left-column">
+            <div class="question-box">
+                <span class="number">1</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+            <div class="question-box">
+                <span class="number">2</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+            <div class="question-box">
+                <span class="number">3</span>
+                <div class="question-answer">
+                    <h5 class="question">
+                        Tell us about your welless journey. How did it star, and why is it important for you?
+                    </h5>
+                    <span class="answer">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="right-column right-column--image">
+            <div class="question-image">
+                <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/featured-article-img-2.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Temptd to -->
+<section class="temptd-to">
+    <div class="temptd-to--wrapper">
+        <div class="image">
+            <img src="http://localhost:8000/wp-content/themes/btemptd/assets/images/featured-article-img-1.png" />
+        </div>
+        <div class="heading">
+            i'm tempt'd to
+        </div>
+        <div class="sub-heading">
+            "Pack my life up and move <br />
+            to a vineyard in Florance"
+        </div>
+
+        <div class="heading">
+            i'm tempt'd to
+        </div>
+        <div class="sub-heading">
+            "Pack my life up and move <br />
+            to a vineyard in Florance"
+        </div>
+    </div>
+</section>
+
 <!-- size chart section -->
-<section class="size-chart">
+<!-- <section class="size-chart">
     <div class="size-chart--wrapper">
         <div class="size-chart--left box-shadow-right">
             <div class="size-chart--image">
@@ -149,11 +312,11 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <!-- Explore the Blog -->
-<section class="explore-blog">
+<!-- <section class="explore-blog">
     <div class="explore-blog--title">Explore the blog</div>
 
     <div class="explore-blog--bg">
@@ -221,10 +384,10 @@ Btemptd_Page_Entry_top('');
     </div>
 
 
-</section>
+</section> -->
 
 <!-- Pagination -->
-<section class="pagination">
+<!-- <section class="pagination">
     <div class="pagination--wrapper">
         <div class="pagination-box">
             <div class="pagination-box--btn">
@@ -242,7 +405,7 @@ Btemptd_Page_Entry_top('');
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Explore the Blog -->
 <section class="explore-blog blog-multiple">
     <div class="explore-blog--bg">
@@ -308,10 +471,9 @@ Btemptd_Page_Entry_top('');
         </div>
     </div>
     </div>
-
-
 </section>
 
+<!--
 <section class="explore-blog blog-multiple">
     <div class="explore-blog--bg">
     <div class="explore-blog--wrapper">
@@ -376,7 +538,7 @@ Btemptd_Page_Entry_top('');
         </div>
     </div>
     </div>
-</section>
+</section> -->
 
 
 <!-- featured article -->
@@ -614,7 +776,7 @@ Btemptd_Page_Entry_top('');
 
 
 <!-- Four Image BLock -->
-<section class="four-image">
+<!-- <section class="four-image">
     <div class="four-image--wrapper">
         <div class="four-image--wrapper__box">
             <img src="https://s7d5.scene7.com/is/image/WacoalAmerica/BT_ALWAYSMELISS_560X560?scl=1" />
@@ -634,6 +796,6 @@ Btemptd_Page_Entry_top('');
 <section class="shop-button--wrapper">
     <a class="shop-now-button" href="https://btemptd.wacoal-america.com/collections/future-foundation-collection" target="_blank">
         SHOP NOW    <img class="cta-button" src="https://btemptdblog.wacoal-america.mark4.oablab.com/wp-content/themes/btemptd/assets/images/blog-down-arrow.svg"></a>
-</section>
+</section> -->
 <?php
 Btemptd_Page_Entry_bottom();

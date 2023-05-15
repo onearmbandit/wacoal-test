@@ -29,13 +29,8 @@ $redirect_domains = [
     'www.wacoal-america.com'   => [
         'wacoal-america.com',
     ],
-    'btemptdblog.wacoal-america.com'   => [
-        'www.btemptdblog.wacoal-america.com',
-        'www.btemptdblog.wacoalamerica.com',
-        'btemptdblog.wacoalamerica.com'
-    ],
-    'blog.wacoal.ca'   => [
-        'www.blog.wacoal.ca',
+    'www.wacoal.ca'   => [
+        'wacoal.ca',
     ],
 ];
 
@@ -55,15 +50,20 @@ foreach ( $redirect_domains as $redirect_to => $redirect_from_domains ) {
 }
 
 /*$proxy_lib = ABSPATH . '/wp-content/mu-plugins/lib/proxy/ip-forward.php';
+<<<<<<< HEAD
 $forwarded_ips = explode( ',', $SERVER['HTTP_X_FORWARDED_FOR'] );
 $forwarded_ips = array_map( 'trim', $forwarded_ips );
+=======
+$forwarded_ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
+$forwarded_ips = array_map('trim', $forwarded_ips);
+>>>>>>> master
 if ($forwarded_ips[0] && ! empty($_SERVER['REMOTE_ADDR']) && file_exists($proxy_lib) ) {
     include_once __DIR__ . '/remote-proxy-ips.php';
     include_once $proxy_lib;
 
     Automattic\VIP\Proxy\fix_remote_address(
-        $forwarded_ips[0],
         $_SERVER['REMOTE_ADDR'],
+        $forwarded_ips[0],
         MY_PROXY_IP_ALLOW_LIST
     );
 }*/

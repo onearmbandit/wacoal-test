@@ -10,7 +10,7 @@
  */
 function Wacoal_register_block_patterns() {
 	$block_pattern_categories = array(
-		'wacoal' => array( 'label' => __( 'Wacoal', 'wacoal' ) ),
+		'wacoal' => array( 'label' => __( 'Wacoal Patterns', 'wacoal' ) ),
 	);
 
 	/**
@@ -43,7 +43,39 @@ function Wacoal_register_block_patterns() {
 		'video-vertical-image',
 		'video-horizontal',
 		'link-button',
-		'conclusion-summary'
+		'conclusion-summary',
+		'list-text-left-image-tip',
+		'list-text-right-image-tip',
+		'product-gallery',
+		'quote-image',
+		'quote-timeline',
+		'quote-progressbar',
+		'checklist',
+		'list-title-body-image-bullets',
+		'list-number-title-subhead-copy',
+		'list-title-statement-body-left-image',
+		'list-title-statement-body-right-image',
+		'image-gallery-full-bleed',
+		'subhead-description',
+		'benton-text-left-image',
+		'benton-text-right-image',
+		'questions-answer-left-image',
+		'questions-answer-right-image',
+		'questions-answer',
+		'image-full-bleed',
+		'timeline',
+		'myth-list-numbered-left-text',
+		'myth-list-numbered-right-text',
+		'reminder',
+		'tip',
+		'list-left-image-title-button',
+		'list-right-image-title-button',
+		'banner-large-image',
+		'banner-medium-image',
+		'banner-small-image',
+		'image-medium',
+		'list-benton-title-button-bordered-left-image',
+		'list-benton-title-button-bordered-right-image'
 	);
 
 	/**

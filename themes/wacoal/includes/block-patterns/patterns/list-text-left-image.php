@@ -4,20 +4,20 @@
  */
 return array(
 	'title'      => __( 'List Text Left Image', 'wacoal' ),
-	'categories' => array( 'text' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/text' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"list-text-image"} -->
 	<section class="wp-block-group list-text-image"><!-- wp:columns {"verticalAlignment":"center","className":"list-text-image\u002d\u002dwrapper img-left"} -->
-	<div class="wp-block-columns are-vertically-aligned-center list-text-image--wrapper img-left"><!-- wp:column {"verticalAlignment":"center","width":"567px"} -->
-	<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:567px"><!-- wp:image {"id":231,"sizeSlug":"large","linkDestination":"none","className":"image-name"} -->
-	<figure class="wp-block-image size-large image-name"><img src="https://blog.wacoal-america.mark4.cetxlabs.com/wp-content/uploads/2020/09/wacoal-101-image.png" alt="" class="wp-image-231"/><figcaption>Body Base® Shorty Panty</figcaption></figure>
+	<div class="wp-block-columns are-vertically-aligned-center list-text-image--wrapper img-left"><!-- wp:column {"verticalAlignment":"center"} -->
+	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:image {"sizeSlug":"large","className":"image-name"} -->
+	<figure class="wp-block-image size-large image-name"><img src="https://www.wacoal-america.com/blog/wp-content/themes/wacoal/assets/images/pattern-images/list-text-left-image.png" alt=""/><figcaption>Body Base® Shorty Panty</figcaption></figure>
 	<!-- /wp:image --></div>
 	<!-- /wp:column -->
 
-	<!-- wp:column {"verticalAlignment":"center","className":"ml-0"} -->
-	<div class="wp-block-column is-vertically-aligned-center ml-0"><!-- wp:group {"className":"list-text-image\u002d\u002dcontent"} -->
+	<!-- wp:column {"verticalAlignment":"center"} -->
+	<div class="wp-block-column is-vertically-aligned-center"><!-- wp:group {"className":"list-text-image\u002d\u002dcontent"} -->
 	<div class="wp-block-group list-text-image--content"><!-- wp:heading {"className":"title"} -->
-	<h2 class="title" id="for-smoothing">For Smoothing</h2>
+	<h2 class="title">For Smoothing</h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"className":"sub-title"} -->

@@ -4,7 +4,7 @@
  */
 return array(
 	'title'      => __( 'Article Header', 'wacoal' ),
-	'categories' => array( 'header' ),
+	'categories' => array( 'wacoal' ),
 	'blockTypes' => array( 'core/template-part/header' ),
 	'content'    => '<!-- wp:group {"tagName":"section","className":"article-header"} -->
 	<section class="wp-block-group article-header"><!-- wp:group {"className":"article-header\u002d\u002dwrapper"} -->
