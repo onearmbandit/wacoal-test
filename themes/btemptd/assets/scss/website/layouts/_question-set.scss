@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     gap: 60px;
+
     max-width: 1270px;
     flex-wrap: nowrap !important;
 
@@ -32,7 +33,6 @@
     .left-column,
     .right-column {
       width: 50%;
-
       @include respond-below(sm) {
         background: var(--color-light-tan);
         width: 100%;
@@ -60,7 +60,6 @@
 
     &.left-image {
       flex-direction: row-reverse;
-
       @include respond-below(sm) {
         flex-direction: column-reverse;
       }
