@@ -1113,8 +1113,7 @@ class Akismet_Admin {
 				self::display_alert();
 			}
 		}
-		elseif ( ( 'plugins.php' === $hook_suffix || 'edit-comments.php' === $hook_suffix ) && ! Akismet::get_api_key() ) {
-			// Show the "Set Up Akismet" banner on the comments and plugin pages if no API key has been set.
+		elseif ( $hook_suffix == 'plugins.php' && !Akismet::get_api_key() ) {
 			self::display_api_key_warning();
 		}
 		elseif ( $hook_suffix == 'edit-comments.php' && wp_next_scheduled( 'akismet_schedule_cron_recheck' ) ) {

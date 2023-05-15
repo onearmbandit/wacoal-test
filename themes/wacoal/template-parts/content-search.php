@@ -60,13 +60,15 @@ $counts= $total_posts->publish;
 
         <div class="search-content">
             <div class="category">
-                <a href="<?php echo esc_url_raw($cat_url);?>">
-                    <?php echo esc_attr($cat_name);?>
-                </a>
+                <?php if (! empty($cat_name) && ! empty($cat_url)) { ?>
+                    <a href="<?php echo esc_url_raw($cat_url);?>">
+                        <?php echo esc_attr($cat_name);?>
+                    </a>
+                <?php } ?>
             </div>
             <div class="title">
                 <a href="<?php echo esc_url(get_permalink($postid));?>">
-                    <?php echo esc_attr(Wacoal_Limit_text($post_title, 61));?>
+                    <?php echo wp_kses_post(Wacoal_Limit_text($post_title, 61));?>
                 </a>
             </div>
 
@@ -119,7 +121,7 @@ $counts= $total_posts->publish;
                 </div>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
+                        <?php echo wp_kses_post(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
                     </a>
                 </h5>
                 <div class="blog-tile--para">

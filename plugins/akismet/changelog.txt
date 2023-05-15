@@ -96,6 +96,7 @@ For the latest changes, please see the "Changelog" section of the [readme.txt fi
 * Hooked into the new "Personal Data Eraser" functionality from WordPress 4.9.6.
 * Added functionality to clear outdated alerts from Akismet.com.
 
+
 = 4.0.8 =
 *Release Date - 19 June 2018*
 

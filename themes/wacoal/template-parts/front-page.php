@@ -42,6 +42,9 @@
 <?php if($slider_blogs_posts && !empty($slider_blogs_posts)) :?>
 <section class="evergreen-article--slider evergreen-article--desktop">
     <div class="swiper-container center-slide-slider">
+        <button aria-label="Stop automatic slideshow" class="pause-btn" type="button">
+            <img class="play-pause" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+        </button>
         <div class="swiper-wrapper">
             <?php foreach ($slider_blogs_posts as $key => $slider_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
@@ -75,7 +78,7 @@
                         <?php if($slider_post_title && !empty($slider_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
                             </h3>
                         </a>
                         <?php endif;?>
@@ -117,7 +120,10 @@
 </section>
 
 <section class="evergreen-article--slider evergreen-article--mobile">
-    <div class="swiper-container center-slide-slider">
+    <div class="swiper-container center-slide-slider-mobile">
+        <button aria-label="Stop automatic slideshow" class="pause-btn-mobile" type="button">
+            <img class="play-pause-mobile" src="<?php echo  esc_url(THEMEURI); ?>/assets/images/pause-button.png" />
+        </button>
         <div class="swiper-wrapper">
             <?php foreach ($slider_blogs_posts as $key => $slider_blog) {
                 $thumbnail_id  = get_post_thumbnail_id($slider_blog->ID);
@@ -140,7 +146,7 @@
                         <?php if($slider_post_title && !empty($slider_post_title)) :?>
                         <a href="<?php echo esc_url(get_permalink($slider_blog->ID));?>">
                             <h3 class="evergreen-article--content__title">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($slider_post_title), 78));?>
                             </h3>
                         </a>
                         <?php endif;?>
@@ -191,13 +197,11 @@
         </div>
 
         <div class="swiper-pagination custom-swiper-pagination"></div>
-
-
   </div>
 </section>
 <?php endif;?>
 
-<?php if(have_rows($static_section) || $static_section['image'] ) : ?>
+
 
 <section class="wacoal-101">
     <div class="wacoal-101--wrapper">
@@ -258,7 +262,7 @@
     </div>
 </section>
 
-<?php endif; ?>
+
 
 <?php if ($featured_blogs && !empty($featured_blogs) ) {?>
 <section class="feature-article-desktop">
@@ -284,7 +288,7 @@
                     <?php if($feat_post_title && !empty($feat_post_title)) :?>
                     <div class="article-one-column--content__title">
                         <a href="<?php echo esc_url(get_permalink($featured_blog_slider[0]->ID)); ?>">
-                            <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
+                            <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
                         </a>
                     </div>
                     <?php endif;?>
@@ -361,7 +365,7 @@
                         <?php if($feat_post_title1 && !empty($feat_post_title1)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[1]->ID)); ?>">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 90));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title1), 90));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -405,7 +409,7 @@
                         <?php if($feat_post_title2 && !empty($feat_post_title2)) :?>
                         <div class="article-two-column--content__title">
                             <a href="<?php echo esc_url(get_permalink($featured_blog_slider[2]->ID)); ?>">
-                                <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title2), 90));?>
+                                <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title2), 90));?>
                             </a>
                         </div>
                         <?php endif;?>
@@ -455,7 +459,7 @@
                             <?php if($feat_post_title && !empty($feat_post_title)) :?>
                             <a href="<?php echo esc_url(get_permalink($featured_blog->ID)); ?>">
                                 <h4 class="featured-box--content__title">
-                                    <?php echo esc_attr(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
+                                    <?php echo wp_kses_post(Wacoal_Limit_text(Wacoal_Remove_P_tag($feat_post_title), 105));?>
                                 </h4>
                             </a>
                             <?php endif;?>
@@ -545,7 +549,7 @@
                 <?php if($feat_post_title && !empty($feat_post_title)) :?>
                 <h5 class="blog-tile--heading">
                     <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
-                        <?php echo esc_attr(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
+                        <?php echo wp_kses_post(Wacoal_Limit_text(get_the_title($blog->ID), 61));?>
                     </a>
                 </h5>
                 <?php endif;?>

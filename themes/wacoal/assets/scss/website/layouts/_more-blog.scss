@@ -283,9 +283,10 @@
       letter-spacing: 0.6px;
       margin-bottom: 11px;
       min-height: 100px;
-      display: flex;
+      display: block;
+      /*display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center;*/
 
       @include respond-below(xl) {
         font-size: 22px;

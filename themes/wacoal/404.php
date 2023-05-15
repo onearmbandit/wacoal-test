@@ -71,7 +71,7 @@ $description=get_field('description', 'options');
 
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
                     <h5 class="blog-tile--heading">
-                        <?php echo esc_attr($blog->post_title);?>
+                        <?php echo wp_kses_post($blog->post_title);?>
                     </h5>
                 <a href="<?php echo esc_url(get_permalink($blog->ID));?>">
 

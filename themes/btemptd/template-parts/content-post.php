@@ -37,9 +37,9 @@
             </a>
         </div>
 
-        <div class="article-header--title">
+        <h1 class="article-header--title">
             <?php echo esc_attr($post_title); ?>
-        </div>
+        </h1>
 
         <div class="article-header--para">
             <?php echo wp_kses_post($tag_line); ?>

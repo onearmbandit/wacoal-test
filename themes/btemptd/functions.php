@@ -101,6 +101,8 @@ add_action('admin_enqueue_scripts', 'Btemptd_Admin_scripts', 10, 1);
  */
 require THEMEPATH . '/includes/website/website-functions.php';
 
+require THEMEPATH . '/includes/block-patterns/block-patterns.php';
+
 /**
  * Enable gutenberg
  */
@@ -121,4 +123,5 @@ add_action('acf/input/admin_enqueue_scripts', 'acf_custom_text_toolbar_script');
  * Website ajax functions include
 */
 require THEMEPATH . '/includes/website/website-ajax-functions.php';
+
 

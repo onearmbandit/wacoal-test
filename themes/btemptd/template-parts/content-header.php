@@ -20,7 +20,7 @@ $logo_image_url = Btemptd_Get_Image($logo_image_array);
         <img class="header-section--logo" src="<?php echo esc_url($logo_image_url);?> " alt="<?php echo wp_kses_post($logo_image_alt);?>">
     </a>
     <!-- <a class="shop-btemptd-btn shop-btemptd-btn-desktop" href="<?php echo esc_url(get_field('header_button_link', 'options'));?>" target="_blank">
-    <?php echo esc_html(get_field('header_button_text', 'options'));?>   </a>
+    <?php echo esc_html(get_field('', 'options'));?>   </a>
     <a class="shop-btemptd-btn shop-btemptd-btn-mobile" href="<?php echo esc_url(get_field('header_button_link', 'options'));?>" target="_blank">
     <?php echo esc_html(get_field('mobile_header_button_text', 'options'));?></a> -->
 

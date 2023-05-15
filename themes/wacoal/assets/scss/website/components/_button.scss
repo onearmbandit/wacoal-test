@@ -7,10 +7,6 @@
   cursor: pointer;
   line-height: 1;
 
-  &:focus {
-      outline: none;
-  }
-
   &.primary {
       border-color: var(--color-black);
       background-color: transparent;
@@ -36,6 +32,10 @@
         background: var(--color-black);
         color: var(--color-white);
       }
+
+      &:focus, &:active {
+        outline: -webkit-focus-ring-color auto 1px;
+      }
   }
 
   &.secondary {
@@ -48,6 +48,10 @@
       padding: 12px 33px;
       letter-spacing: 1.4px;
       line-height: 18px;
+
+      &:focus, &:active {
+        outline: -webkit-focus-ring-color auto 1px;
+      }
   }
 
 }

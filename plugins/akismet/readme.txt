@@ -6,7 +6,7 @@ Tested up to: 6.1
 Stable tag: 5.0.1
 License: GPLv2 or later
 
-The best anti-spam protection to block spam comments and spam in a contact form. The most trusted antispam solution for WordPress and WooCommerce.
+Akismet checks your comments and contact form submissions against our global database of spam to protect you and your site from malicious content.
 
 == Description ==
 

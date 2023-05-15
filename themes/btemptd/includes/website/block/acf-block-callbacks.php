@@ -641,3 +641,90 @@ function Btemptd_Img_Text_Img_Block_Render_callback( $block )
         }
     }
 }
+
+/**
+ * Callback function for Questions A block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Qustion_A_Block_Render_callback( $block )
+{
+    $list_data  = get_field('list_data');
+
+    if (! empty($list_data[0]) ) {
+        if (is_admin() ) {
+            Btemptd_WP_Backend_edit('Questions A');
+        } else {
+            $shortcode_template  = '/template-parts/block/btemptd-question-a.php';
+            include locate_template($shortcode_template);
+        }
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Questions A</u></h4>
+            <span style="color:red">Empty Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for Questions B block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_Qustion_B_Block_Render_callback( $block )
+{
+    $list_data  = get_field('list_data');
+    $img_position  = get_field('image_position');
+    $image_id    = get_field('image');
+
+    if (! empty($list_data[0]) ) {
+        if (is_admin() ) {
+            Btemptd_WP_Backend_edit('Questions B');
+        } else {
+            $shortcode_template  = '/template-parts/block/btemptd-question-b.php';
+            include locate_template($shortcode_template);
+        }
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Questions B</u></h4>
+            <span style="color:red">Empty Block</span>
+            <?php
+        }
+    }
+}
+
+/**
+ * Callback function for Tempt'd To block
+ *
+ * @param [type] $block Block.
+ *
+ * @return void
+ */
+function Btemptd_temptd_to_Block_Render_callback( $block )
+{
+    $title  = get_field('title');
+    $description  = get_field('description');
+
+    if (! empty($title) ) {
+        if (is_admin() ) {
+            Btemptd_WP_Backend_edit('Tempt\'d To');
+        } else {
+            $shortcode_template  = '/template-parts/block/btemptd-to.php';
+            include locate_template($shortcode_template);
+        }
+    } else {
+        if (is_admin() ) {
+            ?>
+            <h4><u>Tempt'd To</u></h4>
+            <span style="color:red">Empty Block</span>
+            <?php
+        }
+    }
+}

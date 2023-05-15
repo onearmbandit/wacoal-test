@@ -112,3 +112,112 @@ section.image-content.image-content-gif a {
 section.article--para {
   margin: 10%;
 }
+
+.wp-block-columns:not(.is-not-stacked-on-mobile)
+  > .wp-block-column:not(:first-child) {
+  margin-left: 32px;
+}
+
+.wp-block.list-text-image .wp-block-image .components-resizable-box__container {
+  width: 350px !important;
+  height: 350px !important;
+}
+
+.wp-block.list-text-image .wp-block-image img {
+  max-width: 100% !important;
+  height: 100%;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block:after {
+  top: 50%;
+}
+
+.image-text-hover .image-wrapper {
+  z-index: 0;
+}
+
+.three-reason .reason-box--image {
+  z-index: 0;
+  max-width: 15vw;
+}
+
+.italics-title .right-box .image-wrapper {
+  width: 380px;
+  height: 380px;
+}
+
+.three-reason .reason-box.img-right .reason-box--image {
+  margin-right: 0;
+}
+
+.three-reason .reason-box.img-right .reason-box--content {
+  left: -200px;
+}
+.internal-banner {
+  padding: 40px 0;
+}
+.internal-banner .big-banner .components-resizable-box__container {
+  width: 840px !important;
+  height: 315px !important;
+}
+
+.internal-banner .medium-banner .components-resizable-box__container {
+  width: 840px !important;
+  height: 231px !important;
+}
+
+.internal-banner .small-banner .components-resizable-box__container {
+  width: 840px !important;
+  height: 135px !important;
+}
+
+.list-number-tip .image-title .image-block {
+  width: 400px;
+  height: 400px;
+}
+
+.list-number-tip .content .number-wrapper {
+  left: -150px;
+}
+
+.list-number-tip .content,
+.list-number-tip--wrapper.img-right .content {
+  padding: 0 20px;
+}
+.list-number-tip--wrapper.img-right .content .number-wrapper {
+  /* right: -120px; */
+  right: inherit;
+  left: -130px;
+}
+
+.image-text-hover .image-wrapper figure {
+  width: 510px;
+  height: 360px;
+}
+
+.image-text-hover .content-wrapper {
+  padding: 10px 30px;
+}
+
+.image-text-hover .image-wrapper .image-caption {
+  width: 440px;
+}
+
+.product-gallery--box:not(:first-child) {
+  margin-left: 10px !important;
+}
+
+.image-text-image {
+  padding: 80px 0 0px;
+}
+.italics-title--wrapper.img-left .left-box {
+  padding: 0 30px;
+}
+.image-text-image .content {
+  padding: 0 30px 0;
+}
+.image-text-image .content .title {
+  font-size: 30px;
+  line-height: 32px;
+  margin-bottom: 0;
+}

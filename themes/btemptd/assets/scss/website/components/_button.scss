@@ -6,9 +6,9 @@
   text-align: center;
   cursor: pointer;
 
-  &:focus {
-      outline: none;
-  }
+  /*&:focus {
+     outline: none;
+  }*/
 
   &.primary {
       border-color: var(--color-black);
@@ -50,6 +50,9 @@
       &:hover {
 
       }
+      &:focus, &:active {
+          outline: -webkit-focus-ring-color auto 1px;
+      }
 
   }
 
@@ -66,6 +69,9 @@
     &:hover {
       background: var(--color-text);
       color: var(--color-white);
+    }
+    &:focus, &:active {
+      outline: -webkit-focus-ring-color auto 1px;
     }
   }
 
