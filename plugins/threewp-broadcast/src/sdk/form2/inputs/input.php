@@ -16,13 +16,19 @@ class input
 	use traits\label;			// Same reason as _disabled.
 	use traits\datalist;		// Same reason as _disabled.
 	use traits\prefix;
-	use traits\readonly;		// Same reason as _disabled.
+	use traits\readonly_trait;	// Same reason as _disabled.
 	use traits\sort_order;		// Same reason as _disabled.
 	use traits\validation;		// All subinputs will inherit the validation methods.
 
 	public $container;
 
 	public $description = '';
+
+	/**
+		@brief		The form we belong to.
+		@since		2023-03-21 12:10:00
+	**/
+	public $form;
 
 	/**
 		@brief		Does this input have a description?

@@ -98,11 +98,27 @@ trait broadcasting
 		{
 			$this->debug( 'Will broadcast taxonomies.' );
 			$bcd->add_new_taxonomies = true;
-			$bcd->taxonomies();
+			$bcd_taxonomies = $bcd->taxonomies();
 			$this->collect_post_type_taxonomies( $bcd );
+
 			$this->debug( 'Taxonomy data dump: %s', $bcd->taxonomy_data );
-			$this->debug( 'Parent blog taxonomies dump: %s', $bcd->parent_blog_taxonomies );
-			$this->debug( 'Parent post taxonomies dump: %s', $bcd->parent_post_taxonomies );
+
+			foreach( $bcd->parent_post_taxonomies as $taxonomy => $taxonomy_terms )
+				$this->debug( 'Parent post taxonomy %s dump: %s', $taxonomy, $bcd->taxonomies()->build_nice_terms_list( $taxonomy_terms ) );
+
+			foreach( $bcd->parent_blog_taxonomies as $taxonomy => $taxonomy_data )
+				$this->debug( 'Parent blog taxonomy %s dump: %s', $taxonomy, $bcd->taxonomies()->build_nice_terms_list( $taxonomy_data[ 'terms' ] ) );
+
+			// Make a note of these terms, since they are very important to syncing the post.
+			foreach( $bcd->parent_post_taxonomies as $taxonomy => $terms )
+			{
+				$term_ids = array_keys( $terms );
+				if ( count( $term_ids ) < 1 )
+					continue;
+				$this->debug( 'For taxonomy %s using terms: %s', $taxonomy, json_encode( $term_ids ) );
+				foreach( $term_ids as $term_id )
+					$bcd_taxonomies->use_term( $term_id );
+			}
 		}
 		else
 			$this->debug( 'Will not broadcast taxonomies.' );
@@ -271,6 +287,16 @@ trait broadcasting
 		$action->broadcasting_data = $bcd;
 		$action->execute();
 
+		// Prevent filtering of perfectly normal tags such as iframes.
+		kses_remove_filters();
+
+		// Prune the unused parent blog terms.
+		if ( $bcd->taxonomies )
+		{
+			$bcd->taxonomies()->mark_parent_terms_used();
+			$bcd->taxonomies()->prune_parent_blog_terms();
+		}
+
 		$this->debug( 'The attachment data is: %s', $bcd->attachment_data );
 
 		$this->debug( 'Beginning child broadcast loop to blogs %s', $bcd->blogs );
@@ -433,6 +459,18 @@ trait broadcasting
 			$this->set_post_status( $bcd->new_post( 'ID' ), $bcd->post->post_status );
 			$bcd->new_post = get_post( $bcd->new_post( 'ID' ) );
 
+			if ( $bcd->link )
+			{
+				$new_post_broadcast_data = $this->get_post_broadcast_data( $bcd->current_child_blog_id, $bcd->new_post( 'ID' ) );
+				$new_post_broadcast_data->set_linked_parent( $bcd->parent_blog_id, $bcd->post->ID );
+				$this->debug( 'Saving broadcast data of child: %s', $new_post_broadcast_data );
+				$this->set_post_broadcast_data( $bcd->current_child_blog_id, $bcd->new_post( 'ID' ), $new_post_broadcast_data );
+
+				// Save the parent also.
+				$this->debug( 'Saving parent broadcast data: %s', $bcd->broadcast_data );
+				$this->set_post_broadcast_data( $bcd->parent_blog_id, $bcd->post->ID, $bcd->broadcast_data );
+			}
+
 			$action = $this->new_action( 'broadcasting_after_update_post' );
 			$action->broadcasting_data = $bcd;
 			$action->execute();
@@ -510,9 +548,6 @@ trait broadcasting
 					$this->sync_terms( $bcd, $parent_taxonomy );
 					$this->debug( 'Taxonomies: Synced terms for %s.', $parent_taxonomy );
 
-					// Get a list of terms that the target blog has.
-					$target_blog_terms = $this->get_current_blog_taxonomy_terms( $parent_taxonomy );
-
 					// Go through the original post's terms and compare each slug with the slug of the target terms.
 					$taxonomies_to_add_to = [];
 
@@ -530,7 +565,6 @@ trait broadcasting
 					{
 						// This relates to the bug mentioned in the method $this->set_term_parent()
 						delete_option( $parent_taxonomy . '_children' );
-						clean_term_cache( '', $parent_taxonomy );
 
 						if ( ! $syncing_parent_blog_taxonomies )
 						{
@@ -650,11 +684,12 @@ trait broadcasting
 
 				// Attached files are custom fields... but special custom fields.
 				if ( $bcd->has_thumbnail )
-				{
-					$new_thumbnail_id = $bcd->copied_attachments()->get( $bcd->thumbnail_id );
-					$this->debug( 'Handling post thumbnail for post %s. Thumbnail ID is now %s', $bcd->new_post( 'ID' ), $new_thumbnail_id );
-					update_post_meta( $bcd->new_post( 'ID' ), '_thumbnail_id', $new_thumbnail_id );
-				}
+					if ( ! $bcd->custom_fields()->protectlist_has( '_thumbnail_id' ) )
+					{
+						$new_thumbnail_id = $bcd->copied_attachments()->get( $bcd->thumbnail_id );
+						$this->debug( 'Handling post thumbnail for post %s. Thumbnail ID is now %s', $bcd->new_post( 'ID' ), $new_thumbnail_id );
+						update_post_meta( $bcd->new_post( 'ID' ), '_thumbnail_id', $new_thumbnail_id );
+					}
 				$this->debug( 'Custom fields: Finished.' );
 			}
 
@@ -670,18 +705,6 @@ trait broadcasting
 			{
 				$this->debug( 'Unsticking post.' );
 				unstick_post( $bcd->new_post( 'ID' ) );
-			}
-
-			if ( $bcd->link )
-			{
-				$new_post_broadcast_data = $this->get_post_broadcast_data( $bcd->current_child_blog_id, $bcd->new_post( 'ID' ) );
-				$new_post_broadcast_data->set_linked_parent( $bcd->parent_blog_id, $bcd->post->ID );
-				$this->debug( 'Saving broadcast data of child: %s', $new_post_broadcast_data );
-				$this->set_post_broadcast_data( $bcd->current_child_blog_id, $bcd->new_post( 'ID' ), $new_post_broadcast_data );
-
-				// Save the parent also.
-				$this->debug( 'Saving parent broadcast data: %s', $bcd->broadcast_data );
-				$this->set_post_broadcast_data( $bcd->parent_blog_id, $bcd->post->ID, $bcd->broadcast_data );
 			}
 
 			$action = $this->new_action( 'broadcasting_before_restore_current_blog' );

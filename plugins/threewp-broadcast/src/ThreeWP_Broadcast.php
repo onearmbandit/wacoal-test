@@ -2,6 +2,7 @@
 
 namespace threewp_broadcast;
 
+use Exception;
 use \threewp_broadcast\broadcast_data\blog;
 
 class ThreeWP_Broadcast
@@ -117,6 +118,8 @@ class ThreeWP_Broadcast
 		if ( ! $this->is_network )
 			return;
 
+		$this->__loaded = false;
+
 		if ( defined( 'WP_CLI' ) && WP_CLI )
 		{
 			$cli = new cli\Broadcast();
@@ -173,6 +176,9 @@ class ThreeWP_Broadcast
 
 	public function activate()
 	{
+		if ( ! is_multisite() )
+			throw new Exception( 'Broadcast requires a Wordpress network install. It does not support single installs.' );
+
 		if ( !$this->is_network )
 			return;
 
@@ -432,6 +438,8 @@ class ThreeWP_Broadcast
 				{
 					switch_to_blog( $parent[ 'blog_id' ] );
 					$o = (object)[];
+					$o->action = $action;
+					$o->blog_id = $parent[ 'blog_id' ];
 					$o->post_id = $parent[ 'post_id' ];
 					$o->post = get_post( $o->post_id );
 					$this->debug( $prefix . '' );
@@ -445,7 +453,15 @@ class ThreeWP_Broadcast
 			$broadcast_data = $this->get_post_broadcast_data( $parent[ 'blog_id' ], $parent[ 'post_id' ] );
 		}
 		else
-			$this->debug( $prefix . 'No linked parent.' );
+		{
+			$this->debug( $prefix . 'On the parent.' );
+			$o = (object)[];
+			$o->post_id = $action->post_id;
+			$o->post = get_post( $o->post_id );
+			$this->debug( $prefix . '' );
+			foreach( $action->callbacks as $callback )
+				$callback( $o );
+		}
 
 		if ( $action->on_children )
 		{
@@ -454,11 +470,16 @@ class ThreeWP_Broadcast
 			{
 				// Do not bother eaching this child if we started here.
 				if ( $blog_id == $action->blog_id )
-					continue;
+				{
+					if ( ! $action->on_source_child )
+						continue;
+				}
 				if ( ! $this->blog_exists( $blog_id ) )
 					continue;
 				switch_to_blog( $blog_id );
 				$o = (object)[];
+				$o->action = $action;
+				$o->blog_id = $blog_id;
 				$o->post_id = $post_id;
 				$o->post = get_post( $post_id );
 				$this->debug( $prefix . 'Executing callbacks on child post %s on blog %s.', $post_id, $blog_id );
@@ -542,33 +563,83 @@ class ThreeWP_Broadcast
 	**/
 	public function wp_head()
 	{
-		// Only override the canonical if we're looking at a single post.
-		$override = false;
-		$override |= is_single();
-		$override |= is_page();
-		$override = apply_filters( 'broadcast_override_canonical_url', $override );
-		if ( ! $override )
-			return;
+        $post_type = get_post_type();
 
-		global $post;
-		global $blog_id;
+        // Make sure post type isn't skipped
+        $canonical_skip_post_types = $this->get_site_option( 'canonical_skip_post_types' );
+        $canonical_skipped_post_types = explode( ' ', $canonical_skip_post_types );
+        if ( in_array( $post_type, $canonical_skipped_post_types ) )
+        {
+        	if ( $this->debugging() )
+        		echo sprintf ("<!-- Broadcast SEO settings are configured to skip this post type: $post_type. --> \n", $post_type );
+            return;
+        }
 
-		// Find the parent, if any.
-		$broadcast_data = $this->get_post_broadcast_data( $blog_id, $post->ID );
-		$linked_parent = $broadcast_data->get_linked_parent();
-		if ( $linked_parent === false)
-			return;
+        // A linked parent is required for the replacement canonical.
+        global $blog_id;
+        global $post;
+        $broadcast_data = $this->get_post_broadcast_data( $blog_id, $post->ID );
+        $linked_parent = $broadcast_data->get_linked_parent();
+        if ( $linked_parent === false)
+        {
+        	if ( $this->debugging() )
+        		echo sprintf ("<!-- Broadcast could not find a linked parent for the canonical. --> \n");
+            return;
+        }
+
+        // Check if post types are limited
+        $canonical_limit_post_types = $this->get_site_option( 'canonical_limit_post_types' );
+        $canonical_limited_post_types = explode( ' ', $canonical_limit_post_types );
+
+        // If post type limit is not defined, we can update any single post type or page.
+        // If defined, post type must be in approved list.
+        if ( $canonical_limit_post_types == '' || in_array( $post_type, $canonical_limited_post_types ) )
+        {
+			$override = false;
+			$override |= is_single();
+			$override |= is_page();
+			$override = apply_filters( 'broadcast_override_canonical_url', $override );
+
+            // If this is an archive page, then exit
+            if ( ! $override )
+            {
+            	if ( $this->debugging() )
+	                echo sprintf ( "<!-- Broadcast is not replacing the canonical after the broadcast_override_canonical_url filter. -->\n" );
+                return;
+            }
+        }
+        // This post type wasn't on the list
+        else
+        {
+            if ( $this->debugging() )
+            	echo sprintf ("<!-- Broadcast SEO settings limit post types to $canonical_limit_post_types which does not include $post_type. -->\n");
+            return;
+        }
 
 		// Post has a parent. Get the parent's permalink.
 		switch_to_blog( $linked_parent[ 'blog_id' ] );
 		$url = get_permalink( $linked_parent[ 'post_id' ] );
 		restore_current_blog();
 
-		echo sprintf( '<link rel="canonical" href="%s" />', $url );
-		echo "\n";
+		// Set the parent's permalink as the canonical
+		$action = $this->new_action( 'canonical_url' );
+		$action->post = $post;
+		$action->url = $url;
+		$action->execute();
 
-		// Prevent Wordpress from outputting its own canonical.
-		remove_action( 'wp_head', 'rel_canonical' );
+		if ( ! $action->url )
+			return;
+
+		if ( $action->html_tag )
+		{
+            if ( $this->debugging() )
+            	echo sprintf ("<!-- Broadcast canonical -->\n");
+			echo sprintf( $action->html_tag, $action->url );
+		}
+
+		if ( $action->disable_rel_canonical )
+			// Prevent Wordpress from outputting its own canonical.
+			remove_action( 'wp_head', 'rel_canonical' );
 
 		// Remove Canonical Link Added By Yoast WordPress SEO Plugin
 		if ( class_exists( '\\WPSEO_Frontend' ) )
